@@ -18,10 +18,10 @@
                         <div id="navigation">
                             <ul>
                                 <li class="active"><a href="index.html" title="Home">Home</a></li>
-                                <li class="has-sub"><a href="service-list.html" title="Service List">Services</a>
+                                <li class="has-sub"><a href="service-list.html" title="Service List">김민석</a>
                                     <ul>
-                                        <li><a href="service-list.html" title="Service List">Service List</a></li>
-                                        <li><a href="service-detail.html" title="Service Detail">Service Detail</a></li>
+                                        <li><a href="/course/create" title="Service List">코스 만들기</a></li>
+                                        <li><a href="/course/list" title="Service Detail">추천 코스</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-sub"><a href="portfolio.html" title="Portfolio">Portfolio</a>
