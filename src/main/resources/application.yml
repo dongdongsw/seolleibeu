@@ -1,0 +1,18 @@
+#server:
+#  port: 9090
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+  datasource:
+    url: jdbc:oracle:thin:@211.238.142.22:1521:XE
+    username: sist1
+    password: happy
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+mybatis:
+  type-aliases-package: com.sist.web.vo
+  mapper-locations: mybatis/mapper/*.xml
