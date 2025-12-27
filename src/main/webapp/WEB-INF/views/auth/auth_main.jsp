@@ -20,12 +20,9 @@
 </head>
 <body>
 
-
-	<jsp:include page="header.jsp"></jsp:include>
 	
-	<jsp:include page="${main_jsp }"></jsp:include>
+	<jsp:include page="${auth_jsp }"></jsp:include>
 
-	<jsp:include page="footer.jsp"></jsp:include>
 	<script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/menumaker.js"></script>
