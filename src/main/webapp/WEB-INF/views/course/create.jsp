@@ -130,17 +130,22 @@
 	.place-info {
 		margin-left: 10px;
 	}
-	.card-right .btn {
+	.btns {
+		height: 25px;
+		height: 25px;
+	}
+	.card-right .btns {
 		margin-left: auto;
 	}
-	.btn > button {
+	.btns > button {
 		background-color: #90e0ef;
 		border: none;
 		color: white;
 		border-radius: 5px;
 		width: 25px;
 		height: 25px;
-		font-weight: bold;
+		font-weight: 1000;
+		margin-right: 15px;
 	}
 	.card-right {
 		display: flex; align-items: center; width: 100%;
@@ -172,10 +177,17 @@
 		align-content: center;
 	}
 	.container {
-		width: 800px;
+		width: 900px;
 	}
 	.form-group {
-		margin-top: 30px;
+		margin-top: 40px;
+	}
+	.col-lg-12 > p {
+		margin-left: 30px;
+		font-size: 12px;
+	}
+	.control-label {
+		font-size: 15px;
 	}
 </style>
 </head>
@@ -200,7 +212,7 @@
 					<div class="place-main">
 						<div class="place-search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search Here" aria-describedby="basic-addon2">
+                                <input type="text" class="form-control" placeholder="장소를 검색하세요." aria-describedby="basic-addon2">
                                 <span class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></span>
                             </div>
                             <div class="cate text-center">
@@ -226,8 +238,8 @@
 									     	   <p>주소주소주소주소</p>
 									     	   <p>카테고리</p>
 									     	</div>
-									     	<div class="btn">
-									     	  <button>+</button>
+									     	<div class="btns">
+									     	  <button><i class="fa fa-plus" aria-hidden="true"></i></button>
 									     	</div>
 								     	</div>
 								     </div>
@@ -249,8 +261,8 @@
 									     	   <p>주소주소주소주소</p>
 									     	   <p>카테고리</p>
 									     	</div>
-									     	<div class="btn">
-									     	  <button>-</button>
+									     	<div class="btns">
+									     	  <button><i class="fa fa-minus" aria-hidden="true"></i></button>
 									     	</div>
 								     	</div>
 								     </div>
@@ -291,14 +303,14 @@
 		      <div class="container">
 		      <div class="col-md-6" style="margin-top: 150px">
                                             <div class="form-group has-feedback">
-                                                <label class="control-label" for="phone">코스 제목</label>
-                                                    <input type="text" class="form-control" id="phone">
+                                                <label class="control-label">코스 제목</label>
+                                                    <input type="text" class="form-control" placeholder="코스 제목을 입력하세요." required>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <label class="control-label" for="textarea">코스 설명</label>
-                                                <textarea class="form-control" id="textarea" name="textarea" rows="12" placeholder=""></textarea>
+                                                <label class="control-label">코스 설명</label>
+                                                <textarea class="form-control" id="textarea" name="textarea" rows="12" placeholder="코스 설명을 작성하세요."></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -312,6 +324,7 @@
 												  <input type="radio" name="category" value="food"> 비공개
 												</label>
                                             </div>
+                                            <p>공개 시 코스 게시판에 등록되고, 비공개 시 마이페이지에서 나만 볼 수 있습니다.</p>
                                         </div>
                                        </div>
                                       </div>

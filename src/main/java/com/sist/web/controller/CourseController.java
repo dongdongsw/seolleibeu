@@ -9,6 +9,7 @@ public class CourseController {
 	
 	@GetMapping("/course/create")
 	public String course_detail() {
+		
 		return "course/create";
 	}
 
