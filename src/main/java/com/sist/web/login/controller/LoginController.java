@@ -22,4 +22,18 @@ public class LoginController {
 		model.addAttribute("auth_jsp","../auth/register.jsp");
 		return "auth/auth_main";
 	}
+	
+	@GetMapping("/find_id")
+	public String auth_find_id(Model model) {
+		
+		model.addAttribute("auth_jsp","../auth/find_id.jsp");
+		return "auth/auth_main";
+	}
+	
+	@GetMapping("/find_pwd")
+	public String auth_find_pwd(Model model) {
+		
+		model.addAttribute("auth_jsp","../auth/find_pwd.jsp");
+		return "auth/auth_main";
+	}
 }

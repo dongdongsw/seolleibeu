@@ -40,9 +40,9 @@
 											<ul style="display: flex; justify-content: center; margin-left: -40px;">
 												<h5><a href="/auth/register" class="title">회원가입</a></h5>
 												<h5>&nbsp;|&nbsp;</h5>
-												<h5><a href="/auth/register" class="title">아이디 찾기</a></h5>
+												<h5><a href="/auth/find_id" class="title">아이디 찾기</a></h5>
 												<h5>&nbsp;|&nbsp;</h5>
-												<h5><a href="/auth/register" class="title">비밀번호 찾기</a></h5>
+												<h5><a href="/auth/find_pwd" class="title">비밀번호 찾기</a></h5>
 											</ul>
 	                                    </div>
 	                                </form>
