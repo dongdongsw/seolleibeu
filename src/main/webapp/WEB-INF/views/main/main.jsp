@@ -24,7 +24,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	
 	<jsp:include page="${main_jsp }"></jsp:include>
-
+	<jsp:include page="../common/cookie.jsp"></jsp:include>
 	<jsp:include page="footer.jsp"></jsp:include>
 	<script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>

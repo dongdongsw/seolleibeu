@@ -5,30 +5,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+a.dropdown-toggle.bellBtn::before {
+	display: none;
+	
+}
+a.dropdown-toggle.bellBtn {
+	padding: 15px 5px 15px 5px !important;
+}
+.read {
+	background-color: #f5f5f5 !important;
+	color: black !important;
+}
+</style>
 </head>
 <body>
 	<div class="header navbar-fixed-top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <a href="index.html"><img src="/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
+                    <a href="/"><img src="/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="navigation">
                         <div id="navigation">
                             <ul>
-                                <li class="active"><a href="index.html" title="Home">Home</a></li>
-                                <li class="has-sub"><a href="service-list.html" title="Service List">김민석</a>
-                                    <ul>
-                                        <li><a href="/course/create" title="Service List">코스 만들기</a></li>
-                                        <li><a href="/course/list" title="Service Detail">추천 코스</a></li>
-                                    </ul>
+                                <li class="active"><a href="/" title="Home">Home</a></li>
+                                <li><a href="/course/create">나만의 코스 만들기</a>
                                 </li>
-                                <li class="has-sub"><a href="portfolio.html" title="Portfolio">Portfolio</a>
-                                    <ul>
-                                        <li><a href="projects.html" title="Projects">Projects</a></li>
-                                        <li><a href="projects-detail.html" title="Projects Detail">Projects Detail</a></li>
-                                    </ul>
+                                <li><a href="/course/list">추천 코스</a>
                                 </li>
                                 <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
                                     <ul>
@@ -39,6 +44,21 @@
                                 <li><a href="contact.html" title="Contact Us">Contact</a> </li>
                                 <li><a href="testimonial.html" title="Testimonial">Testimonial</a> </li>
                                 <li><a href="error.html" title="Error">404 error</a> </li>
+                                
+                                <li><a href="#" class="dropdown-toggle bellBtn">
+                                <img src="/images/bell2.png" style="height: 14px; width: 12px; padding-bottom: 2px"></a>
+                                	<ul class="dropdown-menu dropdown-menu-right bell" style="width:300px;">
+									    <li>
+									      <a href="#" style="width: 300px;">코스 게시판에 새 댓글이 달렸습니다.</a>
+									    </li>
+									    <li>
+									      <a class="read" href="#" style="width: 300px;">뮤지컬 결제 완료 되었습니다.</a>
+									    </li>
+									    <li>
+									      <a  class="read" href="#" style="width: 300px;">뮤지컬 예매 완료 되었습니다.</a>
+									    </li>
+									  </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
