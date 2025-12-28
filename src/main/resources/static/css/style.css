@@ -418,7 +418,7 @@ url(../images/cta-section-img.jpg) no-repeat center; background-size: cover; }
 /*----------------------------------------------
     5.4 Page Header
 ----------------------------------------------*/
-.page-header { background: linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)), rgba(36, 39, 38, 0.5) url(../images/page-header.jpg) no-repeat center; background-size: cover; margin: 0; border-bottom: none; padding-bottom: 0px; }
+.page-header { background: linear-gradient(rgba(30, 30, 30, 0.7), rgba(30, 30, 30, 0.7)), rgba(30, 30, 30, 0.7) url(../images/seoul_night.jpg) no-repeat center; background-size: cover; margin: 0; border-bottom: none; padding-bottom: 0px; }
 .page-caption { padding: 180px 0px 120px 0; position: relative; z-index: 1; color: #fff; text-align: center; }
 .page-title { color: #fff; font-size: 40px; font-weight: 400; margin-bottom: 20px; }
 .breadcrumb { }

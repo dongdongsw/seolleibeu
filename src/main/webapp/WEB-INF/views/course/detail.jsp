@@ -63,7 +63,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="page-caption">
                         <h2 class="page-title">코스 상세</h2>
-                        <p>셀레이브 유저가 직접 추천한 데이트 코스,<br>
+                        <p>셀레이브 유저가 직접 추천하는 데이트 코스,<br>
                         셀렘 가득한 데이트를 즐겨보세요!</p>
                     </div>
                 </div>
