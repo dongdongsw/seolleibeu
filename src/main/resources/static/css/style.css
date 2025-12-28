@@ -61,7 +61,7 @@ Author:             Jitu Chauhan
 -----------------------------------*/
 
 body { font-size: 16px; background-color: #fff; color: #464241; font-family: 'Raleway', sans-serif; line-height: 28px; font-weight: 300; }
-h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; margin-bottom: 10px; color: #383433; font-weight: 400; text-transform: uppercase; font-family: 'Raleway', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; margin-bottom: 10px; color: #383433; font-weight: 400; font-family: 'Raleway', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 h1 { font-size: 32px; line-height: 42px; }
 h2 { font-size: 24px; line-height: 32px; }
 h3 { font-size: 18px; line-height: 28px; }

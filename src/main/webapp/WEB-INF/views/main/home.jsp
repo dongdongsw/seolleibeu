@@ -30,7 +30,7 @@
                col-sm-12 col-xs-12">
                     <div class="mb60 text-center section-title">
                         <!-- section title start-->
-                        <h1 style="font-weight: bold; font-size: 40px;">인기코스 BEST 4</h1>
+                        <h1 style="font-weight: bold; font-size: 40px; font-variant-numeric: lining-nums;">인기 코스 Best 4</h1>
                     </div>
                     <!-- /.section title start-->
                 </div>
@@ -47,7 +47,7 @@
                         <!-- service img -->
                         <div class="service-content">
                             <!-- service content -->
-                            <h2><a href="service-detail.html" class="title">코스1-1</a></h2>
+                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스1-1</a></h2>
                             <p>코스 간략 소개</p>
                         </div>
                         <!-- service content -->
@@ -64,7 +64,7 @@
                         <!-- service img -->
                         <div class="service-content">
                             <!-- service content -->
-                            <h2><a href="service-detail.html" class="title">코스1-2</a></h2>
+                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스1-2</a></h2>
                             <p>코스 간략 소개</p>
                         </div>
                         <!-- service content -->
@@ -81,7 +81,7 @@
                         <!-- service img -->
                         <div class="service-content">
                             <!-- service content -->
-                            <h2><a href="service-detail.html" class="title">코스1-3</a></h2>
+                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스1-3</a></h2>
                             <p>코스 간략 소개</p>
                         </div>
                         <!-- service content -->
@@ -98,7 +98,7 @@
                         <!-- service img -->
                         <div class="service-content">
                             <!-- service content -->
-                            <h2><a href="service-detail.html" class="title">코스1-4</a></h2>
+                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스1-4</a></h2>
                             <p>코스 간략 소개</p>
                         </div>
                         <!-- service content -->
@@ -117,7 +117,7 @@
                col-sm-12 col-xs-12">
                     <div class="mb60 text-center section-title">
                         <!-- section title start-->
-                        <h1 style="font-weight: bold; font-size: 40px;">최신 코스 New 4</h1>
+                        <h1 style="font-weight: bold; font-size: 40px; font-variant-numeric: lining-nums;">최신 코스 New 4</h1>
                     </div>
                     <!-- /.section title start-->
                 </div>
@@ -134,7 +134,7 @@
                         <!-- service img -->
                         <div class="service-content">
                             <!-- service content -->
-                            <h2><a href="service-detail.html" class="title">코스2-1</a></h2>
+                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스2-1</a></h2>
                             <p>코스 간략 소개</p>
                         </div>
                         <!-- service content -->
@@ -151,7 +151,7 @@
                         <!-- service img -->
                         <div class="service-content">
                             <!-- service content -->
-                            <h2><a href="service-detail.html" class="title">코스2-2</a></h2>
+                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스2-2</a></h2>
                             <p>코스 간략 소개</p>
                         </div>
                         <!-- service content -->
@@ -168,7 +168,7 @@
                         <!-- service img -->
                         <div class="service-content">
                             <!-- service content -->
-                            <h2><a href="service-detail.html" class="title">코스2-3</a></h2>
+                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스2-3</a></h2>
                             <p>코스 간략 소개</p>
                         </div>
                         <!-- service content -->
@@ -185,7 +185,7 @@
                         <!-- service img -->
                         <div class="service-content">
                             <!-- service content -->
-                            <h2><a href="service-detail.html" class="title">코스2-4</a></h2>
+                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스2-4</a></h2>
                             <p>코스 간략 소개</p>
                         </div>
                         <!-- service content -->
@@ -195,6 +195,8 @@
 			</div>
         </div>
     </div>
+    
+    <!-- 장소 이동 버튼 -->
     <div class="space-medium">
         <div class="container">
             <div class="row">
@@ -209,7 +211,9 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="outline pinside30 text-center mb30">
-                        <div class="mb30"> <img src="images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download"> </div>
+                        <div class="mb30">
+                        	<img src="images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download">
+                       	</div>
                         <div class="">
                             <h2>Restaurant</h2>
                             <a href="#" class="btn btn-white" style="margin-left: 1px;">식당 목록 →</a>
@@ -218,12 +222,25 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="outline pinside30 text-center mb30">
-                        <div class="mb30"> <img src="images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download"> </div>
+                        <div class="mb30">
+                        	<img src="images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download">
+                       	</div>
                         <div class="">
                             <h2>Culture & Entertainment</h2>
                             <a href="#" class="btn btn-white" style="margin-left: 1px;">문화/엔터 목록 →</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="text-center">
+                        <h1 style="font-weight: bold; font-size: 40px;">나만의 코스 만들기</h1>
+                        <a href="#" class="btn btn-white" target="_blank">Go!</a> </div>
                 </div>
             </div>
         </div>
