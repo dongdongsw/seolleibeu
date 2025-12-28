@@ -11,35 +11,45 @@
         <!-- footer-->
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            	<!-- 로고/소개 -->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                	<a href="/"><img src="/images/main_logo.png" style="width: 80px; height: 50px; margin-left: -4px;"></a>
                     <div class="footer-widget">
-                        <h3 class="widget-title">About us</h3>
-                        <p>Phasellus hendrerit mauris vitae odio suscip pimus donec consequat cursus viverra varius natoque penatibus magnis dis parturient.</p>
+                        <h3 class="widget-title">설레이브</h3>
+                        <p>설레이브 | Team 1 Project<br>당신의 특별한 데이트를 위한 파트너</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                
+                <!-- 기능1 -->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="footer-widget">
-                        <!-- social block -->
-                        <h3 class="widget-title">Our Address</h3>
-                        <p>1309 Roosevelt Wilson Lane
-                            <br> Colton, CA 92324</p>
+                        <h3 class="widget-title"><a href="#" style="color: white;">주요 기능1</a></h3>
+                        <p><a href="#" style="color: gray;">기능 1-1</a></p>
+                        <p><a href="#" style="color: gray;">기능 1-2</a></p>
+                        <p><a href="#" style="color: gray;">기능 1-3</a></p>
                     </div>
-                    <!-- /.social block -->
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                
+                <!-- 기능2 -->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="footer-widget">
                         <!-- newsletter block -->
-                        <h3 class="widget-title">e-mail Us</h3>
-                        <p>info@yourwebsitedomain.com</p>
+                        <h3 class="widget-title"><a href="#" style="color: white;">주요 기능2</a></h3>
+                        <p><a href="#" style="color: gray;">기능 2-1</a></p>
+                        <p><a href="#" style="color: gray;">기능 2-2</a></p>
+                        <p><a href="#" style="color: gray;">기능 2-3</a></p>
                     </div>
                     <!-- newsletter block -->
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                
+                <!-- 기능3 -->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="footer-widget">
                         <!-- newsletter block -->
-                        <h3 class="widget-title">Call us</h3>
-                        <p>180-874-5234</p>
-                        <p>180-752-3957</p>
+                        <h3 class="widget-title"><a href="#" style="color: white;">주요 기능3</a></h3>
+                        <p><a href="#" style="color: gray;">기능 3-1</a></p>
+                        <p><a href="#" style="color: gray;">기능 3-2</a></p>
+                        <p><a href="#" style="color: gray;">기능 3-3</a></p>
                     </div>
                     <!-- newsletter block -->
                 </div>
@@ -53,7 +63,7 @@
             <div class="row">
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                     <div class="copyright-content">
-                       Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+                       Made by<i class="fa fa-love"></i><a href="https://github.com/dongdongsw/seolleibeu" style="color: white; margin-left: 4px;">Git Hub</a>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
