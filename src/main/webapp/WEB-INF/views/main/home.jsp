@@ -212,7 +212,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="outline pinside30 text-center mb30">
                         <div class="mb30">
-                        	<img src="images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download">
+                        	<img src="images/restaurant.jpg" class="" alt="Interior Design Website Templates Free Download">
                        	</div>
                         <div class="">
                             <h2>Restaurant</h2>
@@ -223,7 +223,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="outline pinside30 text-center mb30">
                         <div class="mb30">
-                        	<img src="images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download">
+                        	<img src="images/culture.jpg" class="" alt="Interior Design Website Templates Free Download">
                        	</div>
                         <div class="">
                             <h2>Culture & Entertainment</h2>
