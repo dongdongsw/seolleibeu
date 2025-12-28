@@ -22,7 +22,6 @@
 <style>
 #navigation > ul > li > a {
 	color: black;
-	
 }
 .header-collapse{
 	background: white;

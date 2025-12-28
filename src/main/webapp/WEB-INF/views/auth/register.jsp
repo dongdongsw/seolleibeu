@@ -10,9 +10,9 @@
 	<div class="content auth-wrapper">
 	    <div class="container" style="display: flex; align-items: center; justify-content: center; ">
 	        <div class="row" style="width: 50%; height: 70vh;">
-	            <div class="col-lg-12 col-md-12" style="height: 110vh;">
+	            <div class="col-lg-12 col-md-12" style="height: 120vh;">
 	
-	                <div class="auth-card register-card" style="height: 105vh;">
+	                <div class="auth-card register-card" style="height: 110vh;">
 	
 	                    <div class="auth-logo text-center mb-4" >
 	                        <h1>회원가입</h1>
@@ -20,7 +20,6 @@
 	
 	                    <form class="auth-form" >
 	
-	                        <!-- 아이디 -->
 	                        <div class="row" style="margin-bottom: 20px;">
 	                            <div class="col-md-8">
 	                                <input type="text" class="form-control auth-input" placeholder="아이디">
@@ -30,7 +29,6 @@
 	                            </div>
 	                        </div>
 	
-	                        <!-- 비밀번호 -->
 	                        <div class="form-group">
 	                            <input type="password" class="form-control auth-input" placeholder="비밀번호">
 	                        </div>
@@ -39,7 +37,6 @@
 	                            <input type="password" class="form-control auth-input" placeholder="비밀번호 재입력">
 	                        </div>
 	
-	                        <!-- 닉네임 -->
 	                        <div class="row"  style="margin-bottom: 20px;">
 	                            <div class="col-md-8">
 	                                <input type="text" class="form-control auth-input" placeholder="닉네임">
@@ -49,12 +46,10 @@
 	                            </div>
 	                        </div>
 	
-	                        <!-- 이메일 -->
 	                        <div class="form-group">
 	                            <input type="email" class="form-control auth-input" placeholder="이메일 입력">
 	                        </div>
 	
-	                        <!-- 인증번호 -->
 	                        <div class="row" style="margin-bottom: 20px;">
 	                            <div class="col-md-8">
 	                                <input type="text" class="form-control auth-input" placeholder="인증번호 입력">
@@ -66,7 +61,6 @@
 	
 								<h3 style="color: #b7b6b7; margin-left: 5px;">전화번호</h3>
 	
-	                        <!-- 전화번호 -->
 	                        <div class="form-group phone-group" style="margin-left: 5px;">
 	                            <select class="form-control phone-select" style="height: 30px; color: black;">
 	                                <option>010</option>
@@ -79,23 +73,24 @@
 	                            <input type="text" class="form-control phone-input" maxlength="4" style="height: 30px; color: black;">
 	                        </div>
 	
-	                        <!-- 약관 -->
 	                        <div class="terms">
-	                            <label>
-	                                <input type="checkbox"> 이용약관(필수)
-	                                <a href="#">더보기</a>
+	                        	<label>
+	                                <input type="checkbox"> 만 14세 이상입니다.(필수)
 	                            </label>
 	                            <label>
-	                                <input type="checkbox"> 개인정보 처리방침(필수)
-	                                <a href="#">더보기</a>
+	                                <input type="checkbox"> 이용약관(선택)
+	                                <a type="button" data-toggle="modal" data-target="#terms_1">더보기</a>
 	                            </label>
 	                            <label>
-	                                <input type="checkbox"> 마케팅 수신 동의(선택)
-	                                <a href="#">더보기</a>
+	                                <input type="checkbox"> 개인정보 수집 및 이용동의(필수)
+	                                <a type="button" data-toggle="modal" data-target="#terms_2">더보기</a>
+	                            </label>
+	                            <label>
+	                                <input type="checkbox"> 개인정보 제3자 제공 동의(필수)
+	                                <a type="button" data-toggle="modal" data-target="#terms_3">더보기</a>
 	                            </label>
 	                        </div>
 	
-	                        <!-- 버튼 -->
 	                        <div class="text-center mt-4">
 	                            <a class="btn btn-default auth-cancel-btn auth-dark-btn" href="/auth/login" 
 	                            		style="color: white; text-decoration: none; margin-top:20px; ">회원가입</a>
@@ -103,14 +98,15 @@
 	                            		style="color: white; text-decoration: none; margin-top:20px; ">취소</a>
 	                            
 	                        </div>
-	
 	                    </form>
-	
 	                </div>
-	
 	            </div>
 	        </div>
 	    </div>
 	</div>
+	
+	<jsp:include page="terms_1.jsp"></jsp:include>
+	<jsp:include page="terms_2.jsp"></jsp:include>
+	<jsp:include page="terms_3.jsp"></jsp:include>
 </body>
 </html>

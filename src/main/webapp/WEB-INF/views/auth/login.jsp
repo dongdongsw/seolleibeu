@@ -41,11 +41,8 @@
 	                            <li>|</li>
 	                            <li><a href="/auth/find_pwd">비밀번호 찾기</a></li>
 	                        </ul>
-	
 	                    </form>
-	
 	                </div>
-	
 	            </div>
 	        </div>
 	    </div>

@@ -130,6 +130,11 @@
     color: #666;
 }
 
+.terms a:hover {
+    cursor: pointer;
+    color: #e7a625;
+}
+
 .auth-cancel-btn {
     margin-left: 10px;
     background: #e0e0e0;
