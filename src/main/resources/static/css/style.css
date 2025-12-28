@@ -335,7 +335,7 @@ url(../images/cta-section-img.jpg) no-repeat center; background-size: cover; }
 /*--------------------------
     5.2 Navigations Regular
    ----------------------------*/
-.hero-section { padding-top: 250px; padding-bottom: 215px; background: linear-gradient(rgba(34, 27, 25, 0.5), rgba(34, 27, 25, 0.5)), rgba(34, 27, 25, 0.5) url(../images/hero-img.jpg) no-repeat center; background-size: cover; position: relative; top: 0px; }
+.hero-section { padding-top: 250px; padding-bottom: 215px; background: linear-gradient(rgba(34, 27, 25, 0.5), rgba(34, 27, 25, 0.5)), rgba(34, 27, 25, 0.5) url(../images/main_banner.jpg) no-repeat center; background-size: cover; position: relative; top: 0px; }
 .hero-caption { padding-top: 100px; padding-bottom: 100px; }
 .hero-title { font-size: 46px; color: #fff; line-height: 58px; margin-bottom: 30px; letter-spacing: -1px; }
 .hero-text { }

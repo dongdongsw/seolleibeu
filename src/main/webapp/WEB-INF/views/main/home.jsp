@@ -11,9 +11,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <h1 class="hero-title"><strong>Interior-exterior</strong><br>
-          Free Webstite template</h1>
-                    <a href="#" class="btn btn-white">REad more <i class="fa fa-plus"></i></a> </div>
+                    <h1 class="hero-title">
+                    	<strong>데이트 코스 짜기에 지치신 분들?</strong>
+                    	<br>원하는 장소로 검색해보세요!
+					</h1>
+					<input type="text" class="search" style="width: 400px; height: 47px; margin-top: 10px; border: none; border-radius: 40px;"/>
+                    <a href="#" class="btn btn-white" style="margin-left: 1px;">검색</a>
+				</div>
             </div>
         </div>
     </div>
@@ -24,7 +28,7 @@
                col-sm-12 col-xs-12">
                     <div class="mb60 text-center section-title">
                         <!-- section title start-->
-                        <h1>Our Services</h1>
+                        <h1 style="font-weight: bold; font-size: 40px;">인기코스 TOP FIVE(바꿀꺼)</h1>
                     </div>
                     <!-- /.section title start-->
                 </div>
