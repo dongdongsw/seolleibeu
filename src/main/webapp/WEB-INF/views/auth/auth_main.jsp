@@ -12,15 +12,25 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/auth.css" rel="stylesheet">
     
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	<script src="https://unpkg.com/vue-demi"></script>
 	<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
+<style>
+#navigation > ul > li > a {
+	color: black;
+	
+}
+.header-collapse{
+	background: white;
+}
+</style>
 <body>
 
-	
+	<jsp:include page="../main/header.jsp"></jsp:include>
 	<jsp:include page="${auth_jsp }"></jsp:include>
 
 	<script src="/js/jquery.min.js"></script>

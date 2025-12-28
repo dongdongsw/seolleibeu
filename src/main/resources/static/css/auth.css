@@ -1,0 +1,142 @@
+.auth-wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+	height:50vh;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    min-width: 420px;         
+}
+
+.auth-tabs {
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.auth-tabs li {
+    margin: 0 15px;
+}
+
+.auth-tabs li a {
+    border: none !important;
+    font-weight: 600;
+    color: #aaa;
+}
+
+.auth-tabs li.active a {
+    color: #000;
+    border-bottom: 2px solid #000 !important;
+}
+
+.auth-form {
+	padding-top:30px;
+    row-gap: 20px;
+}
+
+.auth-logo{
+	margin-bottom: 30px;
+}
+
+.auth-logo h1 {
+    font-size: 32px;
+}
+.auth-input {
+    border: none;
+    border-bottom: 1px solid #e2dcdb;
+    border-radius: 0;
+    height: 55px;          
+    font-size: 16px;   
+}
+
+.auth-sub-btn {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.auth-main-btn {
+    margin-top: 20px;
+    padding: 16px 60px;
+    border-radius: 10px;
+    font-size: 16px;   
+}
+
+.login-btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+}
+
+.auth-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.auth-links a {
+    color: #666;
+    font-size: 14px;  
+}
+
+.auth-links a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.register-card {
+    padding: 60px;
+    padding-top: 30px;
+}
+
+.phone-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.phone-select {
+    width: 90px;
+}
+
+.phone-input {
+    width: 100px;
+}
+
+.terms {
+    margin-top: 20px;
+}
+
+.terms label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.terms a {
+    margin-left: auto;
+    font-size: 13px;
+    color: #666;
+}
+
+.auth-cancel-btn {
+    margin-left: 10px;
+    background: #e0e0e0;
+}
+
+.btn.btn-default.auth-dark-btn {
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+}
