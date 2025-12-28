@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>설레이브 - 코스 생성</title>
 <link href="/css/style.css" rel="stylesheet">
+<link href="/css/course.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -14,231 +15,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-<style type="text/css">
-.course-container {
-	height: 100vh;
-	display: block;
-}
-
-.choose-top {
-	width: 100%;
-	height: 7vh;
-	background-color: #f8f6f2;
-}
-
-.choose-main {
-	display: flex;
-}
-
-.choose-left {
-	width: 34%;
-	height: 90vh;
-	display: flex;
-}
-
-.side-menu {
-	width: 5%;
-	height: 90vh;
-}
-
-.side-menu>.menu {
-	color: #d2cfcb;
-	font-weight: bold;
-	width: 70px;
-	margin: 20px 20px 20px 0;
-}
-
-.side-menu>.active {
-	color: #f999b7;
-}
-
-.info-main {
-	width: 95%;
-	height: 90vh;
-}
-
-.place-main {
-	width: 100%;
-}
-
-.place-search {
-	width: 100%;
-	height: 20%;
-}
-
-.place-list {
-	width: 100%;
-	height: 80%;
-	display: flex;
-}
-
-.place-result {
-	width: 50%;
-}
-
-.place-choosed {
-	width: 50%;
-}
-
-.map {
-	width: 60%;
-	height: 90vh;
-	margin-left: 10px;
-}
-
-.choose-bottom {
-	width: 100%;
-	height: 10vh;
-	background-color: #f8f6f2;
-}
-
-.input-group {
-	width: 350px;
-	margin: 0px auto;
-	padding-top: 50px;
-}
-
-.input-group>.form-control {
-	border-right: none;
-}
-
-.input-group-addon {
-	background-color: white;
-}
-
-.cate {
-	margin-top: 20px;
-}
-
-.cate>span {
-	width: 80px;
-	height: 30px;
-	padding: 10px;
-	margin: 5px;
-	background-color: #f8f6f2;
-	border-radius: 15px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
-	transition: all 0.2s ease;
-}
-
-.menus {
-	margin-top: 100px !important;
-}
-
-.place {
-	width: 90%;
-	height: 110px;
-	border-radius: 10px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
-	transition: all 0.2s ease;
-	margin: 0px auto;
-	margin-bottom: 8px;
-	display: flex;
-}
-
-h4 {
-	height: 3%;
-	margin-left: 20px;
-}
-
-.list-scroll {
-	height: 90%;
-	overflow-y: auto;
-	overflow-x: hidden;
-}
-
-.thumb>img {
-	border-radius: 10px;
-	margin: 4px 0 0 4px;
-}
-
-.place-info {
-	margin-left: 10px;
-}
-
-.btns {
-	height: 25px;
-	height: 25px;
-}
-
-.card-right .btns {
-	margin-left: auto;
-}
-
-.btns>button {
-	background-color: #90e0ef;
-	border: none;
-	color: white;
-	border-radius: 5px;
-	width: 25px;
-	height: 25px;
-	font-weight: 1000;
-	margin-right: 15px;
-}
-
-.card-right {
-	display: flex;
-	align-items: center;
-	width: 100%;
-}
-
-.btn-default {
-	background-color: black;
-	color: white;
-	font-weight: bold;
-	font-size: 15px;
-}
-
-.choose-bottom {
-	display: flex;
-}
-
-.start {
-	width: 10%;
-	align-content: center;
-	margin-left: 70px;
-}
-
-.cen {
-	width: 80%;
-}
-
-.end {
-	width: 10%;
-	align-content: center;
-	margin-left: 30%;
-}
-
-.end2 {
-	width: 10%;
-	align-content: center;
-}
-
-.container {
-	width: 900px;
-	display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.form-group {
-	margin-top: 60px;
-}
-
-.col-lg-12>p {
-	margin-left: 30px;
-	font-size: 12px;
-}
-
-.control-label {
-	font-size: 15px;
-}
-</style>
 </head>
 <body>
 	<div class="tab-content">
-
 		<!-- STEP 1 -->
 		<div id="step1" class="tab-pane fade in active">
 			<div class="course-container">
@@ -336,6 +115,7 @@ h4 {
 				</div>
 			</div>
 		</div>
+		
 		<!-- STEP 2 -->
 		<div id="step2" class="tab-pane fade">
 			<div class="course-container">
@@ -349,7 +129,7 @@ h4 {
 							STEP 2<br>상세 내용
 						</div>
 					</div>
-					<div class="container">
+					<div class="container create-form">
 						<div class="col-md-6">
 							<div class="form-group has-feedback">
 								<label class="control-label">코스 제목</label> <input type="text"
@@ -389,6 +169,5 @@ h4 {
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

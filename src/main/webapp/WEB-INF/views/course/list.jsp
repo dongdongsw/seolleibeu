@@ -6,45 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-.head, a {
-	color: black;
-	cursor: pointer;
-}
-
-.head {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	height: 100%;
-	margin-right: 50px;
-}
-.place-tag {
-	padding-right: 40px;
-	display: flex;
-  flex-wrap: wrap;         
-  gap: 7px;                
-  margin: 10px 0;
-}
-.place-tag > span {
-	width: 90px;
-	height: 30px;
-	padding: 10px;
-	margin: 2px;
-	background-color: #f8f6f2;
-	border-radius: 15px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
-	transition: all 0.2s ease;
-	font-size: 13px;
-	display: inline-flex;  
-    align-items: center;
-    white-space: nowrap; 
-	
-}
-.post-content {
-	padding-top: 20px;
-}
-</style>
+<link href="/css/course.css" rel="stylesheet">
 </head>
 <body>
 	<div class="page-header">
@@ -66,7 +28,7 @@
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="row">
-						<div style="height: 100px; display: flex; align-items: center;">
+						<div class="list-head">
 							<div class="widget widget-search col-md-3"
 								style="margin-left: 30px;">
 								<form>
@@ -78,27 +40,25 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-9 text-right head" style="">
-								<h3>
+							<div class="col-md-9 text-right head" style="margin-top: 30px;">
+								<h4>
 									<a>최신순</a>
-								</h3>
+								</h4>
 								&nbsp;&nbsp;<span style="margin-bottom: 10px">|</span>&nbsp;&nbsp;
-								<h3>
+								<h4>
 									<a>인기순</a>
-								</h3>
+								</h4>
 							</div>
 						</div>
 						<c:forEach begin="0" end="4">
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="post-block" style="display: flex;">
-									<!-- post block -->
 									<div>
 										<img
 											src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=96376680-1aa2-4a72-b00d-98eee8043165"
 											style="margin-right: 20px; height: 300px; height: 300px;">
 									</div>
 									<div>
-
 										<h1>
 											<a href="/course/detail" class="title">서울의 아름다운 밤을 바라보다.</a>
 										</h1>
@@ -122,7 +82,6 @@
 											</div>
 										</div>
 									</div>
-									<!-- /.post block -->
 								</div>
 								<hr>
 							</div>
@@ -140,7 +99,6 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

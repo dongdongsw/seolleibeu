@@ -5,33 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-a.dropdown-toggle.bellBtn::before {
-	display: none;
-	
-}
-a.dropdown-toggle.bellBtn {
-	padding: 15px 15px 15px 15px !important;
-}
-.no-read {
-	background-color: #fff !important;
-	color: #222 !important;
-	font-weight: 800;
-	border-left: 4px solid #f999b7 !important;
-}
-
-.read {
-	background-color: #f7f7f7 !important;
-	color: #888 !important;
-}
-</style>
 </head>
 <body>
 	<div class="header navbar-fixed-top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <a href="/"><img src="/images/main_logo.png" style="width: 90px; height: 50px"></a>
+                    <a href="/"><img src="/images/main_logo.png" style="width: 80px; height: 50px"></a>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="navigation">
@@ -49,7 +29,6 @@ a.dropdown-toggle.bellBtn {
                                     </ul>
                                 </li>
                                 <li><a href="contact.html" title="Contact Us">Contact</a> </li>
-                                <li><a href="testimonial.html" title="Testimonial">Testimonial</a> </li>
                                 <li><a href="/admin" title="Error">관리자</a> </li>
                                 
                                 <li><a href="#" class="dropdown-toggle bellBtn">

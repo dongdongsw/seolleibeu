@@ -314,7 +314,24 @@ url(../images/cta-section-img.jpg) no-repeat center; background-size: cover; }
 /*--------------------------------
 5 Header / Navigations 
 ----------------------------------*/
+a.dropdown-toggle.bellBtn::before {
+	display: none;
+	
+}
+a.dropdown-toggle.bellBtn {
+	padding: 15px 15px 15px 15px !important;
+}
+.no-read {
+	background-color: #fff !important;
+	color: #222 !important;
+	font-weight: 800;
+	border-left: 4px solid #f999b7 !important;
+}
 
+.read {
+	background-color: #f7f7f7 !important;
+	color: #888 !important;
+}
 /*--------------------
     5.1 Header Regular 
    ----------------------*/
@@ -752,6 +769,8 @@ opacity: .5; }
 .error-block { text-align: center; margin-top: 45px; }
 .error-title { font-size: 282px; margin-bottom: 140px; font-weight: 800; }
 
+
+
 /*==========  Non-Mobile First Method  ==========*/
 
 /* Large Devices, Wide Screens */
@@ -837,3 +856,4 @@ opacity: .5; }
     .childern { padding-left: 0px; list-style: none; }
     .error-title { font-size: 42px; margin-bottom: 10px; font-weight: 800; }
     .testimonial-content { font-weight: 400; padding-left: 0px; }
+}
