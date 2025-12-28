@@ -9,7 +9,7 @@
 <body id="page-top">
 <div id="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <img src="/images/main_logo.png" style="width: 50px;">
             </a>
             <hr class="sidebar-divider my-0">
