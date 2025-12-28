@@ -18,18 +18,14 @@
                         <div id="navigation">
                             <ul>
                                 <li class="active"><a href="/" title="Home">Home</a></li>
-                                <li><a href="/course/create">나만의 코스 만들기</a>
+                                <li><a href="/course/create">내 코스 만들기</a>
                                 </li>
                                 <li><a href="/course/list">추천 코스</a>
                                 </li>
-                                <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
-                                    <ul>
-                                        <li><a href="blog-default.html" title="Blog">Blog Default</a></li>
-                                        <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html" title="Contact Us">Contact</a> </li>
+                                <li><a href="contact.html" title="Contact Us">음식점</a> </li>
+                                <li><a href="contact.html" title="Contact Us">문화/엔터</a> </li>
                                 <li><a href="/admin" title="Error">관리자</a> </li>
+                                <li><a href="contact.html" title="Contact Us">공지사항</a> </li>
                                 
                                 <li>
                                 	<a href="#" class="dropdown-toggle bellBtn">
