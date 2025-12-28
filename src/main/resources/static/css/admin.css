@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* ===== DataTables Pagination Wrapper ===== */
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+}
+
+/* 페이지네이션 ul */
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+    justify-content: flex-end;
+}
+
+/* ===== Pagination Button ===== */
+.page-item {
+    margin: 0 2px;
+}
+
+.page-item .page-link {
+    color: #4e73df;
+    border: 1px solid #dddfeb;
+    padding: 0.375rem 0.75rem;
+}
+
+/* hover */
+.page-item .page-link:hover {
+    color: #224abe;
+    background-color: #eaecf4;
+    border-color: #dddfeb;
+}
+
+/* active */
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+/* disabled */
+.page-item.disabled .page-link {
+    color: #858796;
+    background-color: #fff;
+    border-color: #dddfeb;
+}

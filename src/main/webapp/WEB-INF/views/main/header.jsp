@@ -43,7 +43,7 @@ a.dropdown-toggle.bellBtn {
                                 </li>
                                 <li><a href="contact.html" title="Contact Us">Contact</a> </li>
                                 <li><a href="testimonial.html" title="Testimonial">Testimonial</a> </li>
-                                <li><a href="error.html" title="Error">404 error</a> </li>
+                                <li><a href="/admin" title="Error">관리자</a> </li>
                                 
                                 <li><a href="#" class="dropdown-toggle bellBtn">
                                 <img src="/images/bell2.png" style="height: 14px; width: 12px; padding-bottom: 2px"></a>
