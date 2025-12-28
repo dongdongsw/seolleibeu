@@ -7,24 +7,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- Begin Page Content -->
 	<div id="wrapper">
 		<div class="container-fluid">
-
-			<!-- Page Heading -->
 			<h1 class="h3 mb-2 text-gray-800">사용자 조회</h1>
-			<p class="mb-4">
-				DataTables is a third party plugin that is used to generate the demo
-				table below. For more information about DataTables, please visit the
-				<a target="_blank" href="https://datatables.net">official
-					DataTables documentation</a>.
-			</p>
-
-			<!-- DataTales Example -->
 			<div class="card shadow mb-4">
-				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-primary">DataTables
-						Example</h6>
+				<div class="card-header py-3 d-flex justify-content-end">
+					<div class="search-wrapper">
+						<div class="input-group search-bar">
+							<input type="text" class="form-control bg-light border-0 small"
+								placeholder="Search for..." aria-label="Search"
+								aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<button class="btn btn-primary" type="button">
+									<i class="fas fa-search fa-sm"></i>
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="card-body">
 					<div class="table-responsive">
@@ -32,22 +31,58 @@
 							cellspacing="0">
 							<thead>
 								<tr>
-									<th>Name</th>
-									<th>Position</th>
-									<th>Office</th>
-									<th>Age</th>
-									<th>Start date</th>
-									<th>Salary</th>
+									<th style="width: 5%">사진</th>
+									<th style="width: 10%">사용자 이름</th>
+									<th style="width: 20%">닉네임</th>
+									<th style="width: 10%">전화번호</th>
+									<th style="width: 20%">이메일</th>
+									<th style="width: 10%">가입일</th>
+									<th style="width: 10%">사용자 상태</th>
+									<th style="width: 5%"></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>Tiger Nixon</td>
-									<td>System Architect</td>
-									<td>Edinburgh</td>
-									<td>61</td>
+									<td><img class="img rounded-circle"
+										src="/images/undraw_profile.svg" width="50px;"></td>
+									<td>정성환</td>
+									<td>향미각 제가 쏨 다같이 회식 ㄱㄱ</td>
+									<td>010-1234-1234</td>
+									<td>ㅇ</td>
 									<td>2011/04/25</td>
-									<td>$320,800</td>
+									<td>활동/정지</td>
+									<td class="text-center">
+										<div class="dropdown">
+											<a href="#" data-toggle="dropdown"> <i
+												class="fas fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#">활동</a> <a
+													class="dropdown-item text-danger" href="#">정지</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td><img class="img rounded-circle"
+										src="/images/undraw_profile.svg" width="50px;"></td>
+									<td>정성환</td>
+									<td>향미각 제가 쏨 다같이 회식 ㄱㄱ</td>
+									<td>010-1234-1234</td>
+									<td>ㅇ</td>
+									<td>2011/04/25</td>
+									<td>활동/정지</td>
+									<td class="text-center">
+										<div class="dropdown">
+											<a href="#" data-toggle="dropdown"> <i
+												class="fas fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#">활동</a> <a
+													class="dropdown-item text-danger" href="#">정지</a>
+											</div>
+										</div>
+									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -67,13 +102,7 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
-
-		<!-- /.container-fluid -->
-
 	</div>
-	<!-- End of Main Content -->
-
 </body>
 </html>

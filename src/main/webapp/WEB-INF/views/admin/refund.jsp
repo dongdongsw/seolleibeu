@@ -9,11 +9,21 @@
 <body>
 	<div id="wrapper">
 		<div class="container-fluid">
-			<h1 class="h3 mb-2 text-gray-800">공지사항 조회</h1>
+			<h1 class="h3 mb-2 text-gray-800">환불 조회</h1>
 			<div class="card shadow mb-4">
 				<div class="card-header py-3 d-flex justify-content-end">
-					<a href="/admin/notice_create" class="btn btn-sm btn-primary"><i
-						class="fas fa-edit"></i>&nbsp;새글</a>
+					<div class="search-wrapper">
+						<div class="input-group search-bar">
+							<input type="text" class="form-control bg-light border-0 small"
+								placeholder="Search for..." aria-label="Search"
+								aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<button class="btn btn-primary" type="button">
+									<i class="fas fa-search fa-sm"></i>
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="card-body">
 					<div class="table-responsive">
@@ -21,20 +31,20 @@
 							cellspacing="0">
 							<thead>
 								<tr>
-									<th style="width: 10%">번호</th>
-									<th style="width: 50%">제목</th>
-									<th style="width: 15%">작성자</th>
-									<th style="width: 5%">조회수</th>
-									<th style="width: 15%">작성일</th>
-									<th style="width: 5%"></th>
+									<th style="width: 5%">번호</th>
+									<th style="width: 15%">사용자 이름</th>
+									<th style="width: 40%">제목</th>
+									<th style="width: 10%">환불 금액</th>
+									<th style="width: 15%">환불 요청일</th>
+									<th style="width: 5%">환불 사유</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>Tiger Nixon</td>
-									<td>System Architect</td>
-									<td>Edinburgh</td>
-									<td>61</td>
+									<td>123</td>
+									<td>김민석</td>
+									<td>김민석 길들이기</td>
+									<td>5만원</td>
 									<td>2011/04/25</td>
 									<td class="text-center">
 										<div class="dropdown">
@@ -42,8 +52,7 @@
 												class="fas fa-ellipsis-h"></i>
 											</a>
 											<div class="dropdown-menu dropdown-menu-right">
-												<a class="dropdown-item" href="/admin/notice_update">수정</a>
-												<a class="dropdown-item text-danger" href="#">삭제</a>
+												<a class="dropdown-item" href="#">상세보기</a>
 											</div>
 										</div>
 									</td>

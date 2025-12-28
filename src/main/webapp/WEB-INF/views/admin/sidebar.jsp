@@ -7,44 +7,29 @@
 <title>Insert title here</title>
 </head>
 <body id="page-top">
-<!-- Sidebar -->
 <div id="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">설레이브</div>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+                <img src="/images/main_logo.png" style="width: 50px;">
             </a>
-            <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="/admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-
-            <!-- Divider -->
             <hr class="sidebar-divider">
-
-            <!-- Heading -->
             <div class="sidebar-heading">
                 Interface
             </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="/admin/place_list">
                     <i class="fas fa-map-marked-alt"></i>
                     <span>장소 조회</span></a>
             </li><li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="	fas fa-pencil-alt"></i>
-                    <span>장소 생성</span></a>
+                <a class="nav-link" href="/admin/place_create">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span>장소 등록</span></a>
             </li>
 			
 			<li class="nav-item">
@@ -53,7 +38,7 @@
                     <span>사용자 조회</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/admin/refund">
                     <i class="fas fa-coins"></i>
                     <span>환불 조회</span></a>
             </li>
@@ -62,14 +47,13 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>공지사항</span></a>
             </li>
-
-            <!-- Divider -->
+            </li><li class="nav-item">
+                <a class="nav-link" href="/admin/notice_create">
+                    <i class="	fas fa-pencil-alt"></i>
+                    <span>공지사항 작성</span></a>
+            </li>
             <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            
         </ul>
-        <!-- End of Sidebar -->
         </div>
 </body>
 </html>

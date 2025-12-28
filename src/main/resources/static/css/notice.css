@@ -1,0 +1,155 @@
+@charset "UTF-8";
+body {
+            margin: 0;
+            font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #858796;
+            background-color: #f8f9fc;
+        }
+        
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid #e3e6f0;
+            border-radius: 0.35rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+        }
+        
+        .card-header {
+            padding: 0.75rem 1.25rem;
+            margin-bottom: 0;
+            background-color: #f8f9fc;
+            border-bottom: 1px solid #e3e6f0;
+            font-weight: 700;
+            color: #4e73df;
+        }
+        
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: #5a5c69;
+        }
+        
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #6e707e;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #d1d3e2;
+            border-radius: 0.35rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        
+        .form-control:focus {
+            color: #6e707e;
+            background-color: #fff;
+            border-color: #bac8f3;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+        }
+        
+        textarea.form-control {
+            min-height: 300px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #858796;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.35rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            color: #fff;
+            background-color: #4e73df;
+            border-color: #4e73df;
+        }
+        
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #2e59d9;
+            border-color: #2653d4;
+        }
+        
+        .btn-secondary {
+            color: #fff;
+            background-color: #858796;
+            border-color: #858796;
+        }
+        
+        .btn-secondary:hover {
+            color: #fff;
+            background-color: #717384;
+            border-color: #6b6d7d;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+        }
+        
+        .page-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #5a5c69;
+            margin-bottom: 1.5rem;
+        }
+        
+        .text-danger {
+            color: #e74a3b;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        
+        .form-control.is-invalid {
+            border-color: #e74a3b;
+        }
+        
+        .form-control.is-invalid:focus {
+            border-color: #e74a3b;
+            box-shadow: 0 0 0 0.2rem rgba(231, 74, 59, 0.25);
+        }

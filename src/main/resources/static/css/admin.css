@@ -44,3 +44,29 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
     background-color: #fff;
     border-color: #dddfeb;
 }
+/* 전체 검색바 오른쪽 정렬 */
+.search-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    width:550px !important;
+}
+
+/* 검색바 크기 줄이기 */
+.search-bar {
+    width: 500px;      /* ← 여기서 크기 조절 */
+}
+
+/* input 배경 흰색 */
+.search-input {
+    background-color: white !important;
+    border: 1px solid #ddd;
+    height: 34px;
+    font-size: 13px;
+}
+
+/* 버튼 높이 맞추기 */
+.search-btn {
+    height: 34px;
+    padding: 0 12px;
+}
