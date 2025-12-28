@@ -19,6 +19,31 @@
 	height: 100%;
 	margin-right: 50px;
 }
+.place-tag {
+	padding-right: 40px;
+	display: flex;
+  flex-wrap: wrap;         
+  gap: 7px;                
+  margin: 10px 0;
+}
+.place-tag > span {
+	width: 90px;
+	height: 30px;
+	padding: 10px;
+	margin: 2px;
+	background-color: #f8f6f2;
+	border-radius: 15px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+	transition: all 0.2s ease;
+	font-size: 13px;
+	display: inline-flex;  
+    align-items: center;
+    white-space: nowrap; 
+	
+}
+.post-content {
+	padding-top: 20px;
+}
 </style>
 </head>
 <body>
@@ -81,14 +106,19 @@
 											<span class="meta-date"> On April 24, 2020 </span> <span
 												class="meta-author">By <a href="#" class="meta-link">작성자</a></span>
 										</p>
+										<div class="place-tag">
+										  <c:forEach begin="0" end="6">
+										    <span>장소장소장소</span>
+										  </c:forEach>
+											
+										</div>
 										<div class="post-content">
 											<p>한양도성은 조선의 건국과 함께 축성한 성곽으로 유네스코 세계유산 잠정 목록에 올라있다. 총 길이는
 												18km에 이르며 가장 아름다운 곳은 흥인지문부터 혜화문까지 낙산구간이다. 흥인지문에서 성곽에 오르기 전에
 												서울디자인지원센터의 한양도성박물관에 들러 서울의 과거를 들여다보자. 해가 질 무렵 낙산공원에서 자리 잡은
 												낙산정으로 가보자. 서울 한복판이 시원스레 내려다보일 것이다.</p>
 											<div class="text-right">
-												<a href="/course/detail" class="btn btn-default right">자세히
-													보기</a>
+												<a href="/course/detail" class="btn btn-default right">자세히 보기</a>
 											</div>
 										</div>
 									</div>

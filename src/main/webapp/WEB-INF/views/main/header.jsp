@@ -11,11 +11,18 @@ a.dropdown-toggle.bellBtn::before {
 	
 }
 a.dropdown-toggle.bellBtn {
-	padding: 15px 5px 15px 5px !important;
+	padding: 15px 15px 15px 15px !important;
 }
+.no-read {
+	background-color: #fff !important;
+	color: #222 !important;
+	font-weight: 800;
+	border-left: 4px solid #f999b7 !important;
+}
+
 .read {
-	background-color: #f5f5f5 !important;
-	color: black !important;
+	background-color: #f7f7f7 !important;
+	color: #888 !important;
 }
 </style>
 </head>
@@ -24,7 +31,7 @@ a.dropdown-toggle.bellBtn {
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <a href="/"><img src="/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
+                    <a href="/"><img src="/images/main_logo.png" style="width: 90px; height: 50px"></a>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="navigation">
@@ -46,10 +53,10 @@ a.dropdown-toggle.bellBtn {
                                 <li><a href="/admin" title="Error">관리자</a> </li>
                                 
                                 <li><a href="#" class="dropdown-toggle bellBtn">
-                                <img src="/images/bell2.png" style="height: 14px; width: 12px; padding-bottom: 2px"></a>
+                                <img src="/images/bell2.png" style="height: 15px; width: 13px; padding-bottom: 2px"></a>
                                 	<ul class="dropdown-menu dropdown-menu-right bell" style="width:300px;">
 									    <li>
-									      <a href="#" style="width: 300px;">코스 게시판에 새 댓글이 달렸습니다.</a>
+									      <a class="no-read" href="#" style="width: 300px;">코스 게시판에 새 댓글이 달렸습니다.</a>
 									    </li>
 									    <li>
 									      <a class="read" href="#" style="width: 300px;">뮤지컬 결제 완료 되었습니다.</a>

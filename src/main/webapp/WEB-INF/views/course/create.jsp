@@ -295,7 +295,7 @@ h4 {
 								<div class="place-choosed">
 									<h4>선택된 장소</h4>
 									<div class="list-scroll">
-										<c:forEach begin="0" end="100">
+										<c:forEach begin="0" end="3">
 											<div class="place">
 												<div class="thumb">
 													<img src="/images/test_map.png" width="100px"
