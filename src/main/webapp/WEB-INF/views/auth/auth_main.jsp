@@ -26,6 +26,11 @@
 .header-collapse{
 	background: white;
 }
+
+html {
+  scrollbar-gutter: stable;
+  overflow-y: auto;
+}
 </style>
 <body>
 
