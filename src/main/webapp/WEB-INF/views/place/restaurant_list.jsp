@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="page-caption">
-                        <h2 class="page-title">문화 & 엔터테인먼트</h2>
+                        <h2 class="page-title">음식점</h2>
                         <p>목록</p>
                     </div>
                 </div>
