@@ -25,6 +25,13 @@ public class AdminController {
 		model.addAttribute("main_jsp", "place_create.jsp");
 		return "admin/main";
 	}
+	// 코스
+	@GetMapping("/admin/course_list")
+	public String course_list(Model model)
+	{
+		model.addAttribute("main_jsp", "course_list.jsp");
+		return "admin/main";
+	}
 	// 사용자
 	@GetMapping("/admin/users_list")
 	public String users_create(Model model)

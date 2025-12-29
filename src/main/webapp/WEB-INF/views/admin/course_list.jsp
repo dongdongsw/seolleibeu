@@ -9,7 +9,7 @@
 <body>
 	<div id="wrapper">
 		<div class="container-fluid">
-			<h1 class="h3 mb-2 text-gray-800">환불 조회</h1>
+			<h1 class="h3 mb-2 text-gray-800">코스 조회</h1>
 			<div class="card shadow mb-4">
 				<div class="card-header py-3 d-flex justify-content-end">
 					<div class="search-wrapper">
@@ -32,27 +32,48 @@
 							<thead>
 								<tr>
 									<th style="width: 5%">번호</th>
-									<th style="width: 15%">사용자 이름</th>
-									<th style="width: 45%">제목</th>
-									<th style="width: 10%">환불 금액</th>
-									<th style="width: 10%">환불 요청일</th>
-									<th style="width: 5%">환불 사유</th>
+									<th style="width: 33%">제목</th>
+									<th style="width: 43%">주소</th>
+									<th style="width: 7%">등록일</th>
+									<th style="width: 7%">상태</th>
+									<th style="width: 5%"></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>123</td>
-									<td>김민석</td>
-									<td>김민석 길들이기</td>
-									<td>5만원</td>
+									<td>쌍용강북교육센터</td>
+									<td>홍대입구 근처</td>
 									<td>2011/04/25</td>
+									<td>공개/비공개</td>
 									<td class="text-center">
 										<div class="dropdown">
 											<a href="#" data-toggle="dropdown"> <i
 												class="fas fa-ellipsis-h"></i>
 											</a>
 											<div class="dropdown-menu dropdown-menu-right">
-												<a class="dropdown-item" href="#">상세보기</a>
+												<a class="dropdown-item" href="#">공개</a>
+												<a class="dropdown-item text-danger" href="#">비공개</a>
+												
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>123</td>
+									<td>쌍용강북교육센터</td>
+									<td>홍대입구 근처</td>
+									<td>2011/04/25</td>
+									<td>공개/비공개</td>
+									<td class="text-center">
+										<div class="dropdown">
+											<a href="#" data-toggle="dropdown"> <i
+												class="fas fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#">공개</a>
+												<a class="dropdown-item text-danger" href="#">비공개</a>
+												
 											</div>
 										</div>
 									</td>

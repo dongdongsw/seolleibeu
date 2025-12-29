@@ -19,9 +19,6 @@
                     <span>Dashboard</span></a>
             </li>
             <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                Interface
-            </div>
             <li class="nav-item">
                 <a class="nav-link" href="/admin/place_list">
                     <i class="fas fa-map-marked-alt"></i>
@@ -30,6 +27,11 @@
                 <a class="nav-link" href="/admin/place_create">
                     <i class="fas fa-pencil-alt"></i>
                     <span>장소 등록</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/course_list">
+                    <i class="fas fa-map"></i>
+                    <span>코스 조회</span></a>
             </li>
 			
 			<li class="nav-item">
@@ -46,11 +48,6 @@
                 <a class="nav-link" href="/admin/notice">
                     <i class="fas fa-fw fa-table"></i>
                     <span>공지사항</span></a>
-            </li>
-            </li><li class="nav-item">
-                <a class="nav-link" href="/admin/notice_create">
-                    <i class="	fas fa-pencil-alt"></i>
-                    <span>공지사항 작성</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
         </ul>
