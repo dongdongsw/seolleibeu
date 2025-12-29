@@ -24,7 +24,17 @@
     <!-- /.page header -->
     <div class="content">
         <div class="container">
-            <div class="row">
+        	<!-- <div class="search">
+			   	<input type="text" class="search" style="width: 200px; height: 47px; margin-top: 10px; border: none; border-bottom: 1px solid black;" placeholder="검색어를 입력하세요"/>
+				<a href="#" class="btn btn-default" style="margin-left: 1px;">검색</a>
+		   	</div> -->
+		   	<div class="input-group" style="margin: 0px;">
+				<input type="text" class="form-control" placeholder="코스를 검색하세요." aria-describedby="basic-addon2" style="border-radius: 15px 0px 0px 15px;">
+				<span class="input-group-addon" id="basic-addon2" style="border-radius: 0px 15px 15px 0px;">
+					<i class="fa fa-search"></i>
+				</span>
+			</div>
+            <div class="row" style="margin-top: 20px;">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="project-img mb30">
                         <a href="service-detail.html" class="imghover"><img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
