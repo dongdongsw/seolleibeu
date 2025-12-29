@@ -62,7 +62,7 @@
 
 .update-info {
 	margin-top: 80px;
-	margin-left: 200px;
+	margin-left: 130px;
 	margin-bottom: 20px;
 	width: auto;
 }
@@ -103,7 +103,7 @@
   margin-top: 0;
   font-size: 24px;
   color: #444;
-  border-bottom: 2px solid #ff9292;
+  border-bottom: 2px solid #cec8c1;
   padding-bottom: 8px;
 }
 .mypage-main h3 {
@@ -114,13 +114,15 @@
 
 .info-card {
   margin-top: 25px;
-  background: #fffaf6;
-  border: 1px solid #ffe0d2;
   border-radius: 15px;
   padding: 20px 30px;
-  box-shadow: 0 4px 12px rgba(255, 145, 145, 0.1);
 }
-
+.info-btn {
+	background-color: black;
+	color: white;
+	padding: 8px;
+	border-radius: 10px;
+}
 .info-card th, .info-card td {
   text-align: left;
   padding: 12px 8px;
@@ -142,24 +144,13 @@
 .btn-group {
   display: flex;
   justify-content: flex-end;
-  gap: 3px;
+  font-size: 10px;
+  padding: 1px 1px;
+  border: none !important;
 }
-
-.edit-btn {
-  margin-top: 25px;
-  background: linear-gradient(90deg, #ff9292, #ffb6b9);
-  border: none;
-  color: white;
-  font-size: 16px;
-  padding: 12px 30px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.edit-btn:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #ffb6b9, #ff9292);
+.info-card btn {
+	background-color: #ffffff;
+	
 }
 
 @media (max-width: 900px) {
