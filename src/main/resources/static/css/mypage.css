@@ -155,7 +155,51 @@
 	background-color: #ffffff;
 	
 }
+.my-course-item {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
 
+/* 왼쪽 이미지 */
+.course-thumb img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 8px;
+	margin-right: 30px
+}
+
+/* 가운데 정보 */
+.course-info {
+	flex: 1; /* 가운데 영역 최대 확장 */
+}
+
+.course-title {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0 0 15px 0;
+}
+
+.course-meta {
+	font-size: 13px;
+	color: #777;
+}
+
+.course-meta span {
+	margin-right: 15px;
+}
+
+/* 오른쪽 버튼 */
+.course-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.course-actions .btn {
+	width: 60px;
+}
 @media (max-width: 900px) {
   .mypage-container {
     flex-direction: column;

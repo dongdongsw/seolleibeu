@@ -63,4 +63,11 @@ public class MypageController {
 		   model.addAttribute("my_jsp", "../mypage/my_refund.jsp");
 		   return "mypage/my_main";
 	   }
+	   
+	   @GetMapping("/mypage/my_course")
+	   public String my_course(Model model)
+	   {
+		   model.addAttribute("my_jsp", "../mypage/my_course.jsp");
+		   return "mypage/my_main";
+	   }
 }

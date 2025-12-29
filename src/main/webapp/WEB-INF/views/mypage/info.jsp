@@ -13,74 +13,52 @@
 </head>
 <body>
 <div class="content auth-wrapper">
-	    <div class="container" style="display: flex; align-items: center; justify-content: center;">
-	        <div class="row justify-content-center">
-	            <div class="col-lg-12 col-md-12">
+  <div class="container">
+    <div class="row">
 
-    
-<div class="content">
-        <div class="container">
-            <div class="mypage-row">
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                    <main class="mypage-main">
-  <h2>회원 정보</h2>
-  <div class="info-card">
-  	<div class="profile">
-      <img src="${empty sessionScope.profile ? '../images/profile.jpg' : sessionScope.profile}" alt="profileImg">
-    </div>
-    
-    <table style="margin-left: 200px;">
-      <tr>
-        <th>아이디</th>
-        <td>happy</td>
-      </tr>
-      <tr>
-        <th>닉네임</th>
-        <td>닉네임</td>
-      </tr>
-      <tr>
-        <th>이메일</th>
-        <td>happy@gmail.com</td>
-      </tr>
-      <tr>
-        <th>연락처</th>
-        <td>010-1234-5678</td>
-      </tr>
-      <tr>
-        <th>가입일</th>
-        <td>2025-12-27</td>
-      </tr>
-    </table>
-  
-  <div class="btn-group" >
-   <button class="info-card btn" onclick="location.href='../mypage/update'" style="border: none;">수정</button>
-  </div>
-  </div>
-  </main>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="margin-top: 100px;">
-                    <div class="sidenav">
-                        <ul class="listnone">
-                            <li><a href="../mypage/info" class="active">내 정보</a></li>
-						    <li><a href="#">즐겨찾기</a></li>
-						    <li><a href="../mypage/bookmark">북마크</a></li>
-						    <li><a href="#">나의 코스</a></li>
-						    <li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
-						    <li><a href="../mypage/reply">내가 쓴 댓글</a></li>
-						    <li><a href="#">예약 내역</a></li>
-						    <li><a href="../mypage/my_refund">환불 내역</a></li>
-						    <li><a href="../mypage/pwd_delete">회원 탈퇴</a></li>
-                        </ul>
-                    </div>
-                    	            
-                    </div>
-                </div>
+      <!-- 메인 -->
+      <div class="col-lg-9 col-md-9 col-sm-12">
+        <main class="mypage-main">
+          <h2>회원 정보</h2>
+
+          <div class="info-card d-flex" style="gap:40px;">
+            <div class="profile">
+              <img src="${empty sessionScope.profile ? '../images/profile.jpg' : sessionScope.profile}">
             </div>
-        </div>
-    </div>
-                    
-                </div>
+
+            <div style="flex:1;">
+              <table class="table">
+                <tr><th style="width:120px;">아이디</th><td>happy</td></tr>
+                <tr><th>닉네임</th><td>닉네임</td></tr>
+                <tr><th>이메일</th><td>happy@gmail.com</td></tr>
+                <tr><th>연락처</th><td>010-1234-5678</td></tr>
+                <tr><th>가입일</th><td>2025-12-27</td></tr>
+              </table>
+
+              <button class="btn" onclick="location.href='../mypage/update'">수정</button>
             </div>
+          </div>
+        </main>
+      </div>
+
+      <div class="col-lg-3 col-md-3 col-sm-12" style="margin-top: 80px;">
+        <div class="sidenav">
+          <ul class="listnone">
+            <li><a href="../mypage/info" class="active">내 정보</a></li>
+            <li><a href="#">즐겨찾기</a></li>
+            <li><a href="../mypage/bookmark">북마크</a></li>
+            <li><a href="../mypage/my_course">나의 코스</a></li>
+            <li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
+            <li><a href="../mypage/reply">내가 쓴 댓글</a></li>
+            <li><a href="#">예약 내역</a></li>
+            <li><a href="../mypage/my_refund">환불 내역</a></li>
+            <li><a href="../mypage/pwd_delete">회원 탈퇴</a></li>
+          </ul>
         </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 </body>
 </html>
