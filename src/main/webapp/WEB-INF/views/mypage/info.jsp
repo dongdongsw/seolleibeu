@@ -15,12 +15,12 @@
 <div class="content auth-wrapper">
   <div class="container">
     <div class="row">
-
+	  <div class="mypage-sizing" style="width: 1300px; margin-left: -80px;">
       <!-- 메인 -->
       <div class="col-lg-9 col-md-9 col-sm-12">
         <main class="mypage-main">
           <h2>회원 정보</h2>
-
+		
           <div class="info-card d-flex" style="gap:40px;">
             <div class="profile">
               <img src="${empty sessionScope.profile ? '../images/profile.jpg' : sessionScope.profile}">
@@ -56,7 +56,7 @@
           </ul>
         </div>
       </div>
-
+	</div>
     </div>
   </div>
 </div>
