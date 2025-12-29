@@ -24,10 +24,6 @@
     <!-- /.page header -->
     <div class="content">
         <div class="container">
-        	<!-- <div class="search">
-			   	<input type="text" class="search" style="width: 200px; height: 47px; margin-top: 10px; border: none; border-bottom: 1px solid black;" placeholder="검색어를 입력하세요"/>
-				<a href="#" class="btn btn-default" style="margin-left: 1px;">검색</a>
-		   	</div> -->
 		   	<div class="input-group" style="margin: 0px;">
 				<input type="text" class="form-control" placeholder="코스를 검색하세요." aria-describedby="basic-addon2" style="border-radius: 15px 0px 0px 15px;">
 				<span class="input-group-addon" id="basic-addon2" style="border-radius: 0px 15px 15px 0px;">
