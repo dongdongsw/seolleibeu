@@ -24,8 +24,13 @@
     <!-- /.page header -->
     <div class="content">
         <div class="container">
+        	<div class="type-select" style="margin-bottom: -40px; margin-left: 5px;">
+	   			<input type="radio" name="type" value="제목" checked="checked">제목
+   				<input type="radio" name="type" value="주소">주소
+	   		</div>
 		   	<div class="input-group" style="margin: 0px;">
-				<input type="text" class="form-control" placeholder="코스를 검색하세요." aria-describedby="basic-addon2" style="border-radius: 15px 0px 0px 15px;">
+		   		
+				<input type="text" class="form-control" placeholder="검색어를 입력하세요." aria-describedby="basic-addon2" style="border-radius: 15px 0px 0px 15px;">
 				<span class="input-group-addon" id="basic-addon2" style="border-radius: 0px 15px 15px 0px;">
 					<i class="fa fa-search"></i>
 				</span>
@@ -34,10 +39,11 @@
 				<button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: white; border-radius: 15px; padding: 5px 10px; margin-right: 10px;">정렬기준
 					<span class="caret"></span>
 				</button>
-				<ul class="dropdown-menu">
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
+				<ul class="dropdown-menu" style="min-width: 80px;">
+					<li><a href="#">낮은가격순</a></li>
+					<li><a href="#">높은가격순</a></li>
+					<li><a href="#">인기순</a></li>
+					<li><a href="#">최신순</a></li>
 				</ul>
 			</div>			
             <div class="row" style="margin-top: 10px;">
