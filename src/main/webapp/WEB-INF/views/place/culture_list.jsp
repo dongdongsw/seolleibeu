@@ -30,7 +30,17 @@
 					<i class="fa fa-search"></i>
 				</span>
 			</div>
-            <div class="row" style="margin-top: 20px;">
+			<div class="dropdown" style="float: right; margin-top: -25px;">
+				<button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: white; border-radius: 15px; padding: 5px 10px; margin-right: 10px;">정렬기준
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+				</ul>
+			</div>			
+            <div class="row" style="margin-top: 10px;">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="project-img mb30">
                         <a href="service-detail.html" class="imghover"><img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
