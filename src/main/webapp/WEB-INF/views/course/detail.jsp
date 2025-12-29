@@ -33,6 +33,7 @@
 					<div class="detail-head">
 						<div>
 							<i class="fa fa-bookmark-o" aria-hidden="true"></i>
+							<i class="fa fa-bookmark" aria-hidden="true"></i>
 						</div>
 						<div style="margin-left: 30px">
 							<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;150

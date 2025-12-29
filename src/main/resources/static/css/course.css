@@ -17,8 +17,8 @@
 	padding-right: 40px;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 7px;
-	margin: 10px 0;
+	margin: 5px 5px 5px 0;
+	gap: 5px;
 }
 
 .place-tag>span {
@@ -37,7 +37,7 @@
 }
 
 .post-content {
-	padding-top: 20px;
+	padding-top: 10px;
 }
 
 .title {
