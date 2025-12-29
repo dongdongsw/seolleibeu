@@ -65,10 +65,10 @@
 						    <li><a href="#">즐겨찾기</a></li>
 						    <li><a href="../mypage/bookmark">북마크</a></li>
 						    <li><a href="#">나의 코스</a></li>
-						    <li><a href="#">내가 쓴 리뷰</a></li>
+						    <li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
 						    <li><a href="../mypage/reply">내가 쓴 댓글</a></li>
 						    <li><a href="#">예약 내역</a></li>
-						    <li><a href="#">환불 내역</a></li>
+						    <li><a href="../mypage/my_refund">환불 내역</a></li>
 						    <li><a href="../mypage/pwd_delete">회원 탈퇴</a></li>
                         </ul>
                     </div>

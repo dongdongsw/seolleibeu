@@ -11,7 +11,6 @@
 		<div class="container-fluid">
 			<div
 				class="d-sm-flex align-items-center justify-content-between mb-3">
-				<h1 class="h3 mb-0 text-gray-800">장소 등록</h1>
 			</div>
 			<div class="card shadow mb-4">
 				<div
@@ -19,7 +18,7 @@
 					<h6 class="m-0 font-weight-bold text-primary">장소 정보 입력</h6>
 					<div>
 						<a href="/admin/place_list"
-							class="btn btn-outline-secondary btn-sm">목록</a>
+							class="btn btn-outline-secondary btn-xs">목록</a>
 					</div>
 				</div>
 				<div class="card-body">

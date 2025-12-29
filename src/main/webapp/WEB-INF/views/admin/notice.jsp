@@ -9,11 +9,13 @@
 <body>
 	<div id="wrapper">
 		<div class="container-fluid">
-			<h1 class="h3 mb-2 text-gray-800">공지사항 조회</h1>
-			<div class="card shadow mb-4">
-				<div class="card-header py-3 d-flex justify-content-end">
-					<a href="/admin/notice_create" class="btn btn-sm btn-primary"><i
+			<div class="card shadow mb-4" style="margin-top: 16px;">
+				<div class="card-header py-3 d-flex justify-content-between align-items-center">
+				   <h6 class="m-0 font-weight-bold text-primary">공지사항 조회</h6>
+				    <div class="search-wrapper">
+					<a href="/admin/notice_create" class="btn btn-xs btn-primary"><i
 						class="fas fa-edit"></i>&nbsp;새글</a>
+				    </div>
 				</div>
 				<div class="card-body">
 					<div class="table-responsive">

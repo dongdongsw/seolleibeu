@@ -9,21 +9,21 @@
 <body>
 	<div id="wrapper">
 		<div class="container-fluid">
-			<h1 class="h3 mb-2 text-gray-800">장소 조회</h1>
-			<div class="card shadow mb-4">
-				<div class="card-header py-3 d-flex justify-content-end">
-					<div class="search-wrapper">
-						<div class="input-group search-bar">
-							<input type="text" class="form-control bg-light border-0 small"
-								placeholder="Search for..." aria-label="Search"
-								aria-describedby="basic-addon2">
-							<div class="input-group-append">
-								<button class="btn btn-primary" type="button">
-									<i class="fas fa-search fa-sm"></i>
-								</button>
-							</div>
-						</div>
-					</div>
+			<div class="card shadow mb-4" style="margin-top: 16px;">
+				<div class="card-header py-3 d-flex justify-content-between align-items-center">
+				   <h6 class="m-0 font-weight-bold text-primary">장소 조회</h6>
+				    <div class="search-wrapper">
+				        <div class="input-group search-bar">
+				            <input type="text" class="form-control bg-light border-0 small"
+				                placeholder="Search for..." aria-label="Search"
+				                aria-describedby="basic-addon2">
+				            <div class="input-group-append">
+				                <button class="btn btn-primary" type="button">
+				                    <i class="fas fa-search fa-sm"></i>
+				                </button>
+				            </div>
+				        </div>
+				    </div>
 				</div>
 				<div class="card-body">
 					<div class="table-responsive">
