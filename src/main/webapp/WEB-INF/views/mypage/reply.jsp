@@ -23,46 +23,27 @@
             <div class="mypage-row">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                     <main class="mypage-main">
-  <h2>정보 수정</h2>
-  <div class="info-card">
-    
-    <form method="post" action="../mypage/update">
-     <table class="update-info">
-      <tr>
-        <th>닉네임</th>
-        <td><input type="text" name="nickname" id="nickname" required></td>
-        <td><button class="btn btn-xs info-btn" style="border: none;">중복 확인</button></td>
-      </tr>
-      <tr>
-        <th>비밀번호</th>
-        <td><input type="password" name="pwd" id="pwd" required></td>
-      </tr>
-      <tr>
-        <th>비밀번호 확인</th>
-        <td><input type="password" name=pwdok id="pwdok" required></td>
-      </tr>
-      <tr>
-        <th>연락처</th>
-        <td><input type="text" name="phone" id="phone" required></td>
-        <td><button class="btn btn-xs info-btn">중복 확인</button></td>
-      </tr>
-     </table>
-    </form>
-    <div class="btn-group">
-     <button class="info-card btn" style="border: none;">저장</button>
+    <h2>내가 쓴 댓글</h2>
+    <h3>총<span style="color:#FF472E;"> 0 </span>건</h3>
+    <div class="reply-card">
+      <img class="reply-profile" src="${empty sessionScope.profile ? '../images/profile.jpg' : sessionScope.profile}" alt="profileImg">
+      <div class="mypage-reply">
+       <h3 style="margin-left: 2px;">홍대 데이트</h3><br/>
+       <p style="margin-bottom: 10px">정말 좋은곳입니다.</p>
+       <h5>닉네임  |  2026. 01. 01</h5>
     </div>
-  </div>
-</main>
+    </div>
+  </main>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="margin-top: 100px;">
                     <div class="sidenav">
                         <ul class="listnone">
-                            <li><a href="../mypage/info" class="active">내 정보</a></li>
+                            <li><a href="../mypage/info">내 정보</a></li>
 						    <li><a href="#">즐겨찾기</a></li>
 						    <li><a href="../mypage/bookmark">북마크</a></li>
 						    <li><a href="#">나의 코스</a></li>
 						    <li><a href="#">내가 쓴 리뷰</a></li>
-						    <li><a href="../mypage/reply">내가 쓴 댓글</a></li>
+						    <li><a href="../mypage/reply" class="active">내가 쓴 댓글</a></li>
 						    <li><a href="#">예약 내역</a></li>
 						    <li><a href="#">환불 내역</a></li>
 						    <li><a href="../mypage/pwd_delete">회원 탈퇴</a></li>

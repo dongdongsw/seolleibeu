@@ -10,45 +10,43 @@ public class MypageController {
 	   @GetMapping("/mypage/info")
 	   public String mypage_info(Model model) {
 	      
-	      model.addAttribute("main_jsp" ,"../mypage/info.jsp");
-	      return "main/main";
+	      model.addAttribute("my_jsp" ,"../mypage/info.jsp");
+	      
+	      return "mypage/my_main";
 	   }
 	   
 	   @GetMapping("/mypage/update")
 	   public String mypage_update(Model model) {
 	      
-	      model.addAttribute("main_jsp" ,"../mypage/update.jsp");
-	      return "main/main";
+	      model.addAttribute("my_jsp" ,"../mypage/update.jsp");
+	      return "mypage/my_main";
 	   }
 	   
-	   @GetMapping("/mypage/my_bookmark")
+	   @GetMapping("/mypage/bookmark")
 	   public String mypage_my_bookmark(Model model) {
 	      
-	      model.addAttribute("main_jsp" ,"../mypage/bookmark.jsp");
-	      return "main/main";
+	      model.addAttribute("my_jsp" ,"../mypage/bookmark.jsp");
+	      return "mypage/my_main";
 	   }
 	   
-	   @GetMapping("/mypage/my_reply")
+	   @GetMapping("/mypage/reply")
 	   public String mypage_my_reply(Model model) {
 	      
-	      model.addAttribute("main_jsp" ,"../mypage/my_reply.jsp");
-	      return "main/main";
+	      model.addAttribute("my_jsp" ,"../mypage/reply.jsp");
+	      return "mypage/my_main";
 	   }
 	   
-	   @GetMapping("/mypage/my_pwd_update")
+	   @GetMapping("/mypage/pwd_update")
 	   public String mypage_my_pwd_update(Model model) {
 	      
-	      model.addAttribute("main_jsp" ,"../mypage/my_pwd_update.jsp");
-	      return "main/main";
+	      model.addAttribute("my_jsp" ,"../mypage/pwd_update.jsp");
+	      return "mypage/my_main";
 	   }
 	   
-	   
-	   
-	   @GetMapping("/mypage/my_pwd_delete")
+	   @GetMapping("/mypage/pwd_delete")
 	   public String mypage_my_pwd_delete(Model model) {
 	      
-	      model.addAttribute("main_jsp" ,"../mypage/my_pwd_delete.jsp");
-	      return "main/main";
+	      model.addAttribute("my_jsp" ,"../mypage/pwd_delete.jsp");
+	      return "mypage/my_main";
 	   }
-	   
 }

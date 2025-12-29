@@ -23,43 +23,31 @@
             <div class="mypage-row">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                     <main class="mypage-main">
-  <h2>정보 수정</h2>
-  <div class="info-card">
-    
-    <form method="post" action="../mypage/update">
-     <table class="update-info">
-      <tr>
-        <th>닉네임</th>
-        <td><input type="text" name="nickname" id="nickname" required></td>
-        <td><button class="btn btn-xs info-btn" style="border: none;">중복 확인</button></td>
-      </tr>
-      <tr>
-        <th>비밀번호</th>
-        <td><input type="password" name="pwd" id="pwd" required></td>
-      </tr>
-      <tr>
-        <th>비밀번호 확인</th>
-        <td><input type="password" name=pwdok id="pwdok" required></td>
-      </tr>
-      <tr>
-        <th>연락처</th>
-        <td><input type="text" name="phone" id="phone" required></td>
-        <td><button class="btn btn-xs info-btn">중복 확인</button></td>
-      </tr>
-     </table>
-    </form>
-    <div class="btn-group">
-     <button class="info-card btn" style="border: none;">저장</button>
+    <h2>북마크</h2>
+    <h3>총<span style="color:#FF472E;"> 0 </span>건</h3>
+    <div class="info-card">
+      <table>
+        <tr>
+          <td width="20%">
+           <img src="#" style="width: 150px;height: 100px">
+          </td>
+          <td width="40%" style="padding-left: 50px;padding-bottom: 80px;">홍대 데이트</td>
+          <td width="15%"></td>
+          <td width="15%"></td>
+          <td width="10%">
+           <a href="#" class="btn btn-xs info-btn" style="margin-bottom: 70px;">X</a>
+          </td>
+        </tr>
+      </table>
     </div>
-  </div>
 </main>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="margin-top: 100px;">
                     <div class="sidenav">
                         <ul class="listnone">
-                            <li><a href="../mypage/info" class="active">내 정보</a></li>
+                            <li><a href="../mypage/info">내 정보</a></li>
 						    <li><a href="#">즐겨찾기</a></li>
-						    <li><a href="../mypage/bookmark">북마크</a></li>
+						    <li><a href="../mypage/bookmark" class="active">북마크</a></li>
 						    <li><a href="#">나의 코스</a></li>
 						    <li><a href="#">내가 쓴 리뷰</a></li>
 						    <li><a href="../mypage/reply">내가 쓴 댓글</a></li>

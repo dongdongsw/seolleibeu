@@ -9,6 +9,9 @@
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   overflow: hidden;
 }
+.mypage-row {
+	width: 1200px !important;
+}
 
 /* 사이드바 */
 .mypage-sidebar {
@@ -57,7 +60,7 @@
 .password-info {
 	margin-top: 200px;
 	margin-bottom: 200px;
-	margin-left: 210px;
+	margin-left: 150px;
 }
 
 .update-info {
@@ -137,7 +140,7 @@
 
 .reply-card {
   margin-top: 30px;
-  border: 2px solid #ffe0d2;
+  border: 2px solid #cec8c1;
   padding: 20px 30px;
 }
 
