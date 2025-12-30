@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  scrollbar-gutter: stable;
+  overflow-y: auto;
+}
 .mypage-container {
   display: flex;
   flex-direction: row-reverse;
@@ -63,8 +67,7 @@
 
 .password-info {
 	margin-top: 200px;
-	margin-bottom: 200px;
-	margin-left: 150px;
+	margin-left: 230px;
 }
 
 .update-info {
@@ -127,12 +130,24 @@
   border-radius: 15px;
   padding: 20px 30px;
 }
+
 .info-btn {
-	background-color: black;
-	color: white;
-	padding: 8px;
-	border-radius: 10px;
+  display: inline-block;
+  font-weight: 400;
+  cursor: pointer;
+  background: black;
+  color: #fff;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 1px 10px;
 }
+
+.info-btn:hover {
+  background-color: #1c1f23;
+  border-color: #1a1e21;
+}
+
 .info-card th, .info-card td {
   text-align: left;
   padding: 12px 8px;
@@ -157,10 +172,6 @@
   font-size: 10px;
   padding: 1px 1px;
   border: none !important;
-}
-.info-card btn {
-	background-color: #ffffff;
-	
 }
 
 .my-course-item {

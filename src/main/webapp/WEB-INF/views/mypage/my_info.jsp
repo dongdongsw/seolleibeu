@@ -27,15 +27,15 @@
             </div>
 
             <div style="flex:1;">
-              <table class="table">
-                <tr><th style="width:120px;">아이디</th><td>happy</td></tr>
+              <table class="info-table" style="margin-left: 250px;">
+                <tr><th>아이디</th><td>happy</td></tr>
                 <tr><th>닉네임</th><td>닉네임</td></tr>
                 <tr><th>이메일</th><td>happy@gmail.com</td></tr>
                 <tr><th>연락처</th><td>010-1234-5678</td></tr>
                 <tr><th>가입일</th><td>2025-12-27</td></tr>
               </table>
-
-              <button class="btn" onclick="location.href='../mypage/my_update'">수정</button>
+              
+                <button type="button" class="info-btn" style="margin-left: 650px;" onclick="location.href='../mypage/my_update'">수정</button>
             </div>
           </div>
         </main>

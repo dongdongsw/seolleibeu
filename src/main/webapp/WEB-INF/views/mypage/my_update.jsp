@@ -22,28 +22,28 @@
 
           <div class="info-card">
             <form method="post" action="../mypage/update">
-              <table class="table" style="max-width:700px;">
+              <table class="info-table" style="margin-left: 190px;margin-top: 50px;">
                 <tr>
                   <th style="width:140px;">닉네임</th>
-                  <td><input class="form-control"></td>
-                  <td><button type="button" class="btn btn-sm">중복 확인</button></td>
+                  <td><input class="text"></td>
+                  <td><button type="button" class="info-btn">중복 확인</button></td>
                 </tr>
                 <tr>
                   <th>비밀번호</th>
-                  <td colspan="2"><input type="password" class="form-control"></td>
+                  <td colspan="2"><input type="password"></td>
                 </tr>
                 <tr>
                   <th>비밀번호 확인</th>
-                  <td colspan="2"><input type="password" class="form-control"></td>
+                  <td colspan="2"><input type="password"></td>
                 </tr>
                 <tr>
                   <th>연락처</th>
-                  <td><input class="form-control"></td>
-                  <td><button type="button" class="btn btn-sm">중복 확인</button></td>
+                  <td><input class="text"></td>
+                  <td><button type="button" class="info-btn">중복 확인</button></td>
                 </tr>
               </table>
 
-              <button class="btn">저장</button>
+              <button style="margin-left: 650px;margin-top: 80px;" class="info-btn">저장</button>
             </form>
           </div>
         </main>

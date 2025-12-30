@@ -13,54 +13,48 @@
 </head>
 <body>
 <div class="content auth-wrapper">
-	    <div class="container" style="display: flex; align-items: center; justify-content: center;">
-	        <div class="row justify-content-center">
-	            <div class="col-lg-12 col-md-12">
+  <div class="container">
+    <div class="row">
+	  <div class="mypage-sizing">
+      <!-- 메인 -->
+      <div class="col-lg-9 col-md-9 col-sm-12">
+        <main class="mypage-main">
+          <h2>회원 탈퇴</h2>
+		
+          <div class="info-card">
+		  <form method="post" action="../mypage/my_password">
+		   <table class="password-info">
+		    <tr>
+		     <td>비밀번호 입력 :</td>
+		     <td>
+		      <input type="password" id=pwdInfo>
+		     </td>
+		     <td><button class="info-btn">확인</button></td>
+		    </tr>
+		   </table>
+		  </form>
+		  </div>
+        </main>
+      </div>
 
-    
-<div class="content">
-        <div class="container">
-            <div class="mypage-row">
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                    <main class="mypage-main">
-  <div class="info-card">
-  <form method="post" action="../mypage/my_password">
-   <table class="password-info">
-    <tr>
-     <td>비밀번호 입력 :</td>
-     <td>
-      <input type="password" id=pwdInfo>
-     </td>
-     <td><button class="btn btn-xs info-btn">확인</button></td>
-    </tr>
-   </table>
-  </form>
-  </div>
-</main>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="margin-top: 100px;">
-                    <div class="sidenav">
-                        <ul class="listnone">
-                            <li><a href="../mypage/my_info">내 정보</a></li>
-				            <li><a href="../mypage/my_favorite">즐겨찾기</a></li>
-				            <li><a href="../mypage/my_bookmark">북마크</a></li>
-				            <li><a href="../mypage/my_course">나의 코스</a></li>
-				            <li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
-				            <li><a href="../mypage/my_reply">내가 쓴 댓글</a></li>
-				            <li><a href="#">예약 내역</a></li>
-				            <li><a href="../mypage/my_refund">환불 내역</a></li>
-				            <li><a href="../mypage/my_pwd_delete" class="active">회원 탈퇴</a></li>
-                        </ul>
-                    </div>
-                    	            
-                    </div>
-                </div>
-            </div>
+      <div class="col-lg-3 col-md-3 col-sm-12" style="margin-top: 80px;">
+        <div class="sidenav">
+          <ul class="listnone">
+            <li><a href="../mypage/my_info" class="active">내 정보</a></li>
+            <li><a href="#">즐겨찾기</a></li>
+            <li><a href="../mypage/my_bookmark">북마크</a></li>
+            <li><a href="../mypage/my_course">나의 코스</a></li>
+            <li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
+            <li><a href="../mypage/my_reply">내가 쓴 댓글</a></li>
+            <li><a href="#">예약 내역</a></li>
+            <li><a href="../mypage/my_refund">환불 내역</a></li>
+            <li><a href="../mypage/my_pwd_delete">회원 탈퇴</a></li>
+          </ul>
         </div>
+      </div>
+	</div>
     </div>
-                    
-                </div>
-            </div>
-        </div>
+  </div>
+</div>
 </body>
 </html>
