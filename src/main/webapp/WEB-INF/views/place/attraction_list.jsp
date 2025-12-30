@@ -14,8 +14,8 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="page-caption">
-                        <h2 class="page-title">문화/체험</h2>
-                        <p>연극/뮤지컬 & 전시 & 액티비티</p>
+                        <h2 class="page-title">관광명소</h2>
+                        <p>명소 & 자연관광 & 엔터</p>
                     </div>
                 </div>
             </div>
@@ -39,8 +39,6 @@
 					<span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu" style="min-width: 80px;">
-					<li><a href="#">낮은가격순</a></li>
-					<li><a href="#">높은가격순</a></li>
 					<li><a href="#">인기순</a></li>
 					<li><a href="#">최신순</a></li>
 				</ul>
@@ -48,12 +46,11 @@
             <div class="row" style="margin-top: 10px;">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="/place/culture/detail" class="imghover">
+                        <a href="/place/attraction/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
                         	</div>
                         </a>
                     </div>
@@ -65,7 +62,6 @@
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
                         	</div>
                         </a>
                     </div>
@@ -77,7 +73,6 @@
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
                         	</div>
                         </a>
                     </div>
@@ -89,57 +84,6 @@
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
-                        	</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="margin-top: 10px;">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
-                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
-                        	<div class="caption">
-                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
-                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
-                        	</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
-                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
-                        	<div class="caption">
-                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
-                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
-                        	</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
-                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
-                        	<div class="caption">
-                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
-                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
-                        	</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
-                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
-                        	<div class="caption">
-                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
-                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
                         	</div>
                         </a>
                     </div>
@@ -153,7 +97,6 @@
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
                         	</div>
                         </a>
                     </div>
@@ -165,7 +108,6 @@
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
                         	</div>
                         </a>
                     </div>
@@ -177,7 +119,6 @@
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
                         	</div>
                         </a>
                     </div>
@@ -189,7 +130,6 @@
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
                         	</div>
                         </a>
                     </div>
@@ -203,7 +143,6 @@
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
                         	</div>
                         </a>
                     </div>
@@ -215,7 +154,6 @@
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
                         	</div>
                         </a>
                     </div>
@@ -227,7 +165,6 @@
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
                         	</div>
                         </a>
                     </div>
@@ -239,7 +176,52 @@
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        		<p style="font-size: 12px;" class="text-right">예매 가능</p>
+                        	</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="project-img mb30 thumbnail">
+                        <a href="service-detail.html" class="imghover">
+                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
+                        	<div class="caption">
+                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
+                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
+                        	</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="project-img mb30 thumbnail">
+                        <a href="service-detail.html" class="imghover">
+                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
+                        	<div class="caption">
+                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
+                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
+                        	</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="project-img mb30 thumbnail">
+                        <a href="service-detail.html" class="imghover">
+                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
+                        	<div class="caption">
+                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
+                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
+                        	</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="project-img mb30 thumbnail">
+                        <a href="service-detail.html" class="imghover">
+                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
+                        	<div class="caption">
+                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
+                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
                         	</div>
                         </a>
                     </div>

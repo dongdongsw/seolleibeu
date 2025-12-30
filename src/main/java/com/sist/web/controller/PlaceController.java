@@ -20,6 +20,20 @@ public class PlaceController {
 		model.addAttribute("main_jsp","../place/culture_detail.jsp");
 		return "main/main";
 	}
+
+	@GetMapping("/place/attraction/list")
+	public String place_attraction_list(Model model) {
+		
+		model.addAttribute("main_jsp", "../place/attraction_list.jsp");
+		return "main/main";
+	}
+	
+	@GetMapping("/place/attraction/detail")
+	public String place_attraction_detail(Model model) {
+		
+		model.addAttribute("main_jsp","../place/attraction_detail.jsp");
+		return "main/main";
+	}
 	
 	@GetMapping("/place/restaurant/list")
 	public String place_restaurant_list(Model model) {
