@@ -209,25 +209,36 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="outline pinside30 text-center mb30">
                         <div class="mb30">
                         	<img src="images/restaurant.jpg" class="" alt="Interior Design Website Templates Free Download">
                        	</div>
                         <div class="">
                             <h2>Restaurant</h2>
-                            <a href="#" class="btn btn-white" style="margin-left: 1px;">식당 목록 →</a>
+                            <a href="/place/restaurant/list" class="btn btn-white" style="margin-left: 1px;">식당 목록 →</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="outline pinside30 text-center mb30">
                         <div class="mb30">
                         	<img src="images/culture.jpg" class="" alt="Interior Design Website Templates Free Download">
                        	</div>
                         <div class="">
-                            <h2>Culture & Entertainment</h2>
-                            <a href="#" class="btn btn-white" style="margin-left: 1px;">문화/엔터 목록 →</a>
+                            <h2>Culture & Experience</h2>
+                            <a href="/place/culture/list" class="btn btn-white" style="margin-left: 1px;">문화/체험 목록 →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="outline pinside30 text-center mb30">
+                        <div class="mb30">
+                        	<img src="images/tour.jpg" class="" alt="Interior Design Website Templates Free Download">
+                       	</div>
+                        <div class="">
+                            <h2>Tourist Attraction</h2>
+                            <a href="/place/attraction/list" class="btn btn-white" style="margin-left: 1px;">관광명소 목록 →</a>
                         </div>
                     </div>
                 </div>
