@@ -48,7 +48,7 @@
             <div class="row" style="margin-top: 30px;">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
@@ -81,53 +81,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
-                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
-                        	<div class="caption">
-                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
-                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        	</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="margin-top: 10px;">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
-                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
-                        	<div class="caption">
-                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
-                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        	</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
-                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
-                        	<div class="caption">
-                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
-                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        	</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
-                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
-                        	<div class="caption">
-                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
-                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
-                        	</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
@@ -140,7 +94,7 @@
             <div class="row" style="margin-top: 10px;">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
@@ -151,7 +105,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
@@ -162,7 +116,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
@@ -173,7 +127,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
@@ -186,7 +140,7 @@
             <div class="row" style="margin-top: 10px;">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
@@ -197,7 +151,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
@@ -208,7 +162,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
@@ -219,7 +173,53 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/restaurant/detail" class="imghover">
+                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
+                        	<div class="caption">
+                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
+                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
+                        	</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="project-img mb30 thumbnail">
+                        <a href="/restaurant/detail" class="imghover">
+                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
+                        	<div class="caption">
+                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
+                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
+                        	</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="project-img mb30 thumbnail">
+                        <a href="/restaurant/detail" class="imghover">
+                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
+                        	<div class="caption">
+                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
+                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
+                        	</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="project-img mb30 thumbnail">
+                        <a href="/restaurant/detail" class="imghover">
+                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
+                        	<div class="caption">
+                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
+                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
+                        	</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="project-img mb30 thumbnail">
+                        <a href="/restaurant/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>

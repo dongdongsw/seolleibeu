@@ -20,21 +20,31 @@
             </div>
         </div>
     </div>
+    <div style="position: absolute ; top: 48%; left: 70%;">
+    	<div style="display: flex;">
+	    	<a><i class="fa-regular fa-heart" style="padding-top:1px; font-size: 30px; color: black;"></i></a>
+	    	<a><i class="fa-regular fa-thumbs-up" style="padding-left:15px; font-size: 30px; color: black;"></i></a>
+	    	<a><i class="fa-regular fa-eye" style="padding-top:1px; padding-left:15px; font-size: 30px; color: black;"><span style="font-size: 20px; padding-left: 3px;">1</span></i></a>	    	
+    	</div>
+    </div>
 	<div class="content">
         <div class="container">
             <div class="row">
             	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			       
 			       <div class="author-post" style="padding-left: 15px; width: 1155px;">
+			       
 			           <!-- author post -->
 			           <div class="row">
 			               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 			                   <div class="author-img"> <img src="/images/author.jpg" class="" alt=""> </div>
 			               </div>
 			               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+			               	   
 			                   <div class="author-header">
 			                       <div class="author-bio">
 			                           <h2 class="author-title">no.(실제 키값 번호)장소명(실제 데이터 들어갈 곳)</h2>
+			                           
 			                           <div class="meta mb0"> <span class="meta-author">타입명(실제 데이터 들어갈 곳)/카테고리(실제 데이터 들어갈 곳)</span></div>
 			                       </div>
 			                       
@@ -72,7 +82,8 @@
 			       </div>
 			       <hr>
 			   </div>
-				<div style="display:flex; flex-wrap:wrap; gap:12px; width:100%;  margin-bottom: 60px; margin-left: 60px;">
+			   <div style="border: 1px solid black; width: 1155px;">
+				<div style="display:flex; flex-wrap:wrap; gap:12px; width:100%;  margin-bottom: 60px; margin-left: 50px;">
 				  <div style="width:200px; border:1px solid #ddd; padding:12px;">
 				    <div style="font-weight:500;">아메리카노</div>
 				    <div style="margin-top:6px;">4,000원</div>
@@ -143,7 +154,7 @@
 				  </div>
 				</div>
 				
-				<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 60%; left: 25%; margin-bottom: 30px;">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 60%; left: 24%; margin-bottom: 30px;">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
 					  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -193,7 +204,7 @@
 					    <span class="sr-only">Next</span>
 					  </a>
 				</div>
-				<div style="display:flex; gap:10px; margin-top:15px; overflow-x:auto; width: 1155px; margin-bottom: 30px;">
+				<div style="display:flex; gap:10px; margin-top:15px; overflow-x:auto; width: 1153px; margin-bottom: 30px;">
 					<img src="/images/post-img.jpg"
 					     style="height:80px; cursor:pointer; opacity:1; border:2px solid #000;" data-target="#myCarousel" data-slide-to="0">
 					<img src="/images/post-img.jpg"

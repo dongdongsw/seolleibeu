@@ -24,11 +24,11 @@
     <!-- /.page header -->
     <div class="content">
         <div class="container">
-        	<div class="type-select" style="margin-bottom: -40px; margin-left: 5px;">
+        	<div class="type-select" style=" margin-left: 5px;">
 	   			<input type="radio" name="type" value="제목" checked="checked"><span style="margin-left: 4px;">제목</span>
    				<input type="radio" name="type" value="주소"><span style="margin-left: 4px;">주소</span>
 	   		</div>
-		   	<div class="input-group" style="margin: 0px; top:10px;">
+		   	<div class="input-group" style="margin: 0px; padding-top:10px;">
 				<input type="text" class="form-control" placeholder="검색어를 입력하세요." aria-describedby="basic-addon2" style="border-radius: 15px 0px 0px 15px;">
 				<span class="input-group-addon" id="basic-addon2" style="border-radius: 0px 15px 15px 0px;">
 					<i class="fa fa-search"></i>
@@ -45,7 +45,7 @@
 					<li><a href="#">최신순</a></li>
 				</ul>
 			</div>			
-            <div class="row" style="margin-top: 30px;">
+            <div class="row" style="margin-top: 10px;">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
                         <a href="service-detail.html" class="imghover">
