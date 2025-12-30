@@ -90,10 +90,38 @@
     align-items: center;
     margin-right: 50px;
 }
+.review-more {
+  font-size: 13px;
+  color: black;
+  cursor: pointer;
+  font-weight: bolder;
+}
+.review-more:hover {
+  color: #333;
+  text-decoration: underline;
+}
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 20px;
+  width: 500px;
+  border-radius: 6px;
+}
 </style>
 </head>
 <body>
-
 	<div class="page-header">
 		<div class="container">
             <div class="row">
@@ -106,7 +134,6 @@
             </div>
         </div>
     </div>
-
 	<div class="content">
         <div class="container">
             <div class="row">
@@ -120,14 +147,12 @@
 			                   <div class="author-img"> <img src="/images/author.jpg" class="" alt=""> </div>
 			               </div>
 			               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-			               	   
 			                   <div class="author-header">
 			                       <div class="author-bio">
 			                           <h2 class="author-title">no.(실제 키값 번호)장소명(실제 데이터 들어갈 곳)</h2>
 			                           
 			                           <div class="meta mb0"> <span class="meta-author">타입명(실제 데이터 들어갈 곳)/카테고리(실제 데이터 들어갈 곳)</span></div>
 			                       </div>
-			                       
 			                   </div><br>
 			                   <div class="address-wrap" style="  flex-direction: column;">
 				                   <div class="author-bio" style="width: 100%; display: flex; ">
@@ -163,12 +188,10 @@
 			   	</div>
 			   	<div class="detail-wrap" style="width:1155px;">
 			   	<ul class="nav nav-tabs" style=" width: 1155px;">
-				  <li><a href="#">상세보기</a></li>
-				  <li class="active"><a href="#">리뷰</a></li>
+				  <li class="${tab == 'detail'?'active':'' }"><a href="/place/restaurant/detail">상세보기</a></li>
+				  <li class="${tab == 'review'?'active':'' }"><a href="/place/restaurant/review">리뷰</a></li>
 				</ul>
 			   <div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px;">
-			   
-			   <!-- 평점 요약 섹션 -->
 			   <div class="rating-summary">
 			       <div class="rating-score">
 			           <div class="rating-number">4.5</div>
@@ -219,7 +242,7 @@
 			           </div>
 			       </div>
 			   </div>
-			   <div style="display:inline; width: 1155px; ">
+			   <div style="display:inline; width: 1155px;" id="reviewApp">
 				<div style="display:flex; flex-wrap:wrap; gap:12px; width:100%;  margin-bottom: 60px; margin-left: 32px; padding-top: 40px;">
 				<div class="container">
           	<div class="row">
@@ -238,6 +261,9 @@
                                                       </div>
                                                       <div class="comment-content">
                                                           <p>Cras ut lorem vitae orci sollicitudin pharetra. In vel scelerisque mi. Pellentes que eu imperdiet tortor. </p>
+                                                          <div class="text-right more" style="margin-right: 60px;">
+                                                          <span class="review-more" @click="openModal">더보기</span>
+                                                          </div>
                                                       </div>
                                                   </div>
                                               </div>
@@ -254,6 +280,9 @@
                                                       </div>
                                                       <div class="comment-content">
                                                           <p>Pellentesque gravida convallis hendrerit. Cras pharetra ultricies tempus. Quisque et pretium ante, nec ullamcorper lorem. </p>
+                                                          <div class="text-right" style="margin-right: 60px;">
+                                                          <span class="review-more" @click="openModal">더보기</span>
+                                                          </div>
                                                       </div>
                                                   </div>
                                               </div>
@@ -270,6 +299,9 @@
                                                       </div>
                                                       <div class="comment-content">
                                                           <p>Pellentesque gravida convallis hendrerit. Cras pharetra ultricies tempus. Quisque et pretium ante, nec ullamcorper lorem. </p>
+                                                          <div class="text-right" style="margin-right: 60px;">
+                                                          <span class="review-more" @click="openModal">더보기</span>
+                                                          </div>
                                                       </div>
                                                   </div>
                                               </div>
@@ -282,17 +314,47 @@
 	                  			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<div class="st-pagination">
 										<ul class="pagination">
-											<li><a href="#">Previous</a></li>
+											<li><a href="#">이전</a></li>
 											<li><a href="#" class="active">1</a></li>
 											<li><a href="#">2</a></li>
 											<li><a href="#">3</a></li>
-											<li><a href="#">Next</a></li>
+											<li><a href="#">다음</a></li>
 										</ul>
 									</div>
 								</div>
 		            	  </div>
 		          		</div>
 					</div>
+					<div class="modal-bg" v-if="isModalOpen">
+				     <div class="modal-box">
+				      <h4 class="mb-3"><a class="dropdown-item" @click.prevent="openModal">리뷰 더보기</a></h4>
+				       <table class="table table-sm">
+				        <tr>
+				         <td width="30%">작성자</td>
+				         <td>{{modalData.writer}}</td>
+				        </tr>
+				        <tr>
+				         <td width="30%">작성자</td>
+				         <td>{{modalData.writer}}</td>
+				        </tr>
+				        <tr>
+				         <td width="30%">작성자</td>
+				         <td>{{modalData.writer}}</td>
+				        </tr>
+				        <tr>
+				         <td width="30%">작성자</td>
+				         <td>{{modalData.writer}}</td>
+				        </tr>
+				        <tr>
+				         <td width="30%">작성자</td>
+				         <td>{{modalData.writer}}</td>
+				        </tr>
+				       </table>
+				       <div class="text-right">
+				        <button class="btn btn-secondary btn-sm" @click="closeModal">닫기</button>
+				       </div>
+				     </div>
+				    </div>
 				</div>
             </div>
             </div>
@@ -318,5 +380,30 @@
 	    	</tbody>	    	
     	</table>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <!-- 리뷰 더보기 모달창 -->
+    <script>
+     const reviewApp=Vue.createApp({
+    	 data(){
+    		 return {
+    			 isModalOpen:false,
+    			 modalData:{
+    				
+    			 }
+    		 }
+    	 },
+    	 methods:{
+    		 openModal(){
+    			 this.modalData={writer:'김민석'}
+    			 this.isModalOpen=true
+    		 },
+    		 closeModal(){
+    			 this.isModalOpen=false
+    			 this.modalData={}
+    		 }
+    	 }
+     })
+     reviewApp.mount('#reviewApp')
+    </script>
 </body>
 </html>

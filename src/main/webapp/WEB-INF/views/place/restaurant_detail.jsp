@@ -78,8 +78,8 @@
 			   	</div>
 			   	<div class="detail-wrap" style="width:1155px;  ">
 			   	<ul class="nav nav-tabs" style=" width: 1155px;">
-				  <li class="active"><a href="#">상세보기</a></li>
-				  <li><a href="#">리뷰</a></li>
+				  <li class="${tab == 'detail'?'active':'' }"><a href="/place/restaurant/detail">상세보기</a></li>
+				  <li class="${tab == 'review'?'active':'' }"><a href="/place/restaurant/review">리뷰</a></li>
 				</ul>
 			   <div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px;">
 			   <div style="display:inline; width: 1155px; ">
