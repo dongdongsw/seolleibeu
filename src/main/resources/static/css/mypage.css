@@ -3,6 +3,26 @@ html {
   scrollbar-gutter: stable;
   overflow-y: auto;
 }
+.comment-input {
+  width: 93%;
+  height: 100px;
+  padding: 8px;
+  font-size: 14px;
+  resize: none;
+  float: left;
+}
+.comment-btn {
+  display: inline-block;
+  font-weight: 400;
+  cursor: pointer;
+  background: black;
+  color: #fff;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 40px 10px;
+}
+
 .mypage-container {
   display: flex;
   flex-direction: row-reverse;
@@ -13,6 +33,7 @@ html {
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   overflow: hidden;
 }
+
 .mypage-row {
 	width: 1200px !important;
 }
