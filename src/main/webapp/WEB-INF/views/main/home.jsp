@@ -216,7 +216,7 @@
                        	</div>
                         <div class="">
                             <h2>Restaurant</h2>
-                            <a href="/place/restaurant/list" class="btn btn-white" style="margin-left: 1px;">식당 목록 →</a>
+                            <a href="/place/restaurant/list" class="btn btn-white" style="margin-left: 1px;">음식점 목록 →</a>
                         </div>
                     </div>
                 </div>
