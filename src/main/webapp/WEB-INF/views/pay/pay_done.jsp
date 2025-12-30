@@ -62,7 +62,7 @@
 
         <div class="buttons">
             <button class="btn btn-primary">예약 상세보기</button>
-            <button class="btn">홈으로</button>
+            <button class="btn" onclick="location.href='/'">홈으로</button>
         </div>
     </div>
 </body>

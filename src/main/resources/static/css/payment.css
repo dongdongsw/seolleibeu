@@ -157,3 +157,100 @@
                 flex-direction: column;
             }
         }
+     /*주문 내역*/
+     .order-container {
+            max-width: 1200px;
+            margin-top: 40px;
+        }
+        
+        .order-layout {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .order-left {
+            flex: 2;
+        }
+        
+        .order-right {
+            flex: 1;
+        }
+        
+        .payment-agree-box {
+            border: 1px solid #e8e4df;
+            padding: 20px;
+            background: #fcfbf9;
+        }
+        
+        .payment-agree-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0ede8;
+        }
+        
+        .payment-agree-item:last-child {
+            border-bottom: none;
+        }
+        
+        .payment-agree-all {
+            font-weight: 600;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .payment-agree-item input {
+            margin-right: 8px;
+        }
+        
+        .payment-agree-item label {
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        .payment-total {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e8e4df;
+            text-align: right;
+        }
+        
+        .payment-total-label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .payment-total-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-left: 10px;
+        }
+        
+        .payment-submit-btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            background: #333;
+            color: white;
+            border: 1px solid #333;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .payment-submit-btn:disabled {
+            background: #ccc;
+            border-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .payment-submit-btn:hover:not(:disabled) {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .order-layout {
+                flex-direction: column;
+            }
+        }
