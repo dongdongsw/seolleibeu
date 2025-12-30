@@ -7,46 +7,46 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MypageController {
 
-	   @GetMapping("/mypage/info")
+	@GetMapping("/mypage/my_info")
 	   public String mypage_info(Model model) {
 	      
-	      model.addAttribute("my_jsp" ,"../mypage/info.jsp");
+	      model.addAttribute("my_jsp" ,"../mypage/my_info.jsp");
 	      
 	      return "mypage/my_main";
 	   }
 	   
-	   @GetMapping("/mypage/update")
+	   @GetMapping("/mypage/my_update")
 	   public String mypage_update(Model model) {
 	      
-	      model.addAttribute("my_jsp" ,"../mypage/update.jsp");
+	      model.addAttribute("my_jsp" ,"../mypage/my_update.jsp");
 	      return "mypage/my_main";
 	   }
 	   
-	   @GetMapping("/mypage/bookmark")
+	   @GetMapping("/mypage/my_bookmark")
 	   public String mypage_my_bookmark(Model model) {
 	      
-	      model.addAttribute("my_jsp" ,"../mypage/bookmark.jsp");
+	      model.addAttribute("my_jsp" ,"../mypage/my_bookmark.jsp");
 	      return "mypage/my_main";
 	   }
 	   
-	   @GetMapping("/mypage/reply")
+	   @GetMapping("/mypage/my_reply")
 	   public String mypage_my_reply(Model model) {
 	      
-	      model.addAttribute("my_jsp" ,"../mypage/reply.jsp");
+	      model.addAttribute("my_jsp" ,"../mypage/my_reply.jsp");
 	      return "mypage/my_main";
 	   }
 	   
-	   @GetMapping("/mypage/pwd_update")
+	   @GetMapping("/mypage/my_pwd_update")
 	   public String mypage_my_pwd_update(Model model) {
 	      
-	      model.addAttribute("my_jsp" ,"../mypage/pwd_update.jsp");
+	      model.addAttribute("my_jsp" ,"../mypage/my_pwd_update.jsp");
 	      return "mypage/my_main";
 	   }
 	   
-	   @GetMapping("/mypage/pwd_delete")
+	   @GetMapping("/mypage/my_pwd_delete")
 	   public String mypage_my_pwd_delete(Model model) {
 	      
-	      model.addAttribute("my_jsp" ,"../mypage/pwd_delete.jsp");
+	      model.addAttribute("my_jsp" ,"../mypage/my_pwd_delete.jsp");
 	      return "mypage/my_main";
 	   }
 	   // 내가 쓴 리뷰

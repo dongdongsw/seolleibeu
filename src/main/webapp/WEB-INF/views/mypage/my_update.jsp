@@ -15,7 +15,7 @@
 <div class="content auth-wrapper">
   <div class="container">
     <div class="row">
-
+	  <div class="mypage-sizing">
       <div class="col-lg-9 col-md-9 col-sm-12">
         <main class="mypage-main">
           <h2>정보 수정</h2>
@@ -52,19 +52,20 @@
       <div class="col-lg-3 col-md-3 col-sm-12" style="margin-top: 80px;">
         <div class="sidenav">
           <ul class="listnone">
-            <li><a href="../mypage/info" class="active">내 정보</a></li>
+            <li><a href="../mypage/my_info" class="active">내 정보</a></li>
             <li><a href="#">즐겨찾기</a></li>
-            <li><a href="../mypage/bookmark">북마크</a></li>
+            <li><a href="../mypage/my_bookmark">북마크</a></li>
             <li><a href="../mypage/my_course">나의 코스</a></li>
             <li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
-            <li><a href="../mypage/reply">내가 쓴 댓글</a></li>
+            <li><a href="../mypage/my_reply">내가 쓴 댓글</a></li>
             <li><a href="#">예약 내역</a></li>
             <li><a href="../mypage/my_refund">환불 내역</a></li>
-            <li><a href="../mypage/pwd_delete">회원 탈퇴</a></li>
+            <li><a href="../mypage/my_pwd_delete">회원 탈퇴</a></li>
           </ul>
         </div>
       </div>
 
+    </div>
     </div>
   </div>
 </div>

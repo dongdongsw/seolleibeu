@@ -51,10 +51,14 @@
 }
 
 .mypage-reply {
-	display:block;
-	text-align: left;
-	margin-top: -80px;
-	margin-left: 80px;
+	line-height: 1.2;
+	flex: 1;
+}
+
+.reply-title {
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: -11px;
 }
 
 .password-info {
@@ -114,7 +118,10 @@
   margin-left: 10px;
   margin-bottom: -20px;
 }
-
+.mypage-sizing {
+	width: 1300px;
+	margin-left: -80px;
+}
 .info-card {
   margin-top: 25px;
   border-radius: 15px;
@@ -155,6 +162,7 @@
 	background-color: #ffffff;
 	
 }
+
 .my-course-item {
 	display: flex;
 	align-items: center;
@@ -184,10 +192,6 @@
 .course-meta {
 	font-size: 13px;
 	color: #777;
-}
-
-.course-meta span {
-	margin-right: 15px;
 }
 
 /* 오른쪽 버튼 */

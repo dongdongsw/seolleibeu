@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>내가 쓴 리뷰</title>
+<title>북마크</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link
 	href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700"
@@ -22,7 +22,7 @@
 			  <div class="mypage-sizing">
 				<div class="col-lg-9 col-md-9 col-sm-12">
 					<main class="mypage-main">
-						<h2>내가 쓴 리뷰</h2>
+						<h2>북마크</h2>
 
 						<div class="info-card">
 							<c:forEach begin="0" end="2">
@@ -33,18 +33,17 @@
 									</div>
 
 									<!-- 가운데 정보 -->
-									<div class="mypage-reply">
-										<h4 class="reply-title">홍대 데이트 코스</h4>
-										<p style="margin-bottom: 10px">정말 좋은곳입니다.</p>
+									<div class="course-info">
+										<h4 class="course-title">홍대 데이트 코스</h4>
 										<div class="course-meta">
-											리뷰 쓴 날짜 : <span class="date">2025-01-05</span>
+											북마크 한 날짜 <span class="date">2025-01-05</span>&nbsp;|
+											<span class="comment">댓글 3</span>&nbsp;|<span class="comment">조회수 100</span>
 										</div>
 									</div>
 
 									<!-- 오른쪽 버튼 -->
 									<div class="course-actions">
-										<a href="#" class="btn btn-xs">수정</a> <a href="#"
-											class="btn btn-xs">삭제</a>
+									 <a href="#" class="btn btn-xs">삭제</a>
 									</div>
 								</div>
 								<hr>
@@ -70,9 +69,9 @@
 						<ul class="listnone">
 							<li><a href="../mypage/my_info">내 정보</a></li>
 				            <li><a href="#">즐겨찾기</a></li>
-				            <li><a href="../mypage/my_bookmark">북마크</a></li>
+				            <li><a href="../mypage/my_bookmark" class="active">북마크</a></li>
 				            <li><a href="../mypage/my_course">나의 코스</a></li>
-				            <li><a href="../mypage/my_review" class="active">내가 쓴 리뷰</a></li>
+				            <li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
 				            <li><a href="../mypage/my_reply">내가 쓴 댓글</a></li>
 				            <li><a href="#">예약 내역</a></li>
 				            <li><a href="../mypage/my_refund">환불 내역</a></li>
