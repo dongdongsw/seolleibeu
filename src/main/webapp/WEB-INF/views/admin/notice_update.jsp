@@ -27,7 +27,7 @@
 						placeholder="내용을 입력하세요"></textarea>
 				</div>
 				<div class="btn-group">
-					<button type="button" class="btn btn-secondary">
+					<button type="button" class="btn btn-secondary" onclick="javascript:history.back()">
 						<i class="fas fa-times"></i> 취소
 					</button>
 					<button type="button" class="btn btn-primary">

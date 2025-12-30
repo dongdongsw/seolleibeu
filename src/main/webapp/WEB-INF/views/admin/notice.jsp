@@ -5,6 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+</style>
 </head>
 <body>
 	<div id="wrapper">
@@ -34,7 +44,7 @@
 							<tbody>
 								<tr>
 									<td>Tiger Nixon</td>
-									<td>System Architect</td>
+									<td><a href="/admin/notice_detail">System Architect</a></td>
 									<td>Edinburgh</td>
 									<td>61</td>
 									<td>2011/04/25</td>

@@ -58,6 +58,12 @@ public class AdminController {
 		model.addAttribute("main_jsp", "notice_update.jsp");
 		return "admin/main";
 	}
+	@GetMapping("/admin/notice_detail")
+	public String notice_detail(Model model)
+	{
+		model.addAttribute("main_jsp", "notice_detail.jsp");
+		return "admin/main";
+	}
 	// 환불
 	@GetMapping("/admin/refund")
 	public String refund(Model model)
