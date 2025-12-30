@@ -36,6 +36,13 @@
 							<li><b>연락처</b><span style="font-size: 14px; margin-left: 10px;">phone</span></li>
 							<li><b>영업시간</b><span style="font-size: 14px; margin-left: 10px;">hours</span></li>
 						</ul>
+						<br>
+						<p style="color: #800020; font-size: 16px; margin: 10px;">
+							- 예매 후 1시간 이내로 미 결제시 예매가 자동 취소되는 점 양해 부탁드립니다<br>
+							- 이용 전 예약변경을 희망하실 경우 업체로 유선 연락 부탁드립니다<br>
+							- 상영시에 음식물 섭취는 제한 되오니 이점 참고하여 이용 부탁드립니다
+						</p>
+						
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">

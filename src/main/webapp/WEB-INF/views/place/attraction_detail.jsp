@@ -22,11 +22,11 @@
     <div class="content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="margin-bottom: 30px;">
                     <div class="mb40">
+                   		<img src="/images/left-image.jpg" class="thumbnail" style="float: left; margin: 0px 30px 0px 0px; width: 300px; height: 280px;">
                    		<span class="meta-author">타입명 / 관광명소 </span> 
-                    	<img src="/images/left-image.jpg" class="alignleft img-responsive">
-                    	<h2>장소 이름(name)</h2>
+                    	<h2 style="font-weight: bold;">장소 이름(name)</h2>
                     	<ul style="list-style: none;">
 							<li><b>주소</b><span style="font-size: 14px; margin-left: 10px;">address</span></li>
 							<li><b>교통정보</b><span style="font-size: 14px; margin-left: 10px;">parking</span></li>
@@ -35,10 +35,9 @@
 							<li><b>문의전화</b><span style="font-size: 14px; margin-left: 10px;">phone</span></li>
 						</ul>
                     </div>
-                    <p>소개...intro</p>
                 </div>
             </div>
-            <div style="position: absolute; left: 64%;">
+            <div style="position: absolute; left: 67%;">
 		    	<table class="table">
 		    		<tbody>
 			    		<tr>
@@ -60,7 +59,7 @@
 				<div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px;">
 			   		<div style="display:inline; width: 1155px; ">
 						<div style="display:flex; flex-wrap:wrap; gap:12px; width:100%;  margin-bottom: 60px; margin-left: 32px; padding-top: 40px;">
-							<p>상세 내용</p>
+							<p>소개...intro</p>
 						</div>
 						<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 60%; left: 20%; margin-bottom: 30px;">
 							<!-- Indicators -->
