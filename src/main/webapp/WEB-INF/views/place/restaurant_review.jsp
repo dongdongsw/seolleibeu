@@ -84,6 +84,12 @@
         min-width: 35px;
         text-align: right;
     }
+    .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 50px;
+}
 </style>
 </head>
 <body>
@@ -224,10 +230,10 @@
                                       <ul class="comment-list">
                                           <li>
                                               <div class="comment-body">
-                                                  <div class="comment-author"><img src="/images/user-pic-1.jpg" alt class="img-responsive"></div>
+                                                  <div class="comment-author"><img src="/images/user-pic-1.jpg" alt class="img-circle"></div>
                                                   <div class="comment-info">
                                                       <div class="comment-header">
-                                                          <h3 class="comments-title">Jerry Graf</h3>
+                                                          <h3 class="comments-title">Jerry Graf&nbsp;<span class="rating-star">★★★★</span></h3>
                                                           <div class="meta"> <span class="meta-date">April 24, 2020</span> </div>
                                                       </div>
                                                       <div class="comment-content">
@@ -240,10 +246,10 @@
                                       <ul class="comment-list">
                                           <li>
                                               <div class="comment-body">
-                                                  <div class="comment-author"><img src="/images/user-pic-3.jpg" alt class="img-responsive"></div>
+                                                  <div class="comment-author"><img src="/images/user-pic-3.jpg" alt class="img-circle"></div>
                                                   <div class="comment-info">
                                                       <div class="comment-header">
-                                                          <h3 class="comments-title">James Howard</h3>
+                                                          <h3 class="comments-title">James Howard&nbsp;<span class="rating-star">★★★★</span></h3>
                                                           <div class="meta"> <span class="meta-date">April 23, 2020</span> </div>
                                                       </div>
                                                       <div class="comment-content">
@@ -256,10 +262,10 @@
                                       <ul class="comment-list">
                                           <li>
                                               <div class="comment-body">
-                                                  <div class="comment-author"><img src="/images/user-pic-3.jpg" alt class="img-responsive"></div>
+                                                  <div class="comment-author"><img src="/images/user-pic-3.jpg" alt class="img-circle"></div>
                                                   <div class="comment-info">
                                                       <div class="comment-header">
-                                                          <h3 class="comments-title">James Howard</h3>
+                                                          <h3 class="comments-title">James Howard&nbsp;<span class="rating-star">★★★★</span></h3>
                                                           <div class="meta"> <span class="meta-date">April 23, 2020</span> </div>
                                                       </div>
                                                       <div class="comment-content">
@@ -272,10 +278,21 @@
                                   </div>
                               </div>
                           </div>
-                  </div>
-              </div>
-          </div>
-				</div>
+                  		</div>
+	                  			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<div class="st-pagination">
+										<ul class="pagination">
+											<li><a href="#">Previous</a></li>
+											<li><a href="#" class="active">1</a></li>
+											<li><a href="#">2</a></li>
+											<li><a href="#">3</a></li>
+											<li><a href="#">Next</a></li>
+										</ul>
+									</div>
+								</div>
+		            	  </div>
+		          		</div>
+					</div>
 				</div>
             </div>
             </div>
