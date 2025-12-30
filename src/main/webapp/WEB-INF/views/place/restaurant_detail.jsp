@@ -24,7 +24,7 @@
     	<div style="display: flex;">
 	    	<a><i class="fa-regular fa-heart" style="padding-top:1px; font-size: 30px; color: black;"></i></a>
 	    	<a><i class="fa-regular fa-thumbs-up" style="padding-left:15px; font-size: 30px; color: black;"></i></a>
-	    	<a><i class="fa-regular fa-eye" style="padding-top:1px; padding-left:15px; font-size: 30px; color: black;"><span style="font-size: 20px; padding-left: 3px;">1</span></i></a>	    	
+	    	<i class="fa-regular fa-eye" style="padding-top:1px; padding-left:15px; font-size: 30px; color: black;"><span style="font-size: 20px; padding-left: 3px;">1</span></i>	    	
     	</div>
     </div>
 	<div class="content">
@@ -79,11 +79,17 @@
 			                   <p>Mauris sit amet diam non nisl maximus porta vel at diam. Maecenas volutpat velit turpis, et scelerisque ipsum venenatis eu. Mauris et neque feugiat, pulvinar velit sed, lobortis neque. Nullam a felis laoisce luctust placerat molestie.</p>
 			                   
 			           </div>
-			       </div>
-			       <hr>
-			   </div>
-			   <div style="border: 1px solid black; width: 1155px;">
-				<div style="display:flex; flex-wrap:wrap; gap:12px; width:100%;  margin-bottom: 60px; margin-left: 50px;">
+					</div>
+			    	<hr>
+			   	</div>
+			   	<div class="detail-wrap" style="width:1155px;  ">
+			   	<ul class="nav nav-tabs" style=" width: 1155px;">
+				  <li class="active"><a href="#">상세보기</a></li>
+				  <li><a href="#">리뷰</a></li>
+				</ul>
+			   <div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px;">
+			   <div style="display:inline; width: 1155px; ">
+				<div style="display:flex; flex-wrap:wrap; gap:12px; width:100%;  margin-bottom: 60px; margin-left: 32px; padding-top: 40px;">
 				  <div style="width:200px; border:1px solid #ddd; padding:12px;">
 				    <div style="font-weight:500;">아메리카노</div>
 				    <div style="margin-top:6px;">4,000원</div>
@@ -154,7 +160,7 @@
 				  </div>
 				</div>
 				
-				<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 60%; left: 24%; margin-bottom: 30px;">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 60%; left: 20%; margin-bottom: 30px;">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
 					  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -204,7 +210,7 @@
 					    <span class="sr-only">Next</span>
 					  </a>
 				</div>
-				<div style="display:flex; gap:10px; margin-top:15px; overflow-x:auto; width: 1153px; margin-bottom: 30px;">
+				<div style="display:flex; gap:10px; margin-top:15px; overflow-x:auto; width: 1115px; margin-bottom: 30px;">
 					<img src="/images/post-img.jpg"
 					     style="height:80px; cursor:pointer; opacity:1; border:2px solid #000;" data-target="#myCarousel" data-slide-to="0">
 					<img src="/images/post-img.jpg"
@@ -222,9 +228,11 @@
 					<img src="/images/post-img.jpg"
 					     style="height:80px; cursor:pointer; opacity:0.6;" data-target="#myCarousel" data-slide-to="7">
 					</div>
-					
+				</div>
+            </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
 </body>
