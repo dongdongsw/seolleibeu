@@ -34,4 +34,10 @@ public class PlaceController {
 		model.addAttribute("main_jsp","../place/restaurant_detail.jsp");
 		return "main/main";
 	}
+	@GetMapping("/place/restaurant/review")
+	public String place_restaurant_review(Model model) {
+		
+		model.addAttribute("main_jsp","../place/restaurant_review.jsp");
+		return "main/main";
+	}
 }
