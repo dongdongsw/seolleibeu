@@ -70,4 +70,12 @@ public class MypageController {
 		   model.addAttribute("my_jsp", "../mypage/my_course.jsp");
 		   return "mypage/my_main";
 	   }
+	   
+	   @GetMapping("/mypage/my_favorite")
+	   public String my_favorite(Model model)
+	   {
+		   model.addAttribute("my_jsp", "../mypage/my_favorite.jsp");
+		   return "mypage/my_main";
+	   }
+	   
 }

@@ -69,9 +69,9 @@
 					<div class="sidenav">
 						<ul class="listnone">
 							<li><a href="../mypage/my_info">내 정보</a></li>
-							<li><a href="#">즐겨찾기</a></li>
+							<li><a href="#"  class="active">즐겨찾기</a></li>
 							<li><a href="../mypage/my_bookmark">북마크</a></li>
-							<li><a href="../mypage/my_course" class="active">나의 코스</a></li>
+							<li><a href="../mypage/my_course">나의 코스</a></li>
 							<li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
 							<li><a href="../mypage/my_reply">내가 쓴 댓글</a></li>
 							<li><a href="#">예약 내역</a></li>
