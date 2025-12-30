@@ -7,10 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PlaceController {
 	
-	@GetMapping("/place/culture_list")
-	public String culture_list(Model model) {
+	@GetMapping("/place/culture/list")
+	public String place_culture_list(Model model) {
 		
 		model.addAttribute("main_jsp", "../place/culture_list.jsp");
+		return "main/main";
+	}
+	
+	@GetMapping("/place/culture/detail")
+	public String place_culture_detail(Model model) {
+		
+		model.addAttribute("main_jsp","../place/culture_detail.jsp");
 		return "main/main";
 	}
 	

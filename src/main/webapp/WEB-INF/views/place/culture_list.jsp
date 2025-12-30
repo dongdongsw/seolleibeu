@@ -48,7 +48,7 @@
             <div class="row" style="margin-top: 10px;">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="project-img mb30 thumbnail">
-                        <a href="service-detail.html" class="imghover">
+                        <a href="/place/culture/detail" class="imghover">
                         	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
