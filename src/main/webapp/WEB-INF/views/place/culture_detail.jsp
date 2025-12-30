@@ -117,6 +117,29 @@
    			</div>
    		</div>
 	</div>
+	
+	
+	
+	
+	<!-- 탭 -->
+	<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#menu1">상세보기</a></li>
+    <li><a data-toggle="tab" href="#menu2">리뷰</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="menu1" class="tab-pane fade in active">
+      탭1
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      탭2
+    </div>
+  </div>
+</div>
+	
+	
+	
 	<script>
 		function changeQ(n) {
 		    var el = document.getElementById('qty_val');
