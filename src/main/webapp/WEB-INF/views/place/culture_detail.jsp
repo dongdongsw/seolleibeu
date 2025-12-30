@@ -49,34 +49,39 @@
                     <!-- widget start -->
                     <div class="widget widget-recent-post">
                         <!-- widget recent post -->
-                        <h3 class="widget-title"> <b>티켓 예매</b> </h3>
+                        <h3 class="widget-title"><b>티켓 예매</b></h3>
                         <ul class="listnone widget-recent-post">
                             <li>
-                                <div class="row calendar">
-									<p>달력달력달력달력달력달력달력달력달력달력달력달력달력달력달력달력달력달력달력달력</p>
-                                </div>
+                                <div class="option_date" style="font-weight: bold; min-height: 30px;">날짜 선택</div>
                             </li>
                             <li>
-                                <div class="row date">
-									<p>시간시간시간시간시간시간시간시간시간시간시간시간시간시간시간시간시간시간시간시간</p>
-                                </div>
+                                <div class="option_time" style="font-weight: bold; min-height: 30px;">시간 선택</div>
                             </li>
                             <li>
-                                <div class="row option_one">
-									<p>옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션</p>
-                                </div>
+                                <div class="option_two" style="font-weight: bold; min-height: 30px;">옵션1 선택</div>
                             </li>
                             <li>
-                                <div class="row option_two">
-									<p>옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션옵션</p>
-                                </div>
+                                <div class="option_two" style="font-weight: bold; min-height: 30px;">옵션2 선택</div>
                             </li>
-                            <li>
-                                <div class="row amount">
-									<p>수량수량수량수량수량수량수량수량수량수량수량수량수량수량수량수량수량수량수량수량</p>
-                                </div>
-                            </li>
-                        </ul>
+                        	<li>
+		                        <div id="selected-option-output" style="margin-bottom: 35px; font-weight: bold; min-height: 30px;">선택옵션 출력</div>
+							    <div style="display: flex; align-items: center; margin-bottom: -25px; margin-left: 75px;">
+							        <span style="margin-right: 10px; font-size: 14px;"><b>수량</b></span>
+							        <div style="display: flex; align-items: stretch; margin-right: 15px;">
+							            <input type="text" id="qty_val" value="1" readonly="readonly" style="width: 38px; height: 32px; text-align: center; border: 1px solid #ccc; border-right: none; 
+							                          padding: 0; margin: 0; font-size: 15px; background-color: #fff; outline: none;">
+							            <div style="display: flex; flex-direction: column; width: 24px;">
+							                <button type="button" onclick="changeQ(1)" style="width: 100%; height: 16px; line-height: 14px; font-size: 10px; padding: 0; 
+							                               border: 1px solid #ccc; background: black; cursor: pointer; display: block; outline: none; color: white;">+</button>
+							                <button type="button" onclick="changeQ(-1)" style="width: 100%; height: 16px; line-height: 14px; font-size: 10px; padding: 0; 
+							                               border: 1px solid #ccc; border-top: none; background: black; cursor: pointer; display: block; outline: none; color: white;">-</button>
+							            </div>
+							        </div>
+							        <button type="button" style="background-color: black; color: white; border: none; border-radius: 20px; 
+							                       padding: 0 20px; height: 32px; font-weight: bold; font-size: 13px; cursor: pointer; outline: none;">예매하기</button>
+							    </div>
+						    </li>
+					    </ul>
                     </div>
                 </div>
             </div>
@@ -107,6 +112,9 @@
             		</div>
         		</div>
     		</div>
+    		<div class="text-right" style="margin-top: 10px;">
+   				<button class="btn btn-sm" style="background-color: black; color: white;" onclick="javasciprt:history.back()">목록</button>
+   			</div>
    		</div>
 	</div>
 </body>

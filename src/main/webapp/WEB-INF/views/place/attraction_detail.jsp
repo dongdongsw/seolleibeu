@@ -114,6 +114,9 @@
             		</div>
         		</div>
     		</div>
+    		<div class="text-right" style="margin-top: 10px;">
+   				<button class="btn btn-sm" style="background-color: black; color: white;" onclick="javasciprt:history.back()">목록</button>
+   			</div>
    		</div>
 	</div>
 </body>
