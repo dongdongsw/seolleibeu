@@ -100,13 +100,7 @@
             </div>
         </div>
     </div>
-    <div style="position: absolute ; top: 48%; left: 70%;">
-    	<div style="display: flex;">
-	    	<a><i class="fa-regular fa-heart" style="padding-top:1px; font-size: 30px; color: black;"></i></a>
-	    	<a><i class="fa-regular fa-thumbs-up" style="padding-left:15px; font-size: 30px; color: black;"></i></a>
-	    	<i class="fa-regular fa-eye" style="padding-top:1px; padding-left:15px; font-size: 30px; color: black;"><span style="font-size: 20px; padding-left: 3px;">1</span></i>	    	
-    	</div>
-    </div>
+
 	<div class="content">
         <div class="container">
             <div class="row">
@@ -288,6 +282,24 @@
         </div>
     </div>
     </div>
+    </div>
+    <div style="position: absolute ; top: 52%; left: 77%;">
+    	<table class="table">
+    		<tbody>
+	    		<tr>
+	    			<td style="border: none;"><a><i class="fa-regular fa-star" style="padding-top:1px; font-size: 22px; color: black;"></i></a></td>
+	    			<td style="border: none;"></td>
+	    		</tr>
+	    		<tr>
+	    			<td style="border: none;"><a><i class="fa-regular fa-thumbs-up" style=" font-size: 22px; color: black;"></i></a></td>
+	    			<td style="border: none;">1</td>
+	    		</tr>
+	    		<tr>
+	    			<td style="border: none;"><i class="fa-regular fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>
+	    			<td style="border: none;">1</td>
+	    		</tr>
+	    	</tbody>	    	
+    	</table>
     </div>
 </body>
 </html>
