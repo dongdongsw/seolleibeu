@@ -251,7 +251,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="text-center">
                         <h1 style="font-weight: bold; font-size: 40px;">나만의 코스 만들기</h1>
-                        <a href="#" class="btn btn-white" target="_blank">Go!</a> </div>
+                        <a href="/course/create" class="btn btn-white">Go!</a> </div>
                 </div>
             </div>
         </div>
