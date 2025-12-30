@@ -150,6 +150,7 @@ html {
   margin-top: 25px;
   border-radius: 15px;
   padding: 20px 30px;
+  max-height: 2000px;
 }
 
 .info-btn {

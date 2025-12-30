@@ -215,14 +215,18 @@ a {
 	width: 350px;
 	margin: 0px auto;
 	padding-top: 50px;
+	margin: 0px;
 }
 
 .input-group>.form-control {
 	border-right: none;
+	border-radius: 15px 0px 0px 15px;
 }
 
 .input-group-addon {
 	background-color: white !important;
+	border-radius: 0px 15px 15px 0px;
+	color: #bdb6b5 !important;
 }
 
 .cate {
@@ -471,28 +475,59 @@ a {
 	color: white !important;
 	font-weight: 700 !important;
 }
-.place-deail {
-	height: 900px;
+.place-detail {
+	height: 920px;
 	margin: 50px;
 	background-color: white;
 	border-radius: 15px;
 	border: 1px solid #f999b7;
 	box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-.place-deail-title {
-	margin-top: 50px;	
+.place-detail-title {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.place-deail-title > h2 {
+.place-detail-title > div > h2 {
 	font-weight: bold;
 }
-.place-deail-img {
+.place-detail-img {
 	margin: 50px 0 30px 0;
 }
-.place-deail-content {
+.place-detail-content {
 	width: 800px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;  
-  text-align: center;   
+    margin-left: 100px;
+}
+.place-detail-btn {
+	margin-left: 100px;
+	width: 800px;
+	margin-top: 50px;
+}
+.place-detail-btn > button {
+	background-color: black;
+	color: white;
+	font-weight: 500;
+	border-radius: 10px;
+}
+.second > h2 {
+	color: #f5f5f5;
+	background-color: #f999b7;
+}
+.post-block-img {
+	margin-right: 20px; 
+	height: 300px; 
+	height: 300px;
+}
+.post-block {
+	display: flex;
+}
+.meta {
+	margin-left: 10px;
+}
+.post-content > p {
+	font-size: 12px
+}
+.widget-search {
+	margin-left: 30px;
 }

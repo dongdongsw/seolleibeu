@@ -8,10 +8,6 @@
 <title>Insert title here</title>
 <link href="/css/course.css" rel="stylesheet">
 </head>
-<style type="text/css">
-
-</style>
-
 <body>
 	<div class="page-header">
 		<div class="container">
@@ -64,7 +60,6 @@
 					<button class="mc-btn prev" aria-label="prev">‹</button>
 					<div class="mc-viewport" id="carousel">
 						<c:forEach begin="0" end="15" varStatus="s">
-
 							<div class="mc-card">
 								<div class="place-index">
 									<h2>${s.count}</h2>
@@ -77,35 +72,41 @@
 								</div>
 							</div>
 						</c:forEach>
-
 					</div>
-
 					<button class="mc-btn next" aria-label="next">›</button>
 				</div>
 			</div>
 			<div class="row">
-				<div class="place-deail">
-					<div class="place-deail-title text-center">
+				<div class="place-detail">
+					<div class="place-detail-title text-center">
+					  <div class="place-index second">
+							<h2>1</h2>
+					</div>
+					&nbsp;&nbsp;
+					<div>
 						<h2>서울 서울서울</h2>
 					</div>
-					<div class="place-deail-address text-center">
-						<p>주소주소주소주소주소주소주소주소 | 카테고리</p>
+						
+					</div>
+					<div class="place-detail-address text-center">
+						<p>서울특별시 동교동 쌍용구 23 | 명소</p>
 					</div>
 					
-					<div class="place-deail-img text-center">
-						<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=96376680-1aa2-4a72-b00d-98eee8043165" width="800" height="500">
+					<div class="place-detail-img text-center">
+						<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=96376680-1aa2-4a72-b00d-98eee8043165" width="800" height="450">
 					</div>
-					<div class="place-deail-content text-center">
-					 
+					<div class="place-detail-content">	 
 					   한양도성은 조선의 건국과 함께 축성한 성곽으로 유네스코 세계유산 잠정 목록에 올라있다. 총 길이는
 									18km에 이르며 가장 아름다운 곳은 흥인지문부터 혜화문까지 낙산구간이다.
 									한양도성은 조선의 건국과 함께 축성한 성곽으로 유네스코 세계유산 잠정 목록에 올라있다. 총 길이는
 									18km에 이르며 가장 아름다운 곳은 흥인지문부터 혜화문까지 낙산구간이다.
 									한양도성은 조선의 건국과 함께 축성한 성곽으로 유네스코 세계유산 잠정 목록에 올라있다. 총 길이는
 									18km에 이르며 가장 아름다운 곳은 흥인지문부터 혜화문까지 낙산구간이다.
-					  
-					  <button>자세히 보기</button>
 					</div>
+					<div class="place-detail-btn text-right">
+						<button>자세히 보기</button>
+					</div>
+					
 				</div>
 			</div>
 		</div>
