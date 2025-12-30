@@ -366,15 +366,15 @@
     	<table class="table">
     		<tbody>
 	    		<tr>
-	    			<td style="border: none;"><a><i class="fa-regular fa-star" style="padding-top:1px; font-size: 22px; color: black;"></i></a></td>
+	    			<td style="border: none;"><a><i class="fa fa-star-o" style="padding-top:1px; font-size: 22px; color: black;"></i></a></td>
 	    			<td style="border: none;"></td>
 	    		</tr>
 	    		<tr>
-	    			<td style="border: none;"><a><i class="fa-regular fa-thumbs-up" style=" font-size: 22px; color: black;"></i></a></td>
+	    			<td style="border: none;"><a><i class="fa fa-thumbs-o-up" style=" font-size: 22px; color: black;"></i></a></td>
 	    			<td style="border: none;">1</td>
 	    		</tr>
 	    		<tr>
-	    			<td style="border: none;"><i class="fa-regular fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>
+	    			<td style="border: none;"><i class="fa fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>
 	    			<td style="border: none;">1</td>
 	    		</tr>
 	    	</tbody>	    	
