@@ -158,13 +158,17 @@ a {
 .side-menu {
 	width: 5%;
 	height: 90vh;
+	background-color: #f8f6f2;
 }
-
+.empty {
+	width: 8%;
+	background-color: #f8f6f2;
+}
 .side-menu>.menu {
 	color: #d2cfcb;
 	font-weight: bold;
 	width: 70px;
-	margin: 20px 20px 20px 0;
+	margin: 20px 20px 20px 10px;
 }
 
 .side-menu>.active {
@@ -215,7 +219,6 @@ a {
 	width: 350px;
 	margin: 0px auto;
 	padding-top: 50px;
-	margin: 0px;
 }
 
 .input-group>.form-control {
@@ -225,7 +228,7 @@ a {
 
 .input-group-addon {
 	background-color: white !important;
-	border-radius: 0px 15px 15px 0px;
+	border-radius: 0px 15px 15px 0px !important;
 	color: #bdb6b5 !important;
 }
 
@@ -319,7 +322,7 @@ a {
 .start {
 	width: 10%;
 	align-content: center;
-	margin-left: 70px;
+	margin-left: 150px;
 }
 
 .cen {
