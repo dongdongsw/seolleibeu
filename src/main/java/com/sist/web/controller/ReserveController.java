@@ -12,4 +12,11 @@ public class ReserveController {
 		
 		return "main/main";
 	}
+	
+	@GetMapping("/reserve/reserve_detail")
+	public String reserve_detail(Model model) {
+		model.addAttribute("main_jsp", "../reserve/reserve_detail.jsp");
+		
+		return "main/main";
+	}
 }

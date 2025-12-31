@@ -34,16 +34,16 @@
 
 									<!-- 가운데 정보 -->
 									<div class="mypage-reply">
-										<h4 class="reply-title">홍대 데이트 코스</h4>
-										<p style="margin-bottom: 10px">정말 좋은곳입니다.</p>
+										<h4 class="reply-title">장소명</h4>
+										<p style="margin-bottom: 10px;"><b>가격  </b>10,000 원 &nbsp;<b>옵션정보  </b>값</p>
 										<div class="course-meta">
-											리뷰 쓴 날짜 : <span class="date">2025-01-05</span>
+											예약 등록일시 : <span class="date">2025-12-31 17:25:50</span>
 										</div>
 									</div>
 
 									<!-- 오른쪽 버튼 -->
 									<div class="course-actions">
-										<a href="#" class="btn btn-xs">예약 상세내역</a>
+										<a href="/reserve/reserve_detail" class="btn btn-xs">예약 상세내역</a>
 									</div>
 								</div>
 								<hr>

@@ -12,7 +12,8 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="page-caption">
-                        <h1 class="page-title">예매 결과</h1>
+                        <h1 class="page-title">예매</h1>
+                        <p>결과 확인</p>
                     </div>
                 </div>
             </div>
@@ -39,8 +40,8 @@
 											<span style="font-size: 14px;"><b>수량&nbsp;</b>값</span><br>
 											<span style="font-size: 14px;"><b>결제금액&nbsp;</b>값</span><br>
 											<span style="font-size: 14px;"><b>예약상태&nbsp;</b>예약대기</span><br>
-											<a class="btn btn-default btn-sm" style="margin-top: 10px;">결제하기</a>&nbsp;
-											<a class="btn btn-default btn-sm" style="margin-top: 10px;">내 예매내역</a><br>
+											<a href="#" class="btn btn-default btn-sm" style="margin-top: 10px;">결제하기</a>&nbsp;
+											<a href="/mypage/my_reserve" class="btn btn-default btn-sm" style="margin-top: 10px;">내 예매내역</a><br>
 										</div>
 									</div>
 								</div>

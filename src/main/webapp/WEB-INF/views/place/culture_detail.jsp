@@ -66,7 +66,7 @@
                             </li>
                         	<li>
 		                        <div id="selected-option-output" style="margin-bottom: 35px; font-weight: bold; min-height: 30px;">선택옵션 출력</div>
-							    <div style="display: flex; align-items: center; margin-bottom: -25px; margin-left: 75px;">
+							    <div style="display: flex; align-items: center; margin-bottom: -25px; margin-left: 65px;">
 							        <span style="margin-right: 10px; font-size: 14px;"><b>수량</b></span>
 							        <div style="display: flex; align-items: stretch; margin-right: 15px;">
 							            <input type="text" id="qty_val" value="1" readonly="readonly" style="width: 38px; height: 32px; text-align: center; border: 1px solid #ccc; border-right: none; 
@@ -101,34 +101,26 @@
 		    	</table>
 		    </div>
             <div class="container">
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#menu1">상세보기</a></li>
-    <li><a data-toggle="tab" href="#menu2">리뷰</a></li>
-  </ul>
-
-  <div class="tab-content">
-    <div id="menu1" class="tab-pane fade in active">
-		<jsp:include page="culture_list.jsp"></jsp:include>
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      <jsp:include page="restaurant_review.jsp"></jsp:include>
-    </div>
-  </div>
-</div>
+			  <ul class="nav nav-tabs">
+			    <li class="active"><a data-toggle="tab" href="#menu1">상세보기</a></li>
+			    <li><a data-toggle="tab" href="#menu2">리뷰</a></li>
+			  </ul>
+			
+			  <div class="tab-content">
+			    <div id="menu1" class="tab-pane fade in active">
+					<jsp:include page="culture_detail_images.jsp"></jsp:include>
+			    </div>
+			    <div id="menu2" class="tab-pane fade">
+			      <jsp:include page="restaurant_review.jsp"></jsp:include>
+			    </div>
+			  </div>
+			</div>
     		<div class="text-right" style="margin-top: 10px;">
    				<button class="btn btn-sm" style="background-color: black; color: white;" onclick="javasciprt:history.back()">목록</button>
    			</div>
    		</div>
 	</div>
-	
-	
-	
-	
 	<!-- 탭 -->
-	
-	
-	
-	
 	<script>
 		function changeQ(n) {
 		    var el = document.getElementById('qty_val');
