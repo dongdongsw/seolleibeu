@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+
 
 			   <div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px;">
 			   <div class="rating-summary">
@@ -127,6 +121,7 @@
                                   </div>
                               </div>
                           </div>
+                          </div>
                   		</div>
 	                  			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<div class="st-pagination">
@@ -142,56 +137,9 @@
 		            	  </div>
 		          		</div>
 					</div>
-					<div class="modal-bg" v-if="isModalOpen">
-				     <div class="modal-box">
-				      <h4 class="mb-3"><a class="dropdown-item" @click.prevent="openModal">리뷰 더보기</a></h4>
-				       <table class="table table-sm">
-				        <tr>
-				         <td width="30%">작성자</td>
-				         <td>{{modalData.writer}}</td>
-				        </tr>
-				        <tr>
-				         <td width="30%">작성자</td>
-				         <td>{{modalData.writer}}</td>
-				        </tr>
-				        <tr>
-				         <td width="30%">작성자</td>
-				         <td>{{modalData.writer}}</td>
-				        </tr>
-				        <tr>
-				         <td width="30%">작성자</td>
-				         <td>{{modalData.writer}}</td>
-				        </tr>
-				        <tr>
-				         <td width="30%">작성자</td>
-				         <td>{{modalData.writer}}</td>
-				        </tr>
-				       </table>
-				       <div class="text-right">
-				        <button class="btn btn-secondary btn-sm" @click="closeModal">닫기</button>
-				       </div>
-				     </div>
-				    </div>
+					
 				</div>
-            </div>
-    <div style="position: absolute ; top: 52%; left: 77%;">
-    	<table class="table">
-    		<tbody>
-	    		<tr>
-	    			<td style="border: none;"><a><i class="fa fa-star-o" style="padding-top:1px; font-size: 22px; color: black;"></i></a></td>
-	    			<td style="border: none;"></td>
-	    		</tr>
-	    		<tr>
-	    			<td style="border: none;"><a><i class="fa fa-thumbs-o-up" style=" font-size: 22px; color: black;"></i></a></td>
-	    			<td style="border: none;">1</td>
-	    		</tr>
-	    		<tr>
-	    			<td style="border: none;"><i class="fa fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>
-	    			<td style="border: none;">1</td>
-	    		</tr>
-	    	</tbody>	    	
-    	</table>
-    </div>
+            </div></div></div></div>
     <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
     <!-- 리뷰 더보기 모달창 -->
     <script>
@@ -217,5 +165,3 @@
      })
      reviewApp.mount('#reviewApp')
     </script>
-</body>
-</html>
