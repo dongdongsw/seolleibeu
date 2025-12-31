@@ -16,7 +16,7 @@
 
 <body>
 
-	<div class="content auth-wrapper">
+	<div class="content auth-wrapper" style="margin-top: -17px;">
 		<div class="container">
 			<div class="row">
 				<div class="mypage-sizing">
@@ -74,7 +74,7 @@
 				</div>
 			</div>
 			
-			<div class="st-pagination" style="position: absolute; left:52.5%; top: 19%;">
+			<div class="st-pagination" style="position: absolute; left:52.5%; top: 17%;">
 				<ul class="pagination">
 					<li><a href="#" style="border-radius: 15px;" class="active">음식점</a></li>
 					<li><a href="#" style="border-radius: 15px;">문화/체험</a></li>

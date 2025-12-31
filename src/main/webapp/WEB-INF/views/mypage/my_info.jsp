@@ -12,7 +12,7 @@
 
 </head>
 <body>
-<div class="content auth-wrapper">
+<div class="content auth-wrapper" style="margin-top: 20px;">
   <div class="container">
     <div class="row">
 	  <div class="mypage-sizing">
@@ -23,7 +23,8 @@
 		
           <div class="info-card" style="gap:40px;">
             <div class="profile" style="margin-bottom: 20px;">
-              <img src="${empty sessionScope.profile ? '../images/profile.jpg' : sessionScope.profile}">
+              <img src="${empty sessionScope.profile ? '../images/profile.png' : sessionScope.profile}">
+              <button style="margin-left: 340px;margin-top: 5px;" class="info-btn">프로필 변경</button>
             </div>
 
             <div style="flex:1;">
@@ -33,6 +34,7 @@
                 <tr><th>이메일</th><td>happy@gmail.com</td></tr>
                 <tr><th>연락처</th><td>010-1234-5678</td></tr>
                 <tr><th>가입일</th><td>2025-12-27</td></tr>
+                <tr><th>최근 수정일</th><td>2026-01-01</td></tr>
               </table>
               
                 <button type="button" class="info-btn" style="margin-left: 650px;" onclick="location.href='../mypage/my_update'">수정</button>
