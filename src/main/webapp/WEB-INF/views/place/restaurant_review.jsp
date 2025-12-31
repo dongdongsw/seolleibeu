@@ -5,10 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="/css/place/restaurant_detail.css" rel="stylesheet">
 </head>
 <body>
-			   	<div class="detail-wrap" style="width:1155px;">
+
 			   <div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px;">
 			   <div class="rating-summary">
 			       <div class="rating-score">
@@ -175,11 +174,6 @@
 				    </div>
 				</div>
             </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
     <div style="position: absolute ; top: 52%; left: 77%;">
     	<table class="table">
     		<tbody>

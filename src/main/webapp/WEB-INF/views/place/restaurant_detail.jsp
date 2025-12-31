@@ -9,14 +9,8 @@
 </head>
 <body>
 
-	
-					<div class="detail-wrap" style="width: 1155px;">
-						<ul class="nav nav-tabs" style="width: 1155px;">
-							<li class="${tab == 'detail'?'active':'' }"><a href="/place/restaurant/detail">상세보기</a></li>
-							<li class="${tab == 'review'?'active':'' }"><a href="/place/restaurant/review">리뷰</a></li>
-						</ul>
+						 
 						<div class="detailborder">
-
 							<div class="detailinline">
 								<div class="detailpadding">
 									<c:forEach begin="0" end="17">
