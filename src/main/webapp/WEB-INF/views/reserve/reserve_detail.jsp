@@ -38,19 +38,24 @@
 											</ul><br>
 											<ul style="list-style: none;">
 												<li style="font-size: 18px;"><b>예약옵션&nbsp;</b>AWS를 통한 CI/CD 풀스택 과정</li>
-												<li style="font-size: 18px; margin-left: 72px;"><b>&nbsp;</b>옵션가격 x 수량 = 결제금액</li>
+												<li style="font-size: 18px; margin-left: 72px;"><b>&nbsp;</b>10,000 원 x 2 = 20,000 원</li>
 											</ul><br>
 											<ul style="list-style: none;">
 												<li style="font-size: 18px;"><b>닉네임&nbsp;</b>이철우</li>
 												<li style="font-size: 18px;"><b>연락처&nbsp;</b>010-1234-5678</li>
-												<li style="font-size: 18px;"><b>결제금액&nbsp;</b>10,000 원</li>
+												<li style="font-size: 18px;"><b>이메일&nbsp;</b>cheol0904@naver.com</li>
+											</ul><br>
+											<ul style="list-style: none;">
+												<li style="font-size: 18px;"><b>결제금액&nbsp;</b>20,000원</li>
+												<li style="font-size: 18px;"><b>결제수단 &nbsp;</b>카드결제</li>
+												<li style="font-size: 18px;"><b>결제일시&nbsp;</b>2025-12-31 17:28:25</li>
 											</ul>
 										</div>
 									</div>
 								</div>
 								<div class="row text-right" style="margin-right: 5px;">
-									
-									<a href="javascript:history.back()" class="btn btn-default btn-sm" style="margin-top: 10px;">목록</a><br>
+									<a href="" class="btn btn-default btn-sm" style="margin-top: 10px;">예약내역 삭제</a>
+									<a href="javascript:history.back()" class="btn btn-default btn-sm" style="margin-top: 10px;">목록</a>
 								</div>
 							</div>
 						</div>
