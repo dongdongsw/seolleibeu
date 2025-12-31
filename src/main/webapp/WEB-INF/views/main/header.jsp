@@ -26,7 +26,7 @@
                                 <li><a href="/place/culture/list" title="Contact Us">문화/체험</a> </li>
                                 <li><a href="/place/attraction/list" title="Contact Us">관광명소</a> </li>
                                 <li><a href="/admin" title="Error">관리자</a> </li>
-                                <li><a href="contact.html" title="Contact Us">공지사항</a> </li>
+                                <li><a href="/notice/list" title="Contact Us">공지사항</a> </li>
                                 <li><a href="/mypage/my_info" title="Contact Us">마이페이지</a> </li>
                                 
                                 <li>
