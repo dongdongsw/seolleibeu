@@ -46,7 +46,7 @@
             <li><a href="../mypage/my_course">나의 코스</a></li>
             <li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
             <li><a href="../mypage/my_reply">내가 쓴 댓글</a></li>
-            <li><a href="#">예약 내역</a></li>
+            <li><a href="../mypage/my_reserve">예약 내역</a></li>
             <li><a href="../mypage/my_refund">환불 내역</a></li>
             <li><a href="../mypage/my_pwd_delete">회원 탈퇴</a></li>
           </ul>

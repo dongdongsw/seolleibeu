@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>내가 쓴 댓글</title>
+<title>내가 쓴 리뷰</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link
 	href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700"
@@ -22,30 +22,32 @@
 			  <div class="mypage-sizing">
 				<div class="col-lg-9 col-md-9 col-sm-12">
 					<main class="mypage-main">
-						<h2>환불 내역</h2>
-						<div class="row">
-							<table class="table">
-							</table>
-							<table class="table">
-								<thead>
-									<tr>
-										<th width="10%" class="text-center">번호</th>
-										<th width="45%" class="text-center">상품명</th>
-										<th width="15%" class="text-center">환불 상태</th>
-										<th width="20%" class="text-center">환불 완료일</th>
-										<th width="10%" class="text-center"></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr v-for="#" :key="#">
-										<td width="10%" class="text-center">dd</td>
-										<td width="45%" class="text-left"><a href="#">dd</a></td>
-										<td width="15%" class="text-center">dd</td>
-										<td width="20%" class="text-center">dd</td>
-										<td width="10%" class="text-center"><button style="background-color: white;border: none;">•••</button></td>
-									</tr>
-								</tbody>
-							</table>
+						<h2>내가 쓴 리뷰</h2>
+
+						<div class="info-card">
+							<c:forEach begin="0" end="2">
+								<div class="post-block my-course-item" style="margin-bottom:0">
+									<!-- 왼쪽 이미지 -->
+									<div class="course-thumb">
+										<img src="images/post-img.jpg" alt="thumbnail">
+									</div>
+
+									<!-- 가운데 정보 -->
+									<div class="mypage-reply">
+										<h4 class="reply-title">홍대 데이트 코스</h4>
+										<p style="margin-bottom: 10px">정말 좋은곳입니다.</p>
+										<div class="course-meta">
+											리뷰 쓴 날짜 : <span class="date">2025-01-05</span>
+										</div>
+									</div>
+
+									<!-- 오른쪽 버튼 -->
+									<div class="course-actions">
+										<a href="#" class="btn btn-xs">예약 상세내역</a>
+									</div>
+								</div>
+								<hr>
+							</c:forEach>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="st-pagination">
 									<ul class="pagination">
@@ -58,6 +60,7 @@
 								</div>
 							</div>
 						</div>
+
 					</main>
 				</div>
 
@@ -70,8 +73,8 @@
 				            <li><a href="../mypage/my_course">나의 코스</a></li>
 				            <li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
 				            <li><a href="../mypage/my_reply">내가 쓴 댓글</a></li>
-				            <li><a href="../mypage/my_reserve">예약 내역</a></li>
-				            <li><a href="../mypage/my_refund" class="active">환불 내역</a></li>
+				            <li><a href="../mypage/my_reserve" class="active">예약 내역</a></li>
+				            <li><a href="../mypage/my_refund">환불 내역</a></li>
 				            <li><a href="../mypage/my_pwd_delete">회원 탈퇴</a></li>
 						</ul>
 					</div>

@@ -78,4 +78,10 @@ public class MypageController {
 		   return "mypage/my_main";
 	   }
 	   
+	   @GetMapping("/mypage/my_reserve")
+	   public String my_reserve(Model model)
+	   {
+		   model.addAttribute("my_jsp", "../mypage/my_reserve.jsp");
+		   return "mypage/my_main";
+	   }	   
 }

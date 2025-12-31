@@ -24,12 +24,12 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="testimonial-block bg-light pinside30 mb30">
-								<div class="post-block">
+							<div class="testimonial-block bg-light pinside30 mb30" style="padding: 10px;">
+								<div class="post-block" style="margin-top: 20px; margin-left: 15px;">
 									<div>
 										<img class="post-block-img" src="/images/left-image.jpg">
 									</div>
-									<div>
+									<div style="margin-left: 20px;">
 										<span class="meta-author">타입명</span>
 										<h1><span class="title" style="font-weight: bold;">장소명</span></h1>
 										<div class="reserve-info">
@@ -40,7 +40,7 @@
 											<span style="font-size: 14px;"><b>결제금액&nbsp;</b>값</span><br>
 											<span style="font-size: 14px;"><b>예약상태&nbsp;</b>예약대기</span><br>
 											<a class="btn btn-default btn-sm" style="margin-top: 10px;">결제하기</a>&nbsp;
-											<a class="btn btn-default btn-sm" style="margin-top: 10px;">내 예매내역</a>
+											<a class="btn btn-default btn-sm" style="margin-top: 10px;">내 예매내역</a><br>
 										</div>
 									</div>
 								</div>
