@@ -16,7 +16,7 @@
 					<div class="page-caption">
 						<h1 class="page-title">추천 코스</h1>
 						<p>
-							셀레이브 유저가 직접 추천하는 데이트 코스,<br> 셀렘 가득한 데이트를 즐겨보세요!
+							설레이브 유저가 직접 추천하는 데이트 코스,<br> 설렘 가득한 데이트를 즐겨보세요!
 						</p>
 					</div>
 				</div>
@@ -31,7 +31,7 @@
 						<div class="list-head">
 							<div class="widget widget-search col-md-3">
 								<form>
-									<div class="input-group">
+									<div class="input-group course-list" style="width: 420px">
 										<input type="text" class="form-control" placeholder="검색어를 입력하세요." aria-describedby="basic-addon2">
 										<span class="input-group-addon" id="basic-addon2">
 											<i class="fa fa-search"></i>
@@ -87,11 +87,11 @@
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="st-pagination">
 								<ul class="pagination">
-									<li><a href="#">&laquo;</a></li>
+									<li><a href="#">이전</a></li>
 									<li><a href="#" class="active">1</a></li>
 									<li><a href="#">2</a></li>
 									<li><a href="#">3</a></li>
-									<li><a href="#">&raquo;</a></li>
+									<li><a href="#">다음</a></li>
 								</ul>
 							</div>
 						</div>
