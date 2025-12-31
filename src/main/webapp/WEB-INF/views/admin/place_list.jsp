@@ -25,54 +25,57 @@
 				        </div>
 				    </div>
 				</div>
-				<div class="card-body">
-					<div class="table-responsive">
-						<table class="table table-bordered" id="dataTable" width="100%"
-							cellspacing="0">
-							<thead>
-								<tr>
-									<th style="width: 5%">번호</th>
-									<th style="width: 30%">이름</th>
-									<th style="width: 33%">주소</th>
-									<th style="width: 7%">카테고리</th>
-									<th style="width: 10%">전화번호</th>
-									<th style="width: 10%">작성일</th>
-									<th style="width: 5%"></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>123</td>
-									<td>쌍용강북교육센터</td>
-									<td>홍대입구 근처</td>
-									<td>문화</td>
-									<td>010-1234-1234</td>
-									<td>2011/04/25</td>
-									<td class="text-center">
-										<div class="dropdown">
-											<a href="#" data-toggle="dropdown"> <i
-												class="fas fa-ellipsis-h"></i>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right">
-												<a class="dropdown-item" href="#">상세보기</a>
+				<div style="height:630px;">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-bordered" id="dataTable" width="100%"
+								cellspacing="0">
+								<thead>
+									<tr>
+										<th style="width: 5%">번호</th>
+										<th style="width: 30%">이름</th>
+										<th style="width: 33%">주소</th>
+										<th style="width: 7%">카테고리</th>
+										<th style="width: 10%">전화번호</th>
+										<th style="width: 10%">작성일</th>
+										<th style="width: 5%"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>123</td>
+										<td>쌍용강북교육센터</td>
+										<td>홍대입구 근처</td>
+										<td>문화</td>
+										<td>010-1234-1234</td>
+										<td>2011/04/25</td>
+										<td class="text-center">
+											<div class="dropdown">
+												<a href="#" data-toggle="dropdown"> <i
+													class="fas fa-ellipsis-h"></i>
+												</a>
+												<div class="dropdown-menu dropdown-menu-right">
+													<a class="dropdown-item" href="#">상세보기</a>
+												</div>
 											</div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-						<div class="dataTables_wrapper">
-							<div class="dataTables_paginate paging_simple_numbers">
-								<ul class="pagination justify-content-center">
-									<li class="page-item active"><a class="page-link">1</a></li>
-									<li class="page-item"><a class="page-link">2</a></li>
-									<li class="page-item"><a class="page-link">3</a></li>
-									<li class="page-item"><a class="page-link">4</a></li>
-									<li class="page-item"><a class="page-link">5</a></li>
-									<li class="page-item"><a class="page-link">6</a></li>
-									<li class="page-item"><a class="page-link">7</a></li>
-								</ul>
-							</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="dataTables_wrapper" style="position: absolute; top: 90%; left: 40%;">
+									<div class="dataTables_paginate paging_simple_numbers">
+										<ul class="pagination justify-content-center">
+											<li class="page-item"><a class="page-link">&lt;</a></li>
+											<li class="page-item active"><a class="page-link">1</a></li>
+											<li class="page-item"><a class="page-link">2</a></li>
+											<li class="page-item"><a class="page-link">3</a></li>
+											<li class="page-item"><a class="page-link">4</a></li>
+											<li class="page-item"><a class="page-link">5</a></li>
+											<li class="page-item"><a class="page-link">6</a></li>
+											<li class="page-item"><a class="page-link">&gt;</a></li>
+										</ul>
+									</div>
+								</div>
 						</div>
 					</div>
 				</div>
