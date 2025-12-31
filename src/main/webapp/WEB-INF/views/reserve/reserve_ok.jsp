@@ -33,13 +33,14 @@
 										<span class="meta-author">타입명</span>
 										<h1><span class="title" style="font-weight: bold;">장소명</span></h1>
 										<div class="reserve-info">
-											<h3 class="menu-title" style="margin-top: 20px; font-weight: bold;">예매 옵션</h3>
+											<h3 class="menu-title" style="margin-top: 10px; font-weight: bold;">예매 옵션</h3>
 											<span style="font-size: 14px;"><b>옵션명&nbsp;</b>값</span><br>
 											<span style="font-size: 14px;"><b>옵션금액&nbsp;</b>값</span><br>
+											<span style="font-size: 14px;"><b>수량&nbsp;</b>값</span><br>
 											<span style="font-size: 14px;"><b>결제금액&nbsp;</b>값</span><br>
 											<span style="font-size: 14px;"><b>예약상태&nbsp;</b>예약대기</span><br>
-											<a class="btn btn-default btn-sm" style="margin-top: 20px;">결제하기</a>&nbsp;
-											<a class="btn btn-default btn-sm" style="margin-top: 20px;">내 예매내역</a>
+											<a class="btn btn-default btn-sm" style="margin-top: 10px;">결제하기</a>&nbsp;
+											<a class="btn btn-default btn-sm" style="margin-top: 10px;">내 예매내역</a>
 										</div>
 									</div>
 								</div>
