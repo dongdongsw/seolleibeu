@@ -22,7 +22,7 @@
 			  <div class="mypage-sizing">
 				<div class="col-lg-9 col-md-9 col-sm-12">
 					<main class="mypage-main">
-						<h2>내가 쓴 리뷰</h2>
+						<h2>내 예매 내역</h2>
 
 						<div class="info-card">
 							<c:forEach begin="0" end="2">
@@ -73,7 +73,7 @@
 				            <li><a href="../mypage/my_course">나의 코스</a></li>
 				            <li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
 				            <li><a href="../mypage/my_reply">내가 쓴 댓글</a></li>
-				            <li><a href="../mypage/my_reserve" class="active">예약 내역</a></li>
+				            <li><a href="../mypage/my_reserve" class="active">예매 내역</a></li>
 				            <li><a href="../mypage/my_refund">환불 내역</a></li>
 				            <li><a href="../mypage/my_pwd_delete">회원 탈퇴</a></li>
 						</ul>
