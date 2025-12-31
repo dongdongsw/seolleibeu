@@ -7,19 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="content">
-				<img src="">
-				<img src="">
-				<img src="">
-				<img src="">
-				<img src="">
-				<img src="">
-				<img src="">
-				<img src="">
-			</div>
+<div class="detailborder">
+	<div class="detailinline">
+		<div class="detailpadding">
+		
 		</div>
 	</div>
+</div>
 </body>
 </html>
