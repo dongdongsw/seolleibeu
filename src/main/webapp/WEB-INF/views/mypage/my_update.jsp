@@ -16,35 +16,36 @@
   <div class="container">
     <div class="row">
 	  <div class="mypage-sizing">
+      <!-- 메인 -->
       <div class="col-lg-9 col-md-9 col-sm-12">
         <main class="mypage-main">
-          <h2>정보 수정</h2>
+          <h2>회원 정보</h2>
+		
+          <div class="info-card" style="gap:40px;">
+            <div class="profile" style="margin-bottom: 20px;">
+              <img src="${empty sessionScope.profile ? '../images/profile.png' : sessionScope.profile}">
+            </div>
 
-          <div class="info-card">
-            <form method="post" action="../mypage/update">
-              <table class="info-table" style="margin-left: 190px;margin-top: 50px;">
-                <tr>
-                  <th style="width:140px;">닉네임</th>
+            <div style="flex:1;">
+              <table class="info-table" style="margin-left: 200px;">
+                <tr><th>닉네임</th>
                   <td><input class="text"></td>
                   <td><button type="button" class="info-btn">중복 확인</button></td>
                 </tr>
-                <tr>
-                  <th>비밀번호</th>
+                <tr><th>비밀번호</th>
                   <td colspan="2"><input type="password"></td>
                 </tr>
-                <tr>
-                  <th>비밀번호 확인</th>
+                <tr><th>비밀번호 확인</th>
                   <td colspan="2"><input type="password"></td>
                 </tr>
-                <tr>
-                  <th>연락처</th>
+                <tr><th>연락처</th>
                   <td><input class="text"></td>
                   <td><button type="button" class="info-btn">중복 확인</button></td>
                 </tr>
               </table>
-
-              <button style="margin-left: 650px;margin-top: 80px;" class="info-btn">저장</button>
-            </form>
+              
+                <button style="margin-left: 650px;margin-top: 80px;" class="info-btn">저장</button>
+            </div>
           </div>
         </main>
       </div>
@@ -64,8 +65,7 @@
           </ul>
         </div>
       </div>
-
-    </div>
+	</div>
     </div>
   </div>
 </div>

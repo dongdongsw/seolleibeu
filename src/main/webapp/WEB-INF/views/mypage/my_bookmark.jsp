@@ -16,7 +16,7 @@
 
 <body>
 
-	<div class="content auth-wrapper">
+	<div class="content auth-wrapper" style="margin-top: -17px;">
 		<div class="container">
 			<div class="row">
 			  <div class="mypage-sizing">
