@@ -87,11 +87,11 @@
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="st-pagination">
 								<ul class="pagination">
-									<li><a href="#">&laquo;</a></li>
+									<li><a href="#">이전</a></li>
 									<li><a href="#" class="active">1</a></li>
 									<li><a href="#">2</a></li>
 									<li><a href="#">3</a></li>
-									<li><a href="#">&raquo;</a></li>
+									<li><a href="#">다음</a></li>
 								</ul>
 							</div>
 						</div>
