@@ -29,7 +29,7 @@
 		     <td>
 		      <input type="password" id=pwdInfo>
 		     </td>
-		     <td><button class="info-btn">확인</button></td>
+		     <td><button class="info-btn" type="button" data-toggle="modal" data-target="#delete_modal">확인</button></td>
 		    </tr>
 		   </table>
 		  </form>
@@ -56,5 +56,6 @@
     </div>
   </div>
 </div>
+<jsp:include page="../mypage/my_deleteModal.jsp"></jsp:include>
 </body>
 </html>
