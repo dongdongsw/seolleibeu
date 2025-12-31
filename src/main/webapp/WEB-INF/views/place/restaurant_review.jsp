@@ -5,16 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-
+<link href="/css/place/restaurant_detail.css" rel="stylesheet">
 </head>
 <body>
-	
 			   	<div class="detail-wrap" style="width:1155px;">
-			   	<ul class="nav nav-tabs" style=" width: 1155px;">
-				  <li class="${tab == 'detail'?'active':'' }"><a href="/place/restaurant/detail">상세보기</a></li>
-				  <li class="${tab == 'review'?'active':'' }"><a href="/place/restaurant/review">리뷰</a></li>
-				</ul>
 			   <div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px;">
 			   <div class="rating-summary">
 			       <div class="rating-score">
@@ -69,7 +63,7 @@
 			   <div style="display:inline; width: 1155px;" id="reviewApp">
 				<div style="display:flex; flex-wrap:wrap; gap:12px; width:100%;  margin-bottom: 60px; margin-left: 32px; padding-top: 40px;">
 				<div class="container">
-          	<div class="row">
+          		<div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="comment-area">
                               <div class="row">

@@ -99,30 +99,7 @@
 			    	</tbody>	    	
 		    	</table>
 		    </div>
-            <div class="row detail">
-				<ul class="nav nav-tabs" style=" width: 1100px;">
-					<li class="active"><a href="#">상세보기</a></li>
-					<li><a href="#">리뷰</a></li>
-				</ul>
-				<div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px;">
-			   		<div style="display:inline; width: 1155px; ">
-						<div style="display:flex; flex-wrap:wrap; gap:12px; width:100%;  margin-bottom: 60px; margin-left: 32px; padding-top: 40px;">
-							<p>상세 내용</p>
-						</div>
-            		</div>
-        		</div>
-    		</div>
-    		<div class="text-right" style="margin-top: 10px;">
-   				<button class="btn btn-sm" style="background-color: black; color: white;" onclick="javasciprt:history.back()">목록</button>
-   			</div>
-   		</div>
-	</div>
-	
-	
-	
-	
-	<!-- 탭 -->
-	<div class="container">
+            <div class="container">
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#menu1">상세보기</a></li>
     <li><a data-toggle="tab" href="#menu2">리뷰</a></li>
@@ -133,10 +110,21 @@
       탭1
     </div>
     <div id="menu2" class="tab-pane fade">
-      탭2
+      <jsp:include page="restaurant_review.jsp"></jsp:include>
     </div>
   </div>
 </div>
+    		<div class="text-right" style="margin-top: 10px;">
+   				<button class="btn btn-sm" style="background-color: black; color: white;" onclick="javasciprt:history.back()">목록</button>
+   			</div>
+   		</div>
+	</div>
+	
+	
+	
+	
+	<!-- 탭 -->
+	
 	
 	
 	
