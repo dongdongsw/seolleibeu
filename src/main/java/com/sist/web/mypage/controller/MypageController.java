@@ -84,4 +84,10 @@ public class MypageController {
 		   model.addAttribute("my_jsp", "../mypage/my_reserve.jsp");
 		   return "mypage/my_main";
 	   }	   
+	   
+	   @GetMapping("/mypage/review_create")
+	   public String review_create(Model model)
+	   {
+		   return "mypage/review_create";
+	   }
 }
