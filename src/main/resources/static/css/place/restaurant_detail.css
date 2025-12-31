@@ -18,6 +18,7 @@
 .project-content{
 	 padding-left: 15px; 
 	 font-weight: 300;
+	 padding-top:13px;
 }
 
 .detailborder{
@@ -58,7 +59,7 @@
 	gap: 10px; 
 	margin-top: 15px; 
 	overflow-x: auto; 
-	width: 1115px; 
+	width: 1102px; 
 	margin-bottom: 30px;
 }
 
