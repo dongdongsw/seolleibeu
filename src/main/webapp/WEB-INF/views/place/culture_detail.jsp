@@ -79,7 +79,7 @@
 							            </div>
 							        </div>
 							        <button type="button" style="background-color: black; color: white; border: none; border-radius: 20px; 
-							                       padding: 0 20px; height: 32px; font-weight: bold; font-size: 13px; cursor: pointer; outline: none;">예매하기</button>
+							                       padding: 0 20px; height: 32px; font-weight: bold; font-size: 13px; cursor: pointer; outline: none;" onclick="location.href='/reserve/reserve_ok'">예매하기</button>
 							    </div>
 						    </li>
 					    </ul>
