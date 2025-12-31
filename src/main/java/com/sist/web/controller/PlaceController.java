@@ -46,7 +46,6 @@ public class PlaceController {
 	public String place_restaurant_detail(Model model) {
 		
 		model.addAttribute("main_jsp","../place/restaurant_detail_main.jsp");
-		model.addAttribute("tab", "detail");
 		return "main/main";
 	}
 	/*

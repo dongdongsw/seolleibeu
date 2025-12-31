@@ -108,7 +108,7 @@
 
   <div class="tab-content">
     <div id="menu1" class="tab-pane fade in active">
-      탭1
+		<jsp:include page="culture_list.jsp"></jsp:include>
     </div>
     <div id="menu2" class="tab-pane fade">
       <jsp:include page="restaurant_review.jsp"></jsp:include>

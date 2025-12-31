@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 						 
 						<div class="detailborder">
 							<div class="detailinline">
@@ -91,11 +90,6 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div class="iconpackage">
 		<table class="table">
 			<tbody>
