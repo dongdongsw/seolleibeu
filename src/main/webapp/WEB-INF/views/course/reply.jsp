@@ -48,14 +48,15 @@
 					  </tr>
 					  <tr class="reply-content">
 					    <td>
-					     <div style="white-space: pre-wrap;background-color: white;border:none;text-align: left;margin-top: 30px;margin-bottom: 30px; margin-left: 50px">첫 데이트하기 좋은 코스</div>
+					     <div style="white-space: pre-wrap;background-color: white;border:none;text-align: left;margin-top: 10px;margin-bottom: 30px; margin-left: 80px">첫 데이트하기 좋은 코스</div>
 					    </td>
 					    <td class="text-right">
-					    <span>
-					     <button type="button" href="#" class="info-btn" id="reply">수정</button>
-					    <button type="button" class="info-btn">삭제</button>
-					    </span>
-					    
+					    <div style="margin-top: 50px;">
+					     <span>
+					      <button type="button" href="#" class="info-btn" id="reply">수정</button>
+					      <button type="button" class="info-btn">삭제</button>
+					     </span>
+					    </div>
 					  </td>
 					  </tr>
 					  
