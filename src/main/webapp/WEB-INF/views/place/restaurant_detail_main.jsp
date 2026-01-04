@@ -11,7 +11,7 @@
 <link href="/css/place/restaurant_detail.css" rel="stylesheet" />
 </head>
 <body>
-	<jsp:include page="restaurant_detail_header.jsp"></jsp:include>
+	<jsp:include page="${fixedPage }"></jsp:include>
 					<%-- <div class="detail-wrap" style="width: 1155px;">
 						<div class="container">
 						  <ul class="nav nav-tabs">
@@ -38,7 +38,7 @@
 					  <div class="tab-content">
 
 					    <div id="menu1" class="tab-pane fade in active">
-					      <jsp:include page="restaurant_detail.jsp"></jsp:include>
+					      <jsp:include page="${detailPage }"></jsp:include>
 					    </div>
 					    <div id="menu2" class="tab-pane fade">
 					      <jsp:include page="restaurant_review.jsp"></jsp:include>

@@ -17,7 +17,9 @@ public class PlaceController {
 	@GetMapping("/place/culture/detail")
 	public String place_culture_detail(Model model) {
 		
-		model.addAttribute("main_jsp","../place/culture_detail.jsp");
+		model.addAttribute("main_jsp","../place/restaurant_detail_main.jsp");
+		model.addAttribute("detailPage", "../place/culture_detail.jsp");
+		model.addAttribute("fixedPage", "../place/culture_detail_header.jsp");
 		return "main/main";
 	}
 
@@ -31,7 +33,9 @@ public class PlaceController {
 	@GetMapping("/place/attraction/detail")
 	public String place_attraction_detail(Model model) {
 		
-		model.addAttribute("main_jsp","../place/attraction_detail.jsp");
+		model.addAttribute("main_jsp","../place/restaurant_detail_main.jsp");
+		model.addAttribute("detailPage", "../place/attraction_detail.jsp");
+		model.addAttribute("fixedPage", "../place/attraction_detail_header.jsp");
 		return "main/main";
 	}
 	
@@ -46,6 +50,8 @@ public class PlaceController {
 	public String place_restaurant_detail(Model model) {
 		
 		model.addAttribute("main_jsp","../place/restaurant_detail_main.jsp");
+		model.addAttribute("detailPage", "../place/restaurant_detail.jsp");
+		model.addAttribute("fixedPage", "../place/restaurant_detail_header.jsp");
 		return "main/main";
 	}
 	/*
