@@ -1,256 +1,133 @@
 @charset "UTF-8";
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+.w-100 {
+width: 100%;
+}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #faf8f5;
-            padding: 40px 20px;
-        }
+.h-100 {
+height: 100%;
+}
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            border: 1px solid #e8e4df;
-            padding: 40px;
-        }
+a {
+text-decoration: none;
+text-align: center;
+}
 
-        .complete-message {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #e8e4df;
-        }
+.wrapper {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 24px;
+overflow: auto;
+}
 
-        .complete-message h1 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
+.max-w-540 {
+max-width: 540px;
+}
 
-        .complete-message p {
-            color: #666;
-            font-size: 14px;
-        }
+.btn-wrapper {
+padding: 0 24px;
+}
 
-        .section {
-            margin-bottom: 30px;
-        }
+.btn {
+padding: 11px 22px;
+border: none;
+border-radius:  8px;
 
-        .section-title {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
+background-color: #f2f4f6;
+color: #4e5968;
+font-weight: 600;
+font-size: 17px;
+cursor: pointer;
+}
 
-        .product-box {
-            border: 1px solid #e8e4df;
-            padding: 20px;
-            background: #fcfbf9;
-        }
+.btn.primary {
+background-color: #3282f6;
+color: #f9fcff;
+}
 
-        .product-item {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
+.text-center {
+text-align: center;
+}
 
-        .product-image {
-            width: 80px;
-            height: 80px;
-            background: #f5f2ed;
-            border: 1px solid #e8e4df;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.flex {
+display: flex;
+}
 
-        .product-image::before {
-            content: '✕';
-            font-size: 30px;
-            color: #d4cec4;
-        }
+.flex-column {
+display: flex;
+flex-direction: column;
+}
 
-        .product-info {
-            flex: 1;
-        }
+.justify-center {
+justify-content: center;
+}
 
-        .product-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            font-size: 14px;
-        }
+.justify-between {
+justify-content: space-between;
+}
 
-        .product-row:last-child {
-            margin-bottom: 0;
-        }
+.align-center {
+align-items: center;
+}
 
-        .label {
-            color: #666;
-        }
+.confirm-loading {
+margin-top: 72px;
+height: 400px;
+justify-content: space-between;
+}
 
-        .value {
-            color: #333;
-        }
 
-        .info-box {
-            border: 1px solid #e8e4df;
-            padding: 20px;
-            background: #fcfbf9;
-        }
+.confirm-success {
+display: none;
+margin-top: 72px;
+}
 
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            font-size: 14px;
-            border-bottom: 1px solid #f0ede8;
-        }
+.button-group {
+margin-top: 32px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 16px;
+}
 
-        .info-row:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
+.title {
+margin-top: 32px;
+margin-bottom: 0;
+color: #191f28;
+font-weight: bold;
+font-size: 24px;
+}
 
-        .info-row:first-child {
-            padding-top: 0;
-        }
+.description {
+margin-top: 8px;
+color: #4e5968;
+font-size: 17px;
+font-weight: 500;
+}
 
-        .buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 30px;
-        }
+.response-section {
+margin-top: 60px;
+display: flex;
+flex-direction: column;
+gap: 16px;
+font-size: 20px;
+}
 
-        .btn {
-            flex: 1;
-            padding: 14px;
-            border: 1px solid #333;
-            background: white;
-            font-size: 14px;
-            cursor: pointer;
-            font-weight: 500;
-        }
+.response-section .response-label {
+font-weight: 600;
+color: #333d48;
+font-size: 17px;
+}
 
-        .btn-primary {
-            background: #333;
-            color: white;
-        }
+.response-section .response-text {
+font-weight: 500;
+color: #4e5968;
+font-size: 17px;
+padding-left: 16px;
+word-break: break-word;
+text-align: right;
+}
 
-        .btn:hover {
-            opacity: 0.8;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            .buttons {
-                flex-direction: column;
-            }
-        }
-     /*주문 내역*/
-     .order-container {
-            max-width: 1200px;
-            margin-top: 40px;
-        }
-        
-        .order-layout {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .order-left {
-            flex: 2;
-        }
-        
-        .order-right {
-            flex: 1;
-        }
-        
-        .payment-agree-box {
-            border: 1px solid #e8e4df;
-            padding: 20px;
-            background: #fcfbf9;
-        }
-        
-        .payment-agree-item {
-            padding: 10px 0;
-            border-bottom: 1px solid #f0ede8;
-        }
-        
-        .payment-agree-item:last-child {
-            border-bottom: none;
-        }
-        
-        .payment-agree-all {
-            font-weight: 600;
-            border-bottom: 2px solid #333;
-            padding-bottom: 15px;
-            margin-bottom: 10px;
-        }
-        
-        .payment-agree-item input {
-            margin-right: 8px;
-        }
-        
-        .payment-agree-item label {
-            font-size: 14px;
-            color: #333;
-            cursor: pointer;
-        }
-        
-        .payment-total {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #e8e4df;
-            text-align: right;
-        }
-        
-        .payment-total-label {
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .payment-total-value {
-            font-size: 18px;
-            font-weight: 600;
-            color: #333;
-            margin-left: 10px;
-        }
-        
-        .payment-submit-btn {
-            width: 100%;
-            padding: 14px;
-            margin-top: 15px;
-            background: #333;
-            color: white;
-            border: 1px solid #333;
-            font-size: 14px;
-            cursor: pointer;
-            font-weight: 500;
-        }
-        
-        .payment-submit-btn:disabled {
-            background: #ccc;
-            border-color: #ccc;
-            cursor: not-allowed;
-        }
-        
-        .payment-submit-btn:hover:not(:disabled) {
-            opacity: 0.8;
-        }
-        
-        @media (max-width: 768px) {
-            .order-layout {
-                flex-direction: column;
-            }
-        }
+.color-grey {
+color: #b0b8c1;
+}
