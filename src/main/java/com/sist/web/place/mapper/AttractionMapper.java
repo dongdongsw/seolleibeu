@@ -1,4 +1,4 @@
-package com.sist.web.course.mapper;
+package com.sist.web.place.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;

@@ -3,5 +3,14 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sist.web.mapper.CultureMapper">
-
+  <select id="cultureListData" resultType="com.sist.web.vo.PlaceVO" parameterType="hashmap">
+    SELECT pno, name, addr, category, type, thumbnail
+    FROM place
+    ORDER BY pno DESC
+    OFFSET #{start} ROWS FETCH NEXT 16 ROWS ONLY
+  </select>
+  
+  <select id="cultureTotalPage" resultType="int">
+    SELECT CEIL(COUNT(*)/16.0) FROM place
+  </select>
 </mapper>
