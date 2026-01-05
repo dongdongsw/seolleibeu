@@ -1,7 +1,9 @@
 package com.sist.web.place.restcontroller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sist.web.place.service.RestaurantService;
-
+import com.sist.web.vo.PlaceVO;
+import com.sist.web.commons.Methods;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -24,12 +27,21 @@ public class RestaurantRestController {
 	@GetMapping("/list_vue/")
 	public ResponseEntity<Map> restaurant_list_vue(@RequestParam("page") int page){
 		
+		Map map = new HashMap<>();
+		int totalpage = 0;
+		String category = "음식";
 		try {
+			map.put("category", category);
+			map.put("start", (page*16)-1);
+			
+			List<PlaceVO> resList = rService.restaurantListData(map);
+			Map pageMap = Methods.paginationMap(8, page, totalpage);
+			map.putAll(pageMap);
 			
 		} catch (Exception ex) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		return new ResponseEntity<>(null, HttpStatus.OK);
+		return new ResponseEntity<>(map, HttpStatus.OK);
 	}
 }
