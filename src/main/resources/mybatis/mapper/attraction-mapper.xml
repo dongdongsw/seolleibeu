@@ -2,6 +2,17 @@
 <!DOCTYPE mapper
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sist.web.mapper.AttractionMapper">
-
+<mapper namespace="com.sist.web.place.mapper.AttractionMapper">
+  <select id="attractionListData" resultType="com.sist.web.vo.PlaceVO" parameterType="int">
+    SELECT pno, name, addr, category, type, thumbnail
+    FROM place
+    WHERE type IN('명소', '자연관광', '엔터테인먼트')
+    ORDER BY pno DESC
+    OFFSET #{start} ROWS FETCH NEXT 16 ROWS ONLY
+  </select>
+  
+  <select id="attractionTotalPage" resultType="int">
+    SELECT CEIL(COUNT(*)/16.0) FROM place
+    WHERE type IN('명소', '자연관광', '엔터테인먼트')
+  </select>
 </mapper>

@@ -2,15 +2,17 @@
 <!DOCTYPE mapper
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sist.web.mapper.CultureMapper">
-  <select id="cultureListData" resultType="com.sist.web.vo.PlaceVO" parameterType="hashmap">
+<mapper namespace="com.sist.web.place.mapper.CultureMapper">
+  <select id="cultureListData" resultType="com.sist.web.vo.PlaceVO" parameterType="int">
     SELECT pno, name, addr, category, type, thumbnail
     FROM place
+    WHERE type IN('연극/뮤지컬', '전시', '액티비티')
     ORDER BY pno DESC
     OFFSET #{start} ROWS FETCH NEXT 16 ROWS ONLY
   </select>
   
   <select id="cultureTotalPage" resultType="int">
     SELECT CEIL(COUNT(*)/16.0) FROM place
+    WHERE type IN('연극/뮤지컬', '전시', '액티비티')
   </select>
 </mapper>
