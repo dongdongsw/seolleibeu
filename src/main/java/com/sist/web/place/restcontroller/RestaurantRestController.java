@@ -35,7 +35,7 @@ public class RestaurantRestController {
 			List<PlaceVO> resList = rService.restaurantListData(map);
 			int totalpage = rService.restaurantTotalPage();
 			
-			Map pageMap = Methods.paginationMap(16, page, totalpage);
+			Map pageMap = Methods.paginationMap(8, page, totalpage);
 			map.putAll(pageMap);
 			map.put("resList", resList);
 		} catch (Exception ex) {

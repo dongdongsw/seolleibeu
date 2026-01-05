@@ -8,7 +8,38 @@
 		SELECT pno, name, addr, type, thumbnail, category
 		FROM place
 		WHERE category = '식당'
-		ORDER BY pno DESC
+		<!-- <where>
+			category = '식당'
+		
+			<choose>
+				<when test="radio == 'subject'">
+					AND name LIKE '%'||#{keyword}||'%'
+				</when>
+				<when test="radio == 'address'">
+					AND addr LIKE '%'||#{keyword}||'%'
+				</when>
+			</choose>
+		</where>
+		
+		<choose>
+			<when test="array == 'lowprice'">
+				ORDER BY 가겨 컬럼 넣고 ASC
+			</when>
+			<when test="array == 'topprice'">
+				ORDER BY 가겨 컬럼 넣고 ASC
+			</when>
+			<when test="array == 'popular'">
+				ORDER BY 즐겨찾기랑 리뷰, 좋아요 중에 하나 고르고 조인 걸어서 count 하고 ASC
+			</when>
+			<when test="array == 'recent'">
+				ORDER BY pno DESC
+			</when>
+			<otherwise>
+				ORDER BY pno ASC
+			</otherwise>
+		</choose>
+		
+		 -->
 		OFFSET #{start} ROWS FETCH NEXT 16 ROWS ONLY
 	</select>
 	
