@@ -15,12 +15,17 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/vue-demi"></script>
+<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 	<div class="tab-content">
 		<!-- STEP 1 -->
 		<div id="step1" class="tab-pane fade in active">
-			<div class="course-container">
+			<div class="course-container" id="place_select">
 				<div class="choose-main">
 					<div class="side-menu">
 						<div style="height: 50px"></div>
@@ -48,53 +53,49 @@
 								<div class="place-result">
 									<h4>검색 결과</h4>
 									<div class="list-scroll">
-										<c:forEach begin="0" end="100">
-											<div class="place">
+											<div class="place" v-for="(vo, index) in store.place_list.slice(0, 10)" :key="index">
 												<div class="thumb">
-													<img src="/images/test_map.png" width="100px"
+													<img :src="vo.thumbnail" width="100px"
 														height="102px">
 												</div>
 												<div class="card-right">
 													<div class="place-info">
-														<h5>장소이름장소이름</h5>
+														<h5>{{vo.name}}</h5>
 
-														<p>주소주소주소주소</p>
-														<p>카테고리</p>
+														<p>{{vo.addr}}</p>
+														<p>{{vo.category}}</p>
 													</div>
-													<div class="btns">
+													<div class="btns" @click="store.select(vo.pno)">
 														<button>
 															<i class="fa fa-plus" aria-hidden="true"></i>
 														</button>
 													</div>
 												</div>
 											</div>
-										</c:forEach>
 									</div>
 								</div>
 								<div class="place-choosed">
 									<h4>선택된 장소</h4>
 									<div class="list-scroll">
-										<c:forEach begin="0" end="3">
-											<div class="place">
+											<div class="place" v-for="(svo, index) in store.selected" :key="index">
 												<div class="thumb">
-													<img src="/images/test_map.png" width="100px"
+													<img :src="svo.thumbnail" width="100px"
 														height="102px">
 												</div>
 												<div class="card-right">
 													<div class="place-info">
-														<h5>장소이름장소이름</h5>
+														<h5>{{svo.name}}</h5>
 
-														<p>주소주소주소주소</p>
-														<p>카테고리</p>
+														<p>{{svo.addr}}</p>
+														<p>{{svo.category}}</p>
 													</div>
-													<div class="btns">
+													<div class="btns" @click="store.remove(svo.pno)">
 														<button>
 															<i class="fa fa-minus" aria-hidden="true"></i>
 														</button>
 													</div>
 												</div>
 											</div>
-										</c:forEach>
 									</div>
 								</div>
 							</div>
@@ -169,5 +170,25 @@
 			</div>
 		</div>
 	</div>
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/course/courseStore.js"></script>
+	<script>
+		const {createApp, onMounted} = Vue
+		const {createPinia} = Pinia
+		const app=createApp({
+			setup() {
+				const store=useCourseStore()
+				onMounted(()=>{
+					store.dataRecv()
+				})
+				
+				return {
+					store
+				}
+			}
+		})
+		app.use(createPinia())
+		app.mount("#place_select")
+	</script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.sist.web.course.mapper.CourseMapper">
+ 
+ 	<select id="placeListDataInCourse" resultType="com.sist.web.vo.PlaceVO" parameterType="hashmap">
+ 		SELECT pno, name, addr, category, thumbnail 
+ 		FROM place
+ 		
+ 		<choose>
+		    <when test="category != null">
+		      WHERE category = #{category}
+		    </when>
+		
+		    <when test="keyword != null">
+		      WHERE name LIKE '%'||#{keyword}||'%'
+		    </when>
+		</choose>
+ 		
+ 		ORDER BY pno ASC
+ 	</select>
+</mapper>

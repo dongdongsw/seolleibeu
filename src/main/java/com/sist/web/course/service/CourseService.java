@@ -6,5 +6,5 @@ import com.sist.web.vo.PlaceVO;
 
 public interface CourseService {
 
-	public List<PlaceVO> placeListDataInCourse();
+	public List<PlaceVO> placeListDataInCourse(String category, String keyword);
 }
