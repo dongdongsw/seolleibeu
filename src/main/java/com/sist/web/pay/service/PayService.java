@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PayService {
 
-    private static final String SECRET_KEY = "test_sk_xxxxx"; // 서버에만
+    private static final String SECRET_KEY = "test_ck_nRQoOaPz8L5MqlJGaZ9P3y47BMw6\r\n"; // 서버에만
 
     public void confirmPayment(String paymentKey, String orderId, Long amount) {
         try {

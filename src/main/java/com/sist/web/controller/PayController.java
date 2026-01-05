@@ -26,9 +26,9 @@ public class PayController {
 	}
 	
 	@GetMapping("/success")
-    public String success(@RequestParam String paymentKey, @RequestParam String orderId, @RequestParam Long amount) 
+    public String success() 
 	{
-        pservice.confirmPayment(paymentKey, orderId, amount);
+		/* pservice.confirmPayment(paymentKey, orderId, amount); */
         return "pay/success";
     }
 }
