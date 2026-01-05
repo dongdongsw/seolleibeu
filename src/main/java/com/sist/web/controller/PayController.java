@@ -13,12 +13,6 @@ import lombok.RequiredArgsConstructor;
 public class PayController {
 	private final PayService pservice;
 	
-	@GetMapping("/order")
-	public String order()
-	{
-		return "pay/order";
-	}
-	
 	@GetMapping("/fail")
 	public String fail()
 	{
@@ -26,9 +20,9 @@ public class PayController {
 	}
 	
 	@GetMapping("/success")
-    public String success() 
+    public String success(@RequestParam("paymentKey") String paymentKey, @RequestParam("orderId") String orderId, @RequestParam("amount") Long amount) 
 	{
-		/* pservice.confirmPayment(paymentKey, orderId, amount); */
+	    pservice.confirmPayment(paymentKey, orderId, amount);
         return "pay/success";
     }
 }
