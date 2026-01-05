@@ -23,7 +23,7 @@
         </div>
     </div>
     <!-- /.page header -->
-    <div class="content">
+    <div class="content" id="restaurant_list">
         <div class="container">
         	<div class="type-select" style="margin-bottom: -40px; margin-left: 5px;">
 	   			<input type="radio" name="type" value="제목" checked="checked"><span style="margin-left: 4px;">제목</span>
@@ -47,24 +47,24 @@
 				</ul>
 			</div>
 			<div style="margin-top: 20px;">	
-			<c:forEach begin="0" end="3">		
-	            <div class="row" style="margin-top: 10px;">
-	            	<c:forEach begin="0" end="3">
-		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+			<%-- <c:forEach begin="0" end="3">	 --%>	
+	            <div class="row" style="margin-top: 10px;" >
+	            	<%-- <c:forEach begin="0" end="3"> --%>
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"  v-for="(rvo,index) in store.resList" :key="index">
 		                    <div class="project-img mb30 thumbnail">
 		                        <a href="/place/restaurant/detail" class="imghover">
-		                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
+		                        	<img :src="rvo.thumbnail" class="img-responsive" alt="Interior Design Website Templates Free Download">
 		                        	<div class="caption">
-		                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
-		                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
+		                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{rvo.name}}</h4>
+		                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{rvo.addr}}</p>
 		                        	</div>
 		                        </a>
 		                    </div>
 		                    <a><i class="fa fa-star" style="position:absolute; left:77%; top:5%; padding-top: 1px; font-size: 30px; color: gold;"></i></a>
 		                </div>
-	                </c:forEach>
+	                <%-- </c:forEach> --%>
 	            </div>
-            </c:forEach>
+            <%-- </c:forEach> --%>
            </div> 
             <div class="row">
                 <div class="st-pagination">
@@ -79,5 +79,28 @@
             </div>
         </div>
     </div>
+    					
+<script src="/vuejs/place/restaurantStore.js"></script>
+<script src="/vuejs/axios.js"></script>
+<script>
+	const {createApp, onMounted} = Vue
+	const {createPinia} = Pinia
+
+	const restaurantApp = Vue.createApp({
+		setup(){
+			const store = useRestaurantStore()
+			onMounted(()=>{
+				store.restaurantListData()
+			})
+			
+			return {
+				store
+			}
+		}
+	})
+	restaurantApp.use(createPinia())
+	restaurantApp.mount("#restaurant_list")
+
+</script>
 </body>
 </html>

@@ -14,5 +14,5 @@ public interface RestaurantMapper {
 
 	public List<PlaceVO> restaurantListData(Map map);
 	
-	public int restaurantTotalPage(String category);
+	public int restaurantTotalPage();
 }

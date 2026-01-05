@@ -7,13 +7,14 @@
 	<select id="restaurantListData" resultType="com.sist.web.vo.PlaceVO" parameterType="hashmap">
 		SELECT pno, name, addr, type, thumbnail, category
 		FROM place
-		WHERE category = #{category}
-		OFFSET #{start} ROWS FETCH 16 ROWS ONLY
+		WHERE category = '식당'
+		ORDER BY pno DESC
+		OFFSET #{start} ROWS FETCH NEXT 16 ROWS ONLY
 	</select>
 	
-	<select id="restaurantTotalPage" resultType="int" parameterType="string">
+	<select id="restaurantTotalPage" resultType="int">
 		SELECT CEIL(COUNT(*)/8.0) 
 		FROM place
-		WHERE category = #{category}
+		WHERE category = '식당'
 	</select>
 </mapper>

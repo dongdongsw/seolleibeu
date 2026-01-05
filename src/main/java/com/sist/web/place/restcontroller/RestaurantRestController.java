@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/restaurant")
+@RequestMapping("/place/restaurant")
 public class RestaurantRestController {
 
 	private final RestaurantService rService;
@@ -27,17 +27,17 @@ public class RestaurantRestController {
 	@GetMapping("/list_vue/")
 	public ResponseEntity<Map> restaurant_list_vue(@RequestParam("page") int page){
 		
+		
 		Map map = new HashMap<>();
-		int totalpage = 0;
-		String category = "음식";
 		try {
-			map.put("category", category);
-			map.put("start", (page*16)-1);
+			map.put("start", (page-1)*16);
 			
 			List<PlaceVO> resList = rService.restaurantListData(map);
-			Map pageMap = Methods.paginationMap(8, page, totalpage);
-			map.putAll(pageMap);
+			int totalpage = rService.restaurantTotalPage();
 			
+			Map pageMap = Methods.paginationMap(16, page, totalpage);
+			map.putAll(pageMap);
+			map.put("resList", resList);
 		} catch (Exception ex) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
