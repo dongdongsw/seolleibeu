@@ -41,6 +41,7 @@
 		border: 1px solid #ddd;
 		border-radius: 4px;
 		font-size: 15px;
+		color: black;
 	}
 	.form-control:focus {
 		border-color: #007bff;
@@ -167,9 +168,6 @@
 								<textarea class="form-control" name="content" id="reviewContent" 
 									placeholder="상품에 대한 솔직한 리뷰를 작성해주세요." 
 									maxlength="1000" required></textarea>
-								<div class="char-count">
-									<span id="charCount">0</span> / 1000
-								</div>
 							</div>
 
 							<div class="form-group">
@@ -211,6 +209,13 @@
 			</div>
 		</div>
 	</div>
-
+<script>
+	const uploadArea = document.getElementById('uploadArea')
+	const imageInput = document.getElementById('imageInput')
+	
+	uploadArea.addEventListener('click', () => {
+	  imageInput.click()
+	})
+</script>
 </body>
 </html>

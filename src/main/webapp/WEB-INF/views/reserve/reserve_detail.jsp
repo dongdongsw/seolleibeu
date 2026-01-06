@@ -55,6 +55,7 @@
 								</div>
 								<div class="row text-right" style="margin-right: 5px;">
 									<a href="" class="btn btn-default btn-sm" style="margin-top: 10px;">예약내역 삭제</a>
+									<a href="../mypage/review_create" class="btn btn-default btn-sm" style="margin-top: 10px;">리뷰 작성</a>
 									<a href="javascript:history.back()" class="btn btn-default btn-sm" style="margin-top: 10px;">목록</a>
 								</div>
 							</div>

@@ -27,12 +27,11 @@
             </div>
         </div>
     </div>
-	<div class="content auth-wrapper" style="margin-top: -17px;">
+	<div class="content auth-wrapper" >
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12">
 					<main class="mypage-main">
-						<h2>공지사항</h2>
 						<div class="row">
 							<table class="table">
 							</table>

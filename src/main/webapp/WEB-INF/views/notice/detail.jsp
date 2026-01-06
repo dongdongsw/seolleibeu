@@ -138,6 +138,32 @@
 			</div>
 		</div>
 	</div>
-
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header') || document.querySelector('.header') || document.querySelector('.navbar');
+    
+    if(header) {
+        // 초기 상태 - 검은색 텍스트
+        header.style.color = '#333';
+        const links = header.querySelectorAll('a');
+        links.forEach(link => link.style.color = '#333');
+        
+        // 스크롤 이벤트
+        window.addEventListener('scroll', function() {
+            if(window.scrollY > 50) {
+                header.classList.add('scrolled');
+                header.style.backgroundColor = '#000';
+                header.style.color = '#fff';
+                links.forEach(link => link.style.color = '#fff');
+            } else {
+                header.classList.remove('scrolled');
+                header.style.backgroundColor = 'transparent';
+                header.style.color = '#333';
+                links.forEach(link => link.style.color = '#333');
+            }
+        });
+    }
+});
+</script>
 </body>
 </html>
