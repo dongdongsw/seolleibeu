@@ -20,10 +20,21 @@
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="/admin/place_list">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-map-marked-alt"></i>
-                    <span>장소 조회</span></a>
-            </li><li class="nav-item">
+                    <span>장소조회</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="buttons.html">음식점</a>
+                        <a class="collapse-item" href="buttons.html">문화</a>
+                        <a class="collapse-item" href="cards.html">관광</a>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="nav-item">
                 <a class="nav-link" href="/admin/place_create">
                     <i class="fas fa-pencil-alt"></i>
                     <span>장소 등록</span></a>
@@ -50,6 +61,7 @@
                     <span>공지사항</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
+            
         </ul>
         </div>
 </body>
