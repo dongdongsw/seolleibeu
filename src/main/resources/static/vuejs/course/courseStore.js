@@ -1,16 +1,21 @@
 const {defineStore} = Pinia
 
-const useCourseStore=defineStore('course', {
+const useCourseStore=defineStore('course_insert', {
 	
 	state: ()=>({
 		place_list: [],
 		selected: [],
 		pnos: [],
 		type: '명소',
-		keyword: ''
+		keyword: '',
+		title: '',
+		content: '',
+		is_public: 'Y',
+		step_ok: ''
 	}),
+	
 	actions: {
-		
+		// 장소 데이터 불러오기
 		async dataRecv() {
 			const res=await api.get('/course/place_list_vue/', {
 				params: {
@@ -19,7 +24,33 @@ const useCourseStore=defineStore('course', {
 				}
 			})
 			console.log(res.data)
+			console.log(this.is_public)
 			this.place_list=res.data
+		},
+		
+		// 코스 생성
+		async courseInsert({titleRef, contentRef}) {
+			if(this.title==='') {
+				titleRef?.focus()
+				return
+			}
+			if(this.content==='') {
+				contentRef?.focus()
+				return
+			}
+			
+			const res=await api.post('/course/insert_vue/', {
+				pnos: this.pnos.join(','),
+				title: this.title,
+				content: this.content,
+				is_public: this.is_public
+			})
+			
+			if(res.data.msg==='yes') {
+				location.href="/course/list"
+			} else {
+				alert("코스 생성에 실패하였습니다.")
+			}
 		},
 		
 		// 장소 선택
@@ -63,6 +94,15 @@ const useCourseStore=defineStore('course', {
 			this.type=type
 			this.keyword=''
 			this.dataRecv()
+		},
+		
+		// 장소 선택을 2개 이상해야 step2 이동 가능
+		step() {
+			if(this.pnos.length<2) {
+				alert('장소를 2개 이상 선택해주세요')
+				return
+			}
+			this.step_ok='ok'
 		}
 	}
 })

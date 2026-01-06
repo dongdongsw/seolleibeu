@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.sist.web.course.mapper.CourseMapper;
+import com.sist.web.vo.CourseVO;
 import com.sist.web.vo.PlaceVO;
 
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,12 @@ public class CourseServiceImpl implements CourseService {
 	public List<PlaceVO> placeListDataInCourse(String type, String keyword) {
 		// TODO Auto-generated method stub
 		return cMapper.placeListDataInCourse(type, keyword);
+	}
+
+	@Override
+	public void courseInsert(CourseVO vo) {
+		// TODO Auto-generated method stub
+		cMapper.courseInsert(vo);
 	}
 
 	

@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import com.sist.web.vo.CourseVO;
 import com.sist.web.vo.PlaceVO;
 
 @Mapper
@@ -14,5 +15,6 @@ import com.sist.web.vo.PlaceVO;
 public interface CourseMapper {
 
 	public List<PlaceVO> placeListDataInCourse(@Param("type") String type, @Param("keyword") String keyword);
+	public void courseInsert(CourseVO vo);
 	
 }

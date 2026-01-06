@@ -233,18 +233,21 @@ a {
 }
 
 .cate {
-	margin-top: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
-.cate>span {
-	width: 80px;
+.cate>button {
+	font-size: 10px;
+	font-weight: bold;
+	width: 60px;
 	height: 30px;
-	padding: 10px;
-	margin: 5px;
+	margin: 2px;
 	background-color: #f8f6f2;
 	border-radius: 15px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
 	transition: all 0.2s ease;
+	border: none;
 }
 
 .menus {
@@ -540,4 +543,11 @@ a {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	width: 100px;
+}
+
+.place-info > h5 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 120px;
 }

@@ -4,7 +4,7 @@
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="com.sist.web.course.mapper.CourseMapper">
  
- 	<select id="placeListDataInCourse" resultType="com.sist.web.vo.PlaceVO" parameterType="hashmap">
+ 	<select id="placeListDataInCourse" resultType="PlaceVO" parameterType="hashmap">
  		SELECT pno, name, addr, category, thumbnail 
  		FROM place
  		
@@ -20,4 +20,11 @@
  		
  		ORDER BY pno ASC
  	</select>
+ 	
+ 	<insert id="courseInsert" parameterType="CourseVO">
+ 		INSERT INTO course
+ 		(cno, uno, pnos, title, content, created_at, is_public) 
+ 		VALUES
+ 		(course_cno_seq.nextval, 1, #{pnos}, #{title}, #{content}, SYSDATE, #{is_public})
+ 	</insert>
 </mapper>

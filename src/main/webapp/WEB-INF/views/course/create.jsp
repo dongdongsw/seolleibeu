@@ -21,12 +21,13 @@
 <script src="https://unpkg.com/vue-demi"></script>
 <script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
-	<div class="tab-content">
+	<div class="tab-content" id="course_insert">
 		<!-- STEP 1 -->
 		<div id="step1" class="tab-pane fade in active">
-			<div class="course-container" id="place_select">
+			<div class="course-container">
 				<div class="choose-main">
 					<div class="side-menu">
 						<div style="height: 50px"></div>
@@ -130,9 +131,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="map">
-						<img src="/images/test_map.png" width="100%" height="100%">
-					</div>
+					<div class="map" id="map"></div>
 				</div>
 				<div class="choose-bottom">
 					<div class="start">
@@ -140,7 +139,7 @@
 					</div>
 					<div class="cen"></div>
 					<div class="end">
-						<a class="btn btn-default" data-toggle="tab" href="#step2">다음</a>
+						<a class="btn btn-default" data-toggle="tab" :href="store.step_ok=='ok' ? '#step2':'#step1'" @click="store.step()">다음</a>
 					</div>
 				</div>
 			</div>
@@ -162,24 +161,25 @@
 					<div class="container create-form">
 						<div class="col-md-6">
 							<div class="form-group has-feedback">
-								<label class="control-label">코스 제목</label> <input type="text"
-									class="form-control" placeholder="코스 제목을 입력하세요." required>
+								<label class="control-label">코스 제목</label> <input type="text" 
+									class="form-control" placeholder="코스 제목을 입력하세요." ref="titleRef" v-model="store.title">
 							</div>
 						</div>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="form-group">
 								<label class="control-label">코스 설명</label>
-								<textarea class="form-control" id="textarea" name="textarea"
+								<textarea class="form-control" id="textarea" name="textarea" ref="contentRef" v-model="store.content"
 									rows="12" placeholder="코스 설명을 작성하세요."></textarea>
 							</div>
 						</div>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="form-group">
-								<label class="control-label" style="padding-right: 50px">공개
-									여부</label> <label> <input type="radio" name="category"
-									value="spot"> 공개
-								</label> &nbsp;&nbsp;&nbsp; <label> <input type="radio"
-									name="category" value="food"> 비공개
+								<label class="control-label" style="padding-right: 50px">공개 여부</label> 
+								<label> 
+									<input type="radio" name="open" value="Y" v-model="store.is_public"> 공개
+								</label> &nbsp;&nbsp;&nbsp; 
+								<label> 
+									<input type="radio" name="open" value="N" v-model="store.is_public"> 비공개
 								</label>
 							</div>
 							<p>공개 시 코스 게시판에 등록되고, 비공개 시 마이페이지에서 나만 볼 수 있습니다.</p>
@@ -193,7 +193,7 @@
 					<div class="cen"></div>
 					<div class="end2">
 						<a class="btn btn-default" data-toggle="tab" href="#step1">이전</a>
-						<a class="btn btn-default">작성</a>
+						<a class="btn btn-default" @click="store.courseInsert({titleRef, contentRef})">작성</a>
 					</div>
 				</div>
 			</div>
@@ -201,6 +201,7 @@
 	</div>
 	<script src="/vuejs/axios.js"></script>
 	<script src="/vuejs/course/courseStore.js"></script>
+	
 	<script>
 		const {createApp, onMounted, ref} = Vue
 		const {createPinia} = Pinia
@@ -208,18 +209,99 @@
 			setup() {
 				const store=useCourseStore()
 				const keywordRef=ref('')
+				const titleRef=ref('')
+				const contentRef=ref('')
+				
 				onMounted(()=>{
 					store.dataRecv()
 				})
 				
 				return {
 					store,
-					keywordRef
+					keywordRef,
+					titleRef,
+					contentRef
 				}
 			}
 		})
 		app.use(createPinia())
-		app.mount("#place_select")
+		app.mount("#course_insert")
 	</script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=500f9263086d9dabb5676152c0e94936&libraries=services"></script>	
+<script>
+/* 1) 지도 생성 */
+var mapContainer = document.getElementById('map');
+var mapOption = {
+  center: new kakao.maps.LatLng(33.450701, 126.570667),
+  level: 5
+};
+var map = new kakao.maps.Map(mapContainer, mapOption);
+
+/* 2) 주소→좌표 변환기 */
+var geocoder = new kakao.maps.services.Geocoder();
+
+/* 3) 주소 데이터 (이 순서대로 선이 그려짐) */
+var places = [
+  { title: "카카오 스페이스닷원", address: "제주특별자치도 제주시 첨단로 242" },
+  { title: "월정리 해수욕장", address: "제주특별자치도 제주시 구좌읍 월정리 33-3" },
+  { title: "예시 장소 3", address: "제주특별자치도 제주시 연동 123-45" }
+];
+
+/* 4) 선 경로(path) + 화면 범위 */
+var linePath = [];
+var bounds = new kakao.maps.LatLngBounds();
+var polyline = null;
+
+/* 5) 주소 하나 처리하는 함수 */
+function addPlace(place) {
+  geocoder.addressSearch(place.address, function(result, status) {
+    if (status !== kakao.maps.services.Status.OK || !result[0]) return;
+
+    // 주소 → 좌표
+    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+    // 마커
+    var marker = new kakao.maps.Marker({
+      position: coords,
+      clickable: true
+    });
+    marker.setMap(map);
+
+    // 클릭하면 뜨는 InfoWindow (removable=true면 X 버튼 생김)
+    var infowindow = new kakao.maps.InfoWindow({
+      content: '<div style="padding:5px;">' + place.title + '<br>' + place.address + '</div>',
+      removable: true
+    });
+
+    kakao.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map, marker);
+    });
+
+    linePath.push(coords);
+
+    if (linePath.length >= 2) {
+      if (polyline) polyline.setMap(null); // 기존 선 제거
+
+      polyline = new kakao.maps.Polyline({
+        path: linePath,
+        strokeWeight: 4,
+        strokeColor: '#FFAE00',
+        strokeOpacity: 0.8,
+        strokeStyle: 'solid'
+      });
+      polyline.setMap(map);
+    }
+
+    bounds.extend(coords);
+    map.setBounds(bounds);
+  });
+}
+
+/* 6) places 전부 실행 */
+for (var i = 0; i < places.length; i++) {
+  addPlace(places[i]);
+}
+</script>
+
 </body>
 </html>
