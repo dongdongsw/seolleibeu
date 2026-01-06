@@ -1,9 +1,9 @@
 package com.sist.web.controller;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.sist.web.commons.*;
+
 @Controller
 public class AdminController {
 	@GetMapping("/admin")
@@ -13,10 +13,16 @@ public class AdminController {
 		return "admin/main";
 	}
 	// 장소
-	@GetMapping("/admin/place_list")
-	public String place_list(Model model)
+	@GetMapping("/admin/culture_list")
+	public String culture_list(Model model)
 	{
-		model.addAttribute("main_jsp", "place_list.jsp");
+		model.addAttribute("main_jsp", "culture_list.jsp");
+		return "admin/main";
+	}
+	@GetMapping("/admin/food_list")
+	public String food_list(Model model)
+	{
+		model.addAttribute("main_jsp", "food_list.jsp");
 		return "admin/main";
 	}
 	@GetMapping("/admin/place_create")

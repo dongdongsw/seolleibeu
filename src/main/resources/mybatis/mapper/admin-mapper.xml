@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sist.web.mapper.PlaceMapper">
+<mapper namespace="com.sist.web.place.mapper.PlaceMapper">
  <select id="cultureListData" resultType="com.sist.web.vo.PlaceVO" parameterType="hashmap">
-  
+  SELECT pno,name,category,thumbnail,company,phone,parking,addr,type
+  FROM place
+  WHERE category=#{category}
+  <if test="name!=null and name !=''">
+  AND name LIKE '%'||#{name}||'%'
+  </if>
+  ORDER BY pno ASC
+  OFFSET #{start} ROWS FETCH NEXT 10 ROWS ONLY
+ </select>
+ 
+ <select id="cultureTotalPage" resultType="int" parameterType="hashmap">
+  SELECT CEIL(COUNT(*)/10.0)
+  FROM place
+  WHERE category=#{category}
+  <if test="name!=null and name !=''">
+  AND name LIKE '%'||#{name}||'%'
+  </if>
  </select>
 </mapper>

@@ -11,7 +11,7 @@
 		<div class="container-fluid">
 			<div class="card shadow mb-4" style="margin-top: 16px;">
 				<div class="card-header py-3 d-flex justify-content-between align-items-center">
-				   <h6 class="m-0 font-weight-bold text-primary">장소 조회</h6>
+				   <h6 class="m-0 font-weight-bold text-primary">식당</h6>
 				    <div class="search-wrapper">
 				        <div class="input-group search-bar">
 				            <input type="text" class="form-control bg-light border-0 small"

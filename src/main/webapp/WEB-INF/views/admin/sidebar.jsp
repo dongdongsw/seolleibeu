@@ -27,9 +27,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">음식점</a>
-                        <a class="collapse-item" href="buttons.html">문화</a>
-                        <a class="collapse-item" href="cards.html">관광</a>
+                        <a class="collapse-item" href="/admin/food_list">식당</a>
+                        <a class="collapse-item" href="/admin/culture_list">문화</a>
                     </div>
                 </div>
             </li>
