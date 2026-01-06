@@ -8,5 +8,5 @@ import com.sist.web.vo.PlaceVO;
 public interface RestaurantService {
 	public List<PlaceVO> restaurantListData(Map map);
 	
-	public int restaurantTotalPage();
+	public int restaurantTotalPage(Map map);
 }

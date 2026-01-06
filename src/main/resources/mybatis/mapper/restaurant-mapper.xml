@@ -6,7 +6,7 @@
 
 	
 	<select id="restaurantListData" resultType="com.sist.web.vo.PlaceVO" parameterType="hashmap">
-		SELECT p.pno, name, addr, type, thumbnail, category, hit, f.f_count, r.r_count, l.l_count
+		SELECT p.pno, name, addr, type, thumbnail, category, hit
 		FROM place p
 		LEFT JOIN (
 			SELECT pno, COUNT(*) as f_count
@@ -41,16 +41,16 @@
 		ORDER BY
 		<choose>
 			<when test="array == 'favoritetop'">
-				f.f_count DESC
+				 NVL(f.f_count, 0) DESC
 			</when>
 			<when test="array == 'liketop'">
-				l.l_count DESC
+				NVL(l.l_count, 0) DESC
 			</when>
 			<when test="array == 'hittop'">
-				hit DESC
+				p.hit DESC
 			</when>
 			<when test="array == 'reviewtop'">
-				r.r_count DESC
+				NVL(r.r_count, 0) DESC
 			</when>
 			<when test="array == 'recent'">
 				pno DESC
@@ -63,9 +63,20 @@
 		OFFSET #{start} ROWS FETCH NEXT 16 ROWS ONLY
 	</select>
 	
-	<select id="restaurantTotalPage" resultType="int">
-		SELECT CEIL(COUNT(*)/8.0) 
+	<select id="restaurantTotalPage" resultType="int" parameterType="hashmap">
+		SELECT CEIL(COUNT(*)/16.0) 
 		FROM place
-		WHERE category = '식당'
+		<where>
+			category = '식당'
+		
+			<choose>
+				<when test="radio == 'subject'">
+					AND name LIKE '%'||#{keyword}||'%'
+				</when>
+				<when test="radio == 'address'">
+					AND addr LIKE '%'||#{keyword}||'%'
+				</when>
+			</choose>
+		</where>
 	</select>
 </mapper>

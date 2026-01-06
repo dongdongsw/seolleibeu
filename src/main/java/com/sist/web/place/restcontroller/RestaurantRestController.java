@@ -41,11 +41,18 @@ public class RestaurantRestController {
 			map.put("keyword", keyword);
 			
 			List<PlaceVO> resList = rService.restaurantListData(map);
-			int totalpage = rService.restaurantTotalPage();
+			int totalpage = rService.restaurantTotalPage(map);
+			
+			for(PlaceVO vo : resList) {
+				String[] addr = vo.getAddr().split(" ");
+				vo.setAddr(addr[1] + " " + addr[2] + " " + addr[3]);
+			}
 			
 			Map pageMap = Methods.paginationMap(8, page, totalpage);
+			
 			map.putAll(pageMap);
 			map.put("resList", resList);
+			
 		} catch (Exception ex) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}

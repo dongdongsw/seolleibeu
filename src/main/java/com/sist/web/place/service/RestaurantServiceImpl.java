@@ -23,9 +23,9 @@ public class RestaurantServiceImpl implements RestaurantService{
 	}
 
 	@Override
-	public int restaurantTotalPage() {
+	public int restaurantTotalPage(Map map) {
 		// TODO Auto-generated method stub
-		return mapper.restaurantTotalPage();
+		return mapper.restaurantTotalPage(map);
 	}
 	
 	

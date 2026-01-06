@@ -7,8 +7,8 @@ const useRestaurantStore = defineStore('restaurant',{
 		startPage: 0,
 		endPage: 0,
 		totalpage: 0,
-		radio:'',
-		array:'recent',
+		radio:'subject',
+		array:'',
 		keyword:''
 		
 	}),
@@ -46,12 +46,8 @@ const useRestaurantStore = defineStore('restaurant',{
 		},
 		arrayChange(array){
 			this.array = array
-		},
-		radioChange(radio){
-			this.radio =  radio
-		},
-		keywordInput(keyword){
-			this.keyword = keyword
+			this.curpage = 1
+			this.restaurantListData()
 		}
 	}
 })
