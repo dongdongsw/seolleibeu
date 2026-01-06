@@ -22,8 +22,16 @@
 			  <div class="mypage-sizing">
 				<div class="col-lg-9 col-md-9 col-sm-12">
 					<main class="mypage-main">
-						<h2>내가 쓴 댓글</h2>
-
+					  <div class="search search-row">
+						  <h2 class="page-title">내가 쓴 댓글</h2>
+						  <div class="input-group reply-search" style="margin-top: -40px;">
+						    <input type="text" class="form-control"
+						           placeholder="검색어를 입력하세요.">
+						    <span class="input-group-addon">
+						      <i class="fa fa-search"></i>
+						    </span>
+						  </div>
+						</div>
 						<div class="info-card">
 							<c:forEach begin="0" end="2">
 								<div class="post-block my-course-item" style="margin-bottom:0">

@@ -196,6 +196,24 @@ html {
   border: none !important;
 }
 
+.search-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #cec8c1;;
+}
+
+.page-title {
+  margin: 0;
+  border-bottom: none !important;
+}
+
+.reply-search {
+  width: 320px;
+  margin-bottom: -20px;
+}
+
 .my-course-item {
 	display: flex;
 	align-items: center;
