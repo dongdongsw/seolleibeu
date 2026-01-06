@@ -30,8 +30,16 @@ public class AttractionRestController {
 			final int BLOCK = 8;
 			int startPage = ((page-1)/BLOCK*BLOCK)+1;
 			int endPage = ((page-1)/BLOCK*BLOCK)+BLOCK;
+			if(endPage>totalpage) {
+				endPage = totalpage;
+			}
 			
-			map.put("culList", attList);
+			for(PlaceVO vo : attList) {
+				String[] datas = vo.getAddr().split(" ");
+				vo.setAddr(datas[0]+" "+datas[1]);
+			}
+			
+			map.put("attList", attList);
 			map.put("curpage", page);
 			map.put("totalpage", totalpage);
 			map.put("startPage", startPage);

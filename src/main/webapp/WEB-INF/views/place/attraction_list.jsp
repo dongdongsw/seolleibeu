@@ -23,7 +23,7 @@
         </div>
     </div>
     <!-- /.page header -->
-    <div class="content">
+    <div class="content" id="attraction_list">
         <div class="container">
         	<div class="type-select" style=" margin-left: 5px;">
 	   			<input type="radio" name="type" value="제목" checked="checked"><span style="margin-left: 4px;">제목</span>
@@ -44,36 +44,51 @@
 					<li><a href="#">최신순</a></li>
 				</ul>
 			</div>			
-			<c:forEach begin="0" end="3">
             <div class="row" style="margin-top: 10px;">
-            	<c:forEach begin="0" end="3">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" v-for="(vo, index) in store.attList" :key="index">
                     <div class="project-img mb30 thumbnail">
-                        <a href="/place/attraction/detail" class="imghover">
-                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
+                        <a href="#" class="imghover">
+                        	<img :src="vo.thumbnail" class="img-responsive" alt="Interior Design Website Templates Free Download" style="width: 235px; height: 250px;">
                         	<div class="caption">
-                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">제목제목제목제목제목제목제목제목제목제목제목</h4>
-                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">소개소개</p>
+                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{vo.name}}</h4>
+                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{vo.addr}}</p>
                         	</div>
                         </a>
-                        <a><i class="fa fa-star" style="position:absolute; left:77%; top:5%; padding-top: 1px; font-size: 30px; color: gold;"></i></a>
                     </div>
+                    <a><i class="fa fa-star" style="position:absolute; left:77%; top:5%; padding-top: 1px; font-size: 30px; color: gold;"></i></a>
                 </div>
-                </c:forEach>
             </div>
-            </c:forEach>
             <div class="row">
                 <div class="st-pagination">
                     <ul class="pagination">
-                        <li><a href="#">Previous</a></li>
-                        <li><a href="#" class="active">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">Next</a></li>
+                        <li v-if="store.startPage>1"><a @click="store.movePage(store.startPage-1)">이전</a></li>
+                        <li v-for="i in store.range"><a :class="i === store.curpage ? 'active' : ''" @click="store.movePage(i)">{{i}}</a></li>
+                        <li v-if="store.endPage<store.totalpage"><a @click="store.movePage(store.endPage+1)">다음</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+    <script src="/vuejs/axios.js"></script>
+    <script src="/vuejs/place/attractionStore.js"></script>
+    <script>
+      const { createApp, onMounted } = Vue
+      const { createPinia } = Pinia
+      
+      const attractionApp = createApp({
+    	  setup() {
+    		  const store = useAttractionStore()
+    		  onMounted(()=> {
+    			  store.attractionListData()
+    		  })
+    		  
+    		  return {
+    			  store
+    		  }
+    	  }
+      })
+      attractionApp.use(createPinia())
+      attractionApp.mount('#attraction_list')
+    </script>
 </body>
 </html>

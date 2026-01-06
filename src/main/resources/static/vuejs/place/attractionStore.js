@@ -1,8 +1,8 @@
 const { defineStore } = Pinia
 
-const useCultureStore = defineStore('culture', {
+const useAttractionStore = defineStore('attraction', {
 	state: ()=> ({
-		culList: [],
+		attList: [],
 		curpage: 1,
 		totalpage: 0,
 		startPage: 0,
@@ -18,13 +18,13 @@ const useCultureStore = defineStore('culture', {
 		}
 	},
 	actions: {
-		async cultureListData() {
-			const res = await api.get('/place/culture_list_vue/', {
+		async attractionListData() {
+			const res = await api.get('/place/attraction_list_vue/', {
 				params: {
 					page: this.curpage
 				}
 			})
-			this.culList = res.data.culList
+			this.attList = res.data.attList
 			this.curpage = res.data.curpage
 			this.startPage = res.data.startPage
 			this.endPage = res.data.endPage
@@ -32,7 +32,7 @@ const useCultureStore = defineStore('culture', {
 		},
 		movePage(page) {
 			this.curpage = page
-			this.cultureListData()
+			this.attractionListData()
 		}
 	}
 })

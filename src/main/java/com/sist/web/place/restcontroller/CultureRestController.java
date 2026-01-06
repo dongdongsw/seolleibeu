@@ -28,6 +28,14 @@ public class CultureRestController {
 			final int BLOCK = 8;
 			int startPage = ((page-1)/BLOCK*BLOCK)+1;
 			int endPage = ((page-1)/BLOCK*BLOCK)+BLOCK;
+			if(endPage>totalpage) {
+				endPage = totalpage;
+			}
+			
+			for(PlaceVO vo : culList) {
+				String[] datas = vo.getAddr().split(" ");
+				vo.setAddr(datas[0]+" "+datas[1]);
+			}
 			
 			map.put("culList", culList);
 			map.put("curpage", page);

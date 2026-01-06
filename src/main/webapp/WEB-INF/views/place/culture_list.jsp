@@ -50,7 +50,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" v-for="(vo, index) in store.culList" :key="index">
                     <div class="project-img mb30 thumbnail">
                         <a href="#" class="imghover">
-                        	<img :src="vo.thumbnail" class="img-responsive" alt="Interior Design Website Templates Free Download">
+                        	<img :src="vo.thumbnail" class="img-responsive" alt="Interior Design Website Templates Free Download" style="width: 235px; height: 250px;">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{vo.name}}</h4>
                         		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{vo.addr}}</p>
@@ -64,11 +64,9 @@
             <div class="row">
                 <div class="st-pagination">
                     <ul class="pagination">
-                        <li><a href="#">Previous</a></li>
-                        <li><a href="#" class="active">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">Next</a></li>
+                        <li v-if="store.startPage>1"><a @click="store.movePage(store.startPage-1)">이전</a></li>
+                        <li v-for="i in store.range"><a :class="i === store.curpage ? 'active' : ''" @click="store.movePage(i)">{{i}}</a></li>
+                        <li v-if="store.endPage<store.totalpage"><a @click="store.movePage(store.endPage+1)">다음</a></li>
                     </ul>
                 </div>
             </div>
