@@ -25,12 +25,20 @@ public class RestaurantRestController {
 	private final RestaurantService rService;
 	
 	@GetMapping("/list_vue/")
-	public ResponseEntity<Map> restaurant_list_vue(@RequestParam("page") int page){
+	public ResponseEntity<Map> restaurant_list_vue(
+			@RequestParam("page") int page,
+			@RequestParam("radio") String radio,
+			@RequestParam("array") String array,
+			@RequestParam("keyword") String keyword
+			){
 		
 		
 		Map map = new HashMap<>();
 		try {
 			map.put("start", (page-1)*16);
+			map.put("radio", radio);
+			map.put("array", array);
+			map.put("keyword", keyword);
 			
 			List<PlaceVO> resList = rService.restaurantListData(map);
 			int totalpage = rService.restaurantTotalPage();

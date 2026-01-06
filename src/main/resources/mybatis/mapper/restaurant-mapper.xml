@@ -4,11 +4,28 @@
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sist.web.place.mapper.RestaurantMapper">
 
+	
 	<select id="restaurantListData" resultType="com.sist.web.vo.PlaceVO" parameterType="hashmap">
-		SELECT pno, name, addr, type, thumbnail, category
-		FROM place
-		WHERE category = '식당'
-		<!-- <where>
+		SELECT p.pno, name, addr, type, thumbnail, category, hit, f.f_count, r.r_count, l.l_count
+		FROM place p
+		LEFT JOIN (
+			SELECT pno, COUNT(*) as f_count
+			FROM favorite
+			GROUP BY pno
+		) f ON p.pno = f.pno
+		
+		LEFT JOIN (
+			SELECT pno, COUNT(*) as r_count
+			FROM review
+			GROUP BY pno
+		) r ON p.pno = r.pno
+		
+		LEFT JOIN (
+			SELECT pno, COUNT(*) as l_count
+			FROM userlike
+			GROUP BY pno
+		) l ON p.pno = l.pno
+		<where>
 			category = '식당'
 		
 			<choose>
@@ -21,25 +38,28 @@
 			</choose>
 		</where>
 		
+		ORDER BY
 		<choose>
-			<when test="array == 'lowprice'">
-				ORDER BY 가겨 컬럼 넣고 ASC
+			<when test="array == 'favoritetop'">
+				f.f_count DESC
 			</when>
-			<when test="array == 'topprice'">
-				ORDER BY 가겨 컬럼 넣고 ASC
+			<when test="array == 'liketop'">
+				l.l_count DESC
 			</when>
-			<when test="array == 'popular'">
-				ORDER BY 즐겨찾기랑 리뷰, 좋아요 중에 하나 고르고 조인 걸어서 count 하고 ASC
+			<when test="array == 'hittop'">
+				hit DESC
+			</when>
+			<when test="array == 'reviewtop'">
+				r.r_count DESC
 			</when>
 			<when test="array == 'recent'">
-				ORDER BY pno DESC
+				pno DESC
 			</when>
 			<otherwise>
-				ORDER BY pno ASC
+				pno ASC
 			</otherwise>
 		</choose>
 		
-		 -->
 		OFFSET #{start} ROWS FETCH NEXT 16 ROWS ONLY
 	</select>
 	

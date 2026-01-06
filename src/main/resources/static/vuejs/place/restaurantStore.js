@@ -6,7 +6,10 @@ const useRestaurantStore = defineStore('restaurant',{
 		curpage: 1,
 		startPage: 0,
 		endPage: 0,
-		totalpage: 0
+		totalpage: 0,
+		radio:'',
+		array:'recent',
+		keyword:''
 		
 	}),
 	getters:{
@@ -22,7 +25,10 @@ const useRestaurantStore = defineStore('restaurant',{
 		async restaurantListData(){
 			const result = await api.get('/place/restaurant/list_vue/',{
 				params:{
-					page:this.curpage
+					page:this.curpage,
+					radio:this.radio,
+					keyword:this.keyword,
+					array:this.array
 				}
 			})
 			// 테스트 끝나면 지울 것
@@ -37,6 +43,15 @@ const useRestaurantStore = defineStore('restaurant',{
 		movePage(page){
 			this.curpage = page
 			this.restaurantListData()
+		},
+		arrayChange(array){
+			this.array = array
+		},
+		radioChange(radio){
+			this.radio =  radio
+		},
+		keywordInput(keyword){
+			this.keyword = keyword
 		}
 	}
 })

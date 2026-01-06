@@ -1,0 +1,12 @@
+package com.sist.web.vo;
+
+import java.util.Date;
+
+import lombok.Data;
+
+@Data
+public class FavoriteVO {
+
+	private int fno, uno, pno;
+	private Date pushed_at;
+}

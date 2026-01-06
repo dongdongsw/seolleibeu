@@ -40,10 +40,10 @@
 					<span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu" style="min-width: 80px;">
-					<li><a href="#">낮은가격순</a></li>
-					<li><a href="#">높은가격순</a></li>
-					<li><a href="#">인기순</a></li>
-					<li><a href="#">최신순</a></li>
+					<li><a href="#" @click="arrayChange('lowprice')">낮은가격순</a></li>
+					<li><a href="#" @click="arrayChange('topprice')">높은가격순</a></li>
+					<li><a href="#" @click="arrayChange('popular')">인기순</a></li>
+					<li><a href="#" @click="arrayChange('recent')">최신순</a></li>
 				</ul>
 			</div>
 			<div style="margin-top: 20px;">	
