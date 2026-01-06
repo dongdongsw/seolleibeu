@@ -16,9 +16,9 @@ public class CourseServiceImpl implements CourseService {
 	private final CourseMapper cMapper;
 
 	@Override
-	public List<PlaceVO> placeListDataInCourse(String category, String keyword) {
+	public List<PlaceVO> placeListDataInCourse(String type, String keyword) {
 		// TODO Auto-generated method stub
-		return cMapper.placeListDataInCourse(category, keyword);
+		return cMapper.placeListDataInCourse(type, keyword);
 	}
 
 	

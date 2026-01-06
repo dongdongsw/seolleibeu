@@ -9,11 +9,11 @@
  		FROM place
  		
  		<choose>
-		    <when test="category != null">
-		      WHERE category = #{category}
+		    <when test="type != null and type != ''">
+		      WHERE type LIKE '%'||#{type}||'%'
 		    </when>
 		
-		    <when test="keyword != null">
+		    <when test="keyword != null and keyword != ''">
 		      WHERE name LIKE '%'||#{keyword}||'%'
 		    </when>
 		</choose>

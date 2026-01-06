@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
 <title>설레이브 - 코스 생성</title>
 <link href="/css/style.css" rel="stylesheet">
 <link href="/css/course.css" rel="stylesheet">
@@ -41,12 +42,40 @@
 						<div class="place-main">
 							<div class="place-search">
 								<div class="input-group">
-									<input type="text" class="form-control"
+									<input type="text" class="form-control" ref="keywordRef" v-model="store.keyword" @keyup.enter="store.find(keywordRef)"
 										placeholder="장소를 검색하세요." aria-describedby="basic-addon2">
-									<span class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></span>
+									<span class="input-group-addon" id="basic-addon2" @click="store.find(keywordRef)"><i class="fa fa-search"></i></span>
 								</div>
 								<div class="cate text-center">
-									<span>명소</span> <span>액티비티</span> <span>연극/뮤지컬</span> <span>음식점</span>
+									<button @click="store.cateButton('명소')">
+										명소
+									</button>  
+									<button @click="store.cateButton('액티비티')">
+										액티비티
+									</button>
+									<button @click="store.cateButton('연극/뮤지컬')">
+										연극/뮤지컬
+									</button> 
+									<button @click="store.cateButton('전시')">
+										전시
+									</button> 
+									<button @click="store.cateButton('카페')">
+										카페
+									</button> 
+									<button @click="store.cateButton('한식')">
+										한식
+									</button> 
+									<button @click="store.cateButton('양식')">
+										양식
+									</button> 
+									<button @click="store.cateButton('일식')">
+										일식
+									</button>  
+									
+									
+									
+									<!-- <span>연극/뮤지컬</span> <span>전시</span> -->
+									<!-- <span>카페</span> <span>한식</span> <span>양식</span> <span>일식</span> -->
 								</div>
 							</div>
 							<div class="place-list">
@@ -173,17 +202,19 @@
 	<script src="/vuejs/axios.js"></script>
 	<script src="/vuejs/course/courseStore.js"></script>
 	<script>
-		const {createApp, onMounted} = Vue
+		const {createApp, onMounted, ref} = Vue
 		const {createPinia} = Pinia
 		const app=createApp({
 			setup() {
 				const store=useCourseStore()
+				const keywordRef=ref('')
 				onMounted(()=>{
 					store.dataRecv()
 				})
 				
 				return {
-					store
+					store,
+					keywordRef
 				}
 			}
 		})

@@ -13,6 +13,6 @@ import com.sist.web.vo.PlaceVO;
 @Repository
 public interface CourseMapper {
 
-	public List<PlaceVO> placeListDataInCourse(@Param("category") String category, @Param("keyword") String keyword);
+	public List<PlaceVO> placeListDataInCourse(@Param("type") String type, @Param("keyword") String keyword);
 	
 }
