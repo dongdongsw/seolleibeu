@@ -36,7 +36,7 @@ public class AttractionRestController {
 			
 			for(PlaceVO vo : attList) {
 				String[] datas = vo.getAddr().split(" ");
-				vo.setAddr(datas[0]+" "+datas[1]);
+				vo.setAddr(datas[1]+" "+datas[2]+" "+datas[3]);
 			}
 			
 			map.put("attList", attList);

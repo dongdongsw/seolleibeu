@@ -34,7 +34,7 @@ public class CultureRestController {
 			
 			for(PlaceVO vo : culList) {
 				String[] datas = vo.getAddr().split(" ");
-				vo.setAddr(datas[0]+" "+datas[1]);
+				vo.setAddr(datas[1]+" "+datas[2]+" "+datas[3]);
 			}
 			
 			map.put("culList", culList);
