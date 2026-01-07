@@ -28,10 +28,6 @@ public class CultureRestController {
 												@RequestParam(name = "selected", required = false) String selected) {
 		Map map = new HashMap();
 		try {
-			if(keyword != null && keyword.trim().isEmpty()) {
-				keyword = null;
-				column = null;
-			}
 			map.put("start", (page-1)*16);
 			map.put("column", column);
 			map.put("keyword", keyword);
