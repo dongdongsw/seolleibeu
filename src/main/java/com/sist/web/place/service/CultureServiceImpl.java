@@ -1,11 +1,11 @@
 package com.sist.web.place.service;
 
-import java.util.List;
+import java.util.*;
 
 import org.springframework.stereotype.Service;
 
-import com.sist.web.place.mapper.CultureMapper;
-import com.sist.web.vo.PlaceVO;
+import com.sist.web.place.mapper.*;
+import com.sist.web.vo.*;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,14 +15,14 @@ public class CultureServiceImpl implements CultureService {
 	private final CultureMapper mapper;
 
 	@Override
-	public List<PlaceVO> cultureListData(int start) {
+	public List<PlaceVO> cultureListData(Map map) {
 		// TODO Auto-generated method stub
-		return mapper.cultureListData(start);
+		return mapper.cultureListData(map);
 	}
 
 	@Override
-	public int cultureTotalPage() {
+	public int cultureTotalPage(Map map) {
 		// TODO Auto-generated method stub
-		return mapper.cultureTotalPage();
+		return mapper.cultureTotalPage(map);
 	}
 }

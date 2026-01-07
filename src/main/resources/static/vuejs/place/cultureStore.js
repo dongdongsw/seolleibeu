@@ -6,7 +6,10 @@ const useCultureStore = defineStore('culture', {
 		curpage: 1,
 		totalpage: 0,
 		startPage: 0,
-		endPage: 0
+		endPage: 0,
+		column: 'addr',
+		keyword: '',
+		selected: 'p.pno'
 	}),
 	getters: {
 		range: (state)=> {
@@ -19,9 +22,12 @@ const useCultureStore = defineStore('culture', {
 	},
 	actions: {
 		async cultureListData() {
-			const res = await api.get('/place/culture_list_vue/', {
+			const res = await api.get('/place/culture/list_vue/', {
 				params: {
-					page: this.curpage
+					page: this.curpage,
+					column: this.column,
+					keyword: this.keyword,
+					selected: this.selected
 				}
 			})
 			this.culList = res.data.culList
@@ -32,6 +38,18 @@ const useCultureStore = defineStore('culture', {
 		},
 		movePage(page) {
 			this.curpage = page
+			this.cultureListData()
+		},
+		search(keywordRef) {
+			if(!this.keyword || !this.keyword.trim()) {
+				keywordRef?.focus()
+				return
+			}
+			this.curpage = 1
+			this.cultureListData()
+		},
+		changeSelected() {
+			this.curpage = 1
 			this.cultureListData()
 		}
 	}

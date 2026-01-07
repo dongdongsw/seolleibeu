@@ -3,16 +3,27 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sist.web.place.mapper.CultureMapper">
-  <select id="cultureListData" resultType="com.sist.web.vo.PlaceVO" parameterType="int">
-    SELECT pno, name, addr, category, type, thumbnail
-    FROM place
+  <select id="cultureListData" resultType="com.sist.web.vo.PlaceVO" parameterType="hashmap">
+    SELECT p.pno, p.name, p.addr, p.category, p.type, p.thumbnail, p.hit, p.created_at,
+    		COUNT(DISTINCT f.fno) AS f_count, COUNT(DISTINCT l.l_id) AS l_count, COUNT(DISTINCT r.rno) AS r_count
+    FROM place p
+    LEFT JOIN favorite f ON p.pno = f.pno
+    LEFT JOIN userlike l ON p.pno = l.pno
+    LEFT JOIN review r ON p.pno = r.pno
     WHERE type IN('연극/뮤지컬', '전시', '액티비티')
-    ORDER BY pno DESC
+    <if test="keyword != null and keyword != ''">
+      AND ${column} LIKE '%'||#{keyword}||'%'
+    </if>
+    GROUP BY p.pno, p.name, p.addr, p.category, p.type, p.thumbnail, p.hit, p.created_at
+    ORDER BY ${selected} DESC
     OFFSET #{start} ROWS FETCH NEXT 16 ROWS ONLY
   </select>
   
-  <select id="cultureTotalPage" resultType="int">
+  <select id="cultureTotalPage" resultType="int" parameterType="hashmap">
     SELECT CEIL(COUNT(*)/16.0) FROM place
     WHERE type IN('연극/뮤지컬', '전시', '액티비티')
+    <if test="keyword != null and keyword != ''">
+      AND ${column} LIKE '%'||#{keyword}||'%'
+    </if>
   </select>
 </mapper>

@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface CultureMapper {
-	public List<PlaceVO> cultureListData(int start);
-	public int cultureTotalPage();
+	public List<PlaceVO> cultureListData(Map map);
+	public int cultureTotalPage(Map map);
 }
