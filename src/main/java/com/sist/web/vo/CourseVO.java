@@ -9,4 +9,6 @@ public class CourseVO {
 	private int cno, uno, hit;
 	private String pnos, title, content, is_public;
 	private Date created_at, updated_at;
+	
+	private UsersVO uvo=new UsersVO();
 }

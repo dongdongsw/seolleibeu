@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sist.web.commons.Methods;
 import com.sist.web.course.service.CourseService;
 import com.sist.web.vo.CourseVO;
 import com.sist.web.vo.PlaceVO;
@@ -45,7 +46,7 @@ public class CourseRestController {
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 	
-	@PostMapping("/insert_vue/")
+	@PostMapping("insert_vue/")
 	public ResponseEntity<Map> course_insert_vue(@RequestBody CourseVO vo) {
 		Map map=new HashMap();
 		try {
@@ -58,4 +59,22 @@ public class CourseRestController {
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	}
 	
+	@GetMapping("list_vue/")
+	public ResponseEntity<Map> course_list_vue(@RequestParam("page") int page, @RequestParam(name = "sort", required = false) String sort) {
+		Map map=new HashMap();
+		try {
+			List<CourseVO> list=cService.courseListData((page-1)*5, sort);
+			int totalpage=cService.courseListTotalPage();
+			
+			Map pageMap=Methods.paginationMap(5, page, totalpage);
+			
+			map.putAll(pageMap);
+			map.put("list", list);
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map, HttpStatus.OK);
+	} 
 }

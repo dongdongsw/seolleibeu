@@ -8,4 +8,6 @@ public interface CourseService {
 
 	public List<PlaceVO> placeListDataInCourse(String type, String keyword);
 	public void courseInsert(CourseVO vo);
+	public List<CourseVO> courseListData(int start, String sort);
+	public int courseListTotalPage();
 }

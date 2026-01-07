@@ -67,9 +67,6 @@
 												class="meta-author">By <a href="#" class="meta-link">작성자</a></span>
 										</p>
 										<div class="place-tag">
-										  <c:forEach begin="0" end="6">
-										    <span>장소장소장소</span>
-										  </c:forEach>
 											
 										</div>
 										<div class="post-content">

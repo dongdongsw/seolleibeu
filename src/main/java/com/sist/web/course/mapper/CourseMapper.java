@@ -16,5 +16,6 @@ public interface CourseMapper {
 
 	public List<PlaceVO> placeListDataInCourse(@Param("type") String type, @Param("keyword") String keyword);
 	public void courseInsert(CourseVO vo);
-	
+	public List<CourseVO> courseListData(@Param("start") Integer start, @Param("sort") String sort);
+	public int courseListTotalPage();
 }

@@ -14,18 +14,30 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CourseServiceImpl implements CourseService {
 
-	private final CourseMapper cMapper;
+	private final CourseMapper mapper;
 
 	@Override
 	public List<PlaceVO> placeListDataInCourse(String type, String keyword) {
 		// TODO Auto-generated method stub
-		return cMapper.placeListDataInCourse(type, keyword);
+		return mapper.placeListDataInCourse(type, keyword);
 	}
 
 	@Override
 	public void courseInsert(CourseVO vo) {
 		// TODO Auto-generated method stub
-		cMapper.courseInsert(vo);
+		mapper.courseInsert(vo);
+	}
+
+	@Override
+	public List<CourseVO> courseListData(int start, String sort) {
+		// TODO Auto-generated method stub
+		return mapper.courseListData(start, sort);
+	}
+
+	@Override
+	public int courseListTotalPage() {
+		// TODO Auto-generated method stub
+		return mapper.courseListTotalPage();
 	}
 
 	
