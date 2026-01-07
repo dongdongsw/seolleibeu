@@ -1,6 +1,7 @@
 package com.sist.web.course.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -29,15 +30,15 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public List<CourseVO> courseListData(int start, String sort) {
+	public List<CourseVO> courseListData(Map map) {
 		// TODO Auto-generated method stub
-		return mapper.courseListData(start, sort);
+		return mapper.courseListData(map);
 	}
 
 	@Override
-	public int courseListTotalPage() {
+	public int courseListTotalPage(String keyword) {
 		// TODO Auto-generated method stub
-		return mapper.courseListTotalPage();
+		return mapper.courseListTotalPage(keyword);
 	}
 
 	

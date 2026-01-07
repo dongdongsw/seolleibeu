@@ -60,11 +60,17 @@ public class CourseRestController {
 	}
 	
 	@GetMapping("list_vue/")
-	public ResponseEntity<Map> course_list_vue(@RequestParam("page") int page, @RequestParam(name = "sort", required = false) String sort) {
+	public ResponseEntity<Map> course_list_vue(@RequestParam("page") int page, @RequestParam("sort") String sort, 
+												@RequestParam(name = "keyword", required = false) String keyword) {
 		Map map=new HashMap();
 		try {
-			List<CourseVO> list=cService.courseListData((page-1)*5, sort);
-			int totalpage=cService.courseListTotalPage();
+			Map cMap=new HashMap();
+			cMap.put("keyword", keyword);
+			cMap.put("sort", sort);
+			cMap.put("start", (page-1)*5);
+			
+			List<CourseVO> list=cService.courseListData(cMap);
+			int totalpage=cService.courseListTotalPage(keyword);
 			
 			Map pageMap=Methods.paginationMap(5, page, totalpage);
 			

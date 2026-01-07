@@ -19,12 +19,11 @@ const useCourseStore=defineStore('course_insert', {
 		async dataRecv() {
 			const res=await api.get('/course/place_list_vue/', {
 				params: {
-					type:this.type,
-					keyword:this.keyword
+					type: this.type,
+					keyword: this.keyword
 				}
 			})
 			console.log(res.data)
-			console.log(this.is_public)
 			this.place_list=res.data
 		},
 		

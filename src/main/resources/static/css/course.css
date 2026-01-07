@@ -224,6 +224,7 @@ a {
 .input-group>.form-control {
 	border-right: none;
 	border-radius: 15px 0px 0px 15px;
+	color: #333;
 }
 
 .input-group-addon {
@@ -521,9 +522,9 @@ a {
 	background-color: #f999b7;
 }
 .post-block-img {
-	margin-right: 20px; 
-	width: 300px;
-	height: 300px;
+	margin-right: 30px; 
+	width: 320px;
+	height: 250px;
 }
 .post-block {
 	display: flex;
@@ -550,4 +551,17 @@ a {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	width: 120px;
+}
+.bold {
+	font-weight: bold;
+}
+.page-link:hover {
+ 	cursor: pointer;
+}
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;     
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
 }

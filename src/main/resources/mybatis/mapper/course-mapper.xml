@@ -32,15 +32,24 @@
  	
  	<resultMap type="com.sist.web.vo.CourseVO" id="courseMap">
  		<result property="uvo.name" column="name"/>
+ 		<result property="pvo.thumbnail" column="thumbnail"/>
  	</resultMap>
  	
  	<!-- 코스 게시판 리스트 -->
  	<select id="courseListData" resultMap="courseMap" parameterType="hashmap">                                                                                                                                                  
- 		SELECT c.cno, c.title, c.content, c.created_at, c.uno, u.name
+ 		SELECT c.cno, c.title, c.content, c.uno, u.name,
+ 			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday,
+ 				(SELECT thumbnail
+ 				 FROM place
+ 				 WHERE pno = TO_NUMBER(SUBSTR(c.pnos, 1, INSTR(c.pnos, ',') - 1))
+ 				 ) AS thumbnail
  		FROM course c
  		JOIN  users u
  		ON c.uno = u.uno
  		WHERE is_public = 'Y'
+ 		<if test="keyword != null and keyword != ''">
+ 			AND (title LIKE '%'||#{keyword}||'%' OR content LIKE '%'||#{keyword}||'%')
+ 		</if>
  		<if test="sort == '최신순'">
  			ORDER BY c.created_at DESC
  		</if>
@@ -51,9 +60,13 @@
  		OFFSET #{start} ROWS FETCH NEXT 5 ROWS ONLY
  	</select>
  	
- 	<select id="courseListTotalPage" resultType="int">                                                                                                                                                   
+ 	<select id="courseListTotalPage" resultType="int" parameterType="string">                                                                                                                                                   
  		SELECT CEIL(COUNT(*)/5.0)
  		FROM course
+ 		WHERE is_public = 'Y'
+ 		<if test="keyword != null and keyword != ''">
+ 			AND (title LIKE '%'||#{keyword}||'%' OR content LIKE '%'||#{keyword}||'%')
+ 		</if>
  	</select>
  	
 </mapper>
