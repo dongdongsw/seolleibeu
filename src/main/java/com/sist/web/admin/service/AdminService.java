@@ -8,4 +8,7 @@ import com.sist.web.vo.PlaceVO;
 public interface AdminService {
 	public List<PlaceVO> cultureListData(Map map);
 	public int cultureTotalPage(Map map);
+	public List<PlaceVO> foodListData(Map map);
+	public int foodTotalPage(Map map);
+	public PlaceVO cultureDetailData(int pno);
 }

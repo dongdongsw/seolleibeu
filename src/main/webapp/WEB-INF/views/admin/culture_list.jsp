@@ -65,7 +65,7 @@
 													class="fas fa-ellipsis-h"></i>
 												</a>
 												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" href="#">상세보기</a>
+													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal" @click="store.modalDetailData(vo.pno)">상세보기</a>
 												</div>
 											</div>
 										</td>
@@ -87,13 +87,54 @@
 			</div>
 		</div>
 	</div>
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content" style="width: 900px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body" v-if="store.detail">
+				    <div>
+				        <h5>{{store.detail.name}}</h5>
+				    </div>
+					    <div style="display: flex; gap:10px; align-items: flex-start;">
+					        <div>
+					            <img :src="store.detail.thumbnail" style="width: 350px; height: 250px;">
+					        </div>
+					        <div style="flex: 1;">
+					            <table>
+					                <tbody>
+					                    <tr>
+					                        <th>전화번호</th>
+					                        <td>{{store.detail.phone}}</td>
+					                    </tr>
+					                    <tr>
+					                        <th>주소</th>
+					                        <td>{{store.detail.addr}}</td>
+					                    </tr>
+					                    <tr>
+					                        <th></th>
+					                        <td></td>
+					                    </tr>
+					                </tbody>
+					            </table>
+					        </div>
+					    </div>
+					</div>
+							<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	</div>
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/vue-demi"></script>
     <script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="/vuejs/admin/culture.js"></script>
 	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/admin/culture.js"></script>
 	<script>
 	 const {createApp,onMounted,ref}=Vue
 	 const {createPinia}=Pinia
@@ -104,6 +145,7 @@
 			 
 			 onMounted(()=>{
 				 store.cultureListData()
+				 store.modalDetailData()
 			 })
 			 return {
 				 store,nameRef

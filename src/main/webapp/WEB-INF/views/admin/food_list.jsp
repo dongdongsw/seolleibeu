@@ -5,8 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+ .addr{
+ 	overflow: hidden;
+ 	text-overflow: ellipsis;
+ 	white-space: nowrap;
+ }
+ #dataTable {
+  table-layout: fixed;
+  width: 100%;
+}
+</style>
 </head>
 <body>
+<div id="food_list">
 	<div id="wrapper">
 		<div class="container-fluid">
 			<div class="card shadow mb-4" style="margin-top: 16px;">
@@ -32,47 +44,40 @@
 								cellspacing="0">
 								<thead>
 									<tr>
-										<th style="width: 5%">번호</th>
-										<th style="width: 30%">이름</th>
-										<th style="width: 33%">주소</th>
-										<th style="width: 7%">카테고리</th>
-										<th style="width: 10%">전화번호</th>
-										<th style="width: 10%">작성일</th>
-										<th style="width: 5%"></th>
+										<th style="width: 4%">번호</th>
+										<th style="width: 25%">이름</th>
+										<th style="width: 38%">주소</th>
+										<th style="width: 13%">전화번호</th>
+										<th style="width: 7%">상태</th>
+										<th style="width: 3%"></th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>123</td>
-										<td>쌍용강북교육센터</td>
-										<td>홍대입구 근처</td>
-										<td>문화</td>
-										<td>010-1234-1234</td>
-										<td>2011/04/25</td>
+									<tr v-for="(vo,index) in store.list" :key="index">
+										<td>{{vo.pno}}</td>
+										<td :title="vo.name">{{vo.name}}</td>
+										<td class="addr" :title="vo.addr">{{vo.addr}}</td>
+										<td class="addr">{{vo.phone}}</td>
+										<td>비공개</td>
 										<td class="text-center">
 											<div class="dropdown">
 												<a href="#" data-toggle="dropdown"> <i
 													class="fas fa-ellipsis-h"></i>
 												</a>
 												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" href="#">상세보기</a>
+													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal">상세보기</a>
 												</div>
 											</div>
 										</td>
 									</tr>
 								</tbody>
 							</table>
-							<div class="dataTables_wrapper" style="position: absolute; top: 90%; left: 40%;">
+							<div class="dataTables_wrapper" style="margin-top: 15px;">
 									<div class="dataTables_paginate paging_simple_numbers">
 										<ul class="pagination justify-content-center">
-											<li class="page-item"><a class="page-link">&lt;</a></li>
-											<li class="page-item active"><a class="page-link">1</a></li>
-											<li class="page-item"><a class="page-link">2</a></li>
-											<li class="page-item"><a class="page-link">3</a></li>
-											<li class="page-item"><a class="page-link">4</a></li>
-											<li class="page-item"><a class="page-link">5</a></li>
-											<li class="page-item"><a class="page-link">6</a></li>
-											<li class="page-item"><a class="page-link">&gt;</a></li>
+											<li class="page-item" v-if="store.startPage>1"><a class="page-link" @click="store.pageChange(store.startPage-1)">이전</a></li>
+											<li :class="i==store.curpage?'page-item active':'page-item'" v-for="i in store.range"><a class="page-link" @click="store.pageChange(i)">{{i}}</a></li>
+											<li class="page-item" v-if="store.endPage<store.totalpage"><a class="page-link" @click="store.pageChange(store.endPage+1)">다음</a></li>
 										</ul>
 									</div>
 								</div>
@@ -82,5 +87,52 @@
 			</div>
 		</div>
 	</div>
+</div>
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>내용</p>
+					<p>내용</p>
+					<p>내용</p>
+					<p>내용</p>
+					<p>내용</p>
+					<p>내용</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://unpkg.com/vue-demi"></script>
+	<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/admin/food.js"></script>
+<script>
+  const {createApp,onMounted,ref}=Vue
+  const {createPinia}=Pinia
+  const foodApp=createApp({
+	  setup(){
+	  	  const store=useFoodStore()
+	  	  const nameRef=ref(null)
+	  
+		  onMounted(()=>{
+			  store.foodListData()
+		  })
+		  return{
+			  store,nameRef
+		  }
+	  }
+  })
+  foodApp.use(createPinia())
+  foodApp.mount('#food_list')
+</script>
 </body>
 </html>

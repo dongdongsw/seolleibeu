@@ -21,4 +21,22 @@ public class AdminServiceImpl implements AdminService{
 		// TODO Auto-generated method stub
 		return pmapper.cultureTotalPage(map);
 	}
+
+	@Override
+	public List<PlaceVO> foodListData(Map map) {
+		// TODO Auto-generated method stub
+		return pmapper.foodListData(map);
+	}
+
+	@Override
+	public int foodTotalPage(Map map) {
+		// TODO Auto-generated method stub
+		return pmapper.foodTotalPage(map);
+	}
+
+	@Override
+	public PlaceVO cultureDetailData(int pno) {
+		// TODO Auto-generated method stub
+		return pmapper.cultureDetailData(pno);
+	}
 }

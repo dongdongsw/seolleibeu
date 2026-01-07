@@ -1,15 +1,14 @@
 const {defineStore}=Pinia
 
-const useCultureStore=defineStore('culture_list',{
+const useFoodStore=defineStore('food_list',{
 	state:()=>({
 		list:[],
 		curpage:1,
 		startPage:0,
-		endPage:0,
 		totalpage:0,
-		category:'문화',
-		name:'',
-		detail:null
+		endPage:0,
+		category:'식당',
+		name:''
 	}),
 	getters:{
 		range:(state)=>{
@@ -22,37 +21,32 @@ const useCultureStore=defineStore('culture_list',{
 		}
 	},
 	actions:{
-		async cultureListData(){
-			const res=await api.get('/admin/culture_list_vue/',{
+		async foodListData(){
+			const res=await api.get('/admin/food_list_vue/',{
 				params:{
 					page:this.curpage,
-					category:this.category,
-					name:this.name
+					name:this.name,
+					category:this.category
 				}
 			})
 			this.list=res.data.list
 			this.curpage=res.data.curpage
 			this.startPage=res.data.startPage
-			this.endPage=res.data.endPage
 			this.totalpage=res.data.totalpage
-		},
-		/*모달창 상세보기*/
-		async modalDetailData(pno){
-			const res=await api.get(`/admin/culture_detail_vue/?pno=${pno}`)
-			this.detail=res.data
+			this.endPage=res.data.endPage
 		},
 		pageChange(page){
 			this.curpage=page
-			this.cultureListData()
+			this.foodListData()
 		},
 		find(nameRef){
-			if(this.name==='')
+			if(nameRef==='')
 			{
 				nameRef?.focus()
 				return
 			}
 			this.curpage=1
-			this.cultureListData()
+			this.foodListData()
 		}
 	}
 })
