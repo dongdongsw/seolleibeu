@@ -1,17 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 						 
 						<div class="detailborder">
 							<div class="detailinline">
 								<div class="detailpadding">
-									<c:forEach begin="0" end="17">
-										<div class="detailmenu">
-											<div style="font-weight: 500;">아메리카노</div>
-											<div style="margin-top: 6px;">4,000원</div>
+									
+										<div class="detailmenu" v-for="(menu, index) in store.pvo.menuList">
+											<div style="font-weight: 500;">{{menu.name}}</div>
+											<div style="margin-top: 6px;">{{menu.price}}</div>
 										</div>
-									</c:forEach>
+									
 								</div>
 
 								<div id="myCarousel" class="carousel slide" data-ride="carousel">

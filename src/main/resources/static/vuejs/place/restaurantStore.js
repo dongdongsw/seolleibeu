@@ -9,8 +9,10 @@ const useRestaurantStore = defineStore('restaurant',{
 		totalpage: 0,
 		radio:'subject',
 		array:'',
-		keyword:''
-		
+		keyword:'',
+		pvo: {
+			menuList: []
+		}
 	}),
 	getters:{
 		range:(state)=>{
@@ -48,6 +50,15 @@ const useRestaurantStore = defineStore('restaurant',{
 			this.array = array
 			this.curpage = 1
 			this.restaurantListData()
+		},
+		async restaurantDetailData(pno){
+			const result = await api.get('/place/restaurant/detail_vue/',{
+				params:{
+					pno:pno
+				}
+			})
+			console.log(result.data)
+			this.pvo = result.data
 		}
 	}
 })

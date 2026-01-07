@@ -1,6 +1,8 @@
 package com.sist.web.vo;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 import lombok.Data;
 
@@ -22,6 +24,9 @@ public class PlaceVO {
 	
 	// 좋아요 개수
 	private int l_count;
+	
+	// 메뉴 분리를 위해서 만든 필드
+	private List<Map> menuList;
 	
 	private PlaceOptionsVO povo = new PlaceOptionsVO();
 }

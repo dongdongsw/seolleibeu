@@ -9,4 +9,6 @@ public interface RestaurantService {
 	public List<PlaceVO> restaurantListData(Map map);
 	
 	public int restaurantTotalPage(Map map);
+	
+	public PlaceVO restaurantDetailData(int pno);
 }

@@ -27,6 +27,13 @@ public class RestaurantServiceImpl implements RestaurantService{
 		// TODO Auto-generated method stub
 		return mapper.restaurantTotalPage(map);
 	}
+
+	@Override
+	public PlaceVO restaurantDetailData(int pno) {
+		// TODO Auto-generated method stub
+		mapper.restaurantHitIncrement(pno);
+		return mapper.restaurantDetailData(pno);
+	}
 	
 	
 }

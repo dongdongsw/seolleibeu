@@ -79,4 +79,18 @@
 			</choose>
 		</where>
 	</select>
+	
+	<select id="restaurantDetailData" resultType="com.sist.web.vo.PlaceVO">
+		SELECT p.pno, name, type, category, addr, phone, seat, parking, intro,
+			hours, created_at, hit, imgs, menu, NVL(l.l_count,0) as lcount, thumbnail
+		FROM place p
+		
+		LEFT JOIN (
+			SELECT pno, COUNT(*) as l_count
+			FROM userlike
+			GROUP BY pno
+		) l ON p.pno = l.pno
+		
+		WHERE p.pno = #{pno} AND category = '식당'
+	</select>
 </mapper>

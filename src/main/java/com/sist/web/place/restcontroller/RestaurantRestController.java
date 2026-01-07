@@ -1,5 +1,6 @@
 package com.sist.web.place.restcontroller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,5 +59,33 @@ public class RestaurantRestController {
 		}
 		
 		return new ResponseEntity<>(map, HttpStatus.OK);
+	}
+	
+	@GetMapping("/detail_vue/")
+	public ResponseEntity<PlaceVO> restaurant_detail_vue(@RequestParam("pno") int pno){
+		
+		PlaceVO pvo = null;
+		try {
+			
+			pvo = rService.restaurantDetailData(pno);
+			if(pvo.getMenu() != null) {
+				List<Map> menuList = new ArrayList<>();
+				String[] menus = pvo.getMenu().split("\\|");
+				for(String items : menus) {
+					String[] item = items.split(":");
+					Map map = new HashMap<>();
+					map.put("name", item[0].trim());
+					map.put("price", item[1].trim());
+					menuList.add(map);
+				}
+				pvo.setMenuList(menuList);
+			}
+			
+			
+		} catch (Exception ex) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<>(pvo, HttpStatus.OK);
 	}
 }

@@ -11,7 +11,9 @@
 <link href="/css/place/restaurant_detail.css" rel="stylesheet" />
 </head>
 <body>
-	<jsp:include page="${fixedPage }"></jsp:include>
+	<div id="restaurant_detail">
+		<jsp:include page="${fixedPage }"></jsp:include>
+	
 					<%-- <div class="detail-wrap" style="width: 1155px;">
 						<div class="container">
 						  <ul class="nav nav-tabs">
@@ -29,6 +31,9 @@
 					  </div>
 					</div> --%>
 					
+				
+					
+					
 					<div class="container">
 					<ul class="nav nav-tabs">
 					    <li class="active"><a data-toggle="tab" href="#menu1">상세보기</a></li>
@@ -45,5 +50,7 @@
 					    </div>
 						</div>
 					  </div>
+		</div>
+	
 </body>
 </html>

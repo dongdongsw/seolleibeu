@@ -140,8 +140,8 @@
 					
 				</div>
             </div></div></div></div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
-    <!-- 리뷰 더보기 모달창 -->
+   <!--  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    리뷰 더보기 모달창
     <script>
      const reviewApp=Vue.createApp({
     	 data(){
@@ -164,4 +164,30 @@
     	 }
      })
      reviewApp.mount('#reviewApp')
-    </script>
+    </script> -->
+    	<script src="/vuejs/axios.js"></script>
+				<script src="/vuejs/place/restaurantStore.js"></script>
+				<script>
+					const {createApp, onMounted} = Vue
+					const {createPinia} = Pinia
+					
+					const restaurantDetailApp = createApp({
+						setup(){
+							const store = useRestaurantStore()
+							const params = new URLSearchParams(location.search)
+							const pno = params.get('pno')
+							
+							onMounted(()=>{
+								store.restaurantDetailData(pno)
+							})
+							
+							return{
+								store
+							}
+						}
+					})
+					restaurantDetailApp.use(createPinia())
+					restaurantDetailApp.mount("#restaurant_detail")
+				</script>
+    
+    
