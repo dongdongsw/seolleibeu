@@ -52,6 +52,7 @@ const useCourseListStore=defineStore('course_list', {
 			}
 			console.log(this.keyword)
 			this.sort='최신순'
+			this.curpage=1
 			this.dataRecv()
 		},
 		
@@ -62,6 +63,7 @@ const useCourseListStore=defineStore('course_list', {
 		
 		sortFunc(sort) {
 			this.sort=sort
+			this.curpage=1
 			this.dataRecv()
 		}
 	}
