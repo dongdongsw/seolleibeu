@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="../css/mypage.css" rel="stylesheet">
+
 <style type="text/css">
 	.reply-box {
 		width: 100%;
@@ -26,7 +27,7 @@
 </style>
 </head>
 <body>
-<div class="content">
+<div class="content" id="reply">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -76,5 +77,12 @@
 			</div>
 		</div>
 	</div>
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/reply/replyStore.js"></script>
+    <script>
+      const {createApp,onMounted} = Vue
+      const {createPinia} = Pinia
+
+    </script>
 </body>
 </html>
