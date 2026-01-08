@@ -1,5 +1,8 @@
 package com.sist.web.course.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sist.web.course.service.CourseService;
 import com.sist.web.vo.CourseVO;
+import com.sist.web.vo.PlaceVO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -34,7 +38,19 @@ public class CourseController {
 		
 		CourseVO vo=cService.courseDetailData(cno);
 		
+		String[] pnos=vo.getPnos().split(",");
+		int firstPlace=Integer.parseInt(pnos[0]);
+		List<PlaceVO> pList=new ArrayList<>();
+		
+		for(String pno:pnos) {
+			PlaceVO pvo=cService.getPlaceData(Integer.parseInt(pno));
+			pList.add(pvo);
+		}
+		
 		model.addAttribute("vo", vo);
+		model.addAttribute("pList", pList);
+		model.addAttribute("firstPlace", firstPlace);
+		
 		model.addAttribute("main_jsp", "../course/detail.jsp");
 		return "main/main";
 	}

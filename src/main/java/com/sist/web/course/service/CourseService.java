@@ -12,4 +12,6 @@ public interface CourseService {
 	public List<CourseVO> courseListData(Map map);
 	public int courseListTotalPage(String keyword);
 	public CourseVO courseDetailData(int cno);
+	public PlaceVO getPlaceData(int pno);
+	public int courseGetFirstPlace(int cno);
 }

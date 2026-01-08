@@ -70,11 +70,17 @@
  	</select>
  	
  	<select id="courseDetailData" resultMap="courseMap" parameterType="int">
- 		SELECT c.cno, c.title, c.content, c.uno, u.name, c.hit,
+ 		SELECT c.cno, c.title, c.content, c.uno, u.name, c.hit, c.pnos,
  			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday
  		FROM course c
  		JOIN users u
  		ON c.uno = u.uno
  		WHERE c.cno = #{cno}
+ 	</select>
+ 	
+ 	<select id="courseGetFirstPlace" resultType="int" parameterType="int">
+ 	 	SELECT TO_NUMBER(SUBSTR(pnos, 1, INSTR(pnos, ',') - 1)) AS pno
+ 	 	FROM course
+ 	 	WHERE cno = #{cno}
  	</select>
 </mapper>

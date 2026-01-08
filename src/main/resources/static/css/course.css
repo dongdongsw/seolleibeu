@@ -436,6 +436,7 @@ a {
 .mc-viewport {
 	overflow: hidden;
 	display: flex;
+	width: 90%;
 	gap: 14px;
 	scroll-behavior: smooth;
 	padding: 10px 4px;
@@ -479,11 +480,11 @@ a {
 }
 
 .card-text>h3 {
-	color: white !important;
+	color: white;
 	font-weight: 700 !important;
 }
 .place-detail {
-	height: 920px;
+	height: 1100px;
 	margin: 50px;
 	background-color: white;
 	border-radius: 15px;
@@ -511,11 +512,11 @@ a {
 	width: 800px;
 	margin-top: 50px;
 }
-.place-detail-btn > button {
-	background-color: black;
-	color: white;
+.place-detail-btn > a {
 	font-weight: 500;
 	border-radius: 10px;
+	margin-right: 50px;
+	text-decoration: underline;
 }
 .second > h2 {
 	color: #f5f5f5;
@@ -564,4 +565,7 @@ a {
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break: break-word;
+}
+.selected-place {
+	color: #f999b7 !important;
 }
