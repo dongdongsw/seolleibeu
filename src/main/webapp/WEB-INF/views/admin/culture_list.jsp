@@ -98,19 +98,14 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<div class="modal-body" v-if="store.detail">
-				    <div>
-				        <h5>{{store.detail.name}}</h5>
-				    </div>
 					    <div style="display: flex; gap:10px; align-items: flex-start;">
 					        <div>
 					            <img :src="store.detail.thumbnail" style="width: 350px; height: 250px;">
 					        </div>
 					        <div style="flex: 1;">
+					         <div style="color: black;" class="type">{{store.detail.name}}</div>
 					            <table>
 					                <tbody>
-					               		<tr>
-					                        <td style="color: black;" class="type">{{store.detail.type}}</td>
-					                    </tr>
 					                    <tr>
 					                        <th width="15%">주소</th>
 					                        <td width="85%">{{store.detail.addr}}</td>
@@ -133,7 +128,7 @@
 					                    </tr>
 					                    <tr>
 					                        <th>회사</th>
-					                        <td>{{store.detail.company ?? '없음'}}</td>
+					                        <td>{{store.detail.company ?? '-'}}</td>
 					                    </tr>
 					                </tbody>
 					            </table>

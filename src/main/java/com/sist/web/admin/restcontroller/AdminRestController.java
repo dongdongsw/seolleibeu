@@ -11,12 +11,14 @@ import java.util.*;
 import com.sist.web.admin.service.*;
 import com.sist.web.commons.Methods;
 import com.sist.web.vo.PlaceVO;
+import com.sist.web.vo.UsersVO;
 
 @RestController
 @RequiredArgsConstructor
 public class AdminRestController {
 	private final AdminService aservice;
 	
+	// 문화 리스트
 	@GetMapping("/admin/culture_list_vue/")
 	public ResponseEntity<Map> culture_list_vue(@RequestParam("category")String category,@RequestParam("page")int page,@RequestParam("name") String name)
 	{
@@ -41,6 +43,7 @@ public class AdminRestController {
 		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
 	
+	// 문화 모달창
 	@GetMapping("/admin/culture_detail_vue/")
 	public PlaceVO culture_detail_vue(@RequestParam("pno") int pno)
 	{
@@ -48,6 +51,7 @@ public class AdminRestController {
 		return vo;
 	}
 	
+	// 식당 리스트
 	@GetMapping("/admin/food_list_vue/")
 	public ResponseEntity<Map> food_list_vue(@RequestParam("category") String category,@RequestParam("page")int page,@RequestParam("name")String name)
 	{
@@ -72,6 +76,7 @@ public class AdminRestController {
 		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
 	
+	// 식당 모달창
 	@GetMapping("/admin/food_detail_vue/")
 	public PlaceVO food_detail_vue(@RequestParam("pno") int pno)
 	{
@@ -79,4 +84,26 @@ public class AdminRestController {
 		return vo;
 	}
 	
+	// 사용자 리스트
+	@GetMapping("/admin/users_list_vue/")
+	public ResponseEntity<Map> users_list_vue(@RequestParam("page") int page, @RequestParam("name") String name)
+	{
+		Map map=new HashMap();
+		try
+		{
+			map.put("start", (page-1)*10);
+			map.put("name", name);
+			List<UsersVO> list=aservice.usersListData(map);
+			int totalpage=aservice.usersTotalPage(map);
+			
+			Map pageMap=Methods.paginationMap(10, page, totalpage);
+			map.putAll(pageMap);
+			map.put("list", list);
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map,HttpStatus.OK);
+	}
 }
