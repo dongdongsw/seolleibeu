@@ -23,18 +23,18 @@
 
 						<!-- author post -->
 						<div class="row">
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="margin-top: 27px;">
+							<div class="col-lg-4 col-md-3 col-sm-3 col-xs-12" style="margin-top: 27px;">
 								<div class="author-img">
 									<img :src="store.pvo.thumbnail" class="" alt="">
 								</div>
 							</div>
-							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+							<div class="col-lg-8 col-md-9 col-sm-9 col-xs-12">
 
 								<div class="author-header">
 									<div class="author-bio">
-										<h2 class="author-title">no.{{store.pvo.pno}}장소명(실제 데이터 들어갈 곳)</h2>
+										<h2 class="author-title">{{store.pvo.name}}</h2>
 
-										<div class="meta mb0">
+										<div class="meta">
 											<span class="meta-author">{{store.pvo.type}} / {{store.pvo.category}}</span>
 										</div>
 									</div>
@@ -64,7 +64,7 @@
 									</div>
 									<div class="author-bio" style="width: 100%; display: flex;">
 										<h5 class="project-title">장소 생성 날짜</h5>
-										<span class="project-content">{{store.pvo.created_at}}</span>
+										<span class="project-content">{{store.pvo.dbday}}</span>
 									</div>
 								</div>
 								<br>

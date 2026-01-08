@@ -31,14 +31,16 @@
 	   		</div>
 		   	<div class="input-group" style="margin: 0px; top:50px; padding-top: 0px;">
 				<input type="text" class="form-control" placeholder="검색어를 입력하세요." aria-describedby="basic-addon2" 
-					style="border-radius: 15px 0px 0px 15px; color:black;" v-model="store.keyword" @keyup.enter="store.restaurantListData()">
+					style="border-radius: 15px 0px 0px 15px; color:black;" v-model="store.keyword" ref="keywordRef"  @keyup.enter="store.keywordInput(keywordRef)">
 				<span class="input-group-addon" id="basic-addon2" style="border-radius: 0px 15px 15px 0px;">
-					<i class="fa fa-search" @click="store.keywordInput(keywordRef)"></i>
+					<button @click="store.keywordInput(keywordRef)" style="border: none; background-color: white;">
+						<i class="fa fa-search" ></i>
+					</button> 
 				</span>
 			</div>
 			<div class="dropdown" style="float: right; margin-top: -25px;">
 				<button class="btn dropdown-toggle" type="button" data-toggle="dropdown" 
-					style="background-color: white; border-radius: 15px; padding: 5px 10px; margin-right: 10px;">정렬기준
+					style="background-color: white; border-radius: 15px; padding: 5px 10px; margin-right: 10px; margin-top: 50px;">정렬기준
 					<span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu" style="min-width: 80px;">
@@ -49,7 +51,7 @@
 					<li><a href="#" @click="store.arrayChange('recent')">최신순</a></li>
 				</ul>
 			</div>
-			<div style="margin-top: 70px;">	
+			<div style="margin-top: 60px;">	
 			<%-- <c:forEach begin="0" end="3">	 --%>	
 	            <div class="row" style="margin-top: 10px;" >
 	            	<%-- <c:forEach begin="0" end="3"> --%>
@@ -90,8 +92,10 @@
 
 	const restaurantApp = Vue.createApp({
 		setup(){
+			
 			const store = useRestaurantStore()
 			const keywordRef = (null)
+			
 			onMounted(()=>{
 				store.restaurantListData()
 			})

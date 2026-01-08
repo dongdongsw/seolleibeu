@@ -52,6 +52,14 @@ const useRestaurantStore = defineStore('restaurant',{
 			this.curpage = 1
 			this.restaurantListData()
 		},
+		keywordInput(keywordRef){
+			if(!this.keyword){
+				keywordRef?.focus()
+				return
+			}
+			this.curpage = 1
+			this.restaurantListData()
+		},
 		async restaurantDetailData(pno){
 			const result = await api.get('/place/restaurant/detail_vue/',{
 				params:{
