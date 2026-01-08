@@ -54,7 +54,7 @@
             <div class="row" style="margin-top: 10px;">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" v-for="(vo, index) in store.culList" :key="index">
                     <div class="project-img mb30 thumbnail">
-                        <a href="#" class="imghover">
+                        <a :href="'/place/culture/detail?pno='+vo.pno" class="imghover">
                         	<img :src="vo.thumbnail" class="img-responsive" alt="Interior Design Website Templates Free Download" style="width: 235px; height: 250px;">
                         	<div class="caption">
                         		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{vo.name}}</h4>

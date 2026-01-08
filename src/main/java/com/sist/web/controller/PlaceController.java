@@ -16,10 +16,9 @@ public class PlaceController {
 	
 	@GetMapping("/place/culture/detail")
 	public String place_culture_detail(Model model) {
-		
-		model.addAttribute("main_jsp","../place/restaurant_detail_main.jsp");
+		model.addAttribute("main_jsp","../place/culture_detail_main.jsp");
 		model.addAttribute("detailPage", "../place/culture_detail.jsp");
-		model.addAttribute("fixedPage", "../place/culture_detail_header.jsp");
+		model.addAttribute("reviewPage", "../place/culture_review.jsp");
 		return "main/main";
 	}
 

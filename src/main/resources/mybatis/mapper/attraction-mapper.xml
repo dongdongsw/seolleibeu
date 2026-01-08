@@ -26,4 +26,12 @@
       AND ${column} LIKE '%'||#{keyword}||'%'
     </if>
   </select>
+  
+  <update id="attractionHitIncrement" parameterType="int">
+    UPDATE place SET
+    hit = hit+1
+    WHERE type IN('명소', '자연관광', '엔터테인먼트')
+    AND pno = #{pno}
+  </update>
+  
 </mapper>

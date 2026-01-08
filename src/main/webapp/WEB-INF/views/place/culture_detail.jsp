@@ -1,12 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-    asd
-	<!-- 탭 -->
-	<script>
-		function changeQ(n) {
-		    var el = document.getElementById('qty_val');
-		    var v = parseInt(el.value) + n;
-		    if (v >= 1) el.value = v;
-		}
-	</script>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="detailborder">
+	<div class="detailinline">
+		<div class="detailpadding">
+		
+		</div>
+	</div>
+</div>
+</body>
+</html>
