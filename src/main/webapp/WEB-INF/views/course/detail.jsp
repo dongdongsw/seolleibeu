@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
 <title>Insert title here</title>
 <link href="/css/course.css" rel="stylesheet">
 <style type="text/css">
@@ -93,7 +94,7 @@ h3 {
 					</div>
 					
 					<div class="place-detail-img text-center">
-						<img :src="store.place.thumbnail" width="700" height="700">
+						<img :src="store.place.thumbnail" width="500" height="500">
 					</div>
 					<div class="text-center" style=" font-size: 12px">	 
 					   {{store.place.addr}}

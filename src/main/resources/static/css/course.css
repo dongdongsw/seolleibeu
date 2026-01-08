@@ -484,8 +484,8 @@ a {
 	font-weight: 700 !important;
 }
 .place-detail {
-	height: 1100px;
-	margin: 50px;
+	height: 820px;
+	margin: 80px 150px 150px 100px;
 	background-color: white;
 	border-radius: 15px;
 	border: 1px solid #f999b7;
@@ -510,13 +510,13 @@ a {
 .place-detail-btn {
 	margin-left: 100px;
 	width: 800px;
-	margin-top: 50px;
 }
 .place-detail-btn > a {
 	font-weight: 500;
 	border-radius: 10px;
-	margin-right: 50px;
+	margin-right: 250px;
 	text-decoration: underline;
+	font-size: 11px;
 }
 .second > h2 {
 	color: #f5f5f5;
