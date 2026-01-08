@@ -42,7 +42,7 @@ public class AdminRestController {
 	}
 	
 	@GetMapping("/admin/culture_detail_vue/")
-	public PlaceVO culture_detail_vue(@RequestParam("pno")int pno)
+	public PlaceVO culture_detail_vue(@RequestParam(name="pno")int pno)
 	{
 		PlaceVO vo=aservice.cultureDetailData(pno);
 		return vo;

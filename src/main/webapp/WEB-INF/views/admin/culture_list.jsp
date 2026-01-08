@@ -105,17 +105,24 @@
 					        <div style="flex: 1;">
 					            <table>
 					                <tbody>
-					                    <tr>
-					                        <th>전화번호</th>
-					                        <td>{{store.detail.phone}}</td>
+					               		<tr>
+					                        <td style="color: black">{{store.detail.type}}</td>
 					                    </tr>
 					                    <tr>
 					                        <th>주소</th>
 					                        <td>{{store.detail.addr}}</td>
 					                    </tr>
 					                    <tr>
-					                        <th></th>
-					                        <td></td>
+					                        <th>전화번호</th>
+					                        <td>{{store.detail.phone}}</td>
+					                    </tr>
+					                    <tr>
+					                        <th>주차</th>
+					                        <td>{{store.detail.parking}}</td>
+					                    </tr>
+					                    <tr>
+					                        <th>운영시간</th>
+					                        <td>{{store.detail.hours}}</td>
 					                    </tr>
 					                </tbody>
 					            </table>
