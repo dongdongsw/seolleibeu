@@ -27,29 +27,30 @@
 </style>
 </head>
 <body>
-<div class="content" id="reply">
+<div class="content" id="reply_list">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<table class="table">
-					  <c:forEach begin="0" end="5">
+					<table class="table" v-for="rvo in rStore.reply_list" :key="rvo.id">
 					  <tr>
 					   <td class="text-left" width="80%" style="display: flex;">
 					   <div style="margin-right: 10px">
 					   	<img src="/images/user-pic-1.jpg" width="30" height="30" style="border-radius: 50px">
 					   </div>
 					   <div style="display: flex; justify-content: center; align-items: center">
-					   	  <p>닉네임</p>
+					   	  <p>{{rvo.name}}</p>
 					   </div>
 					   
 					   </td>
 					   <td class="text-right">
-					     2025.12.31
+					     {{rvo.dbday}}
 					   </td>
 					  </tr>
 					  <tr class="reply-content">
 					    <td>
-					     <div style="white-space: pre-wrap;background-color: white;border:none;text-align: left;margin-top: 10px;margin-bottom: 30px; margin-left: 80px">첫 데이트하기 좋은 코스</div>
+					     <div style="white-space: pre-wrap;background-color: white;border:none;text-align: left;margin-top: 10px;margin-bottom: 30px; margin-left: 80px">
+					      {{rvo.cr_content}}
+					     </div>
 					    </td>
 					    <td class="text-right">
 					    <div style="margin-top: 50px;">
@@ -60,8 +61,6 @@
 					    </div>
 					  </td>
 					  </tr>
-					  
-					  </c:forEach>
 					</table>
 					<table class="table">
 					 <tr>
@@ -79,10 +78,27 @@
 	</div>
 	<script src="/vuejs/axios.js"></script>
 	<script src="/vuejs/reply/replyStore.js"></script>
-    <script>
-      const {createApp,onMounted} = Vue
-      const {createPinia} = Pinia
-
+    <script type="text/javascript">
+     const {createApp,onMounted} = Vue
+     const {createPinia} = Pinia
+     const replyApp=createApp({
+    	 setup(){
+    		 const rStore=useReplyStore();
+    		 
+    		 const params=new URLSearchParams(location.search)
+    		 const cno=params.get('cno')
+    		 
+    		 onMounted(()=>{
+    			 rStore.replyListData(cno)
+    		 })
+    		 
+    		 return {
+    			 rStore
+    		 }
+    	 }
+     })
+     replyApp.use(createPinia())
+     replyApp.mount('#reply_list')
     </script>
 </body>
 </html>

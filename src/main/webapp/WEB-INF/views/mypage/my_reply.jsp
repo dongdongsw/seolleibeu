@@ -23,7 +23,7 @@
 				<div class="col-lg-9 col-md-9 col-sm-12">
 					<main class="mypage-main">
 					  <div class="search search-row">
-						  <h2 class="page-title">내가 쓴 댓글</h2>
+						  <h2 class="mypage-title">내가 쓴 댓글</h2>
 						  <div class="input-group reply-search" style="margin-top: -40px;">
 						    <input type="text" class="form-control"
 						           placeholder="검색어를 입력하세요.">

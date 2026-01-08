@@ -18,7 +18,6 @@ public class ReplyServiceImpl implements ReplyService{
 	public List<ReplyVO> replyListData(int cno) {
 		return rMapper.replyListData(cno);
 	}
-
 	@Override
 	public void replyInsert(ReplyVO vo) {
 		rMapper.replyInsert(vo);
@@ -33,4 +32,5 @@ public class ReplyServiceImpl implements ReplyService{
 	public void replyDelete(int id) {
 		rMapper.replyDelete(id);
 	}
+
 }

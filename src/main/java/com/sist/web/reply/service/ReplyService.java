@@ -13,6 +13,7 @@ public interface ReplyService {
 		
 		// 댓글 수정
 		public void replyUpdate(int id, String cr_content);
+		
 		// 댓글 삭제
 		public void replyDelete(int id);
 }

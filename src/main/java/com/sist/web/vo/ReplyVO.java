@@ -10,6 +10,9 @@ public class ReplyVO {
 	private int cno;
 	private int uno;
 	private String cr_content;
+	private String dbday;
 	private Date cr_created_at;
 	private Date cr_update_at;
+	
+	private String name;
 }

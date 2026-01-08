@@ -20,8 +20,8 @@ public interface ReplyMapper {
 		   +"FROM reply r "
 		   +"JOIN users u ON r.uno = u.uno "
 		   +"WHERE cno=#{cno} "
-		   +"ORDER BY id DESC")
-	public List<ReplyVO> replyListData(int cno);
+		   +"ORDER BY id DESC ")
+	public List<ReplyVO> replyListData(@Param("cno") Integer cno);
 	
 	// 댓글 삽입
 	@Insert("INSERT INTO reply VALUES( "
