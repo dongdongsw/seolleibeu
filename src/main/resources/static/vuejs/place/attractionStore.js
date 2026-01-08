@@ -10,7 +10,9 @@ const useAttractionStore = defineStore('attraction', {
 		column: 'addr',
 		keyword: '',
 		selected: 'p.pno',
-		pvo: {}
+		pvo: {
+			imgList: []
+		}
 	}),
 	getters: {
 		range: (state)=> {

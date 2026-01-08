@@ -34,8 +34,9 @@
   </update>
   
   <select id="attractionDetailData" resultType="com.sist.web.vo.PlaceVO" parameterType="int">
-    SELECT p.pno, p.thumbnail, p.type, p.name, p.addr, p.parking, p.hours, p.ticket, p.phone, p.hit, p.intro, TO_CHAR(p.created_at, 'YYYY-MM-DD') AS createday,
-    	NVL(f.f_count, 0) AS f_count, NVL(l.l_count, 0) AS l_count
+    SELECT p.pno, p.thumbnail, p.type, p.name, p.addr, p.parking, p.hours, p.ticket, p.imgs,
+    		p.phone, p.hit, p.intro, TO_CHAR(p.created_at, 'YYYY-MM-DD') AS createday,
+    		NVL(f.f_count, 0) AS f_count, NVL(l.l_count, 0) AS l_count
     FROM place p
     LEFT JOIN (SELECT pno, COUNT(*) AS f_count
     			FROM favorite

@@ -62,6 +62,18 @@ public class AttractionRestController {
 		PlaceVO pvo = new PlaceVO();
 		try {
 			pvo = aService.attractionDetailData(pno);
+			
+			if(pvo.getImgs() != null) {
+				List<Map> imgList = new ArrayList();
+				String[] imgs = pvo.getImgs().split("\\|");
+				
+				for(String img : imgs) {
+					Map map = new HashMap();
+					map.put("img", img);
+					imgList.add(map);
+				}
+				pvo.setImgList(imgList);
+			}
 		} catch(Exception ex) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}

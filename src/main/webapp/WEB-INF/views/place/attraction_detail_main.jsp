@@ -77,7 +77,7 @@
 	<script src="/vuejs/axios.js"></script>
     <script src="/vuejs/place/attractionStore.js"></script>
     <script>
-      const { createApp, onMounted } = Vue
+      const { createApp, onMounted, ref } = Vue
       const { createPinia } = Pinia
       
       const attractionDetailApp = createApp({
@@ -85,13 +85,15 @@
     		  const store = useAttractionStore()
     		  const params = new URLSearchParams(location.search)
     		  const pno = params.get('pno')
+    		  const selectedIndex = ref(0)
     		  
     		  onMounted(()=> {
     			  store.attractionDetailData(pno)
     		  })
     		  
     		  return {
-    			  store
+    			  store,
+    			  selectedIndex
     		  }
     	  }
       })
