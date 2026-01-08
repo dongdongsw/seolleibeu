@@ -72,6 +72,20 @@
 								<p>{{store.pvo.intro}}</p>
 
 							</div>
+							<div style="position: absolute; left: 80%; top: 1%;">
+						    	<table class="table">
+						    		<tbody>
+							    		<tr>
+							    			<td style="border: none;"><a><i class="fa fa-star-o" style="padding-top:1px; font-size: 22px; color: black;"></i></a></td>
+							    			<td style="border: none;"></td>
+							    			<td style="border: none;"><a><i class="fa fa-thumbs-o-up" style=" font-size: 22px; color: black;"></i></a></td>
+							    			<td style="border: none;">{{store.pvo.l_count}}</td>
+							    			<td style="border: none;"><i class="fa fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>
+							    			<td style="border: none;">{{store.pvo.hit}}</td>
+							    		</tr>
+							    	</tbody>	    
+						    	</table>
+						    </div>
 						</div>
 						<hr>
 					</div>

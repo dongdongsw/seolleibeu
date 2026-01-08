@@ -11,7 +11,8 @@ const useRestaurantStore = defineStore('restaurant',{
 		array:'',
 		keyword:'',
 		pvo: {
-			menuList: []
+			menuList: [],
+			imgList: []
 		}
 	}),
 	getters:{

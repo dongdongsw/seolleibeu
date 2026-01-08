@@ -26,7 +26,7 @@
 									</ol>
 
 									<!-- Wrapper for slides -->
-									<div class="carousel-inner">
+									<div class="carousel-inner" v-for="(imgs, index) in store.pvo.imgList" :key="index">
 										<div class="item active">
 											<img src="/images/post-img.jpg" alt="aaa">
 										</div>
@@ -64,11 +64,12 @@
 									</a>
 								</div>
 								<div class="detailsubimages">
-									<img src="/images/post-img.jpg" style="opacity: 1; border: 2px solid #000;"
-										data-target="#myCarousel" data-slide-to="0" class="imagefocus"> 
-									<img src="/images/post-img.jpg" style="opacity: 0.6;"
-										data-target="#myCarousel" data-slide-to="1" class="imagefocus"> 
-									<img src="/images/post-img.jpg" style="opacity: 0.6;"
+									<div  v-for="(imgs, index) in store.pvo.imgList" :key="index">
+									<!-- <img src="/images/post-img.jpg" style="opacity: 1; border: 2px solid #000;"
+										data-target="#myCarousel" data-slide-to="0" class="imagefocus">  -->
+									<img :src="imgs.img" style="opacity: 0.6;"
+										data-target="#myCarousel" :data-slide-to="index" class="imagefocus"> 
+									<!-- <img src="/images/post-img.jpg" style="opacity: 0.6;"
 										data-target="#myCarousel" data-slide-to="2" class="imagefocus"> 
 									<img src="/images/post-img.jpg" style="opacity: 0.6;"
 										data-target="#myCarousel" data-slide-to="3" class="imagefocus"> 
@@ -79,7 +80,8 @@
 									<img src="/images/post-img.jpg" style="opacity: 0.6;"
 										data-target="#myCarousel" data-slide-to="6" class="imagefocus"> 
 									<img src="/images/post-img.jpg" style="opacity: 0.6;"
-										data-target="#myCarousel" data-slide-to="7" class="imagefocus">
+										data-target="#myCarousel" data-slide-to="7" class="imagefocus"> -->
+									</div>
 								</div>
 							</div>
 						</div>

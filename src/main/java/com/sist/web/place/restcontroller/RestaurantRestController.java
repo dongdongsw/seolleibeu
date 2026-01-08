@@ -68,9 +68,12 @@ public class RestaurantRestController {
 		try {
 			
 			pvo = rService.restaurantDetailData(pno);
+			
 			if(pvo.getMenu() != null) {
+				
 				List<Map> menuList = new ArrayList<>();
 				String[] menus = pvo.getMenu().split("\\|");
+				
 				for(String items : menus) {
 					String[] item = items.split(":");
 					Map map = new HashMap<>();
@@ -80,6 +83,19 @@ public class RestaurantRestController {
 				}
 				pvo.setMenuList(menuList);
 			}
+			
+			if(pvo.getImgs() != null) {
+				List<Map> imgList = new ArrayList<>();
+				String[] imgs = pvo.getImgs().split("\\|");
+				
+				for(String img : imgs) {
+					Map map = new HashMap<>();
+					map.put("img", img);
+					imgList.add(map);
+				}
+				pvo.setImgList(imgList);
+			}
+			
 			
 			
 		} catch (Exception ex) {

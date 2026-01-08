@@ -28,5 +28,8 @@ public class PlaceVO {
 	// 메뉴 분리를 위해서 만든 필드
 	private List<Map> menuList;
 	
+	// 이미지 분리를 위해서 만든 필드
+	private List<Map> imgList;
+	
 	private PlaceOptionsVO povo = new PlaceOptionsVO();
 }

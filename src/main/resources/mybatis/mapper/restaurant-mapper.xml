@@ -82,7 +82,7 @@
 	
 	<select id="restaurantDetailData" resultType="com.sist.web.vo.PlaceVO">
 		SELECT p.pno, name, type, category, addr, phone, seat, parking, intro,
-			hours, created_at, hit, imgs, menu, NVL(l.l_count,0) as lcount, thumbnail
+			hours, created_at, hit, imgs, menu, l.l_count, thumbnail
 		FROM place p
 		
 		LEFT JOIN (
