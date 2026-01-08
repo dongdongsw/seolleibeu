@@ -11,4 +11,5 @@ public interface CourseService {
 	public void courseInsert(CourseVO vo);
 	public List<CourseVO> courseListData(Map map);
 	public int courseListTotalPage(String keyword);
+	public CourseVO courseDetailData(int cno);
 }

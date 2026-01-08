@@ -33,13 +33,12 @@
 					<div class="row">
 						<div class="list-head">
 							<div class="widget widget-search col-md-3">
-									<div class="input-group course-list" style="width: 420px">
-										<input type="text" class="form-control" placeholder="검색어를 입력하세요." aria-describedby="basic-addon2"
-											ref="keywordRef" v-model="store.keyword" @keyup.enter="store.find(keywordRef)">
-										<a class="input-group-addon" id="basic-addon2" @click="store.find(keywordRef)">
-											<i class="fa fa-search"></i>
-										</a>
-									</div>
+
+									<div class="input-group" style="width: 420px">
+									<input type="text" class="form-control" ref="keywordRef" v-model="store.keyword" @keyup.enter="store.find(keywordRef)"
+										placeholder="검색어를 입력하세요." aria-describedby="basic-addon2">
+									<span class="input-group-addon" id="basic-addon2" @click="store.find(keywordRef)"><i class="fa fa-search"></i></span>
+								</div>
 							</div>
 							<div class="col-md-9 text-right head" style="margin-top: 30px;">
 								<h4>
@@ -54,14 +53,14 @@
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" v-for="(vo, index) in store.course_list" :key="index">
 								<div class="post-block">
 									<div>
-										<a href="/course/detail">
+										<a :href="'/course/detail?cno='+vo.cno">
 										<img class="post-block-img"
 											:src="vo.pvo.thumbnail">
 										</a>
 									</div>
 									<div>
 										<h1>
-											<a href="/course/detail" class="title">{{vo.title}}</a>
+											<a :href="'/course/detail?cno='+vo.cno" class="title">{{vo.title}}</a>
 										</h1>
 										<p class="meta">
 											<span class="meta-date"> {{vo.dbday}} </span> <span
@@ -109,7 +108,7 @@
 		const app=createApp({
 			setup() {
 				const store=useCourseListStore()
-				const keywordRef=ref('')
+				const keywordRef=ref(null)
 				onMounted(()=>{
 					store.dataRecv()
 				})

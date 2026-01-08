@@ -69,4 +69,12 @@
  		</if>
  	</select>
  	
+ 	<select id="courseDetailData" resultType="CourseVO" parameterType="int">
+ 		SELECT c.cno, c.title, c.content, c.uno, u.name,
+ 			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday
+ 		FROM course c
+ 		JOIN users u
+ 		ON c.uno = u.uno
+ 		WHERE c.cno = #{cno}
+ 	</select>
 </mapper>

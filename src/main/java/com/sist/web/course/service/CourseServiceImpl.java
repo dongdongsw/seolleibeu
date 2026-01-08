@@ -41,5 +41,11 @@ public class CourseServiceImpl implements CourseService {
 		return mapper.courseListTotalPage(keyword);
 	}
 
+	@Override
+	public CourseVO courseDetailData(int cno) {
+		// TODO Auto-generated method stub
+		return mapper.courseDetailData(cno);
+	}
+
 	
 }

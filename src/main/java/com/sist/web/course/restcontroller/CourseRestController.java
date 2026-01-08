@@ -46,6 +46,7 @@ public class CourseRestController {
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 	
+	// 코스 생성
 	@PostMapping("insert_vue/")
 	public ResponseEntity<Map> course_insert_vue(@RequestBody CourseVO vo) {
 		Map map=new HashMap();
@@ -59,6 +60,7 @@ public class CourseRestController {
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	}
 	
+	// 코스 게시판 리스트
 	@GetMapping("list_vue/")
 	public ResponseEntity<Map> course_list_vue(@RequestParam("page") int page, @RequestParam("sort") String sort, 
 												@RequestParam(name = "keyword", required = false) String keyword) {
@@ -83,4 +85,18 @@ public class CourseRestController {
 		}
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	} 
+	
+	// 코스 게시판 상세보기
+	@GetMapping("detail_vue/")
+	public ResponseEntity<CourseVO> course_detail_vue(@RequestParam("cno") int cno) {
+		
+		CourseVO vo=new CourseVO();
+		try {
+			vo=cService.courseDetailData(cno);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(vo, HttpStatus.OK);
+	}
 }
