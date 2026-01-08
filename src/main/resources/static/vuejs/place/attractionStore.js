@@ -9,7 +9,8 @@ const useAttractionStore = defineStore('attraction', {
 		endPage: 0,
 		column: 'addr',
 		keyword: '',
-		selected: 'p.pno'
+		selected: 'p.pno',
+		pvo: {}
 	}),
 	getters: {
 		range: (state)=> {
@@ -51,6 +52,10 @@ const useAttractionStore = defineStore('attraction', {
 		changeSelected() {
 			this.curpage = 1
 			this.attractionListData()
+		},
+		async attractionDetailData(pno) {
+			const res = await api.get(`/place/attraction/detail_vue/?pno=${pno}`)
+			this.pvo = res.data
 		}
 	}
 })

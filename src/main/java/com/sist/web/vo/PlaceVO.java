@@ -11,7 +11,7 @@ public class PlaceVO {
 
 	private int pno, uno;
 	private String name, phone, addr, company, category, type, dbday, 
-		thumbnail, imgs, hours, seat, parking, intro, runtime, rating, ticket, menu;
+		thumbnail, imgs, hours, seat, parking, intro, runtime, rating, ticket, menu, createday;
 	private Date created_at, updated_at;
 	
 	// 조회수

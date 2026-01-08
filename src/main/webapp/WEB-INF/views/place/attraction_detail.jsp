@@ -7,7 +7,7 @@
 				<div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px;">
 			   		<div style="display:inline; width: 1155px; ">
 						<div style="display:flex; flex-wrap:wrap; gap:12px; width:100%;  margin-bottom: 60px; margin-left: 32px; padding-top: 40px;">
-							<p>소개...intro</p>
+							<p>{{store.pvo.intro}}</p>
 						</div>
 						<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 60%; left: 20%; margin-bottom: 30px;">
 							<!-- Indicators -->

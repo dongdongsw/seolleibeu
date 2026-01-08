@@ -12,4 +12,6 @@ import org.springframework.stereotype.Repository;
 public interface AttractionMapper {
 	public List<PlaceVO> attractionListData(Map map);
 	public int attractionTotalPage(Map map);
+	public PlaceVO attractionDetailData(int pno);
+	public void attractionHitIncrement(int pno);
 }

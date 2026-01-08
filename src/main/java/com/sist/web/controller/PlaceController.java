@@ -32,9 +32,9 @@ public class PlaceController {
 	@GetMapping("/place/attraction/detail")
 	public String place_attraction_detail(Model model) {
 		
-		model.addAttribute("main_jsp","../place/restaurant_detail_main.jsp");
+		model.addAttribute("main_jsp", "../place/attraction_detail_main.jsp");
 		model.addAttribute("detailPage", "../place/attraction_detail.jsp");
-		model.addAttribute("fixedPage", "../place/attraction_detail_header.jsp");
+		model.addAttribute("reviewPage", "../place/attraction_review.jsp");
 		return "main/main";
 	}
 	

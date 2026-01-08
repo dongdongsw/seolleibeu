@@ -9,7 +9,7 @@ const useCultureStore = defineStore('culture', {
 		endPage: 0,
 		column: 'addr',
 		keyword: '',
-		selected: 'p.pno'
+		selected: 'pno'
 	}),
 	getters: {
 		range: (state)=> {

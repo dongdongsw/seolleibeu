@@ -25,4 +25,11 @@ public class AttractionServiceImpl implements AttractionService {
 		// TODO Auto-generated method stub
 		return mapper.attractionTotalPage(map);
 	}
+
+	@Override
+	public PlaceVO attractionDetailData(int pno) {
+		// TODO Auto-generated method stub
+        mapper.attractionHitIncrement(pno);
+        return mapper.attractionDetailData(pno);
+	}
 }
