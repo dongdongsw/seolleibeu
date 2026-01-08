@@ -34,6 +34,7 @@ public class CourseController {
 		
 		CourseVO vo=cService.courseDetailData(cno);
 		
+		model.addAttribute("vo", vo);
 		model.addAttribute("main_jsp", "../course/detail.jsp");
 		return "main/main";
 	}

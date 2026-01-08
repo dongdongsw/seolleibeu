@@ -28,7 +28,7 @@
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="title text-center">
-						<h2>서울의 아름다운 밤을 바라보다</h2>
+						<h2>${vo.title }</h2>
 					</div>
 					<div class="detail-head">
 						<div>
@@ -36,17 +36,14 @@
 								class="fa fa-bookmark" aria-hidden="true"></i>
 						</div>
 						<div style="margin-left: 30px">
-							<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;150
+							<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;${vo.hit }
 						</div>
 						<div class="head-right">
-							<span class="meta-date">2025.12.27</span> <span
-								class="meta-author">By 작성자</span>
+							<span class="meta-date">${vo.dbday }</span> <span
+								class="meta-author">By ${vo.uvo.name }</span>
 						</div>
 					</div>
-					<div class="detail-content">한양도성은 조선의 건국과 함께 축성한 성곽으로 유네스코
-						세계유산 잠정 목록에 올라있다. 총 길이는 18km에 이르며 가장 아름다운 곳은 흥인지문부터 혜화문까지 낙산구간이다.
-						흥인지문에서 성곽에 오르기 전에 서울디자인지원센터의 한양도성박물관에 들러 서울의 과거를 들여다보자. 해가 질 무렵
-						낙산공원에서 자리 잡은 낙산정으로 가보자. 서울 한복판이 시원스레 내려다보일 것이다.</div>
+					<div class="detail-content">${vo.content }</div>
 					<div class="project-img mb30">
 						<img src="/images/course.png" class="img-responcive"
 							style="width: 100%;">
