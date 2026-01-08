@@ -45,7 +45,8 @@ const useCourseDetailStore=defineStore('course_detail', {
 		urlCate() {
 			if(this.category === '식당') {
 				this.url_cate='restaurant'
-			} else if(this.type === '연극/뮤지컬') {
+			} else if(this.type === '연극/뮤지컬' || this.type === '전시' 
+									|| this.type === '액티비티') {
 				this.url_cate='culture'
 			} else (
 				this.url_cate='attraction'
