@@ -47,4 +47,16 @@ public class CourseServiceImpl implements CourseService {
 		mapper.courseHitIncrement(cno);
 		return mapper.courseDetailData(cno);
 	}
+
+	@Override
+	public PlaceVO getPlaceData(int pno) {
+		// TODO Auto-generated method stub
+		return mapper.getPlaceData(pno);
+	}
+
+	@Override
+	public int courseGetFirstPlace(int cno) {
+		// TODO Auto-generated method stub
+		return mapper.courseGetFirstPlace(cno);
+	}
 }

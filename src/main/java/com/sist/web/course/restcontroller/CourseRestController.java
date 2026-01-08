@@ -86,17 +86,30 @@ public class CourseRestController {
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	} 
 	
-	// 코스 게시판 상세보기
-	@GetMapping("detail_vue/")
-	public ResponseEntity<CourseVO> course_detail_vue(@RequestParam("cno") int cno) {
+	
+	@GetMapping("place_vue/")
+	public ResponseEntity<PlaceVO> place_vue(@RequestParam("pno") int pno) {
 		
-		CourseVO vo=new CourseVO();
+		PlaceVO vo=new PlaceVO();
 		try {
-			vo=cService.courseDetailData(cno);
+			vo=cService.getPlaceData(pno);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<>(vo, HttpStatus.OK);
+	}
+	
+	@GetMapping("first_place_vue/")
+public ResponseEntity<Integer> first_place_vue(@RequestParam("cno") int cno) {
+		
+		int pno=0;
+		try {
+			pno=cService.courseGetFirstPlace(cno);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(pno, HttpStatus.OK);
 	}
 }

@@ -7,6 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="/css/course.css" rel="stylesheet">
+<style type="text/css">
+h3 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+</style>
 </head>
 <body>
 	<div class="page-header">
@@ -51,20 +58,20 @@
 				</div>
 			</div>
 		</div>
-		<div class="container course-place-info">
+		<div class="container course-place-info" id="course_detail"> 
 			<div class="row">
 				<div class="mc-wrap" style="margin: 0 15px 0 15px">
 					<button class="mc-btn prev" aria-label="prev">‹</button>
 					<div class="mc-viewport" id="carousel">
-						<c:forEach begin="0" end="15" varStatus="s">
-							<div class="mc-card">
+						<c:forEach var="vo" items="${pList }" varStatus="s">
+							<div class="mc-card" @click="store.placeData(${vo.pno})">
 								<div class="place-index">
 									<h2>${s.count}</h2>
 								</div>
 								<div class="card-img"
-									style="background-image: url('https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=96376680-1aa2-4a72-b00d-98eee8043165')">
+									style="background-image: url('${vo.thumbnail}')">
 									<div class="card-text">
-										<h3>서울 서울서울</h3>
+										<h3 :class="{ 'selected-place': store.pno === ${vo.pno} }">${vo.name }</h3>
 									</div>
 								</div>
 							</div>
@@ -76,32 +83,25 @@
 			<div class="row">
 				<div class="place-detail">
 					<div class="place-detail-title text-center">
-					  <div class="place-index second">
-							<h2>1</h2>
-					</div>
-					&nbsp;&nbsp;
 					<div>
-						<h2>서울 서울서울</h2>
+						<h2>{{store.place.name}}</h2>
 					</div>
-						
 					</div>
-					<div class="place-detail-address text-center">
-						<p>서울특별시 동교동 쌍용구 23 | 명소</p>
+					
+					<div class="place-detail-address text-center" style="margin-top:15px">
+						<p>{{store.place.category}} | {{store.place.type}}</p>
 					</div>
 					
 					<div class="place-detail-img text-center">
-						<img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=96376680-1aa2-4a72-b00d-98eee8043165" width="800" height="450">
+						<img :src="store.place.thumbnail" width="700" height="700">
 					</div>
-					<div class="place-detail-content">	 
-					   한양도성은 조선의 건국과 함께 축성한 성곽으로 유네스코 세계유산 잠정 목록에 올라있다. 총 길이는
-									18km에 이르며 가장 아름다운 곳은 흥인지문부터 혜화문까지 낙산구간이다.
-									한양도성은 조선의 건국과 함께 축성한 성곽으로 유네스코 세계유산 잠정 목록에 올라있다. 총 길이는
-									18km에 이르며 가장 아름다운 곳은 흥인지문부터 혜화문까지 낙산구간이다.
-									한양도성은 조선의 건국과 함께 축성한 성곽으로 유네스코 세계유산 잠정 목록에 올라있다. 총 길이는
-									18km에 이르며 가장 아름다운 곳은 흥인지문부터 혜화문까지 낙산구간이다.
+					<div class="text-center" style=" font-size: 12px">	 
+					   {{store.place.addr}}
 					</div>
+					
 					<div class="place-detail-btn text-right">
-						<button>자세히 보기</button>
+						<a :href="'../place/'+store.url_cate+'/detail?pno='+store.place.pno">
+							바로가기</a>
 					</div>
 					
 				</div>
@@ -110,6 +110,29 @@
 	</div>
 	<jsp:include page="reply.jsp"></jsp:include>
 	<script src="/js/course_detail.js"></script>
+	<script src="/vuejs/course/courseDetailStore.js"></script>
+	<script>
+	 
+	
+     const detailApp=createApp({
+    	 setup(){
+    		 const store=useCourseDetailStore()
+    		 
+    		 const params=new URLSearchParams(location.search)
+    		 const cno=params.get('cno')
+    		 
+    		 onMounted(()=>{
+    			 store.firstPlace(cno)
+    		 })
+    		 
+    		 return {
+    			 store
+    		 }
+    	 }
+     })
+     detailApp.use(createPinia())
+     detailApp.mount('#course_detail')
+    </script>
 </body>
 
 </html>

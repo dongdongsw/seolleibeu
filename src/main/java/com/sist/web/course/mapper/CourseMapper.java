@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
@@ -24,4 +25,11 @@ public interface CourseMapper {
 	@Update("UPDATE course SET hit=hit+1 "
 		   + "WHERE cno = #{cno}")
 	public void courseHitIncrement(int cno);
+	
+	@Select("SELECT pno, thumbnail, name, addr, type, category, intro "
+			+ "FROM place "
+			+ "WHERE pno = #{pno}")
+	public PlaceVO getPlaceData(int pno);
+	
+	public int courseGetFirstPlace(int cno);
 }
