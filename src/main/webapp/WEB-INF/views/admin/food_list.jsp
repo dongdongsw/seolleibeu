@@ -15,6 +15,9 @@
   table-layout: fixed;
   width: 100%;
 }
+ .type {
+ 	font-size: 25px;
+ }
 </style>
 </head>
 <body>
@@ -28,9 +31,9 @@
 				        <div class="input-group search-bar">
 				            <input type="text" class="form-control bg-light border-0 small"
 				                placeholder="Search for..." aria-label="Search"
-				                aria-describedby="basic-addon2">
+				                aria-describedby="basic-addon2" v-model="store.name" ref="nameRef" @keyup.enter="store.find(nameRef)">
 				            <div class="input-group-append">
-				                <button class="btn btn-primary" type="button">
+				                <button class="btn btn-primary" @click="store.find(nameRef)">
 				                    <i class="fas fa-search fa-sm"></i>
 				                </button>
 				            </div>
@@ -65,7 +68,7 @@
 													class="fas fa-ellipsis-h"></i>
 												</a>
 												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal">상세보기</a>
+													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal" @click="store.modalDetailData(vo.pno)">상세보기</a>
 												</div>
 											</div>
 										</td>
@@ -87,52 +90,88 @@
 			</div>
 		</div>
 	</div>
-</div>
 	<div id="myModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
-			<div class="modal-content">
+			<div class="modal-content" style="width: 1100px;">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
-				<div class="modal-body">
-					<p>내용</p>
-					<p>내용</p>
-					<p>내용</p>
-					<p>내용</p>
-					<p>내용</p>
-					<p>내용</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<div class="modal-body" v-if="store.detail">
+				    <div>
+				        <h5>{{store.detail.name}}</h5>
+				    </div>
+					    <div style="display: flex; gap:10px; align-items: flex-start;">
+					        <div>
+					            <img :src="store.detail.thumbnail" style="width: 350px; height: 250px;">
+					        </div>
+					        <div style="flex: 1;">
+					            <table>
+					                <tbody>
+					               		<tr>
+					                        <td style="color: black;" class="type">{{store.detail.type}}</td>
+					                    </tr>
+					                    <tr>
+					                        <th width="15%">주소</th>
+					                        <td width="85%">{{store.detail.addr}}</td>
+					                    </tr>
+					                    <tr>
+					                        <th>전화번호</th>
+					                        <td>{{store.detail.phone}}</td>
+					                    </tr>
+					                    <tr>
+					                        <th>주차</th>
+					                        <td>{{store.detail.parking}}</td>
+					                    </tr>
+					                    <tr>
+					                        <th>이용등급</th>
+					                        <td>{{store.detail.rating ?? '전연령'}}</td>
+					                    </tr>
+					                    <tr>
+					                        <th>운영시간</th>
+					                        <td>{{store.detail.hours}}</td>
+					                    </tr>
+					                    <tr>
+					                        <th>회사</th>
+					                        <td>{{store.detail.company ?? '없음'}}</td>
+					                    </tr>
+					                </tbody>
+					            </table>
+					        </div>
+					    </div>
+					</div>
+							<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	</div>
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	<script src="https://unpkg.com/vue-demi"></script>
-	<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-demi"></script>
+    <script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="/vuejs/axios.js"></script>
 	<script src="/vuejs/admin/food.js"></script>
-<script>
-  const {createApp,onMounted,ref}=Vue
-  const {createPinia}=Pinia
-  const foodApp=createApp({
-	  setup(){
-	  	  const store=useFoodStore()
-	  	  const nameRef=ref(null)
-	  
-		  onMounted(()=>{
-			  store.foodListData()
-		  })
-		  return{
-			  store,nameRef
-		  }
-	  }
-  })
-  foodApp.use(createPinia())
-  foodApp.mount('#food_list')
-</script>
+	<script>
+	 const {createApp,onMounted,ref}=Vue
+	 const {createPinia}=Pinia
+	 const foodApp=createApp({
+		 setup(){
+			 const store=useFoodStore()
+			 const nameRef=ref(null)
+			 
+			 onMounted(()=>{
+				 store.foodListData()
+				 store.modalDetailData()
+			 })
+			 return {
+				 store,nameRef
+			 }
+		 }
+	 })
+	 foodApp.use(createPinia())
+	 foodApp.mount('#food_list')
+	</script>
 </body>
 </html>

@@ -16,4 +16,8 @@ public interface PlaceMapper {
 	@Select("SELECT * FROM place "
 			+ "WHERE pno=#{pno}")
 	public PlaceVO cultureDetailData(int pno);
+	
+	@Select("SELECT * FROM place "
+			+ "WHERE pno=#{pno}")
+	public PlaceVO foodDetailData(int pno);
 }

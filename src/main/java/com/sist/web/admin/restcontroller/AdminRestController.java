@@ -42,7 +42,7 @@ public class AdminRestController {
 	}
 	
 	@GetMapping("/admin/culture_detail_vue/")
-	public PlaceVO culture_detail_vue(@RequestParam(name="pno")int pno)
+	public PlaceVO culture_detail_vue(@RequestParam("pno") int pno)
 	{
 		PlaceVO vo=aservice.cultureDetailData(pno);
 		return vo;
@@ -71,4 +71,12 @@ public class AdminRestController {
 		}
 		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
+	
+	@GetMapping("/admin/food_detail_vue/")
+	public PlaceVO food_detail_vue(@RequestParam("pno") int pno)
+	{
+		PlaceVO vo=aservice.foodDetailData(pno);
+		return vo;
+	}
+	
 }

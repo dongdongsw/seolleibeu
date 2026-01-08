@@ -15,6 +15,9 @@
   table-layout: fixed;
   width: 100%;
 }
+ .type {
+ 	font-size: 25px;
+ }
 </style>
 </head>
 <body>
@@ -90,7 +93,7 @@
 	<div id="myModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
-			<div class="modal-content" style="width: 900px;">
+			<div class="modal-content" style="width: 1100px;">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
@@ -106,11 +109,11 @@
 					            <table>
 					                <tbody>
 					               		<tr>
-					                        <td style="color: black">{{store.detail.type}}</td>
+					                        <td style="color: black;" class="type">{{store.detail.type}}</td>
 					                    </tr>
 					                    <tr>
-					                        <th>주소</th>
-					                        <td>{{store.detail.addr}}</td>
+					                        <th width="15%">주소</th>
+					                        <td width="85%">{{store.detail.addr}}</td>
 					                    </tr>
 					                    <tr>
 					                        <th>전화번호</th>
@@ -121,8 +124,16 @@
 					                        <td>{{store.detail.parking}}</td>
 					                    </tr>
 					                    <tr>
+					                        <th>이용등급</th>
+					                        <td>{{store.detail.rating ?? '전연령'}}</td>
+					                    </tr>
+					                    <tr>
 					                        <th>운영시간</th>
 					                        <td>{{store.detail.hours}}</td>
+					                    </tr>
+					                    <tr>
+					                        <th>회사</th>
+					                        <td>{{store.detail.company ?? '없음'}}</td>
 					                    </tr>
 					                </tbody>
 					            </table>

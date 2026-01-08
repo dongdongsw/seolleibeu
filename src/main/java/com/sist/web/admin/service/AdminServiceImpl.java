@@ -39,4 +39,10 @@ public class AdminServiceImpl implements AdminService{
 		// TODO Auto-generated method stub
 		return pmapper.cultureDetailData(pno);
 	}
+
+	@Override
+	public PlaceVO foodDetailData(int pno) {
+		// TODO Auto-generated method stub
+		return pmapper.foodDetailData(pno);
+	}
 }

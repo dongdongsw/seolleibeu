@@ -11,4 +11,5 @@ public interface AdminService {
 	public List<PlaceVO> foodListData(Map map);
 	public int foodTotalPage(Map map);
 	public PlaceVO cultureDetailData(int pno);
+	public PlaceVO foodDetailData(int pno);
 }

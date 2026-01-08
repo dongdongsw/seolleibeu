@@ -8,7 +8,8 @@ const useFoodStore=defineStore('food_list',{
 		totalpage:0,
 		endPage:0,
 		category:'식당',
-		name:''
+		name:'',
+		detail:null
 	}),
 	getters:{
 		range:(state)=>{
@@ -35,12 +36,16 @@ const useFoodStore=defineStore('food_list',{
 			this.totalpage=res.data.totalpage
 			this.endPage=res.data.endPage
 		},
+		async modalDetailData(pno){
+			const res=await api.get(`/admin/food_detail_vue/?pno=${pno}`)
+			this.detail=res.data
+		},
 		pageChange(page){
 			this.curpage=page
 			this.foodListData()
 		},
 		find(nameRef){
-			if(nameRef==='')
+			if(this.name==='')
 			{
 				nameRef?.focus()
 				return
