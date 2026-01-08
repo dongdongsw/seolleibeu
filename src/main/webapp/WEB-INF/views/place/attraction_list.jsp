@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="/css/course.css" rel="stylesheet">
+<style>
+.custom-select option[disabled] {
+    display: none;
+}
+</style>
 </head>
 <body>
     <div class="page-header">
@@ -26,24 +31,26 @@
     <div class="content" id="attraction_list">
         <div class="container">
         	<div class="type-select" style=" margin-left: 5px;">
-	   			<input type="radio" name="type" value="제목" checked="checked"><span style="margin-left: 4px;">제목</span>
-   				<input type="radio" name="type" value="주소"><span style="margin-left: 4px;">주소</span>
+	   			<input type="radio" name="type" value="name" v-model="store.column">제목
+   				<input type="radio" name="type" value="addr" v-model="store.column">주소
 	   		</div>
 		   	<div class="input-group" style="margin: 0px; padding-top:10px;">
-				<input type="text" class="form-control" placeholder="검색어를 입력하세요." aria-describedby="basic-addon2" style="border-radius: 15px 0px 0px 15px;">
+				<input type="text" class="form-control" placeholder="검색어를 입력하세요." aria-describedby="basic-addon2"
+						style="border-radius: 15px 0px 0px 15px; color: gray;" v-model="store.keyword" ref="keywordRef" @keyup.enter="store.search(keywordRef)">
 				<span class="input-group-addon" id="basic-addon2" style="border-radius: 0px 15px 15px 0px;">
-					<i class="fa fa-search"></i>
+					<button @click="store.search(keywordRef)" style="border: none; background-color: white;"><i class="fa fa-search"></i></button>
 				</span>
 			</div>
-			<div class="dropdown" style="float: right; margin-top: -25px;">
-				<button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: white; border-radius: 15px; padding: 5px 10px; margin-right: 10px;">정렬기준
-					<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu" style="min-width: 80px;">
-					<li><a href="#">인기순</a></li>
-					<li><a href="#">최신순</a></li>
-				</ul>
-			</div>			
+			<div style="float: right; margin-top: -25px;">
+			    <select class="btn" style="background-color: white; border-radius: 15px; padding: 5px 10px; margin-right: 10px;" v-model="store.selected" @change="store.changeSelected">
+			        <option value="p.pno" selected disabled hidden>정렬기준</option>
+			        <option value="p.created_at">최신순</option>
+			        <option value="p.hit">인기순</option>
+			        <option value="f_count">즐겨찾기순</option>
+			        <option value="l_count">좋아요순</option>
+			        <option value="r_count">리뷰순</option>
+			    </select>
+			</div>	
             <div class="row" style="margin-top: 10px;">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" v-for="(vo, index) in store.attList" :key="index">
                     <div class="project-img mb30 thumbnail">
@@ -72,18 +79,21 @@
     <script src="/vuejs/axios.js"></script>
     <script src="/vuejs/place/attractionStore.js"></script>
     <script>
-      const { createApp, onMounted } = Vue
+      const { createApp, onMounted, ref } = Vue
       const { createPinia } = Pinia
       
       const attractionApp = createApp({
     	  setup() {
+    		  const keywordRef = ref(null)
     		  const store = useAttractionStore()
+    		  
     		  onMounted(()=> {
     			  store.attractionListData()
     		  })
     		  
     		  return {
-    			  store
+    			  store,
+    			  keywordRef
     		  }
     	  }
       })

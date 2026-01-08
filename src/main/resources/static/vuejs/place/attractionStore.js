@@ -6,7 +6,10 @@ const useAttractionStore = defineStore('attraction', {
 		curpage: 1,
 		totalpage: 0,
 		startPage: 0,
-		endPage: 0
+		endPage: 0,
+		column: 'addr',
+		keyword: '',
+		selected: 'p.pno'
 	}),
 	getters: {
 		range: (state)=> {
@@ -19,9 +22,12 @@ const useAttractionStore = defineStore('attraction', {
 	},
 	actions: {
 		async attractionListData() {
-			const res = await api.get('/place/attraction_list_vue/', {
+			const res = await api.get('/place/attraction/list_vue/', {
 				params: {
-					page: this.curpage
+					page: this.curpage,
+					column: this.column,
+					keyword: this.keyword,
+					selected: this.selected
 				}
 			})
 			this.attList = res.data.attList
@@ -32,6 +38,18 @@ const useAttractionStore = defineStore('attraction', {
 		},
 		movePage(page) {
 			this.curpage = page
+			this.attractionListData()
+		},
+		search(keywordRef) {
+			if(!this.keyword || !this.keyword.trim()) {
+				keywordRef?.focus()
+				return
+			}
+			this.curpage = 1
+			this.attractionListData()
+		},
+		changeSelected() {
+			this.curpage = 1
 			this.attractionListData()
 		}
 	}

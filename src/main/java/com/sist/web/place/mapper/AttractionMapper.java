@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface AttractionMapper {
-	public List<PlaceVO> attractionListData(int start);
-	public int attractionTotalPage();
+	public List<PlaceVO> attractionListData(Map map);
+	public int attractionTotalPage(Map map);
 }

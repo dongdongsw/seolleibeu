@@ -1,11 +1,11 @@
 package com.sist.web.place.service;
 
-import java.util.List;
+import java.util.*;
 
 import org.springframework.stereotype.Service;
 
-import com.sist.web.place.mapper.AttractionMapper;
-import com.sist.web.vo.PlaceVO;
+import com.sist.web.place.mapper.*;
+import com.sist.web.vo.*;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,14 +15,14 @@ public class AttractionServiceImpl implements AttractionService {
 	private final AttractionMapper mapper;
 
 	@Override
-	public List<PlaceVO> attractionListData(int start) {
+	public List<PlaceVO> attractionListData(Map map) {
 		// TODO Auto-generated method stub
-		return mapper.attractionListData(start);
+		return mapper.attractionListData(map);
 	}
 
 	@Override
-	public int attractionTotalPage() {
+	public int attractionTotalPage(Map map) {
 		// TODO Auto-generated method stub
-		return mapper.attractionTotalPage();
+		return mapper.attractionTotalPage(map);
 	}
 }
