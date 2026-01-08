@@ -23,7 +23,7 @@
 
 						<!-- author post -->
 						<div class="row">
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="margin-top: 27px;">
 								<div class="author-img">
 									<img :src="store.pvo.thumbnail" class="" alt="">
 								</div>

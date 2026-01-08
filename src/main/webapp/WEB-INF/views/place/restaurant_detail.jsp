@@ -16,40 +16,17 @@
 								<div id="myCarousel" class="carousel slide" data-ride="carousel">
 									<!-- Indicators -->
 									<ol class="carousel-indicators">
-										<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-										<li data-target="#myCarousel" data-slide-to="1"></li>
-										<li data-target="#myCarousel" data-slide-to="2"></li>
-										<li data-target="#myCarousel" data-slide-to="3"></li>
-										<li data-target="#myCarousel" data-slide-to="4"></li>
-										<li data-target="#myCarousel" data-slide-to="5"></li>
-										<li data-target="#myCarousel" data-slide-to="6"></li>
+										<li data-target="#myCarousel" data-slide-to="index" 
+											:class="{active : index === 0}" v-for="(imgs, index) in store.pvo.imgList" 
+											:key="index"></li>
+										
 									</ol>
 
 									<!-- Wrapper for slides -->
-									<div class="carousel-inner" v-for="(imgs, index) in store.pvo.imgList" :key="index">
-										<div class="item active">
-											<img src="/images/post-img.jpg" alt="aaa">
-										</div>
-										<div class="item">
-											<img src="/images/post-img.jpg" alt="bbb">
-										</div>
-										<div class="item">
-											<img src="/images/post-img.jpg" alt="ccc">
-										</div>
-										<div class="item">
-											<img src="/images/post-img.jpg" alt="ddd">
-										</div>
-										<div class="item">
-											<img src="/images/post-img.jpg" alt="eee">
-										</div>
-										<div class="item">
-											<img src="/images/post-img.jpg" alt="fff">
-										</div>
-										<div class="item">
-											<img src="/images/post-img.jpg" alt="ggg">
-										</div>
-										<div class="item">
-											<img src="/images/post-img.jpg" alt="hhh">
+									<div class="carousel-inner" style="height: 500px;">
+										<div class="item" :class="{active : index === 0}"  
+											v-for="(imgs, index) in store.pvo.imgList" :key="index">
+											<img :src="imgs.img" style="height: 500px; width: 660px;">
 										</div>
 									</div>
 
@@ -67,8 +44,10 @@
 									<div  v-for="(imgs, index) in store.pvo.imgList" :key="index">
 									<!-- <img src="/images/post-img.jpg" style="opacity: 1; border: 2px solid #000;"
 										data-target="#myCarousel" data-slide-to="0" class="imagefocus">  -->
-									<img :src="imgs.img" style="opacity: 0.6;"
-										data-target="#myCarousel" :data-slide-to="index" class="imagefocus"> 
+									<img :src="imgs.img"
+										data-target="#myCarousel" :data-slide-to="index" class="imagefocus"
+										:style="{ opacity : index === 0 ? 1 : 0.6,
+												border: index ===0 ? '2px solid #000' : none}"> 
 									<!-- <img src="/images/post-img.jpg" style="opacity: 0.6;"
 										data-target="#myCarousel" data-slide-to="2" class="imagefocus"> 
 									<img src="/images/post-img.jpg" style="opacity: 0.6;"
