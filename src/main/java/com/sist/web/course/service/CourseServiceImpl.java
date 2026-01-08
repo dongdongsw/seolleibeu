@@ -44,8 +44,7 @@ public class CourseServiceImpl implements CourseService {
 	@Override
 	public CourseVO courseDetailData(int cno) {
 		// TODO Auto-generated method stub
+		mapper.courseHitIncrement(cno);
 		return mapper.courseDetailData(cno);
 	}
-
-	
 }

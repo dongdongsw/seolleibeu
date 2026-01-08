@@ -37,7 +37,7 @@
  	
  	<!-- 코스 게시판 리스트 -->
  	<select id="courseListData" resultMap="courseMap" parameterType="hashmap">                                                                                                                                                  
- 		SELECT c.cno, c.title, c.content, c.uno, u.name,
+ 		SELECT c.cno, c.title, c.content, c.uno, u.name, c.hit,
  			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday,
  				(SELECT thumbnail
  				 FROM place
@@ -69,8 +69,8 @@
  		</if>
  	</select>
  	
- 	<select id="courseDetailData" resultType="CourseVO" parameterType="int">
- 		SELECT c.cno, c.title, c.content, c.uno, u.name,
+ 	<select id="courseDetailData" resultMap="courseMap" parameterType="int">
+ 		SELECT c.cno, c.title, c.content, c.uno, u.name, c.hit,
  			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday
  		FROM course c
  		JOIN users u
