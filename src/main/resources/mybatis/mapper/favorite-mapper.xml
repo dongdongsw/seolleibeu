@@ -6,30 +6,66 @@
 
 	<resultMap type="com.sist.web.vo.FavoriteVO" id="favoriteListMap">
 		<id column="fno" property="fno"/>
-		<result column="pno" property="pno"/>
 		<result column="uno" property="uno"/>
-		<collection property="pvo" javaType="com.sist.web.vo.PlaceVO">
+		
+		<association property="pvo" javaType="com.sist.web.vo.PlaceVO">
 			<id column="pno" property="pno"/>
 			<result column="name" property="name"/>
 			<result column="thumbnail" property="thumbnail"/>
-		</collection>
+			<result column="category" property="category"/>
+			<result column="type" property="type"/>
+		</association>
 	</resultMap>
 	
 	<select id="favoriteListData" resultMap="favoriteListMap" parameterType="hashmap">
-		SELECT f.fno, p.name, p.thumbnail, p.pno
+		SELECT f.fno, p.name, p.thumbnail, p.pno, p.category, p.type
 		FROM favorite f
 		LEFT JOIN place p
 			ON p.pno = f.pno
 		<!-- WHERE f.uno = ${uno} -->
-		WHERE f.uno = 1
+		<where>
+			f.uno = 1
+			
+			<choose>
+				<when test="category == 'restaurant'">
+					AND p.category = '식당'
+				</when>
+				<when test="category == 'culture'">
+					AND p.type IN('연극/뮤지컬', '전시', '액티비티')
+				</when>
+				<when test="category == 'attraction'">
+					AND p.type IN('명소', '자연관광', '엔터테인먼트')
+				</when>
+			</choose>
+			
+		</where>
+		
+		ORDER BY f.fno DESC
 		OFFSET #{start} ROWS FETCH NEXT 8 ROWS ONLY
 	</select>
 	
 	<select id="favoriteTotalPage" resultType="int" parameterType="hashmap">
-		SELECT CEIL(COUNT(*)/5.0) 
-		FROM favorite
+		SELECT CEIL(COUNT(*)/8.0) 
+		FROM favorite f
+		LEFT JOIN place p
+			ON p.pno = f.pno
 		<!-- WHERE f.uno = ${uno} -->
-		WHERE uno = 1
+		<where>
+			f.uno = 1
+			
+			<choose>
+				<when test="category == 'restaurant'">
+					AND p.category = '식당'
+				</when>
+				<when test="category == 'culture'">
+					AND p.type IN('연극/뮤지컬', '전시', '액티비티')
+				</when>
+				<when test="category == 'attraction'">
+					AND p.type IN('명소', '자연관광', '엔터테인먼트')
+				</when>
+			</choose>
+			
+		</where>
 	</select>
 
 </mapper>

@@ -23,13 +23,17 @@ public class FavoriteRestController {
 	private final FavoriteService fService;
 	
 	@GetMapping("/mypage/favorite/list_vue/")
-	public ResponseEntity<Map> mypage_favorite_list(@RequestParam("page") String page){
+	public ResponseEntity<Map> mypage_favorite_list(
+			@RequestParam("page") String page,
+			@RequestParam("category") String category
+			){
 		
 		Map map = new HashMap<>();
 		int curpage = Integer.parseInt(page);
 		try {
 			
 			map.put("start", (curpage-1)*5);
+			map.put("category", category);
 			
 			List<FavoriteVO> fList = fService.favoriteListData(map);
 			int totalpage = fService.favoriteTotalPage(map);
@@ -39,14 +43,12 @@ public class FavoriteRestController {
 			map.putAll(pageMap);
 			map.put("fList", fList);
 			
-			
-			
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 			
 		}
 		
-		return new ResponseEntity<>(null, HttpStatus.OK);
+		return new ResponseEntity<>(map, HttpStatus.OK);
 	}
 }

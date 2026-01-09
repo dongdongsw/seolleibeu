@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" name="referrer" content="no-referrer">
 <title>나의 코스</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link
@@ -16,43 +15,46 @@
 
 <body>
 
-	<div class="content auth-wrapper" style="margin-top: -17px;">
+	<div class="content auth-wrapper" style="margin-top: -17px;" >
 		<div class="container">
 			<div class="row">
 				<div class="mypage-sizing">
-					<div class="col-lg-9 col-md-9 col-sm-12">
+					<div class="col-lg-9 col-md-9 col-sm-12" id="mypage_favorite">
 						<main class="mypage-main">
 							<h2>나의 즐겨찾기</h2>
 	
 							<div class="row" style="margin-top: 30px;">
-								<c:forEach begin="0" end="7">
-					                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+					                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" v-for="(fvo,index) in store.fList" :key="index">
 					                    <div class="project-img mb30 thumbnail">
-					                        <a href="/place/restaurant/detail" class="imghover">
-					                        	<img src="/images/project-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download">
+					                        <a :href="'/place/' + store.routeType(fvo.pvo.type) + '/detail?pno=' + fvo.pvo.pno" class="imghover">
+					                        	<img :src="fvo.pvo.thumbnail" class="img-responsive" alt="Interior Design Website Templates Free Download">
 					                        </a>
 					                    </div>
 					                    <h4 class="text-center" style="position:absolute; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
 					                    	left: 10%; top:85%; width: 80%">
-					                    	제목제목제목제목제목제목제목제목제목제목제목
+					                    	{{fvo.pvo.name}}
 					                    </h4>
 					                    <a><i class="fa fa-star" style="position:absolute; left:77%; top:7%; padding-top: 1px; font-size: 22px; color: gold;"></i></a>
 					                </div>
 					                
-				                </c:forEach>
 				            </div>
 				            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 25px;">
 								<div class="st-pagination">
 									<ul class="pagination">
-										<li><a href="#">Previous</a></li>
-										<li><a href="#" class="active">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">Next</a></li>
+										<li v-if="store.startPage > 1"><a @click="store.movePage(store.startPage-1)">이전</a></li>
+										<li v-for="i in store.range"><a :class="i === store.curpage?'active':''" @click="store.movePage(i)">{{i}}</a></li>
+										<li v-if="store.endPage < store.totalpage"><a @click="store.movePage(store.endPage+1)">다음</a></li>
 									</ul>
 								</div>
 							</div>
 						</main>
+						<div class="st-pagination" style="position: absolute; left:70%; top: 4%;">
+							<ul class="pagination">
+								<li><a href="#" style="border-radius: 15px;" @click="store.categoryFilter('restaurant')">음식점</a></li>
+								<li><a href="#" style="border-radius: 15px;" @click="store.categoryFilter('culture')">문화/체험</a></li>
+								<li><a href="#" style="border-radius: 15px;" @click="store.categoryFilter('attraction')">관광명소</a></li>
+							</ul>
+						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-3 col-sm-12" style="margin-top: 80px;">
@@ -74,16 +76,30 @@
 				</div>
 			</div>
 			
-			<div class="st-pagination" style="position: absolute; left:52.5%; top: 17%;">
-				<ul class="pagination">
-					<li><a href="#" style="border-radius: 15px;" class="active">음식점</a></li>
-					<li><a href="#" style="border-radius: 15px;">문화/체험</a></li>
-					<li><a href="#" style="border-radius: 15px;">관광명소</a></li>
-				</ul>
-			</div>
+			
 			
 		</div>
 	</div>
-	
+	<script src = "/vuejs/axios.js"></script>
+	<script src = "/vuejs/mypage/favoriteStore.js"></script>
+	<script>
+		const {createApp, onMounted} = Vue
+		const {createPinia} = Pinia
+		const mypageFavoriteApp = createApp({
+			setup(){
+				const store = useMypageFavoriteStore()
+				
+				onMounted(()=>{
+					store.mypageFavoriteListData()
+				})
+				
+				return{
+					store
+				}
+			}
+		})
+		mypageFavoriteApp.use(createPinia())
+		mypageFavoriteApp.mount("#mypage_favorite")
+	</script>
 </body>
 </html>

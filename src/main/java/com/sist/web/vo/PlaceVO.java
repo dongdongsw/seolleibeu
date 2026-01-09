@@ -33,7 +33,7 @@ public class PlaceVO {
 	private List<Map> imgList;
 	
 	// 장소 옵션 조인용
-	private PlaceOptionsVO povo = new PlaceOptionsVO();
+	private PlaceOptionsVO povo;
 	
 	
 }

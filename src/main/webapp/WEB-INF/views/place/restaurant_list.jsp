@@ -75,9 +75,9 @@
             <div class="row">
                 <div class="st-pagination">
                     <ul class="pagination">
-                        <li v-if="store.startPage > 1" @click="store.movePage(store.startPage-1)"><a >이전</a></li>
+                        <li v-if="store.startPage > 1"><a @click="store.movePage(store.startPage-1)">이전</a></li>
                         <li v-for="i in store.range"><a :class="i === store.curpage?'active':''" @click="store.movePage(i)">{{i}}</a></li>
-                        <li v-if="store.endPage < store.totalpage" @click="store.movePage(store.endPage+1)"><a >다음</a></li>
+                        <li v-if="store.endPage < store.totalpage"><a @click="store.movePage(store.endPage+1)">다음</a></li>
                     </ul>
                 </div>
             </div>
