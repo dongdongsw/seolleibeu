@@ -83,7 +83,7 @@
 								<div class="place-result">
 									<h4>검색 결과</h4>
 									<div class="list-scroll">
-											<div class="place" v-for="(vo, index) in store.place_list.slice(0, 10)" :key="index">
+											<div class="place" v-for="(vo, index) in store.place_list.slice(0, 30)" :key="index">
 												<div class="thumb">
 													<img :src="vo.thumbnail" width="100px"
 														height="102px">
@@ -152,10 +152,10 @@
 					<div class="side-menu">
 						<div style="height: 50px"></div>
 						<div class="menu text-center">
-							STEP 1<br>장소 선택
+							STEP 1<br>장소 수정
 						</div>
 						<div class="menu active text-center">
-							STEP 2<br>상세 내용
+							STEP 2<br>내용 수정
 						</div>
 					</div>
 					<div class="container create-form">
@@ -193,7 +193,7 @@
 					<div class="cen"></div>
 					<div class="end2">
 						<a class="btn btn-default" data-toggle="tab" href="#step1">이전</a>
-						<a class="btn btn-default" @click="store.courseInsert({titleRef, contentRef})">작성</a>
+						<a class="btn btn-default" @click="store.courseUpdate({titleRef, contentRef})">수정</a>
 					</div>
 				</div>
 			</div>
@@ -216,7 +216,6 @@
 				
 				onMounted(()=>{
 					store.courseData(cno)
-					store.placeData()
 				})
 				
 				return {

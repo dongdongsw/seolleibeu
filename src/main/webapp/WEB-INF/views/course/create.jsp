@@ -83,7 +83,7 @@
 								<div class="place-result">
 									<h4>검색 결과</h4>
 									<div class="list-scroll">
-											<div class="place" v-for="(vo, index) in store.place_list.slice(0, 10)" :key="index">
+											<div class="place" v-for="(vo, index) in store.place_list.slice(0, 30)" :key="index">
 												<div class="thumb">
 													<img :src="vo.thumbnail" width="100px"
 														height="102px">

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -60,7 +61,21 @@ public class CourseRestController {
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	}
 	
-	// 코스 게시판 리스트
+	// 코스 수정
+	@PutMapping("update_vue/")
+	public ResponseEntity<Map> course_update_vue(@RequestBody CourseVO vo) {
+		Map map=new HashMap();
+		try {
+			cService.courseUpdate(vo);
+			map.put("msg", "yes");
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map, HttpStatus.OK);
+	}
+	
+	// 코스 게시판 리스트 데이터
 	@GetMapping("list_vue/")
 	public ResponseEntity<Map> course_list_vue(@RequestParam("page") int page, @RequestParam("sort") String sort, 
 												@RequestParam(name = "keyword", required = false) String keyword) {
@@ -86,7 +101,7 @@ public class CourseRestController {
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	} 
 	
-	
+	// 한 장소의 데이터 
 	@GetMapping("place_vue/")
 	public ResponseEntity<PlaceVO> place_vue(@RequestParam("pno") int pno) {
 		
@@ -100,6 +115,7 @@ public class CourseRestController {
 		return new ResponseEntity<>(vo, HttpStatus.OK);
 	}
 	
+	// 코스 첫번째 장소 데이터
 	@GetMapping("first_place_vue/")
 	public ResponseEntity<Integer> first_place_vue(@RequestParam("cno") int cno) {
 		

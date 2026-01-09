@@ -36,7 +36,7 @@ h3 {
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="title text-center">
-						<h2>${vo.title }</h2>
+						<h2>${vo.title }</h2><a href="/course/update?cno=${vo.cno }" style="text-decoration: underline">수정</a>
 					</div>
 					<div class="detail-head">
 						<div>

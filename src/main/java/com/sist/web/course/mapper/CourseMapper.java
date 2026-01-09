@@ -17,9 +17,13 @@ import com.sist.web.vo.PlaceVO;
 public interface CourseMapper {
 
 	public List<PlaceVO> placeListDataInCourse(@Param("type") String type, @Param("keyword") String keyword);
+	
 	public void courseInsert(CourseVO vo);
+	
 	public List<CourseVO> courseListData(Map map);
+	
 	public int courseListTotalPage(String keyword);
+	
 	public CourseVO courseDetailData(int cno);
 	
 	@Update("UPDATE course SET hit=hit+1 "
@@ -32,4 +36,6 @@ public interface CourseMapper {
 	public PlaceVO getPlaceData(int pno);
 	
 	public int courseGetFirstPlace(int cno);
+	
+	public void courseUpdate(CourseVO vo);
 }

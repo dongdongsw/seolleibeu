@@ -7,7 +7,7 @@ const useCourseUpdateStore=defineStore('course_update', {
 		place_list: [],
 		selected: [],
 		pnos: [],
-		type: '명소',
+		type: '',
 		keyword: '',
 		title: '',
 		content: '',
@@ -17,7 +17,7 @@ const useCourseUpdateStore=defineStore('course_update', {
 	
 	actions: {
 		// 장소 데이터 불러오기
-		async placeData() {
+		async dataRecv() {
 			const res=await api.get('/course/place_list_vue/', {
 				params: {
 					type: this.type,
@@ -26,13 +26,11 @@ const useCourseUpdateStore=defineStore('course_update', {
 			})
 			console.log(res.data)
 			this.place_list=res.data
-			
-			console.log(this.selected)
-			console.log(this.pnos)
 		},
 		
 		// 기존 코스 정보 불러오기
 		async courseData(cno) {
+			
 			this.cno=cno
 			const res=await api.get('/course/course_vue/', {
 				params: {
@@ -43,12 +41,15 @@ const useCourseUpdateStore=defineStore('course_update', {
 			this.pnos=res.data.pnosList
 			this.title=res.data.title
 			this.content=res.data.content
+			this.is_public=res.data.is_public
 			
-			this.selectedPlace(this.pnos)
+			await this.dataRecv()
+			this.selectedPlace()
+			this.type='명소'
 		},
 		
-		// 코스 생성
-		async courseInsert({titleRef, contentRef}) {
+		// 코스 수정
+		async courseUpdate({titleRef, contentRef}) {
 			if(this.title==='') {
 				titleRef?.focus()
 				return
@@ -58,7 +59,8 @@ const useCourseUpdateStore=defineStore('course_update', {
 				return
 			}
 			
-			const res=await api.post('/course/insert_vue/', {
+			const res=await api.put('/course/update_vue/', {
+				cno: this.cno,
 				pnos: this.pnos.join(','),
 				title: this.title,
 				content: this.content,
@@ -66,24 +68,23 @@ const useCourseUpdateStore=defineStore('course_update', {
 			})
 			
 			if(res.data.msg==='yes') {
-				location.href="/course/list"
+				location.href="/course/detail?cno="+this.cno
 			} else {
-				alert("코스 생성에 실패하였습니다.")
+				alert("코스 수정에 실패하였습니다.")
 			}
 		},
 		
 		// 선택되었던 장소 선택
-		selectedPlace(pnos) {
-		  	pnos.forEach(pno => {
-		    	const p = this.place_list.find(vo => vo.pno === pno)
-				if (!p) return
-
-			    this.selected.push(p)
-			    this.pnos.push(p.pno)
-	
+		selectedPlace() {
+			console.log(this.pnos.length)
+		  	for(let i=0; i<this.pnos.length; i++) {
+				const p=this.place_list.find(vo => vo.pno === this.pnos[i])
+				this.selected.push(p)
+				
 				const idx=this.place_list.indexOf(p)
 				this.place_list.splice(idx, 1)
-		  })
+			}
+			console.log(this.selected)
 		},
 
 		// 장소 선택
@@ -96,6 +97,7 @@ const useCourseUpdateStore=defineStore('course_update', {
 			this.place_list.splice(idx, 1)
 			
 			console.log(this.pnos)
+			console.log(this.selected)
 		},
 		
 		// 선택된 장소에서 제거
@@ -110,6 +112,7 @@ const useCourseUpdateStore=defineStore('course_update', {
 			this.selected.splice(pidx, 1)
 			
 			console.log(this.pnos)
+			console.log(this.selected)
 		},
 		
 		// 검색

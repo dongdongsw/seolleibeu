@@ -5,7 +5,7 @@
  <mapper namespace="com.sist.web.course.mapper.CourseMapper">
  
  	<!-- 코스 생성 장소 검색 -->
- 	<select id="placeListDataInCourse" resultType="com.sist.web.vo.PlaceVO" parameterType="hashmap">
+ 	<select id="placeListDataInCourse" resultType="PlaceVO" parameterType="hashmap">
  		SELECT pno, name, addr, category, thumbnail 
  		FROM place
  		
@@ -23,7 +23,7 @@
  	</select>
  	
  	<!-- 코스 생성 -->
- 	<insert id="courseInsert" parameterType="com.sist.web.vo.CourseVO">
+ 	<insert id="courseInsert" parameterType="CourseVO">
  		INSERT INTO course
  		(cno, uno, pnos, title, content, created_at, is_public) 
  		VALUES
@@ -31,6 +31,15 @@
  	</insert>
  	
  	<!-- 코스 수정 -->
+ 	<update id="courseUpdate" parameterType="CourseVO">
+ 		UPDATE course SET
+ 			title = #{title},
+ 			content = #{content},
+ 			pnos = #{pnos},
+ 			is_public = #{is_public},
+ 			updated_at = SYSDATE
+ 		WHERE cno = #{cno}
+ 	</update>
  	
  	<resultMap type="com.sist.web.vo.CourseVO" id="courseMap">
  		<result property="uvo.name" column="name"/>
@@ -62,6 +71,7 @@
  		OFFSET #{start} ROWS FETCH NEXT 5 ROWS ONLY
  	</select>
  	
+ 	<!-- 코스 게시판 전체 페이지 -->
  	<select id="courseListTotalPage" resultType="int" parameterType="string">                                                                                                                                                   
  		SELECT CEIL(COUNT(*)/5.0)
  		FROM course
@@ -71,15 +81,17 @@
  		</if>
  	</select>
  	
+ 	<!-- 코스 상세 데이터 가져오기 -->
  	<select id="courseDetailData" resultMap="courseMap" parameterType="int">
  		SELECT c.cno, c.title, c.content, c.uno, u.name, c.hit, c.pnos,
- 			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday
+ 			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday, is_public
  		FROM course c
  		JOIN users u
  		ON c.uno = u.uno
  		WHERE c.cno = #{cno}
  	</select>
  	
+ 	<!-- 썸네일용 첫 번째 장소 -->
  	<select id="courseGetFirstPlace" resultType="int" parameterType="int">
  	 	SELECT TO_NUMBER(SUBSTR(pnos, 1, INSTR(pnos, ',') - 1)) AS pno
  	 	FROM course
