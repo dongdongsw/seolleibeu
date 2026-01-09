@@ -25,4 +25,11 @@ public class CultureServiceImpl implements CultureService {
 		// TODO Auto-generated method stub
 		return mapper.cultureTotalPage(map);
 	}
+
+	@Override
+	public PlaceVO cultureDetailData(int pno) {
+		// TODO Auto-generated method stub
+		mapper.cultureHitIncrement(pno);
+		return mapper.cultureDetailData(pno);
+	}
 }

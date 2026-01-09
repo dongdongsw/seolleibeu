@@ -12,4 +12,6 @@ import org.springframework.stereotype.Repository;
 public interface CultureMapper {
 	public List<PlaceVO> cultureListData(Map map);
 	public int cultureTotalPage(Map map);
+	public PlaceVO cultureDetailData(int pno);
+	public void cultureHitIncrement(int pno);
 }

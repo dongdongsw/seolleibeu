@@ -51,4 +51,28 @@ public class CultureRestController {
 		
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	}
+	
+	@GetMapping("/detail_vue/")
+	public ResponseEntity<PlaceVO> culture_detail_vue(@RequestParam("pno") int pno) {
+		PlaceVO pvo = new PlaceVO();
+		try {
+			pvo = cService.cultureDetailData(pno);
+			
+			if(pvo.getImgs() != null) {
+				List<Map> imgList = new ArrayList();
+				String[] imgs = pvo.getImgs().split("\\|");
+				
+				for(String img : imgs) {
+					Map map = new HashMap();
+					map.put("img", img);
+					imgList.add(map);
+				}
+				pvo.setImgList(imgList);
+			}
+		} catch(Exception ex) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<>(pvo, HttpStatus.OK);
+	}
 }

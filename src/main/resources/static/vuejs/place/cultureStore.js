@@ -9,7 +9,10 @@ const useCultureStore = defineStore('culture', {
 		endPage: 0,
 		column: 'addr',
 		keyword: '',
-		selected: 'pno'
+		selected: 'p.pno',
+		pvo: {
+			imgList: []
+		}
 	}),
 	getters: {
 		range: (state)=> {
@@ -51,6 +54,10 @@ const useCultureStore = defineStore('culture', {
 		changeSelected() {
 			this.curpage = 1
 			this.cultureListData()
+		},
+		async cultureDetailData(pno) {
+			const res = await api.get(`/place/culture/detail_vue/?pno=${pno}`)
+			this.po = res.data
 		}
 	}
 })
