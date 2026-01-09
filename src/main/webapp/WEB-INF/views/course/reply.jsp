@@ -31,7 +31,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<table class="table" v-for="rvo in rStore.reply_list" :key="rvo.id">
+					<table class="table" v-for="(rvo,index) in rStore.reply_list" :key="index">
 					  <tr>
 					   <td class="text-left" width="80%" style="display: flex;">
 					   <div style="margin-right: 10px">
@@ -55,23 +55,37 @@
 					    <td class="text-right">
 					    <div style="margin-top: 50px;">
 					     <span>
-					      <button type="button" href="#" class="info-btn" id="reply">수정</button>
-					      <button type="button" class="info-btn">삭제</button>
+					      <button type="button" class="info-btn"
+					       @click="rStore.toggleUpdate(rvo.id,rvo.cr_content)"
+					      >
+					      	{{rStore.upReplyNo===rvo.id?'취소':'수정'}}
+					      </button>
+					      <button type="button" class="info-btn"
+					       @click="rStore.replyDelete(rvo.id)"
+					      >삭제</button>
 					     </span>
 					    </div>
 					  </td>
 					  </tr>
+					 
+					 <tr v-if="rStore.upReplyNo===rvo.id">
+					  <td colspan="2">
+					   <textarea rows="5" class="comment-input" v-model="rStore.updateMsg[rvo.id]"></textarea>
+					   <button type=button class="replyupdate-btn" @click="rStore.replyUpdate(rvo.id)"
+					   >댓글수정</button>
+					  </td>
+					 </tr>
+
 					</table>
 					<table class="table">
 					 <tr>
-					  <td>
-					   <!-- <textarea row="5" cols="70" style="float: left"></textarea> -->
-					   <textarea rows="5" cols="70" class="comment-input"></textarea>
-					   <button type=button class="comment-btn">댓글쓰기</button>
-					  </td>
-					 </tr>
-					 
-					</table>
+					   <td>
+					    <textarea rows="5" cols="70" class="comment-input" v-model="rStore.cr_content"></textarea>
+					    <button type=button class="comment-btn" @click="rStore.replyInsert()"
+					    >댓글쓰기</button>
+					   </td>
+					  </tr>
+					 </table>
 				</div>
 			</div>
 		</div>
@@ -90,6 +104,7 @@
     		 
     		 onMounted(()=>{
     			 rStore.replyListData(cno)
+    			 //rStore.sessionId=SESSION_ID
     		 })
     		 
     		 return {

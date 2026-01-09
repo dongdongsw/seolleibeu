@@ -12,7 +12,7 @@ public interface ReplyService {
 		public void replyInsert(ReplyVO vo);
 		
 		// 댓글 수정
-		public void replyUpdate(int id, String cr_content);
+		public void replyUpdate(ReplyVO vo);
 		
 		// 댓글 삭제
 		public void replyDelete(int id);

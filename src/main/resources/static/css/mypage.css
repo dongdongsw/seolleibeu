@@ -11,6 +11,7 @@ html {
   resize: none;
   float: left;
 }
+
 .comment-btn {
   display: inline-block;
   font-weight: 400;
@@ -22,7 +23,18 @@ html {
   font-weight: bold;
   padding: 40px 10px;
 }
-
+.replyupdate-btn {
+  display: inline-block;
+  font-weight: 400;
+  cursor: pointer;
+  background: black;
+  color: #fff;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 40px 10px;
+  vertical-align: top;
+}
 .mypage-container {
   display: flex;
   flex-direction: row-reverse;

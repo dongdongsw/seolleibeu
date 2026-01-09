@@ -24,8 +24,8 @@ public class ReplyServiceImpl implements ReplyService{
 	}
 
 	@Override
-	public void replyUpdate(int id, String cr_content) {
-		rMapper.replyUpdate(id, cr_content);
+	public void replyUpdate(ReplyVO vo) {
+		rMapper.replyUpdate(vo);
 	}
 
 	@Override

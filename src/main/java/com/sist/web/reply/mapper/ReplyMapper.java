@@ -21,7 +21,7 @@ public interface ReplyMapper {
 		   +"JOIN users u ON r.uno = u.uno "
 		   +"WHERE cno=#{cno} "
 		   +"ORDER BY id DESC ")
-	public List<ReplyVO> replyListData(@Param("cno") Integer cno);
+	public List<ReplyVO> replyListData(int cno);
 	
 	// 댓글 삽입
 	@Insert("INSERT INTO reply VALUES( "
@@ -33,7 +33,7 @@ public interface ReplyMapper {
 	@Update("UPDATE reply SET "
 		   +"cr_content=#{cr_content},cr_update_at=SYSDATE "
 		   +"WHERE id=#{id}")
-	public void replyUpdate(@Param("id") Integer id, @Param("cr_content") String cr_content);
+	public void replyUpdate(ReplyVO vo);
 	// 댓글 삭제
 	@Delete("DELETE FROM reply "
 		   +"WHERE id=#{id}")
