@@ -8,16 +8,24 @@ import com.sist.web.vo.*;
 @Repository
 @Mapper
 public interface PlaceMapper {
+	// 문화 리스트
 	public List<PlaceVO> cultureListData(Map map);
+	// 문화 총 페이지
 	public int cultureTotalPage(Map map);
+	// 식당 리스트
 	public List<PlaceVO> foodListData(Map map);
+	// 식당 총 페이지
 	public int foodTotalPage(Map map);
-	
+	// 문화 모달창
 	@Select("SELECT * FROM place "
 			+ "WHERE pno=#{pno}")
 	public PlaceVO cultureDetailData(int pno);
-	
+	// 식당 모달창
 	@Select("SELECT * FROM place "
 			+ "WHERE pno=#{pno}")
 	public PlaceVO foodDetailData(int pno);
+	// 코스 리스트
+	public List<CourseVO> courseListData(Map map);
+	// 코스 총 페이지
+	public int courseTotalPage(Map map);
 }

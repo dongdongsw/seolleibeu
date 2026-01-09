@@ -5,8 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+ .content {
+ 	white-space: nowrap;
+ 	overflow: hidden;
+ 	text-overflow: ellipsis;
+ }
+ #dataTable {
+  table-layout: fixed;
+  width: 100%;
+}
+</style>
 </head>
 <body>
+<div id="course_list">
 	<div id="wrapper">
 		<div class="container-fluid">
 			<div class="card shadow mb-4" style="margin-top: 16px;">
@@ -16,9 +28,9 @@
 				        <div class="input-group search-bar">
 				            <input type="text" class="form-control bg-light border-0 small"
 				                placeholder="Search for..." aria-label="Search"
-				                aria-describedby="basic-addon2">
+				                aria-describedby="basic-addon2" v-model="store.title" ref="titleRef" @keyup.enter="store.find(titleRef)">
 				            <div class="input-group-append">
-				                <button class="btn btn-primary" type="button">
+				                <button class="btn btn-primary" type="button" @click="store.find(titleRef)">
 				                    <i class="fas fa-search fa-sm"></i>
 				                </button>
 				            </div>
@@ -33,38 +45,19 @@
 								<thead>
 									<tr>
 										<th style="width: 5%">번호</th>
-										<th style="width: 33%">제목</th>
-										<th style="width: 43%">주소</th>
-										<th style="width: 7%">등록일</th>
+										<th style="width: 30%">제목</th>
+										<th style="width: 43%">내용</th>
+										<th style="width: 10%">등록일</th>
 										<th style="width: 7%">상태</th>
 										<th style="width: 5%"></th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>123</td>
-										<td>쌍용강북교육센터</td>
-										<td>홍대입구 근처</td>
-										<td>2011/04/25</td>
-										<td>공개/비공개</td>
-										<td class="text-center">
-											<div class="dropdown">
-												<a href="#" data-toggle="dropdown"> <i
-													class="fas fa-ellipsis-h"></i>
-												</a>
-												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" href="#">공개</a>
-													<a class="dropdown-item text-danger" href="#">비공개</a>
-													
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>123</td>
-										<td>쌍용강북교육센터</td>
-										<td>홍대입구 근처</td>
-										<td>2011/04/25</td>
+									<tr v-for="(vo,index) in store.list" :key="index">
+										<td>{{vo.cno}}</td>
+										<td :title="vo.title">{{vo.title}}</td>
+										<td class="content" :title="vo.content">{{vo.content}}</td>
+										<td>{{vo.created_at.split('T')[0]}}</td>
 										<td>공개/비공개</td>
 										<td class="text-center">
 											<div class="dropdown">
@@ -84,14 +77,9 @@
 							<div class="dataTables_wrapper" style="position: absolute; top: 90%; left: 40%;">
 								<div class="dataTables_paginate paging_simple_numbers">
 									<ul class="pagination justify-content-center">
-										<li class="page-item"><a class="page-link">&lt;</a></li>
-										<li class="page-item active"><a class="page-link">1</a></li>
-										<li class="page-item"><a class="page-link">2</a></li>
-										<li class="page-item"><a class="page-link">3</a></li>
-										<li class="page-item"><a class="page-link">4</a></li>
-										<li class="page-item"><a class="page-link">5</a></li>
-										<li class="page-item"><a class="page-link">6</a></li>
-										<li class="page-item"><a class="page-link">&gt;</a></li>
+										<li class="page-item" v-if="store.startPage>1"><a class="page-link" @click="store.pageChange(store.startPage-1)">이전</a></li>
+										<li :class="i==store.curpage?'page-item active':'page-item'" v-for="i in store.range"><a class="page-link" @click="store.pageChange(i)">{{i}}</a></li>
+										<li class="page-item" v-if="store.endPage<store.totalpage"><a class="page-link" @click="store.pageChange(store.endPage+1)">다음</a></li>
 									</ul>
 								</div>
 							</div>
@@ -101,5 +89,31 @@
 			</div>
 		</div>
 	</div>
+</div>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/vue-demi"></script>
+<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/vuejs/axios.js"></script>
+<script src="/vuejs/admin/course.js"></script>
+	<script>
+	 const {createApp,onMounted,ref}=Vue
+	 const {createPinia}=Pinia
+	 const courseApp=createApp({
+		 setup(){
+			 const store=useCourseStore()
+			 const titleRef=ref(null)
+			 
+			 onMounted(()=>{
+				 store.courseListData()
+			 })
+			 return {
+				 store,titleRef
+			 }
+		 }
+	 })
+	 courseApp.use(createPinia())
+	 courseApp.mount('#course_list')
+	</script>
 </body>
 </html>

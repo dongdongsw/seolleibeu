@@ -17,7 +17,7 @@
 					class="card-header py-3 d-flex justify-content-between align-items-center">
 					<h6 class="m-0 font-weight-bold text-primary">장소 정보 입력</h6>
 					<div>
-						<a href="/admin/place_list"
+						<a href="/admin/culture_list"
 							class="btn btn-outline-secondary btn-xs">목록</a>
 					</div>
 				</div>

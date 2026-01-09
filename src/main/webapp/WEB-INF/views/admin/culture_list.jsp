@@ -130,6 +130,10 @@
 					                        <th>회사</th>
 					                        <td>{{store.detail.company ?? '-'}}</td>
 					                    </tr>
+					                    <tr>
+					                        <th>소요시간</th>
+					                        <td>{{store.detail.runtime ?? '-'}}</td>
+					                    </tr>
 					                </tbody>
 					            </table>
 					        </div>

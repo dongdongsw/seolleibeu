@@ -46,4 +46,27 @@
   </if>
  </select>
  
+ <!-- 코스 리스트 -->
+ <select id="courseListData" resultType="com.sist.web.vo.CourseVO" parameterType="hashmap">
+  SELECT cno,uno,title,is_public,pnos,hit,created_at,content
+  FROM course
+  <where>
+  <if test="title!=null and title!=''">
+   AND title LIKE '%'||#{title}||'%'
+  </if>
+  </where>
+  ORDER BY cno ASC
+  OFFSET #{start} ROWS FETCH NEXT 10 ROWS ONLY
+ </select>
+ 
+ <!-- 코스 총 페이지 -->
+ <select id="courseTotalPage" resultType="int" parameterType="hashmap">
+  SELECT CEIL(COUNT(*)/10.0) 
+  FROM course
+  <where>
+  <if test="title!=null and title!=''">
+   AND title LIKE '%'||#{title}||'%'
+  </if>
+  </where>
+ </select>
 </mapper>

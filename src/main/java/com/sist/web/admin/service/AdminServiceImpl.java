@@ -5,6 +5,7 @@ import java.util.*;
 
 import com.sist.web.admin.mapper.UsersMapper;
 import com.sist.web.place.mapper.*;
+import com.sist.web.vo.CourseVO;
 import com.sist.web.vo.PlaceVO;
 import com.sist.web.vo.UsersVO;
 
@@ -61,5 +62,17 @@ public class AdminServiceImpl implements AdminService{
 	public int usersTotalPage(Map map) {
 		// TODO Auto-generated method stub
 		return umapper.usersTotalPage(map);
+	}
+	// 코스 리스트
+	@Override
+	public List<CourseVO> courseListData(Map map) {
+		// TODO Auto-generated method stub
+		return pmapper.courseListData(map);
+	}
+	// 코스 총 페이지
+	@Override
+	public int courseTotalPage(Map map) {
+		// TODO Auto-generated method stub
+		return pmapper.courseTotalPage(map);
 	}
 }

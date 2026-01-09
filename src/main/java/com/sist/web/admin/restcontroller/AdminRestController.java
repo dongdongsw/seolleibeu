@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import java.util.*;
 import com.sist.web.admin.service.*;
 import com.sist.web.commons.Methods;
+import com.sist.web.vo.CourseVO;
 import com.sist.web.vo.PlaceVO;
 import com.sist.web.vo.UsersVO;
 
@@ -106,4 +107,29 @@ public class AdminRestController {
 		}
 		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
+	
+	// 코스 리스트
+	@GetMapping("/admin/course_list_vue/")
+	public ResponseEntity<Map> course_list_vue(@RequestParam("page") int page, @RequestParam("title") String title)
+	{
+		Map map=new HashMap();
+		try
+		{
+			map.put("start", (page-1)*10);
+			map.put("title", title);
+			List<CourseVO> list=aservice.courseListData(map);
+			int totalpage=aservice.courseTotalPage(map);
+			
+			Map pageMap=Methods.paginationMap(10, page, totalpage);
+			map.putAll(pageMap);
+			map.put("list", list);
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map,HttpStatus.OK);
+	}
+	
+	// 코스 모달창
 }
