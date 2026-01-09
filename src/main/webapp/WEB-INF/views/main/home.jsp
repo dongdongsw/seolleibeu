@@ -24,6 +24,14 @@
 	width: 200px;
 	margin: 0px auto;
 }
+
+.cta-section_thumb { 
+	width: 100%; 
+	height: 600px; 
+	box-sizing: border-box; 
+	background: url(../images/mycoursethumb.jpg) no-repeat center;
+	background-size: cover;
+}
 </style>
 </head>
 <body>
@@ -169,13 +177,14 @@
             </div>
         </div>
     </div>
-    <div class="cta-section">
+    <div class="cta-section cta-section_thumb">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="text-center">
+                    <div class="text-center" style="margin: 200px auto;">
                         <h1 style="font-weight: bold; font-size: 40px;">나만의 코스 만들기</h1>
-                        <a href="/course/create" class="btn btn-white">Go!</a> </div>
+                        <a href="/course/create" class="btn btn-white">GO →</a>
+                    </div>
                 </div>
             </div>
         </div>
