@@ -21,6 +21,8 @@
 	text-overflow: ellipsis;
 	line-height: 1.5; /* 줄 간격 조정 */
 	max-height: 3em; /* line-height * 2줄 (fallback) */
+	width: 200px;
+	margin: 0px auto;
 }
 </style>
 </head>
