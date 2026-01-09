@@ -43,7 +43,7 @@
 			</div>
 			<div style="float: right; margin-top: -25px;">
 			    <select class="btn" style="background-color: white; border-radius: 15px; padding: 5px 10px; margin-right: 10px;" v-model="store.selected" @change="store.changeSelected">
-			        <option value="pno" selected disabled hidden>정렬기준</option>
+			        <option value="p.pno" selected disabled hidden>정렬기준</option>
 			        <option value="p.created_at">최신순</option>
 			        <option value="p.hit">인기순</option>
 			        <option value="f_count">즐겨찾기순</option>
