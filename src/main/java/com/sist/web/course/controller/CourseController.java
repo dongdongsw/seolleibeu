@@ -20,12 +20,21 @@ public class CourseController {
 	
 	private final CourseService cService;
 	
+	// 코스 생성 페이지 이동
 	@GetMapping("/course/create")
 	public String course_detail() {
 		
 		return "course/create";
 	}
+	
+	// 코스 수정 페이지 이동
+	@GetMapping("/course/update")
+	public String course_update(@RequestParam("cno") int cno) {
+			
+		return "course/update";
+	}
 
+	// 코스 게시판 목록 페이지 이동
 	@GetMapping("/course/list")
 	public String course_list(Model model) {
 		
@@ -33,6 +42,7 @@ public class CourseController {
 		return "main/main";
 	}
 	
+	// 코스 게시판 상세보기 페이지 이동
 	@GetMapping("/course/detail")
 	public String course_detail(@RequestParam("cno") int cno, Model model) {
 		
@@ -54,6 +64,7 @@ public class CourseController {
 		model.addAttribute("main_jsp", "../course/detail.jsp");
 		return "main/main";
 	}
+	
 	
 	
 	

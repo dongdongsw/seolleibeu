@@ -101,7 +101,7 @@ public class CourseRestController {
 	}
 	
 	@GetMapping("first_place_vue/")
-public ResponseEntity<Integer> first_place_vue(@RequestParam("cno") int cno) {
+	public ResponseEntity<Integer> first_place_vue(@RequestParam("cno") int cno) {
 		
 		int pno=0;
 		try {
@@ -111,5 +111,30 @@ public ResponseEntity<Integer> first_place_vue(@RequestParam("cno") int cno) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<>(pno, HttpStatus.OK);
+	}
+	
+	// 코스 수정 시 코스 데이터 가져오기
+	@GetMapping("course_vue/") 
+	public ResponseEntity<CourseVO> course_vue(@RequestParam("cno") int cno) {
+		
+		CourseVO vo=new CourseVO();
+		try {
+			vo=cService.courseDetailData(cno);
+			
+			String pnos=vo.getPnos();
+			String[] pnoList=pnos.split(",");
+			List<Integer> pnosList=new ArrayList<>();
+			
+			for (String pno:pnoList) {
+				pnosList.add(Integer.parseInt(pno));
+			}
+			
+			vo.setPnosList(pnosList);
+			
+		} catch (Exception ex) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<>(vo, HttpStatus.OK);
 	}
 }

@@ -1,8 +1,9 @@
 const {defineStore} = Pinia
 
-const useCourseStore=defineStore('course_insert', {
+const useCourseUpdateStore=defineStore('course_update', {
 	
 	state: ()=>({
+		cno: 0,
 		place_list: [],
 		selected: [],
 		pnos: [],
@@ -11,12 +12,12 @@ const useCourseStore=defineStore('course_insert', {
 		title: '',
 		content: '',
 		is_public: 'Y',
-		step_ok: ''
+		step_ok: '',
 	}),
 	
 	actions: {
 		// 장소 데이터 불러오기
-		async dataRecv() {
+		async placeData() {
 			const res=await api.get('/course/place_list_vue/', {
 				params: {
 					type: this.type,
@@ -25,6 +26,25 @@ const useCourseStore=defineStore('course_insert', {
 			})
 			console.log(res.data)
 			this.place_list=res.data
+			
+			console.log(this.selected)
+			console.log(this.pnos)
+		},
+		
+		// 기존 코스 정보 불러오기
+		async courseData(cno) {
+			this.cno=cno
+			const res=await api.get('/course/course_vue/', {
+				params: {
+					cno: this.cno
+				}
+			})
+			console.log(res.data)
+			this.pnos=res.data.pnosList
+			this.title=res.data.title
+			this.content=res.data.content
+			
+			this.selectedPlace(this.pnos)
 		},
 		
 		// 코스 생성
@@ -52,6 +72,20 @@ const useCourseStore=defineStore('course_insert', {
 			}
 		},
 		
+		// 선택되었던 장소 선택
+		selectedPlace(pnos) {
+		  	pnos.forEach(pno => {
+		    	const p = this.place_list.find(vo => vo.pno === pno)
+				if (!p) return
+
+			    this.selected.push(p)
+			    this.pnos.push(p.pno)
+	
+				const idx=this.place_list.indexOf(p)
+				this.place_list.splice(idx, 1)
+		  })
+		},
+
 		// 장소 선택
 		select(pno) {
 			const p=this.place_list.find(vo => vo.pno === pno)
@@ -62,7 +96,6 @@ const useCourseStore=defineStore('course_insert', {
 			this.place_list.splice(idx, 1)
 			
 			console.log(this.pnos)
-			console.log(this.selected)
 		},
 		
 		// 선택된 장소에서 제거

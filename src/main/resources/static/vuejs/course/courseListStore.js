@@ -47,7 +47,7 @@ const useCourseListStore=defineStore('course_list', {
 		 
 		find(keywordRef) {
 			if(this.keyword==='') {
-				keywordRef?.focus()
+				this.$refs.keyword.focus()
 				return
 			}
 			console.log(this.keyword)

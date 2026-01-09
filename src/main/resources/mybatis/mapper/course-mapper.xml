@@ -30,6 +30,8 @@
  		(course_cno_seq.nextval, 1, #{pnos}, #{title}, #{content}, SYSDATE, #{is_public})
  	</insert>
  	
+ 	<!-- 코스 수정 -->
+ 	
  	<resultMap type="com.sist.web.vo.CourseVO" id="courseMap">
  		<result property="uvo.name" column="name"/>
  		<result property="pvo.thumbnail" column="thumbnail"/>
