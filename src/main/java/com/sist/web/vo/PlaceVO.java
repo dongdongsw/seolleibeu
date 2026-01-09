@@ -32,5 +32,8 @@ public class PlaceVO {
 	// 이미지 분리를 위해서 만든 필드
 	private List<Map> imgList;
 	
+	// 장소 옵션 조인용
 	private PlaceOptionsVO povo = new PlaceOptionsVO();
+	
+	
 }

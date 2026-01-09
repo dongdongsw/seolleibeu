@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.web.favorite.mapper.FavoriteMapper">
+
+	<resultMap type="com.sist.web.vo.FavoriteVO" id="favoriteListMap">
+		<id column="fno" property="fno"/>
+		<result column="pno" property="pno"/>
+		<result column="uno" property="uno"/>
+		<collection property="pvo" javaType="com.sist.web.vo.PlaceVO">
+			<id column="pno" property="pno"/>
+			<result column="name" property="name"/>
+			<result column="thumbnail" property="thumbnail"/>
+		</collection>
+	</resultMap>
+	
+	<select id="favoriteListData" resultMap="favoriteListMap" parameterType="hashmap">
+		SELECT f.fno, p.name, p.thumbnail, p.pno
+		FROM favorite f
+		LEFT JOIN place p
+			ON p.pno = f.pno
+		<!-- WHERE f.uno = ${uno} -->
+		WHERE f.uno = 1
+		OFFSET #{start} ROWS FETCH NEXT 8 ROWS ONLY
+	</select>
+	
+	<select id="favoriteTotalPage" resultType="int" parameterType="hashmap">
+		SELECT CEIL(COUNT(*)/5.0) 
+		FROM favorite
+		<!-- WHERE f.uno = ${uno} -->
+		WHERE uno = 1
+	</select>
+
+</mapper>
