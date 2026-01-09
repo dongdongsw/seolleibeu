@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class ReviewVO {
 	private int rno,uno,pno,r_depth,r_gid;
-	private String r_content,r_img;
-	private Date r_createdAt,r_updatedAt;
+	private String r_content,r_img,dbday,name;
+	private Date r_created_at,r_updated_at;
 }
