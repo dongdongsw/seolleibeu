@@ -1,10 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+.coursethumb {
+	width: 245px;
+	height: 245px;
+}
+
+.content_p {
+	font-size: 14px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2; /* 2줄까지 표시 */
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	line-height: 1.5; /* 줄 간격 조정 */
+	max-height: 3em; /* line-height * 2줄 (fallback) */
+}
+</style>
 </head>
 <body>
 	<div class="hero-section">
@@ -35,76 +53,28 @@
                     <!-- /.section title start-->
                 </div>
             </div>
-            <!-- 나중에 반복문 출력 -->
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="service-block text-center">
-                        <!-- service block -->
-                        <div class="service-img ">
-                            <!-- service img -->
-                            <a href="service-detail.html" class="imghover"><img src="images/service-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"> </a>
-                        </div>
-                        <!-- service img -->
-                        <div class="service-content">
-                            <!-- service content -->
-                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스1-1</a></h2>
-                            <p>코스 간략 소개</p>
-                        </div>
-                        <!-- service content -->
-                    </div>
-                    <!-- /.service block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="service-block text-center">
-                        <!-- service block -->
-                        <div class="service-img ">
-                            <!-- service img -->
-                            <a href="service-detail.html" class="imghover"><img src="images/service-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"> </a>
-                        </div>
-                        <!-- service img -->
-                        <div class="service-content">
-                            <!-- service content -->
-                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스1-2</a></h2>
-                            <p>코스 간략 소개</p>
-                        </div>
-                        <!-- service content -->
-                    </div>
-                    <!-- /.service block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="service-block text-center">
-                        <!-- service block -->
-                        <div class="service-img ">
-                            <!-- service img -->
-                            <a href="service-detail.html" class="imghover"><img src="images/service-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"> </a>
-                        </div>
-                        <!-- service img -->
-                        <div class="service-content">
-                            <!-- service content -->
-                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스1-3</a></h2>
-                            <p>코스 간략 소개</p>
-                        </div>
-                        <!-- service content -->
-                    </div>
-                    <!-- /.service block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="service-block text-center">
-                        <!-- service block -->
-                        <div class="service-img ">
-                            <!-- service img -->
-                            <a href="service-detail.html" class="imghover"><img src="images/service-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"> </a>
-                        </div>
-                        <!-- service img -->
-                        <div class="service-content">
-                            <!-- service content -->
-                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스1-4</a></h2>
-                            <p>코스 간략 소개</p>
-                        </div>
-                        <!-- service content -->
-                    </div>
-                    <!-- /.service block -->
-                </div>
+            	<c:forEach var="b4vo" items="${b4List}">
+	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+	                    <div class="service-block text-center">
+	                        <!-- service block -->
+	                        <div class="service-img ">
+	                            <!-- service img -->
+	                            <a href="service-detail.html" class="imghover">
+	                            	<img src="${b4vo.pvo.thumbnail}" class="img-responsive coursethumb" alt="Interior Design Website Templates Free Download">
+	                            </a>
+	                        </div>
+	                        <!-- service img -->
+	                        <div class="service-content">
+	                            <!-- service content -->
+	                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">${b4vo.title}</a></h2>
+	                            <p class="content_p">${b4vo.content}</p>
+	                        </div>
+	                        <!-- service content -->
+	                    </div>
+	                    <!-- /.service block -->
+	                </div>
+                </c:forEach>
             </div>
         </div>
     </div>
@@ -122,76 +92,28 @@
                     <!-- /.section title start-->
                 </div>
             </div>
-            <!-- 나중에 반복문 출력 -->
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="service-block text-center">
-                        <!-- service block -->
-                        <div class="service-img ">
-                            <!-- service img -->
-                            <a href="service-detail.html" class="imghover"><img src="images/service-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"> </a>
-                        </div>
-                        <!-- service img -->
-                        <div class="service-content">
-                            <!-- service content -->
-                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스2-1</a></h2>
-                            <p>코스 간략 소개</p>
-                        </div>
-                        <!-- service content -->
-                    </div>
-                    <!-- /.service block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="service-block text-center">
-                        <!-- service block -->
-                        <div class="service-img ">
-                            <!-- service img -->
-                            <a href="service-detail.html" class="imghover"><img src="images/service-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"> </a>
-                        </div>
-                        <!-- service img -->
-                        <div class="service-content">
-                            <!-- service content -->
-                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스2-2</a></h2>
-                            <p>코스 간략 소개</p>
-                        </div>
-                        <!-- service content -->
-                    </div>
-                    <!-- /.service block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="service-block text-center">
-                        <!-- service block -->
-                        <div class="service-img ">
-                            <!-- service img -->
-                            <a href="service-detail.html" class="imghover"><img src="images/service-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"> </a>
-                        </div>
-                        <!-- service img -->
-                        <div class="service-content">
-                            <!-- service content -->
-                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스2-3</a></h2>
-                            <p>코스 간략 소개</p>
-                        </div>
-                        <!-- service content -->
-                    </div>
-                    <!-- /.service block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="service-block text-center">
-                        <!-- service block -->
-                        <div class="service-img ">
-                            <!-- service img -->
-                            <a href="service-detail.html" class="imghover"><img src="images/service-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"> </a>
-                        </div>
-                        <!-- service img -->
-                        <div class="service-content">
-                            <!-- service content -->
-                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">코스2-4</a></h2>
-                            <p>코스 간략 소개</p>
-                        </div>
-                        <!-- service content -->
-                    </div>
-                    <!-- /.service block -->
-                </div>
+            	<c:forEach var="n4vo" items="${n4List}">
+	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+	                    <div class="service-block text-center">
+	                        <!-- service block -->
+	                        <div class="service-img ">
+	                            <!-- service img -->
+	                            <a href="service-detail.html" class="imghover">
+	                            	<img src="${n4vo.pvo.thumbnail}" class="img-responsive coursethumb" alt="Interior Design Website Templates Free Download">
+                            	</a>
+	                        </div>
+	                        <!-- service img -->
+	                        <div class="service-content">
+	                            <!-- service content -->
+	                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">${n4vo.title}</a></h2>
+	                            <p class="content_p">${n4vo.content}</p>
+	                        </div>
+	                        <!-- service content -->
+	                    </div>
+	                    <!-- /.service block -->
+	                </div>
+				</c:forEach>
 			</div>
         </div>
     </div>
