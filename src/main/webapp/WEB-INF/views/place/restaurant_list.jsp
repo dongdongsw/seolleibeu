@@ -26,7 +26,7 @@
     <div class="content" id="restaurant_list">
         <div class="container">
         	<div class="type-select" style="margin-bottom: -40px; margin-left: 5px;">
-	   			<input type="radio" name="type" value="subject" checked="checked" v-model="store.radio"><span style="margin-left: 4px;">제목</span>
+	   			<input type="radio" name="type" value="subject" checked="checked" v-model="store.radio"><span style="margin-left: 4px;">이름</span>
    				<input type="radio" name="type" value="address" v-model="store.radio"><span style="margin-left: 4px;">주소</span>
 	   		</div>
 		   	<div class="input-group" style="margin: 0px; top:50px; padding-top: 0px;">

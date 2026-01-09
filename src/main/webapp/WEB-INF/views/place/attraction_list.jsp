@@ -31,7 +31,7 @@
     <div class="content" id="attraction_list">
         <div class="container">
         	<div class="type-select" style=" margin-left: 5px;">
-	   			<input type="radio" name="type" value="name" v-model="store.column">제목
+	   			<input type="radio" name="type" value="name" v-model="store.column">이름
    				<input type="radio" name="type" value="addr" v-model="store.column">주소
 	   		</div>
 		   	<div class="input-group" style="margin: 0px; padding-top:10px;">
