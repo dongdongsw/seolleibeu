@@ -3,6 +3,11 @@ package com.sist.web.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 public class PlaceController {
@@ -60,4 +65,42 @@ public class PlaceController {
 	 * model.addAttribute("main_jsp","../place/restaurant_review.jsp");
 	 * model.addAttribute("tab", "review"); return "main/main"; }
 	 */
+	
+	// 최근 본 장소 (쿠키 생성)
+	@GetMapping("/place/culture/detail_before")
+	public String culture_before(@RequestParam("pno") int pno, HttpServletResponse response,
+															RedirectAttributes ra) {
+		
+		Cookie cookie=new Cookie("place_culture_"+pno, "culture_"+String.valueOf(pno));
+		cookie.setPath("/");
+		cookie.setMaxAge(60*60*24);
+		response.addCookie(cookie);
+		
+		return "redirect:/place/culture/detail?pno="+pno;
 	}
+	
+	@GetMapping("/place/attraction/detail_before")
+	public String attraction_before(@RequestParam("pno") int pno, HttpServletResponse response,
+															RedirectAttributes ra) {
+		
+		Cookie cookie=new Cookie("place_attraction_"+pno, "attraction_"+String.valueOf(pno));
+		cookie.setPath("/");
+		cookie.setMaxAge(60*60*24);
+		response.addCookie(cookie);
+		
+		return "redirect:/place/attraction/detail?pno="+pno;
+	}
+	
+	@GetMapping("/place/restaurant/detail_before")
+	
+	public String restaurant_before(@RequestParam("pno") int pno, HttpServletResponse response,
+															RedirectAttributes ra) {
+		
+		Cookie cookie=new Cookie("place_restaurant_"+pno, "restaurant_"+String.valueOf(pno));
+		cookie.setPath("/");
+		cookie.setMaxAge(60*60*24);
+		response.addCookie(cookie);
+		
+		return "redirect:/place/restaurant/detail?pno="+pno;
+	}
+}

@@ -16,4 +16,5 @@ public interface CourseService {
 	public int courseGetFirstPlace(int cno);
 	public CourseVO courseUpdateData(int cno);
 	public void courseUpdate(CourseVO vo);
+	public void courseDelete(int cno);
 }

@@ -41,6 +41,7 @@
  		WHERE cno = #{cno}
  	</update>
  	
+ 	
  	<resultMap type="com.sist.web.vo.CourseVO" id="courseMap">
  		<result property="uvo.name" column="name"/>
  		<result property="pvo.thumbnail" column="thumbnail"/>

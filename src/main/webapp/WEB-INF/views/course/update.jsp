@@ -32,10 +32,10 @@
 					<div class="side-menu">
 						<div style="height: 50px"></div>
 						<div class="menu active text-center">
-							STEP 1<br>장소 선택
+							STEP 1<br>장소 수정
 						</div>
 						<div class="menu text-center">
-							STEP 2<br>상세 내용
+							STEP 2<br>내용 수정
 						</div>
 					</div>
 					<div class="choose-left">
@@ -48,28 +48,28 @@
 									<span class="input-group-addon" id="basic-addon2" @click="store.find(keywordRef)"><i class="fa fa-search"></i></span>
 								</div>
 								<div class="cate text-center">
-									<button @click="store.cateButton('명소')">
+									<button @click="store.cateButton('명소')" :style="store.type=='명소'?'color:#d2cfcb':''">
 										명소
 									</button>  
-									<button @click="store.cateButton('액티비티')">
+									<button @click="store.cateButton('액티비티')" :style="store.type=='액티비티'?'color:#d2cfcb':''">
 										액티비티
 									</button>
-									<button @click="store.cateButton('연극/뮤지컬')">
+									<button @click="store.cateButton('연극/뮤지컬')" :style="store.type=='연극/뮤지컬'?'color:#d2cfcb':''"> 
 										연극/뮤지컬
 									</button> 
-									<button @click="store.cateButton('전시')">
+									<button @click="store.cateButton('전시')" :style="store.type=='전시'?'color:#d2cfcb':''">
 										전시
 									</button> 
-									<button @click="store.cateButton('카페')">
+									<button @click="store.cateButton('카페')" :style="store.type=='카페'?'color:#d2cfcb':''">
 										카페
 									</button> 
-									<button @click="store.cateButton('한식')">
+									<button @click="store.cateButton('한식')" :style="store.type=='한식'?'color:#d2cfcb':''">
 										한식
 									</button> 
-									<button @click="store.cateButton('양식')">
+									<button @click="store.cateButton('양식')" :style="store.type=='양식'?'color:#d2cfcb':''">
 										양식
 									</button> 
-									<button @click="store.cateButton('일식')">
+									<button @click="store.cateButton('일식')" :style="store.type=='일식'?'color:#d2cfcb':''">
 										일식
 									</button>  
 									
@@ -229,6 +229,7 @@
 		app.use(createPinia())
 		app.mount("#course_update")
 	</script>
+	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=500f9263086d9dabb5676152c0e94936&libraries=services"></script>	
 <script>
 /* 1) 지도 생성 */

@@ -20,8 +20,6 @@ const useCourseDetailStore=defineStore('course_detail', {
 			this.place=res.data
 			this.category=res.data.category
 			this.type=res.data.type
-			console.log(this.category)
-			console.log(this.type)
 			this.urlCate()
 		},
 		
@@ -34,7 +32,7 @@ const useCourseDetailStore=defineStore('course_detail', {
 			})
 			
 			this.pno=res.data
-			this.dataRecv()
+			await this.dataRecv()
 		},
 		
 		placeData(pno) {

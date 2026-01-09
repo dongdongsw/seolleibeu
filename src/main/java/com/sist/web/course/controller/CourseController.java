@@ -29,7 +29,7 @@ public class CourseController {
 	
 	// 코스 수정 페이지 이동
 	@GetMapping("/course/update")
-	public String course_update(@RequestParam("cno") int cno) {
+	public String course_update() {
 			
 		return "course/update";
 	}

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sist.web.course.mapper.CourseMapper;
 import com.sist.web.vo.CourseVO;
@@ -70,5 +71,13 @@ public class CourseServiceImpl implements CourseService {
 	public void courseUpdate(CourseVO vo) {
 		// TODO Auto-generated method stub
 		mapper.courseUpdate(vo);
+	}
+
+	@Override
+	@Transactional(rollbackFor = Exception.class)
+	public void courseDelete(int cno) {
+		// TODO Auto-generated method stub
+		mapper.courseReplyDelete(cno);
+		mapper.courseDelete(cno);
 	}
 }
