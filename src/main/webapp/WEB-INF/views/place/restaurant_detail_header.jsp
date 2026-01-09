@@ -77,7 +77,7 @@
 						    		<tbody>
 							    		<tr>
 							    			<td style="border: none;"><a><i class="fa fa-star-o" style="padding-top:1px; font-size: 22px; color: black;"></i></a></td>
-							    			<td style="border: none;"></td>
+							    			<td style="border: none;">{{store.pvo.f_count}}</td>
 							    			<td style="border: none;"><a><i class="fa fa-thumbs-o-up" style=" font-size: 22px; color: black;"></i></a></td>
 							    			<td style="border: none;">{{store.pvo.l_count}}</td>
 							    			<td style="border: none;"><i class="fa fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>

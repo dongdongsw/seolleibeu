@@ -13,7 +13,8 @@ const useRestaurantStore = defineStore('restaurant',{
 		pvo: {
 			menuList: [],
 			imgList: []
-		}
+		},
+		selectedImgIndex:0
 	}),
 	getters:{
 		range:(state)=>{
@@ -60,6 +61,10 @@ const useRestaurantStore = defineStore('restaurant',{
 			this.curpage = 1
 			this.restaurantListData()
 		},
+		imageClick(index){
+			this.selectedImgIndex = index 
+		},
+		
 		async restaurantDetailData(pno){
 			const result = await api.get('/place/restaurant/detail_vue/',{
 				params:{
@@ -68,6 +73,7 @@ const useRestaurantStore = defineStore('restaurant',{
 			})
 			console.log(result.data)
 			this.pvo = result.data
+			this.selectedImgIndex = 0
 		}
 	}
 })

@@ -168,7 +168,7 @@
     	<script src="/vuejs/axios.js"></script>
 				<script src="/vuejs/place/restaurantStore.js"></script>
 				<script>
-					const {createApp, onMounted} = Vue
+					const {createApp, onMounted, ref} = Vue
 					const {createPinia} = Pinia
 					
 					const restaurantDetailApp = createApp({
@@ -183,6 +183,7 @@
 							
 							return{
 								store
+								
 							}
 						}
 					})

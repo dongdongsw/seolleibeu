@@ -17,14 +17,14 @@
 									<!-- Indicators -->
 									<ol class="carousel-indicators">
 										<li data-target="#myCarousel" data-slide-to="index" 
-											:class="{active : index === 0}" v-for="(imgs, index) in store.pvo.imgList" 
+											:class="{active : store.selectedImgIndex  === index}" v-for="(imgs, index) in store.pvo.imgList" 
 											:key="index"></li>
 										
 									</ol>
 
 									<!-- Wrapper for slides -->
 									<div class="carousel-inner" style="height: 500px;">
-										<div class="item" :class="{active : index === 0}"  
+										<div class="item" :class="{active : store.selectedImgIndex  === index}"  
 											v-for="(imgs, index) in store.pvo.imgList" :key="index">
 											<img :src="imgs.img" style="height: 500px; width: 660px;">
 										</div>
@@ -46,8 +46,8 @@
 										data-target="#myCarousel" data-slide-to="0" class="imagefocus">  -->
 									<img :src="imgs.img"
 										data-target="#myCarousel" :data-slide-to="index" class="imagefocus"
-										:style="{ opacity : index === 0 ? 1 : 0.6,
-												border: index ===0 ? '2px solid #000' : none}"> 
+										:style="{ opacity : store.selectedImgIndex  === index ? 1 : 0.6,
+												border: store.selectedImgIndex  === index ? '2px solid #000' : none}"  @click="store.imageClick(index)"> 
 									<!-- <img src="/images/post-img.jpg" style="opacity: 0.6;"
 										data-target="#myCarousel" data-slide-to="2" class="imagefocus"> 
 									<img src="/images/post-img.jpg" style="opacity: 0.6;"
