@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <meta name="referrer" content="no-referrer">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="/css/course.css" rel="stylesheet">
 <style type="text/css">

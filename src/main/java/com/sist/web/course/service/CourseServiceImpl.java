@@ -59,4 +59,10 @@ public class CourseServiceImpl implements CourseService {
 		// TODO Auto-generated method stub
 		return mapper.courseGetFirstPlace(cno);
 	}
+
+	@Override
+	public CourseVO courseUpdateData(int cno) {
+		// TODO Auto-generated method stub
+		return mapper.courseDetailData(cno);
+	}
 }

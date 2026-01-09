@@ -14,4 +14,5 @@ public interface CourseService {
 	public CourseVO courseDetailData(int cno);
 	public PlaceVO getPlaceData(int pno);
 	public int courseGetFirstPlace(int cno);
+	public CourseVO courseUpdateData(int cno);
 }
