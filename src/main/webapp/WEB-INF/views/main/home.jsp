@@ -16,11 +16,11 @@
 	font-size: 14px;
 	overflow: hidden;
 	display: -webkit-box;
-	-webkit-line-clamp: 2; /* 2줄까지 표시 */
+	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	text-overflow: ellipsis;
-	line-height: 1.5; /* 줄 간격 조정 */
-	max-height: 3em; /* line-height * 2줄 (fallback) */
+	line-height: 1.5;
+	max-height: 3em;
 	width: 200px;
 	margin: 0px auto;
 }
