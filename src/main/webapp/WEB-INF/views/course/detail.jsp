@@ -31,12 +31,14 @@ h3 {
 			</div>
 		</div>
 	</div>
-	<div class="content">
+	<div class="content" id="course_detail">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="title text-center">
-						<h2>${vo.title }</h2><a href="/course/update?cno=${vo.cno }" style="text-decoration: underline">수정</a>
+						<h2>${vo.title }</h2>
+						<a href="/course/update?cno=${vo.cno }" style="text-decoration: underline">수정</a>&nbsp;
+						<a @click="dStore.courseDelete(${vo.cno })" style="text-decoration: underline">삭제</a>
 					</div>
 					<div class="detail-head">
 						<div>
@@ -59,7 +61,7 @@ h3 {
 				</div>
 			</div>
 		</div>
-		<div class="container course-place-info" id="course_detail"> 
+		<div class="container course-place-info" > 
 			<div class="row">
 				<div class="mc-wrap" style="margin: 0 15px 0 15px">
 					<button class="mc-btn prev" aria-label="prev">‹</button>
@@ -69,8 +71,8 @@ h3 {
 								<div class="place-index">
 									<h2>${s.count}</h2>
 								</div>
-								<div class="card-img"
-									style="background-image: url('${vo.thumbnail}')">
+								<div class="card-img">
+									<img src="${vo.thumbnail }" style="width: 220px; height: 200px; filter: brightness(60%);">
 									<div class="card-text">
 										<h3 :class="{ 'selected-place': store.pno === ${vo.pno} }">${vo.name }</h3>
 									</div>
@@ -112,12 +114,14 @@ h3 {
 	<jsp:include page="reply.jsp"></jsp:include>
 	<script src="/js/course_detail.js"></script>
 	<script src="/vuejs/course/courseDetailStore.js"></script>
+	<script src="/vuejs/course/MyCourseStore.js"></script>
 	<script>
 	 
 	
      const detailApp=createApp({
     	 setup(){
     		 const store=useCourseDetailStore()
+    		 const dStore=useMyCourseStore()
     		 
     		 const params=new URLSearchParams(location.search)
     		 const cno=params.get('cno')
@@ -127,7 +131,8 @@ h3 {
     		 })
     		 
     		 return {
-    			 store
+    			 store,
+    			 dStore
     		 }
     	 }
      })
