@@ -32,6 +32,44 @@
 	background: url(../images/mycoursethumb.jpg) no-repeat center;
 	background-size: cover;
 }
+
+.mainSearch-container {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-top: 10px;
+    height: 50px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.mainSearch {
+    flex: 1;
+    border: none;
+    height: 100%;
+    padding-left: 20px;
+    outline: none;
+}
+
+.btn-search {
+    background: #fff;
+    height: 100%;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border-left: none;
+}
+
+.btn-search:hover {
+	background-color: #e7a625;
+	border-color: #e7a625;
+	color: #fff;
+}
 </style>
 </head>
 <body>
@@ -43,8 +81,10 @@
                     	<strong>데이트 코스 짜기에 지치신 분들?</strong>
                     	<br>원하는 장소로 검색해보세요!
 					</h1>
-					<input type="text" class="search" style="width: 400px; height: 47px; margin-top: 10px; border: none; border-radius: 40px;"/>
-                    <a href="#" class="btn btn-white" style="margin-left: 1px;">검색</a>
+					<div class="mainSearch-container">
+						<input type="text" class="mainSearch" placeholder="검색어를 입력하세요">
+	                    <a href="#" class="btn-search">검색</a>
+                    </div>
 				</div>
             </div>
         </div>
