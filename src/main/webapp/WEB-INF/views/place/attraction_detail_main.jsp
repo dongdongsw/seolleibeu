@@ -76,6 +76,7 @@
 	</div>
 	<script src="/vuejs/axios.js"></script>
     <script src="/vuejs/place/attractionStore.js"></script>
+    <script src="/vuejs/place/review.js"></script>
     <script>
       const { createApp, onMounted, ref } = Vue
       const { createPinia } = Pinia
@@ -87,13 +88,22 @@
     		  const pno = params.get('pno')
     		  const selectedIndex = ref(0)
     		  
+			  /* 리뷰 */
+    		  const rstore = useReviewStore()
+    		  
     		  onMounted(()=> {
     			  store.attractionDetailData(pno)
+    			  
+    			  /* 리뷰 */
+    			  rstore.pno=pno
+    			  rstore.curpage=1
+    			  rstore.reviewListData()
     		  })
     		  
     		  return {
     			  store,
-    			  selectedIndex
+    			  selectedIndex,
+    			  rstore
     		  }
     	  }
       })

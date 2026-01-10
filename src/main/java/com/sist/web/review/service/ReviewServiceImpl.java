@@ -23,5 +23,11 @@ public class ReviewServiceImpl implements ReviewService{
 		// TODO Auto-generated method stub
 		return rmapper.reviewTotalPage(pno);
 	}
+
+	@Override
+	public int reviewCount(int pno) {
+		// TODO Auto-generated method stub
+		return rmapper.reviewCount(pno);
+	}
 	
 }

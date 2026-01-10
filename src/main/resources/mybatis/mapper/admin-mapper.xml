@@ -55,7 +55,7 @@
    AND title LIKE '%'||#{title}||'%'
   </if>
   </where>
-  ORDER BY cno ASC
+  ORDER BY cno DESC
   OFFSET #{start} ROWS FETCH NEXT 10 ROWS ONLY
  </select>
  

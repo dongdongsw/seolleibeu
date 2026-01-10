@@ -8,4 +8,6 @@ public interface ReviewService {
 	public List<ReviewVO> reviewListData(Map map);
 	// 리뷰 촣 페이지
 	public int reviewTotalPage(int pno);
+	// 리뷰 갯수
+	public int reviewCount(int pno);
 }

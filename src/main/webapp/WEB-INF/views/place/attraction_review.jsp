@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px; margin-bottom: 20px;">
+<div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px; margin-bottom: 50px;">
 	<div class="rating-summary">
 		<div class="rating-score">
         	<div class="rating-number">4.5</div>
@@ -18,7 +18,7 @@
 	            <i class="fa fa-star"></i>
 	            <i class="fa fa-star-half-o"></i>
         	</div>
-        	<div class="rating-count">(1234개)</div>
+        	<div class="rating-count">{{rstore.count }} 개</div>
     	</div>
     	<div class="rating-breakdown">
         	<div class="rating-row">
@@ -59,62 +59,36 @@
 	    </div>
 	</div>
 	<div style="display:inline; width: 1155px;" id="reviewApp">
-		<div style="display:flex; flex-wrap:wrap; gap:12px; width:100%;  margin-bottom: 60px; margin-left: 32px; padding-top: 40px;">
+		<div style="display:flex; flex-wrap:wrap; gap:12px; width:100%;  margin-bottom: 10px; margin-left: 32px; padding-top: 40px;">
 			<div class="container">
 	      		<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     					<div class="comment-area">
         					<div class="row">
             					<div class=" col-lg-12 col-md-12">
-                					<ul class="comment-list">
-                    					<li>
-                        					<div class="comment-body">
-                            					<div class="comment-author"><img src="/images/user-pic-1.jpg" alt class="img-circle"></div>
-                            					<div class="comment-info">
-                                					<div class="comment-header">
-                                    					<h3 class="comments-title">Jerry Graf&nbsp;<span class="rating-star">★★★★</span></h3>
-                                    					<div class="meta"> <span class="meta-date">April 24, 2020</span> </div>
-                                					</div>
-                                					<div class="comment-content">
-                                    					<p>Cras ut lorem vitae orci sollicitudin pharetra. In vel scelerisque mi. Pellentes que eu imperdiet tortor. </p>
-                                   						<div class="text-right more" style="margin-right: 60px;">
-                   											<span class="review-more" @click="openModal">더보기</span>
-                   										</div>
-                									</div>
-            									</div>
-       										</div>
-    									</li>
-									</ul>
 									<ul class="comment-list">
-									    <li>
+									    <li v-for="(vo,index) in rstore.list" :key="index">
 									        <div class="comment-body">
-									            <div class="comment-author"><img src="/images/user-pic-3.jpg" alt class="img-circle"></div>
+									            <div class="comment-author"><img :src="profile_img" alt class="img-circle"></div>
 									            <div class="comment-info">
-									                <div class="comment-header">
-									                    <h3 class="comments-title">James Howard&nbsp;<span class="rating-star">★★★★</span></h3>
-									                    <div class="meta"> <span class="meta-date">April 23, 2020</span> </div>
+									                <div class="comment-header rating-stars">
+									                    <h3 class="comments-title">{{vo.name}}&nbsp;
+									                    <!-- 리뷰 별점 -->
+									                    <span class="rating-star" v-if="vo.r_score != null">
+														  <i class="fa fa-star"
+														     v-for="n in rstore.starCount(vo.r_score).full"
+														     :key="'f'+n"></i>
+														  <i class="fa fa-star-half-o"
+														     v-if="rstore.starCount(vo.r_score).half"></i>
+														  <i class="fa fa-star-o"
+														     v-for="n in rstore.starCount(vo.r_score).empty"
+														     :key="'e'+n"></i>
+														</span>
+									                    </h3>
+									                    <div class="meta"> <span class="meta-date">{{vo.dbday}}</span> </div>
 									                </div>
 									                <div class="comment-content">
-									                    <p>Pellentesque gravida convallis hendrerit. Cras pharetra ultricies tempus. Quisque et pretium ante, nec ullamcorper lorem. </p>
-									                    <div class="text-right" style="margin-right: 60px;">
-									                    <span class="review-more" @click="openModal">더보기</span>
-									                    </div>
-									                </div>
-									            </div>
-									        </div>
-									    </li>
-									</ul>
-									<ul class="comment-list">
-									    <li>
-									        <div class="comment-body">
-									            <div class="comment-author"><img src="/images/user-pic-3.jpg" alt class="img-circle"></div>
-									            <div class="comment-info">
-									                <div class="comment-header">
-									                    <h3 class="comments-title">James Howard&nbsp;<span class="rating-star">★★★★</span></h3>
-									                    <div class="meta"> <span class="meta-date">April 23, 2020</span> </div>
-									                </div>
-									                <div class="comment-content">
-									                    <p>Pellentesque gravida convallis hendrerit. Cras pharetra ultricies tempus. Quisque et pretium ante, nec ullamcorper lorem. </p>
+									                    <p>{{vo.r_content}}</p>
 									                    <div class="text-right" style="margin-right: 60px;">
                                                       		<span class="review-more" @click="openModal">더보기</span>
                                                       	</div>
@@ -133,8 +107,6 @@
 						<ul class="pagination">
 							<li><a href="#">이전</a></li>
 							<li><a href="#" class="active">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
 							<li><a href="#">다음</a></li>
 						</ul>
 					</div>

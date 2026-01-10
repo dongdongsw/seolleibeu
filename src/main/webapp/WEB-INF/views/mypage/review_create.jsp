@@ -52,6 +52,41 @@
 		min-height: 300px;
 		resize: vertical;
 	}
+	
+	/* 별점 스타일 */
+	.rating-area {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		padding: 20px;
+		background-color: #f9f9f9;
+		border-radius: 4px;
+		border: 1px solid #ddd;
+	}
+	.star-rating {
+		display: flex;
+		gap: 5px;
+		font-size: 32px;
+	}
+	.star-wrapper {
+		position: relative;
+		display: inline-block;
+		cursor: pointer;
+	}
+	.star-wrapper i {
+		color: #ddd;
+		transition: color 0.2s;
+	}
+	.star-wrapper i.filled {
+		color: #ffc107;
+	}
+	.rating-text {
+		font-size: 18px;
+		font-weight: bold;
+		color: #333;
+		min-width: 120px;
+	}
+	
 	.image-upload-area {
 		border: 2px dashed #ddd;
 		border-radius: 4px;
@@ -161,6 +196,35 @@
 						</div>
 
 						<form id="reviewForm" method="post" enctype="multipart/form-data">
+							<!-- 별점 -->
+							<div class="form-group">
+								<label class="form-label">
+									별점<span class="required">*</span>
+								</label>
+								<div class="rating-area">
+									<div class="star-rating" id="starRating">
+										<span class="star-wrapper" data-value="1">
+											<i class="fa fa-star-o"></i>
+										</span>
+										<span class="star-wrapper" data-value="2">
+											<i class="fa fa-star-o"></i>
+										</span>
+										<span class="star-wrapper" data-value="3">
+											<i class="fa fa-star-o"></i>
+										</span>
+										<span class="star-wrapper" data-value="4">
+											<i class="fa fa-star-o"></i>
+										</span>
+										<span class="star-wrapper" data-value="5">
+											<i class="fa fa-star-o"></i>
+										</span>
+									</div>
+									<span class="rating-text" id="ratingText">별점을 선택해주세요</span>
+								</div>
+								<input type="hidden" name="rating" id="ratingValue" required>
+							</div>
+
+							<!-- 리뷰 내용 -->
 							<div class="form-group">
 								<label class="form-label">
 									리뷰 내용<span class="required">*</span>
@@ -170,6 +234,7 @@
 									maxlength="1000" required></textarea>
 							</div>
 
+							<!-- 이미지 업로드 -->
 							<div class="form-group">
 								<label class="form-label">
 									리뷰 이미지 <span style="color: #999; font-weight: normal;">(선택사항)</span>
@@ -209,13 +274,11 @@
 			</div>
 		</div>
 	</div>
-<script>
-	const uploadArea = document.getElementById('uploadArea')
-	const imageInput = document.getElementById('imageInput')
-	
-	uploadArea.addEventListener('click', () => {
-	  imageInput.click()
-	})
-</script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/vue-demi"></script>
+<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/vuejs/axios.js"></script>
+<script src="/vuejs/place/r_create.js"></script>
 </body>
 </html>
