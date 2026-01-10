@@ -27,11 +27,11 @@
 					                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" v-for="(fvo,index) in store.fList" :key="index">
 					                    <div class="project-img mb30 thumbnail">
 					                        <a :href="'/place/' + store.routeType(fvo.pvo.type) + '/detail?pno=' + fvo.pvo.pno" class="imghover">
-					                        	<img :src="fvo.pvo.thumbnail" class="img-responsive" alt="Interior Design Website Templates Free Download">
+					                        	<img :src="fvo.pvo.thumbnail" class="img-responsive" style="height:200px; ">
 					                        </a>
 					                    </div>
 					                    <h4 class="text-center" style="position:absolute; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
-					                    	left: 10%; top:85%; width: 80%">
+					                    	left: 10%; top:87%; width: 80%">
 					                    	{{fvo.pvo.name}}
 					                    </h4>
 					                    <a><i class="fa fa-star" style="position:absolute; left:77%; top:7%; padding-top: 1px; font-size: 22px; color: gold;"></i></a>
@@ -48,11 +48,11 @@
 								</div>
 							</div>
 						</main>
-						<div class="st-pagination" style="position: absolute; left:70%; top: 4%;">
+						<div class="st-pagination" style="position: absolute; left:70%; top: 2.5%;">
 							<ul class="pagination">
-								<li><a href="#" style="border-radius: 15px;" @click="store.categoryFilter('restaurant')">음식점</a></li>
-								<li><a href="#" style="border-radius: 15px;" @click="store.categoryFilter('culture')">문화/체험</a></li>
-								<li><a href="#" style="border-radius: 15px;" @click="store.categoryFilter('attraction')">관광명소</a></li>
+								<li><a href="#" style="border-radius: 15px;" @click="store.categoryFilter('restaurant')" :class="store.category=='restaurant'?'active':''">음식점</a></li>
+								<li><a href="#" style="border-radius: 15px;" @click="store.categoryFilter('culture')" :class="store.category=='culture'?'active':''">문화/체험</a></li>
+								<li><a href="#" style="border-radius: 15px;" @click="store.categoryFilter('attraction')" :class="store.category=='attraction'?'active':''">관광명소</a></li>
 							</ul>
 						</div>
 					</div>

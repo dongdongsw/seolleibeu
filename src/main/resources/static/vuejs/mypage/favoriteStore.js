@@ -14,7 +14,7 @@ const useMypageFavoriteStore = defineStore('favorite',{
 	getters:{
 		range:(state)=>{
 			const arr = []
-			for(let i = state.startPage; i < state.endPage; i++){
+			for(let i = state.startPage; i <= state.endPage; i++){
 				arr.push(i)
 			}
 			return arr
