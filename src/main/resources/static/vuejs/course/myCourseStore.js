@@ -8,8 +8,7 @@ const useMyCourseStore=defineStore('my_course', {
 		totalpage:0,
 		startPage:0,
 		endPage:0,
-		cno: 0,
-		uno: 1
+		cno: 0
 	}),
 	
 	getters: {
@@ -26,8 +25,7 @@ const useMyCourseStore=defineStore('my_course', {
 		async myCourseData() {
 			const res=await api.get('/course/mycourse_vue/', {
 				params: {
-					page: this.curpage,
-					uno: this.uno
+					page: this.curpage
 				}
 			})	
 			console.log(res.data)

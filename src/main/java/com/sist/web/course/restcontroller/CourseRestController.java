@@ -20,6 +20,7 @@ import com.sist.web.course.service.CourseService;
 import com.sist.web.vo.CourseVO;
 import com.sist.web.vo.PlaceVO;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -171,7 +172,10 @@ public class CourseRestController {
 	
 	// 마이페이지 내 코스 목록
 	@GetMapping("mycourse_vue/")
-	public ResponseEntity<Map> course_delete_vue(@RequestParam("page") int page, @RequestParam("uno") int uno) { 
+	public ResponseEntity<Map> course_delete_vue(@RequestParam("page") int page, HttpSession session) { 
+		
+		int uno=(int)session.getAttribute("uno");
+		
 		Map map=new HashMap();
 		try {
 			List<CourseVO> list=cService.myCourseListData((page-1)*3, uno);
