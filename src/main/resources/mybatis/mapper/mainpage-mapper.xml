@@ -8,18 +8,18 @@
   </resultMap>
   
   <select id="courseBest4" resultMap="courseMap">
-   	SELECT p.thumbnail, c.title, c.content
-	FROM (SELECT title, content, REGEXP_SUBSTR(pnos, '[^,]+', 1, 1) AS pno
-			FROM (SELECT title, content, pnos
+   	SELECT p.thumbnail, c.cno, c.title, c.content
+	FROM (SELECT cno, title, content, REGEXP_SUBSTR(pnos, '[^,]+', 1, 1) AS pno
+			FROM (SELECT cno, title, content, pnos
         			FROM course ORDER BY hit DESC)
 			WHERE ROWNUM &lt;= 4) c
 	JOIN place p ON p.pno = TO_NUMBER(c.pno)
   </select>
   
   <select id="courseNew4" resultMap="courseMap">
-   	SELECT p.thumbnail, c.title, c.content
-	FROM (SELECT title, content, REGEXP_SUBSTR(pnos, '[^,]+', 1, 1) AS pno
-			FROM (SELECT title, content, pnos
+   	SELECT p.thumbnail, c.cno, c.title, c.content
+	FROM (SELECT cno, title, content, REGEXP_SUBSTR(pnos, '[^,]+', 1, 1) AS pno
+			FROM (SELECT cno, title, content, pnos
         			FROM course ORDER BY created_at DESC)
 			WHERE ROWNUM &lt;= 4) c
 	JOIN place p ON p.pno = TO_NUMBER(c.pno)

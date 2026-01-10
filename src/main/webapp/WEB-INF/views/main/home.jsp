@@ -63,6 +63,10 @@
     color: #333;
     font-weight: bold;
     border-left: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
 }
 
 .btn-search:hover {
@@ -81,10 +85,12 @@
                     	<strong>데이트 코스 짜기에 지치신 분들?</strong>
                     	<br>원하는 장소로 검색해보세요!
 					</h1>
-					<div class="mainSearch-container">
-						<input type="text" class="mainSearch" placeholder="검색어를 입력하세요">
-	                    <a href="#" class="btn-search">검색</a>
-                    </div>
+					<form action="/course/list" method="get">
+						<div class="mainSearch-container">
+							<input type="text" class="mainSearch" placeholder="검색어를 입력하세요" name="keyword">
+		                    <button type="submit" class="btn-search">검색</button>
+	                    </div>
+                    </form>
 				</div>
             </div>
         </div>
@@ -110,14 +116,14 @@
 	                        <!-- service block -->
 	                        <div class="service-img ">
 	                            <!-- service img -->
-	                            <a href="service-detail.html" class="imghover">
+	                            <a href="/course/detail?cno=${b4vo.cno}" class="imghover">
 	                            	<img src="${b4vo.pvo.thumbnail}" class="img-responsive coursethumb" alt="Interior Design Website Templates Free Download">
 	                            </a>
 	                        </div>
 	                        <!-- service img -->
 	                        <div class="service-content">
 	                            <!-- service content -->
-	                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">${b4vo.title}</a></h2>
+	                            <h2><a href="/course/detail?cno=${b4vo.cno}" class="title" style="font-variant-numeric: lining-nums;">${b4vo.title}</a></h2>
 	                            <p class="content_p">${b4vo.content}</p>
 	                        </div>
 	                        <!-- service content -->
@@ -149,14 +155,14 @@
 	                        <!-- service block -->
 	                        <div class="service-img ">
 	                            <!-- service img -->
-	                            <a href="service-detail.html" class="imghover">
+	                            <a href="/course/detail?cno=${n4vo.cno}" class="imghover">
 	                            	<img src="${n4vo.pvo.thumbnail}" class="img-responsive coursethumb" alt="Interior Design Website Templates Free Download">
                             	</a>
 	                        </div>
 	                        <!-- service img -->
 	                        <div class="service-content">
 	                            <!-- service content -->
-	                            <h2><a href="service-detail.html" class="title" style="font-variant-numeric: lining-nums;">${n4vo.title}</a></h2>
+	                            <h2><a href="/course/detail?cno=${n4vo.cno}" class="title" style="font-variant-numeric: lining-nums;">${n4vo.title}</a></h2>
 	                            <p class="content_p">${n4vo.content}</p>
 	                        </div>
 	                        <!-- service content -->

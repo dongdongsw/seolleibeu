@@ -110,6 +110,13 @@
 				const store=useCourseListStore()
 				const keywordRef=ref(null)
 				onMounted(()=>{
+					const params = new URLSearchParams(window.location.search)
+					const keyword = params.get('keyword')
+					
+					if(keyword != null && keyword !== '') {
+						store.keyword = keyword
+					}
+					
 					store.dataRecv()
 				})
 				
