@@ -136,7 +136,7 @@
 					    </div>
 					    <table>
 					     <tr>
-					      <th>&lt;소개&gt;</th>
+					      <br><th style="color: black;">&lt;소개&gt;</th>
 					     <tr>
 			             <tr>
 			              <td>{{store.detail.intro}}</td>

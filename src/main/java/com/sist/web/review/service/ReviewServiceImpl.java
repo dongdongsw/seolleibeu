@@ -23,11 +23,29 @@ public class ReviewServiceImpl implements ReviewService{
 		// TODO Auto-generated method stub
 		return rmapper.reviewTotalPage(pno);
 	}
-
+	// 리뷰 갯수
 	@Override
 	public int reviewCount(int pno) {
 		// TODO Auto-generated method stub
 		return rmapper.reviewCount(pno);
+	}
+	// 리뷰 작성
+	@Override
+	public void reviewInsert(ReviewVO vo) {
+		// TODO Auto-generated method stub
+		rmapper.reviewInsert(vo);
+	}
+	// 리뷰 수정
+	@Override
+	public void reviewUpdate(ReviewVO vo) {
+		// TODO Auto-generated method stub
+		rmapper.reviewUpdate(vo);
+	}
+	// 리뷰 삭제
+	@Override
+	public void reviewDelete(int pno) {
+		// TODO Auto-generated method stub
+		rmapper.reviewDelete(pno);
 	}
 	
 }

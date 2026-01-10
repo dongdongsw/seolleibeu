@@ -125,6 +125,7 @@
 	</div>
 	<script src="/vuejs/axios.js"></script>
     <script src="/vuejs/place/cultureStore.js"></script>
+    <script src="/vuejs/place/review.js"></script>
     <script>
       const { createApp, onMounted } = Vue
       const { createPinia } = Pinia
@@ -135,12 +136,19 @@
     		  const params = new URLSearchParams(location.search)
     		  const pno = params.get('pno')
     		  
+    		  const rstore = useReviewStore()
+    		  
     		  onMounted(()=> {
     			  store.cultureDetailData(pno)
+    			  
+    			  rstore.pno=pno
+    			  rstore.curpage=1
+    			  rstore.reviewListData()
     		  })
     		  
     		  return {
-    			  store
+    			  store,
+    			  rstore
     		  }
     	  }
       })

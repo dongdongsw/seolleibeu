@@ -16,7 +16,7 @@
 
 <body>
 
-	<div class="content auth-wrapper" style="margin-top: -17px;">
+	<div class="content auth-wrapper" style="margin-top: -17px;" id="review_list">
 		<div class="container">
 			<div class="row">
 			  <div class="mypage-sizing">
@@ -52,8 +52,8 @@
 
 									<!-- 오른쪽 버튼 -->
 									<div class="course-actions">
-										<a href="#" class="btn btn-xs">수정</a> <a href="#"
-											class="btn btn-xs">삭제</a>
+										<a href="/mypage/review_update" class="btn btn-xs">수정</a> <a href="#"
+											class="btn btn-xs" data-toggle="modal" data-target="#myModal">삭제</a>
 									</div>
 								</div>
 								<hr>
@@ -93,7 +93,30 @@
 			</div>
 			</div>
 		</div>
+		<div id="myModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title">리뷰 삭제</h3>
+		      </div>
+		      <div class="modal-body">
+		        <p>리뷰를 삭제하시겠습니까?</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-danger">삭제</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	</div>
-
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/vue-demi"></script>
+<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/vuejs/axios.js"></script>
+<script src="/vuejs/place/review.js"></script>
 </body>
 </html>

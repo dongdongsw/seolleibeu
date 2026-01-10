@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>리뷰 작성</title>
+<title>리뷰 수정</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -191,7 +191,7 @@
 					<main class="mypage-main">
 						<div class="review-write-header">
 							<div class="review-write-title">
-								<i class="fa fa-pencil"></i> 리뷰 작성
+								<i class="fa fa-pencil"></i> 리뷰 수정
 							</div>
 						</div>
 
@@ -265,7 +265,7 @@
 									<i class="fa fa-times"></i> 취소
 								</button>
 								<button type="submit" class="btn-submit">
-									<i class="fa fa-check"></i> 등록하기
+									<i class="fa fa-check"></i> 수정하기
 								</button>
 							</div>
 						</form>
