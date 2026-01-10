@@ -37,6 +37,7 @@ public class CourseController {
 	// 코스 게시판 목록 페이지 이동
 	@GetMapping("/course/list")
 	public String course_list(@RequestParam(name = "keyword", required = false) String keyword, Model model) {
+		
 		model.addAttribute("keyword", keyword);
 		
 		model.addAttribute("main_jsp", "../course/list.jsp");

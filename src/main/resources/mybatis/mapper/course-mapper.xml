@@ -98,7 +98,9 @@
  	<!-- 수정 시 코스 상세 데이터 가져오기 -->
  	<select id="courseUpdateData" resultMap="courseMap" parameterType="int">
  		SELECT c.cno, c.title, c.content, c.uno, u.name, c.hit, c.pnos,
- 			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday, is_public
+ 			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday, is_public,
+ 			   (SELECT COUNT(*) FROM reply r 
+ 				 WHERE c.cno = r.cno) AS replycount
  		FROM course c
  		JOIN users u
  		ON c.uno = u.uno

@@ -44,11 +44,8 @@ const useCourseDetailStore=defineStore('course_detail', {
 					cno: this.cno
 				}
 			})
-			console.log(res.data)
 			this.pnos=res.data.pnosList
-			console.log(this.pnos)
 			await this.getPlaceListData()
-			console.log(this.addressList)
 			this.map()
 		},
 		

@@ -77,6 +77,7 @@ public class CourseServiceImpl implements CourseService {
 	@Transactional(rollbackFor = Exception.class)
 	public void courseDelete(int cno) {
 		// TODO Auto-generated method stub
+		mapper.courseBookmarkDelete(cno);
 		mapper.courseReplyDelete(cno);
 		mapper.courseDelete(cno);
 	}

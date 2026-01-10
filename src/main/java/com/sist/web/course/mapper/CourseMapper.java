@@ -56,6 +56,11 @@ public interface CourseMapper {
 			+ "WHERE cno = #{cno}")
 	public void courseReplyDelete(int cno);
 	
+	// 코스 삭제 시 해당 코스 북마크 삭제
+	@Delete("DELETE FROM bookmark "
+			+ "WHERE cno = #{cno}")
+	public void courseBookmarkDelete(int cno);
+	
 	public List<CourseVO> myCourseListData(@Param("start") Integer start, @Param("uno") Integer uno);
 	
 	public int myCourseListTotalPage(int uno);

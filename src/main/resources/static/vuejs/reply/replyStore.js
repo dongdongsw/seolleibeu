@@ -5,7 +5,8 @@ const initialState=()=>({
 	cr_content:'',
 	upReplyNo:null,
 	sessionId:'',
-	updateMsg:{}
+	updateMsg:{},
+	replycount:0
 })
 const useReplyStore=defineStore('reply',{
 	state:initialState,
@@ -25,6 +26,7 @@ const useReplyStore=defineStore('reply',{
 		})
 		this.reply_list=data.rList
 		this.cno=data.cno
+		this.replyCount()
 		},
 	// 댓글 수정
 	async replyUpdate(id){
@@ -47,6 +49,7 @@ const useReplyStore=defineStore('reply',{
 		this.reply_list=data.rList
 		this.cno=data.cno
 		this.cr_content=''
+		this.replyCount()
 	},
 	// 댓글 삭제 
 	async replyDelete(id){
@@ -58,6 +61,16 @@ const useReplyStore=defineStore('reply',{
 		})
 		this.reply_list=data.rList
 		this.cno=data.cno
-	}
+		this.replyCount()
+	},
+	// 댓글 개수 가져오기 
+	async replyCount(){
+		const {data} =await api.get('/course/course_vue/',{
+			params:{
+				cno:this.cno
+			}
+		})
+		this.replycount=data.replycount
+		}
 	}
 })

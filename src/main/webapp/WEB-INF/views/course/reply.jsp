@@ -34,6 +34,12 @@ const SESSION_ID=Number('${sessionScope.uno}')
 </head>
 <body>
 <div class="content-reply" id="reply_list">
+	    <div class="container">
+	  		<div class="row">
+		  		<h2>댓글 {{rStore.replycount}}</h2>
+				<hr style="margin-top: 10px; color:black">
+	  		</div>
+	    </div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
