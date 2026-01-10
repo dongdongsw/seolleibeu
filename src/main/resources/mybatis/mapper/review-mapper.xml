@@ -17,7 +17,7 @@
 </select>
 
 <!-- 마이페이지 리뷰 총 페이지 -->
-<select id="mypageReviewTotalPage" resultType="com.sist.vo.ReviewVO" parameterType="hashmap">
+<select id="mypageReviewTotalPage" resultType="com.sist.web.vo.ReviewVO" parameterType="hashmap">
  SELECT CEIL(COUNT(*)/3.0)
  FROM review
  JOIN place p ON r.pno=p.pno
