@@ -39,7 +39,7 @@ public class ReviewRestController {
 		}
 		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
-	// 리뷰 더보기
+	// 리뷰 더보기(모달창)
 	
 	// 리뷰 작성
 	

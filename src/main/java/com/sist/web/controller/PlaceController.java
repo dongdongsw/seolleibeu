@@ -23,7 +23,7 @@ public class PlaceController {
 	public String place_culture_detail(Model model) {
 		model.addAttribute("main_jsp", "../place/culture_detail_main.jsp");
 		model.addAttribute("detailPage", "../place/culture_detail.jsp");
-		model.addAttribute("reviewPage", "../place/culture_review.jsp");
+		model.addAttribute("reviewPage", "../place/place_review.jsp");
 		return "main/main";
 	}
 
@@ -39,7 +39,7 @@ public class PlaceController {
 		
 		model.addAttribute("main_jsp", "../place/attraction_detail_main.jsp");
 		model.addAttribute("detailPage", "../place/attraction_detail.jsp");
-		model.addAttribute("reviewPage", "../place/attraction_review.jsp");
+		model.addAttribute("reviewPage", "../place/place_review.jsp");
 		return "main/main";
 	}
 	

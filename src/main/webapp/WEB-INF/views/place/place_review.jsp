@@ -10,7 +10,7 @@
 <div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px; margin-bottom: 50px;">
 	<div class="rating-summary">
 		<div class="rating-score">
-        	<div class="rating-number">4.5</div>
+        	<div class="rating-number">{{rstore.r_score}}</div>
         	<div class="rating-stars">
 	            <i class="fa fa-star"></i>
 	            <i class="fa fa-star"></i>
@@ -67,12 +67,13 @@
         					<div class="row">
             					<div class=" col-lg-12 col-md-12">
 									<ul class="comment-list">
-									    <li v-for="(vo,index) in rstore.list" :key="index">
+									  <li v-if="rstore.list.length===0" class="text-center"><h3>리뷰가 없습니다.</h3></li>
+									    <li v-for="(vo,index) in rstore.list" :key="index" v-if="rstore.list.length>0">
 									        <div class="comment-body">
-									            <div class="comment-author"><img :src="profile_img" alt class="img-circle"></div>
+									            <div class="comment-author"><img :src="vo.profile_img ? vo.profile_img : '/images/noimage.png'" alt class="img-circle" style="width: 80px;height: 80px;"></div>
 									            <div class="comment-info">
 									                <div class="comment-header rating-stars">
-									                    <h3 class="comments-title">{{vo.name}}&nbsp;
+									                    <h3 class="comments-title" :title="vo.name">{{vo.name}}&nbsp;
 									                    <!-- 리뷰 별점 -->
 									                    <span class="rating-star" v-if="vo.r_score != null">
 														  <i class="fa fa-star"
@@ -88,7 +89,7 @@
 									                    <div class="meta"> <span class="meta-date">{{vo.dbday}}</span> </div>
 									                </div>
 									                <div class="comment-content">
-									                    <p>{{vo.r_content}}</p>
+									                    <p :title="vo.r_content">{{vo.r_content}}</p>
 									                    <div class="text-right" style="margin-right: 60px;">
                                                       		<span class="review-more" @click="openModal">더보기</span>
                                                       	</div>
@@ -105,9 +106,9 @@
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="st-pagination">
 						<ul class="pagination">
-							<li><a href="#">이전</a></li>
-							<li><a href="#" class="active">1</a></li>
-							<li><a href="#">다음</a></li>
+							<li v-if="rstore.startPage>1"><a href="#" @click="rstore.pageChange(rstore.startPage-1)">이전</a></li>
+							<li :class="i==rstore.curpage?'active':''" v-for="i in rstore.range"><a href="#" @click="rstore.pageChange(i)">{{i}}</a></li>
+							<li v-if="rstore.endPage<rstore.totalpage"><a href="#" @click="rstore.pageChange(rstore.endPage+1)">다음</a></li>
 						</ul>
 					</div>
 				</div>

@@ -10,4 +10,10 @@ public interface ReviewService {
 	public int reviewTotalPage(int pno);
 	// 리뷰 갯수
 	public int reviewCount(int pno);
+	// 작성
+	public void reviewInsert(ReviewVO vo);
+	// 리뷰 수정
+	public void reviewUpdate(ReviewVO vo);
+	// 리뷰 삭제
+	public void reviewDelete(int pno);
 }
