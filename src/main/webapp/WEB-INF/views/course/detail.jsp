@@ -31,9 +31,9 @@ h3 {
 			</div>
 		</div>
 	</div>
-	<div class="content" id="course_detail">
+	<div class="content">
 		<div class="container">
-			<div class="row">
+			<div class="row" id="bookmark_area">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="title text-center">
 						<h2>${vo.title }</h2>
@@ -57,7 +57,7 @@ h3 {
 				</div>
 			</div>
 		</div>
-		<div class="container course-place-info" > 
+		<div class="container course-place-info" id="course_detail"> 
 			<div class="row">
 				<div class="mc-wrap" style="margin: 0 15px 0 15px">
 					<button class="mc-btn prev" aria-label="prev">‹</button>
