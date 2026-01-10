@@ -22,7 +22,7 @@
 	
 	                        <div class="row" style="margin-bottom: 20px;">
 	                            <div class="col-md-8">
-	                                <input type="text" class="form-control auth-input" placeholder="아이디" name="id" v-model="id">
+	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="아이디" name="id" v-model="id">
 	                            </div>
 	                            <div class="col-md-4">
 	                                <button class="btn btn-default auth-sub-btn auth-dark-btn">중복 검사</button>
@@ -30,16 +30,16 @@
 	                        </div>
 	
 	                        <div class="form-group">
-	                            <input type="password" class="form-control auth-input" placeholder="비밀번호" name="pwd" v-model="pwd">
+	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호" name="pwd" v-model="pwd">
 	                        </div>
 	
 	                        <div class="form-group"  style="margin-bottom: 30px;">
-	                            <input type="password" class="form-control auth-input" placeholder="비밀번호 재입력" >
+	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호 재입력" >
 	                        </div>
 	
 	                        <div class="row"  style="margin-bottom: 20px;">
 	                            <div class="col-md-8">
-	                                <input type="text" class="form-control auth-input" placeholder="닉네임" name="name" v-model="name">
+	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="닉네임" name="name" v-model="name">
 	                            </div>
 	                            <div class="col-md-4">
 	                                <button class="btn btn-default auth-sub-btn auth-dark-btn">중복 검사</button>
@@ -47,12 +47,12 @@
 	                        </div>
 	
 	                        <div class="form-group">
-	                            <input type="email" class="form-control auth-input" placeholder="이메일 입력" name="email" v-model="email">
+	                            <input type="email" class="form-control auth-input" style="color: black;" placeholder="이메일 입력" name="email" v-model="email">
 	                        </div>
 	
 	                        <div class="row" style="margin-bottom: 20px;">
 	                            <div class="col-md-8">
-	                                <input type="text" class="form-control auth-input" placeholder="인증번호 입력">
+	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="인증번호 입력">
 	                            </div>
 	                            <div class="col-md-4">
 	                                <button class="btn btn-default auth-sub-btn auth-dark-btn" style="padding:14px 3px;">인증번호 전송</button>

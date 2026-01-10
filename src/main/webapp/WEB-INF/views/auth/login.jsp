@@ -25,11 +25,11 @@
 	                    <form class="auth-form" action="/auth/login_process" method="post">
 	
 	                        <div class="form-group"  style="display: flex; align-items: center; justify-content: center; margin-bottom: 0px;">
-	                            <input type="text" class="form-control auth-input" style="width: 80%; " placeholder="아이디" required name="id">
+	                            <input type="text" class="form-control auth-input" style="width: 80%; color: black;" placeholder="아이디" required name="id">
 	                        </div>
 	
 	                        <div class="form-group" style="display: flex; align-items: center; justify-content: center; margin-bottom: 0px;">
-	                            <input type="password" class="form-control auth-input" style="width: 80%; " placeholder="비밀번호" name="pwd">
+	                            <input type="password" class="form-control auth-input" style="width: 80%; color: black;" placeholder="비밀번호" name="pwd">
 	                            
 	                        </div>
 	                        

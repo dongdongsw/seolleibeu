@@ -10,4 +10,6 @@ public interface FavoriteService {
 public List<FavoriteVO> favoriteListData(Map map);
 	
 	public int favoriteTotalPage(Map map);
+	
+	public void fovoriteInsert(FavoriteVO vo);
 }

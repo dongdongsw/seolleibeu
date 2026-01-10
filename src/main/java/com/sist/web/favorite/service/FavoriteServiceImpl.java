@@ -27,6 +27,12 @@ public class FavoriteServiceImpl implements FavoriteService{
 		// TODO Auto-generated method stub
 		return mapper.favoriteTotalPage(map);
 	}
+
+	@Override
+	public void fovoriteInsert(FavoriteVO vo) {
+		// TODO Auto-generated method stub
+		mapper.fovoriteInsert(vo);
+	}
 	
 	
 	

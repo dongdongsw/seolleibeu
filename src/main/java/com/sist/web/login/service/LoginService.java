@@ -6,4 +6,5 @@ public interface LoginService {
 	public void registerInsert(UsersVO vo);
 	
 	public UsersVO loginInfoData(String id);
+	
 }

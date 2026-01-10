@@ -165,30 +165,37 @@
      })
      reviewApp.mount('#reviewApp')
     </script> -->
-    	<script src="/vuejs/axios.js"></script>
-				<script src="/vuejs/place/restaurantStore.js"></script>
-				<script>
-					const {createApp, onMounted, ref} = Vue
-					const {createPinia} = Pinia
-					
-					const restaurantDetailApp = createApp({
-						setup(){
-							const store = useRestaurantStore()
-							const params = new URLSearchParams(location.search)
-							const pno = params.get('pno')
-							
-							onMounted(()=>{
-								store.restaurantDetailData(pno)
-							})
-							
-							return{
-								store
-								
-							}
-						}
-					})
-					restaurantDetailApp.use(createPinia())
-					restaurantDetailApp.mount("#restaurant_detail")
-				</script>
+   	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/place/restaurantStore.js"></script>
+	<script src="/vuejs/favorite/favoriteStore.js"></script>
+	<script>
+		const {createApp, onMounted} = Vue
+		const {createPinia} = Pinia
+		
+		const restaurantDetailApp = createApp({
+			setup(){
+				const store = useRestaurantStore()
+				const favoriteStore = useFavoriteStore()
+				
+				const params = new URLSearchParams(location.search)
+				const pno = params.get('pno')
+				
+				const onClickFavorite = () =>{
+					favoriteStore.favoritePush(pno)
+				}
+				
+				onMounted(()=>{
+					store.restaurantDetailData(pno)
+				})
+				
+				return{
+					store,
+					onClickFavorite
+				}
+			}
+		})
+		restaurantDetailApp.use(createPinia())
+		restaurantDetailApp.mount("#restaurant_detail")
+	</script>
     
     

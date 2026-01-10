@@ -7,6 +7,8 @@ import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -54,5 +56,24 @@ public class FavoriteRestController {
 		}
 		
 		return new ResponseEntity<>(map, HttpStatus.OK);
+	}
+	
+	@PostMapping("/favorite/push_vue/")
+	public ResponseEntity<Void> favorite_push_vue(
+			@RequestBody FavoriteVO vo, HttpSession session){
+		
+		try {
+			Integer uno = (Integer)session.getAttribute("uno");
+			if(uno == null) {
+				return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
+			}
+			vo.setUno(uno);
+			fService.fovoriteInsert(vo);
+			
+		} catch (Exception ex) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return ResponseEntity.ok().build();
 	}
 }

@@ -19,14 +19,14 @@
 	
 	                    <div class="row auth-form">
 	                        <div class="col-md-8">
-	                            <input type="text" class="form-control auth-input" placeholder="이메일">
+	                            <input type="text" style="color: black;" class="form-control auth-input" placeholder="이메일">
 	                        </div>
 	                        <div class="col-md-4">
 	                            <button class="btn btn-default auth-sub-btn auth-dark-btn" style="padding: 14px 3px;">인증번호 전송</button>
 	                        </div>
 	
 	                        <div class="col-md-8">
-	                            <input type="text" class="form-control auth-input" placeholder="인증번호">
+	                            <input type="text" style="color: black;" class="form-control auth-input" placeholder="인증번호">
 	                        </div>
 	                        <div class="col-md-4">
 	                            <button class="btn btn-default auth-sub-btn auth-dark-btn">확인</button>
