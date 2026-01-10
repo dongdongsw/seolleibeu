@@ -1,5 +1,7 @@
 package com.sist.web.mypage.service;
 
-public interface MypageService {
+import com.sist.web.vo.UsersVO;
 
+public interface MypageService {
+	public UsersVO mypageData(int uno);
 }

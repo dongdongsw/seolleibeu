@@ -42,17 +42,22 @@ public class ReplyRestController {
 	}
 	@PostMapping("/reply/insert_vue/")
 	public ResponseEntity<Map> reply_insert_vue(
-	   @RequestBody ReplyVO vo/*,HttpSession session*/
+	   @RequestBody ReplyVO vo,HttpSession session
 	)
 	{
 		Map map=new HashMap();
 		try
 		{
+			int uno=(int)session.getAttribute("uno");
+			String name=(String)session.getAttribute("name");
+			vo.setUno(uno);
+			vo.setName(name);
+			
 			rService.replyInsert(vo);
 			List<ReplyVO> list=rService.replyListData(vo.getCno());
 			map.put("rList", list);
 			map.put("cno", vo.getCno());
-			map.put("uno", vo.getUno());
+			map.put("sessionId", session.getAttribute("id"));
 		}catch(Exception ex)
 		{
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);

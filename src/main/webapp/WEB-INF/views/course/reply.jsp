@@ -28,6 +28,9 @@
 		padding-top: 0;
 	}
 </style>
+<script>
+const SESSION_ID=Number('${sessionScope.uno}')
+</script>
 </head>
 <body>
 <div class="content-reply" id="reply_list">
@@ -58,12 +61,12 @@
 					    <td class="text-right">
 					    <div style="margin-top: 50px;">
 					     <span>
-					      <button type="button" class="info-btn"
+					      <button type="button" class="info-btn" v-if="rStore.sessionId===rvo.uno"
 					       @click="rStore.toggleUpdate(rvo.id,rvo.cr_content)"
 					      >
 					      	{{rStore.upReplyNo===rvo.id?'취소':'수정'}}
 					      </button>
-					      <button type="button" class="info-btn"
+					      <button type="button" class="info-btn" v-if="rStore.sessionId===rvo.uno"
 					       @click="rStore.replyDelete(rvo.id)"
 					      >삭제</button>
 					     </span>
@@ -80,7 +83,7 @@
 					 </tr>
 
 					</table>
-					<table class="table">
+					<table class="table" v-if="rStore.sessionId">
 					 <tr>
 					   <td>
 					    <textarea rows="5" cols="70" class="comment-input" v-model="rStore.cr_content"></textarea>
@@ -107,7 +110,7 @@
     		 
     		 onMounted(()=>{
     			 rStore.replyListData(cno)
-    			 //rStore.sessionId=SESSION_ID
+    			 rStore.sessionId=SESSION_ID
     		 })
     		 
     		 return {

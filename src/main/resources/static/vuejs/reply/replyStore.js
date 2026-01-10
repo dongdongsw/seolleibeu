@@ -4,7 +4,7 @@ const initialState=()=>({
 	cno:0,
 	cr_content:'',
 	upReplyNo:null,
-	uno:1,
+	sessionId:'',
 	updateMsg:{}
 })
 const useReplyStore=defineStore('reply',{
@@ -43,7 +43,6 @@ const useReplyStore=defineStore('reply',{
 		const {data} = await api.post('/reply/insert_vue/',{
 			cno:this.cno,
 			cr_content:this.cr_content,
-			uno:this.uno
 		})
 		this.reply_list=data.rList
 		this.cno=data.cno

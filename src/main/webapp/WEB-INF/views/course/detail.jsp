@@ -15,6 +15,9 @@ h3 {
 	text-overflow: ellipsis;
 }
 </style>
+<script>
+const SESSION_UNO = Number('${sessionScope.uno}')
+</script>
 </head>
 <body>
 	<div class="page-header">
@@ -40,8 +43,9 @@ h3 {
 					</div>
 					<div class="detail-head">
 						<div style="margin-left: 10px">
-							<i class="fa fa-bookmark-o" aria-hidden="true"></i> <i
-								class="fa fa-bookmark" aria-hidden="true"></i>
+							<i v-if="!bookmarkStore.bookmarked" class="fa fa-bookmark-o"
+                          	   aria-hidden="true" @click="bookmarkStore.bookmarkInsert()"></i>
+                            <i v-else class="fa fa-bookmark" aria-hidden="true"></i>
 						</div>
 						<div style="margin-left: 30px">
 							<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;${vo.hit }
@@ -120,6 +124,7 @@ h3 {
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=500f9263086d9dabb5676152c0e94936&libraries=services"></script>
 	<script src="/vuejs/course/courseDetailStore.js"></script>
 	<script src="/vuejs/course/courseDetail.js"></script>
+	<script src="/vuejs/bookmark/bookmarkStore.js"></script>
 </body>
 
 </html>

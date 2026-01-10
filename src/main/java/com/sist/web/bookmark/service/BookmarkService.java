@@ -1,5 +1,8 @@
 package com.sist.web.bookmark.service;
 
-public interface BookmarkService {
+import com.sist.web.vo.BookMarkVO;
 
+public interface BookmarkService {
+	public void bookmarkInsert(BookMarkVO vo);
+	public void bookmarkDelete(int id);
 }
