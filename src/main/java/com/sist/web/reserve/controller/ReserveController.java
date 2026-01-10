@@ -1,4 +1,4 @@
-package com.sist.web.controller;
+package com.sist.web.reserve.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
