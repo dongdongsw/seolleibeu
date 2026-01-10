@@ -24,10 +24,13 @@
 	.reply-content {
 		border-top: none !important;
 	}
+	.content-reply {
+		padding-top: 0;
+	}
 </style>
 </head>
 <body>
-<div class="content" id="reply_list">
+<div class="content-reply" id="reply_list">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

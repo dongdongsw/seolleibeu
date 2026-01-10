@@ -3,6 +3,8 @@ package com.sist.web.course.service;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.sist.web.vo.*;
 
 public interface CourseService {
@@ -17,4 +19,6 @@ public interface CourseService {
 	public CourseVO courseUpdateData(int cno);
 	public void courseUpdate(CourseVO vo);
 	public void courseDelete(int cno);
+	public List<CourseVO> myCourseListData(int start, int uno);
+	public int myCourseListTotalPage(int uno);
 }

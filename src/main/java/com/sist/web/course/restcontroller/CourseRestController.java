@@ -136,7 +136,7 @@ public class CourseRestController {
 		
 		CourseVO vo=new CourseVO();
 		try {
-			vo=cService.courseDetailData(cno);
+			vo=cService.courseUpdateData(cno);
 			
 			String pnos=vo.getPnos();
 			String[] pnoList=pnos.split(",");
@@ -162,6 +162,26 @@ public class CourseRestController {
 		try {
 			cService.courseDelete(cno);
 			map.put("msg", "yes");
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map, HttpStatus.OK);
+	}
+	
+	// 마이페이지 내 코스 목록
+	@GetMapping("mycourse_vue/")
+	public ResponseEntity<Map> course_delete_vue(@RequestParam("page") int page, @RequestParam("uno") int uno) { 
+		Map map=new HashMap();
+		try {
+			List<CourseVO> list=cService.myCourseListData((page-1)*3, uno);
+			int totalpage=cService.myCourseListTotalPage(uno);
+			
+			Map pageMap=Methods.paginationMap(5, page, totalpage);
+			
+			map.putAll(pageMap);
+			map.put("list", list);
+			
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

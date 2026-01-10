@@ -4,6 +4,11 @@
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="com.sist.web.course.mapper.CourseMapper">
  
+ 	<resultMap type="com.sist.web.vo.CourseVO" id="courseMap">
+ 		<result property="uvo.name" column="name"/>
+ 		<result property="pvo.thumbnail" column="thumbnail"/>
+ 	</resultMap>
+ 
  	<!-- 코스 생성 장소 검색 -->
  	<select id="placeListDataInCourse" resultType="PlaceVO" parameterType="hashmap">
  		SELECT pno, name, addr, category, thumbnail 
@@ -41,20 +46,16 @@
  		WHERE cno = #{cno}
  	</update>
  	
- 	
- 	<resultMap type="com.sist.web.vo.CourseVO" id="courseMap">
- 		<result property="uvo.name" column="name"/>
- 		<result property="pvo.thumbnail" column="thumbnail"/>
- 	</resultMap>
- 	
  	<!-- 코스 게시판 리스트 -->
  	<select id="courseListData" resultMap="courseMap" parameterType="hashmap">                                                                                                                                                  
  		SELECT c.cno, c.title, c.content, c.uno, u.name, c.hit,
  			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday,
  				(SELECT thumbnail
- 				 FROM place
+ 				 FROM place 
  				 WHERE pno = TO_NUMBER(SUBSTR(c.pnos, 1, INSTR(c.pnos, ',') - 1))
- 				 ) AS thumbnail
+ 				 ) AS thumbnail,
+ 				 (SELECT COUNT(*) FROM reply r 
+ 				 WHERE c.cno = r.cno) AS replycount 
  		FROM course c
  		JOIN  users u
  		ON c.uno = u.uno
@@ -85,6 +86,18 @@
  	<!-- 코스 상세 데이터 가져오기 -->
  	<select id="courseDetailData" resultMap="courseMap" parameterType="int">
  		SELECT c.cno, c.title, c.content, c.uno, u.name, c.hit, c.pnos,
+ 			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday, is_public,
+ 			   (SELECT COUNT(*) FROM reply r 
+ 				WHERE c.cno = r.cno) AS replycount
+ 		FROM course c
+ 		JOIN users u
+ 		ON c.uno = u.uno
+ 		WHERE c.cno = #{cno}
+ 	</select>
+ 	
+ 	<!-- 수정 시 코스 상세 데이터 가져오기 -->
+ 	<select id="courseUpdateData" resultMap="courseMap" parameterType="int">
+ 		SELECT c.cno, c.title, c.content, c.uno, u.name, c.hit, c.pnos,
  			   TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday, is_public
  		FROM course c
  		JOIN users u
@@ -97,5 +110,28 @@
  	 	SELECT TO_NUMBER(SUBSTR(pnos, 1, INSTR(pnos, ',') - 1)) AS pno
  	 	FROM course
  	 	WHERE cno = #{cno}
+ 	</select>
+ 	
+ 	<!-- 마이페이지 내 코스 목록 -->
+ 	<select id="myCourseListData" resultMap="courseMap" parameterType="hashmap">                                                                                                                                                  
+ 		SELECT c.cno, c.title, c.content, c.uno, c.hit, is_public,
+ 			    TO_CHAR(c.created_at, 'yyyy.mm.dd') AS dbday,
+ 				(SELECT thumbnail
+ 				 FROM place
+ 				 WHERE pno = TO_NUMBER(SUBSTR(c.pnos, 1, INSTR(c.pnos, ',') - 1))
+ 				 ) AS thumbnail,
+ 				 (SELECT COUNT(*) FROM reply r 
+ 				 WHERE c.cno = r.cno) AS replycount 
+ 		FROM course c
+ 		WHERE uno = #{uno}	
+ 		ORDER BY created_at DESC	
+ 		OFFSET #{start} ROWS FETCH NEXT 3 ROWS ONLY
+ 	</select>
+ 	
+ 	<!-- 마이페이지 내 코스 전체 페이지 -->
+ 	<select id="myCourseListTotalPage" resultType="int" parameterType="int">                                                                                                                                                   
+ 		SELECT CEIL(COUNT(*)/3.0)
+ 		FROM course
+ 		WHERE uno = #{uno}	
  	</select>
 </mapper>

@@ -70,7 +70,7 @@
 											<span class="meta-date"> 조회수</span>
 											<span class="meta-author"><a href="#" class="meta-link">{{vo.hit}}</a></span>&nbsp;
 											<span class="meta-date"> 댓글수</span>
-											<span class="meta-author"><a href="#" class="meta-link">3</a></span>
+											<span class="meta-author"><a href="#" class="meta-link">{{vo.replycount}}</a></span>
 										</p>
 										<div class="post-content">
 											<p class="clamp-3">{{vo.content}}</p>

@@ -211,7 +211,7 @@ a {
 
 .detail-map {
 	height: 600px;
-	width:98%;
+	width:100%;
 }
 
 .choose-bottom {
@@ -462,6 +462,13 @@ a {
 	background-position: center;
 	overflow: hidden;
 }
+
+.card-img > img {
+	width: 220px;
+	height: 200px; 
+	filter: brightness(60%);
+}
+
 /* 살짝 흑백 + 어둡게 (이미지에만) */
 .card-img::before {
 	content: "";

@@ -1,7 +1,6 @@
 const detailApp=createApp({
     	 setup(){
     		 const store=useCourseDetailStore()
-    		 const dStore=useMyCourseStore()
     		 
     		 const params=new URLSearchParams(location.search)
     		 const cno=params.get('cno')
@@ -11,8 +10,7 @@ const detailApp=createApp({
     		 })
     		 
     		 return {
-    			 store,
-    			 dStore
+    			 store
     		 }
     	 }
      })

@@ -37,8 +37,6 @@ h3 {
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="title text-center">
 						<h2>${vo.title }</h2>
-						<a href="/course/update?cno=${vo.cno }" style="text-decoration: underline">수정</a>&nbsp;
-						<a @click="dStore.courseDelete(${vo.cno })" style="text-decoration: underline">삭제</a>
 					</div>
 					<div class="detail-head">
 						<div style="margin-left: 10px">
@@ -70,7 +68,7 @@ h3 {
 									<h2>${s.count}</h2>
 								</div>
 								<div class="card-img">
-									<img src="${vo.thumbnail }" style="width: 220px; height: 200px; filter: brightness(60%);">
+									<img src="${vo.thumbnail }">
 									<div class="card-text">
 										<h3 :class="{ 'selected-place': store.pno === ${vo.pno} }">${vo.name }</h3>
 									</div>
@@ -109,11 +107,18 @@ h3 {
 			</div>
 		</div>
 	</div>
-	<jsp:include page="reply.jsp"></jsp:include>
+	<div class="container">
+	
+	  	<div class="row" style="margin-bottom: 100px;">
+	  	<h2>댓글 ${vo.replycount }</h2>
+			<hr style="margin-top: 10px; color:black">
+	  		<jsp:include page="reply.jsp"></jsp:include>
+	  	</div>
+	</div>
+	
 	<script src="/js/course_detail.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=500f9263086d9dabb5676152c0e94936&libraries=services"></script>
 	<script src="/vuejs/course/courseDetailStore.js"></script>
-	<script src="/vuejs/course/MyCourseStore.js"></script>
 	<script src="/vuejs/course/courseDetail.js"></script>
 </body>
 

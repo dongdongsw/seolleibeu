@@ -41,6 +41,9 @@ public interface CourseMapper {
 	
 	public int courseGetFirstPlace(int cno);
 	
+	// 코스 수정
+	public CourseVO courseUpdateData(int cno);
+	
 	public void courseUpdate(CourseVO vo);
 	
 	// 코스 삭제
@@ -52,4 +55,8 @@ public interface CourseMapper {
 	@Delete("DELETE FROM reply "
 			+ "WHERE cno = #{cno}")
 	public void courseReplyDelete(int cno);
+	
+	public List<CourseVO> myCourseListData(@Param("start") Integer start, @Param("uno") Integer uno);
+	
+	public int myCourseListTotalPage(int uno);
 }

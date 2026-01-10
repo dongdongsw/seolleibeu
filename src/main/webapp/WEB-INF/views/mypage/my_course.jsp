@@ -12,51 +12,60 @@
 	rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<style type="text/css">
+a {
+	cursor: pointer;
+}
+</style>
 </head>
-
 <body>
-
 	<div class="content auth-wrapper" style="margin-top: -17px;">
-		<div class="container">
+		<div class="container" id="my_course">
 			<div class="row">
 			  <div class="mypage-sizing">
 				<div class="col-lg-9 col-md-9 col-sm-12">
 					<main class="mypage-main">
 						<h2>나의 코스</h2>
 
-						<div class="info-card">
-							<c:forEach begin="0" end="2">
-								<div class="post-block my-course-item" style="margin-bottom:0">
+						<div class="info-card" style="margin: 0; padding: 0">
+							<div v-for="(vo, index) in store.list" :key="index">
+								<div class="post-block my-course-item"  style="margin-top: 30px">
 									<!-- 왼쪽 이미지 -->
 									<div class="course-thumb">
-										<img src="images/post-img.jpg" alt="thumbnail">
+										<img :src="vo.pvo.thumbnail" style="width:80px; height: 80px">
 									</div>
 
 									<!-- 가운데 정보 -->
 									<div class="course-info">
-										<h4 class="course-title">홍대 데이트 코스</h4>
+										<h4 class="course-title"><a :href="'/course/detail?cno='+vo.cno" style="color:black;">{{vo.title}}</a></h4>
 										<div class="course-meta">
-											<span class="date">2025-01-05</span>
-											<span class="comment">댓글 3</span><span class="comment">조회수 100</span>
+											<span class="date">{{vo.dbday}}&nbsp;&nbsp;</span>
+											<span class="comment">댓글 {{vo.replycount}}</span>
+											&nbsp;&nbsp;<span class="comment">조회수 {{vo.hit}}</span>
+											&nbsp;&nbsp;<span class="comment">{{vo.is_public==='Y'?'공개':'비공개'}}</span>
 										</div>
 									</div>
 
 									<!-- 오른쪽 버튼 -->
 									<div class="course-actions">
-										<a href="#" class="btn btn-xs">수정</a> <a href="#"
-											class="btn btn-xs">삭제</a>
-									</div>
+										<a :href="'/course/update?cno='+vo.cno" class="btn btn-xs">수정</a> 
+										<a @click="store.courseDelete(vo.cno)" class="btn btn-xs">삭제</a>
+									</div>	
 								</div>
-								<hr>
-							</c:forEach>
+								<hr style="margin:0">
+							</div>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="st-pagination">
 									<ul class="pagination">
-										<li><a href="#">이전</a></li>
-										<li><a href="#" class="active">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">다음</a></li>
+										<li v-if="store.startPage>1" @click="store.movePage(store.startPage-1)">
+											<a class="page-link">이전</a>
+										</li>
+										<li v-for="i in store.range" >
+											<a :class="i==store.curpage?'page-link active':'page-link'" @click="store.movePage(i)">{{i}}</a>
+										</li>
+										<li v-if="store.endPage<store.totalpage">
+											<a class="page-link" @click="store.movePage(store.endPage+1)">다음</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -85,6 +94,8 @@
 			</div>
 		</div>
 	</div>
-
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/course/myCourseStore.js"></script>
+	<script src="/vuejs/course/myCourse.js"></script>
 </body>
 </html>

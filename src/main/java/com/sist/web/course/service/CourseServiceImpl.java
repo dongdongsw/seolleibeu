@@ -64,7 +64,7 @@ public class CourseServiceImpl implements CourseService {
 	@Override
 	public CourseVO courseUpdateData(int cno) {
 		// TODO Auto-generated method stub
-		return mapper.courseDetailData(cno);
+		return mapper.courseUpdateData(cno);
 	}
 
 	@Override
@@ -79,5 +79,17 @@ public class CourseServiceImpl implements CourseService {
 		// TODO Auto-generated method stub
 		mapper.courseReplyDelete(cno);
 		mapper.courseDelete(cno);
+	}
+
+	@Override
+	public List<CourseVO> myCourseListData(int start, int uno) {
+		// TODO Auto-generated method stub
+		return mapper.myCourseListData(start, uno);
+	}
+
+	@Override
+	public int myCourseListTotalPage(int uno) {
+		// TODO Auto-generated method stub
+		return mapper.myCourseListTotalPage(uno);
 	}
 }
