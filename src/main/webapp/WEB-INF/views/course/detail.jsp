@@ -41,7 +41,7 @@ h3 {
 						<a @click="dStore.courseDelete(${vo.cno })" style="text-decoration: underline">삭제</a>
 					</div>
 					<div class="detail-head">
-						<div>
+						<div style="margin-left: 10px">
 							<i class="fa fa-bookmark-o" aria-hidden="true"></i> <i
 								class="fa fa-bookmark" aria-hidden="true"></i>
 						</div>
@@ -54,10 +54,8 @@ h3 {
 						</div>
 					</div>
 					<div class="detail-content">${vo.content }</div>
-					<div class="project-img mb30">
-						<img src="/images/course.png" class="img-responcive"
-							style="width: 100%;">
-					</div>
+					<div class="detail-map" id="map"></div>
+						
 				</div>
 			</div>
 		</div>
@@ -113,32 +111,10 @@ h3 {
 	</div>
 	<jsp:include page="reply.jsp"></jsp:include>
 	<script src="/js/course_detail.js"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=500f9263086d9dabb5676152c0e94936&libraries=services"></script>
 	<script src="/vuejs/course/courseDetailStore.js"></script>
 	<script src="/vuejs/course/MyCourseStore.js"></script>
-	<script>
-	 
-	
-     const detailApp=createApp({
-    	 setup(){
-    		 const store=useCourseDetailStore()
-    		 const dStore=useMyCourseStore()
-    		 
-    		 const params=new URLSearchParams(location.search)
-    		 const cno=params.get('cno')
-    		 
-    		 onMounted(()=>{
-    			 store.firstPlace(cno)
-    		 })
-    		 
-    		 return {
-    			 store,
-    			 dStore
-    		 }
-    	 }
-     })
-     detailApp.use(createPinia())
-     detailApp.mount('#course_detail')
-    </script>
+	<script src="/vuejs/course/courseDetail.js"></script>
 </body>
 
 </html>

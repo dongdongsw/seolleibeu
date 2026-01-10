@@ -1,102 +1,110 @@
-const useCourseDetailStore=defineStore('course_detail', {
+const {defineStore} = Pinia
+
+const useCourseStore=defineStore('course_insert', {
 	
 	state: ()=>({
-		place: {},
+		place_list: [],
+		selected: [],
 		addressList: [],
 		pnos: [],
-		pno: 0,
-		cno: 0,
-		url_cate: '',
-		selected: true,
-		category: '',
-		type: ''
+		type: '명소',
+		keyword: '',
+		title: '',
+		content: '',
+		is_public: 'Y',
+		step_ok: ''
 	}),
 	
 	actions: {
-		
-		// 한 장소의 상세정보 가져오기
-		async placeDetailData() {
-			const res=await api.get('/course/place_vue/', {
+		// 장소 데이터 불러오기
+		async dataRecv() {
+			const res=await api.get('/course/place_list_vue/', {
 				params: {
-					pno: this.pno
+					type: this.type,
+					keyword: this.keyword
 				}
 			})
-			this.place=res.data
-			this.category=res.data.category
-			this.type=res.data.type
-			this.urlCate()
-		},
-		
-		// 한 장소의 상세정보 가져오기 (데이터만 return)
-		async PlaceDetail(pno) {
-		  const res = await api.get('/course/place_vue/', {
-		    params: { pno }
-		  })
-		  return res.data
-		},
-		
-		// 장소 리스트 불러오기
-		async placeList(cno) {
-					
-		this.cno=cno
-			const res=await api.get('/course/course_vue/', {
-				params: {
-					cno: this.cno
-				}
-			})
-			console.log(res.data)
-			this.pnos=res.data.pnosList
-			console.log(this.pnos)
-			await this.getPlaceListData()
-			console.log(this.addressList)
+			this.place_list=res.data
 			this.map()
 		},
 		
-		// 초기값을 위한 첫번째 장소 가져오기
-		async firstPlace(cno) {
-			this.cno=cno
-			const res=await api.get("course/first_place_vue/", {
-				params: {
-					cno: this.cno
-				}
+		// 코스 생성
+		async courseInsert({titleRef, contentRef}) {
+			if(this.title==='') {
+				titleRef?.focus()
+				return
+			}
+			if(this.content==='') {
+				contentRef?.focus()
+				return
+			}
+			
+			const res=await api.post('/course/insert_vue/', {
+				pnos: this.pnos.join(','),
+				title: this.title,
+				content: this.content,
+				is_public: this.is_public
 			})
 			
-			this.pno=res.data
-			await this.placeDetailData()
-			this.placeList(this.cno)
-			
-		},
-		
-		// 지도에 넣을 addr, label만들기
-		async getPlaceListData() {
-
-		  for (const pno of this.pnos) {
-		    const data = await this.PlaceDetail(pno)
-		    if (!data) continue
-
-		    this.addressList.push({
-		      addr: data.addr,
-		      label: data.name
-		    })
-		  }
+			if(res.data.msg==='yes') {
+				location.href="/course/list"
+			} else {
+				alert("코스 생성에 실패하였습니다.")
+			}
 		},
 		
 		// 장소 선택
-		placeData(pno) {
-			this.pno=pno
-			this.placeDetailData()
+		select(pno) {
+			const p=this.place_list.find(vo => vo.pno === pno)
+			this.selected.push(p)
+			this.pnos.push(p.pno)
+			
+			const idx=this.place_list.indexOf(p)
+			this.place_list.splice(idx, 1)
+			
+			this.pushAddressList()
+			this.map()
 		},
 		
-		// 바로가기 버튼		
-		urlCate() {
-			if(this.category === '식당') {
-				this.url_cate='restaurant'
-			} else if(this.type === '연극/뮤지컬' || this.type === '전시' 
-									|| this.type === '액티비티') {
-				this.url_cate='culture'
-			} else (
-				this.url_cate='attraction'
-			)
+		// 선택된 장소에서 제거
+		remove(pno) {
+			const p=this.selected.find(vo => vo.pno === pno)
+			this.place_list.push(p)
+			
+			const pnoidx=this.pnos.indexOf(pno)
+			this.pnos.splice(pnoidx, 1)
+					
+			const pidx=this.selected.indexOf(p)
+			this.selected.splice(pidx, 1)
+			
+			this.pushAddressList()
+			this.map()
+		},
+		
+		// 검색
+		find(keywordRef) {
+			if(this.keyword==='') {
+				keywordRef?.focus()
+				return
+			}
+			this.type=''
+			this.dataRecv()
+		},
+		
+		// 카테고리 버튼
+		cateButton(type) {
+			this.type=type
+			this.keyword=''
+			this.dataRecv()
+		},
+		
+		// 장소 선택을 2개 이상해야 step2 이동 가능
+		step() {
+			if(this.pnos.length<2) {
+				alert('장소를 2개 이상 선택해주세요')
+				return
+			}
+			this.step_ok='ok'
 		},
 		
 		// kakao api지도 (주소변환, 마커, 선 긋기)
@@ -148,11 +156,11 @@ const useCourseDetailStore=defineStore('course_detail', {
 				  var infowindow = new kakao.maps.InfoWindow({
 				  		content: `<div style="width:150px;text-align:center;padding:6px 0;
 				  		overflow: hidden; text-overflow:ellipsis; white-space: nowrap; font-size: 13px;
-						font-weight: bold">
+				  		font-weight: bold">
 				  			${index + 1}. ${p.label}</div>`
 				  });
-			      infowindow.open(map, marker);
-			    });
+				  infowindow.open(map, marker);
+				});
 
 			    // 선(Polyline): 변환된 좌표 순서대로 연결
 			    var linePath = points.map(p => p.latlng);
@@ -165,23 +173,23 @@ const useCourseDetailStore=defineStore('course_detail', {
 			      strokeStyle: 'solid'
 			    });
 			    polyline.setMap(map);
-		
+
 			    // 화면을 선/마커 전체가 보이게 맞추기
 			    var bounds = new kakao.maps.LatLngBounds();
 			    points.forEach(p => bounds.extend(p.latlng));
 			    map.setBounds(bounds);
 			  });
 		},
-
+		
 		// addressList에 값 채우기
 		pushAddressList() {
 			this.addressList=[]
-		  	this.place.forEach((s, index) => {
+		  	this.selected.forEach((s, index) => {
 		    this.addressList.push({
 		      	addr: s.addr,
 		      	label: s.name
-			   })
-	      	})
-	  	}
+		    })
+		  })
+		}
 	}
 })

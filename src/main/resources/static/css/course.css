@@ -60,7 +60,7 @@
 }
 
 .detail-content {
-	margin: 30px 0;
+	margin: 30px 20px;
 }
 
 .place-index {
@@ -207,6 +207,11 @@ a {
 	width: 60%;
 	height: 90vh;
 	margin-left: 10px;
+}
+
+.detail-map {
+	height: 600px;
+	width:98%;
 }
 
 .choose-bottom {
