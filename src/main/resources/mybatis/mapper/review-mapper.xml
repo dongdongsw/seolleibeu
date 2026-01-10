@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.web.review.mapper.ReviewMapper">
+<!-- 마이페이지 리뷰 목록 -->
+<select id="mypageReviewListData" resultType="com.sist.vo.ReviewVO" parameterType="hashmap">
+ SELECT r.rno,r.uno,pno,name,r_content,r_img,r_score,profile_img,TO_CHAR(r_created_at,'yyyy-mm-dd HH24:MI:SS) as dbday
+ p.name
+ FROM review
+ JOIN users u ON r.uno=u.uno
+ JOIN place p ON r.pno=p.pno
+ WHERE pno=#{pno}
+ <if test="name!=null and name!=''">
+  AND name LIKE'%'||#{name}||'%'
+ </if>
+ ORDER BY rno DESC
+ OFFSET #{start} ROWS FETCH NEXT 3 ROWS ONLY
+</select>
+
+<!-- 마이페이지 리뷰 총 페이지 -->
+<select id="mypageReviewTotalPage" resultType="com.sist.vo.ReviewVO" parameterType="hashmap">
+ SELECT CEIL(COUNT(*)/3.0)
+ FROM review
+ JOIN place p ON r.pno=p.pno
+ WHERE pno=#{pno}
+ <if test="name!=null and name!=''">
+  AND name LIKE'%'||#{name}||'%'
+ </if>
+</select>
+</mapper>

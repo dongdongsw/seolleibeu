@@ -34,13 +34,11 @@
 						</div>
 
 						<div class="info-card">
-							<c:forEach begin="0" end="2">
 								<div class="post-block my-course-item" style="margin-bottom:0">
 									<!-- 왼쪽 이미지 -->
 									<div class="course-thumb">
 										<img src="images/post-img.jpg" alt="thumbnail">
 									</div>
-
 									<!-- 가운데 정보 -->
 									<div class="mypage-reply">
 										<h4 class="reply-title">홍대 데이트 코스</h4>
@@ -49,7 +47,6 @@
 											리뷰 쓴 날짜 : <span class="date">2025-01-05</span>
 										</div>
 									</div>
-
 									<!-- 오른쪽 버튼 -->
 									<div class="course-actions">
 										<a href="/mypage/review_update" class="btn btn-xs">수정</a> <a href="#"
@@ -57,7 +54,6 @@
 									</div>
 								</div>
 								<hr>
-							</c:forEach>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="st-pagination">
 									<ul class="pagination">

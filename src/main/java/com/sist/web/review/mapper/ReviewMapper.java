@@ -38,4 +38,5 @@ public interface ReviewMapper {
 	@Delete("DELETE FROM review "
 			+ "WHERE rno=#{rno}")
 	public void reviewDelete(int pno);
+	
 }

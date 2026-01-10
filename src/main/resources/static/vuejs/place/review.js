@@ -31,7 +31,7 @@ const useReviewStore=defineStore('/review_list',{
 	},
 	actions:{
 		async reviewListData(){
-			const res=await api.get('/place/attraction_review_vue/',{
+			const res=await api.get('/place/place_review_vue/',{
 				params:{
 					page:this.curpage,
 					pno:this.pno

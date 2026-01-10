@@ -15,7 +15,8 @@ import com.sist.web.commons.Methods;
 public class ReviewRestController {
 	private final ReviewService rservice;
 	
-	@GetMapping("/place/attraction_review_vue/")
+	// 리뷰 목록
+	@GetMapping("/place/place_review_vue/")
 	public ResponseEntity<Map> review_list_vue(@RequestParam("page") int page,@RequestParam("pno") int pno)
 	{
 		Map map=new HashMap();
@@ -46,4 +47,27 @@ public class ReviewRestController {
 	// 리뷰 삭제
 	
 	// 리뷰 수정
+	
+	// 마이페이지 리뷰 목록
+	@GetMapping("/mypage/my_review_vue/")
+	public ResponseEntity<Map> mypage_review_list_vue(@RequestParam("page") int page,@RequestParam("pno") int pno)
+	{
+		Map map=new HashMap();
+		try
+		{
+			map.put("start", (page-1)*3);
+			map.put("pno", pno);
+			//List<ReviewVO> list=rservice.mypageReviewListData(map);
+			//int totalpage=rservice.mypageReviewTotalPage(pno);
+			
+			//Map pageMap=Methods.paginationMap(5, page, totalpage);
+			//map.putAll(pageMap);
+			//map.put("list", list);
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map,HttpStatus.OK);
+	}
 }

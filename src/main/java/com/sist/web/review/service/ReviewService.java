@@ -1,6 +1,5 @@
 package com.sist.web.review.service;
 import java.util.*;
-import java.util.Map;
 import com.sist.web.vo.*;
 
 public interface ReviewService {
@@ -16,4 +15,8 @@ public interface ReviewService {
 	public void reviewUpdate(ReviewVO vo);
 	// 리뷰 삭제
 	public void reviewDelete(int pno);
+	// 마이페이지 리뷰
+	//public List<ReviewVO> mypageReviewListData(Map map);
+	// 마이페이지 리뷰 총 페이지
+	//public int mypageReviewTotalPage(Map map);
 }
