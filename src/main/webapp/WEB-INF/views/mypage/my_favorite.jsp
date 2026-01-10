@@ -15,7 +15,7 @@
 
 <body>
 
-	<div class="content auth-wrapper" style="margin-top: -17px;" >
+	<div class="content auth-wrapper" style="margin-top: 0px;" >
 		<div class="container">
 			<div class="row">
 				<div class="mypage-sizing">
@@ -38,8 +38,8 @@
 					                </div>
 					                
 				            </div>
-				            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 25px;">
-								<div class="st-pagination">
+				            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 0px;">
+								<div class="st-pagination" style="position:absolute; left:32%; top: 2.5%;">
 									<ul class="pagination">
 										<li v-if="store.startPage > 1"><a @click="store.movePage(store.startPage-1)">이전</a></li>
 										<li v-for="i in store.range"><a :class="i === store.curpage?'active':''" @click="store.movePage(i)">{{i}}</a></li>

@@ -1,5 +1,9 @@
 package com.sist.web.login.service;
 
-public class LoginService {
+import com.sist.web.vo.UsersVO;
 
+public interface LoginService {
+	public void registerInsert(UsersVO vo);
+	
+	public UsersVO loginInfoData(String id);
 }

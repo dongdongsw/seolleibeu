@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,20 +17,25 @@
 	
 	                    <div class="auth-logo text-center mb-4">
 	                        <h1>로그인</h1>
+	                        
 	                    </div>
-	
-	                    <form class="auth-form" >
+	                    
+	                    
+						<p style="position:absolute; left:22%; top:60%; color: red;">${errorMsg }</p>
+	                    <form class="auth-form" action="/auth/login_process" method="post">
 	
 	                        <div class="form-group"  style="display: flex; align-items: center; justify-content: center; margin-bottom: 0px;">
-	                            <input type="text" class="form-control auth-input" style="width: 80%; " placeholder="아이디">
+	                            <input type="text" class="form-control auth-input" style="width: 80%; " placeholder="아이디" required name="id">
 	                        </div>
 	
 	                        <div class="form-group" style="display: flex; align-items: center; justify-content: center; margin-bottom: 0px;">
-	                            <input type="password" class="form-control auth-input" style="width: 80%; " placeholder="비밀번호">
+	                            <input type="password" class="form-control auth-input" style="width: 80%; " placeholder="비밀번호" name="pwd">
+	                            
 	                        </div>
+	                        
 	
 	                        <div class="form-group text-center mt-4">
-	                            <button class="btn btn-default auth-main-btn login-btn" style="background: black; color: #fff; border-radius: 10px; width: 80%;">
+	                            <button type="submit" class="btn btn-default auth-main-btn login-btn" style="background: black; color: #fff; border-radius: 10px; width: 80%;">
 	                                로그인하기
 	                            </button>
 	                        </div>
@@ -42,6 +48,7 @@
 	                            <li><a href="/auth/find_pwd">비밀번호 찾기</a></li>
 	                        </ul>
 	                    </form>
+	                    
 	                </div>
 	            </div>
 	        </div>

@@ -22,9 +22,8 @@
 		FROM favorite f
 		LEFT JOIN place p
 			ON p.pno = f.pno
-		<!-- WHERE f.uno = ${uno} -->
 		<where>
-			f.uno = 1
+			f.uno = #{uno}
 			
 			<choose>
 				<when test="category == 'restaurant'">
@@ -49,9 +48,8 @@
 		FROM favorite f
 		LEFT JOIN place p
 			ON p.pno = f.pno
-		<!-- WHERE f.uno = ${uno} -->
 		<where>
-			f.uno = 1
+			f.uno = #{uno}
 			
 			<choose>
 				<when test="category == 'restaurant'">

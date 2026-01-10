@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +54,22 @@
                     <div class="navigation">
                         <div id="navigation">
                         	<ul>
-                				<li><a href="/auth/login" style="border: 1px solid #fff; border-radius: 12px; padding: 10px 20px; margin-top: 5px;">로그인</a>
+               					<sec:authorize access="!isAuthenticated()">
+	                				<li>
+	                					<a href="/auth/login" style="border: 1px solid #fff; border-radius: 12px; padding: 10px 20px; margin-top: 5px;">로그인</a>
+	               					</li>
+               					</sec:authorize>
+               					<sec:authorize access="!isAuthenticated()">
+	               					<li>
+	                					<a href="/auth/register" style="position:absolute; left:5px; width:95px;
+	                						border: 1px solid #fff; border-radius: 12px; padding: 10px 20px; margin-top: 5px;">회원가입</a>
+	               					</li>
+               					</sec:authorize>
+               					<sec:authorize access="isAuthenticated()">
+	               					<li>
+	                					<a href="/auth/logout" style="border: 1px solid #fff; border-radius: 12px; padding: 10px 20px; margin-top: 5px;">로그아웃</a>
+	               					</li>
+               					</sec:authorize>
                 			</ul>
                         </div>
 		           </div>

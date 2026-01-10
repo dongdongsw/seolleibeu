@@ -18,11 +18,11 @@
 	                        <h1>회원가입</h1>
 	                    </div>
 	
-	                    <form class="auth-form" >
+	                    <form id="register" ref="register" action="/auth/register_ok" class="auth-form" method="post">
 	
 	                        <div class="row" style="margin-bottom: 20px;">
 	                            <div class="col-md-8">
-	                                <input type="text" class="form-control auth-input" placeholder="아이디">
+	                                <input type="text" class="form-control auth-input" placeholder="아이디" name="id" v-model="id">
 	                            </div>
 	                            <div class="col-md-4">
 	                                <button class="btn btn-default auth-sub-btn auth-dark-btn">중복 검사</button>
@@ -30,16 +30,16 @@
 	                        </div>
 	
 	                        <div class="form-group">
-	                            <input type="password" class="form-control auth-input" placeholder="비밀번호">
+	                            <input type="password" class="form-control auth-input" placeholder="비밀번호" name="pwd" v-model="pwd">
 	                        </div>
 	
 	                        <div class="form-group"  style="margin-bottom: 30px;">
-	                            <input type="password" class="form-control auth-input" placeholder="비밀번호 재입력">
+	                            <input type="password" class="form-control auth-input" placeholder="비밀번호 재입력" >
 	                        </div>
 	
 	                        <div class="row"  style="margin-bottom: 20px;">
 	                            <div class="col-md-8">
-	                                <input type="text" class="form-control auth-input" placeholder="닉네임">
+	                                <input type="text" class="form-control auth-input" placeholder="닉네임" name="name" v-model="name">
 	                            </div>
 	                            <div class="col-md-4">
 	                                <button class="btn btn-default auth-sub-btn auth-dark-btn">중복 검사</button>
@@ -47,7 +47,7 @@
 	                        </div>
 	
 	                        <div class="form-group">
-	                            <input type="email" class="form-control auth-input" placeholder="이메일 입력">
+	                            <input type="email" class="form-control auth-input" placeholder="이메일 입력" name="email" v-model="email">
 	                        </div>
 	
 	                        <div class="row" style="margin-bottom: 20px;">
@@ -61,24 +61,24 @@
 	
 								<h3 style="color: #b7b6b7; margin-left: 5px;">전화번호</h3>
 	
-	                        <div class="form-group phone-group" style="margin-left: 5px;">
+	                        <div class="form-group phone-group" style="margin-left: 5px;" >
 	                            <select class="form-control phone-select" style="height: 30px; color: black;">
 	                                <option>010</option>
 	                                <option>011</option>
 	                                <option>031</option>
 	                            </select>
 	                            <span>-</span>
-	                            <input type="text" class="form-control phone-input" maxlength="4" style="height: 30px; color: black;">
+	                            <input type="text" class="form-control phone-input" maxlength="4" style="height: 30px; color: black;" value="01012345678" name="phone">
 	                            <span>-</span>
 	                            <input type="text" class="form-control phone-input" maxlength="4" style="height: 30px; color: black;">
 	                        </div>
 	
 	                        <div class="terms">
 	                        	<label>
-	                                <input type="checkbox"> 만 14세 이상입니다.(필수)
+	                                <input type="checkbox" name="required_agree" value="Y"> 만 14세 이상입니다.(필수)
 	                            </label>
 	                            <label>
-	                                <input type="checkbox"> 이용약관(선택)
+	                                <input type="checkbox" name="optional_agree" value="Y"> 이용약관(선택)
 	                                <a type="button" data-toggle="modal" data-target="#terms_1">더보기</a>
 	                            </label>
 	                            <label>
@@ -86,16 +86,20 @@
 	                                <a type="button" data-toggle="modal" data-target="#terms_2">더보기</a>
 	                            </label>
 	                            <label>
-	                                <input type="checkbox"> 개인정보 제3자 제공 동의(필수)
+	                                <input type="checkbox" > 개인정보 제3자 제공 동의(필수)
 	                                <a type="button" data-toggle="modal" data-target="#terms_3">더보기</a>
 	                            </label>
 	                        </div>
 	
 	                        <div class="text-center mt-4">
-	                            <a class="btn btn-default auth-cancel-btn auth-dark-btn" href="/auth/login" 
+	                            <!-- <a class="btn btn-default auth-cancel-btn auth-dark-btn" href="/auth/login" 
 	                            		style="color: white; text-decoration: none; margin-top:20px; ">회원가입</a>
 	                            <a class="btn btn-default auth-cancel-btn auth-dark-btn" href="/auth/login" 
-	                            		style="color: white; text-decoration: none; margin-top:20px; ">취소</a>
+	                            		style="color: white; text-decoration: none; margin-top:20px; ">취소</a> -->
+	                            <button type="submit" class="btn btn-default auth-cancel-btn auth-dark-btn" 
+	                            	style="color: white; text-decoration: none; margin-top:20px;">회원가입</button>
+	                            <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
+	                            	style="color: white; text-decoration: none; margin-top:20px;" onclick="javascript:history.back()">취소</button>
 	                            
 	                        </div>
 	                    </form>
@@ -108,5 +112,26 @@
 	<jsp:include page="terms_1.jsp"></jsp:include>
 	<jsp:include page="terms_2.jsp"></jsp:include>
 	<jsp:include page="terms_3.jsp"></jsp:include>
+	
+	<script>
+		let registerApp = Vue.createApp({
+			data(){
+				return{
+					id:'', 
+					pwd:'', 
+					name:'', 
+					phone:'', 
+					email:'',
+					required_agree:'N', 
+					optional_agree:'N'
+				}
+			},
+			methods:{
+				idCheck(){
+					
+				}
+			}
+		})
+	</script>
 </body>
 </html>
