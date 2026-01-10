@@ -85,12 +85,12 @@
                     	<strong>데이트 코스 짜기에 지치신 분들?</strong>
                     	<br>원하는 장소로 검색해보세요!
 					</h1>
-					<form action="/course/list" method="get">
+					<!-- <form action="/course/list" method="get"> -->
 						<div class="mainSearch-container">
-							<input type="text" class="mainSearch" placeholder="검색어를 입력하세요" name="keyword">
-		                    <button type="submit" class="btn-search">검색</button>
+							<input type="text" class="mainSearch" placeholder="검색어를 입력하세요" name="keyword" id="homeKeyword" onkeydown="enter(event)">
+		                    <button type="submit" class="btn-search" onclick="homeSearch()">검색</button>
 	                    </div>
-                    </form>
+                    <!-- </form> -->
 				</div>
             </div>
         </div>
@@ -235,5 +235,24 @@
             </div>
         </div>
     </div>
+    <script>
+    	function enter(e) {
+    		if (e.key === 'Enter') {
+    			homeSearch()
+    		}
+    	}
+    	
+    	function homeSearch() {
+    		const input = document.getElementById('homeKeyword')
+    		
+    		if(!input.value || input.value.trim() === '') {
+    			input.focus()
+    			
+    			return
+    		}
+    		
+    		location.href = '/course/list?keyword='+encodeURIComponent(input.value.trim())
+    	}
+    </script>
 </body>
 </html>
