@@ -114,5 +114,8 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/vuejs/axios.js"></script>
 <script src="/vuejs/place/review.js"></script>
+<script>
+ const {createApp,onMounted}
+</script>
 </body>
 </html>
