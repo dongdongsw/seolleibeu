@@ -147,15 +147,6 @@
     		  /* 즐겨찾기 */
     		  const favoriteStore = useFavoriteStore()
     		  
-    		  /* 즐겨찾기 */
-    		  const onClickFavorite = () =>{
-					favoriteStore.favoritePush(pno)
-			  }
-    		  /* 즐겨찾기 */	
-			  const unClickFavorite = () =>{
-					favoriteStore.favoriteCancel(pno)
-			  }
-    		  
     		  onMounted(()=> {
     			  store.cultureDetailData(pno)
     			  
@@ -172,8 +163,6 @@
     			  rstore,
     			  
     			  /* 즐겨찾기 */
-    			  onClickFavorite,
-				  unClickFavorite,
 				  favoriteStore
     		  }
     	  }

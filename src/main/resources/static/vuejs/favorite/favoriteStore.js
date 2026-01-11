@@ -46,7 +46,7 @@ const useFavoriteStore = defineStore('favorite',{
 			else{
 				const result = confirm('로그인이 필요한 서비스입니다.')
 				if(result){
-					window.location.href= '/auth/login'; 
+					window.location.href = '/auth/login'; 
 				}
 			}
 		}

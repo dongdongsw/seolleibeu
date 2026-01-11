@@ -180,13 +180,6 @@
 				const params = new URLSearchParams(location.search)
 				const pno = params.get('pno')
 				
-				const onClickFavorite = () =>{
-					favoriteStore.favoritePush(pno)
-				}
-				
-				const unClickFavorite = () =>{
-					favoriteStore.favoriteCancel(pno)
-				}
 				
 				onMounted(()=>{
 					store.restaurantDetailData(pno)
@@ -195,8 +188,6 @@
 				
 				return{
 					store,
-					onClickFavorite,
-					unClickFavorite,
 					favoriteStore
 				}
 			}

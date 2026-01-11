@@ -62,7 +62,6 @@
                         	</div>
                         </a>
                     </div>
-                    <a><i class="fa fa-star" style="position:absolute; left:77%; top:5%; padding-top: 1px; font-size: 30px; color: gold;"></i></a>
                 </div>
             </div>
             <div class="row">

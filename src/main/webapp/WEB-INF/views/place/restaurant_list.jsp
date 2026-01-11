@@ -52,25 +52,20 @@
 				</ul>
 			</div>
 			<div style="margin-top: 60px;">	
-			<%-- <c:forEach begin="0" end="3">	 --%>	
 	            <div class="row" style="margin-top: 10px;" >
-	            	<%-- <c:forEach begin="0" end="3"> --%>
-		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"  v-for="(rvo,index) in store.resList" :key="index">
-		                    <div class="project-img mb30 thumbnail">
-		                        <a :href="'/place/restaurant/detail_before?pno=' + rvo.pno" class="imghover">
-		                        <!-- "'/place/restaurant/detail_vue?pno='+rvo.pno" -->
-		                        	<img :src="rvo.thumbnail" style="height: 250px;" class="img-responsive" alt="Interior Design Website Templates Free Download">
-		                        	<div class="caption">
-		                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{rvo.name}}</h4>
-		                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{rvo.addr}}</p>
-		                        	</div>
-		                        </a>
-		                    </div>
-		                    <a><i class="fa fa-star" style="position:absolute; left:77%; top:5%; padding-top: 1px; font-size: 30px; color: gold;"></i></a>
-		                </div>
-	                <%-- </c:forEach> --%>
+	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"  v-for="(rvo,index) in store.resList" :key="index">
+	                    <div class="project-img mb30 thumbnail">
+	                        <a :href="'/place/restaurant/detail_before?pno=' + rvo.pno" class="imghover">
+	                        <!-- "'/place/restaurant/detail_vue?pno='+rvo.pno" -->
+	                        	<img :src="rvo.thumbnail" style="height: 250px;" class="img-responsive" alt="Interior Design Website Templates Free Download">
+	                        	<div class="caption">
+	                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{rvo.name}}</h4>
+	                        		<p style="font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{rvo.addr}}</p>
+	                        	</div>
+	                        </a>
+	                    </div>
+	                </div>
 	            </div>
-            <%-- </c:forEach> --%>
            </div> 
             <div class="row">
                 <div class="st-pagination">
@@ -96,8 +91,10 @@
 			const store = useRestaurantStore()
 			const keywordRef = (null)
 			
+			
 			onMounted(()=>{
 				store.restaurantListData()
+				
 			})
 			
 			return {
