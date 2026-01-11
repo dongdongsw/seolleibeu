@@ -11,7 +11,7 @@
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<div  id="myreview_list">
+<div id="myreview_list">
 	<div class="content auth-wrapper" style="margin-top: -17px;">
 		<div class="container">
 			<div class="row">
@@ -108,7 +108,7 @@
 		 const store=useReviewStore()
 		 
 		 onMounted(()=>{
-				 store.myreviewListData()
+			 store.myreviewListData()
 		 })
 		 return {
 			 store

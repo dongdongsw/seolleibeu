@@ -6,9 +6,7 @@ const useReviewStore=defineStore('myreview_list',{
 		curpage:1,
 		startPage:0,
 		totalpage:0,
-		endPage:0,
-		count:0,
-		uno:1
+		endPage:0
 	}),
 	getters:{
 		range:(state)=>{
@@ -34,8 +32,7 @@ const useReviewStore=defineStore('myreview_list',{
 		async myreviewListData(){
 			const res=await api.get('/mypage/my_review_vue/',{
 				params:{
-					page:this.curpage,
-					uno:this.uno
+					page:this.curpage
 				}
 			})
 			this.list=res.data.list
@@ -43,7 +40,8 @@ const useReviewStore=defineStore('myreview_list',{
 			this.startPage=res.data.startPage
 			this.endPage=res.data.endPage
 			this.totalpage=res.data.totalpage
-			console.log(res.data.list)
+			console.log(res.data)
+			console.log(this.list)
 		},
 		pageChange(page){
 			this.curpage=page
