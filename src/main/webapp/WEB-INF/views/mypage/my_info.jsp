@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,9 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-
+<script>
+const SESSION_UNO = Number('${sessionScope.uno}')
+</script>
 </head>
 <body>
 <div class="content auth-wrapper" style="margin-top: 20px;">
@@ -29,12 +32,12 @@
 
             <div style="flex:1;">
               <table class="info-table" style="margin-left: 250px;">
-                <tr><th>아이디</th><td>happy</td></tr>
-                <tr><th>닉네임</th><td>닉네임</td></tr>
-                <tr><th>이메일</th><td>happy@gmail.com</td></tr>
-                <tr><th>연락처</th><td>010-1234-5678</td></tr>
-                <tr><th>가입일</th><td>2025-12-27</td></tr>
-                <tr><th>최근 수정일</th><td>2026-01-01</td></tr>
+                <tr><th>아이디</th><td>${vo.id}</td></tr>
+                <tr><th>닉네임</th><td>${vo.name}</td></tr>
+                <tr><th>이메일</th><td>${vo.email}</td></tr>
+                <tr><th>연락처</th><td>${phoneFormatted}</td></tr>
+                <tr><th>가입일</th><td>${createdAtFormatted}</td></tr>
+                <tr><th>최근 수정일</th><td>${updatedAtFormatted}</td></tr>
               </table>
               
                 <button type="button" class="info-btn" style="margin-left: 650px;" onclick="location.href='../mypage/my_update'">수정</button>

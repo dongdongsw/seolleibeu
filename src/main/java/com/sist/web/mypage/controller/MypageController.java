@@ -1,16 +1,56 @@
 package com.sist.web.mypage.controller;
 
+import java.text.SimpleDateFormat;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
-public class MypageController {
+import com.sist.web.mypage.service.MypageService;
+import com.sist.web.vo.UsersVO;
 
+import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
+
+@Controller
+@RequiredArgsConstructor
+public class MypageController {
+	private final MypageService mService;
 	// 내 정보
 	@GetMapping("/mypage/my_info")
-	public String mypage_info(Model model) {
-	      
+	public String mypage_info(HttpSession session,Model model) {
+		Integer uno = (Integer) session.getAttribute("uno");
+	    if (uno == null) return "redirect:/login";
+
+	    UsersVO vo = mService.mypageData(uno);
+	    
+	    String phoneFormatted = "";
+	    if (vo != null && vo.getPhone() != null && vo.getPhone().length() == 11) {
+	        String p = vo.getPhone();
+	        phoneFormatted =
+	            p.substring(0,3) + "-" +
+	            p.substring(3,7) + "-" +
+	            p.substring(7,11);
+	    }
+
+	    String createdAtFormatted = "";
+	    if (vo != null && vo.getCreated_at() != null) {
+	        createdAtFormatted =
+	            new SimpleDateFormat("yyyy-MM-dd")
+	                .format(vo.getCreated_at());
+	    }
+
+	    String updatedAtFormatted = "없음";
+	    if (vo != null && vo.getUpdated_at() != null) {
+	        updatedAtFormatted =
+	            new SimpleDateFormat("yyyy-MM-dd")
+	                .format(vo.getUpdated_at());
+	    }
+
+	    model.addAttribute("vo", vo);
+	    model.addAttribute("phoneFormatted", phoneFormatted);
+	    model.addAttribute("createdAtFormatted", createdAtFormatted);
+	    model.addAttribute("updatedAtFormatted", updatedAtFormatted);
 		model.addAttribute("my_jsp" ,"../mypage/my_info.jsp");
 		return "mypage/my_main";
 	}
