@@ -68,12 +68,55 @@ public class FavoriteRestController {
 				return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
 			}
 			vo.setUno(uno);
-			fService.fovoriteInsert(vo);
+			fService.favoriteInsert(vo);
 			
 		} catch (Exception ex) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
 		return ResponseEntity.ok().build();
+	}
+	
+	@PostMapping("/favorite/cancel_vue/")
+	public ResponseEntity<Void> favorite_cancel_vue(
+			@RequestBody FavoriteVO vo, HttpSession session){
+		
+		try {
+			Integer uno = (Integer)session.getAttribute("uno");
+			if(uno == null) {
+				return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
+			}
+			vo.setUno(uno);
+			fService.favoriteDelete(vo);
+			
+		} catch (Exception ex) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return ResponseEntity.ok().build();
+	}
+	
+	@GetMapping("/favorite/detail/check_vue/")
+	public ResponseEntity<Map> favorite_detail_check_vue(@RequestParam("pno") int pno, HttpSession session){
+		
+		FavoriteVO vo = new FavoriteVO();
+		Map map  = new HashMap<>();
+		Integer uno = (Integer)session.getAttribute("uno");
+		if(uno == null) {
+			map.put("favoriteCount", fService.favoriteDetailCount(pno));
+			map.put("checkFavorite", 0);
+			map.put("loginTrueFalse", "false");
+			return ResponseEntity.ok(map);
+		}
+			
+		vo.setPno(pno);
+		vo.setUno(uno);
+		
+		int checkFavorite = fService.favoriteDetailCheck(vo);
+		map.put("checkFavorite", checkFavorite);
+		map.put("favoriteCount", fService.favoriteDetailCount(pno));
+		map.put("loginTrueFalse", "true");
+		
+		return ResponseEntity.ok(map);
 	}
 }

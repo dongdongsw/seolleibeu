@@ -184,13 +184,20 @@
 					favoriteStore.favoritePush(pno)
 				}
 				
+				const unClickFavorite = () =>{
+					favoriteStore.favoriteCancel(pno)
+				}
+				
 				onMounted(()=>{
 					store.restaurantDetailData(pno)
+					favoriteStore.favoriteDetailCheck(pno)
 				})
 				
 				return{
 					store,
-					onClickFavorite
+					onClickFavorite,
+					unClickFavorite,
+					favoriteStore
 				}
 			}
 		})

@@ -3,6 +3,7 @@ package com.sist.web.favorite.mapper;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -20,11 +21,21 @@ public interface FavoriteMapper {
 	
 	@Insert("INSERT INTO favorite(fno, uno, pno) "
 			+ "VALUES(fav_fno_seq.nextval, #{uno}, #{pno})")
-	public void fovoriteInsert(FavoriteVO vo);
+	public void favoriteInsert(FavoriteVO vo);
 	
 	@Select("SELECT COUNT(*) "
 			+ "FROM favorite "
 			+ "WHERE uno = #{uno}"
 			+ "AND pno = #{pno}")
-	public int favoriteDetailDone(FavoriteVO vo);
+	public int favoriteDetailCheck(FavoriteVO vo);
+	
+	@Select("SELECT COUNT(*) "
+			+ "FROM favorite "
+			+ "WHERE pno = #{pno}")
+	public int favoriteDetailCount(int pno);
+	
+	@Delete("DELETE favorite "
+			+ "WHERE uno = #{uno} "
+			+ "AND pno = #{pno}")
+	public void favoriteDelete(FavoriteVO vo);
 }
