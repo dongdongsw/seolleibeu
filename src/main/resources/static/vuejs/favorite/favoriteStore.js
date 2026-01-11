@@ -27,11 +27,14 @@ const useFavoriteStore = defineStore('favorite',{
 			this.loginTrueFalse = result.data.loginTrueFalse
 		},
 		async favoriteCancel(pno){
-			const result = await api.post('favorite/cancel_vue/',{
-				pno:pno
-			})
-			this.checkFavorite = 0
-			this.favoriteDetailCheck(pno)
+			const deleteMsg = confirm('즐겨찾기를 해제 하시겠습니까?')
+				if(deleteMsg){
+					const result = await api.post('favorite/cancel_vue/',{
+						pno:pno
+					})
+					this.checkFavorite = 0
+					this.favoriteDetailCheck(pno)
+				}
 		},
 		handleFavoriteClick(pno){
 			
