@@ -6,38 +6,38 @@
 <head>
 <meta charset="UTF-8">
 <title>북마크</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<meta name="referrer" content="no-referrer">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
 <link
 	href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700"
 	rel="stylesheet">
-<link href="css/font-awesome.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
 	<div class="content auth-wrapper" style="margin-top: -17px;">
-		<div class="container">
+		<div class="container" id="bookmark_list">
 			<div class="row">
 			  <div class="mypage-sizing">
 				<div class="col-lg-9 col-md-9 col-sm-12">
 					<main class="mypage-main">
 						<h2>북마크</h2>
 
-						<div class="info-card">
-							<c:forEach begin="0" end="2">
+						<div class="info-card" v-for="vo in store.list" :key="vo.cno">
 								<div class="post-block my-course-item" style="margin-bottom:0">
 									<!-- 왼쪽 이미지 -->
 									<div class="course-thumb">
-										<img src="images/post-img.jpg" alt="thumbnail">
+										<img :src="vo.thumbnail" alt="thumbnail">
 									</div>
 
 									<!-- 가운데 정보 -->
 									<div class="course-info">
-										<h4 class="course-title">홍대 데이트 코스</h4>
+										<h4 class="course-title">{{vo.title}}</h4>
 										<div class="course-meta">
-											북마크 한 날짜 <span class="date">2025-01-05</span>&nbsp;|
-											<span class="comment">댓글 3</span>&nbsp;|<span class="comment">조회수 100</span>
+											북마크 한 날짜 <span class="date">{{vo.bm_pushat}}</span>&nbsp;|
+											<span class="comment">댓글 {{vo.replyCount}}</span>&nbsp;|<span class="comment">조회수 {{vo.hit}}</span>
 										</div>
 									</div>
 
@@ -47,15 +47,10 @@
 									</div>
 								</div>
 								<hr>
-							</c:forEach>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="st-pagination">
 									<ul class="pagination">
-										<li><a href="#">Previous</a></li>
-										<li><a href="#" class="active">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">Next</a></li>
+
 									</ul>
 								</div>
 							</div>
@@ -84,6 +79,24 @@
 			</div>
 		</div>
 	</div>
-
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/mypage/mypage.js"></script>
+    <script type="text/javascript">
+     const {createApp,onMounted} = Vue
+     const {createPinia} = Pinia
+     const bookmarkApp = createApp({
+   	  	setup() {
+   	    	const store = useBookmarkStore()
+   	    		onMounted(() => {
+   	      	store.bookmarkListData()
+   	    })
+   	    return {
+   	    		store
+   	    	}
+   	  }
+   	})
+   	bookmarkApp.use(createPinia())
+   	bookmarkApp.mount('#bookmark_list')
+    </script>
 </body>
 </html>
