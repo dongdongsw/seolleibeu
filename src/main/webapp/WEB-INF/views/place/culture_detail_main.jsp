@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/css/place/restaurant_detail.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href="/css/review/review_create.css" rel="stylesheet">
 </head>
 <body>
 	<div class="page-header" style="margin: 0px auto;">
@@ -155,5 +156,7 @@
       cultureDetailApp.use(createPinia())
       cultureDetailApp.mount('#culture_detail')
     </script>
+    
+    <script src="/vuejs/mypage/r_create.js"></script>
 </body>
 </html>

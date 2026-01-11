@@ -43,9 +43,9 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 	// 리뷰 삭제
 	@Override
-	public void reviewDelete(int pno) {
+	public void reviewDelete(ReviewVO vo) {
 		// TODO Auto-generated method stub
-		rmapper.reviewDelete(pno);
+		rmapper.reviewDelete(vo);
 	}
 	// 마이페이지 리뷰 목록
 	@Override
@@ -58,6 +58,18 @@ public class ReviewServiceImpl implements ReviewService{
 	public int mypageReviewTotalPage(int uno) {
 		// TODO Auto-generated method stub
 		return rmapper.mypageReviewTotalPage(uno);
+	}
+
+	@Override
+	public ReviewVO reviewModalData(int rno) {
+		// TODO Auto-generated method stub
+		return rmapper.reviewModalData(rno);
+	}
+
+	@Override
+	public Double scoreAvg(int pno) {
+		// TODO Auto-generated method stub
+		return rmapper.scoreAvg(pno);
 	}
 	
 }
