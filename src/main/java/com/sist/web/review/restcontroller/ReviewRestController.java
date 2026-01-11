@@ -50,19 +50,19 @@ public class ReviewRestController {
 	
 	// 마이페이지 리뷰 목록
 	@GetMapping("/mypage/my_review_vue/")
-	public ResponseEntity<Map> mypage_review_list_vue(@RequestParam("page") int page,@RequestParam("pno") int pno)
+	public ResponseEntity<Map> mypage_review_list_vue(@RequestParam("page") int page,@RequestParam("uno") int uno)
 	{
 		Map map=new HashMap();
 		try
 		{
 			map.put("start", (page-1)*3);
-			map.put("pno", pno);
-			//List<ReviewVO> list=rservice.mypageReviewListData(map);
-			//int totalpage=rservice.mypageReviewTotalPage(pno);
+			map.put("uno", uno);
+			List<ReviewVO> list=rservice.mypageReviewListData(map);
+			int totalpage=rservice.mypageReviewTotalPage(uno);
 			
-			//Map pageMap=Methods.paginationMap(5, page, totalpage);
-			//map.putAll(pageMap);
-			//map.put("list", list);
+			Map pageMap=Methods.paginationMap(5, page, totalpage);
+			map.putAll(pageMap);
+			map.put("list", list);
 		}catch(Exception ex)
 		{
 			ex.printStackTrace();

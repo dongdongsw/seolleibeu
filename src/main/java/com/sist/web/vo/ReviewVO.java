@@ -8,6 +8,8 @@ public class ReviewVO {
 	private String r_content,r_img,dbday,r_count;
 	private Date r_created_at,r_updated_at;
 	private Double r_score;
-	
+	// 사용자
 	private String profile_img,name;
+	// 장소
+	private String pname;
 }

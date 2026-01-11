@@ -3,27 +3,19 @@
 <mapper namespace="com.sist.web.review.mapper.ReviewMapper">
 <!-- 마이페이지 리뷰 목록 -->
 <select id="mypageReviewListData" resultType="com.sist.web.vo.ReviewVO" parameterType="hashmap">
- SELECT r.rno,r.uno,pno,name,r_content,r_img,r_score,profile_img,TO_CHAR(r_created_at,'yyyy-mm-dd HH24:MI:SS) as dbday
- p.name
- FROM review
+ SELECT r.rno,r.uno,p.pno,p.name as pname,r.r_content,r.r_img,r.r_score,u.profile_img,TO_CHAR(r.r_created_at,'yyyy-mm-dd HH24:MI:SS') as dbday
+ FROM review r
  JOIN users u ON r.uno=u.uno
  JOIN place p ON r.pno=p.pno
- WHERE pno=#{pno}
- <if test="name!=null and name!=''">
-  AND name LIKE'%'||#{name}||'%'
- </if>
- ORDER BY rno DESC
+ WHERE r.uno=#{uno}
+ ORDER BY r.rno DESC
  OFFSET #{start} ROWS FETCH NEXT 3 ROWS ONLY
 </select>
 
 <!-- 마이페이지 리뷰 총 페이지 -->
-<select id="mypageReviewTotalPage" resultType="com.sist.web.vo.ReviewVO" parameterType="hashmap">
+<select id="mypageReviewTotalPage" resultType="int" parameterType="int">
  SELECT CEIL(COUNT(*)/3.0)
  FROM review
- JOIN place p ON r.pno=p.pno
- WHERE pno=#{pno}
- <if test="name!=null and name!=''">
-  AND name LIKE'%'||#{name}||'%'
- </if>
+ WHERE uno=#{uno}
 </select>
 </mapper>

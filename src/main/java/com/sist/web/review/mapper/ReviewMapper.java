@@ -39,4 +39,9 @@ public interface ReviewMapper {
 			+ "WHERE rno=#{rno}")
 	public void reviewDelete(int pno);
 	
+	// 마이페이지 리뷰 리스트
+	public List<ReviewVO> mypageReviewListData(Map map);
+	// 마이페이지 리뷰 총 페이지
+	public int mypageReviewTotalPage(int uno);
+	
 }

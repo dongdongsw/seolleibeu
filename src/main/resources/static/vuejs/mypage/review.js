@@ -1,5 +1,6 @@
+const {defineStore}=Pinia
 
-const useReviewStore=defineStore('review_list',{
+const useReviewStore=defineStore('myreview_list',{
 	state:()=>({
 		list:[],
 		curpage:1,
@@ -7,7 +8,7 @@ const useReviewStore=defineStore('review_list',{
 		totalpage:0,
 		endPage:0,
 		count:0,
-		pno:null
+		uno:1
 	}),
 	getters:{
 		range:(state)=>{
@@ -30,11 +31,11 @@ const useReviewStore=defineStore('review_list',{
 		}
 	},
 	actions:{
-		async reviewListData(){
-			const res=await api.get('/place/place_review_vue/',{
+		async myreviewListData(){
+			const res=await api.get('/mypage/my_review_vue/',{
 				params:{
 					page:this.curpage,
-					pno:this.pno
+					uno:this.uno
 				}
 			})
 			this.list=res.data.list
@@ -42,11 +43,11 @@ const useReviewStore=defineStore('review_list',{
 			this.startPage=res.data.startPage
 			this.endPage=res.data.endPage
 			this.totalpage=res.data.totalpage
-			this.count=res.data.count
+			console.log(res.data.list)
 		},
 		pageChange(page){
 			this.curpage=page
-			this.reviewListData()
+			this.myreviewListData()
 		}
 	}
 })

@@ -70,7 +70,7 @@
 									  <li v-if="rstore.list.length===0" class="text-center"><h3>리뷰가 없습니다.</h3></li>
 									    <li v-for="(vo,index) in rstore.list" :key="index" v-if="rstore.list.length>0">
 									        <div class="comment-body">
-									            <div class="comment-author"><img :src="vo.profile_img ? vo.profile_img : '/images/noimage.png'" alt class="img-circle" style="width: 80px;height: 80px;"></div>
+									            <div class="comment-author"><img :src="vo.profile_img ? vo.profile_img : '/images/noimage.png'" class="img-circle" style="width: 80px;height: 80px;"></div>
 									            <div class="comment-info">
 									                <div class="comment-header rating-stars">
 									                    <h3 class="comments-title" :title="vo.name">{{vo.name}}&nbsp;

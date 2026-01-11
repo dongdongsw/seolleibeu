@@ -47,5 +47,17 @@ public class ReviewServiceImpl implements ReviewService{
 		// TODO Auto-generated method stub
 		rmapper.reviewDelete(pno);
 	}
+	// 마이페이지 리뷰 목록
+	@Override
+	public List<ReviewVO> mypageReviewListData(Map map) {
+		// TODO Auto-generated method stub
+		return rmapper.mypageReviewListData(map);
+	}
+	// 마이페이지 리뷰 총 페이지
+	@Override
+	public int mypageReviewTotalPage(int uno) {
+		// TODO Auto-generated method stub
+		return rmapper.mypageReviewTotalPage(uno);
+	}
 	
 }
