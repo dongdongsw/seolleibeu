@@ -18,7 +18,12 @@ public class BookmarkServiceImpl implements BookmarkService{
 	}
 
 	@Override
-	public void bookmarkDelete(int id) {
-		bMapper.bookmarkDelete(id);
+	public void bookmarkDelete(int uno, int cno) {
+		bMapper.bookmarkDelete(uno, cno);
+	}
+
+	@Override
+	public int bookmarkCheck(int uno, int cno) {
+		return bMapper.bookmarkCheck(uno, cno);
 	}
 }

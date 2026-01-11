@@ -21,14 +21,28 @@ const useBookmarkStore=Pinia.defineStore('bookmark',{
 			alert('북마크에 추가되었습니다')
 		},
 		// 북마크 삭제
-		async bookmarkDelete(id){
+		async bookmarkDelete(){
 			const {data} =await api.delete('/bookmark/delete_vue/',{
 				params:{
-					id:id,
-					cno:this.cno
+					uno: this.uno,
+					cno: this.cno
 				}
 			})
 			this.cno=data.cno
+			this.bookmarked = false
+		},
+		// 북마크 체크
+		async bookmarkCheck(){
+		  if (!this.uno || !this.cno) return
+
+		  const { data } = await api.get('/bookmark/bookmarkCheck_vue/', {
+		    params: {
+		      uno: this.uno,
+		      cno: this.cno
+		    }
+		  })
+
+		  this.bookmarked = Number(data) > 0
 		}
 	}
 })
@@ -41,7 +55,9 @@ const useBookmarkStore=Pinia.defineStore('bookmark',{
     		 
     		 onMounted(()=>{
 				  bookmarkStore.cno = Number(cno)
-				  bookmarkStore.uno = SESSION_UNO
+				  bookmarkStore.uno = SESSION_UNO || null
+				  
+				  bookmarkStore.bookmarkCheck()
     		 })
     		 
     		 return {

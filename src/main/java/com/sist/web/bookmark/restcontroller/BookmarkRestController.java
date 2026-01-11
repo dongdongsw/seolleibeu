@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,18 +43,25 @@ public class BookmarkRestController {
 	}
 	@DeleteMapping("/bookmark/delete_vue/")
 	public ResponseEntity<Map> bookmark_delete_vue(
-	  @RequestParam("cno") int cno, @RequestParam("id") int id
+		@RequestParam("uno") int uno, @RequestParam("cno") int cno
 	)
 	{
 		Map map=new HashMap();
 		try
 		{
-			bService.bookmarkDelete(id);
+			bService.bookmarkDelete(uno, cno);
 			map.put("cno", cno);
+			map.put("uno", uno);
 		}catch(Exception ex)
 		{
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<>(map,HttpStatus.OK);
+	}
+	@GetMapping("/bookmark/bookmarkCheck_vue/")
+	public String bookmarkCheck_vue(@RequestParam("uno") int uno, @RequestParam("cno") int cno)
+	{
+		int count=bService.bookmarkCheck(uno, cno);
+		return String.valueOf(count);
 	}
 }

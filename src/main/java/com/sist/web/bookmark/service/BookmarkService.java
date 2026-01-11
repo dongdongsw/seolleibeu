@@ -4,5 +4,6 @@ import com.sist.web.vo.BookMarkVO;
 
 public interface BookmarkService {
 	public void bookmarkInsert(BookMarkVO vo);
-	public void bookmarkDelete(int id);
+	public void bookmarkDelete(int uno, int cno);
+	public int bookmarkCheck(int uno, int cno);
 }

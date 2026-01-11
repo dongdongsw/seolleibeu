@@ -43,9 +43,12 @@ const SESSION_UNO = Number('${sessionScope.uno}')
 					</div>
 					<div class="detail-head">
 						<div style="margin-left: 10px">
-							<i v-if="!bookmarkStore.bookmarked" class="fa fa-bookmark-o"
+							<i v-if="bookmarkStore.uno && !bookmarkStore.bookmarked" class="fa fa-bookmark-o"
                           	   aria-hidden="true" @click="bookmarkStore.bookmarkInsert()"></i>
-                            <i v-else class="fa fa-bookmark" aria-hidden="true"></i>
+                            <i v-else-if="bookmarkStore.uno && bookmarkStore.bookmarked"
+                               class="fa fa-bookmark" aria-hidden="true"
+                               @click="bookmarkStore.bookmarkDelete()"></i>
+                            <i v-else class="fa fa-bookmark-o" style="pointer-events: none;" title="로그인 후 이용 가능합니다"></i>
 						</div>
 						<div style="margin-left: 30px">
 							<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;${vo.hit }
