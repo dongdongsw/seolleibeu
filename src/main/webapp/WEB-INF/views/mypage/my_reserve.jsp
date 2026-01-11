@@ -15,28 +15,35 @@
 					<div class="col-lg-9 col-md-9 col-sm-12" id="myreserve_list">
 						<main class="mypage-main">
 							<h2>내 예매 내역</h2>
-							<div class="info-card">
+							<div class="info-card" style="margin-top: 5px;">
 								<div v-if="store.rvList.length > 0">
-									<div class="post-block my-course-item" style="margin-bottom:0" v-for="(vo, index) in store.rvList" :key="index">
-										<!-- 왼쪽 이미지 -->
-										<div class="course-thumb">
-											<img :src="vo.pvo.thumbnail" style="width: 80px; height: 80px;">
-										</div>
-
-										<!-- 가운데 정보 -->
-										<div class="mypage-reply">
-											<h4 class="reply-title">장소명</h4>
-											<p style="margin-bottom: 10px;"><b>가격  </b>{{vo.form_price}} 원 &nbsp;<b>옵션정보  </b>{{vo.rv_option1}} / {{vo.rv_option2}}</p>
-											<div class="course-meta">
-												예약 등록일시 : <span class="date">{{vo.createday}}</span>
+									<div v-for="(vo, index) in store.rvList" :key="index">
+										<div class="post-block my-course-item" style="margin-bottom: 5px;">
+											<!-- 왼쪽 이미지 -->
+											<div class="course-thumb">
+												<img :src="vo.pvo.thumbnail" style="width: 80px; height: 100%;">
 											</div>
-										</div>
-
-										<!-- 오른쪽 버튼 -->
-										<div class="course-actions">
-											<a href="/reserve/reserve_detail" class="btn btn-xs">예약 상세내역</a>
-										</div>
-									</div><hr>
+	
+											<!-- 가운데 정보 -->
+											<div class="mypage-reply">
+												<h4 class="reply-title">{{vo.pvo.name}}</h4>
+												<p style="margin-bottom: 10px;"><b>가격  </b>{{vo.form_price}} 원 &nbsp;<b>옵션정보  </b>
+													<span v-if="vo.rv_date">{{vo.rv_date}}</span>
+													<span v-if="vo.rv_time">{{vo.rv_time}}</span>
+													<span v-if="vo.rv_option1">{{vo.rv_option1}}</span>
+													{{vo.rv_option2}}
+												</p>
+												<div class="course-meta">
+													예매 등록일시 : <span class="date">{{vo.createday}}</span>
+												</div>
+											</div>
+	
+											<!-- 오른쪽 버튼 -->
+											<div class="course-actions">
+												<a href="/reserve/reserve_detail" class="btn btn-xs">예약 상세내역</a>
+											</div>
+										</div><hr style="margin: 15px;">
+									</div>
 									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="st-pagination">
 											<ul class="pagination">
