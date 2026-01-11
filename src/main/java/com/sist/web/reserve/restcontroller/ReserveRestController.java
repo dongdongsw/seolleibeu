@@ -44,4 +44,16 @@ public class ReserveRestController {
 		
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	}
+	
+	@GetMapping("detail_vue/")
+	public ResponseEntity<ReserveVO> reservedDetail_vue(@RequestParam("rvno") int rvno) {
+		ReserveVO rvvo = new ReserveVO();
+		try {
+			rvvo = rvService.myReservedDetailData(rvno);
+		} catch(Exception ex) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<>(rvvo, HttpStatus.OK);
+	}
 }

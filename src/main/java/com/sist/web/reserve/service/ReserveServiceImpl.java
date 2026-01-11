@@ -25,4 +25,10 @@ public class ReserveServiceImpl implements ReserveService {
 		// TODO Auto-generated method stub
 		return mapper.myReservedTotalPage(uno);
 	}
+
+	@Override
+	public ReserveVO myReservedDetailData(int rvno) {
+		// TODO Auto-generated method stub
+		return mapper.myReservedDetailData(rvno);
+	}
 }

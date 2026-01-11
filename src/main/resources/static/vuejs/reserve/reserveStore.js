@@ -6,7 +6,10 @@ const useReserveStore = defineStore('reserve', {
 		curpage: 1,
 		totalpage: 0,
 		startPage: 0,
-		endPage: 0
+		endPage: 0,
+		rvvo: {
+			pvo: {}
+		}
 	}),
 	getters: {
 		range: (state)=> {
@@ -25,7 +28,6 @@ const useReserveStore = defineStore('reserve', {
 					page: this.curpage
 				}
 			})
-			console.log(res.data)
 			this.rvList = res.data.rvList
 			this.curpage = res.data.curpage
 			this.startPage = res.data.startPage
@@ -35,6 +37,11 @@ const useReserveStore = defineStore('reserve', {
 		movePage(page) {
 			this.curpage = page
 			this.reserveListData()
+		},
+		async reserveDetailData(rvno) {
+			const res = await api.get(`/reserve/detail_vue/?rvno=${rvno}`)
+			console.log(res.data)
+			this.rvvo = res.data
 		}
 	}
 	

@@ -40,7 +40,7 @@
 	
 											<!-- 오른쪽 버튼 -->
 											<div class="course-actions">
-												<a href="/reserve/reserve_detail" class="btn btn-xs">예약 상세내역</a>
+												<a :href="'/reserve/reserve_detail?rvno='+vo.rvno" class="btn btn-xs">예약 상세내역</a>
 											</div>
 										</div><hr style="margin: 15px;">
 									</div>

@@ -6,10 +6,14 @@
   <resultMap type="com.sist.web.vo.ReserveVO" id="reserveMap">
     <result property="pvo.thumbnail" column="thumbnail"/>
     <result property="pvo.name" column="name"/>
+    <result property="pvo.company" column="company"/>
+    <result property="pvo.addr" column="addr"/>
+    <result property="pvo.phone" column="p_phone"/>
+    <result property="phone" column="rv_phone"/>
   </resultMap>
   
   <select id="myReservedListData" resultMap="reserveMap" parameterType="hashmap">
-    SELECT p.thumbnail, p.name, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_date, rv.rv_time, 
+    SELECT p.thumbnail, p.name, rv.rvno, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_date, rv.rv_time, 
     		rv.rv_option1, rv.rv_option2, TO_CHAR(rv.rv_created_at, 'YYYY-MM-DD HH24:MI:SS') AS createday
     FROM reserve rv
     JOIN place p ON p.pno = rv.pno
@@ -21,5 +25,13 @@
   <select id="myReservedTotalPage" resultType="int" parameterType="int">
     SELECT CEIL(COUNT(*)/3.0) FROM reserve rv
     WHERE rv.uno = #{uno}
+  </select>
+  
+  <select id="myReservedDetailData" resultMap="reserveMap" parameterType="int">
+    SELECT p.thumbnail, p.name, p.company, p.addr, p.phone AS p_phone, rv.rv_status, rv.rv_time, rv.rv_date, rv.rv_option1, rv.rv_option2, 
+    		rv.rv_price, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_amount, rv.nickname, rv.phone AS rv_phone, rv.email
+    FROM reserve rv
+    JOIN place p ON p.pno = rv.pno
+    WHERE rv.rvno = #{rvno}
   </select>
 </mapper>
