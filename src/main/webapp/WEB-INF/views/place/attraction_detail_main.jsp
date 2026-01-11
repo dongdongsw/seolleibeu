@@ -47,8 +47,12 @@
 			<table class="table">
 				<tbody>
 					<tr>
-						<td style="border: none;"><a><i class="fa fa-star-o" style="padding-top:1px; font-size: 22px; color: black;"></i></a></td>
-						<td style="border: none;">{{store.pvo.f_count}}</td>
+						<td style="border: none;">
+		    				<a @click.prevent="favoriteStore.handleFavoriteClick(store.pvo.pno)">
+		    					<i :class="favoriteStore.checkFavorite >= 1?'fa fa-star':'fa fa-star-o'" style="padding-top:1px; font-size: 22px; color: black;"></i>
+		    				</a>
+		    			</td>
+						<td style="border: none;">{{favoriteStore.favoriteCount}}</td>
 						<td style="border: none;"><a><i class="fa fa-thumbs-o-up" style=" font-size: 22px; color: black;"></i></a></td>
 						<td style="border: none;">{{store.pvo.l_count}}</td>
 						<td style="border: none;"><i class="fa fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>
@@ -78,6 +82,7 @@
 	<script src="/vuejs/axios.js"></script>
     <script src="/vuejs/place/attractionStore.js"></script>
     <script src="/vuejs/place/review.js"></script>
+    <script src="/vuejs/favorite/favoriteStore.js"></script>
     <script>
       const { createApp, onMounted, ref } = Vue
       const { createPinia } = Pinia
@@ -92,9 +97,23 @@
 			  /* 리뷰 */
     		  const rstore = useReviewStore()
     		  
+    		  /* 즐겨찾기 */
+			  const favoriteStore = useFavoriteStore()
+    		  
+    		  /* 즐겨찾기 */
+    		  const onClickFavorite = () =>{
+					favoriteStore.favoritePush(pno)
+			  }
+    		  /* 즐겨찾기 */
+			  const unClickFavorite = () =>{
+					favoriteStore.favoriteCancel(pno)
+			  }
     		  
     		  onMounted(()=> {
     			  store.attractionDetailData(pno)
+    			  
+    			  /* 즐겨찾기 */
+    			  favoriteStore.favoriteDetailCheck(pno)
     			  
     			  /* 리뷰 */
     			  rstore.pno=pno
@@ -105,7 +124,12 @@
     		  return {
     			  store,
     			  selectedIndex,
-    			  rstore
+    			  rstore,
+    			  
+    			  /* 즐겨찾기 */
+    			  onClickFavorite,
+				  unClickFavorite,
+				  favoriteStore
     		  }
     	  }
       })

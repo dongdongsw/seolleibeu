@@ -14,7 +14,8 @@ const useRestaurantStore = defineStore('restaurant',{
 			menuList: [],
 			imgList: []
 		},
-		selectedImgIndex:0
+		selectedImgIndex:0,
+		favoriteCount:0
 	}),
 	getters:{
 		range:(state)=>{
@@ -43,6 +44,7 @@ const useRestaurantStore = defineStore('restaurant',{
 			this.startPage = result.data.startPage
 			this.endPage = result.data.endPage
 			this.totalpage = result.data.totalpage
+			
 		},
 		movePage(page){
 			this.curpage = page
@@ -74,6 +76,7 @@ const useRestaurantStore = defineStore('restaurant',{
 			console.log(result.data)
 			this.pvo = result.data
 			this.selectedImgIndex = 0
+			this.favoriteCount = result.data.f_count
 		}
 	}
 })

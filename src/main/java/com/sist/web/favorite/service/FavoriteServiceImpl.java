@@ -29,9 +29,27 @@ public class FavoriteServiceImpl implements FavoriteService{
 	}
 
 	@Override
-	public void fovoriteInsert(FavoriteVO vo) {
+	public void favoriteInsert(FavoriteVO vo) {
 		// TODO Auto-generated method stub
-		mapper.fovoriteInsert(vo);
+		mapper.favoriteInsert(vo);
+	}
+
+	@Override
+	public int favoriteDetailCheck(FavoriteVO vo) {
+		// TODO Auto-generated method stub
+		return mapper.favoriteDetailCheck(vo);
+	}
+
+	@Override
+	public void favoriteDelete(FavoriteVO vo) {
+		// TODO Auto-generated method stub
+		mapper.favoriteDelete(vo);
+	}
+
+	@Override
+	public int favoriteDetailCount(int pno) {
+		// TODO Auto-generated method stub
+		return mapper.favoriteDetailCount(pno);
 	}
 	
 	

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 	<div class="page-header" style="margin: 0px auto;">
 		<div class="container">
 			<div class="row">
@@ -76,8 +77,12 @@
 						    	<table class="table">
 						    		<tbody>
 							    		<tr>
-							    			<td style="border: none;"><a @click.prevent="onClickFavorite()"><i class="fa fa-star-o" style="padding-top:1px; font-size: 22px; color: black;"></i></a></td>
-							    			<td style="border: none;">{{store.pvo.f_count}}</td>
+							    			<td style="border: none;">
+							    				<a @click.prevent="favoriteStore.handleFavoriteClick(store.pvo.pno)">
+							    					<i :class="favoriteStore.checkFavorite >= 1?'fa fa-star':'fa fa-star-o'" style="padding-top:1px; font-size: 22px; color: black;"></i>
+							    				</a>
+							    			</td>
+							    			<td style="border: none;">{{favoriteStore.favoriteCount}}</td>
 							    			<td style="border: none;"><a ><i class="fa fa-thumbs-o-up" style=" font-size: 22px; color: black;"></i></a></td>
 							    			<td style="border: none;">{{store.pvo.l_count}}</td>
 							    			<td style="border: none;"><i class="fa fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>

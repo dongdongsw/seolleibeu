@@ -96,8 +96,12 @@
 			<table class="table">
 				<tbody>
 					<tr>
-						<td style="border: none;"><a><i class="fa fa-star-o" style="padding-top:1px; font-size: 22px; color: black;"></i></a></td>
-						<td style="border: none;">{{store.pvo.f_count}}</td>
+						<td style="border: none;">
+		    				<a @click.prevent="favoriteStore.handleFavoriteClick(store.pvo.pno)">
+		    					<i :class="favoriteStore.checkFavorite >= 1?'fa fa-star':'fa fa-star-o'" style="padding-top:1px; font-size: 22px; color: black;"></i>
+		    				</a>
+		    			</td>
+						<td style="border: none;">{{favoriteStore.favoriteCount}}</td>
 						<td style="border: none;"><a><i class="fa fa-thumbs-o-up" style=" font-size: 22px; color: black;"></i></a></td>
 						<td style="border: none;">{{store.pvo.l_count}}</td>
 						<td style="border: none;"><i class="fa fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>
@@ -126,6 +130,7 @@
 	</div>
 	<script src="/vuejs/axios.js"></script>
     <script src="/vuejs/place/cultureStore.js"></script>
+    <script src="/vuejs/favorite/favoriteStore.js"></script>
     <script src="/vuejs/place/review.js"></script>
     <script>
       const { createApp, onMounted } = Vue
@@ -134,13 +139,29 @@
       const cultureDetailApp = createApp({
     	  setup() {
     		  const store = useCultureStore()
+    		  
     		  const params = new URLSearchParams(location.search)
     		  const pno = params.get('pno')
     		  
     		  const rstore = useReviewStore()
     		  
+    		  /* 즐겨찾기 */
+    		  const favoriteStore = useFavoriteStore()
+    		  
+    		  /* 즐겨찾기 */
+    		  const onClickFavorite = () =>{
+					favoriteStore.favoritePush(pno)
+			  }
+    		  /* 즐겨찾기 */	
+			  const unClickFavorite = () =>{
+					favoriteStore.favoriteCancel(pno)
+			  }
+    		  
     		  onMounted(()=> {
     			  store.cultureDetailData(pno)
+    			  
+    			  /* 즐겨찾기 */
+    			  favoriteStore.favoriteDetailCheck(pno)
     			  
     			  rstore.pno=pno
     			  rstore.curpage=1
@@ -149,7 +170,12 @@
     		  
     		  return {
     			  store,
-    			  rstore
+    			  rstore,
+    			  
+    			  /* 즐겨찾기 */
+    			  onClickFavorite,
+				  unClickFavorite,
+				  favoriteStore
     		  }
     	  }
       })

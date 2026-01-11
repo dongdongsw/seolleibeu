@@ -8,29 +8,34 @@ const bookmarkInitialState=()=>({
 const useBookmarkStore=Pinia.defineStore('bookmark',{
 	state:bookmarkInitialState,
 	actions:{
-		// 북마크 추가
-		async bookmarkInsert(){
-			if (this.bookmarked) return
-			const {data} = await api.post('/bookmark/insert_vue/',{
-				cno:this.cno,
-				uno:this.uno
-			})
-			this.cno=data.cno
-			this.bookmarked = true
-			
-			alert('북마크에 추가되었습니다')
-		},
-		// 북마크 삭제
-		async bookmarkDelete(){
-			const {data} =await api.delete('/bookmark/delete_vue/',{
-				params:{
-					uno: this.uno,
-					cno: this.cno
-				}
-			})
-			this.cno=data.cno
-			this.bookmarked = false
-		},
+		async toggleBookmark(){
+		    // 로그인 경고 메세지
+		    if (!this.uno) {
+		      alert('로그인 후 이용해주세요')
+		      return
+		    }
+
+		    // 북마크 삭제
+		    if (this.bookmarked) {
+		      await api.delete('/bookmark/delete_vue/', {
+		        params:{
+		          uno: this.uno,
+		          cno: this.cno
+		        }
+		      })
+		      this.bookmarked = false
+		      return
+		    }
+
+		    // 북마크 추가
+		    await api.post('/bookmark/insert_vue/', {
+		      uno: this.uno,
+		      cno: this.cno
+		    })
+
+		    this.bookmarked = true
+		    alert('북마크에 추가되었습니다')
+		  },
 		// 북마크 체크
 		async bookmarkCheck(){
 		  if (!this.uno || !this.cno) return

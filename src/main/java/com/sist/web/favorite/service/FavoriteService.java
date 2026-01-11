@@ -11,5 +11,10 @@ public List<FavoriteVO> favoriteListData(Map map);
 	
 	public int favoriteTotalPage(Map map);
 	
-	public void fovoriteInsert(FavoriteVO vo);
+	public void favoriteInsert(FavoriteVO vo);
+	
+	public int favoriteDetailCheck(FavoriteVO vo);
+	public int favoriteDetailCount(int pno);
+	
+	public void favoriteDelete(FavoriteVO vo);
 }

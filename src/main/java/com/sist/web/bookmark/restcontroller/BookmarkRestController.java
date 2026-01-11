@@ -1,8 +1,9 @@
 package com.sist.web.bookmark.restcontroller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-
+import com.sist.web.commons.Methods;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -63,5 +64,28 @@ public class BookmarkRestController {
 	{
 		int count=bService.bookmarkCheck(uno, cno);
 		return String.valueOf(count);
+	}
+	@GetMapping("/mypage/my_bookmark_vue/")
+	public ResponseEntity<Map> my_bookmark_vue(@RequestParam("page") int page,HttpSession session)
+	{
+		Map map=new HashMap();
+		try
+		{
+			Integer uno = (Integer)session.getAttribute("uno");
+			
+			List<BookMarkVO> list=bService.bookmarkListData(uno,(page-1)*3);
+			int totalpage=bService.bookmarkTotalpage(uno);
+			   
+			Map pageMap=Methods.paginationMap(5, page, totalpage);
+			   	   
+			map.putAll(pageMap);
+			   
+			map.put("list", list);
+			
+		}catch(Exception ex)
+		{
+			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
 }
