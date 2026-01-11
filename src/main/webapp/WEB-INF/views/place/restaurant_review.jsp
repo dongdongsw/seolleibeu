@@ -168,6 +168,7 @@
    	<script src="/vuejs/axios.js"></script>
 	<script src="/vuejs/place/restaurantStore.js"></script>
 	<script src="/vuejs/favorite/favoriteStore.js"></script>
+	<script src="/vuejs/like/likeStore.js"></script>
 	<script>
 		const {createApp, onMounted} = Vue
 		const {createPinia} = Pinia
@@ -176,6 +177,7 @@
 			setup(){
 				const store = useRestaurantStore()
 				const favoriteStore = useFavoriteStore()
+				const likeStore = useLikeStore()
 				
 				const params = new URLSearchParams(location.search)
 				const pno = params.get('pno')
@@ -184,11 +186,13 @@
 				onMounted(()=>{
 					store.restaurantDetailData(pno)
 					favoriteStore.favoriteDetailCheck(pno)
+					likeStore.likeCheck(pno)
 				})
 				
 				return{
 					store,
-					favoriteStore
+					favoriteStore,
+					likeStore
 				}
 			}
 		})

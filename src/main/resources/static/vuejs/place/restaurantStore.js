@@ -36,9 +36,6 @@ const useRestaurantStore = defineStore('restaurant',{
 					array:this.array
 				}
 			})
-			// 테스트 끝나면 지울 것
-			console.log(result.data)
-			
 			this.resList = result.data.resList
 			this.curpage = result.data.curpage
 			this.startPage = result.data.startPage
@@ -73,7 +70,6 @@ const useRestaurantStore = defineStore('restaurant',{
 					pno:pno
 				}
 			})
-			console.log(result.data)
 			this.pvo = result.data
 			this.selectedImgIndex = 0
 			this.favoriteCount = result.data.f_count

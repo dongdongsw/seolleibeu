@@ -21,7 +21,6 @@ const useFavoriteStore = defineStore('favorite',{
 					pno:pno
 				}
 			})
-			console.log(result.data,typeof result.data.checkFavorite)
 			this.checkFavorite = result.data.checkFavorite
 			this.favoriteCount = result.data.favoriteCount
 			this.loginTrueFalse = result.data.loginTrueFalse

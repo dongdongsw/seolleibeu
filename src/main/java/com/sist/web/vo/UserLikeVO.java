@@ -7,6 +7,6 @@ import lombok.Data;
 @Data
 public class UserLikeVO {
 
-	private int lid, uno, pno;
+	private int l_id, uno, pno;
 	private Date likedate;
 }
