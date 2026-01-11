@@ -11,9 +11,8 @@
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<div id="myreview_list">
 	<div class="content auth-wrapper" style="margin-top: -17px;">
-		<div class="container">
+		<div class="container" id="myreview_list">
 			<div class="row">
 			  <div class="mypage-sizing">
 				<div class="col-lg-9 col-md-9 col-sm-12">
@@ -21,8 +20,9 @@
 						<div class="search search-row">
 						  <h2 class="mypage-title">내가 쓴 리뷰</h2>
 						</div>
-						<div class="info-card">
-								<div class="post-block my-course-item" style="margin-bottom:0" v-for="(vo,index) in store.list" :key="index">
+						<div class="info-card" style="margin: 0; padding: 0">
+						   <div v-for="(vo,index) in store.list" :key="index">
+								<div class="post-block my-course-item" style="margin-top: 30px">
 									<!-- 왼쪽 이미지 -->
 									<div class="course-thumb">
 										<img :src="vo.profile_img ? vo.profile_img : '/images/noimage.png'" style="width: 80px;height: 80px;">
@@ -41,7 +41,8 @@
 											class="btn btn-xs" data-toggle="modal" data-target="#myModal">삭제</a>
 									</div>
 								</div>
-								<hr>
+								<hr style="margin:0">
+							 </div>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="st-pagination">
 									<ul class="pagination">
@@ -54,7 +55,6 @@
 						</div>
 					</main>
 				</div>
-
 				<div class="col-lg-3 col-md-3 col-sm-12" style="margin-top: 80px;">
 					<div class="sidenav">
 						<ul class="listnone">
@@ -93,11 +93,6 @@
 		  </div>
 		</div>
 	</div>
-</div>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="https://unpkg.com/vue-demi"></script>
-<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/vuejs/axios.js"></script>
 <script src="/vuejs/mypage/review.js"></script>
 <script>

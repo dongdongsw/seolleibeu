@@ -9,4 +9,7 @@ public class BookMarkVO {
 	private int cno;
 	private int uno;
 	private Date bm_pushat;
+	
+	private String title;
+	private int hit;
 }

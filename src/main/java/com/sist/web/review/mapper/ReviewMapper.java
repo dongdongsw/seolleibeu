@@ -26,18 +26,25 @@ public interface ReviewMapper {
 	// 리뷰 갯수
 	@Select("SELECT COUNT(*) FROM review WHERE pno=#{pno}")
 	public int reviewCount(int pno);
+	// 리뷰 평균 별점
+	@Select("SELECT ROUND(AVG(r_score),1) AS avg_score FROM review WHERE pno=#{pno}")
+	public Double scoreAvg(int pno);
 	// 리뷰 작성 
-	@Insert("INSERT INTO review VALUES(REV_NO_SEQ.NEXTVAL, #{uno},#{pno},#{r_content},#{r_img},#{r_depth},(SELECT NVL(MAX(r_gid)+1,1) FROM review),SYSDATE,NULL,#{r_score})")
+	@Insert("INSERT INTO review VALUES (REV_NO_SEQ.NEXTVAL, #{uno},#{pno},#{r_content},NULL,1,(SELECT NVL(MAX(r_gid)+1,1) FROM review),SYSDATE,NULL,#{r_score})")
 	public void reviewInsert(ReviewVO vo);
 	// 리뷰 수정
 	@Update("UPDATE review SET "
 			+ "r_content=#{r_content}, r_updated_at=SYSDATE "
-			+ "WHERE rno=#{rno}")
+			+ "WHERE rno=#{rno} AND uno=#{uno}")
 	public void reviewUpdate(ReviewVO vo);
 	// 리뷰 삭제
 	@Delete("DELETE FROM review "
+			+ "WHERE rno=#{rno} AND uno=#{uno}")
+	public void reviewDelete(ReviewVO vo);
+	// 리뷰 모달창
+	@Select("SELECT * FROM review "
 			+ "WHERE rno=#{rno}")
-	public void reviewDelete(int pno);
+	public ReviewVO reviewModalData(int rno);
 	
 	// 마이페이지 리뷰 리스트
 	public List<ReviewVO> mypageReviewListData(Map map);

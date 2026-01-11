@@ -9,7 +9,8 @@
   </resultMap>
   
   <select id="myReservedListData" resultMap="reserveMap" parameterType="hashmap">
-    SELECT p.thumbnail, p.name, rv.rv_price, rv.rv_date, rv.rv_time, rv.rv_option1, rv.rv_option2, rv.rv_created_at
+    SELECT p.thumbnail, p.name, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_date, rv.rv_time, 
+    		rv.rv_option1, rv.rv_option2, TO_CHAR(rv.rv_created_at, 'YYYY-MM-DD HH24:MI:SS') AS createday
     FROM reserve rv
     JOIN place p ON p.pno = rv.pno
     WHERE rv.uno = #{uno}

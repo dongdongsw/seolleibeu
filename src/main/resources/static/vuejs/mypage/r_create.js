@@ -1,19 +1,19 @@
-	const uploadArea = document.getElementById('uploadArea')
+	/*const uploadArea = document.getElementById('uploadArea')
 	const imageInput = document.getElementById('imageInput')
 	const imagePreview = document.getElementById('imagePreview')
 	const previewImg = document.getElementById('previewImg')
-	const removeImage = document.getElementById('removeImage')
+	const removeImage = document.getElementById('removeImage')*/
 	const starWrappers = document.querySelectorAll('.star-wrapper')
 	const ratingValue = document.getElementById('ratingValue')
 	const ratingText = document.getElementById('ratingText')
 	
 	// 이미지 업로드 클릭
-	uploadArea.addEventListener('click', () => {
+	/*uploadArea.addEventListener('click', () => {
 		imageInput.click()
-	})
+	})*/
 	
 	// 이미지 미리보기
-	imageInput.addEventListener('change', (e) => {
+	/*imageInput.addEventListener('change', (e) => {
 		const file = e.target.files[0]
 		if (file) {
 			const reader = new FileReader()
@@ -24,14 +24,14 @@
 			}
 			reader.readAsDataURL(file)
 		}
-	})
+	})*/
 	
 	// 이미지 삭제
-	removeImage.addEventListener('click', () => {
+	/*removeImage.addEventListener('click', () => {
 		imageInput.value = ''
 		uploadArea.style.display = 'block'
 		imagePreview.style.display = 'none'
-	})
+	})*/
 	
 	// 별점 선택 (0.5 단위)
 	starWrappers.forEach(wrapper => {
