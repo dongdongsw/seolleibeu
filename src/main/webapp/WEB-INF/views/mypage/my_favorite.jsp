@@ -34,7 +34,9 @@
 					                    	left: 10%; top:87%; width: 80%">
 					                    	{{fvo.pvo.name}}
 					                    </h4>
-					                    <a><i class="fa fa-star" style="position:absolute; left:77%; top:7%; padding-top: 1px; font-size: 22px; color: gold;"></i></a>
+					                    <a @click.prevent="store.favoriteCancel(fvo.pvo.pno)" style="cursor: pointer;">
+					                    	<i class="fa fa-star" style="position:absolute; left:77%; top:7%; padding-top: 1px; font-size: 22px; color: gold;"></i>
+					                    </a>
 					                </div>
 					                
 				            </div>
@@ -88,6 +90,7 @@
 		const mypageFavoriteApp = createApp({
 			setup(){
 				const store = useMypageFavoriteStore()
+				
 				
 				onMounted(()=>{
 					store.mypageFavoriteListData()
