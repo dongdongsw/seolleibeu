@@ -25,10 +25,16 @@ public class AdminController {
 		model.addAttribute("main_jsp", "food_list.jsp");
 		return "admin/main";
 	}
-	@GetMapping("/admin/place_create")
+	@GetMapping("/admin/culture_create")
+	public String culture_create(Model model)
+	{
+		model.addAttribute("main_jsp", "culture_create.jsp");
+		return "admin/main";
+	}
+	@GetMapping("/admin/restaurant_create")
 	public String place_create(Model model)
 	{
-		model.addAttribute("main_jsp", "place_create.jsp");
+		model.addAttribute("main_jsp", "restaurant_create.jsp");
 		return "admin/main";
 	}
 	// 코스
