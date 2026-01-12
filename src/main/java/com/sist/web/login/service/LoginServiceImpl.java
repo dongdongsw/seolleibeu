@@ -30,6 +30,18 @@ public class LoginServiceImpl implements LoginService{
 		// TODO Auto-generated method stub
 		return mapper.registerUserNameCheck(name);
 	}
+
+	@Override
+	public int loginIdCheck(String id) {
+		// TODO Auto-generated method stub
+		return mapper.loginIdCheck(id);
+	}
+
+	@Override
+	public int registerEmailCheck(String email) {
+		// TODO Auto-generated method stub
+		return mapper.registerEmailCheck(email);
+	}
 	
 	
 }

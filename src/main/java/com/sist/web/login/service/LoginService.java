@@ -8,4 +8,8 @@ public interface LoginService {
 	public UsersVO loginInfoData(String id);
 	
 	public int registerUserNameCheck(String name);
+	
+	public int loginIdCheck(String id);	
+	
+	public int registerEmailCheck(String email);
 }

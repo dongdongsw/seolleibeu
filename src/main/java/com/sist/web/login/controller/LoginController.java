@@ -35,17 +35,17 @@ public class LoginController {
 		return "auth/auth_main";
 	}
 	
-	@PostMapping("/register_ok")
-	public String auth_register_ok(@ModelAttribute("vo") UsersVO vo ) {
-		
-		vo.setPwd(Encoder.encode(vo.getPwd()));
-		
-		System.out.println(vo);
-		
-		lService.registerInsert(vo);
-		return "redirect:/";
-		
-	}
+//	@PostMapping("/register_ok")
+//	public String auth_register_ok(@ModelAttribute("vo") UsersVO vo ) {
+//		
+//		vo.setPwd(Encoder.encode(vo.getPwd()));
+//		
+//		System.out.println(vo);
+//		
+//		lService.registerInsert(vo);
+//		return "redirect:/";
+//		
+//	}
 	
 	@GetMapping("/find_id")
 	public String auth_find_id(Model model) {
