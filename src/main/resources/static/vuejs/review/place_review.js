@@ -48,6 +48,7 @@ const useReviewStore=defineStore('review_list',{
 			this.totalpage=res.data.totalpage
 			this.count=res.data.count
 			this.avg_score=res.data.avg_score
+			console.log(res.data.list)
 		},
 		async reviewDetailData(rno){
 			const res=await api.get(`/review_detail_vue/?rno=${rno}`)
@@ -75,22 +76,6 @@ const useReviewStore=defineStore('review_list',{
 			this.r_score=0
 			this.reviewListData()
 			console.log(this.r_content, this.r_score)
-		},
-		async reviewDelete(rno){
-			this.rno=rno
-			const ok=confirm('정말로 리뷰를 삭제하시겠습니까?')
-			if(!ok) return
-			const res=await api.delete('/review_delete_vue/',{
-				params:{
-					rno
-				}
-			})
-			if(res.data.msg==='yes')
-				this.reviewListData()
-			else
-			{
-				alert("리뷰 삭제에 실패하였습니다")
-			}
 		},
 		pageChange(page){
 			this.curpage=page

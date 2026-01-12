@@ -43,6 +43,32 @@ const useReviewStore=defineStore('myreview_list',{
 			console.log(res.data)
 			console.log(this.list)
 		},
+		async reviewUpdate(){
+			if(!this.r_content.trim()){
+		        alert("리뷰 내용을 입력해주세요")
+		        return
+		    }
+			const res=await api.post('/review_update_vue/',{
+				rno:this.detail.rno,
+				r_content:this.r_content
+			})
+		},
+		async reviewDelete(rno){
+			this.rno=rno
+			const ok = confirm('정말로 리뷰를 삭제하시겠습니까?')
+	      	if (!ok) return
+			const res=await api.delete('/review_delete_vue/',{
+				params:{
+					rno
+				}
+			})
+			if(res.data.msg==='yes')
+				this.myreviewListData()
+			else
+			{
+				alert("리뷰 삭제에 실패하였습니다")
+			}
+		},
 		pageChange(page){
 			this.curpage=page
 			this.myreviewListData()

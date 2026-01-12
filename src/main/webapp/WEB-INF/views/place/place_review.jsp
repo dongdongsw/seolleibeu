@@ -12,7 +12,7 @@
 	
 	<sec:authorize access="isAuthenticated()">
 	<!-- 리뷰 작성 폼 -->
-	<div class="review-write-box">
+	<div class="review-write-box"  v-if="rstore.list.length===0">
 		<div class="review-write-title">
 			<i class="fa fa-pencil"></i> 리뷰 작성하기
 		</div>
@@ -127,13 +127,11 @@
                                                       		<a href="/mypage/my_review" v-if="sessionId===id">수정 / 삭제</a>
                                                       	</div>
                                                        </sec:authorize>
-									                    <div class="meta"> <span class="meta-date">{{vo.dbday}}</span> </div>
+									                    <div class="meta"> <span v-if="vo.uday"> 수정일 : {{ vo.uday }} </span>
+										    				<span v-else>작성일 : {{ vo.dbday }} </span></div>
 									                </div>
 									                <div class="comment-content">
 									                    <p :title="vo.r_content">{{vo.r_content}}</p>
-									                    <div class="text-right" style="margin-right: 60px;">
-                                                      		<span class="review-more" data-toggle="modal" data-target="#myModal" @click="rstore.reviewDetailData(vo.rno)">더보기</span>
-                                                      	</div>
                                                   	</div>
                                               	</div>
                                          	 </div>

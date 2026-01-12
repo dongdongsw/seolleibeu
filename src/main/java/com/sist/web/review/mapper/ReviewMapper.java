@@ -12,7 +12,7 @@ import com.sist.web.vo.*;
 @Repository
 public interface ReviewMapper {
 	// 리뷰 리스트
-	@Select("SELECT r.rno,r.uno,pno,name,r_content,r_img,r_score,profile_img,TO_CHAR(r_created_at,'yyyy-mm-dd HH24:MI:SS') as dbday "
+	@Select("SELECT r.rno,r.uno,pno,name,r_content,r_img,r_score,profile_img,TO_CHAR(r_created_at,'yyyy-mm-dd HH24:MI:SS') as dbday,TO_CHAR(r_updated_at,'yyyy-mm-dd HH24:MI:SS') as uday "
 			+ "FROM review r "
 			+ "JOIN users u ON r.uno=u.uno "
 			+ "WHERE pno=#{pno} "

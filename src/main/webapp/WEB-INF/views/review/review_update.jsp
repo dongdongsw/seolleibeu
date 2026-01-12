@@ -5,15 +5,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>리뷰 수정</title>
+<title></title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/style.css" rel="stylesheet">
 <link href="/css/review/review.css" rel="stylesheet">
+<style type="text/css">
+ .star-rating-read {
+    display: inline-block;
+    font-size: 3rem;
+    position: relative;
+    unicode-bidi: bidi-override;
+    color: #e0e0e0;
+}
+.star-rating-read::before {
+    content: "★★★★★"; 
+}
+.star-rating-read .star {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    color: #ffc107;
+}
+.star-rating-read .star::before {
+    content: "★★★★★";
+}
+</style>
 </head>
 <body>
-	<div class="content auth-wrapper" style="margin-top: 30px;">
+	<div class="content auth-wrapper" style="margin-top: 30px;" id="review_update">
 		<div class="container back">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12">
@@ -23,20 +48,17 @@
 								<i class="fa fa-pencil"></i> 리뷰 수정
 							</div>
 						</div>
-						<form id="reviewForm" method="post" enctype="multipart/form-data" action="/board/update_ok">
+						<form id="reviewForm" method="post" action="/review_update_vue/">
+					      <input type="hidden" name="rno" value="${vo.rno }">
 							<!-- 별점 -->
 							<div class="form-group">
 								<label class="form-label">
-									별점<span class="required">*</span>
+									별점(수정 불가)
 								</label>
 								<div class="rating-area">
-									<div class="star-rating" id="starRating">
-										<span class="star-wrapper" v-for="n in 5" :key="n" :data-value="n" 
-								          @click="(e) => {const rect = e.currentTarget.getBoundingClientRect(); const x = e.clientX - rect.left; rstore.r_score = x < rect.width / 2 ? n - 0.5 : n;}">
-										  <i class="fa" :class="n <= Math.floor(rstore.r_score) ? 'fa-star' : (n === Math.ceil(rstore.r_score) && rstore.r_score % 1 !== 0 ? 'fa-star-half-o' : 'fa-star-o')"></i>
-										</span>
+									<div class="star-rating-read">
+									    <span class="star" style="width:${vo.r_score * 20}%"></span>
 									</div>
-									<span class="rating-text" id="ratingText">별점을 선택해주세요</span>
 								</div>
 								<input type="hidden" name="rating" id="ratingValue" required>
 							</div>
@@ -93,7 +115,6 @@
 <script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/vuejs/axios.js"></script>
-<script src="/vuejs/review/place_review.js"></script>
-<script src="/vuejs/review/r_create.js"></script>
+<script src="/vuejs/review/mypage_review.js"></script>
 </body>
 </html>

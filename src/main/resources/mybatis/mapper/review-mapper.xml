@@ -3,7 +3,8 @@
 <mapper namespace="com.sist.web.review.mapper.ReviewMapper">
 <!-- 마이페이지 리뷰 목록 -->
 <select id="mypageReviewListData" resultType="com.sist.web.vo.ReviewVO" parameterType="hashmap">
- SELECT r.rno,r.uno,p.pno,p.name as pname,r.r_content,r.r_img,r.r_score,u.profile_img,TO_CHAR(r.r_created_at,'yyyy-mm-dd HH24:MI:SS') as dbday
+ SELECT r.rno,r.uno,p.pno,p.name as pname,r.r_content,r.r_img,r.r_score,u.profile_img,TO_CHAR(r.r_created_at,'yyyy-mm-dd HH24:MI:SS') as dbday, p.thumbnail as thumbnail,
+ TO_CHAR(r.r_updated_at,'yyyy-mm-dd HH24:MI:SS') as uday
  FROM review r
  JOIN users u ON r.uno=u.uno
  JOIN place p ON r.pno=p.pno

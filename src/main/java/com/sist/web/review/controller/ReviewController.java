@@ -23,6 +23,7 @@ public class ReviewController {
 	public String review_update(@RequestParam("rno") int rno,Model model)
 	{
 		ReviewVO vo=rservice.reviewDetailData(rno);
+		model.addAttribute("rno", rno);
 		model.addAttribute("vo", vo);
 		return "review/review_update"; 
 	}

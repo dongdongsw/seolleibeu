@@ -78,12 +78,21 @@ public class ReviewRestController {
 	}
 	// 리뷰 수정
 	@PostMapping("/review_update_vue/")
-	public ResponseEntity<Integer> review_update_vue(@RequestBody ReviewVO vo,HttpSession session)
+	public String review_update_vue(@ModelAttribute ReviewVO vo,HttpSession session)
 	{
 		int uno=(int)session.getAttribute("uno");
 		vo.setUno(uno);
-		int result=rservice.reviewUpdate(vo);
-		return ResponseEntity.ok(result);
+		
+		int result = rservice.reviewUpdate(vo);
+		
+	    if(result > 0) {
+	        // 수정 성공 시 뒤로 또는 상세 페이지로 이동
+	        return "<script>location.href='/mypage/my_review';</script>";
+	    } 
+	    else 
+	    {
+	        return "<script>alert('리뷰 수정에 실패했습니다.'); history.back();</script>";
+	    }
 	}
 	// 리뷰 삭제
 	@DeleteMapping("/review_delete_vue/")

@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
 <title>내가 쓴 리뷰</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
@@ -25,20 +27,21 @@
 								<div class="post-block my-course-item" style="margin-top: 30px">
 									<!-- 왼쪽 이미지 -->
 									<div class="course-thumb">
-										<img :src="vo.profile_img ? vo.profile_img : '/images/noimage.png'" style="width: 80px;height: 80px;">
+										<img :src="vo.thumbnail ? vo.thumbnail: '/images/noimage.png'" style="width: 80px;height: 80px;">
 									</div>
 									<!-- 가운데 정보 -->
 									<div class="mypage-reply">
-										<h4 class="reply-title">{{vo.pname}}</h4>
+										<h4 class="reply-title"><a href="#" style="color: black">{{vo.pname}}</a></h4>
 										<p style="margin-bottom: 10px">{{vo.r_content}}</p>
 										<div class="course-meta">
-											리뷰 쓴 날짜 : <span class="date">{{vo.dbday}}</span>
+											<span v-if="vo.uday"> 수정일 : {{ vo.uday }} </span>
+										    <span v-else> 작성일 : {{ vo.dbday }} </span><span style="margin-left: 20px;color: black;font-weight: bolder;">별점 {{vo.r_score}}점</span>
 										</div>
 									</div>
 									<!-- 오른쪽 버튼 -->
 									<div class="course-actions">
-										<a href="/review_update" class="btn btn-xs">수정</a> 
-										<a href="#" class="btn btn-xs" data-toggle="modal" data-target="#myModal">삭제</a>
+										<a :href="'/review_update?rno='+vo.rno" class="btn btn-xs">수정</a> 
+										<a href="#" class="btn btn-xs" @click="store.reviewDelete(vo.rno)">삭제</a>
 									</div>
 								</div>
 								<hr style="margin:0">
@@ -73,24 +76,7 @@
 			</div>
 			</div>
 		</div>
-		<div id="myModal" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
-		    <!-- Modal content-->
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h3 class="modal-title">리뷰 삭제</h3>
-		      </div>
-		      <div class="modal-body">
-		        <p>리뷰를 삭제하시겠습니까?</p>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-danger">삭제</button>
-		        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+		
 	</div>
 <script src="/vuejs/axios.js"></script>
 <script src="/vuejs/review/mypage_review.js"></script>
