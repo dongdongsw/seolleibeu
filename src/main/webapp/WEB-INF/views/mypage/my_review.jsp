@@ -37,8 +37,8 @@
 									</div>
 									<!-- 오른쪽 버튼 -->
 									<div class="course-actions">
-										<a href="/mypage/review_update" class="btn btn-xs">수정</a> <a href="#"
-											class="btn btn-xs" data-toggle="modal" data-target="#myModal">삭제</a>
+										<a href="/review_update" class="btn btn-xs">수정</a> 
+										<a href="#" class="btn btn-xs" data-toggle="modal" data-target="#myModal">삭제</a>
 									</div>
 								</div>
 								<hr style="margin:0">
@@ -70,7 +70,6 @@
 						</ul>
 					</div>
 				</div>
-
 			</div>
 			</div>
 		</div>
@@ -94,7 +93,7 @@
 		</div>
 	</div>
 <script src="/vuejs/axios.js"></script>
-<script src="/vuejs/mypage/review.js"></script>
+<script src="/vuejs/review/mypage_review.js"></script>
 <script>
  const {createApp,onMounted}=Vue
  const {createPinia}=Pinia

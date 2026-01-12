@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -76,21 +77,13 @@ public class ReviewRestController {
 		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
 	// 리뷰 수정
-	@PutMapping("/review_update_vue/")
-	public ResponseEntity<Map> review_update_vue(@RequestBody ReviewVO vo,HttpSession session)
+	@PostMapping("/review_update_vue/")
+	public ResponseEntity<Integer> review_update_vue(@RequestBody ReviewVO vo,HttpSession session)
 	{
 		int uno=(int)session.getAttribute("uno");
-		Map map=new HashMap();
-		try
-		{
-			vo.setUno(uno);
-			rservice.reviewUpdate(vo);
-		}catch(Exception ex)
-		{
-			ex.printStackTrace();
-			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-		return new ResponseEntity<>(map,HttpStatus.OK);
+		vo.setUno(uno);
+		int result=rservice.reviewUpdate(vo);
+		return ResponseEntity.ok(result);
 	}
 	// 리뷰 삭제
 	@DeleteMapping("/review_delete_vue/")

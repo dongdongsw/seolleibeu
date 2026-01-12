@@ -19,6 +19,12 @@ public interface ReviewMapper {
 			+ "ORDER BY r_gid DESC,r_created_at ASC "
 			+ "OFFSET #{start} ROWS FETCH NEXT 8 ROWS ONLY")
 	public List<ReviewVO> reviewListData(Map map);
+	// 리뷰 내용
+	@Select("SELECT rno,r_content,r_score,TO_CHAR(r_created_at,'yyyy-mm-dd HH24:MI:SS') as dbday "
+			+ "FROM review "
+			+ "WHERE rno=#{rno}")
+	public ReviewVO reviewDetailData(int rno);
+	
 	// 리뷰 총 페이지
 	@Select("SELECT CEIL(COUNT(*)/10.0) FROM review "
 			+ "WHERE pno=#{pno}")
@@ -36,7 +42,9 @@ public interface ReviewMapper {
 	@Update("UPDATE review SET "
 			+ "r_content=#{r_content}, r_updated_at=SYSDATE "
 			+ "WHERE rno=#{rno} AND uno=#{uno}")
-	public void reviewUpdate(ReviewVO vo);
+	public int reviewUpdate(ReviewVO vo);
+	@Select("SELECT * FROM review WHERE rno=#{rno}")
+	public ReviewVO reviewUpdateData(int rno);
 	// 리뷰 삭제
 	@Delete("DELETE FROM review "
 			+ "WHERE rno=#{rno} AND uno=#{uno}")

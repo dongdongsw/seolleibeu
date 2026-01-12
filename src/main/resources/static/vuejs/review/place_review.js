@@ -50,7 +50,7 @@ const useReviewStore=defineStore('review_list',{
 			this.avg_score=res.data.avg_score
 		},
 		async reviewDetailData(rno){
-			const res=await api.get(`/place/place_review_detail_vue/?rno=${rno}`)
+			const res=await api.get(`/review_detail_vue/?rno=${rno}`)
 			this.detail=res.data
 			console.log(res.data)
 		},
@@ -75,14 +75,6 @@ const useReviewStore=defineStore('review_list',{
 			this.r_score=0
 			this.reviewListData()
 			console.log(this.r_content, this.r_score)
-		},
-		async reviewUpdate(){
-			await api.put('/review_update_vue/',{
-				rno:this.rno,
-				r_content:this.r_content,
-				r_score:this.r_score
-			})
-			location.href='/mypage/my_review'
 		},
 		async reviewDelete(rno){
 			this.rno=rno

@@ -12,9 +12,7 @@
 <link href="/css/style.css" rel="stylesheet">
 <link href="/css/review/review.css" rel="stylesheet">
 </head>
-
 <body>
-
 	<div class="content auth-wrapper" style="margin-top: 30px;">
 		<div class="container back">
 			<div class="row">
@@ -25,8 +23,7 @@
 								<i class="fa fa-pencil"></i> 리뷰 수정
 							</div>
 						</div>
-
-						<form id="reviewForm" method="post" enctype="multipart/form-data">
+						<form id="reviewForm" method="post" enctype="multipart/form-data" action="/board/update_ok">
 							<!-- 별점 -->
 							<div class="form-group">
 								<label class="form-label">
@@ -34,37 +31,24 @@
 								</label>
 								<div class="rating-area">
 									<div class="star-rating" id="starRating">
-										<span class="star-wrapper" data-value="1">
-											<i class="fa fa-star-o"></i>
-										</span>
-										<span class="star-wrapper" data-value="2">
-											<i class="fa fa-star-o"></i>
-										</span>
-										<span class="star-wrapper" data-value="3">
-											<i class="fa fa-star-o"></i>
-										</span>
-										<span class="star-wrapper" data-value="4">
-											<i class="fa fa-star-o"></i>
-										</span>
-										<span class="star-wrapper" data-value="5">
-											<i class="fa fa-star-o"></i>
+										<span class="star-wrapper" v-for="n in 5" :key="n" :data-value="n" 
+								          @click="(e) => {const rect = e.currentTarget.getBoundingClientRect(); const x = e.clientX - rect.left; rstore.r_score = x < rect.width / 2 ? n - 0.5 : n;}">
+										  <i class="fa" :class="n <= Math.floor(rstore.r_score) ? 'fa-star' : (n === Math.ceil(rstore.r_score) && rstore.r_score % 1 !== 0 ? 'fa-star-half-o' : 'fa-star-o')"></i>
 										</span>
 									</div>
 									<span class="rating-text" id="ratingText">별점을 선택해주세요</span>
 								</div>
 								<input type="hidden" name="rating" id="ratingValue" required>
 							</div>
-
 							<!-- 리뷰 내용 -->
 							<div class="form-group">
 								<label class="form-label">
 									리뷰 내용<span class="required">*</span>
 								</label>
-								<textarea class="form-control" name="content" id="reviewContent" 
+								<textarea class="form-control" name="r_content" id="reviewContent" 
 									placeholder="상품에 대한 솔직한 리뷰를 작성해주세요." 
-									maxlength="1000" required></textarea>
+									maxlength="1000" required>${vo.r_content }</textarea>
 							</div>
-
 							<!-- 이미지 업로드 -->
 							<!-- <div class="form-group">
 								<label class="form-label">
@@ -90,7 +74,6 @@
 									</div>
 								</div>
 							</div> -->
-
 							<div class="review-footer" style="margin-bottom: 20px;">
 								<button type="button" class="btn-cancel" onclick="history.back()">
 									<i class="fa fa-times"></i> 취소
