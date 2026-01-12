@@ -81,7 +81,7 @@
 	</div>
 	<script src="/vuejs/axios.js"></script>
     <script src="/vuejs/place/attractionStore.js"></script>
-    <script src="/vuejs/place/review.js"></script>
+    <script src="/vuejs/review/place_review.js"></script>
     <script src="/vuejs/favorite/favoriteStore.js"></script>
     <script>
       const { createApp, onMounted, ref } = Vue
@@ -127,6 +127,6 @@
       attractionDetailApp.mount('#attraction_detail')
     </script>
     
-    <script src="/vuejs/mypage/r_create.js"></script>
+    <script src="/vuejs/review/r_create.js"></script>
 </body>
 </html>
