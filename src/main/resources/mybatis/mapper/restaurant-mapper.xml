@@ -82,21 +82,8 @@
 	
 	<select id="restaurantDetailData" resultType="com.sist.web.vo.PlaceVO">
 		SELECT p.pno, name, type, category, addr, phone, seat, parking, intro,
-			hours, TO_CHAR(created_at, 'yyyy-mm-dd') as dbday, hit, imgs, menu, l.l_count, thumbnail, f.f_count
+			hours, TO_CHAR(created_at, 'yyyy-mm-dd') as dbday, hit, imgs, menu, thumbnail
 		FROM place p
-		
-		LEFT JOIN (
-			SELECT pno, COUNT(*) as l_count
-			FROM userlike
-			GROUP BY pno
-		) l ON p.pno = l.pno
-		
-		LEFT JOIN (
-			SELECT pno, COUNT(*) as f_count
-			FROM favorite
-			GROUP BY pno
-		) f ON p.pno = f.pno
-		
 		WHERE p.pno = #{pno} AND category = '식당'
 	</select>
 </mapper>

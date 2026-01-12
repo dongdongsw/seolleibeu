@@ -83,7 +83,11 @@
 							    				</a>
 							    			</td>
 							    			<td style="border: none;">{{favoriteStore.favoriteCount}}</td>
-							    			<td style="border: none;"><a ><i :class="likeStore.likeCheck >= 1?'fa fa-thumbs-up':'fa fa-thumbs-o-up'" style=" font-size: 22px; color: black;"></i></a></td>
+							    			<td style="border: none;">
+							    				<a @click.prevent="likeStore.handleLikeClick(store.pvo.pno)">
+							    					<i :class="likeStore.likeCheck >= 1?'fa fa-thumbs-up':'fa fa-thumbs-o-up'" style=" font-size: 22px; color: black;"></i>
+						    					</a>
+					    					</td>
 							    			<td style="border: none;">{{likeStore.likeCount}}</td>
 							    			<td style="border: none;"><i class="fa fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>
 							    			<td style="border: none;">{{store.pvo.hit}}</td>

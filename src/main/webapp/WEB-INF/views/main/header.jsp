@@ -61,13 +61,13 @@
                					</sec:authorize>
                					<sec:authorize access="!isAuthenticated()">
 	               					<li>
-	                					<a href="/auth/register" style="position:absolute; left:5px; width:95px;
-	                						border: 1px solid #fff; border-radius: 12px; padding: 10px 20px; margin-top: 5px;">회원가입</a>
+	                					<a href="/auth/register" style="position:absolute; left:5px; 
+	                						border: 1px solid #fff; border-radius: 12px; width:96px; padding: 10px 20px; margin-top: 5px;">회원가입</a>
 	               					</li>
                					</sec:authorize>
                					<sec:authorize access="isAuthenticated()">
 	               					<li>
-	                					<a href="/auth/logout" style="border: 1px solid #fff; border-radius: 12px; padding: 10px 20px; margin-top: 5px;">로그아웃</a>
+	                					<a href="/auth/logout" style="border: 1px solid #fff; border-radius: 12px; padding: 10px 20px; margin-top: 5px; width:96px;">로그아웃</a>
 	               					</li>
                					</sec:authorize>
                 			</ul>

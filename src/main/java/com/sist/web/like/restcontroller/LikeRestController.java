@@ -3,9 +3,12 @@ package com.sist.web.like.restcontroller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -58,9 +61,47 @@ public class LikeRestController {
 	}
 	
 	@PostMapping("/like/push_vue/")
-	public ResponseEntity<Void> like_push_vue(@RequestParam("pno") int pno,
+	public ResponseEntity<Void> like_push_vue(@RequestBody UserLikeVO vo,
 			HttpSession session){
 		
+		try {
+			Integer uno = (Integer)session.getAttribute("uno");
+
+			if(uno == null) {
+				vo.setUno(0);
+				return new ResponseEntity<>(null,HttpStatus.UNAUTHORIZED);
+			}
+			else {
+				vo.setUno(uno);
+			}
+			vo.setPno(vo.getPno());
+			lService.userLikeInsert(vo);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return ResponseEntity.ok().build();
+	}
+	
+	@PostMapping("/like/delete_vue/")
+	public ResponseEntity<Void> like_delte_vue(@RequestBody UserLikeVO vo,
+			HttpSession session){
+		
+		try {
+			Integer uno = (Integer)session.getAttribute("uno");
+
+			if(uno == null) {
+				vo.setUno(0);
+				return new ResponseEntity<>(null,HttpStatus.UNAUTHORIZED);
+			}
+			else {
+				vo.setUno(uno);
+			}
+			vo.setPno(vo.getPno());
+			lService.userLikeDelete(vo);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 		
 		return ResponseEntity.ok().build();
 	}

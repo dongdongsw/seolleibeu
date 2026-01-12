@@ -186,7 +186,7 @@
 				onMounted(()=>{
 					store.restaurantDetailData(pno)
 					favoriteStore.favoriteDetailCheck(pno)
-					likeStore.likeCheck(pno)
+					likeStore.likeUserCheck(pno)
 				})
 				
 				return{

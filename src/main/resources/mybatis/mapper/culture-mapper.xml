@@ -35,15 +35,8 @@
   
   <select id="cultureDetailData" resultType="com.sist.web.vo.PlaceVO" parameterType="int">
     SELECT p.pno, p.thumbnail, p.type, p.name, p.imgs, p.company, p.runtime, p.phone, p.parking,
-    		 p.addr, p.rating, p.hours, p.hit, TO_CHAR(p.created_at, 'YYYY-MM-DD') AS createday,
-    		 NVL(f.f_count, 0) AS f_count, NVL(l.l_count, 0) AS l_count
+    		 p.addr, p.rating, p.hours, p.hit, TO_CHAR(p.created_at, 'YYYY-MM-DD') AS createday
     FROM place p
-    LEFT JOIN (SELECT pno, COUNT(*) AS f_count
-    			FROM favorite
-    			GROUP BY pno) f ON p.pno = f.pno
-    LEFT JOIN (SELECT pno, COUNT(*) AS l_count
-    			FROM userlike
-    			GROUP BY pno) l ON p.pno = l.pno
     WHERE p.type IN('연극/뮤지컬', '전시', '액티비티')
     AND p.pno = #{pno}
   </select>

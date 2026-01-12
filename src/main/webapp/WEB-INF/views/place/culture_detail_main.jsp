@@ -102,8 +102,11 @@
 		    				</a>
 		    			</td>
 						<td style="border: none;">{{favoriteStore.favoriteCount}}</td>
-						<td style="border: none;"><a><i class="fa fa-thumbs-o-up" style=" font-size: 22px; color: black;"></i></a></td>
-						<td style="border: none;">{{store.pvo.l_count}}</td>
+						<td style="border: none;">
+		    				<a @click.prevent="likeStore.handleLikeClick(store.pvo.pno)">
+		    					<i :class="likeStore.likeCheck >= 1?'fa fa-thumbs-up':'fa fa-thumbs-o-up'" style=" font-size: 22px; color: black;"></i>
+	    					</a>
+						<td style="border: none;">{{likeStore.likeCount}}</td>
 						<td style="border: none;"><i class="fa fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>
 						<td style="border: none;">{{store.pvo.hit}}</td>
 					</tr>
@@ -132,6 +135,7 @@
     <script src="/vuejs/place/cultureStore.js"></script>
     <script src="/vuejs/favorite/favoriteStore.js"></script>
     <script src="/vuejs/place/review.js"></script>
+	<script src="/vuejs/like/likeStore.js"></script>
     <script>
       const { createApp, onMounted } = Vue
       const { createPinia } = Pinia
@@ -148,11 +152,17 @@
     		  /* 즐겨찾기 */
     		  const favoriteStore = useFavoriteStore()
     		  
+    		  /* 좋아요 */
+    		  const likeStore = useLikeStore()
+    		  
     		  onMounted(()=> {
     			  store.cultureDetailData(pno)
     			  
     			  /* 즐겨찾기 */
     			  favoriteStore.favoriteDetailCheck(pno)
+    			  
+    			  /* 좋아요 */
+				  likeStore.likeUserCheck(pno)
     			  
     			  rstore.pno=pno
     			  rstore.curpage=1
@@ -164,7 +174,10 @@
     			  rstore,
     			  
     			  /* 즐겨찾기 */
-				  favoriteStore
+				  favoriteStore,
+				  
+				  /* 좋아요 */
+				  likeStore
     		  }
     	  }
       })
