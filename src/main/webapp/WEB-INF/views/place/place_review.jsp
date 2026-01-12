@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>리뷰</title>
-
 </head>
 <body>
 <div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px; margin-bottom: 50px;">
@@ -123,9 +122,11 @@
 														     :key="'e'+n"></i>
 														</span>
 									                    </h3>
+									                   <sec:authorize access="isAuthenticated()">
 									                    <div class="text-left" style="margin-right: auto;">
-                                                      		<a href="/mypage/my_review">수정 / 삭제</a>
+                                                      		<a href="/mypage/my_review" v-if="sessionId===id">수정 / 삭제</a>
                                                       	</div>
+                                                       </sec:authorize>
 									                    <div class="meta"> <span class="meta-date">{{vo.dbday}}</span> </div>
 									                </div>
 									                <div class="comment-content">

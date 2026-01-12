@@ -35,12 +35,7 @@ public class ReviewServiceImpl implements ReviewService{
 		// TODO Auto-generated method stub
 		rmapper.reviewInsert(vo);
 	}
-	// 리뷰 수정
-	@Override
-	public void reviewUpdate(ReviewVO vo) {
-		// TODO Auto-generated method stub
-		rmapper.reviewUpdate(vo);
-	}
+	
 	// 리뷰 삭제
 	@Override
 	public void reviewDelete(ReviewVO vo) {
@@ -59,17 +54,35 @@ public class ReviewServiceImpl implements ReviewService{
 		// TODO Auto-generated method stub
 		return rmapper.mypageReviewTotalPage(uno);
 	}
-
+	// 리뷰 모달창
 	@Override
 	public ReviewVO reviewModalData(int rno) {
 		// TODO Auto-generated method stub
 		return rmapper.reviewModalData(rno);
 	}
-
+	// 리뷰 평점
 	@Override
 	public Double scoreAvg(int pno) {
 		// TODO Auto-generated method stub
 		return rmapper.scoreAvg(pno);
 	}
-	
+	// 리뷰 내용
+	@Override
+	public ReviewVO reviewDetailData(int rno) {
+		// TODO Auto-generated method stub
+		return rmapper.reviewDetailData(rno);
+	}
+
+	@Override
+	public ReviewVO reviewUpdateData(int rno) {
+		// TODO Auto-generated method stub
+		return rmapper.reviewUpdateData(rno);
+	}
+
+	@Override
+	public int reviewUpdate(ReviewVO vo) {
+		// TODO Auto-generated method stub
+		return rmapper.reviewUpdate(vo);
+	}
+
 }

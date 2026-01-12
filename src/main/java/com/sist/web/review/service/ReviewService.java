@@ -5,6 +5,8 @@ import com.sist.web.vo.*;
 public interface ReviewService {
 	// 리뷰 리스트
 	public List<ReviewVO> reviewListData(Map map);
+	// 리뷰 내용
+	public ReviewVO reviewDetailData(int rno);
 	// 리뷰 촣 페이지
 	public int reviewTotalPage(int pno);
 	// 리뷰 모달창
@@ -16,7 +18,8 @@ public interface ReviewService {
 	// 작성
 	public void reviewInsert(ReviewVO vo);
 	// 리뷰 수정
-	public void reviewUpdate(ReviewVO vo);
+	public ReviewVO reviewUpdateData(int rno);
+	public int reviewUpdate(ReviewVO vo);
 	// 리뷰 삭제
 	public void reviewDelete(ReviewVO vo);
 	// 마이페이지 리뷰
