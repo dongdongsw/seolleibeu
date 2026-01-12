@@ -15,6 +15,9 @@
   table-layout: fixed;
   width: 100%;
 }
+a {
+	cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -37,45 +40,47 @@
 				        </div>
 				    </div>
 				</div>
-				<div style="height:630px;">
+				  <div class="row">
+				    <div style="margin-bottom: 20px;">
 					<div class="card-body" style="min-height:80%; ">
 						<div class="table-responsive">
 							<table class="table table-bordered" id="dataTable" width="100%"
 								cellspacing="0">
 								<thead>
 									<tr>
-										<th style="width: 5%">번호</th>
-										<th style="width: 30%">제목</th>
-										<th style="width: 43%">내용</th>
-										<th style="width: 10%">등록일</th>
-										<th style="width: 7%">상태</th>
-										<th style="width: 5%"></th>
+										<th style="width: 5%" class="text-center">번호</th>
+										<th style="width: 30%" class="text-center">제목</th>
+										<th style="width: 43%" class="text-center">내용</th>
+										<th style="width: 10%" class="text-center">등록일</th>
+										<th style="width: 5%" class="text-center">상태</th>
+										<th style="width: 7%" class="text-center"></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr v-for="(vo,index) in store.list" :key="index">
-										<td>{{vo.cno}}</td>
-										<td :title="vo.title">{{vo.title}}</td>
+										<td class="text-center">{{vo.cno}}</td>
+										<td :title="vo.title" class="text-center">{{vo.title}}</td>
 										<td class="content" :title="vo.content">{{vo.content}}</td>
-										<td>{{vo.created_at.split('T')[0]}}</td>
-										<td>{{vo.is_public == 'Y'?'공개':'비공개'}}</td>
+										<td class="text-center">{{vo.created_at.split('T')[0]}}</td>
+										<td class="text-center">{{vo.is_public == 'Y'?'공개':'비공개'}}</td>
 										<td class="text-center">																		
 											<button type="submit" class="btn btn-primary" style="font-size: 10px;" @click="store.courseStatusUpdate(vo.cno,vo.is_public)">상태변경</button>
 										</td>
 									</tr>
 								</tbody>
 							</table>
-							<div class="dataTables_wrapper" style="position: absolute; top: 90%; left: 40%;">
-								<div class="dataTables_paginate paging_simple_numbers">
-									<ul class="pagination justify-content-center">
-										<li class="page-item" v-if="store.startPage>1"><a class="page-link" @click="store.pageChange(store.startPage-1)">이전</a></li>
-										<li :class="i==store.curpage?'page-item active':'page-item'" v-for="i in store.range"><a class="page-link" @click="store.pageChange(i)">{{i}}</a></li>
-										<li class="page-item" v-if="store.endPage<store.totalpage"><a class="page-link" @click="store.pageChange(store.endPage+1)">다음</a></li>
-									</ul>
-								</div>
-							</div>
+					</div>
+				</div>
+				<div class="dataTables_wrapper" >
+						<div class="dataTables_paginate paging_simple_numbers">
+							<ul class="pagination justify-content-center">
+								<li class="page-item" v-if="store.startPage>1"><a class="page-link" @click="store.pageChange(store.startPage-1)">이전</a></li>
+								<li :class="i==store.curpage?'page-item active':'page-item'" v-for="i in store.range"><a class="page-link" @click="store.pageChange(i)">{{i}}</a></li>
+								<li class="page-item" v-if="store.endPage<store.totalpage"><a class="page-link" @click="store.pageChange(store.endPage+1)">다음</a></li>
+							</ul>
 						</div>
 					</div>
+				  </div>
 				</div>
 			</div>
 		</div>

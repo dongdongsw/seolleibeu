@@ -66,8 +66,4 @@ public class CourseController {
 		model.addAttribute("main_jsp", "../course/detail.jsp");
 		return "main/main";
 	}
-	
-	
-	
-	
 }

@@ -26,8 +26,10 @@ a {
 				<div class="col-lg-9 col-md-9 col-sm-12">
 					<main class="mypage-main">
 						<h2>나의 코스</h2>
-
-						<div class="info-card" style="margin: 0; padding: 0">
+						<div class="info-card text-center" style="margin: 0; padding: 0" v-if="store.list == ''">
+							<p style="margin-top: 250px;">등록된 코스가 없습니다.</p>
+						</div>
+						<div class="info-card" style="margin: 0; padding: 0" v-if="store.list !== ''">
 							<div v-for="(vo, index) in store.list" :key="index">
 								<div class="post-block my-course-item"  style="margin-top: 30px">
 									<!-- 왼쪽 이미지 -->

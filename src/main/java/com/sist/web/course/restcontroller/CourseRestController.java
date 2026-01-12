@@ -51,9 +51,12 @@ public class CourseRestController {
 	
 	// 코스 생성
 	@PostMapping("insert_vue/")
-	public ResponseEntity<Map> course_insert_vue(@RequestBody CourseVO vo) {
+	public ResponseEntity<Map> course_insert_vue(@RequestBody CourseVO vo, HttpSession session) {
 		Map map=new HashMap();
 		try {
+			int uno=(int)session.getAttribute("uno");
+			vo.setUno(uno);
+			
 			cService.courseInsert(vo);
 			map.put("msg", "yes");
 		} catch (Exception ex) {

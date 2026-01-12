@@ -89,7 +89,7 @@ const SESSION_ID=Number('${sessionScope.uno}')
 					 </tr>
 
 					</table>
-					<table class="table" v-if="rStore.sessionId">
+					<table class="table" v-if="rStore.sessionId" style="margin-bottom: 100px;">
 					 <tr>
 					   <td>
 					    <textarea rows="5" cols="70" class="comment-input" v-model="rStore.cr_content"></textarea>

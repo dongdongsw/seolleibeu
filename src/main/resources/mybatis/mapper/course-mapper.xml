@@ -32,7 +32,7 @@
  		INSERT INTO course
  		(cno, uno, pnos, title, content, created_at, is_public) 
  		VALUES
- 		(course_cno_seq.nextval, 1, #{pnos}, #{title}, #{content}, SYSDATE, #{is_public})
+ 		(course_cno_seq.nextval, #{uno}, #{pnos}, #{title}, #{content}, SYSDATE, #{is_public})
  	</insert>
  	
  	<!-- 코스 수정 -->
