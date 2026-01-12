@@ -127,10 +127,9 @@
 														<li>
 															<span class="label">예약옵션</span>
 															<span class="value"> 
-																<span v-if="store.rvvo.rv_date">{{store.rvvo.rv_date}}&nbsp;</span>
+																<span v-if="store.rvvo.opday">{{store.rvvo.opday}}&nbsp;</span>
 																<span v-if="store.rvvo.rv_time">{{store.rvvo.rv_time}}&nbsp;</span>
-																<span v-if="store.rvvo.rv_option1">{{store.rvvo.rv_option1}}&nbsp;</span>
-																<span v-if="store.rvvo.rv_option2">{{store.rvvo.rv_option2}}</span>
+																<span v-if="store.rvvo.rv_option">{{store.rvvo.rv_option}}</span>
 															</span> 
 														</li>
 														<li>
@@ -175,7 +174,7 @@
 									</div>
 								</div>
 								<div class="row text-right" style="margin-right: 1px; margin-bottom: 10px;">
-									<a href="" class="btn btn-default btn-sm">예약내역 삭제</a>&nbsp;
+									<a href="" class="btn btn-default btn-sm">예매내역 삭제</a>&nbsp;
 									<a href="../mypage/review_create" class="btn btn-default btn-sm">리뷰 작성</a>&nbsp;
 									<a href="javascript:history.back()" class="btn btn-default btn-sm">목록</a>
 								</div>

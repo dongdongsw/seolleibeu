@@ -28,10 +28,9 @@
 											<div class="mypage-reply">
 												<h4 class="reply-title">{{vo.pvo.name}}</h4>
 												<p style="margin-bottom: 10px;"><b>가격  </b>{{vo.form_price}} 원 &nbsp;<b>옵션정보  </b>
-													<span v-if="vo.rv_date">{{vo.rv_date}}</span>
-													<span v-if="vo.rv_time">{{vo.rv_time}}</span>
-													<span v-if="vo.rv_option1">{{vo.rv_option1}}</span>
-													{{vo.rv_option2}}
+													<span v-if="vo.opday">{{vo.opday}}&nbsp;</span>
+													<span v-if="vo.rv_time">{{vo.rv_time}}&nbsp;</span>
+													<span v-if="vo.rv_option">{{vo.rv_option}}</span>
 												</p>
 												<div class="course-meta">
 													예매 등록일시 : <span class="date">{{vo.createday}}</span>
