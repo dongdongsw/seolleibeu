@@ -28,4 +28,6 @@ public interface PlaceMapper {
 	public List<CourseVO> courseListData(Map map);
 	// 코스 총 페이지
 	public int courseTotalPage(Map map);
+	// 코스 상태 변경
+	public void courseStatusUpdate(CourseVO vo);
 }

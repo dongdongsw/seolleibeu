@@ -58,18 +58,9 @@
 										<td :title="vo.title">{{vo.title}}</td>
 										<td class="content" :title="vo.content">{{vo.content}}</td>
 										<td>{{vo.created_at.split('T')[0]}}</td>
-										<td>공개/비공개</td>
-										<td class="text-center">
-											<div class="dropdown">
-												<a href="#" data-toggle="dropdown"> <i
-													class="fas fa-ellipsis-h"></i>
-												</a>
-												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" href="#">공개</a>
-													<a class="dropdown-item text-danger" href="#">비공개</a>
-													
-												</div>
-											</div>
+										<td>{{vo.is_public == 'Y'?'공개':'비공개'}}</td>
+										<td class="text-center">																		
+											<button type="submit" class="btn btn-primary" style="font-size: 10px;" @click="store.courseStatusUpdate(vo.cno,vo.is_public)">상태변경</button>
 										</td>
 									</tr>
 								</tbody>

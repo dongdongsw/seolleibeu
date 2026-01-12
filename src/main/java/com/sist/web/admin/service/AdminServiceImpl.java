@@ -75,4 +75,10 @@ public class AdminServiceImpl implements AdminService{
 		// TODO Auto-generated method stub
 		return pmapper.courseTotalPage(map);
 	}
+	// 코스 상태 변경
+	@Override
+	public void courseStatusUpdate(CourseVO vo) {
+		// TODO Auto-generated method stub
+		pmapper.courseStatusUpdate(vo);
+	}
 }

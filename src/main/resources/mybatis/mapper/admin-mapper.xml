@@ -69,4 +69,12 @@
   </if>
   </where>
  </select>
+ 
+ <!-- 코스 상태 변경 -->
+ <update id="courseStatusUpdate" parameterType="hashmap">
+  UPDATE course
+  SET 
+  is_public = #{is_public}
+  WHERE cno = #{cno}
+ </update>
 </mapper>

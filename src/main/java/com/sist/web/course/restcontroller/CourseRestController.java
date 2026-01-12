@@ -172,7 +172,7 @@ public class CourseRestController {
 	
 	// 마이페이지 내 코스 목록
 	@GetMapping("mycourse_vue/")
-	public ResponseEntity<Map> course_delete_vue(@RequestParam("page") int page, HttpSession session) { 
+	public ResponseEntity<Map> mycourse_vue(@RequestParam("page") int page, HttpSession session) { 
 		
 		int uno=(int)session.getAttribute("uno");
 		
