@@ -174,7 +174,7 @@
 									</div>
 								</div>
 								<div class="row text-right" style="margin-right: 1px; margin-bottom: 10px;">
-									<a href="" class="btn btn-default btn-sm">예매내역 삭제</a>&nbsp;
+									<a class="btn btn-default btn-sm" @click="store.reserveExposureChange(store.rvvo.rvno)">예매내역 삭제</a>&nbsp;
 									<a href="../mypage/review_create" class="btn btn-default btn-sm">리뷰 작성</a>&nbsp;
 									<a href="javascript:history.back()" class="btn btn-default btn-sm">목록</a>
 								</div>

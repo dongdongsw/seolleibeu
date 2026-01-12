@@ -9,12 +9,13 @@
     <result property="pvo.company" column="company"/>
     <result property="pvo.addr" column="addr"/>
     <result property="pvo.phone" column="p_phone"/>
+    <result property="pvo.pno" column="pno"/>
     <result property="phone" column="rv_phone"/>
   </resultMap>
   
   <select id="myReservedListData" resultMap="reserveMap" parameterType="hashmap">
-    SELECT p.thumbnail, p.name, rv.rvno, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, rv.rv_time, 
-    		rv.rv_option, TO_CHAR(rv.rv_created_at, 'YYYY-MM-DD HH24:MI:SS') AS createday
+    SELECT p.pno, p.thumbnail, p.name, rv.rvno, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, rv.rv_time, 
+    		rv.rv_option, TO_CHAR(rv.rv_created_at, 'YYYY-MM-DD HH24:MI:SS') AS createday, rv.rv_exposure
     FROM reserve rv
     JOIN place p ON p.pno = rv.pno
     WHERE rv.uno = #{uno}
@@ -28,7 +29,7 @@
   </select>
   
   <select id="myReservedDetailData" resultMap="reserveMap" parameterType="int">
-    SELECT p.thumbnail, p.name, p.company, p.addr, p.phone AS p_phone, rv.rv_status, rv.rv_time, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, rv.rv_option, 
+    SELECT p.thumbnail, p.name, p.company, p.addr, p.phone AS p_phone, rv.rvno, rv.rv_status, rv.rv_time, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, rv.rv_option, 
     		rv.rv_price, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_amount, rv.nickname, rv.phone AS rv_phone, rv.email
     FROM reserve rv
     JOIN place p ON p.pno = rv.pno

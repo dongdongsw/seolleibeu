@@ -18,15 +18,17 @@
 							<div class="info-card" style="margin-top: 5px;">
 								<div v-if="store.rvList.length > 0">
 									<div v-for="(vo, index) in store.rvList" :key="index">
-										<div class="post-block my-course-item" style="margin-bottom: 5px;">
+										<div v-if="vo.rv_exposure === 'y'" class="post-block my-course-item" style="margin-bottom: 5px;">
 											<!-- 왼쪽 이미지 -->
 											<div class="course-thumb">
-												<img :src="vo.pvo.thumbnail" style="width: 80px; height: 100%;">
+												<a :href="'/place/culture/detail_before?pno='+vo.pvo.pno">
+													<img :src="vo.pvo.thumbnail" style="width: 80px; height: 100%;">
+												</a>
 											</div>
 	
 											<!-- 가운데 정보 -->
 											<div class="mypage-reply">
-												<h4 class="reply-title">{{vo.pvo.name}}</h4>
+												<a :href="'/place/culture/detail_before?pno='+vo.pvo.pno"><h4 class="reply-title">{{vo.pvo.name}}</h4></a>
 												<p style="margin-bottom: 10px;"><b>가격  </b>{{vo.form_price}} 원 &nbsp;<b>옵션정보  </b>
 													<span v-if="vo.opday">{{vo.opday}}&nbsp;</span>
 													<span v-if="vo.rv_time">{{vo.rv_time}}&nbsp;</span>
@@ -41,7 +43,7 @@
 											<div class="course-actions">
 												<a :href="'/reserve/reserve_detail?rvno='+vo.rvno" class="btn btn-xs">예약 상세내역</a>
 											</div>
-										</div><hr style="margin: 15px;">
+										</div><hr style="margin: 15px;" v-if="vo.rv_exposure === 'y'">
 									</div>
 									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="st-pagination">
