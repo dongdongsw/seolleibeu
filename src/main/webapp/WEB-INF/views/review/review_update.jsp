@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/style.css" rel="stylesheet">
-<link href="/css/review/review_update.css" rel="stylesheet">
+<link href="/css/review/review.css" rel="stylesheet">
 </head>
 
 <body>
@@ -110,6 +110,7 @@
 <script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/vuejs/axios.js"></script>
-<script src="/vuejs/mypage/r_create.js"></script>
+<script src="/vuejs/review/place_review.js"></script>
+<script src="/vuejs/review/r_create.js"></script>
 </body>
 </html>

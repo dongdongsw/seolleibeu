@@ -10,180 +10,9 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/style.css" rel="stylesheet">
-<style>
-	.review-write-header {
-		border-bottom: 2px solid #333;
-		padding-bottom: 20px;
-		margin-bottom: 30px;
-	}
-	.review-write-title {
-		font-size: 24px;
-		font-weight: bold;
-		color: #333;
-	}
-	.form-group {
-		margin-bottom: 25px;
-	}
-	.form-label {
-		font-weight: bold;
-		font-size: 16px;
-		margin-bottom: 10px;
-		display: block;
-		color: #333;
-	}
-	.form-label .required {
-		color: #dc3545;
-		margin-left: 5px;
-	}
-	.form-control {
-		width: 100%;
-		padding: 12px;
-		border: 1px solid #ddd;
-		border-radius: 4px;
-		font-size: 15px;
-		color: black;
-	}
-	.form-control:focus {
-		border-color: #007bff;
-		outline: none;
-		box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
-	}
-	textarea.form-control {
-		min-height: 300px;
-		resize: vertical;
-	}
-	
-	/* 별점 스타일 */
-	.rating-area {
-		display: flex;
-		align-items: center;
-		gap: 15px;
-		padding: 20px;
-		background-color: #f9f9f9;
-		border-radius: 4px;
-		border: 1px solid #ddd;
-	}
-	.star-rating {
-		display: flex;
-		gap: 5px;
-		font-size: 32px;
-	}
-	.star-wrapper {
-		position: relative;
-		display: inline-block;
-		cursor: pointer;
-	}
-	.star-wrapper i {
-		color: #ddd;
-		transition: color 0.2s;
-	}
-	.star-wrapper i.filled {
-		color: #ffc107;
-	}
-	.rating-text {
-		font-size: 18px;
-		font-weight: bold;
-		color: #333;
-		min-width: 120px;
-	}
-	
-	.image-upload-area {
-		border: 2px dashed #ddd;
-		border-radius: 4px;
-		padding: 40px;
-		text-align: center;
-		background-color: #f9f9f9;
-		cursor: pointer;
-		transition: all 0.3s;
-	}
-	.image-upload-area:hover {
-		border-color: #007bff;
-		background-color: #f0f8ff;
-	}
-	.image-upload-area i {
-		font-size: 48px;
-		color: #999;
-		margin-bottom: 15px;
-	}
-	.image-upload-text {
-		color: #666;
-		font-size: 14px;
-	}
-	.image-preview {
-		display: none;
-		margin-top: 20px;
-	}
-	.image-preview img {
-		max-width: 100%;
-		max-height: 400px;
-		border-radius: 4px;
-		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-	}
-	.image-preview-controls {
-		margin-top: 10px;
-	}
-	.btn-remove-image {
-		background-color: #dc3545;
-		color: white;
-		border: none;
-		padding: 8px 20px;
-		border-radius: 4px;
-		cursor: pointer;
-	}
-	.btn-remove-image:hover {
-		background-color: #c82333;
-	}
-	.review-footer {
-		border-top: 1px solid #ddd;
-		padding-top: 20px;
-		margin-top: 40px;
-		text-align: right;
-	}
-	.btn-submit {
-		background-color: #007bff;
-		color: white;
-		border: none;
-		padding: 12px 40px;
-		font-size: 16px;
-		border-radius: 4px;
-		cursor: pointer;
-		margin-left: 10px;
-	}
-	.btn-submit:hover {
-		background-color: #0056b3;
-	}
-	.btn-cancel {
-		background-color: #6c757d;
-		color: white;
-		border: none;
-		padding: 12px 40px;
-		font-size: 16px;
-		border-radius: 4px;
-		cursor: pointer;
-	}
-	.btn-cancel:hover {
-		background-color: #5a6268;
-	}
-	.back {
-		background-color: #ffffff;
-		padding: 40px;
-		border-radius: 8px;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-	}
-	body {
-		background-color: #f8f6f2;
-	}
-	.char-count {
-		text-align: right;
-		color: #999;
-		font-size: 13px;
-		margin-top: 5px;
-	}
-</style>
+<link href="/css/review/review.css" rel="stylesheet">
 </head>
-
 <body>
-
 	<div class="content auth-wrapper" style="margin-top: 30px;">
 		<div class="container back">
 			<div class="row">
@@ -235,7 +64,7 @@
 							</div>
 
 							<!-- 이미지 업로드 -->
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label class="form-label">
 									리뷰 이미지 <span style="color: #999; font-weight: normal;">(선택사항)</span>
 								</label>
@@ -258,7 +87,7 @@
 										</button>
 									</div>
 								</div>
-							</div>
+							</div> -->
 
 							<div class="review-footer" style="margin-bottom: 20px;">
 								<button type="button" class="btn-cancel" onclick="history.back()">
@@ -279,6 +108,6 @@
 <script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/vuejs/axios.js"></script>
-<script src="/vuejs/mypage/r_create.js"></script>
+<script src="/vuejs/review/r_create.js"></script>
 </body>
 </html>

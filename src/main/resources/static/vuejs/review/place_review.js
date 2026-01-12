@@ -82,8 +82,6 @@ const useReviewStore=defineStore('review_list',{
 				r_content:this.r_content,
 				r_score:this.r_score
 			})
-			this.r_content=''
-			this.r_score=0
 			location.href='/mypage/my_review'
 		},
 		async reviewDelete(rno){
