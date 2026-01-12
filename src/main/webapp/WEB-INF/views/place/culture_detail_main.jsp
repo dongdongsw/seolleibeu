@@ -134,8 +134,8 @@
 	<script src="/vuejs/axios.js"></script>
     <script src="/vuejs/place/cultureStore.js"></script>
     <script src="/vuejs/favorite/favoriteStore.js"></script>
-    <script src="/vuejs/place/review.js"></script>
 	<script src="/vuejs/like/likeStore.js"></script>
+    <script src="/vuejs/review/place_review.js"></script>
     <script>
       const { createApp, onMounted } = Vue
       const { createPinia } = Pinia
@@ -185,6 +185,6 @@
       cultureDetailApp.mount('#culture_detail')
     </script>
     
-    <script src="/vuejs/mypage/r_create.js"></script>
+    <script src="/vuejs/review/r_create.js"></script>
 </body>
 </html>
