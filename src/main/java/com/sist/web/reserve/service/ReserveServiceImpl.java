@@ -37,4 +37,10 @@ public class ReserveServiceImpl implements ReserveService {
 		// TODO Auto-generated method stub
 		mapper.myReservedChangeExposure(rvno);
 	}
+
+//	@Override
+//	public ReserveVO reserveResultPage(int rvno) {
+//		// TODO Auto-generated method stub
+//		return mapper.reserveResultPage(rvno);
+//	}
 }

@@ -10,6 +10,7 @@
     <result property="pvo.addr" column="addr"/>
     <result property="pvo.phone" column="p_phone"/>
     <result property="pvo.pno" column="pno"/>
+    <result property="pvo.type" column="type"/>
     <result property="phone" column="rv_phone"/>
   </resultMap>
   
@@ -41,4 +42,12 @@
     rv_exposure = 'n'
     WHERE rvno = #{rvno}
   </update>
+  
+<!--   <select id="reserveResultPage" resultMap="reserveMap" parameterMap="int">
+    SELECT p.thumbnail, p.type, p.name, rv.rvno, rv.rv_status, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, 
+    		rv.rv_option, rv.rv_price, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_amount
+    FROM reserve rv
+    JOIN place p ON p.pno = rv.pno
+    WHERE rv.rvno = #{rvno}
+  </select> -->
 </mapper>

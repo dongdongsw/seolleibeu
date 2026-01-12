@@ -11,9 +11,89 @@
 <link rel="stylesheet" href="/css/review/review.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+.page-header {
+	margin: 0px auto;
+}
+
+.main-container {
+	padding-top: 100px;
+}
+
+.attraction-detail-block {
+	margin-bottom: 40px;
+}
+
+.attraction-thumbnail {
+	float: left;
+	margin: 0px 30px 0px 0px;
+	width: 300px;
+	height: 280px;
+}
+
+.attraction-info ul {
+	list-style: none;
+	padding: 0;
+}
+
+.attraction-info li {
+	font-size: 16px;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.attraction-info .label {
+	display: inline-block;
+	width: 60px;
+	padding: 4px 0px;
+	font-weight: bold;
+	color: black;
+	flex-shrink: 0;
+}
+
+.attraction-info .value {
+	margin-left: 12px;
+	font-size: 14px;
+	flex: 1;
+	word-break: keep-all;
+}
+
+.stats-section {
+	position: absolute;
+	left: 66%;
+}
+
+.stats-table {
+	border: none;
+}
+
+.stats-table td {
+	border: none !important;
+}
+
+.stats-table tbody tr {
+	border: none !important;
+}
+
+.stats-icon {
+	padding-top: 1px;
+	font-size: 22px;
+	color: black;
+}
+
+.btn-list {
+	background-color: black;
+	color: white;
+}
+
+.text-right {
+	margin-top: 5px;
+}
+</style>
 </head>
 <body>
-	<div class="page-header" style="margin: 0px auto;">
+	<div class="page-header">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -25,49 +105,70 @@
 			</div>
 		</div>
 	</div>
-	<div class="container" style="padding-top: 100px;" id="attraction_detail">
+	<div class="container main-container" id="attraction_detail">
 		<div class="row">
-			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-				<div class="mb40">
-					<img :src="store.pvo.thumbnail" class="thumbnail" style="float: left; margin: 0px 30px 0px 0px; width: 300px; height: 280px;">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="attraction-detail-block">
+					<img :src="store.pvo.thumbnail" class="thumbnail attraction-thumbnail">
 					<span class="meta-author">{{store.pvo.type}} / 관광명소 </span> 
 					<h2 style="font-weight: bold;">{{store.pvo.name}}</h2>
-					<ul style="list-style: none;">
-						<li><b>주소</b><span style="font-size: 14px; margin-left: 10px;">{{store.pvo.addr ? store.pvo.addr : '-'}}</span></li>
-						<li><b>교통정보</b><span style="font-size: 14px; margin-left: 10px;">{{store.pvo.parking ? store.pvo.parking : '-'}}</span></li>
-						<li><b>운영시간</b><span style="font-size: 14px; margin-left: 10px;">{{store.pvo.hours ? store.pvo.hours : '-'}}</span></li>
-						<li><b>가격정보</b><span style="font-size: 14px; margin-left: 10px;">{{store.pvo.ticket ? store.pvo.ticket : '-'}}</span></li>
-						<li><b>문의전화</b><span style="font-size: 14px; margin-left: 10px;">{{store.pvo.phone ? store.pvo.phone : '-'}}</span></li>
-						<li><b>장소 등록일</b><span style="font-size: 14px; margin-left: 10px;">{{store.pvo.createday ? store.pvo.createday : '-'}}</span></li>
-					</ul>
+					<div class="attraction-info">
+						<ul>
+							<li>
+								<span class="label">주소</span>
+								<span class="value">{{store.pvo.addr ? store.pvo.addr : '-'}}</span>
+							</li>
+							<li>
+								<span class="label">교통정보</span>
+								<span class="value">{{store.pvo.parking ? store.pvo.parking : '-'}}</span>
+							</li>
+							<li>
+								<span class="label">운영시간</span>
+								<span class="value">{{store.pvo.hours ? store.pvo.hours : '-'}}</span>
+							</li>
+							<li>
+								<span class="label">가격정보</span>
+								<span class="value">{{store.pvo.ticket ? store.pvo.ticket : '-'}}</span>
+							</li>
+							<li>
+								<span class="label">문의전화</span>
+								<span class="value">{{store.pvo.phone ? store.pvo.phone : '-'}}</span>
+							</li>
+							<li>
+								<span class="label">장소 등록일</span>
+								<span class="value">{{store.pvo.createday ? store.pvo.createday : '-'}}</span>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div style="position: absolute; left: 66%;">
-			<table class="table">
+		<div class="stats-section">
+			<table class="table stats-table">
 				<tbody>
 					<tr>
-						<td style="border: none;">
+						<td>
 		    				<a @click.prevent="favoriteStore.handleFavoriteClick(store.pvo.pno)">
-		    					<i :class="favoriteStore.checkFavorite >= 1?'fa fa-star':'fa fa-star-o'" style="padding-top:1px; font-size: 22px; color: black;"></i>
+		    					<i :class="favoriteStore.checkFavorite >= 1?'fa fa-star':'fa fa-star-o'" class="stats-icon"></i>
 		    				</a>
 		    			</td>
-						<td style="border: none;">{{favoriteStore.favoriteCount}}</td>
-						<td style="border: none;">
+						<td>{{favoriteStore.favoriteCount}}</td>
+						<td>
 		    				<a @click.prevent="likeStore.handleLikeClick(store.pvo.pno)">
-		    					<i :class="likeStore.likeCheck >= 1?'fa fa-thumbs-up':'fa fa-thumbs-o-up'" style=" font-size: 22px; color: black;"></i>
+		    					<i :class="likeStore.likeCheck >= 1?'fa fa-thumbs-up':'fa fa-thumbs-o-up'" class="stats-icon"></i>
 	    					</a>
     					</td>
-						<td style="border: none;">{{likeStore.likeCount}}</td>
-						<td style="border: none;"><i class="fa fa-eye" style="padding-top:1px; font-size: 22px; color: black;"></i></td>
-						<td style="border: none;">{{store.pvo.hit}}</td>
+						<td>{{likeStore.likeCount}}</td>
+						<td><i class="fa fa-eye stats-icon"></i></td>
+						<td>{{store.pvo.hit}}</td>
 					</tr>
 				</tbody>	    	
 			</table>
 		</div>
-		<div class="text-right" style="margin-top: 5px;">
-			<button class="btn btn-sm" style="background-color: black; color: white;" onclick="javasciprt:history.back()">목록</button>
-		</div><hr>
+		<div class="text-right">
+			<button class="btn btn-sm btn-list" onclick="javascript:history.back()">목록</button>
+		</div>
+		<hr>
 		<div class="container">
 			<ul class="nav nav-tabs">
 				<li class="active"><a data-toggle="tab" href="#menu1">상세보기</a></li>

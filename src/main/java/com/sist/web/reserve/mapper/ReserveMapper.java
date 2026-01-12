@@ -14,4 +14,5 @@ public interface ReserveMapper {
 	public int myReservedTotalPage(int uno);
 	public ReserveVO myReservedDetailData(int rvno);
 	public void myReservedChangeExposure(int rvno);
+//	public ReserveVO reserveResultPage(int rvno);
 }

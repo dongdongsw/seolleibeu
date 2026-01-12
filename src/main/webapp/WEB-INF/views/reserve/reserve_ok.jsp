@@ -26,7 +26,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="testimonial-block bg-light pinside30 mb30" style="padding: 10px;">
+							<div class="testimonial-block bg-light pinside30 mb30" style="padding: 10px;" id="reserved_result">
 								<div class="post-block" style="margin-top: 20px; margin-left: 15px;">
 									<div>
 										<img class="post-block-img" src="/images/left-image.jpg">
@@ -53,7 +53,31 @@
             </div>
         </div>
     </div>
+    <script src="/vuejs/axios.js"></script>
+    <script src="/vuejs/reserve/reserveStore.js"></script>
     <script>
+    	const { createApp, onMounted } = Vue
+    	const { createPinia } = Pinia
+    	
+    	const reserveResultApp = createApp({
+    		setup() {
+    			const store = useReserveStore()
+    			const params = new URLSearchParams(location.search)
+    			const rvno = params.get('rvno')
+    			
+    			onMounted(()=> {
+    				store.reserveResult(rvno)
+    			})
+    			
+    			return {
+    				store
+    			}
+    		}
+    	})
+    	reserveResultApp.use(createPinia())
+    	reserveResultApp.mount('#reserved_result')
+    
+    <%-- 
       // ------  SDK 초기화 ------
       // @docs https://docs.tosspayments.com/sdk/v2/js#토스페이먼츠-초기화
       const clientKey = "test_ck_nRQoOaPz8L5MqlJGaZ9P3y47BMw6";
@@ -91,6 +115,7 @@
           },
         });
       }
+      --%>
     </script>
 </body>
 </html>

@@ -9,6 +9,9 @@ const useReserveStore = defineStore('reserve', {
 		endPage: 0,
 		rvvo: {
 			pvo: {}
+		},
+		rsvo: {
+			pvo: {}
 		}
 	}),
 	getters: {
@@ -40,7 +43,6 @@ const useReserveStore = defineStore('reserve', {
 		},
 		async reserveDetailData(rvno) {
 			const res = await api.get(`/reserve/detail_vue/?rvno=${rvno}`)
-			console.log(res.data)
 			this.rvvo = res.data
 		},
 		async reserveExposureChange(rvno) {

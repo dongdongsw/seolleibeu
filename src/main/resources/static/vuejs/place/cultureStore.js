@@ -56,9 +56,7 @@ const useCultureStore = defineStore('culture', {
 			this.cultureListData()
 		},
 		async cultureDetailData(pno) {
-			console.log('pno:', pno)
 			const res = await api.get(`/place/culture/detail_vue/?pno=${pno}`)
-			console.log('res:', res.data)
 			this.pvo = res.data
 		}
 	}
