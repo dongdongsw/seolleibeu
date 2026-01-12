@@ -138,6 +138,7 @@
 .auth-cancel-btn {
     margin-left: 10px;
     background: #e0e0e0;
+    margin-top: 10px;
 }
 
 .btn.btn-default.auth-dark-btn {

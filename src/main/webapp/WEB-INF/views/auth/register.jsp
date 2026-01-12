@@ -7,7 +7,7 @@
 <title>회원가입</title>
 </head>
 <body>
-	<div class="content auth-wrapper">
+	<div class="content auth-wrapper" id="">
 	    <div class="container" style="display: flex; align-items: center; justify-content: center; ">
 	        <div class="row" style="width: 50%; height: 70vh;">
 	            <div class="col-lg-12 col-md-12" style="height: 120vh;">
@@ -25,7 +25,7 @@
 	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="아이디" name="id" v-model="id">
 	                            </div>
 	                            <div class="col-md-4">
-	                                <button class="btn btn-default auth-sub-btn auth-dark-btn">중복 검사</button>
+	                                <button class="btn btn-default auth-cancel-btn auth-dark-btn">중복 검사</button>
 	                            </div>
 	                        </div>
 	
@@ -42,7 +42,7 @@
 	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="닉네임" name="name" v-model="name">
 	                            </div>
 	                            <div class="col-md-4">
-	                                <button class="btn btn-default auth-sub-btn auth-dark-btn">중복 검사</button>
+	                                <button class="btn btn-default auth-cancel-btn auth-dark-btn">중복 검사</button>
 	                            </div>
 	                        </div>
 	
@@ -55,7 +55,7 @@
 	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="인증번호 입력">
 	                            </div>
 	                            <div class="col-md-4">
-	                                <button class="btn btn-default auth-sub-btn auth-dark-btn" style="padding:14px 3px;">인증번호 전송</button>
+	                                <button class="btn btn-default auth-cancel-btn auth-dark-btn" style="padding:14px 17px;">인증번호 전송</button>
 	                            </div>
 	                        </div>
 	
@@ -112,26 +112,24 @@
 	<jsp:include page="terms_1.jsp"></jsp:include>
 	<jsp:include page="terms_2.jsp"></jsp:include>
 	<jsp:include page="terms_3.jsp"></jsp:include>
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/auth/register.js"></script>
 	
 	<script>
-		let registerApp = Vue.createApp({
-			data(){
-				return{
-					id:'', 
-					pwd:'', 
-					name:'', 
-					phone:'', 
-					email:'',
-					required_agree:'N', 
-					optional_agree:'N'
-				}
-			},
-			methods:{
-				idCheck(){
+		const {createApp, onMounted} = Vue
+		const {createPinia} = Pinia
+		
+		const registerApp = createApp({
+			setup(){
+				const registerStore = useRegisterStore()
+				
+				onMounted(()=>{
 					
-				}
+				})
 			}
 		})
+		registerApp.use(createPinia())
+		registerApp.mount("#register")
 	</script>
 </body>
 </html>

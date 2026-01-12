@@ -24,6 +24,12 @@ public class LoginServiceImpl implements LoginService{
 		// TODO Auto-generated method stub
 		return mapper.loginInfoData(id);
 	}
+
+	@Override
+	public int registerUserNameCheck(String name) {
+		// TODO Auto-generated method stub
+		return mapper.registerUserNameCheck(name);
+	}
 	
 	
 }

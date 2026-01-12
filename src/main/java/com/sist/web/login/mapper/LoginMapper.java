@@ -15,13 +15,20 @@ public interface LoginMapper {
 			+ "VALUES(users_uno_seq.NEXTVAL, #{id}, #{pwd}, #{name,}, #{phone}, #{email}, 'USER', 'ACTIVE', #{required_agree}, #{optional_agree})")
 	public void registerInsert(UsersVO vo);
 
+	// 비밀번호 회원가입하면서 검사 하는 부분
+	
+	// 닉네임 중복 체크
+	@Select("SELECT COUNT(*) "
+			+ "FROM users "
+			+ "WHERE name = #{name}")
+	public int registerUserNameCheck(String name);
 	
 	@Select("SELECT uno, id, pwd, name, phone, email "
 			+ "FROM users "
 			+ "WHERE id = #{id}")
 	public UsersVO loginInfoData(String id);
 	
-	// 중복 체크
+	// 아이디 중복 체크
 	@Select("SELECT COUNT(*) "
 			+ "FROM users "
 			+ "WHERE id = #{id}")

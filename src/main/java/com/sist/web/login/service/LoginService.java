@@ -7,4 +7,5 @@ public interface LoginService {
 	
 	public UsersVO loginInfoData(String id);
 	
+	public int registerUserNameCheck(String name);
 }
