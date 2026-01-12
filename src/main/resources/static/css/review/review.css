@@ -41,7 +41,7 @@
 		min-height: 300px;
 		resize: vertical;
 	}
-	
+
 	/* 별점 스타일 */
 	.rating-area {
 		display: flex;
@@ -75,7 +75,7 @@
 		color: #333;
 		min-width: 120px;
 	}
-	
+
 	.image-upload-area {
 		border: 2px dashed #ddd;
 		border-radius: 4px;
@@ -159,12 +159,107 @@
 		border-radius: 8px;
 		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 	}
-	body {
-		background-color: #f8f6f2;
-	}
 	.char-count {
 		text-align: right;
 		color: #999;
 		font-size: 13px;
 		margin-top: 5px;
 	}
+
+/* ============= 리뷰 작성 부분만 추가 ============= */
+
+/* 리뷰 작성 박스 */
+.review-write-box {
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 25px;
+	margin-bottom: 30px;
+}
+
+/* compact 별점 영역 */
+.compact-rating-area {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	padding: 15px;
+	background-color: #fff;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+}
+
+.compact-star-rating {
+	display: flex;
+	gap: 5px;
+	font-size: 28px;
+}
+
+.compact-star-rating .star-wrapper {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	transition: transform 0.2s;
+}
+
+.compact-star-rating .star-wrapper:hover {
+	transform: scale(1.1);
+}
+
+.compact-star-rating .star-wrapper i.fa-star {
+	color: #ffc107;
+}
+
+.compact-star-rating .star-wrapper i.fa-star-half-o {
+	color: #ffc107;
+}
+
+.compact-rating-text {
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+	min-width: 120px;
+}
+
+/* 리뷰 내용 입력 */
+.compact-textarea {
+	width: 100%;
+	min-height: 150px;
+	padding: 15px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 15px;
+	color: #333;
+	resize: vertical;
+	margin-bottom: 10px;
+}
+
+.compact-textarea:focus {
+	border-color: #007bff;
+	outline: none;
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.compact-textarea::placeholder {
+	color: #999;
+}
+
+/* 등록 버튼 */
+.btn-submit-review {
+	background-color: #007bff;
+	color: white;
+	border: none;
+	padding: 10px 30px;
+	font-size: 15px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.btn-submit-review:hover {
+	background-color: #0056b3;
+}
+
+.btn-submit-review i {
+	margin-right: 5px;
+}
