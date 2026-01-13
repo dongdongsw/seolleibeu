@@ -54,9 +54,13 @@ const useReviewStore=defineStore('myreview_list',{
 			})
 		},
 		async reviewDelete(rno){
-			this.rno=rno
 			const ok = confirm('정말로 리뷰를 삭제하시겠습니까?')
-	      	if (!ok) return
+	      	if (!ok) 
+			{
+				alert("리뷰 삭제에 실패하였습니다")
+				return
+			}
+				
 			const res=await api.delete('/review_delete_vue/',{
 				params:{
 					rno
@@ -64,10 +68,6 @@ const useReviewStore=defineStore('myreview_list',{
 			})
 			if(res.data.msg==='yes')
 				this.myreviewListData()
-			else
-			{
-				alert("리뷰 삭제에 실패하였습니다")
-			}
 		},
 		pageChange(page){
 			this.curpage=page

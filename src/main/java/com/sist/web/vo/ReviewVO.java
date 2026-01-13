@@ -11,5 +11,5 @@ public class ReviewVO {
 	// 사용자
 	private String profile_img,name;
 	// 장소
-	private String pname,thumbnail;
+	private String pname,thumbnail,category,type;
 }
