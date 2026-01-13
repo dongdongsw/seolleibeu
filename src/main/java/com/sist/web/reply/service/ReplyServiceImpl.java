@@ -32,5 +32,13 @@ public class ReplyServiceImpl implements ReplyService{
 	public void replyDelete(int id) {
 		rMapper.replyDelete(id);
 	}
+	@Override
+	public List<ReplyVO> replyMypage(int uno, int start) {
+		return rMapper.replyMypage(uno, start);
+	}
+	@Override
+	public int replyTotalpage(int uno) {
+		return rMapper.replyTotalpage(uno);
+	}
 
 }

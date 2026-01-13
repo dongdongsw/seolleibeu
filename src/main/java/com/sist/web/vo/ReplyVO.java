@@ -15,4 +15,7 @@ public class ReplyVO {
 	private Date cr_update_at;
 	
 	private String name;
+	
+	private String title;
+	private String thumbnail;
 }

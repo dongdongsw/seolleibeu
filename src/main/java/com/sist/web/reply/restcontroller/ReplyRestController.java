@@ -3,6 +3,7 @@ package com.sist.web.reply.restcontroller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.sist.web.commons.Methods;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sist.web.commons.Methods;
 import com.sist.web.reply.service.ReplyService;
 import com.sist.web.vo.ReplyVO;
 
@@ -95,6 +97,29 @@ public class ReplyRestController {
 			List<ReplyVO> list=rService.replyListData(cno);
 			map.put("rList", list);
 			map.put("cno", cno);
+		}catch(Exception ex)
+		{
+			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map,HttpStatus.OK);
+	}
+	
+	@GetMapping("/mypage/my_reply_vue/")
+	public ResponseEntity<Map> my_reply_vue(@RequestParam("page") int page,HttpSession session)
+	{
+		Map map=new HashMap();
+		try
+		{
+			Integer uno = (Integer)session.getAttribute("uno");
+			
+			List<ReplyVO> list=rService.replyMypage(uno,(page-1)*3);
+			int totalpage=rService.replyTotalpage(uno);
+			
+			Map pageMap=Methods.paginationMap(5, page, totalpage);
+		   	   
+			map.putAll(pageMap);
+			   
+			map.put("list", list);
 		}catch(Exception ex)
 		{
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);

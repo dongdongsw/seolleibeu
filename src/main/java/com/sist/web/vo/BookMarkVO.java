@@ -12,4 +12,6 @@ public class BookMarkVO {
 	
 	private String title;
 	private int hit;
+	private String thumbnail;
+	private int replyCount;
 }

@@ -29,7 +29,7 @@
 								<div class="post-block my-course-item" style="margin-bottom:0">
 									<!-- 왼쪽 이미지 -->
 									<div class="course-thumb">
-										<img :src="vo.thumbnail" alt="thumbnail">
+										<img :src="vo.thumbnail" style="width:80px; height: 80px">
 									</div>
 
 									<!-- 가운데 정보 -->
@@ -43,22 +43,24 @@
 
 									<!-- 오른쪽 버튼 -->
 									<div class="course-actions">
-									 <a href="#" class="btn btn-xs">삭제</a>
+									 <a href="#" class="btn btn-xs" @click.prevent="store.bookmarkDelete(vo.cno)">삭제</a>
 									</div>
 								</div>
 								<hr>
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<div class="st-pagination">
-									<ul class="pagination">
-
-									</ul>
-								</div>
-							</div>
 						</div>
 
 					</main>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="st-pagination">
+							<ul class="pagination">
+                               <li v-if="store.startPage>1"><a class="nav-link" @click="store.movePage(store.startPage-1)">&laquo;</a></li>
+						       <li v-for="i in store.range" :class="i===store.curpage?'active':''"><a class="nav-link" @click="store.movePage(i)">{{i}}</a></li>
+						       <li v-if="store.endPage<store.totalpage"><a class="nav-link" @click="store.movePage(store.endPage+1)">&raquo;</a></li>
+                            </ul>
+						</div>
+					</div>
 				</div>
-
+							
 				<div class="col-lg-3 col-md-3 col-sm-12" style="margin-top: 80px;">
 					<div class="sidenav">
 						<ul class="listnone">
@@ -80,7 +82,7 @@
 		</div>
 	</div>
 	<script src="/vuejs/axios.js"></script>
-	<script src="/vuejs/mypage/mypage.js"></script>
+	<script src="/vuejs/mypage/bookmark.js"></script>
     <script type="text/javascript">
      const {createApp,onMounted} = Vue
      const {createPinia} = Pinia

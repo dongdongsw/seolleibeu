@@ -16,4 +16,9 @@ public interface ReplyService {
 		
 		// 댓글 삭제
 		public void replyDelete(int id);
+		
+		// 댓글 마이페이지
+		public List<ReplyVO> replyMypage(int uno, int start);
+		
+		public int replyTotalpage(int uno);
 }
