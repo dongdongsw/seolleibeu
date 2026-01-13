@@ -55,7 +55,7 @@ public class PlaceController {
 		
 		model.addAttribute("main_jsp","../place/restaurant_detail_main.jsp");
 		model.addAttribute("detailPage", "../place/restaurant_detail.jsp");
-		model.addAttribute("fixedPage", "../place/restaurant_detail_header.jsp");
+		model.addAttribute("reviewPage", "../place/place_review.jsp");
 		return "main/main";
 	}
 	/*
