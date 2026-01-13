@@ -6,6 +6,7 @@ const useRegisterStore = defineStore('register',{
 		name:'', // 닉네임
 		id:'', // 아이디
 		pwd:'', // 비밀번호
+		pwd1:'', // 비밀번호 재입력
 		email: '', //이메일
 		phone:'', // 전화번호 합친 것
 		phone1:'', // 010
@@ -16,9 +17,11 @@ const useRegisterStore = defineStore('register',{
 		option1:'N', // 만 14세 이상입니다.(필수)
 		option2:'N', // 개인정보 수집 및 이용동의(필수)
 		option3:'N',  // 개인정보 제3자 제공 동의(필수)
-		nickNameCheckCount:0, // 닉네임 중복 검사
-		idCheckCount:0, // 아이디 중복 검사
-		emailCheckCount:0 // 이메일 중복 검사
+		nickNameCheckCount:2, // 닉네임 중복 검사
+		idCheckCount:2, // 아이디 중복 검사
+		emailCheckCount:2, // 이메일 중복 검사
+		emailCodeCheckCount:2,
+		emailCodeSuccess:2
 	}),
 	actions:{
 		async register(){
@@ -31,6 +34,7 @@ const useRegisterStore = defineStore('register',{
 				required_agree:this.required_agree,
 				optional_agree:this.optional_agree
 			})
+			location.href="/"
 		},
 		async idCheck(){
 			const result = await api.get('/auth/idCheck_vue/',{
@@ -40,14 +44,6 @@ const useRegisterStore = defineStore('register',{
 			})
 			console.log(result.data)
 			this.idCheckCount = result.data.idCheckCount
-		},
-		async pwdCheck(){
-			await api.get('/auth/pwdCheck_vue/',{
-				params:{
-					
-				}
-				
-			})
 		},
 		async nickNameCheck(){
 			const result = await api.get('/auth/nickNameCheck_vue/',{
@@ -59,7 +55,7 @@ const useRegisterStore = defineStore('register',{
 			this.nickNameCheckCount = result.data.nickNameCheckCount
 			
 		},
-		async emailSend(){
+		async emailCheck(){
 			const result = await api.get('/auth/emailCheck_vue/',{
 				params:{
 					email:this.email
@@ -68,19 +64,78 @@ const useRegisterStore = defineStore('register',{
 			console.log(result.data)
 			this.emailCheckCount = result.data.emailCheckCount
 			
-			if(this.emailCheckCount === 0){
-				result = await api.get('/auth/emailSend_vue/',{
+			
+		},
+		async emailSend(){
+			const result = await api.get('/auth/emailSend_vue/',{
+				params:{
+					email:this.email
+				}
+			})
+			this.emailCodeCheckCount = result.data.emailCodeCheckCount
+		},
+		async emailSend(){
+				const result = await api.get('/auth/emailCode_vue/',{
 					params:{
-						
+						emailCode:this.emailCode
 					}
 				})
-			}
-			else{
-				// 이메일이 존재하면 알림 메시지
-			}
-		},
+				this.emailCodeSuccess = result.data.emailCodeSuccess
+			},
 		handleRegisterClick(){
+			
+			if(this.option1 === 'Y' && this.option2 === 'Y' && this.option3 === 'Y'){
+				this.required_agree = 'Y'
+			}
 			// 조건문
+			if(this.pwd !== '' || this.pwd !== ''){ // 1
+				
+				if(this.pwd === this.pwd1){ // 2
+			
+					if(this.idCheckCount === 0){ // 3
+						
+						if(this.nickNameCheckCount === 0){ // 4
+							
+							if(this.emailCheckCount === 0){ // 5
+								
+								//if(this.emailCodeCheckCount === 1){ // 6
+									if(this.phone1 !== '' && (this.phone2 !== ''  && this.phone2.length === 4) && (this.phone3 !== '' && this.phone3.length === 4)){	
+										
+										if(this.required_agree === 'Y'){ // 8
+											
+											this.register()
+										} // 8
+										else{
+											alert('필수 약관에 동의해주세요')
+										}
+									}
+									else{
+										alert('전화번호를 입력해주세요');
+									}	
+								//} // 6
+								//else{
+								//	alert('이메일 인증번호 인증을 완료해주세요');
+								//}
+							} // 5
+							else{
+								alert('이메일의 중복 검사를 해주세요');
+							}
+						} // 4
+						else{
+							alert('닉네임 중복체크 해주세요');
+						}
+					} // 3
+					else{
+						alert('아이디 중복체크 해주세요');
+					}
+				} // 2
+				else{
+					alert('비밀번호가 일치하지 않습니다.');
+				}
+			} //1
+			else{
+				alert('비밀번호를 입력해주세요');
+			}
 		}
 	}
 })

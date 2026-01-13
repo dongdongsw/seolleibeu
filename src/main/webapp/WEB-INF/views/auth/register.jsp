@@ -28,6 +28,8 @@
 	                                <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
 	                                	@click="registerStore.idCheck">중복 검사</button>
 	                            </div>
+	                            <p style="position: absolute; left:16%; top:15%; color: green;">{{registerStore.idCheckCount === 0?'사용가능한 아이디입니다.':''}}</p>
+	                            <p style="position: absolute; left:16%; top:15%; color: red;">{{registerStore.idCheckCount === 1?'이미 존재하는 아이디 입니다.':''}}</p>
 	                        </div>
 	
 	                        <div class="form-group">
@@ -35,9 +37,13 @@
 	                        </div>
 	
 	                        <div class="form-group"  style="margin-bottom: 30px;">
-	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호 재입력" >
+	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호 재입력" v-model="registerStore.pwd1">
+	                            <p style="position: absolute; left:16%; top:29%; color: red;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwd !== registerStore.pwd1?'비밀번호가 일치하지 않습니다.':''}}</p>
+                            	<p style="position: absolute; left:16%; top:29%; color: green;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwd === registerStore.pwd1?'비밀번호가 일치합니다.':''}}</p>
 	                        </div>
-	
+							
+							
+							
 	                        <div class="row"  style="margin-bottom: 20px;">
 	                            <div class="col-md-8">
 	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="닉네임" v-model="registerStore.name">
@@ -46,6 +52,8 @@
 	                                <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
 	                                	@click="registerStore.nickNameCheck(registerStore.nickname)">중복 검사</button>
 	                            </div>
+	                            <p style="position: absolute; left:16%; top:37%; color: green;">{{registerStore.nickNameCheckCount === 0?'사용가능한 닉네임입니다.':''}}</p>
+	                            <p style="position: absolute; left:16%; top:37%; color: red;">{{registerStore.nickNameCheckCount === 1?'이미 존재하는 닉네임 입니다.':''}}</p>
 	                        </div>
 	
 	                        <div class="form-group">
@@ -58,8 +66,15 @@
 	                            </div>
 	                            <div class="col-md-4">
 	                                <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
-	                                	style="padding:14px 17px;" @click="registerStore.emailSend()">인증번호 전송</button>
+	                                	style="padding:14px 17px;" @click="registerStore.emailCheck()" v-if="registerStore.emailCheckCount!==0">이메일 검사</button>
+	                                <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
+	                                	style="padding:14px 17px;" @click="registerStore.emailSend()" v-if="registerStore.emailCheckCount===0">인증번호 전송</button>
+	                                <!-- <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
+	                                	style="padding:14px 17px;" @click="registerStore.emailCode()" v-if="registerStore.emailCodeCheckCount===0">인증번호 확인</button> -->
 	                            </div>
+	                            <!-- 이메일 인증 기능 만들면 하기로함 -->
+	                            <!-- <p style="position: absolute; left:16%; top:51.5%; color: red;">{{registerStore.idCheckCount === 0?'인증번호가 일치하지 않습니다.':''}}</p>
+	                            <p style="position: absolute; left:16%; top:51.5%; color: green;">{{registerStore.idCheckCount === 1?'인증번호가 일치합니다.':''}}</p -->>
 	                        </div>
 	
 								<h3 style="color: #b7b6b7; margin-left: 5px;">전화번호</h3>
@@ -102,7 +117,7 @@
 	                            <a class="btn btn-default auth-cancel-btn auth-dark-btn" href="/auth/login" 
 	                            		style="color: white; text-decoration: none; margin-top:20px; ">취소</a> -->
 	                            <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
-	                            	style="color: white; text-decoration: none; margin-top:20px;" @click="registerStore.register()">회원가입</button>
+	                            	style="color: white; text-decoration: none; margin-top:20px;" @click="registerStore.handleRegisterClick()">회원가입</button>
 	                            <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
 	                            	style="color: white; text-decoration: none; margin-top:20px;" onclick="javascript:history.back()">취소</button>
 	                            
