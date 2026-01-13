@@ -27,11 +27,13 @@ import com.sist.web.vo.UsersVO;
 @RestController
 @RequiredArgsConstructor
 public class AdminRestController {
+
+    private final Methods methods;
 	private final AdminService aservice;
 	
 	@Value("${file.upload.place}")
 	private String uploadDir;
-	
+
 	// 문화 리스트
 	@GetMapping("/admin/culture_list_vue/")
 	public ResponseEntity<Map> culture_list_vue(@RequestParam("category")String category,@RequestParam("page")int page,@RequestParam("name") String name)
@@ -182,7 +184,10 @@ public class AdminRestController {
 							@RequestParam(required = false) List<MultipartFile> imgFiles) {
 		try {
 			Methods.imageUpload(ocvo.getPvo(), thumbnailFile, imgFiles, uploadDir);
-			aservice.cultureCreate(ocvo.getPvo(), ocvo.getOpList());
+			
+			List<PlaceOptionsVO> opList = Methods.saveOptions(ocvo);
+			
+			aservice.cultureCreate(ocvo.getPvo(), opList);
 		} catch(Exception ex) {
 			ex.printStackTrace();
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

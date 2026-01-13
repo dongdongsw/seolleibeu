@@ -37,9 +37,11 @@ public interface PlaceMapper {
 	// 문화체험 장소 생성
 	public void cultureCreate(PlaceVO vo);
 	
+	// 문화체험 옵션 생성
+	public void cultureOptionCreate(PlaceOptionsVO vo);	
+	
 	// 관광명소 장소 생성
 	public void attractionCreate(PlaceVO vo);
 	
-	// 문화체험 옵션 생성
-	public void cultureOptionCreate(PlaceOptionsVO vo);
+
 }

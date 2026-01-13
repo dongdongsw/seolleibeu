@@ -100,6 +100,12 @@
   			#{phone}, #{parking}, #{addr}, #{hours}, #{thumbnail}, #{imgs}, SYSDATE, 0)
  </insert>
  
+ <!-- 문화/체험 옵션 생성 -->
+ <insert id="cultureOptionCreate" parameterType="com.sist.web.vo.PlaceOptionsVO">
+   INSERT INTO options(opno, pno, op_date, op_time, op_type, op_price, op_amount, op_booked)
+   VALUES(op_opno_seq.nextval, #{pno}, #{op_date}, #{op_time}, #{op_type}, #{op_price}, TRUNC(DBMS_RANDOM.VALUE(0, 31)), 0)
+ </insert>
+ 
  <!-- 관광명소 장소 생성 -->
  <insert id="attractionCreate" parameterType="com.sist.web.vo.PlaceVO">
    <selectKey keyProperty="pno" resultType="int" order="BEFORE">
@@ -109,11 +115,5 @@
    					phone, parking, addr, hours, thumbnail, imgs, created_at, hit)
    VALUES(#{pno}, #{name}, '문화', #{type}, #{company}, #{intro}, #{ticket}, 
    			#{phone}, #{parking}, #{addr}, #{hours}, #{thumbnail}, #{imgs}, SYSDATE, 0)
- </insert>
- 
- <!-- 문화/체험 옵션 생성 -->
- <insert id="cultureOptionCreate" parameterType="com.sist.web.vo.PlaceOptionsVO">
-   INSERT INTO options(opno, pno, op_date, op_time, op_type, op_price, op_amount, op_booked)
-   VALUES(op_opno_seq.nextval, #{pno}, #{op_date}, #{op_time}, #{op_type}, #{op_price}, TRUNC(DBMS_RANDOM.VALUE(0, 31)), 0)
  </insert>
 </mapper>

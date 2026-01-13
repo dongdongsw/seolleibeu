@@ -117,8 +117,51 @@
 								</div>
 							</div>
 						</div><hr>
-						<div class="mb-4" v-if="selectedType === 'attraction'">
-							<div class="row">
+						<div class="mb-3">
+							<div class="row" v-if="selectedType === 'culture'">
+								<div class="col-lg-4 mb-3">
+									<label class="small text-gray-700 font-weight-bold">시작날짜 (OP_DATE)</label>
+									<input type="date" name="op_date_start" class="form-control">
+								</div>
+								<div class="col-lg-4 mb-3">
+									<label class="small text-gray-700 font-weight-bold">종료날짜 (OP_DATE)</label>
+									<input type="date" name="op_date_end" class="form-control">
+								</div>
+								<div class="col-lg-4 mb-3">
+									<label class="small text-gray-700 font-weight-bold">시간옵션 (OP_TIME)</label><br>
+										<input type="checkbox" name="op_time" value="10:00" style="margin-left: 20px;">10:00
+										<input type="checkbox" name="op_time" value="11:00" style="margin-left: 30px;">11:00
+										<input type="checkbox" name="op_time" value="12:00" style="margin-left: 30px;">12:00
+										<input type="checkbox" name="op_time" value="13:00" style="margin-left: 30px;">13:00
+										<input type="checkbox" name="op_time" value="14:00" style="margin-left: 30px;">14:00
+										<input type="checkbox" name="op_time" value="15:00" style="margin-left: 30px;">15:00<br>
+										<input type="checkbox" name="op_time" value="16:00" style="margin-left: 20px;">16:00
+										<input type="checkbox" name="op_time" value="17:00" style="margin-left: 30px;">17:00
+										<input type="checkbox" name="op_time" value="18:00" style="margin-left: 30px;">18:00
+										<input type="checkbox" name="op_time" value="19:00" style="margin-left: 30px;">19:00
+										<input type="checkbox" name="op_time" value="20:00" style="margin-left: 30px;">20:00
+										<input type="checkbox" name="op_time" value="21:00" style="margin-left: 30px;">21:00
+								</div>
+								<div class="col-lg-4 mb-3">
+									<label class="small text-gray-700 font-weight-bold">옵션1 (OP_TYPE)</label>
+									<input type="text" name="op_type[0]" class="form-control" placeholder="예) 대인">
+									<label class="small text-gray-700 font-weight-bold">옵션1 가격 (OP_PRICE)</label>
+									<input type="text" name="op_price[0]" class="form-control" placeholder="예) 30000">
+								</div>
+								<div class="col-lg-4 mb-3">
+									<label class="small text-gray-700 font-weight-bold">옵션2 (OP_TYPE)</label>
+									<input type="text" name="op_type[1]" class="form-control" placeholder="예) 소인">
+									<label class="small text-gray-700 font-weight-bold">옵션2 가격 (OP_PRICE)</label>
+									<input type="text" name="op_price[1]" class="form-control" placeholder="예) 20000">
+								</div>
+								<div class="col-lg-4 mb-3">
+									<label class="small text-gray-700 font-weight-bold">옵션3 (OP_TYPE)</label>
+									<input type="text" name="op_type[2]" class="form-control" placeholder="예) 유아">
+									<label class="small text-gray-700 font-weight-bold">옵션3 가격 (OP_PRICE)</label>
+									<input type="text" name="op_price[2]" class="form-control" placeholder="예) 15000">
+								</div>
+							</div>
+							<div class="row" v-if="selectedType === 'attraction'">
 								<div class="col-lg-12 mb-3">
 									<label class="small text-gray-700 font-weight-bold">소개/설명 (INTRO)</label>
 									<textarea name="intro" class="form-control" rows="8" placeholder="장소 소개, 특징, 안내 문구 등"></textarea>
