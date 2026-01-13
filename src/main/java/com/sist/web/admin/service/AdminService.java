@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.sist.web.vo.CourseVO;
+import com.sist.web.vo.PlaceOptionsVO;
 import com.sist.web.vo.PlaceVO;
 import com.sist.web.vo.UsersVO;
 
@@ -32,4 +33,13 @@ public interface AdminService {
 	public int courseTotalPage(Map map);
 	// 코스 상태 변경
 	public void courseStatusUpdate(CourseVO vo);
+	
+	// 식당 장소 생성
+	public void restaurantCreate(PlaceVO vo);
+
+	// 문화체험 장소 생성
+	public void cultureCreate(PlaceVO pvo, List<PlaceOptionsVO> opList);
+	
+	// 관광명소 장소 생성
+	public void attractionCreate(PlaceVO vo);
 }

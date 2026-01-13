@@ -1,19 +1,26 @@
 package com.sist.web.admin.restcontroller;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.RequiredArgsConstructor;
 import java.util.*;
 import com.sist.web.admin.service.*;
 import com.sist.web.commons.Methods;
+import com.sist.web.place.mapper.PlaceMapper;
 import com.sist.web.vo.CourseVO;
+import com.sist.web.vo.OptionsCreateVO;
+import com.sist.web.vo.PlaceOptionsVO;
 import com.sist.web.vo.PlaceVO;
 import com.sist.web.vo.UsersVO;
 
@@ -21,6 +28,9 @@ import com.sist.web.vo.UsersVO;
 @RequiredArgsConstructor
 public class AdminRestController {
 	private final AdminService aservice;
+	
+	@Value("${file.upload.place}")
+	private String uploadDir;
 	
 	// 문화 리스트
 	@GetMapping("/admin/culture_list_vue/")
@@ -149,5 +159,51 @@ public class AdminRestController {
 		return new ResponseEntity<>(vo,HttpStatus.OK);
 	} 
 	
-	// 코스 모달창
+	// 식당 장소 생성
+	@PostMapping("/admin/restaurant_create_vue/")
+	public ResponseEntity<PlaceVO> restaurant_create_vue(@ModelAttribute PlaceVO vo, 
+						@RequestParam(required = false) MultipartFile thumbnailFile,
+						@RequestParam(required = false) List<MultipartFile> imgFiles) {
+		try {
+			Methods.imageUpload(vo, thumbnailFile, imgFiles, uploadDir);
+			aservice.restaurantCreate(vo);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<>(vo, HttpStatus.OK);
+	}
+	
+	// 문화체험 장소 생성
+	@PostMapping("/admin/culture_create_vue/")
+	public ResponseEntity<Void> culture_create_vue(@ModelAttribute OptionsCreateVO ocvo, 
+							@RequestParam(required = false) MultipartFile thumbnailFile,
+							@RequestParam(required = false) List<MultipartFile> imgFiles) {
+		try {
+			Methods.imageUpload(ocvo.getPvo(), thumbnailFile, imgFiles, uploadDir);
+			aservice.cultureCreate(ocvo.getPvo(), ocvo.getOpList());
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	// 관광명소 장소 생성
+	@PostMapping("/admin/attraction_create_vue/")
+	public ResponseEntity<PlaceVO> attraction_create_vue(@ModelAttribute PlaceVO vo,
+						@RequestParam(required = false) MultipartFile thumbnailFile,
+						@RequestParam(required = false) List<MultipartFile> imgFiles) {
+		try {
+			Methods.imageUpload(vo, thumbnailFile, imgFiles, uploadDir);
+			aservice.attractionCreate(vo);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<>(vo, HttpStatus.OK);
+	}
 }

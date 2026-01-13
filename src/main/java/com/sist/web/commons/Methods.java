@@ -1,7 +1,11 @@
 package com.sist.web.commons;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import com.sist.web.vo.*;
 
 public class Methods {
 
@@ -20,5 +24,41 @@ public class Methods {
 		map.put("endPage", endPage);
 		
 		return map;
+	}
+	
+	public static void imageUpload(PlaceVO vo, MultipartFile thumbnailFile, 
+			List<MultipartFile> imgFiles, String uploadDir) throws Exception {
+		File dir = new File(uploadDir);
+		if(!dir.exists()) {
+			dir.mkdirs();
+		}
+		
+		// 썸네일
+		if(thumbnailFile != null && !thumbnailFile.isEmpty()) {
+			String thumbName = UUID.randomUUID()+"_"+thumbnailFile.getOriginalFilename();
+			File thumbFile = new File(dir, thumbName);
+			thumbnailFile.transferTo(thumbFile);
+			
+			vo.setThumbnail(thumbName);
+		}
+		
+		// 상세이미지
+		if(imgFiles != null && !imgFiles.isEmpty()) {
+			List<String> imgNames = new ArrayList<>();
+			
+			for(MultipartFile mf : imgFiles) {
+				if(mf.isEmpty()) {
+					continue;
+				}
+				
+				String imgName = UUID.randomUUID()+"_"+mf.getOriginalFilename();
+				File imgFile = new File(dir, imgName);
+				mf.transferTo(imgFile);
+				
+				imgNames.add(imgName);
+			}
+			
+			vo.setImgs(String.join("|", imgNames));
+		}
 	}
 }

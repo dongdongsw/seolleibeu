@@ -34,26 +34,26 @@
 									<label class="small text-gray-700 font-weight-bold">카테고리 (CATEGORY)</label>
 									<select name="category" class="form-control" required>
 										<option value="">선택</option>
-										<option value="RESTAURANT">식당</option>
+										<option value="restaurant">식당</option>
 									</select>
 								</div>
 								<div class="col-lg-3 mb-3">
 									<label class="small text-gray-700 font-weight-bold">유형 (TYPE)</label>
-									<input type="text" name="type" class="form-control" placeholder="예) 중식, 전시, 호텔 등">
+									<input type="text" name="type" class="form-control" placeholder="예) 한식, 카페, 주점 등">
 								</div>
 							</div>
 							<div class="row">
+								<div class="col-lg-6 mb-3">
+									<label class="small text-gray-700 font-weight-bold">주소 (ADDR)</label>
+									<input type="text" name="addr" class="form-control" placeholder="에) 서울특별시 마포구 서교동 123-1">
+								</div>
 								<div class="col-lg-3 mb-3">
-									<label class="small text-gray-700 font-weight-bold">업체/주관 (COMPANY)</label>
+									<label class="small text-gray-700 font-weight-bold">업체명 (COMPANY)</label>
 									<input type="text" name="company" class="form-control" placeholder="예) 향미각 / 기획사명">
 								</div>
 								<div class="col-lg-3 mb-3">
 									<label class="small text-gray-700 font-weight-bold">전화번호 (PHONE)</label>
 									<input type="text" name="phone" class="form-control" placeholder="예) (02) 1234-1234">
-								</div>
-								<div class="col-lg-6 mb-3">
-									<label class="small text-gray-700 font-weight-bold">주소 (ADDR)</label>
-									<input type="text" name="addr" class="form-control" placeholder="에) 서울특별시 마포구 서교동 123-1">
 								</div>
 							</div>
 						</div><hr>

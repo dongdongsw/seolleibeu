@@ -32,49 +32,77 @@
 								</div>
 								<div class="col-lg-3 mb-3">
 									<label class="small text-gray-700 font-weight-bold">유형 (TYPE)</label>
-									<select name="category" class="form-control" required>
+									<select name="category" v-model="selectedType" class="form-control" required>
 										<option value="" hidden="">선택</option>
-										<option value="문화/체험">문화/체험</option>
-										<option value="관광명소">관광명소</option>
+										<option value="culture">문화/체험</option>
+										<option value="attraction">관광명소</option>
 									</select>
 								</div>
 								<div class="col-lg-3 mb-3">
-									<label class="small text-gray-700 font-weight-bold">유형 (TYPE)</label>
-									<input type="text" name="type" class="form-control" placeholder="예) 연극/뮤지컬, 전시, 액티비티 등">
+									<label class="small text-gray-700 font-weight-bold">상세분류 (TYPE2)</label>
+									<select name="type" class="form-control" v-if="selectedType === 'culture'">
+										<option value="" hidden="">선택</option>
+										<option value="연극/뮤지컬">연극/뮤지컬</option>
+										<option value="전시">전시</option>
+										<option value="액티비티">액티비티</option>
+									</select>
+									<select name="type" class="form-control" v-if="selectedType === 'attraction'">
+										<option value="" hidden="">선택</option>
+										<option value="명소">명소</option>
+										<option value="자연관광">자연관광</option>
+										<option value="엔터테인먼트">엔터테인먼트</option>
+									</select>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-lg-6 mb-3">
 									<label class="small text-gray-700 font-weight-bold">주소 (ADDR)</label>
-									<input type="text" name="addr" class="form-control" placeholder="도로명/지번 주소">
+									<input type="text" name="addr" class="form-control" placeholder="예) 서울특별시 마포구 서교동 123-1">
 								</div>
 								<div class="col-lg-3 mb-3">
-									<label class="small text-gray-700 font-weight-bold">전화번호 (PHONE)</label>
+									<label class="small text-gray-700 font-weight-bold">문의전화 (PHONE)</label>
 									<input type="text" name="phone" class="form-control" placeholder="예) 010-1234-1234">
 								</div>
 								<div class="col-lg-3 mb-3">
 									<label class="small text-gray-700 font-weight-bold">업체/주관 (COMPANY)</label>
-									<input type="text" name="company" class="form-control" placeholder="예) 향미각 / 기획사명">
+									<input type="text" name="company" class="form-control" placeholder="예) SIST엔터테인먼트">
 								</div>
 							</div>
 						</div><hr>
 						<div class="mb-3">
-							<div class="row">
+							<div class="row" v-if="selectedType === 'culture'">
+								<div class="col-lg-3 mb-3">
+									<label class="small text-gray-700 font-weight-bold">운영시간 (HOURS)</label>
+									<input type="text" name="hours" class="form-control" placeholder="예) 11:00~22:00 (매주 월 휴무)">
+								</div>
+								<div class="col-lg-3 mb-3">
+									<label class="small text-gray-700 font-weight-bold">교통정보 (PARKING)</label>
+									<input type="text" name="parking" class="form-control" placeholder="예) 오시는 길, 주차정보">
+								</div>
+								<div class="col-lg-3 mb-3">
+									<label class="small text-gray-700 font-weight-bold">연령등급 (RATING)</label>
+									<input type="text" name="rating" class="form-control" placeholder="예) 전체관람가, 만 11세이상 등">
+								</div>
+								<div class="col-lg-3 mb-3" >
+									<label class="small text-gray-700 font-weight-bold">소요시간 (RUNTIME)</label>
+									<input type="text" name="runtime" class="form-control" placeholder="예) 약 70분 등">
+								</div>
+							</div>
+							<div class="row" v-if="selectedType === 'attraction'">
 								<div class="col-lg-4 mb-3">
 									<label class="small text-gray-700 font-weight-bold">운영시간 (HOURS)</label>
 									<input type="text" name="hours" class="form-control" placeholder="예) 11:00~22:00 (매주 월 휴무)">
 								</div>
 								<div class="col-lg-4 mb-3">
-									<label class="small text-gray-700 font-weight-bold">좌석/수용 (SEAT)</label>
-									<input type="text" name="seat" class="form-control" placeholder="예) 40석 / 최대 100명">
+									<label class="small text-gray-700 font-weight-bold">교통정보 (PARKING)</label>
+									<input type="text" name="parking" class="form-control" placeholder="예) 오시는 길, 주차정보">
 								</div>
-								<div class="col-lg-4 mb-3">
-									<label class="small text-gray-700 font-weight-bold">주차 (PARKING)</label>
-									<input type="text" name="parking" class="form-control" placeholder="예) 가능(2시간 무료) / 불가">
+								<div class="col-lg-4 mb-3" >
+									<label class="small text-gray-700 font-weight-bold">입장료 (TICKET)</label>
+									<input type="text" name="ticket" class="form-control" placeholder="예) 무료, 15,000원 등">
 								</div>
 							</div>
-						</div>
-						<hr>
+						</div><hr>
 						<div class="mb-3">
 							<div class="row">
 								<div class="col-lg-6 mb-3">
@@ -88,17 +116,12 @@
 									<small class="form-text text-muted">여러 장 업로드 후 저장 경로들을 | 로 합쳐 IMGS 컬럼에 저장하는 방식 추천</small>
 								</div>
 							</div>
-						</div>
-						<hr>
-						<div class="mb-4">
+						</div><hr>
+						<div class="mb-4" v-if="selectedType === 'attraction'">
 							<div class="row">
-								<div class="col-lg-6 mb-3">
+								<div class="col-lg-12 mb-3">
 									<label class="small text-gray-700 font-weight-bold">소개/설명 (INTRO)</label>
 									<textarea name="intro" class="form-control" rows="8" placeholder="장소 소개, 특징, 안내 문구 등"></textarea>
-								</div>
-								<div class="col-lg-6 mb-3">
-									<label class="small text-gray-700 font-weight-bold">메뉴/상세정보 (MENU)</label>
-									<textarea name="menu" class="form-control" rows="8" placeholder="메뉴/가격/옵션/구성 등"></textarea>
 								</div>
 							</div>
 						</div>

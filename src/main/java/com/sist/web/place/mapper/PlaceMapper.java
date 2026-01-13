@@ -30,4 +30,16 @@ public interface PlaceMapper {
 	public int courseTotalPage(Map map);
 	// 코스 상태 변경
 	public void courseStatusUpdate(CourseVO vo);
+	
+	// 식당 장소 생성
+	public void restaurantCreate(PlaceVO vo);
+
+	// 문화체험 장소 생성
+	public void cultureCreate(PlaceVO vo);
+	
+	// 관광명소 장소 생성
+	public void attractionCreate(PlaceVO vo);
+	
+	// 문화체험 옵션 생성
+	public void cultureOptionCreate(PlaceOptionsVO vo);
 }

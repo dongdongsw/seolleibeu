@@ -25,12 +25,16 @@ public class AdminController {
 		model.addAttribute("main_jsp", "food_list.jsp");
 		return "admin/main";
 	}
+	
+	// 문화체험, 관광명소 장소 생성
 	@GetMapping("/admin/culture_create")
 	public String culture_create(Model model)
 	{
 		model.addAttribute("main_jsp", "culture_create.jsp");
 		return "admin/main";
 	}
+	
+	// 식당 장소 생성
 	@GetMapping("/admin/restaurant_create")
 	public String place_create(Model model)
 	{
