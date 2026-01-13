@@ -33,7 +33,7 @@
 	float: left;
 	margin: 0px 20px 0px 0px;
 	width: 270px;
-	height: 350px;
+	height: 100%;
 }
 
 .culture-info ul {
@@ -244,12 +244,14 @@
 								<span class="label">장소 등록일</span>
 								<span class="value">{{store.pvo.createday ? store.pvo.createday : '-'}}</span>
 							</li>
+							<li style="margin-top: -10px;">
+								<span class="culture-notice">
+								- 예매 후 1시간 이내로 미 결제시 예매가 자동 취소되는 점 양해 부탁드립니다<br>
+								- 이용 전 예약변경을 희망하실 경우 업체로 유선 연락 부탁드립니다<br>
+								- 상영시에 음식물 섭취는 제한 되오니 참고 후 이용 부탁드립니다
+								</span>
+							</li>
 						</ul>
-						<p class="culture-notice">
-							- 예매 후 1시간 이내로 미 결제시 예매가 자동 취소되는 점 양해 부탁드립니다<br>
-							- 이용 전 예약변경을 희망하실 경우 업체로 유선 연락 부탁드립니다<br>
-							- 상영시에 음식물 섭취는 제한 되오니 이점 참고하여 이용 부탁드립니다
-						</p>
 					</div>
 				</div>
 			</div>

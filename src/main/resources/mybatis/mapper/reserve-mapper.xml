@@ -20,6 +20,7 @@
     FROM reserve rv
     JOIN place p ON p.pno = rv.pno
     WHERE rv.uno = #{uno}
+    AND rv.rv_exposure = 'y'
     ORDER BY rv.rvno DESC
     OFFSET #{start} ROWS FETCH NEXT 3 ROWS ONLY
   </select>
