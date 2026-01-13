@@ -31,7 +31,7 @@
 									</div>
 									<!-- 가운데 정보 -->
 									<div class="mypage-reply">
-										<h4 class="reply-title"><a href="#" style="color: black">{{vo.pname}}</a></h4>
+										<h4 class="reply-title"><a :href="`/place/${vo.placeType }/detail?pno=${vo.pno}&rno=${vo.rno}`" style="color: black">{{vo.pname}}</a></h4>
 										<p style="margin-bottom: 10px">{{vo.r_content}}</p>
 										<div class="course-meta">
 											<span v-if="vo.uday"> 수정일 : {{ vo.uday }} </span>

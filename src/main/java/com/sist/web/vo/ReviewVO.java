@@ -12,4 +12,6 @@ public class ReviewVO {
 	private String profile_img,name;
 	// 장소
 	private String pname,thumbnail,category,type;
+	// 타입 분류(리뷰 관련)
+	private String placeType;
 }

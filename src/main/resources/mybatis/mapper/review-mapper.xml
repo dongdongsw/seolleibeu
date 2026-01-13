@@ -3,8 +3,16 @@
 <mapper namespace="com.sist.web.review.mapper.ReviewMapper">
 <!-- 마이페이지 리뷰 목록 -->
 <select id="mypageReviewListData" resultType="com.sist.web.vo.ReviewVO" parameterType="hashmap">
- SELECT r.rno,r.uno,p.pno,p.name as pname,r.r_content,r.r_img,r.r_score,u.profile_img,TO_CHAR(r.r_created_at,'yyyy-mm-dd HH24:MI:SS') as dbday, p.thumbnail as thumbnail,
- TO_CHAR(r.r_updated_at,'yyyy-mm-dd HH24:MI:SS') as uday
+ SELECT r.rno,r.uno,p.pno,r.r_content,r.r_img,r.r_score,u.profile_img,TO_CHAR(r.r_created_at,'yyyy-mm-dd HH24:MI:SS') as dbday, p.thumbnail as thumbnail,
+ TO_CHAR(r.r_updated_at,'yyyy-mm-dd HH24:MI:SS') as uday, 
+ p.category as category,
+ p.type as type,
+ p.name as pname,
+ CASE
+  WHEN p.type IN ('연극/뮤지컬','전시','액티비티') THEN 'culture'
+  WHEN p.type IN ('명소','자연관광','엔터') THEN 'attraction'
+  WHEN p.category IN ('식당') THEN 'restaurant'
+ END placeType
  FROM review r
  JOIN users u ON r.uno=u.uno
  JOIN place p ON r.pno=p.pno
