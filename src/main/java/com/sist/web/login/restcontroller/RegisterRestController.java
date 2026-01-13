@@ -1,4 +1,4 @@
-package com.sist.web.login;
+package com.sist.web.login.restcontroller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +21,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/auth")
-public class LoginRestController {
+public class RegisterRestController {
 
 	private final LoginService lService;
 	private final BCryptPasswordEncoder Encoder;

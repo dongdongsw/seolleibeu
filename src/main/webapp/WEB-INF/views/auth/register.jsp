@@ -74,7 +74,7 @@
 	                            </div>
 	                            <!-- 이메일 인증 기능 만들면 하기로함 -->
 	                            <!-- <p style="position: absolute; left:16%; top:51.5%; color: red;">{{registerStore.idCheckCount === 0?'인증번호가 일치하지 않습니다.':''}}</p>
-	                            <p style="position: absolute; left:16%; top:51.5%; color: green;">{{registerStore.idCheckCount === 1?'인증번호가 일치합니다.':''}}</p -->>
+	                            <p style="position: absolute; left:16%; top:51.5%; color: green;">{{registerStore.idCheckCount === 1?'인증번호가 일치합니다.':''}}</p> -->
 	                        </div>
 	
 								<h3 style="color: #b7b6b7; margin-left: 5px;">전화번호</h3>
