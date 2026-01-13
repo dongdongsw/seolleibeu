@@ -23,15 +23,17 @@
 						  <h2 class="mypage-title">내가 쓴 리뷰</h2>
 						</div>
 						<div class="info-card" style="margin: 0; padding: 0">
-						   <div v-for="(vo,index) in store.list" :key="index">
+						   <div v-if="store.list.length" v-for="(vo,index) in store.list" :key="index">
 								<div class="post-block my-course-item" style="margin-top: 30px">
 									<!-- 왼쪽 이미지 -->
 									<div class="course-thumb">
+									  <a :href="'/place/'+vo.placeType+'/detail?pno='+vo.pno">
 										<img :src="vo.thumbnail ? vo.thumbnail: '/images/noimage.png'" style="width: 80px;height: 80px;">
+									  </a>
 									</div>
 									<!-- 가운데 정보 -->
 									<div class="mypage-reply">
-										<h4 class="reply-title"><a :href="`/place/${vo.placeType }/detail?pno=${vo.pno}&rno=${vo.rno}`" style="color: black">{{vo.pname}}</a></h4>
+										<h4 class="reply-title"><a :href="'/place/'+vo.placeType+'/detail?pno='+vo.pno" style="color: black">{{vo.pname}}</a></h4>
 										<p style="margin-bottom: 10px">{{vo.r_content}}</p>
 										<div class="course-meta">
 											<span v-if="vo.uday"> 수정일 : {{ vo.uday }} </span>
@@ -89,6 +91,7 @@
 		 
 		 onMounted(()=>{
 			 store.myreviewListData()
+			 
 		 })
 		 return {
 			 store

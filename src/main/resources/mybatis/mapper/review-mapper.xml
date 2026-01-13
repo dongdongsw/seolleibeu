@@ -10,9 +10,9 @@
  p.name as pname,
  CASE
   WHEN p.type IN ('연극/뮤지컬','전시','액티비티') THEN 'culture'
-  WHEN p.type IN ('명소','자연관광','엔터') THEN 'attraction'
+  WHEN p.type IN ('명소','자연관광','엔터테인먼트') THEN 'attraction'
   WHEN p.category IN ('식당') THEN 'restaurant'
- END placeType
+ END AS placeType
  FROM review r
  JOIN users u ON r.uno=u.uno
  JOIN place p ON r.pno=p.pno
