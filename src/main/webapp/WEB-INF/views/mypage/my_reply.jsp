@@ -17,7 +17,7 @@
 <body>
 
 	<div class="content auth-wrapper" style="margin-top: -17px;">
-		<div class="container">
+		<div class="container" id="reply_list">
 			<div class="row">
 			  <div class="mypage-sizing">
 				<div class="col-lg-9 col-md-9 col-sm-12">
@@ -32,44 +32,40 @@
 						    </span>
 						  </div>
 						</div>
-						<div class="info-card">
-							<c:forEach begin="0" end="2">
+						<div class="info-card" v-for="vo in store.list" :key="vo.cno">
 								<div class="post-block my-course-item" style="margin-bottom:0">
 									<!-- 왼쪽 이미지 -->
 									<div class="course-thumb">
-										<img src="images/post-img.jpg" alt="thumbnail">
+										<img :src="vo.thumbnail" style="width:80px; height: 80px">
 									</div>
 
 									<!-- 가운데 정보 -->
 									<div class="mypage-reply">
-										<h4 class="reply-title">홍대 데이트 코스</h4>
-										<p style="margin-bottom: 10px">정말 좋은곳입니다.</p>
+										<h4 class="reply-title">{{vo.title}}</h4>
+										<p style="margin-bottom: 10px">{{vo.cr_content}}</p>
 										<div class="course-meta">
-											댓글 쓴 날짜 : <span class="date">2025-01-05</span>
+											댓글 쓴 날짜 : <span class="date">{{ vo.cr_update_at ? vo.cr_update_at : vo.cr_created_at }}</span>
 										</div>
 									</div>
 
 									<!-- 오른쪽 버튼 -->
 									<div class="course-actions">
-										<a href="#" class="btn btn-xs">바로가기</a>
+										<a :href="'/course/detail?cno='+vo.cno" class="btn btn-xs">바로가기</a>
 									</div>
 								</div>
 								<hr>
-							</c:forEach>
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<div class="st-pagination">
-									<ul class="pagination">
-										<li><a href="#">Previous</a></li>
-										<li><a href="#" class="active">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">Next</a></li>
-									</ul>
-								</div>
-							</div>
 						</div>
 
 					</main>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="st-pagination">
+							<ul class="pagination">
+                               <li v-if="store.startPage>1"><a class="nav-link" @click="store.movePage(store.startPage-1)">&laquo;</a></li>
+						       <li v-for="i in store.range" :class="i===store.curpage?'active':''"><a class="nav-link" @click="store.movePage(i)">{{i}}</a></li>
+						       <li v-if="store.endPage<store.totalpage"><a class="nav-link" @click="store.movePage(store.endPage+1)">&raquo;</a></li>
+                            </ul>
+						</div>
+					</div>
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-12" style="margin-top: 80px;">
@@ -92,6 +88,24 @@
 			</div>
 		</div>
 	</div>
-
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/mypage/reply.js"></script>
+    <script type="text/javascript">
+     const {createApp,onMounted} = Vue
+     const {createPinia} = Pinia
+     const replyApp = createApp({
+   	  	setup() {
+   	    	const store = useReplyStore()
+   	    		onMounted(() => {
+   	      	store.replyMypage()
+   	    })
+   	    return {
+   	    		store
+   	    	}
+   	  }
+   	})
+   	replyApp.use(createPinia())
+   	replyApp.mount('#reply_list')
+    </script>
 </body>
 </html>

@@ -88,4 +88,21 @@ public class BookmarkRestController {
 		}
 		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
+	@DeleteMapping("/bookmark/mydelete_vue/")
+	public ResponseEntity<Map> bookmark_mydelete_vue(
+		@RequestParam("cno") int cno, HttpSession session
+	)
+	{
+		Map map=new HashMap();
+		try
+		{
+			Integer uno = (Integer)session.getAttribute("uno");
+			bService.bookmarkDelete(uno, cno);
+			map.put("cno", cno);
+		}catch(Exception ex)
+		{
+			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map,HttpStatus.OK);
+	}
 }

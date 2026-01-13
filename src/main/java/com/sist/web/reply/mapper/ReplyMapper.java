@@ -38,4 +38,19 @@ public interface ReplyMapper {
 	@Delete("DELETE FROM reply "
 		   +"WHERE id=#{id}")
 	public void replyDelete(int id);
+	
+	@Select("SELECT c.cno,c.title,r.cr_content, "
+		   +"TO_CHAR(r.cr_created_at,'yyyy-mm-dd') as cr_created_at, "
+		   +"TO_CHAR(r.cr_update_at,'yyyy-mm-dd') as cr_update_at, "
+		   +"(SELECT thumbnail FROM place "
+		   +"WHERE pno = TO_NUMBER(SUBSTR(c.pnos, 1, INSTR(c.pnos, ',') - 1))) AS thumbnail "
+		   +"FROM reply r "
+		   +"JOIN course c ON r.cno = c.cno "
+		   +"WHERE r.uno = #{uno}"
+		   +"ORDER BY r.id DESC "
+		   +"OFFSET #{start} ROWS FETCH NEXT 3 ROWS ONLY")
+	public List<ReplyVO> replyMypage(@Param("uno") int uno, @Param("start") int start);
+	
+	@Select("SELECT CEIL(COUNT(*)/3.0) FROM reply WHERE uno = #{uno}")
+	public int replyTotalpage(@Param("uno") int uno);
 }
