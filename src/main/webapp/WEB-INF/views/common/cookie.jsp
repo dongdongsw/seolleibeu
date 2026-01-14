@@ -13,12 +13,14 @@
 		<div class="card-header text-center">
 			<h4>최근 본 장소</h4>
 		</div>
-		<c:forEach begin="0" end="2">
+<%-- 		<c:forEach var="c" items="${cookieList }">
 			<a href="#"> 
 				<img src="https://korean.visitseoul.net/resources/theme/images/img/visitseoul_sns_20241127.png"
 					 style="width: 130px; height: 100px;">
 			</a>
-		</c:forEach>
+			${c.type }
+			${c.pno }
+		</c:forEach> --%>
 	</div>
 </body>
 </html>
