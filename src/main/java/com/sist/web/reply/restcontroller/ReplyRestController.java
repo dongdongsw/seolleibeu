@@ -105,20 +105,24 @@ public class ReplyRestController {
 	}
 	
 	@GetMapping("/mypage/my_reply_vue/")
-	public ResponseEntity<Map> my_reply_vue(@RequestParam("page") int page,HttpSession session)
+	public ResponseEntity<Map> my_reply_vue(
+			@RequestParam("page") int page,
+			@RequestParam("cr_content") String cr_content,
+			HttpSession session
+	)
 	{
 		Map map=new HashMap();
 		try
 		{
 			Integer uno = (Integer)session.getAttribute("uno");
 			
-			List<ReplyVO> list=rService.replyMypage(uno,(page-1)*3);
-			int totalpage=rService.replyTotalpage(uno);
+			List<ReplyVO> list=rService.replyFindData(uno,(page-1)*3,cr_content);
+			int totalpage=rService.replyTotalpage(uno,cr_content);
 			
 			Map pageMap=Methods.paginationMap(5, page, totalpage);
-		   	   
+		   	
 			map.putAll(pageMap);
-			   
+			map.put("cr_content", cr_content);
 			map.put("list", list);
 		}catch(Exception ex)
 		{

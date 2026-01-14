@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.web.reply.mapper.ReplyMapper">
+  <select id="replyFindData" resultType="com.sist.web.vo.ReplyVO" parameterType="map">
+   SELECT c.cno,
+   c.title,
+   r.cr_content,
+   TO_CHAR(r.cr_created_at,'yyyy-mm-dd') AS cr_created_at,
+   TO_CHAR(r.cr_update_at,'yyyy-mm-dd') AS cr_update_at,
+   (SELECT thumbnail
+   FROM place
+   WHERE pno = TO_NUMBER(SUBSTR(c.pnos,1,INSTR(c.pnos,',')-1))) AS thumbnail
+   FROM reply r
+   JOIN course c ON r.cno = c.cno
+  <where>
+  r.uno = #{uno}
+  <if test="cr_content != null and cr_content != ''">
+    AND r.cr_content LIKE '%' || #{cr_content} || '%'
+  </if>
+  </where>
+  ORDER BY r.id DESC
+  OFFSET #{start} ROWS FETCH NEXT 3 ROWS ONLY
+  </select>
+  
+  <select id="replyTotalpage" resultType="int" parameterType="map">
+   SELECT CEIL(COUNT(*) / 3.0)
+   FROM reply r
+   JOIN course c ON r.cno = c.cno
+  <where>
+  r.uno = #{uno}
+  <if test="cr_content != null and cr_content != ''">
+    AND r.cr_content LIKE '%' || #{cr_content} || '%'
+  </if>
+  </where>
+  </select>
+</mapper>

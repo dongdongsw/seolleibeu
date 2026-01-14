@@ -165,6 +165,12 @@ html {
   max-height: 2000px;
 }
 
+.my-info {
+  margin-top: 25px;
+  border-radius: 15px;
+  max-height: 2000px;
+}
+
 .info-btn {
   display: inline-block;
   font-weight: 400;

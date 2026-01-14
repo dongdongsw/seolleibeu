@@ -17,7 +17,7 @@
 
 <body>
 
-	<div class="content auth-wrapper" style="margin-top: -17px;">
+	<div class="content auth-wrapper" style="margin-top: 12px;">
 		<div class="container" id="bookmark_list">
 			<div class="row">
 			  <div class="mypage-sizing">
@@ -25,7 +25,7 @@
 					<main class="mypage-main">
 						<h2>북마크</h2>
 
-						<div class="info-card" v-for="vo in store.list" :key="vo.cno">
+						<div class="my-info" v-for="vo in store.list" :key="vo.cno">
 								<div class="post-block my-course-item" style="margin-bottom:0">
 									<!-- 왼쪽 이미지 -->
 									<div class="course-thumb">

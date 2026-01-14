@@ -2,6 +2,8 @@ package com.sist.web.reply.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.sist.web.vo.ReplyVO;
 
 public interface ReplyService {
@@ -18,7 +20,7 @@ public interface ReplyService {
 		public void replyDelete(int id);
 		
 		// 댓글 마이페이지
-		public List<ReplyVO> replyMypage(int uno, int start);
+		public int replyTotalpage(int uno, String cr_content);
 		
-		public int replyTotalpage(int uno);
+		public List<ReplyVO> replyFindData(int uno,int start,String cr_content);
 }
