@@ -20,7 +20,7 @@
 	
 	                   <!--  <form id="register" ref="register" action="/auth/register_ok" class="auth-form" method="post"> -->
 	
-	                        <div class="row" style="margin-bottom: 20px;">
+	                        <div class="row" style="margin-bottom: 20px; position: relative;">
 	                            <div class="col-md-8">
 	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="아이디" v-model="registerStore.id">
 	                            </div>
@@ -28,23 +28,23 @@
 	                                <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
 	                                	@click="registerStore.idCheck">중복 검사</button>
 	                            </div>
-	                            <p style="position: absolute; left:16%; top:15%; color: green;">{{registerStore.idCheckCount === 0?'사용가능한 아이디입니다.':''}}</p>
-	                            <p style="position: absolute; left:16%; top:15%; color: red;">{{registerStore.idCheckCount === 1?'이미 존재하는 아이디 입니다.':''}}</p>
+	                            <p style="position: absolute; left:6%; top:80%; color: green;">{{registerStore.idCheckCount === 0?'사용가능한 아이디입니다.':''}}</p>
+	                            <p style="position: absolute; left:6%; top:80%; color: red;">{{registerStore.idCheckCount === 1?'이미 존재하는 아이디 입니다.':''}}</p>
 	                        </div>
 	
 	                        <div class="form-group">
 	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호" v-model="registerStore.pwd">
 	                        </div>
 	
-	                        <div class="form-group"  style="margin-bottom: 30px;">
+	                        <div class="form-group"  style="margin-bottom: 30px; position: relative;">
 	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호 재입력" v-model="registerStore.pwd1">
-	                            <p style="position: absolute; left:16%; top:29%; color: red;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwd !== registerStore.pwd1?'비밀번호가 일치하지 않습니다.':''}}</p>
-                            	<p style="position: absolute; left:16%; top:29%; color: green;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwd === registerStore.pwd1?'비밀번호가 일치합니다.':''}}</p>
+	                            <p style="position: absolute; left:3%; top:100%; color: red;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwd !== registerStore.pwd1?'비밀번호가 일치하지 않습니다.':''}}</p>
+                            	<p style="position: absolute; left:3%; top:100%; color: green;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwd === registerStore.pwd1?'비밀번호가 일치합니다.':''}}</p>
 	                        </div>
 							
 							
 							
-	                        <div class="row"  style="margin-bottom: 20px;">
+	                        <div class="row"  style="margin-bottom: 20px;  position: relative;">
 	                            <div class="col-md-8">
 	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="닉네임" v-model="registerStore.name">
 	                            </div>
@@ -52,8 +52,8 @@
 	                                <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
 	                                	@click="registerStore.nickNameCheck(registerStore.nickname)">중복 검사</button>
 	                            </div>
-	                            <p style="position: absolute; left:16%; top:37%; color: green;">{{registerStore.nickNameCheckCount === 0?'사용가능한 닉네임입니다.':''}}</p>
-	                            <p style="position: absolute; left:16%; top:37%; color: red;">{{registerStore.nickNameCheckCount === 1?'이미 존재하는 닉네임 입니다.':''}}</p>
+	                            <p style="position: absolute; left:6%; top:80%; color: green;">{{registerStore.nickNameCheckCount === 0?'사용가능한 닉네임입니다.':''}}</p>
+	                            <p style="position: absolute; left:6%; top:80%; color: red;">{{registerStore.nickNameCheckCount === 1?'이미 존재하는 닉네임 입니다.':''}}</p>
 	                        </div>
 	
 	                        <div class="form-group">
