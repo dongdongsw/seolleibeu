@@ -1,6 +1,8 @@
 package com.sist.web.admin.mapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 import com.sist.web.vo.*;
 import java.util.*;
@@ -13,5 +15,10 @@ public interface UsersMapper {
 	
 	// 사용자 총 페이지
 	public int usersTotalPage(Map map);
+
 	
+	@Update("UPDATE users SET "
+			+ "enabled = #{enabled} "
+			+ "WHERE uno = #{uno}")
+	public void usersEnabledUpdate(@Param("enabled") Integer enabled, @Param("uno") Integer uno);
 }

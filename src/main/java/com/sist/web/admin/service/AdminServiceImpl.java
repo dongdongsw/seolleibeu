@@ -112,4 +112,9 @@ public class AdminServiceImpl implements AdminService{
 		// TODO Auto-generated method stub
 		pmapper.attractionCreate(vo);
 	}
+	@Override
+	public void usersEnabledUpdate(int enabled, int uno) {
+		// TODO Auto-generated method stub
+		umapper.usersEnabledUpdate(enabled, uno);
+	}
 }

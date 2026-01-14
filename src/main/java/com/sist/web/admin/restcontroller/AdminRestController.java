@@ -107,12 +107,12 @@ public class AdminRestController {
 		Map map=new HashMap();
 		try
 		{
-			map.put("start", (page-1)*10);
+			map.put("start", (page-1)*6);
 			map.put("name", name);
 			List<UsersVO> list=aservice.usersListData(map);
 			int totalpage=aservice.usersTotalPage(map);
 			
-			Map pageMap=Methods.paginationMap(10, page, totalpage);
+			Map pageMap=Methods.paginationMap(6, page, totalpage);
 			map.putAll(pageMap);
 			map.put("list", list);
 		}catch(Exception ex)
@@ -121,6 +121,23 @@ public class AdminRestController {
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<>(map,HttpStatus.OK);
+	}
+	
+	// 사용자 상태 변경
+	@PostMapping("/admin/users_enabled_vue/")
+	public ResponseEntity<Void> users_enabled_vue(@RequestBody UsersVO vo){
+		
+		try {
+			
+			aservice.usersEnabledUpdate(vo.getEnabled(), vo.getUno());
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		
+		return ResponseEntity.ok().build();
 	}
 	
 	// 코스 리스트

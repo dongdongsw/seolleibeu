@@ -33,33 +33,35 @@
 								cellspacing="0">
 								<thead>
 									<tr>
-										<th style="width: 5%">사진</th>
-										<th style="width: 25%">아이디</th>
-										<th style="width: 15%">이름</th>
-										<th style="width: 10%">전화번호</th>
-										<th style="width: 25%">이메일</th>
-										<th style="width: 10%">가입일</th>
-										<th style="width: 5%">상태</th>
-										<th style="width: 5%"></th>
+										<th style="width: 5%" class="text-center">사진</th>
+										<th style="width: 15%" class="text-center">아이디</th>
+										<th style="width: 12%" class="text-center">닉네임</th>
+										<th style="width: 13%" class="text-center">전화번호</th>
+										<th style="width: 22%" class="text-center">이메일</th>
+										<th style="width: 10%" class="text-center">가입일</th>
+										<th style="width: 10%" class="text-center">최근수정일</th>
+										<th style="width: 8%" class="text-center">상태</th>
+										<th style="width: 5%" class="text-center"></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr v-for="(vo,index) in store.list" :key="index">
-										<td><img class="img rounded-circle" src="/images/프로필 사진.png" style="width: 60px;height: 50px;"></td><!-- :src="vo.profile_img" -->
-										<td>{{vo.id}}</td>
-										<td>{{vo.name}}</td>
-										<td>{{vo.phone}}</td>
-										<td>{{vo.email}}</td>
-										<td>{{vo.created_at.split('T')[0]}}</td>
-										<td>{{vo.status}}</td>
+										<td><img class="img rounded-circle" src="/images/프로필 사진.png" style="width: 55px;height: 50px;"></td><!-- :src="vo.profile_img" -->
+										<td class="text-center">{{vo.id}}</td>
+										<td class="text-center">{{vo.name}}</td>
+										<td class="text-center">{{vo.phone}}</td>
+										<td class="text-center">{{vo.email}}</td>
+										<td class="text-center">{{vo.created_at.split('T')[0]}}</td>
+										<td class="text-center">{{vo.updated_at !== null?vo.updated_at.split('T')[0]:''}}</td>
+										<td class="text-center">{{vo.enabled === 1?'ACTIVE':'LOCK'}}</td>
 										<td class="text-center">
 											<div class="dropdown">
 												<a href="#" data-toggle="dropdown"> <i
 													class="fas fa-ellipsis-h"></i>
 												</a>
 												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" href="#">활동</a> <a
-														class="dropdown-item text-danger" href="#">정지</a>
+													<a class="dropdown-item" @click="store.enabledChange(vo.uno,vo.enabled)">활동</a> <a
+														class="dropdown-item text-danger"  @click="store.enabledChange(vo.uno,vo.enabled)">정지</a>
 												</div>
 											</div>
 										</td>

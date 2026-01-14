@@ -3,6 +3,8 @@ package com.sist.web.admin.service;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.sist.web.vo.CourseVO;
 import com.sist.web.vo.PlaceOptionsVO;
 import com.sist.web.vo.PlaceVO;
@@ -26,6 +28,9 @@ public interface AdminService {
 	
 	// 사용자 총 페이지
 	public int usersTotalPage(Map map);
+
+	// 사용자 계정 상태 업데이트
+	public void usersEnabledUpdate(int enabled, int uno);
 	
 	// 코스 리스트
 	public List<CourseVO> courseListData(Map map);
@@ -42,4 +47,6 @@ public interface AdminService {
 	
 	// 관광명소 장소 생성
 	public void attractionCreate(PlaceVO vo);
+	
+
 }

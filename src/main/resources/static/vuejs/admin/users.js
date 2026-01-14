@@ -7,7 +7,9 @@ const useUsersStore=defineStore('users_list',{
 		startPage:0,
 		endPage:0,
 		totalpage:0,
-		name:''
+		name:'',
+		enabled:0,
+		uno:0
 	}),
 	getters:{
 		range:(state)=>{
@@ -45,6 +47,19 @@ const useUsersStore=defineStore('users_list',{
 			}
 			this.curpage=1
 			this.usersListData()
+		},
+		async enabledChange(uno,enabled){
+			if(enabled === 1){
+				this.enabled = 0
+			}
+			else{
+				this.enabled = 1
+			}
+			 await api.post('/admin/users_enabled_vue/',{
+					uno:uno,
+					enabled:this.enabled
+			 })
+			 this.usersListData()
 		}
 	}
 })

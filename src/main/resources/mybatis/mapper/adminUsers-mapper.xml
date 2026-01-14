@@ -4,20 +4,24 @@
 
  <!-- 사용자 리스트 -->
  <select id="usersListData" resultType="com.sist.web.vo.UsersVO" parameterType="hashmap">
-  SELECT uno,id,name,phone,email,status,profile_img,created_at
+  SELECT uno,id,name,phone,email,status,profile_img,created_at,updated_at,enabled
   FROM users
   <where>
    <if test="name!=null and name!=''">
-    AND name LIKE '%'||#{name}||'%'
+    AND uno LIKE '%'||#{name}||'%'
+    OR  id LIKE '%'||#{name}||'%'
+    OR  name LIKE '%'||#{name}||'%'
+    OR  phone LIKE '%'||#{name}||'%'
+    OR  email LIKE '%'||#{name}||'%'
    </if>
   </where>
   ORDER BY uno ASC
-  OFFSET #{start} ROWS FETCH NEXT 10 ROWS ONLY
+  OFFSET #{start} ROWS FETCH NEXT 6 ROWS ONLY
  </select>
  
  <!-- 사용자 총 페이지 -->
  <select id="usersTotalPage" resultType="int" parameterType="hashmap">
-  SELECT CEIL(COUNT(*)/10.0)
+  SELECT CEIL(COUNT(*)/6.0)
   FROM users
   <where>
    <if test="name!=null and name!=''">
