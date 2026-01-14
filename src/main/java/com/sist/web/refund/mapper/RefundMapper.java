@@ -11,5 +11,8 @@ public interface RefundMapper {
 	public List<RefundVO> refundListData(Map map);
 	// 환불 총 페이지
 	public int refundTotalPage(int uno);
-	// 환불 요청
+	// 사용자 환불 요청
+	public String refundInsert(RefundVO vo);
+	// 관리자 환불 승인/거절
+	public int refundUpdate(Map map);
 }

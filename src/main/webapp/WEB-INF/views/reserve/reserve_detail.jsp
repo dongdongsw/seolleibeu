@@ -176,7 +176,26 @@
 								<div class="row text-right" style="margin-right: 1px; margin-bottom: 10px;">
 									<a class="btn btn-default btn-sm" @click="store.reserveExposureChange(store.rvvo.rvno)">예매내역 삭제</a>&nbsp;
 									<a href="../mypage/review_create" class="btn btn-default btn-sm">리뷰 작성</a>&nbsp;
+									<a href="#" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">환불 요청</a>&nbsp;
 									<a href="javascript:history.back()" class="btn btn-default btn-sm">목록</a>
+								</div>
+								<div id="myModal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<h4 class="modal-title">환불 사유 작성</h4>
+											</div>
+											<div class="modal-body">
+												<h5 style="color: red;">※적절한 환불 사유를 작성하지 않을 시 환불이 거절 될 수있습니다.</h5>
+													<textarea rows="5" cols="68" v-model="rstore.rf_msg" placeholder="환불 사유를 입력해 주세요"></textarea>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal" @click="rstore.refundInsert()">작성</button>
+												<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -187,6 +206,7 @@
     </div>
     <script src="/vuejs/axios.js"></script>
     <script src="/vuejs/reserve/reserveStore.js"></script>
+    <script src="/vuejs/refund/refund.js"></script>
     <!-- <script src="https://js.tosspayments.com/v2/standard"> -->
     <script>
 	    const { createApp, onMounted } = Vue
@@ -198,12 +218,16 @@
 	    		const params = new URLSearchParams(location.search)
 	    		const rvno = params.get('rvno')
 	    		
+	    		/* 환불 */
+	    		const rstore = useRefundStore()
+	    		
 	    		onMounted(()=> {
 	    			store.reserveDetailData(rvno)
 	    		})
 	    		
 	    		return {
-	    			store
+	    			store,
+	    			rstore
 	    		}
 	    	}
 	    })

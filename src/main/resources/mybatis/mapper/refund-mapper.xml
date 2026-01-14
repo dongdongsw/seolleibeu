@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sist.web.refund.mapper.RefundMapper">
+ <!-- 환불 목록 -->
  <select id="refundListData" resultType="RefundVO" parameterType="hashmap">
-  SELECT r.rf_id,r.p_id,r.rf_status,TO_CHAR(rf_done_at,'yyyy-mm-dd') as doneday,TO_char(rf_requested_at,'yyyy-mm-dd') as reqday,
+  SELECT r.rf_id,r.p_id,r.rf_status,TO_CHAR(r.rf_done_at,'yyyy-mm-dd') as doneday,TO_char(r.rf_requested_at,'yyyy-mm-dd') as reqday,
   pl.name as pname
   FROM refund r
   JOIN pay p ON r.p_id=p.p_id
@@ -12,11 +13,21 @@
   ORDER BY rf_id DESC
   OFFSET #{start} ROWS FETCH NEXT 8 ROWS ONLY
  </select>
- 
+ <!-- 환불 총 페이지 -->
  <select id="refundTotalPage" resultType="int">
   SELECT CEIL(COUNT(*)/8.0) FROM refund r
   JOIN pay p ON r.p_id=p.p_id
   JOIN reserve re ON p.rvno=re.rvno
   WHERE re.uno=#{uno}
  </select> 
+ <!-- 사용자 환불 요청 -->
+ <insert id="refundInsert" parameterType="RefundVO">
+  INSERT INTO refund VALUES(refund_id_seq.nextval,#{p_id},#{rf_msg},#{rf_amount},'환불 요청',SYSDATE,NULL)
+ </insert>
+ <!-- 관리자 승인/거절 -->
+ <update id="refundUpdate" parameterType="hashmap">
+  UPDATE refund SET rf_status=#{rf_status}, rf_done_at=SYSDATE
+  WHERE rf_id=#{rf_id} 
+  AND rf_status='환불 대기'
+ </update>
 </mapper>

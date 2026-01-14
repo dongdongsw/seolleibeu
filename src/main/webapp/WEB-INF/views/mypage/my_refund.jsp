@@ -13,88 +13,87 @@
 </head>
 <body>
 	<div class="content auth-wrapper" style="margin-top: -17px;">
-		<div class="container">
+		<div class="container" id="my_refund">
 			<div class="row">
-			  <div class="mypage-sizing">
-				<div class="col-lg-9 col-md-9 col-sm-12">
-					<main class="mypage-main">
-						<h2>환불 내역</h2>
-						<div class="row">
-							<table class="table">
-							</table>
-							<table class="table">
-								<thead>
-									<tr>
-										<th width="10%" class="text-center">번호</th>
-										<th width="45%" class="text-center">상품명</th>
-										<th width="15%" class="text-center">환불 상태</th>
-										<th width="20%" class="text-center">환불 요청·완료일</th>
-										<th width="10%" class="text-center">환불요청</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr v-for="#" :key="#">
-										<td width="10%" class="text-center">dd</td>
-										<td width="45%" class="text-left"><a href="#">dd</a></td>
-										<td width="15%" class="text-center">dd</td>
-										<td width="20%" class="text-center">dd</td>
-										<td width="10%" class="text-center"><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">작성</button></td>
-									</tr>
-								</tbody>
-							</table>
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<div class="st-pagination">
-									<ul class="pagination">
-										<li><a href="#">이전</a></li>
-										<li><a href="#" class="active">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">다음</a></li>
-									</ul>
+				<div class="mypage-sizing">
+					<div class="col-lg-9 col-md-9 col-sm-12">
+						<main class="mypage-main">
+							<h2>환불 내역</h2>
+							<div class="row">
+								<table class="table">
+								</table>
+								<table class="table">
+									<thead>
+										<tr>
+											<th width="10%" class="text-center">번호</th>
+											<th width="50%" class="text-center">상품명</th>
+											<th width="10%" class="text-center">상태</th>
+											<th width="15%" class="text-center">요청일</th>
+											<th width="15%" class="text-center">완료일</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr v-for="(vo,index) in store.list" :key="index">
+											<td width="10%" class="text-center">{{vo.rf_id}}</td>
+											<td width="50%" class="text-left">{{vo.pname}}</td>
+											<td width="10%" class="text-center">{{vo.rf_status}}</td>
+											<td width="15%" class="text-center">{{vo.reqday}}</td>
+											<td width="15%" class="text-center">{{vo.doneday ? vo.doneday : '-'}}</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<div class="st-pagination">
+										<ul class="pagination">
+											<li v-if="store.startPage>1"><a href="#" @click="store.pageChange(store.startPage-1)">이전</a></li>
+											<li v-for="i in store.range" :class="i==store.curpage?'active':''"><a href="#" class="active" @click="store.pageChange(i)">1</a></li>
+											<li v-if="store.endPage<store.totalpage" @click="store.pageChange(store.endPage+1)"><a href="#">다음</a></li>
+										</ul>
+									</div>
 								</div>
 							</div>
-						</div>
-					</main>
-				</div>
+						</main>
+					</div>
 
-				<div class="col-lg-3 col-md-3 col-sm-12" style="margin-top: 80px;">
-					<div class="sidenav">
-						<ul class="listnone">
-							<li><a href="../mypage/my_info">내 정보</a></li>
-				            <li><a href="../mypage/my_favorite">즐겨찾기</a></li>
-				            <li><a href="../mypage/my_bookmark">북마크</a></li>
-				            <li><a href="../mypage/my_course">나의 코스</a></li>
-				            <li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
-				            <li><a href="../mypage/my_reply">내가 쓴 댓글</a></li>
-				            <li><a href="../mypage/my_reserve">예매 내역</a></li>
-				            <li><a href="../mypage/my_refund" class="active">환불 내역</a></li>
-				            <li><a href="../mypage/my_pwd_delete">회원 탈퇴</a></li>
-						</ul>
+					<div class="col-lg-3 col-md-3 col-sm-12" style="margin-top: 80px;">
+						<div class="sidenav">
+							<ul class="listnone">
+								<li><a href="../mypage/my_info">내 정보</a></li>
+								<li><a href="../mypage/my_favorite">즐겨찾기</a></li>
+								<li><a href="../mypage/my_bookmark">북마크</a></li>
+								<li><a href="../mypage/my_course">나의 코스</a></li>
+								<li><a href="../mypage/my_review">내가 쓴 리뷰</a></li>
+								<li><a href="../mypage/my_reply">내가 쓴 댓글</a></li>
+								<li><a href="../mypage/my_reserve">예매 내역</a></li>
+								<li><a href="../mypage/my_refund" class="active">환불 내역</a></li>
+								<li><a href="../mypage/my_pwd_delete">회원 탈퇴</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
-
-			</div>
 			</div>
 		</div>
 	</div>
-		<div id="myModal" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
-		    <!-- Modal content-->
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h4 class="modal-title">환불 사유 작성</h4>
-		      </div>
-		      <div class="modal-body">
-		       <h5 style="color: red;">※적절한 환불 사유를 적지 않을 시 환불이 취소될 수 있습니다.</h5>
-		       <textarea rows="5" cols="68"></textarea>
-		      </div>
-		      <div class="modal-footer">
- 		        <button type="submit" class="btn btn-default" data-dismiss="modal">작성</button>
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/refund/my_refund.js"></script>
+	<script>
+	 const {createApp,onMounted} = Vue
+	 const {createPinia} = Pinia
+	 
+	 const refundApp=createApp({
+		 setup(){
+			 const store=useRefundStore()
+			 
+			 onMounted(()=>{
+			 	store.refundListData()
+		 	})
+		 	return {
+				 store
+			 }
+		 }
+	 })
+	 refundApp.use(createPinia())
+	 refundApp.mount('#my_refund')
+	</script>
 </body>
 </html>
