@@ -28,8 +28,8 @@
 										<th width="10%" class="text-center">번호</th>
 										<th width="45%" class="text-center">상품명</th>
 										<th width="15%" class="text-center">환불 상태</th>
-										<th width="20%" class="text-center">환불 완료일</th>
-										<th width="10%" class="text-center"></th>
+										<th width="20%" class="text-center">환불 요청·완료일</th>
+										<th width="10%" class="text-center">환불요청</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -38,18 +38,18 @@
 										<td width="45%" class="text-left"><a href="#">dd</a></td>
 										<td width="15%" class="text-center">dd</td>
 										<td width="20%" class="text-center">dd</td>
-										<td width="10%" class="text-center"><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">•••</button></td>
+										<td width="10%" class="text-center"><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">작성</button></td>
 									</tr>
 								</tbody>
 							</table>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="st-pagination">
 									<ul class="pagination">
-										<li><a href="#">Previous</a></li>
+										<li><a href="#">이전</a></li>
 										<li><a href="#" class="active">1</a></li>
 										<li><a href="#">2</a></li>
 										<li><a href="#">3</a></li>
-										<li><a href="#">Next</a></li>
+										<li><a href="#">다음</a></li>
 									</ul>
 								</div>
 							</div>
@@ -83,17 +83,14 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h4 class="modal-title">내 예약</h4>
+		        <h4 class="modal-title">환불 사유 작성</h4>
 		      </div>
 		      <div class="modal-body">
-		        <p>내용</p>
-		        <p>내용</p>
-		        <p>내용</p>
-		        <p>내용</p>
-		        <p>내용</p>
-		        <p>내용</p>
+		       <h5 style="color: red;">※적절한 환불 사유를 적지 않을 시 환불이 취소될 수 있습니다.</h5>
+		       <textarea rows="5" cols="68"></textarea>
 		      </div>
 		      <div class="modal-footer">
+ 		        <button type="submit" class="btn btn-default" data-dismiss="modal">작성</button>
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		      </div>
 		    </div>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.web.refund.mapper.RefundMapper">
+ <select id="refundListData" resultType="RefundVO" parameterType="hashmap">
+  SELECT r.rf_id,r.p_id,r.rf_status,TO_CHAR(rf_done_at,'yyyy-mm-dd') as doneday,TO_char(rf_requested_at,'yyyy-mm-dd') as reqday,
+  pl.name as pname
+  FROM refund r
+  JOIN pay p ON r.p_id=p.p_id
+  JOIN reserve re ON p.rvno=re.rvno
+  JOIN place pl ON re.pno=pl.pno
+  WHERE re.uno=#{uno}
+  ORDER BY rf_id DESC
+  OFFSET #{start} ROWS FETCH NEXT 8 ROWS ONLY
+ </select>
+ 
+ <select id="refundTotalPage" resultType="int">
+  SELECT CEIL(COUNT(*)/8.0) FROM refund r
+  JOIN pay p ON r.p_id=p.p_id
+  JOIN reserve re ON p.rvno=re.rvno
+  WHERE re.uno=#{uno}
+ </select> 
+</mapper>
