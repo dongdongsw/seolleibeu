@@ -35,7 +35,8 @@
 													<span v-if="vo.rv_option">{{vo.rv_option}}</span>
 												</p>
 												<div class="course-meta">
-													예매 등록일시 : <span class="date">{{vo.createday}}</span>
+													<span class="date"><b>예매 등록일시</b> {{vo.createday}}</span>
+													<span style="margin-left: 5px;"><b>예매 상태</b> {{vo.rv_status}}</span>
 												</div>
 											</div>
 	

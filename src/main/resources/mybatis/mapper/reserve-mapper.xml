@@ -16,7 +16,7 @@
   
   <select id="myReservedListData" resultMap="reserveMap" parameterType="hashmap">
     SELECT p.pno, p.thumbnail, p.name, rv.rvno, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, rv.rv_time, 
-    		rv.rv_option, TO_CHAR(rv.rv_created_at, 'YYYY-MM-DD HH24:MI:SS') AS createday, rv.rv_exposure
+    		rv.rv_option, TO_CHAR(rv.rv_created_at, 'YYYY-MM-DD HH24:MI:SS') AS createday, rv.rv_exposure, rv.rv_status
     FROM reserve rv
     JOIN place p ON p.pno = rv.pno
     WHERE rv.uno = #{uno}
