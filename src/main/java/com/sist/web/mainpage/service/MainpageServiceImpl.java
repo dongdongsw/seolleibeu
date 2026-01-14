@@ -25,4 +25,10 @@ public class MainpageServiceImpl implements MainpageService {
 		// TODO Auto-generated method stub
 		return mapper.courseNew4();
 	}
+
+	@Override
+	public PlaceVO placeDataForCookie(int pno) {
+		// TODO Auto-generated method stub
+		return mapper.placeDataForCookie(pno);
+	}
 }

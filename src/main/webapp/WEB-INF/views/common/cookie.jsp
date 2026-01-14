@@ -13,14 +13,13 @@
 		<div class="card-header text-center">
 			<h4>최근 본 장소</h4>
 		</div>
-<%-- 		<c:forEach var="c" items="${cookieList }">
-			<a href="#"> 
-				<img src="https://korean.visitseoul.net/resources/theme/images/img/visitseoul_sns_20241127.png"
+ 		<c:forEach var="vo" items="${cookieList }">
+			<a href="/place/${vo.category=='식당' ? 'restaurant': 
+			(vo.type=='전시'||vo.type=='연극/뮤지컬'||vo.type=='액티비티' ? 'culture' : 'attraction') }/detail?pno=${vo.pno}"> 
+				<img src="${vo.thumbnail }" title="${vo.name }"
 					 style="width: 130px; height: 100px;">
 			</a>
-			${c.type }
-			${c.pno }
-		</c:forEach> --%>
+		</c:forEach> 
 	</div>
 </body>
 </html>

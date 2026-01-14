@@ -71,9 +71,9 @@ public class PlaceController {
 	public String culture_before(@RequestParam("pno") int pno, HttpServletResponse response,
 															RedirectAttributes ra) {
 		
-		Cookie cookie=new Cookie("place_culture_"+pno, "culture_"+String.valueOf(pno));
+		Cookie cookie=new Cookie("place_culture_"+pno, String.valueOf(pno));
 		cookie.setPath("/");
-		cookie.setMaxAge(60*60*24);
+		cookie.setMaxAge(60*60*24*3);
 		response.addCookie(cookie);
 		
 		return "redirect:/place/culture/detail?pno="+pno;
@@ -83,9 +83,9 @@ public class PlaceController {
 	public String attraction_before(@RequestParam("pno") int pno, HttpServletResponse response,
 															RedirectAttributes ra) {
 		
-		Cookie cookie=new Cookie("place_attraction_"+pno, "attraction_"+String.valueOf(pno));
+		Cookie cookie=new Cookie("place_attraction_"+pno, String.valueOf(pno));
 		cookie.setPath("/");
-		cookie.setMaxAge(60*60*24);
+		cookie.setMaxAge(60*60*24*3);
 		response.addCookie(cookie);
 		
 		return "redirect:/place/attraction/detail?pno="+pno;
@@ -96,9 +96,9 @@ public class PlaceController {
 	public String restaurant_before(@RequestParam("pno") int pno, HttpServletResponse response,
 															RedirectAttributes ra) {
 		
-		Cookie cookie=new Cookie("place_restaurant_"+pno, "restaurant_"+String.valueOf(pno));
+		Cookie cookie=new Cookie("place_restaurant_"+pno, String.valueOf(pno));
 		cookie.setPath("/");
-		cookie.setMaxAge(60*60*24);
+		cookie.setMaxAge(60*60*24*3);
 		response.addCookie(cookie);
 		
 		return "redirect:/place/restaurant/detail?pno="+pno;
