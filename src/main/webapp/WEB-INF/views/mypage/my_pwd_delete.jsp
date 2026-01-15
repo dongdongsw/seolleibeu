@@ -21,18 +21,17 @@
         <main class="mypage-main">
           <h2>회원 탈퇴</h2>
 		
-          <div class="info-card">
-		  <form method="post" action="../mypage/my_password">
+          <div class="info-card" id="mypage_pwd">
 		   <table class="password-info">
 		    <tr>
 		     <td>비밀번호 입력 :</td>
 		     <td>
-		      <input type="password" id=pwdInfo>
+		      <input type="password" v-model="store.pwd" @keyup.enter="store.checkPwd">
 		     </td>
-		     <td><button class="info-btn" type="button" data-toggle="modal" data-target="#delete_modal">확인</button></td>
+		     <td><button type="button" class="info-btn" @click="store.checkPwd">확인</button></td>
 		    </tr>
 		   </table>
-		  </form>
+		   <p v-if="store.error" style="color:red; margin-left: 360px;">{{ store.error }}</p>
 		  </div>
         </main>
       </div>
@@ -48,7 +47,7 @@
             <li><a href="../mypage/my_reply">내가 쓴 댓글</a></li>
             <li><a href="../mypage/my_reserve">예매 내역</a></li>
             <li><a href="../mypage/my_refund">환불 내역</a></li>
-            <li><a href="../mypage/my_pwd_delete"  class="active">회원 탈퇴</a></li>
+            <li><a href="../mypage/my_pwd_delete" class="active">회원 탈퇴</a></li>
           </ul>
         </div>
       </div>
@@ -56,6 +55,22 @@
     </div>
   </div>
 </div>
-<jsp:include page="../mypage/my_deleteModal.jsp"></jsp:include>
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/mypage/mypage_delete_pwd.js"></script>
+    <script type="text/javascript">
+     const {createApp,onMounted} = Vue
+     const {createPinia} = Pinia
+     const mypagePwdApp=createApp({
+    	 setup(){
+    		 const store = useMypagePwd();
+
+    		 return {
+    			 store
+    		 }
+    	 }
+     })
+     mypagePwdApp.use(createPinia())
+     mypagePwdApp.mount('#mypage_pwd')
+    </script>
 </body>
 </html>

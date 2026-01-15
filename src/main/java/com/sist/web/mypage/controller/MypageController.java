@@ -1,12 +1,21 @@
 package com.sist.web.mypage.controller;
 
+import java.text.SimpleDateFormat;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
-public class MypageController {
+import com.sist.web.mypage.service.MypageService;
+import com.sist.web.vo.UsersVO;
 
+import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
+
+@Controller
+@RequiredArgsConstructor
+public class MypageController {
+	private final MypageService mService;
 	// 내 정보
 	@GetMapping("/mypage/my_info")
 	public String mypage_info(Model model) {
@@ -20,6 +29,26 @@ public class MypageController {
 	public String mypage_update(Model model) {
 		
 		model.addAttribute("my_jsp" ,"../mypage/my_update.jsp");
+		return "mypage/my_main";
+	}
+	
+	// 비밀번호 체크
+	@GetMapping("/mypage/mypagePwd")
+	public String mypageEdit(HttpSession session) {
+
+	    Boolean ok = (Boolean) session.getAttribute("MYPAGE_PWD_OK");
+
+	    if (ok == null || !ok) {
+	        return "redirect:/mypage/my_pwd_update";
+	    }
+
+	    return "mypage/my_update";
+	}
+	
+	@GetMapping("/mypage/my_deleteModal")
+	public String my_deleteModal(Model model) {
+		
+		model.addAttribute("my_jsp" ,"../mypage/my_deleteModal.jsp");
 		return "mypage/my_main";
 	}
 	   

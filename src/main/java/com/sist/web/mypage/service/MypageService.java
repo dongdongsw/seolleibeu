@@ -4,4 +4,10 @@ import com.sist.web.vo.UsersVO;
 
 public interface MypageService {
 	public UsersVO mypageData(int uno);
+	
+	boolean mypagePwd(String pwd);
+	
+	public boolean mypagNameChk(String name, int uno);
+	public boolean mypagPhoneChk(String phone, int uno);
+	public void mypageUpdate(UsersVO vo);
 }

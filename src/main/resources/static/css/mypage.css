@@ -231,6 +231,64 @@ html {
   width: 320px;
   margin-bottom: -20px;
 }
+.field-row {
+  display: flex;
+  align-items: center;
+}
+
+.check-msg {
+  color: #e74c3c;
+  white-space: nowrap;
+}
+.info-btn {
+  white-space: nowrap;
+}
+.info-table {
+  table-layout: auto !important;
+}
+.info-table th {
+  display:block;
+  margin-right: -10px;
+  white-space: nowrap;
+}
+.form-wrap {
+  margin-left: 200px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.form-row label {
+  width: 120px;
+  font-weight: 600;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: -15px;
+}
+
+.field input {
+  width: 220px;
+}
+
+.info-btn {
+  white-space: nowrap;
+}
+
+.check-msg {
+  white-space: nowrap;
+  color: #e74c3c;
+}
+
+.check-msg.ok {
+  color: #3498db;
+}
 
 .my-course-item {
 	display: flex;

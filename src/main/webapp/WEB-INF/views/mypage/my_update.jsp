@@ -18,33 +18,67 @@
 	  <div class="mypage-sizing">
       <!-- 메인 -->
       <div class="col-lg-9 col-md-9 col-sm-12">
-        <main class="mypage-main">
+        <main class="mypage-main" id="mypage_update">
           <h2>회원 정보</h2>
 		
-          <div class="info-card" style="gap:40px;">
+          <div class="info-card" style="margin-left: -40px;">
             <div class="profile" style="margin-bottom: 20px;">
               <img src="${empty sessionScope.profile ? '../images/profile.png' : sessionScope.profile}">
             </div>
 
             <div style="flex:1;">
-              <table class="info-table" style="margin-left: 200px;">
-                <tr><th>닉네임</th>
-                  <td><input class="text"></td>
-                  <td><button type="button" class="info-btn">중복 확인</button></td>
-                </tr>
-                <tr><th>비밀번호</th>
-                  <td colspan="2"><input type="password"></td>
-                </tr>
-                <tr><th>비밀번호 확인</th>
-                  <td colspan="2"><input type="password"></td>
-                </tr>
-                <tr><th>연락처</th>
-                  <td><input class="text"></td>
-                  <td><button type="button" class="info-btn">중복 확인</button></td>
-                </tr>
-              </table>
+                <div class="form-wrap">
+
+			  <div class="form-row">
+			    <label>닉네임</label>
+			    <div class="field">
+			      <input v-model="store.name" @keyup.enter="store.mypagNameChk">
+			      <button class="info-btn" @click="store.mypagNameChk">중복 확인</button>
+			      <span class="check-msg"
+			            :class="{ ok: store.nameChecked }">
+			        {{ store.nameMsg }}
+			      </span>
+			    </div>
+			  </div>
+			
+			  <div class="form-row">
+			    <label>비밀번호</label>
+			    <div class="field">
+			      <input type="password"
+			             v-model="store.password"
+			             @input="store.mypagePwd">
+			    </div>
+			  </div>
+			
+			  <div class="form-row">
+			    <label>비밀번호 확인</label>
+			    <div class="field">
+			      <input type="password"
+			             v-model="store.passwordConfirm"
+			             @input="store.mypagePwd">
+			      <span class="check-msg"
+			            :class="{ ok: store.passwordChecked }">
+			        {{ store.passwordMsg }}
+			      </span>
+			    </div>
+			  </div>
+			
+			  <!-- 연락처 -->
+			  <div class="form-row">
+			    <label>연락처</label>
+			    <div class="field">
+			      <input v-model="store.phone" @keyup.enter="store.mypagPhoneChk">
+			      <button class="info-btn" @click="store.mypagPhoneChk">중복 확인</button>
+			      <span class="check-msg"
+			            :class="{ ok: store.phoneChecked }">
+			        {{ store.phoneMsg }}
+			      </span>
+			    </div>
+			  </div>
+			
+			</div>
               
-                <button style="margin-left: 650px;margin-top: 80px;" class="info-btn">저장</button>
+                <button style="margin-left: 650px;margin-top: 80px;" class="info-btn" @click="store.save">저장</button>
             </div>
           </div>
         </main>
@@ -69,5 +103,21 @@
     </div>
   </div>
 </div>
+<script src="/vuejs/axios.js"></script>
+<script src="/vuejs/mypage/mypage_update.js"></script>
+<script type="text/javascript">
+	const {createApp,onMounted} = Vue
+	const {createPinia} = Pinia
+	const mypageUpdateApp=createApp({
+		 setup(){
+			 const store = useInfoUpdateStore()
+			 return {
+				 store
+			 }
+		 }
+	})
+	mypageUpdateApp.use(createPinia())
+	mypageUpdateApp.mount('#mypage_update')
+</script>
 </body>
 </html>

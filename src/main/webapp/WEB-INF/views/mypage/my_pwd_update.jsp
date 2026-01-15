@@ -21,18 +21,17 @@
         <main class="mypage-main">
           <h2>회원 수정</h2>
 		
-          <div class="info-card">
-		  <form method="post" action="../mypage/my_password">
+          <div class="info-card" id="mypage_pwd">
 		   <table class="password-info">
 		    <tr>
 		     <td>비밀번호 입력 :</td>
 		     <td>
-		      <input type="password" id=pwdInfo>
+		      <input type="password" v-model="store.pwd" @keyup.enter="store.checkPwd">
 		     </td>
-		     <td><button class="info-btn">확인</button></td>
+		     <td><button type="button" class="info-btn" @click="store.checkPwd">확인</button></td>
 		    </tr>
 		   </table>
-		  </form>
+		   <p v-if="store.error" style="color:red; margin-left: 360px;">{{ store.error }}</p>
 		  </div>
         </main>
       </div>
@@ -56,5 +55,22 @@
     </div>
   </div>
 </div>
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/mypage/mypage_update_pwd.js"></script>
+    <script type="text/javascript">
+     const {createApp,onMounted} = Vue
+     const {createPinia} = Pinia
+     const mypagePwdApp=createApp({
+    	 setup(){
+    		 const store = useMypagePwd();
+
+    		 return {
+    			 store
+    		 }
+    	 }
+     })
+     mypagePwdApp.use(createPinia())
+     mypagePwdApp.mount('#mypage_pwd')
+    </script>
 </body>
 </html>
