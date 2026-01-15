@@ -1,38 +1,32 @@
-// ------  SDK 초기화 ------
-  // @docs https://docs.tosspayments.com/sdk/v2/js#토스페이먼츠-초기화
-  const clientKey = "test_ck_nRQoOaPz8L5MqlJGaZ9P3y47BMw6";
-  const customerKey = "JwnRtoHUueqwSHJPh8FY3";
-  const tossPayments = TossPayments(clientKey);
-  // 회원 결제
-  // @docs https://docs.tosspayments.com/sdk/v2/js#tosspaymentspayment
-  const payment = tossPayments.payment({ customerKey });
-  // 비회원 결제
-  // const payment = tossPayments.payment({customerKey: TossPayments.ANONYMOUS})
-  // ------ '결제하기' 버튼 누르면 결제창 띄우기 ------
-  // @docs https://docs.tosspayments.com/sdk/v2/js#paymentrequestpayment
-  
-  async function requestPayment() {
-    // 결제를 요청하기 전에 orderId, amount를 서버에 저장하세요.
-    // 결제 과정에서 악의적으로 결제 금액이 바뀌는 것을 확인하는 용도입니다.
+// vuejs/pay/payment.js
+
+// JSP에서 사용할 수 있는 전역 함수 정의
+const tossPaymentRequest = async (rvvo) => {
+  try {
+    // 1. 초기화 (스크립트 태그로 불러온 TossPayments 객체 사용)
+    const clientKey = "test_ck_nRQoOaPz8L5MqlJGaZ9P3y47BMw6"
+    const tossPayments = TossPayments(clientKey)
+    
+    // 2. 결제 객체 생성
+    const payment = tossPayments.payment({ 
+      customerKey: "USER_" + rvvo.uno 
+    })
+
+    // 3. 결제 요청 (바로 카드 결제창을 띄우는 방식)
     await payment.requestPayment({
-      method: "CARD", // 카드 결제
+      method: "CARD",
       amount: {
         currency: "KRW",
-        value: 50000,
+        value: rvvo.rv_price * rvvo.rv_amount,
       },
-      orderId: "e1nYcsVLaxdAdt9W0iKAp", // 고유 주문번호
-      orderName: "토스 티셔츠 외 2건",
-      successUrl: window.location.origin + "/success", // 결제 요청이 성공하면 리다이렉트되는 URL
-      failUrl: window.location.origin + "/fail", // 결제 요청이 실패하면 리다이렉트되는 URL
-      customerEmail: "customer123@gmail.com",
-      customerName: "김토스",
-      customerMobilePhone: "01012341234",
-      // 카드 결제에 필요한 정보
-      card: {
-        useEscrow: false,
-        flowMode: "DEFAULT", // 통합결제창 여는 옵션
-        useCardPoint: false,
-        useAppCardOnly: false,
-      },
-    });
+      orderId: "RV-" + rvvo.rvno + "-" + new Date().getTime(),
+      orderName: rvvo.pvo.name,
+      successUrl: window.location.origin + "/pay/success?rvno=" + rvvo.rvno,
+      failUrl: window.location.origin + "/pay/fail",
+      customerEmail: rvvo.email,
+      customerName: rvvo.nickname
+    })
+  } catch (error) {
+    alert("결제를 취소 하셨습니다.")
   }
+};

@@ -1,69 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>결제 완료</title>
-    <link href="/css/payment.css" rel="stylesheet">
+<meta charset="utf-8" />
+<link rel="icon" href="https://static.toss.im/icons/png/4x/icon-toss-logo.png" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>토스페이먼츠 샘플 프로젝트</title>
 </head>
 <body>
-    <div class="container">
-        <div class="complete-message">
-            <h1>결제 완료</h1>
-            <p>주문이 정상적으로 완료되었습니다</p>
-        </div>
-
-        <div class="section">
-            <div class="section-title">예약 상품</div>
-            <div class="product-box">
-                <div class="product-item">
-                    <img src="/images/main_logo.png" style="width: 100px;height: 80px;">
-                    <div class="product-info">
-                        <div class="product-row">
-                            <span class="label">상품</span>
-                            <span class="value">남산타워 전망대</span>
-                        </div>
-                        <div class="product-row">
-                            <span class="label">수량</span>
-                            <span class="value">1</span>
-                        </div>
-                        <div class="product-row">
-                            <span class="label">결제금액</span>
-                            <span class="value">${amount }</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">주문자 정보</div>
-            <div class="info-box">
-                <div class="info-row">
-                    <span class="label">주문번호</span>
-                    <span class="value">${orderId }</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">결</span>
-                    <span class="value">2025-12-15</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">이름</span>
-                    <span class="value">홍길동</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">이메일</span>
-                    <span class="value">1234@naver.com</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="buttons">
-            <button class="btn btn-primary" onclick="location.href='/mypage/my_reserve'">예약 상세보기</button>
-            <button class="btn" onclick="location.href='/'">홈으로</button>
-        </div>
-    </div>
+	<div class="wrapper w-100">
+		<div class="flex-column align-center confirm-loading w-100 max-w-540">
+			<div class="flex-column align-center">
+				<img src="https://static.toss.im/lotties/loading-spot-apng.png" width="120" height="120"></img>
+				<h2 class="title text-center">결제 요청까지 성공했어요.</h2>
+				<h4 class="text-center description">결제 승인하고 완료해보세요.</h4>
+			</div>
+			<div class="w-100">
+				<button id="confirmPaymentButton" class="btn primary w-100">결제 승인하기</button>
+			</div>
+		</div>
+		<div class="flex-column align-center confirm-success w-100 max-w-540">
+			<img src="https://static.toss.im/illusts/check-blue-spot-ending-frame.png" width="120" height="120"></img>
+			<h2 class="title">결제를 완료했어요</h2>
+			<div class="response-section w-100">
+				<div class="flex justify-between">
+					<span class="response-label">{{rvvo.rv_price}}</span> <span id="amount" class="response-text"></span>
+				</div>
+				<div class="flex justify-between">
+					<span class="response-label">{{rvvo.rvno}}</span> <span id="orderId" class="response-text"></span>
+				</div>
+				<div class="flex justify-between">
+					<span class="response-label">{{rvvo.pvo.name}}</span> <span id="paymentKey" class="response-text"></span>
+				</div>
+			</div>
+			<div class="w-100 button-group">
+				<div class="flex" style="gap: 16px;">
+					<a class="btn w-100" href="https://developers.tosspayments.com/sandbox">다시 테스트하기</a>
+					 <a class="btn w-100" href="https://docs.tosspayments.com/guides/v2/payment-widget/integration" target="_blank" rel="noreferrer noopener">결제 연동 문서가기</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="module" src="./success.js"></script>
 </body>
 </html>

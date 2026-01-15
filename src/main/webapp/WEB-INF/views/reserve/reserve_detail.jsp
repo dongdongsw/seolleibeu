@@ -207,7 +207,8 @@
     <script src="/vuejs/axios.js"></script>
     <script src="/vuejs/reserve/reserveStore.js"></script>
     <script src="/vuejs/refund/refund.js"></script>
-    <!-- <script src="https://js.tosspayments.com/v2/standard"> -->
+    <script src="https://js.tosspayments.com/v2/standard"></script>
+    <script src="/vuejs/pay/payment.js"></script>
     <script>
 	    const { createApp, onMounted } = Vue
 	    const { createPinia } = Pinia
@@ -218,6 +219,8 @@
 	    		const params = new URLSearchParams(location.search)
 	    		const rvno = params.get('rvno')
 	    		
+	    		const requestPayment = () => tossPaymentRequest(store.rvvo)
+	    		
 	    		/* 환불 */
 	    		const rstore = useRefundStore()
 	    		
@@ -227,7 +230,8 @@
 	    		
 	    		return {
 	    			store,
-	    			rstore
+	    			rstore,
+	    			requestPayment
 	    		}
 	    	}
 	    })

@@ -74,13 +74,13 @@ const main = async () => {
        * @docs https://docs.tosspayments.com/sdk/v2/js#widgetsrequestpayment
        */
       await widgets.requestPayment({
-        orderId: generateRandomString(),
-        orderName: "토스 티셔츠 외 2건",
-        successUrl: window.location.origin + "/sandbox/success",
-        failUrl: window.location.origin + "/sandbox/fail",
-        customerEmail: "customer123@gmail.com",
-        customerName: "김토스",
-        customerMobilePhone: "01012341234",
+        orderId: "RV-" + rvvo.rvno + "-" + new Date().getTime(),
+        orderName: rvvo.pvo.name,
+        successUrl: window.location.origin + "/pay/success?rvno=" + rvvo.rvno,
+        failUrl: window.location.origin + "/pay/fail",
+        customerEmail: rvvo.email,
+        customerName: rvvo.nickname,
+        customerMobilePhone: rvvo.phone,
       });
     } catch (err) {
      console.log('err', err);

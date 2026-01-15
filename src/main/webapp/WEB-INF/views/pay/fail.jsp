@@ -1,24 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-  </head>
-
-  <body>
-    <h2> 결제 실패 </h2>
-    <p id="code"></p>
-    <p id="message"></p>
-  </body>
+<head>
+<meta charset="utf-8" />
+<link rel="icon" href="https://static.toss.im/icons/png/4x/icon-toss-logo.png" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>토스페이먼츠 샘플 프로젝트</title>
+</head>
+<body>
+	<div class="wrapper w-100">
+		<div class="flex-column align-center w-100 max-w-540">
+			<img src="https://static.toss.im/lotties/error-spot-no-loop-space-apng.png" width="160" height="160"></img>
+			<h2 class="title">결제를 실패했어요</h2>
+			<div class="response-section w-100">
+				<div class="flex justify-between">
+					<span class="response-label">code</span> <span id="error-code" class="response-text"></span>
+				</div>
+				<div class="flex justify-between">
+					<span class="response-label">message</span> <span id="error-message" class="response-text"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="module" src="./fail.js"></script>
+</body>
 </html>
-
-<script>
-  const urlParams = new URLSearchParams(window.location.search);
-
-  const codeElement = document.getElementById("code");
-  const messageElement = document.getElementById("message");
-
-  codeElement.textContent = "에러코드: " + urlParams.get("code");
-  messageElement.textContent = "실패 사유: " + urlParams.get("message");
-</script>

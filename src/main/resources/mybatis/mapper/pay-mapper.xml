@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.web.pay.mapper.PayMapper">
+  <insert id="paymentInsert" parameterType="PayVO">
+   INSERT INTO pay VALUES(pay_id_seq.nextval,#{rvno},#{orderId},#{orderName},#{method},#{paymentKey},#{totalAmount},#{balanceAmount},#{receiptUrl},#{status},SYSDATE,NULL)
+  </insert>
+  <!-- 예약 완료 -->
+  <update id="rv_statusUpdate" parameterType="int">
+   UPDATE reserve SET
+   rv_status='예약완료'
+   WHERE rvno=#{rvno}
+  </update>
+</mapper>
