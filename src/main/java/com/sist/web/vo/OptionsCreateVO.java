@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class OptionsCreateVO {
-	private PlaceVO pvo;
+	private PlaceVO pvo = new PlaceVO();
 	private String op_date_start;
 	private String op_date_end;
 	private List<String> op_time;

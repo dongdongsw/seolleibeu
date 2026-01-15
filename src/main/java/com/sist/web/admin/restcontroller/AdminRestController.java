@@ -182,7 +182,7 @@ public class AdminRestController {
 	@PostMapping("/admin/restaurant_create_vue/")
 	public ResponseEntity<PlaceVO> restaurant_create_vue(@ModelAttribute PlaceVO vo, 
 						@RequestParam(value = "thumbnailFile", required = false) MultipartFile thumbnailFile,
-						@RequestParam(value = "imgFiles" ,required = false) List<MultipartFile> imgFiles) {
+						@RequestParam(value = "imgFiles", required = false) List<MultipartFile> imgFiles) {
 		try {
 			Methods.imageUpload(vo, thumbnailFile, imgFiles, uploadDir);
 			aservice.restaurantCreate(vo);
@@ -196,18 +196,31 @@ public class AdminRestController {
 	
 	// 문화체험 장소 생성
 	@PostMapping("/admin/culture_create_vue/")
-	public ResponseEntity<Void> culture_create_vue(@ModelAttribute OptionsCreateVO ocvo, 
-							@RequestParam(required = false) MultipartFile thumbnailFile,
-							@RequestParam(required = false) List<MultipartFile> imgFiles) {
+	public ResponseEntity<Void> culture_create_vue(@ModelAttribute PlaceVO pvo, 
+							@RequestParam(value = "op_date_start", required = false) String op_date_start,
+							@RequestParam(value = "op_date_end", required = false) String op_date_end,
+							@RequestParam(value = "op_time", required = false) List<String> op_time,
+							@RequestParam(value = "op_type", required = false) String[] op_type,
+							@RequestParam(value = "op_price", required = false) String[] op_price,
+							@RequestParam(value = "thumbnailFile", required = false) MultipartFile thumbnailFile,
+							@RequestParam(value = "imgFiles", required = false) List<MultipartFile> imgFiles) {
 		try {
-			Methods.imageUpload(ocvo.getPvo(), thumbnailFile, imgFiles, uploadDir);
+			Methods.imageUpload(pvo, thumbnailFile, imgFiles, uploadDir);
+			
+			OptionsCreateVO ocvo = new OptionsCreateVO();
+			ocvo.setPvo(pvo);
+			ocvo.setOp_date_start(op_date_start);
+			ocvo.setOp_date_end(op_date_end);
+			ocvo.setOp_time(op_time);
+			ocvo.setOp_type(op_type);
+			ocvo.setOp_price(op_price);
 			
 			List<PlaceOptionsVO> opList = Methods.saveOptions(ocvo);
 			
-			aservice.cultureCreate(ocvo.getPvo(), opList);
+			aservice.cultureCreate(pvo, opList);
 		} catch(Exception ex) {
 			ex.printStackTrace();
-			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
 		return new ResponseEntity<>(HttpStatus.OK);
@@ -215,17 +228,17 @@ public class AdminRestController {
 	
 	// 관광명소 장소 생성
 	@PostMapping("/admin/attraction_create_vue/")
-	public ResponseEntity<PlaceVO> attraction_create_vue(@ModelAttribute PlaceVO vo,
-						@RequestParam(required = false) MultipartFile thumbnailFile,
-						@RequestParam(required = false) List<MultipartFile> imgFiles) {
+	public ResponseEntity<PlaceVO> attraction_create_vue(@ModelAttribute PlaceVO pvo,
+						@RequestParam(value = "thumbnailFile", required = false) MultipartFile thumbnailFile,
+						@RequestParam(value = "imgFiles", required = false) List<MultipartFile> imgFiles) {
 		try {
-			Methods.imageUpload(vo, thumbnailFile, imgFiles, uploadDir);
-			aservice.attractionCreate(vo);
+			Methods.imageUpload(pvo, thumbnailFile, imgFiles, uploadDir);
+			aservice.attractionCreate(pvo);
 		} catch(Exception ex) {
 			ex.printStackTrace();
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		return new ResponseEntity<>(vo, HttpStatus.OK);
+		return new ResponseEntity<>(pvo, HttpStatus.OK);
 	}
 }
