@@ -129,18 +129,18 @@
 								</div>
 								<div class="col-lg-4 mb-3">
 									<label class="small text-gray-700 font-weight-bold">시간옵션 (OP_TIME)</label><br>
-										<input type="checkbox" name="op_time" value="10:00" style="margin-left: 20px;">10:00
-										<input type="checkbox" name="op_time" value="11:00" style="margin-left: 30px;">11:00
-										<input type="checkbox" name="op_time" value="12:00" style="margin-left: 30px;">12:00
-										<input type="checkbox" name="op_time" value="13:00" style="margin-left: 30px;">13:00
-										<input type="checkbox" name="op_time" value="14:00" style="margin-left: 30px;">14:00
-										<input type="checkbox" name="op_time" value="15:00" style="margin-left: 30px;">15:00<br>
-										<input type="checkbox" name="op_time" value="16:00" style="margin-left: 20px;">16:00
-										<input type="checkbox" name="op_time" value="17:00" style="margin-left: 30px;">17:00
-										<input type="checkbox" name="op_time" value="18:00" style="margin-left: 30px;">18:00
-										<input type="checkbox" name="op_time" value="19:00" style="margin-left: 30px;">19:00
-										<input type="checkbox" name="op_time" value="20:00" style="margin-left: 30px;">20:00
-										<input type="checkbox" name="op_time" value="21:00" style="margin-left: 30px;">21:00
+										<input type="checkbox" name="op_time" value="10:00" style="margin-left: 15px;">10:00
+										<input type="checkbox" name="op_time" value="11:00" style="margin-left: 25px;">11:00
+										<input type="checkbox" name="op_time" value="12:00" style="margin-left: 25px;">12:00
+										<input type="checkbox" name="op_time" value="13:00" style="margin-left: 25px;">13:00
+										<input type="checkbox" name="op_time" value="14:00" style="margin-left: 25px;">14:00
+										<input type="checkbox" name="op_time" value="15:00" style="margin-left: 25px;">15:00<br>
+										<input type="checkbox" name="op_time" value="16:00" style="margin-left: 15px;">16:00
+										<input type="checkbox" name="op_time" value="17:00" style="margin-left: 25px;">17:00
+										<input type="checkbox" name="op_time" value="18:00" style="margin-left: 25px;">18:00
+										<input type="checkbox" name="op_time" value="19:00" style="margin-left: 25px;">19:00
+										<input type="checkbox" name="op_time" value="20:00" style="margin-left: 25px;">20:00
+										<input type="checkbox" name="op_time" value="21:00" style="margin-left: 25px;">21:00
 								</div>
 								<div class="col-lg-4 mb-3">
 									<label class="small text-gray-700 font-weight-bold">옵션1 (OP_TYPE)</label>
