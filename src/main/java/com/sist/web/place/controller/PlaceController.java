@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.sist.web.commons.Methods;
+
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -68,38 +70,29 @@ public class PlaceController {
 	
 	// 최근 본 장소 (쿠키 생성)
 	@GetMapping("/place/culture/detail_before")
-	public String culture_before(@RequestParam("pno") int pno, HttpServletResponse response,
-															RedirectAttributes ra) {
+	public String culture_before(@RequestParam("pno") int pno, HttpServletResponse response) {
 		
-		Cookie cookie=new Cookie("place_culture_"+pno, String.valueOf(pno));
-		cookie.setPath("/");
-		cookie.setMaxAge(60*60*24*3);
-		response.addCookie(cookie);
+		String type="culture";
+		Methods.setCookie(pno, type, response);
 		
 		return "redirect:/place/culture/detail?pno="+pno;
 	}
 	
 	@GetMapping("/place/attraction/detail_before")
-	public String attraction_before(@RequestParam("pno") int pno, HttpServletResponse response,
-															RedirectAttributes ra) {
+	public String attraction_before(@RequestParam("pno") int pno, HttpServletResponse response) {
 		
-		Cookie cookie=new Cookie("place_attraction_"+pno, String.valueOf(pno));
-		cookie.setPath("/");
-		cookie.setMaxAge(60*60*24*3);
-		response.addCookie(cookie);
+		String type="attraction";
+		Methods.setCookie(pno, type, response);
 		
 		return "redirect:/place/attraction/detail?pno="+pno;
 	}
 	
 	@GetMapping("/place/restaurant/detail_before")
 	
-	public String restaurant_before(@RequestParam("pno") int pno, HttpServletResponse response,
-															RedirectAttributes ra) {
+	public String restaurant_before(@RequestParam("pno") int pno, HttpServletResponse response) {
 		
-		Cookie cookie=new Cookie("place_restaurant_"+pno, String.valueOf(pno));
-		cookie.setPath("/");
-		cookie.setMaxAge(60*60*24*3);
-		response.addCookie(cookie);
+		String type="restaurant";
+		Methods.setCookie(pno, type, response);
 		
 		return "redirect:/place/restaurant/detail?pno="+pno;
 	}

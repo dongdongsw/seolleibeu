@@ -31,16 +31,6 @@ public class CommonsCookie {
 			
 			PlaceVO vo=mService.placeDataForCookie(Integer.parseInt(c.getValue()));
 			
-			// 중복이면 오래된 거 제거
-			for(int i=0; i<cookieList.size(); i++) {
-
-				if(cookieList.get(i).getPno()==vo.getPno()) {
-					cookieList.remove(i);
-					System.out.println("삭제완");
-					break;
-				}
-			}
-			
 			// 마지막 제거 
 			if (cookieList.size() >= 3) {
 				cookieList.remove(0);
