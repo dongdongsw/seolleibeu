@@ -13,11 +13,7 @@ const useRefundStore=defineStore('refund',{
 					alert('환불 사유를 입력해주세요')
 					return
 				}
-				else
-				{
-					alert('환불 요청 실패')
-				}
-				const res=await api.get('/refund_insert_vue/',{
+				const res=await api.post('/refund_insert_vue/',{
 					p_id:this.p_id,
 					rf_msg:this.rf_msg,
 					uno:this.uno
@@ -27,6 +23,12 @@ const useRefundStore=defineStore('refund',{
 					alert('환불 요청이 완료되었습니다')
 					this.refundListData()
 				}
+				else
+				{
+					console.error(err)
+					alert('환불 요청에 실패하였습니다')
+				}
+				console.log(res.data)
 			}
 	}
 })
