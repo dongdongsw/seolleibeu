@@ -28,11 +28,11 @@
 							<div class="row">
 								<div class="col-lg-6 mb-3">
 									<label class="small text-gray-700 font-weight-bold">장소명 (NAME)</label>
-									<input type="text" name="name" class="form-control" placeholder="예) 컨텐츠명" required>
+									<input type="text" name="name" class="form-control" placeholder="예) 컨텐츠명">
 								</div>
 								<div class="col-lg-3 mb-3">
 									<label class="small text-gray-700 font-weight-bold">유형 (TYPE)</label>
-									<select name="category" v-model="selectedType" class="form-control" required>
+									<select name="category" v-model="selectedType" class="form-control">
 										<option value="" hidden="">선택</option>
 										<option value="culture">문화/체험</option>
 										<option value="attraction">관광명소</option>

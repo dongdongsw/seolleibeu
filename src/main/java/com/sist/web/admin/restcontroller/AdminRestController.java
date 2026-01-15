@@ -31,7 +31,7 @@ public class AdminRestController {
     private final Methods methods;
 	private final AdminService aservice;
 	
-	@Value("${file.upload.place}")
+	@Value("${file.upload.place:/uploads/place}")
 	private String uploadDir;
 
 	// 문화 리스트
@@ -181,8 +181,8 @@ public class AdminRestController {
 	// 식당 장소 생성
 	@PostMapping("/admin/restaurant_create_vue/")
 	public ResponseEntity<PlaceVO> restaurant_create_vue(@ModelAttribute PlaceVO vo, 
-						@RequestParam(required = false) MultipartFile thumbnailFile,
-						@RequestParam(required = false) List<MultipartFile> imgFiles) {
+						@RequestParam(value = "thumbnailFile", required = false) MultipartFile thumbnailFile,
+						@RequestParam(value = "imgFiles" ,required = false) List<MultipartFile> imgFiles) {
 		try {
 			Methods.imageUpload(vo, thumbnailFile, imgFiles, uploadDir);
 			aservice.restaurantCreate(vo);

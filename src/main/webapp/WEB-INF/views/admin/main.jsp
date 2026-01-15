@@ -31,13 +31,15 @@
 		</div>
 	</div>
 
-	
 	<script src="/vendor/jquery/jquery.min.js"></script>
 	<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
-	<script src="/js/sb-admin-2.min.js"></script>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://unpkg.com/vue-demi"></script>
+	<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="/vendor/datatables/jquery.dataTables.min.js"></script>
 	<script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-	<script src="/js/demo/datatables-demo.js"></script>
+	<!-- <script src="/js/demo/datatables-demo.js"></script> -->
 </body>
 </html>

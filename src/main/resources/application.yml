@@ -24,4 +24,4 @@ mybatis:
 
 file:
   upload:
-    place: /uploads/place
+    place: C:/data/uploads/place
