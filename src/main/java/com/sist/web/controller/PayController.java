@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequiredArgsConstructor
 public class PayController {
-	private final PayService pservice;
+	private final PayMentService pservice;
 	
 	@GetMapping("/fail")
 	public String fail()

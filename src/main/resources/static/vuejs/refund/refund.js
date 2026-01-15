@@ -13,6 +13,11 @@ const useRefundStore=defineStore('refund',{
 					alert('환불 사유를 입력해주세요')
 					return
 				}
+				console.log("===== 환불 요청 데이터 확인 =====");
+				    console.log("상품 ID (p_id):", this.p_id);
+				    console.log("사용자 번호 (uno):", this.uno);
+				    console.log("환불 금액 (rf_amount):", this.rf_amount);
+				    console.log("환불 사유 (rf_msg):", this.rf_msg);
 				const res=await api.post('/refund_insert_vue/',{
 					p_id:this.p_id,
 					rf_msg:this.rf_msg,
@@ -25,10 +30,8 @@ const useRefundStore=defineStore('refund',{
 				}
 				else
 				{
-					console.error(err)
 					alert('환불 요청에 실패하였습니다')
 				}
-				console.log(res.data)
 			}
 	}
 })

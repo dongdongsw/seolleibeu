@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
@@ -44,7 +45,7 @@ public class RefundRestcontroller {
 	}
 	// 환불 요청
 	@PostMapping("/refund_insert_vue/")
-	public ResponseEntity<String> refund_insert_vue(@ModelAttribute RefundVO vo)
+	public ResponseEntity<String> refund_insert_vue(@RequestBody RefundVO vo)
 	{
 		try
 		{

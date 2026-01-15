@@ -1,5 +1,5 @@
 package com.sist.web.pay.service;
 
-public interface PayService {
+public class PayServiceImpl {
 
 }
