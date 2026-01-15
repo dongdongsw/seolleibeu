@@ -7,13 +7,19 @@ import java.util.*;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sist.web.vo.*;
+
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Component
 public class Methods {
 	
+	// 페이지네이션 공통 모듈
 	public static Map paginationMap(final int BLOCK, int page, int totalpage) {
 		
 		Map map=new HashMap();
@@ -96,5 +102,20 @@ public class Methods {
 		}
 		
 		return list;
+	}
+	
+
+	// 쿠키값 삭제 및 생성
+	public static void setCookie(int pno, String type, HttpServletResponse response) {
+		
+		Cookie del = new Cookie("place_"+type+"_"+pno, "");
+	    del.setPath("/");
+	    del.setMaxAge(0);
+	    response.addCookie(del);
+		
+		Cookie cookie=new Cookie("place_"+type+"_"+pno, String.valueOf(pno));
+		cookie.setPath("/");
+		cookie.setMaxAge(60*60*24*3);
+		response.addCookie(cookie);
 	}
 }
