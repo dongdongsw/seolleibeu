@@ -39,6 +39,7 @@ public class Methods {
 	
 	public static void imageUpload(PlaceVO vo, MultipartFile thumbnailFile, 
 			List<MultipartFile> imgFiles, String uploadDir) throws Exception {
+		String webPath = "/placeimages/";
 		File dir = new File(uploadDir);
 		if(!dir.exists()) {
 			dir.mkdirs();
@@ -50,7 +51,7 @@ public class Methods {
 			File thumbFile = new File(dir, thumbName);
 			thumbnailFile.transferTo(thumbFile);
 			
-			vo.setThumbnail(thumbName);
+			vo.setThumbnail(webPath+thumbName);
 		}
 		
 		// 상세이미지
@@ -66,7 +67,7 @@ public class Methods {
 				File imgFile = new File(dir, imgName);
 				mf.transferTo(imgFile);
 				
-				imgNames.add(imgName);
+				imgNames.add(webPath+imgName);
 			}
 			
 			vo.setImgs(String.join("|", imgNames));
