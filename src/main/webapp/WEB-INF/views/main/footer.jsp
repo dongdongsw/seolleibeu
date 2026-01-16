@@ -23,10 +23,10 @@
                 <!-- 기능1 -->
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="footer-widget">
-                        <h3 class="widget-title"><a href="#" style="color: white;">주요 기능1</a></h3>
-                        <p><a href="#" style="color: gray;">기능 1-1</a></p>
-                        <p><a href="#" style="color: gray;">기능 1-2</a></p>
-                        <p><a href="#" style="color: gray;">기능 1-3</a></p>
+                        <h3 class="widget-title"><a href="#" style="color: white;">코스</a></h3>
+                        <p><a href="#" style="color: gray;">코스 생성</a></p>
+                        <p><a href="#" style="color: gray;">추천 코스</a></p>
+                        <p><a href="#" style="color: gray;">나의 코스</a></p>
                     </div>
                 </div>
                 
@@ -34,22 +34,22 @@
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="footer-widget">
                         <!-- newsletter block -->
-                        <h3 class="widget-title"><a href="#" style="color: white;">주요 기능2</a></h3>
-                        <p><a href="#" style="color: gray;">기능 2-1</a></p>
-                        <p><a href="#" style="color: gray;">기능 2-2</a></p>
-                        <p><a href="#" style="color: gray;">기능 2-3</a></p>
+                        <h3 class="widget-title"><a href="#" style="color: white;">장소</a></h3>
+                        <p><a href="#" style="color: gray;">음식점</a></p>
+                        <p><a href="#" style="color: gray;">문화/체험</a></p>
+                        <p><a href="#" style="color: gray;">관광명소</a></p>
                     </div>
                     <!-- newsletter block -->
                 </div>
                 
                 <!-- 기능3 -->
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="footer-widget">
+                    <div class="footer-widget" style="margin-top: 80px;">
                         <!-- newsletter block -->
-                        <h3 class="widget-title"><a href="#" style="color: white;">주요 기능3</a></h3>
-                        <p><a href="#" style="color: gray;">기능 3-1</a></p>
-                        <p><a href="#" style="color: gray;">기능 3-2</a></p>
-                        <p><a href="#" style="color: gray;">기능 3-3</a></p>
+                        <p><a href="#" style="color: gray;">공지사항</a></p>
+                        <p><a href="#" style="color: gray;">로그인</a></p>
+                        <p><a href="#" style="color: gray;">회원가입</a></p>
+                      <!--   <p><a href="#" style="color: gray;">마이페이지</a></p> -->
                     </div>
                     <!-- newsletter block -->
                 </div>
