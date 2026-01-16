@@ -1,0 +1,178 @@
+@charset "UTF-8";
+.page-header {
+	margin: 0px auto;
+}
+
+.main-container {
+	padding-top: 100px;
+}
+
+.culture-detail-section {
+	margin-top: 0px;
+	position: relative;
+}
+
+.culture-detail-block {
+	margin-bottom: 40px;
+}
+
+.culture-thumbnail {
+	float: left;
+	margin: 0px 20px 0px 0px;
+	width: 270px;
+	height: 100%;
+}
+
+.culture-info ul {
+	list-style: none;
+	padding: 0;
+}
+
+.culture-info li {
+	font-size: 16px;
+	margin-bottom: 8px;
+	display: flex;
+	align-items: center;
+}
+
+.culture-info .label {
+	display: inline-block;
+	width: 70px;
+	padding: 4px 0px;
+	font-weight: bold;
+	color: black;
+	flex-shrink: 0;
+}
+
+.culture-info .value {
+	margin-left: 5px;
+	font-size: 14px;
+	flex: 1;
+	word-break: keep-all;
+}
+
+.culture-notice {
+	color: #800020;
+	font-size: 14px;
+	margin: 10px;
+	padding: 0;
+}
+
+.booking-widget {
+	/* widget styling */
+	
+}
+
+.booking-widget .widget-title {
+	font-weight: bold;
+}
+
+.booking-widget ul {
+	list-style: none;
+}
+
+.booking-option {
+	font-weight: bold;
+	min-height: 30px;
+}
+
+.quantity-section {
+	display: flex;
+	align-items: center;
+	margin-bottom: -25px;
+	margin-left: 65px;
+}
+
+.quantity-label {
+	margin-right: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.quantity-controls {
+	display: flex;
+	align-items: stretch;
+	margin-right: 15px;
+}
+
+.quantity-input {
+	width: 38px;
+	height: 32px;
+	text-align: center;
+	border: 1px solid #ccc;
+	border-right: none;
+	padding: 0;
+	margin: 0;
+	font-size: 15px;
+	background-color: #fff;
+	outline: none;
+}
+
+.quantity-buttons {
+	display: flex;
+	flex-direction: column;
+	width: 24px;
+}
+
+.quantity-btn {
+	width: 100%;
+	height: 16px;
+	line-height: 14px;
+	font-size: 10px;
+	padding: 0;
+	border: 1px solid #ccc;
+	background: black;
+	cursor: pointer;
+	display: block;
+	outline: none;
+	color: white;
+}
+
+.quantity-btn.minus {
+	border-top: none;
+}
+
+.booking-btn {
+	background-color: black;
+	color: white;
+	border: none;
+	border-radius: 20px;
+	padding: 0 20px;
+	height: 32px;
+	font-weight: bold;
+	font-size: 13px;
+	cursor: pointer;
+	outline: none;
+}
+
+.stats-section {
+	position: absolute;
+	left: 66%;
+}
+
+.stats-table {
+	border: none;
+}
+
+.stats-table td {
+	border: none !important;
+}
+
+.stats-table tbody tr {
+	border: none !important;
+}
+
+.stats-icon {
+	padding-top: 1px;
+	font-size: 22px;
+	color: black;
+}
+
+.btn-list {
+	background-color: black;
+	color: white;
+}
+
+.text-right {
+	margin-top: 5px;
+}
