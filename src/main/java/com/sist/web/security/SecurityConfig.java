@@ -36,9 +36,11 @@ public class SecurityConfig {
 							"/auth/**",
 							"/mypage/**"
 					).permitAll()
-					//.requestMatchers("/mypage/**", "/course/**").hasRole("USER")
+					.requestMatchers("/course/create/**").hasRole("USER")
+					//.requestMatchers("/mypage/**").hasRole("USER")
 					//.requestMatchers("/admin/**").hasRole("ADMIN")
 					.anyRequest().permitAll()
+					//.anyRequest().authenticated()
 			)
 			
 			.formLogin(form -> form

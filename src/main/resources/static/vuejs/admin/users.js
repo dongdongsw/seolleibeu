@@ -49,15 +49,9 @@ const useUsersStore=defineStore('users_list',{
 			this.usersListData()
 		},
 		async enabledChange(uno,enabled){
-			if(enabled === 1){
-				this.enabled = 0
-			}
-			else{
-				this.enabled = 1
-			}
 			 await api.post('/admin/users_enabled_vue/',{
 					uno:uno,
-					enabled:this.enabled
+					enabled:enabled
 			 })
 			 this.usersListData()
 		}

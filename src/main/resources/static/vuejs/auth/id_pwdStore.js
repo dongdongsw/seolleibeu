@@ -7,7 +7,11 @@ const useId_PwdStore = defineStore('id_pwd',{
 		emailCode:'', 
 		pwd:'', 				// 비밀번호 1번째 입력
 		pwd1:'', 				// 비밀번호 2번쨰 입력	
-		emailCheckCount:2 		// 이메일 중복 검사
+		emailCheckCount:2, 		// 이메일 중복 검사
+		idCheckCount:2,
+		idFindSuccess: false, 	// 아이디 찾기 이메일 검사 완료시 true => 화면 전환을 위해서
+		pwdFindSuccess: false,	// 비밀번호 찾기 이메일 검사, 아이디 검사 완료시 true => 화면 전환을 위해서
+		
 	}),
 	actions:{
 		// 공용

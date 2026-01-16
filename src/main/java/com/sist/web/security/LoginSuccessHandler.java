@@ -28,8 +28,6 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler{
 		UsersVO vo = lService.loginInfoData(authentication.getName());
 		HttpSession session = request.getSession();
 		
-		
-		
 		session.setAttribute("uno", vo.getUno());
 		session.setAttribute("id", vo.getId());
 		session.setAttribute("name", vo.getName());

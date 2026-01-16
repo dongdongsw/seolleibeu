@@ -60,8 +60,8 @@
 													class="fas fa-ellipsis-h"></i>
 												</a>
 												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" @click="store.enabledChange(vo.uno,vo.enabled)">활동</a> <a
-														class="dropdown-item text-danger"  @click="store.enabledChange(vo.uno,vo.enabled)">정지</a>
+													<a class="dropdown-item" @click="store.enabledChange(vo.uno, 1)">활동</a> 
+													<a class="dropdown-item text-danger"  @click="store.enabledChange(vo.uno, 0)">정지</a>
 												</div>
 											</div>
 										</td>
