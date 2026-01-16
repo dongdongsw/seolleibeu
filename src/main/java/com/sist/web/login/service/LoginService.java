@@ -1,5 +1,7 @@
 package com.sist.web.login.service;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.sist.web.vo.UsersVO;
 
 public interface LoginService {
@@ -12,4 +14,6 @@ public interface LoginService {
 	public int loginIdCheck(String id);	
 	
 	public int registerEmailCheck(String email);
+	
+	public void pwdReset(String pwd, String id);
 }

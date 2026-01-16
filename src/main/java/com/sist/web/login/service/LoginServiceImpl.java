@@ -42,6 +42,12 @@ public class LoginServiceImpl implements LoginService{
 		// TODO Auto-generated method stub
 		return mapper.registerEmailCheck(email);
 	}
+
+	@Override
+	public void pwdReset(String pwd, String id) {
+		// TODO Auto-generated method stub
+		mapper.pwdReset(pwd, id);
+	}
 	
 	
 }

@@ -7,7 +7,7 @@
 <title>아이디 찾기</title>
 </head>
 <body>
-	<div class="content auth-wrapper">
+	<div class="content auth-wrapper" id="idFind">
 	    <div class="container" style="display: flex; align-items: center; justify-content: center;">
 	        <div class="row col-md-6">
 	            <div class="col-md-12">
@@ -33,7 +33,7 @@
 	                        </div>
 	
 	                        <div class="col-md-12 text-center" style=" padding-top: 40px;">
-	                            <button class="btn btn-default auth-main-btn auth-dark-btn">아이디 찾기</button>
+	                            <button class="btn btn-default auth-main-btn auth-dark-btn" @click="">아이디 찾기</button>
 	                        </div>
 	                    </div>
 	                </div>
@@ -41,5 +41,21 @@
 	        </div>
 	    </div>
 	</div>
+	<script src="/vuejs/auth/id_pwdStore.js"></script>
+	<script>
+		const {createApp, onMounted} = Vue
+		const {createPinia} = Pinia
+		
+		const idApp = createApp({
+			setup(){
+				idStore = useId_PwdStore()
+				return {
+					idStore
+				}
+			}
+		})
+		idApp.use(createPinia())
+		idApp.mount("#idFind")
+	</script>
 </body>
 </html>

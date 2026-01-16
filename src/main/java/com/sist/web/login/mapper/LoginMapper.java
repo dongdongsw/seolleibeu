@@ -2,7 +2,9 @@ package com.sist.web.login.mapper;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import com.sist.web.vo.UsersVO;
@@ -39,5 +41,9 @@ public interface LoginMapper {
 			+ "FROM users "
 			+ "WHERE email = #{email}")
 	public int registerEmailCheck(String email);
+	
+	// <비밀번호 찾기> 비밀번호 바꾸기
+	@Update("UPDATE users SET pwd = #{pwd} WHERE id = #{id}")
+	public void pwdReset(@Param("pwd") String pwd, @Param("id") String id);
 	
 }

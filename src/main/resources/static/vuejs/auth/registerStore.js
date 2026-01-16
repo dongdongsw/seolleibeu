@@ -2,24 +2,24 @@ const {defineStore} = Pinia
 
 const useRegisterStore = defineStore('register',{
 	state:()=>({
-		emailCode:'', // 이메일 인증번호
-		name:'', // 닉네임
-		id:'', // 아이디
-		pwd:'', // 비밀번호
-		pwd1:'', // 비밀번호 재입력
-		email: '', //이메일
-		phone:'', // 전화번호 합친 것
-		phone1:'', // 010
-		phone2:'', // 중간 전화번호
-		phone3:'', // 끝 전화번호
-		required_agree:'N', // 필수 선택 결론
-		optional_agree:'N', // 선택 결론
-		option1:'N', // 만 14세 이상입니다.(필수)
-		option2:'N', // 개인정보 수집 및 이용동의(필수)
-		option3:'N',  // 개인정보 제3자 제공 동의(필수)
-		nickNameCheckCount:2, // 닉네임 중복 검사
-		idCheckCount:2, // 아이디 중복 검사
-		emailCheckCount:2, // 이메일 중복 검사
+		emailCode:'', 			// 이메일 인증번호
+		name:'', 				// 닉네임
+		id:'', 					// 아이디
+		pwd:'', 				// 비밀번호
+		pwd1:'', 				// 비밀번호 재입력
+		email: '', 				// 이메일
+		phone:'', 				// 전화번호 합친 것
+		phone1:'', 				// 010
+		phone2:'', 				// 중간 전화번호
+		phone3:'', 				// 끝 전화번호
+		required_agree:'N', 	// 필수 선택 결론
+		optional_agree:'N', 	// 선택 결론
+		option1:'N', 			// 만 14세 이상입니다.(필수)
+		option2:'N', 			// 개인정보 수집 및 이용동의(필수)
+		option3:'N',  			// 개인정보 제3자 제공 동의(필수)
+		nickNameCheckCount:2, 	// 닉네임 중복 검사
+		idCheckCount:2, 		// 아이디 중복 검사
+		emailCheckCount:2, 		// 이메일 중복 검사
 		emailCodeCheckCount:2,
 		emailCodeSuccess:2
 	}),
@@ -55,6 +55,7 @@ const useRegisterStore = defineStore('register',{
 			this.nickNameCheckCount = result.data.nickNameCheckCount
 			
 		},
+		// 이메일 중복 검사
 		async emailCheck(){
 			const result = await api.get('/auth/emailCheck_vue/',{
 				params:{
@@ -90,7 +91,7 @@ const useRegisterStore = defineStore('register',{
 			// 조건문
 			if(this.idCheckCount === 0){ // 1
 				
-				if(this.pwd !== '' || this.pwd !== ''){ // 2
+				if(this.pwd !== '' || this.pwd1 !== ''){ // 2
 					
 					if(this.pwd === this.pwd1){ // 3
 				

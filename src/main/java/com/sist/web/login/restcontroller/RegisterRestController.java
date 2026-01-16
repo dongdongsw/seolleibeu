@@ -85,4 +85,20 @@ public class RegisterRestController {
 		
 		return ResponseEntity.ok().build();
 	}
+	
+	@PostMapping("/pwdReset_vue/")
+	public ResponseEntity<Void> auth_pwdReset_vue(@RequestBody UsersVO vo){
+		
+		try {
+			lService.pwdReset(vo.getPwd(), vo.getId());
+			
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		
+		return ResponseEntity.ok().build();
+	}
 }
