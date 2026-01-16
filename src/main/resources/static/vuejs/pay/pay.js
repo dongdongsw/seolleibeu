@@ -19,7 +19,7 @@ const main = async () => {
    * renderPaymentMethods, renderAgreement, requestPayment 보다 반드시 선행되어야 합니다.
    * @docs https://docs.tosspayments.com/sdk/v2/js#widgetssetamount
    */
-  await widgets.setAmount(amount);
+  await widgets.setAmount(amount)
 
   const [paymentMethodWidget] = await Promise.all([
     /**
@@ -38,7 +38,7 @@ const main = async () => {
      * @docs https://docs.tosspayments.com/reference/widget-sdk#renderagreement선택자-옵션
      */
     widgets.renderAgreement({ selector: "#agreement", variantKey: "AGREEMENT" }),
-  ]);
+  ])
 
   /**
    * 결제수단 선택 이벤트를 등록합니다.
@@ -54,9 +54,9 @@ const main = async () => {
       // 커스텀 결제수단 (결제위젯 Pro 플랜 기능)
       // 문화바우처 안내사항 노출
     }
-  });
+  })
 
-  const paymentRequestButton = document.getElementById('payment-request-button');
+  const paymentRequestButton = document.getElementById('payment-request-button')
 
   paymentRequestButton.addEventListener('click', async () => {
     try {
@@ -64,8 +64,8 @@ const main = async () => {
        * 선택된 결제수단을 조회합니다.
        * @docs https://docs.tosspayments.com/sdk/v2/js#paymentmethodwidgetgetselectedpaymentmethod
        */
-      const selectedPaymentMethod = await paymentMethodWidget.getSelectedPaymentMethod();
-      console.log("selectedPaymentMethod: ", selectedPaymentMethod);
+      const selectedPaymentMethod = await paymentMethodWidget.getSelectedPaymentMethod()
+      console.log("selectedPaymentMethod: ", selectedPaymentMethod)
       
       /**
        * 결제 요청
@@ -80,15 +80,15 @@ const main = async () => {
         failUrl: window.location.origin + "/pay/fail",
         customerEmail: rvvo.email,
         customerName: rvvo.nickname,
-        customerMobilePhone: rvvo.phone,
-      });
+        customerMobilePhone: rvvo.phone
+      })
     } catch (err) {
      console.log('err', err);
       // TODO: 에러 처리
     }
-  });
+  })
 }
 
-main();
+main()
 
-const generateRandomString = () => window.btoa(Math.random()).slice(0, 20);
+const generateRandomString = () => window.btoa(Math.random()).slice(0, 20)

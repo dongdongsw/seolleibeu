@@ -10,11 +10,11 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class PayController {
 	@GetMapping("/pay/success")
-	public String pay_success(@RequestParam("paymentKey") String paymentKey, @RequestParam("orderId") String orderId, @RequestParam("totalAmount") int totalAmount,@RequestParam("rvno") int rvno, Model model)
+	public String pay_success(@RequestParam("paymentKey") String paymentKey, @RequestParam("orderId") String orderId, @RequestParam("amount") long amount,@RequestParam("rvno") int rvno, Model model)
 	{
 		model.addAttribute("paymentKey", paymentKey);
 		model.addAttribute("orderId", orderId);
-		model.addAttribute("totalAmount", totalAmount);
+		model.addAttribute("amount", amount);
 		model.addAttribute("rvno", rvno);
 		return "pay/success";
 	}

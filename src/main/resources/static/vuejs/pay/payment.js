@@ -17,7 +17,7 @@ const tossPaymentRequest = async (rvvo) => {
       method: "CARD",
       amount: {
         currency: "KRW",
-        value: rvvo.rv_price * rvvo.rv_amount,
+        value: rvvo.rv_price * rvvo.rv_amount
       },
       orderId: "RV-" + rvvo.rvno + "-" + new Date().getTime(),
       orderName: rvvo.pvo.name,
@@ -29,4 +29,4 @@ const tossPaymentRequest = async (rvvo) => {
   } catch (error) {
     alert("결제를 취소 하셨습니다.")
   }
-};
+}

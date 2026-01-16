@@ -15,12 +15,13 @@ async function confirmPayment() {
 	totalAmount:totalAmount,
 	rvno:rvno
   })
-
+  
   if (response.data.result==='success')
   {
 	document.querySelector('.confirm-loading').style.display = 'none';
 	document.querySelector('.confirm-success').style.display = 'flex';
   }
+  
 }
 
 const confirmPaymentButton = document.getElementById('confirmPaymentButton')
