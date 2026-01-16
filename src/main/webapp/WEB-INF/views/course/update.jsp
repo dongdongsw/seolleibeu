@@ -44,7 +44,7 @@
 							<div class="place-search">
 								<div class="input-group">
 									<input type="text" class="form-control" ref="keywordRef" v-model="store.keyword" @keyup.enter="store.find(keywordRef)"
-										placeholder="장소를 검색하세요." aria-describedby="basic-addon2">
+										placeholder="장소명 또는 주소를 검색하세요." aria-describedby="basic-addon2">
 									<span class="input-group-addon" id="basic-addon2" @click="store.find(keywordRef)"><i class="fa fa-search"></i></span>
 								</div>
 								<div class="cate text-center">
@@ -78,7 +78,7 @@
 								<div class="place-result">
 									<h4>검색 결과</h4>
 									<div class="list-scroll">
-											<div class="place" v-for="(vo, index) in store.place_list.slice(0, 30)" :key="index">
+											<div class="place" v-for="(vo, index) in store.place_list.slice(0, 50)" :key="index">
 												<div class="thumb">
 													<img :src="vo.thumbnail" width="100px"
 														height="102px">

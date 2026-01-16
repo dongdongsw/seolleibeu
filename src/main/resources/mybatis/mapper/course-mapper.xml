@@ -20,7 +20,7 @@
 		    </when>
 		
 		    <when test="keyword != null and keyword != ''">
-		      WHERE name LIKE '%'||#{keyword}||'%'
+		      WHERE name LIKE '%'||#{keyword}||'%' OR addr LIKE '%'||#{keyword}||'%'
 		    </when>
 		</choose>
  		

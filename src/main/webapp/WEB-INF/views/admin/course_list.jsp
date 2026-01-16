@@ -17,6 +17,7 @@
 }
 a {
 	cursor: pointer;
+	color: #858796;
 }
 </style>
 </head>
@@ -59,7 +60,7 @@ a {
 								<tbody>
 									<tr v-for="(vo,index) in store.list" :key="index">
 										<td class="text-center">{{vo.cno}}</td>
-										<td :title="vo.title" class="text-center">{{vo.title}}</td>
+										<td :title="vo.title" class="text-center"><a :href="'../course/detail?cno='+vo.cno">{{vo.title}}</a></td>
 										<td class="content" :title="vo.content">{{vo.content}}</td>
 										<td class="text-center">{{vo.created_at.split('T')[0]}}</td>
 										<td class="text-center">{{vo.is_public == 'Y'?'공개':'비공개'}}</td>
