@@ -23,6 +23,8 @@
         <button class="button" onclick="location.href='/mypage/my_reserve'">마이페이지</button>
       </div>
     </div>
-    <script type="module" src="/vuejs/pay/success.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/pay/success.js"></script>
   </body>
 </html>

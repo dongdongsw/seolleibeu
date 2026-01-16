@@ -154,15 +154,16 @@
 													<ul>
 														<li>
 															<span class="label">결제금액</span>
-															<span class="value" v-if="store.rvvo.rv_status === '예약완료'">20,000원</span>
+															<span class="value" v-if="store.rvvo.rv_status === '예약완료'">{{(store.rvvo.pyvo.totalAmount || 0).toLocaleString()}}원</span>
 														</li>
 														<li>
 															<span class="label">결제수단</span>
-															<span class="value" v-if="store.rvvo.rv_status === '예약완료'">카드결제</span>
+															<span class="value" v-if="store.rvvo.rv_status === '예약완료'">{{store.rvvo.pyvo.method === 'CARD' ? '카드결제' : store.rvvo.pyvo.method}}</span>
 														</li>
 														<li>
 															<span class="label">결제일시</span>
-															<span class="value" v-if="store.rvvo.rv_status === '예약완료'">2025-12-31 17:28:25</span>
+															<span class="value" v-if="store.rvvo.rv_status === '예약완료'">
+															{{store.rvvo.pyvo.requestedAt ? store.rvvo.pyvo.requestedAt.replace('T', ' ').split('.')[0] : ''}}</span>
 														</li>
 													</ul>
 												</div>

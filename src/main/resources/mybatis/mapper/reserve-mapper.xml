@@ -12,6 +12,11 @@
     <result property="pvo.pno" column="pno"/>
     <result property="pvo.type" column="type"/>
     <result property="phone" column="rv_phone"/>
+    
+    <!-- 결제 관련 -->
+    <result property="pyvo.totalAmount" column="totalAmount"/>
+    <result property="pyvo.method" column="method"/>
+    <result property="pyvo.requestedAt" column="requestedAt"/>
   </resultMap>
   
   <select id="myReservedListData" resultMap="reserveMap" parameterType="hashmap">
@@ -32,9 +37,11 @@
   
   <select id="myReservedDetailData" resultMap="reserveMap" parameterType="int">
     SELECT p.thumbnail, p.name, p.company, p.addr, p.phone AS p_phone, rv.rvno, rv.rv_status, rv.rv_time, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, rv.rv_option, 
-    		rv.rv_price, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_amount, rv.nickname, rv.phone AS rv_phone, rv.email
+    		rv.rv_price, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_amount, rv.nickname, rv.phone AS rv_phone, rv.email,
+    		pyvo.totalAmount, pyvo.method, TO_CHAR(pyvo.requestedAt, 'YYYY-MM-DD HH24:MI:SS') AS requestedAt
     FROM reserve rv
     JOIN place p ON p.pno = rv.pno
+    LEFT OUTER JOIN pay pyvo ON rv.rvno = pyvo.rvno
     WHERE rv.rvno = #{rvno}
   </select>
   

@@ -14,11 +14,7 @@ public class PayServiceImpl implements PayService{
 	public void paymentInsert(PayVO vo) {
 		// TODO Auto-generated method stub
 		mapper.paymentInsert(vo);
+		mapper.rv_statusUpdate(vo.getRvno());
 	}
 
-	@Override
-	public void rv_statusUpdate(int rvno) {
-		// TODO Auto-generated method stub
-		mapper.rv_statusUpdate(rvno);
-	}
 }
