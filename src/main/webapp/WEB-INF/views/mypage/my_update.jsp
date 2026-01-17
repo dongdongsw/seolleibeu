@@ -23,7 +23,7 @@
 		
           <div class="info-card" style="margin-left: -40px;">
             <div class="profile" style="margin-bottom: 20px;">
-              <img src="${empty sessionScope.profile ? '../images/profile.png' : sessionScope.profile}">
+              <img src="${empty vo.profile_img ? '/profile/profile.png' : vo.profile_img}">
             </div>
 
             <div style="flex:1;">

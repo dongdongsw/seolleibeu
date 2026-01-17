@@ -10,4 +10,5 @@ public interface MypageService {
 	public boolean mypagNameChk(String name, int uno);
 	public boolean mypagPhoneChk(String phone, int uno);
 	public void mypageUpdate(UsersVO vo);
+	public void profile_update(String profile_img, int uno);
 }

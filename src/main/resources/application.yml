@@ -25,3 +25,4 @@ mybatis:
 file:
   upload:
     place: C:/data/uploads/place
+    profile: src/main/resources/static/profile

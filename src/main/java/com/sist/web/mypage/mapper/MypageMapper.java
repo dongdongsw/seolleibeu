@@ -31,5 +31,8 @@ public interface MypageMapper {
 		   +"pwd = #{pwd} "
 		   +"WHERE uno = #{uno}")
 	public void mypageUpdate(UsersVO vo);
+	
+	@Update("UPDATE users SET profile_img = #{profile_img} WHERE uno = #{uno}")
+	public void profile_update(@Param("profile_img") String profile_img, @Param("uno") int uno);
 
 }

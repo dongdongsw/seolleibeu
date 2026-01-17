@@ -18,7 +18,7 @@ import lombok.Data;
 @Repository
 public interface ReplyMapper {
 	// 댓글 조회
-	@Select("SELECT r.id,cno,r.uno,name,cr_content,TO_CHAR(cr_update_at,'yyyy-mm-dd HH24:MI:SS') as dbday "
+	@Select("SELECT r.id,cno,r.uno,u.name,u.profile_img,cr_content,TO_CHAR(cr_update_at,'yyyy-mm-dd HH24:MI:SS') as dbday "
 		   +"FROM reply r "
 		   +"JOIN users u ON r.uno = u.uno "
 		   +"WHERE cno=#{cno} "

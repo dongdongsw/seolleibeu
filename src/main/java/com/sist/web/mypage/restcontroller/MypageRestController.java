@@ -1,5 +1,14 @@
 package com.sist.web.mypage.restcontroller;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.sist.web.mypage.service.MypageService;
 import com.sist.web.vo.UsersVO;
@@ -86,4 +96,43 @@ public class MypageRestController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
          }
      }
+    @Value("${file.upload.profile}")
+    private String uploadDir;
+
+    @PostMapping("/mypage/profile_upload_ok")
+    public ResponseEntity<String> profile_upload_ok(
+            @RequestParam("profile") MultipartFile profile,
+            HttpSession session
+    ) {
+        try {
+            if (profile.isEmpty()) {
+                return ResponseEntity.badRequest().body("파일 없음");
+            }
+
+            Integer uno = (Integer) session.getAttribute("uno");
+            if (uno == null) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("로그인 필요");
+            }
+
+            File dir = new File(uploadDir);
+            if (!dir.exists()) dir.mkdirs();
+
+            String originalName = profile.getOriginalFilename();
+            String ext = originalName.substring(originalName.lastIndexOf("."));
+            String newName = System.currentTimeMillis() + "-" + UUID.randomUUID() + ext;
+
+            Path savePath = Paths.get(uploadDir, newName);
+            Files.copy(profile.getInputStream(), savePath, StandardCopyOption.REPLACE_EXISTING);
+
+            String urlPath = "/profile/" + newName;
+            mService.profile_update(urlPath, uno);
+
+            return ResponseEntity.ok(urlPath);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("서버 오류");
+        }
+    }
 }

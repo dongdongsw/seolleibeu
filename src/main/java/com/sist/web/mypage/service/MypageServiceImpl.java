@@ -50,4 +50,9 @@ public class MypageServiceImpl implements MypageService{
 	    mMapper.mypageUpdate(vo);
 		
 	}
+
+	@Override
+	public void profile_update(String profile_img, int uno) {
+		mMapper.profile_update(profile_img, uno);
+	}
 }

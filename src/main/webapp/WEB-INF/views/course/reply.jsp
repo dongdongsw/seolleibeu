@@ -47,7 +47,7 @@ const SESSION_ID=Number('${sessionScope.uno}')
 					  <tr>
 					   <td class="text-left" width="80%" style="display: flex;">
 					   <div style="margin-right: 10px">
-					   	<img src="/images/user-pic-1.jpg" width="30" height="30" style="border-radius: 50px">
+					   	<img :src="rvo.profile_img ? rvo.profile_img : '/profile/profile.png'" width="30" height="30" style="border-radius: 50px">
 					   </div>
 					   <div style="display: flex; justify-content: center; align-items: center">
 					   	  <p>{{rvo.name}}</p>
