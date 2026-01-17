@@ -46,7 +46,12 @@ public class RestaurantRestController {
 			
 			for(PlaceVO vo : resList) {
 				String[] addr = vo.getAddr().split(" ");
-				vo.setAddr(addr[1] + " " + addr[2] + " " + addr[3]);
+				if(addr.length >= 4) {
+					vo.setAddr(addr[1] + " " + addr[2] + " " + addr[3]);
+				}
+				else {
+					vo.setAddr(addr[0]);
+				}
 			}
 			
 			Map pageMap = Methods.paginationMap(8, page, totalpage);
@@ -76,10 +81,12 @@ public class RestaurantRestController {
 				
 				for(String items : menus) {
 					String[] item = items.split(":");
-					Map map = new HashMap<>();
-					map.put("name", item[0].trim());
-					map.put("price", item[1].trim());
-					menuList.add(map);
+					if(item.length == 2) {
+						Map map = new HashMap<>();
+						map.put("name", item[0].trim());
+						map.put("price", item[1].trim());
+						menuList.add(map);
+					}
 				}
 				pvo.setMenuList(menuList);
 			}
@@ -88,12 +95,14 @@ public class RestaurantRestController {
 				List<Map> imgList = new ArrayList<>();
 				String[] imgs = pvo.getImgs().split("\\|");
 				
-				for(String img : imgs) {
-					Map map = new HashMap<>();
-					map.put("img", img);
-					imgList.add(map);
+				if(imgs.length >= 1) {
+					for(String img : imgs) {
+						Map map = new HashMap<>();
+						map.put("img", img);
+						imgList.add(map);
+					}
+					pvo.setImgList(imgList);
 				}
-				pvo.setImgList(imgList);
 			}
 			
 		

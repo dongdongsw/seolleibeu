@@ -10,7 +10,7 @@
 <body>
 	<div class="header navbar-fixed-top">
         <div class="container" style="width: 1500px;">
-            <div class="row">
+            <div class="row" style="position: relative;">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
                     <a href="/"><img src="/images/main_logo.png" style="width: 80px; height: 50px"></a>
                 </div>
@@ -50,30 +50,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1 col-md-8 col-sm-12 col-xs-12">
-                    <div class="navigation">
-                        <div id="navigation">
-                        	<ul>
-               					<sec:authorize access="!isAuthenticated()">
-	                				<li>
-	                					<a href="/auth/login" style="border: 1px solid #fff; border-radius: 12px; padding: 10px 20px; margin-top: 5px;">로그인</a>
-	               					</li>
-               					</sec:authorize>
-               					<sec:authorize access="!isAuthenticated()">
-	               					<li>
-	                					<a href="/auth/register" style="position:absolute; left:5px; 
-	                						border: 1px solid #fff; border-radius: 12px; width:96px; padding: 10px 20px; margin-top: 5px;">회원가입</a>
-	               					</li>
-               					</sec:authorize>
-               					<sec:authorize access="isAuthenticated()">
-	               					<li>
-	                					<a href="/auth/logout" style="border: 1px solid #fff; border-radius: 12px; padding: 10px 20px; margin-top: 5px; width:96px;">로그아웃</a>
-	               					</li>
-               					</sec:authorize>
-                			</ul>
-                        </div>
-		           </div>
-		       </div>
+                <sec:authorize access="!isAuthenticated()">
+                	<div style="position: absolute; left: 91%; width: 300px; height: 21px;">
+    					<a href="/auth/login" 
+    						style="font-size: 13px;     font-weight: 600;
+    							padding: 5px 20px; margin-top: 5px; color: white;
+    							height: 35px; display: inline-block;">로그인/회원가입</a>
+  					
+    				<!-- 	<a href="/auth/register" 
+    						style="border-radius: 12px; 
+    							padding: 5px 20px; margin-top: 5px; color: white;
+    							height: 35px; display: inline-block;">회원가입</a> -->
+		       		</div>
+			   </sec:authorize>
+		       <sec:authorize access="isAuthenticated()">
+			       <div class="dropdown" style="position: absolute; left: 90%">
+					  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" 
+					  	style="border-radius: 12px; color:white; background: none;">${sessionScope.name }
+					  <span class="caret"></span></button>
+					  <ul class="dropdown-menu"  style="width: 110px; min-width: 110px; left: auto;">
+					    <li><a href="/mypage/my_info">마이페이지</a></li>
+					    <li><a href="admin">관리자</a></li>
+					    <li class="divider"></li>
+					    <li><a href="/auth/logout">로그아웃</a></li>
+					  </ul>
+					</div>
+ 				</sec:authorize>
             </div>
          </div>
     </div>
