@@ -3,7 +3,7 @@
 <mapper namespace="com.sist.web.refund.mapper.RefundMapper">
  <!-- 환불 목록 -->
  <select id="refundListData" resultType="RefundVO" parameterType="hashmap">
-  SELECT r.rf_id,r.p_id,r.rf_status,TO_CHAR(r.rf_done_at,'yyyy-mm-dd') as doneday,TO_char(r.rf_requested_at,'yyyy-mm-dd') as reqday,
+  SELECT r.rf_id,r.p_id,r.rf_status,TO_CHAR(r.rf_doneAt,'yyyy-mm-dd') as doneday,TO_char(r.rf_requestedAt,'yyyy-mm-dd') as reqday,
   pl.name as pname
   FROM refund r
   JOIN pay p ON r.p_id=p.p_id

@@ -14,7 +14,7 @@
 
 		<sec:authorize access="isAuthenticated()">
 			<!-- 리뷰 작성 폼 -->
-			<div class="review-write-box" v-if="rstore.list.length===0">
+			<div class="review-write-box">
 				<div class="review-write-title">
 					<i class="fa fa-pencil"></i> 리뷰 작성하기
 				</div>
