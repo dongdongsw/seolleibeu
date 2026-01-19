@@ -22,7 +22,7 @@
  </select> 
  <!-- 사용자 환불 요청 -->
  <insert id="refundInsert" parameterType="RefundVO">
-  INSERT INTO refund VALUES(refund_id_seq.nextval,#{p_id},#{rf_msg},#{rf_amount},'환불 요청',SYSDATE,NULL)
+  INSERT INTO refund VALUES(refund_id_seq.nextval,#{p_id},NULL,#{rf_msg},#{rf_amount},NULL,DEFAULT,SYSDATE,NULL)
  </insert>
  <!-- 관리자 승인/거절 -->
  <update id="refundUpdate" parameterType="hashmap">

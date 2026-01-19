@@ -17,6 +17,9 @@
     <result property="pyvo.totalAmount" column="totalAmount"/>
     <result property="pyvo.method" column="method"/>
     <result property="pyvo.requestedAt" column="requestedAt"/>
+    <result property="pyvo.p_id" column="p_id"/>
+    
+    <!-- 환불 관련 -->
   </resultMap>
   
   <select id="myReservedListData" resultMap="reserveMap" parameterType="hashmap">
@@ -38,7 +41,7 @@
   <select id="myReservedDetailData" resultMap="reserveMap" parameterType="int">
     SELECT p.thumbnail, p.name, p.company, p.addr, p.phone AS p_phone, rv.rvno, rv.rv_status, rv.rv_time, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, rv.rv_option, 
     		rv.rv_price, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_amount, rv.nickname, rv.phone AS rv_phone, rv.email,
-    		pyvo.totalAmount, pyvo.method, TO_CHAR(pyvo.requestedAt, 'YYYY-MM-DD HH24:MI:SS') AS requestedAt
+    		pyvo.totalAmount, pyvo.method, TO_CHAR(pyvo.requestedAt, 'YYYY-MM-DD HH24:MI:SS') AS requestedAt, pyvo.p_id
     FROM reserve rv
     JOIN place p ON p.pno = rv.pno
     LEFT OUTER JOIN pay pyvo ON rv.rvno = pyvo.rvno

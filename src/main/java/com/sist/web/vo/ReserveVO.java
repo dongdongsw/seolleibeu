@@ -14,4 +14,5 @@ public class ReserveVO {
 	private PlaceOptionsVO povo = new PlaceOptionsVO();
 	
 	private PayVO pyvo = new PayVO();
+	private RefundVO rfvo = new RefundVO();
 }

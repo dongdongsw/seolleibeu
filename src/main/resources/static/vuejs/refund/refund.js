@@ -2,9 +2,9 @@
 const useRefundStore=defineStore('refund',{
 	state:()=>({
 		list:[],
-		uno:null,
-		p_id:null,
-		rf_msg:''
+		p_id:'',
+		rf_msg:'',
+		rf_amount:''
 	}),
 	actions:{
 		async refundInsert(){
@@ -14,14 +14,14 @@ const useRefundStore=defineStore('refund',{
 					return
 				}
 				console.log("===== 환불 요청 데이터 확인 =====");
-				    console.log("상품 ID (p_id):", this.p_id);
-				    console.log("사용자 번호 (uno):", this.uno);
-				    console.log("환불 금액 (rf_amount):", this.rf_amount);
-				    console.log("환불 사유 (rf_msg):", this.rf_msg);
+				    console.log("p_id:", this.p_id);
+				    console.log("rf_amount:", this.rf_amount);
+				    console.log("rf_msg:", this.rf_msg);
+					console.log(JSON.parse(JSON.stringify(useReserveStore().rvvo)));
 				const res=await api.post('/refund_insert_vue/',{
 					p_id:this.p_id,
 					rf_msg:this.rf_msg,
-					uno:this.uno
+					rf_amount:this.rf_amount
 				})
 				if(res.data==='환불 요청 완료')
 				{
