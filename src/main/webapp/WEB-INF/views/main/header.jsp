@@ -51,31 +51,34 @@
                     </div>
                 </div>
                 <sec:authorize access="!isAuthenticated()">
-                	<div style="position: absolute; left: 91%; width: 300px; height: 21px;">
-    					<a href="/auth/login" 
-    						style="font-size: 13px;     font-weight: 600;
-    							padding: 5px 20px; margin-top: 5px; color: white;
-    							height: 35px; display: inline-block;">로그인/회원가입</a>
-  					
-    				<!-- 	<a href="/auth/register" 
-    						style="border-radius: 12px; 
-    							padding: 5px 20px; margin-top: 5px; color: white;
-    							height: 35px; display: inline-block;">회원가입</a> -->
-		       		</div>
-			   </sec:authorize>
-		       <sec:authorize access="isAuthenticated()">
-			       <div class="dropdown" style="position: absolute; left: 90%">
-					  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" 
-					  	style="border-radius: 12px; color:white; background: none;">${sessionScope.name }
-					  <span class="caret"></span></button>
-					  <ul class="dropdown-menu"  style="width: 110px; min-width: 110px; left: auto;">
-					    <li><a href="/mypage/my_info">마이페이지</a></li>
-					    <li><a href="admin">관리자</a></li>
-					    <li class="divider"></li>
-					    <li><a href="/auth/logout">로그아웃</a></li>
-					  </ul>
+				    <div style=" position:absolute; right:20px; top:40%; transform:translateY(-50%);">
+				        <a href="/auth/login"
+				           style="font-size:13px; font-weight:600; padding:5px 20px;
+				               color:white; height:35px; display:inline-flex;
+				               align-items:center; line-height:normal; text-decoration:none;">
+				            로그인/회원가입
+				        </a>
+				    </div>
+				</sec:authorize>
+		       	<sec:authorize access="isAuthenticated()">
+					<div class="dropdown" style="position:absolute; right:40px; top:40%; transform:translateY(-50%);">
+					    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+					            style="background:none; border:none; color:white;
+					                font-size:13px; font-weight:600; height:35px;
+					                padding:5px 20px; display:inline-flex; align-items:center;
+					                line-height:normal;">
+					        ${sessionScope.name}
+					        <span class="caret" style="margin-left:4px;"></span>
+					    </button>
+					    <ul class="dropdown-menu"
+					        style="width:110px; min-width:110px; left:auto; right:0;">
+					        <li><a href="/mypage/my_info">마이페이지</a></li>
+					        <li><a href="/admin">관리자</a></li>
+					        <li class="divider"></li>
+					        <li><a href="/auth/logout">로그아웃</a></li>
+					    </ul>
 					</div>
- 				</sec:authorize>
+				</sec:authorize>
             </div>
          </div>
     </div>
