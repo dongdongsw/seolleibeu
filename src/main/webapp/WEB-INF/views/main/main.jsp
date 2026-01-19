@@ -9,6 +9,7 @@
 	<meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
     <meta name="referrer" content="no-referrer">
+    
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,6 +28,7 @@
 	<jsp:include page="${main_jsp }"></jsp:include>
 	<jsp:include page="../common/cookie.jsp"></jsp:include>
 	<jsp:include page="footer.jsp"></jsp:include>
+	
 	<script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/menumaker.js"></script>

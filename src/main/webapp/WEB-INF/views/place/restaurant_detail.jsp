@@ -42,24 +42,10 @@
 								</div>
 								<div class="detailsubimages">
 									<div  v-for="(imgs, index) in store.pvo.imgList" :key="index">
-									<!-- <img src="/images/post-img.jpg" style="opacity: 1; border: 2px solid #000;"
-										data-target="#myCarousel" data-slide-to="0" class="imagefocus">  -->
 									<img :src="imgs.img"
 										data-target="#myCarousel" :data-slide-to="index" class="imagefocus"
 										:style="{ opacity : store.selectedImgIndex  === index ? 1 : 0.6,
 												border: store.selectedImgIndex  === index ? '2px solid #000' : none}"  @click="store.imageClick(index)"> 
-									<!-- <img src="/images/post-img.jpg" style="opacity: 0.6;"
-										data-target="#myCarousel" data-slide-to="2" class="imagefocus"> 
-									<img src="/images/post-img.jpg" style="opacity: 0.6;"
-										data-target="#myCarousel" data-slide-to="3" class="imagefocus"> 
-									<img src="/images/post-img.jpg" style="opacity: 0.6;"
-										data-target="#myCarousel" data-slide-to="4" class="imagefocus"> 
-									<img src="/images/post-img.jpg" style="opacity: 0.6;"
-										data-target="#myCarousel" data-slide-to="5" class="imagefocus"> 
-									<img src="/images/post-img.jpg" style="opacity: 0.6;"
-										data-target="#myCarousel" data-slide-to="6" class="imagefocus"> 
-									<img src="/images/post-img.jpg" style="opacity: 0.6;"
-										data-target="#myCarousel" data-slide-to="7" class="imagefocus"> -->
 									</div>
 								</div>
 							</div>

@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
 	<div class="header navbar-fixed-top">
         <div class="container" style="width: 1500px;">
@@ -19,7 +21,8 @@
                         <div id="navigation">
                             <ul>
                                 <li class="active"><a href="/" title="Home">Home</a></li>
-                                <li><a href="/course/create">내 코스 만들기</a>
+                                <li>
+                                	<a href="/course/create" onclick="return loginRouter()">내 코스 만들기</a>
                                 </li>
                                 <li><a href="/course/list">추천 코스</a>
                                 </li>
@@ -82,5 +85,19 @@
             </div>
          </div>
     </div>
+    <script>
+    	function loginRouter(){
+    		var userId = '${sessionScope.id}';
+    		if(userId !== ''){
+    			return true;
+    		}
+    		
+  			if(confirm('로그인이 필요한 서비스입니다. 로그인하시겠습니까?')){
+  				location.href='/auth/login';
+  			}
+    	
+  			return false;
+    	}
+    </script>
 </body>
 </html>

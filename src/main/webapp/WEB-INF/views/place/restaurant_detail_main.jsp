@@ -9,7 +9,6 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link href="/css/place/restaurant_detail.css" rel="stylesheet" />
 <link rel="stylesheet" href="/css/review/review.css">
 </head>
@@ -134,32 +133,7 @@
 					</div>
 					</div>
 					</div>
-					<!--  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
-    리뷰 더보기 모달창
-    <script>
-     const reviewApp=Vue.createApp({
-    	 data(){
-    		 return {
-    			 isModalOpen:false,
-    			 modalData:{
-    				
-    			 }
-    		 }
-    	 },
-    	 methods:{
-    		 openModal(){
-    			 this.modalData={writer:'김민석'}
-    			 this.isModalOpen=true
-    		 },
-    		 closeModal(){
-    			 this.isModalOpen=false
-    			 this.modalData={}
-    		 }
-    	 }
-     })
-     reviewApp.mount('#reviewApp')
-    </script> -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+					
 	<script src="/vuejs/axios.js"></script>
 	<script src="/vuejs/place/restaurantStore.js"></script>
     <script src="/vuejs/review/place_review.js"></script>

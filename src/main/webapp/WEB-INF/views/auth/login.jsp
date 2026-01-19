@@ -13,7 +13,7 @@
 	        <div class="row justify-content-center">
 	            <div class="col-lg-12 col-md-12">
 	
-	                <div class="auth-card login-card">
+	                <div class="auth-card login-card" style="position: relative;">
 	
 	                    <div class="auth-logo text-center mb-4">
 	                        <h1>로그인</h1>
@@ -21,7 +21,7 @@
 	                    </div>
 	                    
 	                    
-						<p style="position:absolute; left:22%; top:60%; color: red;">${errorMsg }</p>
+						<p style="position:absolute; left:20.5%; top:58%; color: red;">${errorMsg }</p>
 	                    <form class="auth-form" action="/auth/login_process" method="post">
 	
 	                        <div class="form-group"  style="display: flex; align-items: center; justify-content: center; margin-bottom: 0px;">
