@@ -26,14 +26,21 @@ public class RegisterRestController {
 	private final LoginService lService;
 	private final BCryptPasswordEncoder Encoder;
 	
+	
+	
 	@GetMapping("/nickNameCheck_vue/")
 	public ResponseEntity<Map> auth_nickNameCheck_vue(@RequestParam("name") String name){
 		
 		Map map = new HashMap<>();
 		
 		try {
-			Integer nickNameCheckCount = lService.registerUserNameCheck(name);
-			map.put("nickNameCheckCount", nickNameCheckCount);
+			if(name.length() == 0) {
+				map.put("nickNameCheckCount", 2);
+			}
+			else {
+				Integer nickNameCheckCount = lService.registerUserNameCheck(name);
+				map.put("nickNameCheckCount", nickNameCheckCount);
+			}
 		} catch (Exception e) {
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -45,10 +52,29 @@ public class RegisterRestController {
 	public ResponseEntity<Map> auth_idCheck_vue(@RequestParam("id") String id){
 		
 		Map map = new HashMap<>();
-		
+		String idEnglish = "^(?=.*[a-zA-Z]).+$";
+		String idNumber = "^(?=.*[0-9]).+$";
 		try {
-			Integer idCheckCount = lService.loginIdCheck(id);
-			map.put("idCheckCount", idCheckCount);
+			if(id.length() <= 12 && id.length() >= 6) {
+				
+				if(id.matches(idNumber) && id.matches(idEnglish)) {
+					Integer idCheckCount = lService.loginIdCheck(id);
+					if(id.equals(1)) {
+						map.put("idCheckCount", 1);
+					}
+					else {
+						map.put("idCheckCount", idCheckCount);
+					}
+				}
+				else {
+					map.put("idCheckCount", 3);
+				}
+				
+			}
+			else {
+				map.put("idCheckCount", 3);
+			}
+			
 		} catch (Exception e) {
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -62,8 +88,14 @@ public class RegisterRestController {
 		Map map = new HashMap<>();
 		
 		try {
-			Integer emailCheckCount = lService.registerEmailCheck(email);
-			map.put("emailCheckCount", emailCheckCount);
+			if(email.length() == 0) {
+				map.put("emailCheckCount", 2);
+			}
+			else {
+				Integer emailCheckCount = lService.registerEmailCheck(email);
+				map.put("emailCheckCount", emailCheckCount);
+			}
+			
 		} catch (Exception e) {
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
 		}

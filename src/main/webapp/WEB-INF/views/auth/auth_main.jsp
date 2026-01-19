@@ -31,6 +31,10 @@ html {
   scrollbar-gutter: stable;
   overflow-y: auto;
 }
+
+.bttn{
+	color:black !important;
+}
 </style>
 <body>
 

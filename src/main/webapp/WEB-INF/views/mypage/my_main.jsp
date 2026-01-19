@@ -28,7 +28,7 @@
 .header-collapse{
 	background: white;
 }
-.btn{
+.bttn{
 	color:black !important;
 }
 </style>

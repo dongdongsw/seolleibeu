@@ -21,7 +21,9 @@ const useRegisterStore = defineStore('register',{
 		idCheckCount:2, 		// 아이디 중복 검사
 		emailCheckCount:2, 		// 이메일 중복 검사
 		emailCodeCheckCount:2,
-		emailCodeSuccess:2
+		emailCodeSuccess:2,
+		pwdCheck:/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~@#$!%*?&])[a-zA-Z\d~@#$!%*?&]{8,}$/ ,
+		pwdCheckCount: 2
 	}),
 	actions:{
 		async register(){
@@ -94,45 +96,52 @@ const useRegisterStore = defineStore('register',{
 				if(this.pwd !== '' || this.pwd1 !== ''){ // 2
 					
 					if(this.pwd === this.pwd1){ // 3
-				
-						if(this.idCheckCount === 0){ // 4
-							
-							if(this.nickNameCheckCount === 0){ // 5
+						if(this.pwdCheck.test(this.pwd) && this.pwdCheck.test(this.pwd1)){
+							this.pwdCheckCount = 2
+						
+					
+							if(this.idCheckCount === 0){ // 4
 								
-								if(this.emailCheckCount === 0){ // 6
+								if(this.nickNameCheckCount === 0){ // 5
 									
-									//if(this.emailCodeCheckCount === 1){// 7
+									if(this.emailCheckCount === 0){ // 6
 										
-										if(this.phone1 !== '' && (this.phone2 !== ''  && this.phone2.length === 4) && 
-											(this.phone3 !== '' && this.phone3.length === 4)){ // 8
+										//if(this.emailCodeCheckCount === 1){// 7
 											
-											if(this.required_agree === 'Y'){ // 9
+											if(this.phone1 !== '' && (this.phone2 !== ''  && this.phone2.length === 4) && 
+												(this.phone3 !== '' && this.phone3.length === 4)){ // 8
 												
-												this.register()
-											} // 9
-											else{ 
-												alert('필수 약관에 동의해주세요!')
-											}
-										}// 8
-										else{
-											alert('전화번호를 입력해주세요!');
-										}	
-									//} // 7
-									//else{
-									//	alert('이메일 인증번호 인증을 완료해주세요!');
-									//}
-								} // 6
+												if(this.required_agree === 'Y'){ // 9
+													
+													this.register()
+												} // 9
+												else{ 
+													alert('필수 약관에 동의해주세요!')
+												}
+											}// 8
+											else{
+												alert('전화번호를 입력해주세요!');
+											}	
+										//} // 7
+										//else{
+										//	alert('이메일 인증번호 인증을 완료해주세요!');
+										//}
+									} // 6
+									else{
+										alert('이메일의 중복 검사를 해주세요!');
+									}
+								} // 5
 								else{
-									alert('이메일의 중복 검사를 해주세요!');
+									alert('닉네임 중복체크 해주세요!');
 								}
-							} // 5
+							} // 4
 							else{
-								alert('닉네임 중복체크 해주세요!');
+								alert('아이디 중복체크 해주세요!');
 							}
-						} // 4
-						else{
-							alert('아이디 중복체크 해주세요!');
 						}
+						else{
+							this.pwdCheckCount = 3
+						}	
 					} // 3
 					else{
 						alert('비밀번호가 일치하지 않습니다!');
@@ -141,6 +150,7 @@ const useRegisterStore = defineStore('register',{
 				else{
 					alert('비밀번호를 입력해주세요!');
 				}
+				
 			} // 1
 			else{
 				alert('아이디 중복 검사를 해주세요!');

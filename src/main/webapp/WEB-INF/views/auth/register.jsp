@@ -22,7 +22,7 @@
 	
 	                        <div class="row" style="margin-bottom: 20px; position: relative;">
 	                            <div class="col-md-8">
-	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="아이디" v-model="registerStore.id">
+	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="아이디 (영문/숫자, 6~12자)" v-model="registerStore.id">
 	                            </div>
 	                            <div class="col-md-4">
 	                                <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
@@ -30,16 +30,18 @@
 	                            </div>
 	                            <p style="position: absolute; left:6%; top:80%; color: green;">{{registerStore.idCheckCount === 0?'사용가능한 아이디입니다.':''}}</p>
 	                            <p style="position: absolute; left:6%; top:80%; color: red;">{{registerStore.idCheckCount === 1?'이미 존재하는 아이디 입니다.':''}}</p>
+	                            <p style="position: absolute; left:6%; top:80%; color: red;">{{registerStore.idCheckCount === 3?'아이디 형식을 지켜주세요.':''}}</p>
 	                        </div>
 	
 	                        <div class="form-group">
-	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호" v-model="registerStore.pwd">
+	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호 (영문/숫자/특수문자)" v-model="registerStore.pwd">
 	                        </div>
 	
 	                        <div class="form-group"  style="margin-bottom: 30px; position: relative;">
-	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호 재입력" v-model="registerStore.pwd1">
-	                            <p style="position: absolute; left:3%; top:100%; color: red;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwd !== registerStore.pwd1?'비밀번호가 일치하지 않습니다.':''}}</p>
-                            	<p style="position: absolute; left:3%; top:100%; color: green;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwd === registerStore.pwd1?'비밀번호가 일치합니다.':''}}</p>
+	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호 재입력 (영문/숫자/특수문자)" v-model="registerStore.pwd1">
+	                            <p style="position: absolute; left:3%; top:100%; color: red;">{{registerStore.pwd !== '' && registerStore.pwd !== ''&& registerStore.pwdCheckCount !== 3 && registerStore.pwd !== registerStore.pwd1?'비밀번호가 일치하지 않습니다.':''}}</p>
+                            	<p style="position: absolute; left:3%; top:100%; color: green;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwdCheckCount !== 3 && registerStore.pwd === registerStore.pwd1?'비밀번호가 일치합니다.':''}}</p>
+                            	<p style="position: absolute; left:3%; top:100%; color: green;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwdCheckCount === 3?'비밀번호 형식을 지켜주세요.':''}}</p>
 	                        </div>
 							
 							
@@ -85,10 +87,10 @@
 	                                <option>011</option>
 	                                <option>031</option>
 	                            </select>
-	                            <span>-</span>
+	                            <span style="font-size: 30px; margin-bottom: 20px;">-</span>
 	                            <input type="text" class="form-control phone-input" maxlength="4" 
 	                            	style="height: 30px; color: black;" v-model="registerStore.phone2">
-	                            <span>-</span>
+	                            <span style="font-size: 30px; margin-bottom: 20px;">-</span>
 	                            <input type="text" class="form-control phone-input" maxlength="4" 
 	                            	style="height: 30px; color: black;" v-model="registerStore.phone3">
 	                        </div>

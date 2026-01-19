@@ -52,7 +52,7 @@
                 </div>
                 <sec:authorize access="!isAuthenticated()">
 				    <div style=" position:absolute; right:20px; top:40%; transform:translateY(-50%);">
-				        <a href="/auth/login"
+				        <a class="bttn" href="/auth/login"
 				           style="font-size:13px; font-weight:600; padding:5px 20px;
 				               color:white; height:35px; display:inline-flex;
 				               align-items:center; line-height:normal; text-decoration:none;">
@@ -62,7 +62,7 @@
 				</sec:authorize>
 		       	<sec:authorize access="isAuthenticated()">
 					<div class="dropdown" style="position:absolute; right:40px; top:40%; transform:translateY(-50%);">
-					    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+					    <button class="bttn dropdown-toggle" type="button" data-toggle="dropdown"
 					            style="background:none; border:none; color:white;
 					                font-size:13px; font-weight:600; height:35px;
 					                padding:5px 20px; display:inline-flex; align-items:center;
