@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,8 +31,14 @@
                                 <li><a href="/place/attraction/list" title="Contact Us">관광명소</a> </li>
                                 <li><a href="/admin" title="Error">관리자</a> </li>
                                 <li><a href="/notice/list" title="Contact Us">공지사항</a> </li>
-                                <li><a href="/mypage/my_info" title="Contact Us">마이페이지</a> </li>
-                                
+                                <c:choose>
+                           		 <c:when test="${not empty sessionScope.uno}">
+                                 <li><a href="/mypage/my_info" title="Contact Us">마이페이지</a> </li>
+                                 </c:when>
+                                 <c:otherwise>
+		                         <li><a href="/auth/login">마이페이지</a></li>
+		                         </c:otherwise>
+		                        </c:choose>
                                 <li>
                                 	<a href="#" class="dropdown-toggle bellBtn">
                                 		<img src="/images/bell2.png" style="height: 15px; width: 13px; padding-bottom: 2px">

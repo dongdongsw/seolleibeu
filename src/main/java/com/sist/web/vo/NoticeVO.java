@@ -5,5 +5,5 @@ import java.util.*;
 public class NoticeVO {
 	private int n_id,uno,hit;
 	private String n_title,n_content;
-	private Date n_createdAt,n_updatedAt;
+	private Date n_created_at,n_updated_at;
 }
