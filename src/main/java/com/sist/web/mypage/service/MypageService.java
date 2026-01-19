@@ -11,4 +11,5 @@ public interface MypageService {
 	public boolean mypagPhoneChk(String phone, int uno);
 	public void mypageUpdate(UsersVO vo);
 	public void profile_update(String profile_img, int uno);
+	public void userDelete(int uno);
 }

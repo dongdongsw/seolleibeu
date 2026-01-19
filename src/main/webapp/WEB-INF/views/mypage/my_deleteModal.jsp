@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="content auth-wrapper" style="margin-top: -17px;">
-  <div class="container">
+  <div class="container" id="userDelete_list">
     <div class="row">
 	  <div class="mypage-sizing">
       <!-- 메인 -->
@@ -63,8 +63,8 @@
 			</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="info-btn" data-dismiss="modal">취소</button>
-        <button type="button" class="info-btn" data-dismiss="modal">동의</button>
+        <button type="button" class="info-btn" data-dismiss="modal" @click="goMyInfo">취소</button>
+        <button type="button" class="info-btn" data-dismiss="modal" @click="deleteUser">동의</button>
       </div>
     </div>
           
@@ -90,5 +90,27 @@
     </div>
   </div>
 </div>
+<script src="/vuejs/axios.js"></script>
+<script src="/vuejs/mypage/bookmark.js"></script>
+<script type="text/javascript">
+	const { createApp } = Vue
+	
+	createApp({
+	  methods: {
+	    deleteUser() {
+	      if (!confirm('정말 탈퇴하시겠습니까?')) return
+	
+	      axios.delete('/mypage/user_delete_vue/')
+	        .then(() => {
+	          alert('회원 탈퇴가 완료되었습니다.')
+	          location.href = '/'
+	        })
+	    },
+       	  goMyInfo() {
+       	    location.href = '../mypage/my_info'
+       	  }
+      }
+	}).mount('#userDelete_list')
+</script>
 </body>
 </html>

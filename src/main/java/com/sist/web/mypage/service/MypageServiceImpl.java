@@ -5,6 +5,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sist.web.mypage.mapper.MypageMapper;
 import com.sist.web.vo.UsersVO;
@@ -54,5 +55,19 @@ public class MypageServiceImpl implements MypageService{
 	@Override
 	public void profile_update(String profile_img, int uno) {
 		mMapper.profile_update(profile_img, uno);
+	}
+
+	@Transactional(rollbackFor = Exception.class)
+	@Override
+	public void userDelete(int uno) {
+		mMapper.userBookmarkDelete(uno);
+		mMapper.userReplyDelete(uno);
+		mMapper.userFavoriteDelete(uno);
+		mMapper.userUserLikeDelete(uno);
+		mMapper.userCourseBookmarkDelete(uno);
+		mMapper.userCourseReplyDelete(uno);
+		mMapper.userCourseDelete(uno);
+		mMapper.userDelete(uno);
+		
 	}
 }

@@ -27,7 +27,7 @@ public interface ReplyMapper {
 	
 	// 댓글 삽입
 	@Insert("INSERT INTO reply VALUES( "
-		   +"(SELECT NVL(MAX(id)+1,1) FROM reply), "
+		   +"cr_id_seq.nextval, "
 		   +"#{cno},#{uno},#{cr_content},SYSDATE,SYSDATE)")
 	public void replyInsert(ReplyVO vo);
 	

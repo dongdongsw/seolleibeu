@@ -6,11 +6,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -134,5 +137,23 @@ public class MypageRestController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("서버 오류");
         }
+    }
+    @DeleteMapping("/mypage/user_delete_vue/")
+    public ResponseEntity<Map> user_delete_vue(
+      HttpSession session
+    )
+    {
+    	Map map=new HashMap();
+    	try
+    	{
+    		Integer uno = (Integer)session.getAttribute("uno");
+    		mService.userDelete(uno);
+    		map.put("uno", uno);
+    		session.invalidate();
+    	}catch(Exception ex)
+    	{
+    		return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+    	}
+    	return new ResponseEntity<>(map,HttpStatus.OK);
     }
 }

@@ -1,5 +1,6 @@
 package com.sist.web.mypage.mapper;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -26,13 +27,40 @@ public interface MypageMapper {
 	public int mypagPhoneChk(@Param("phone") String phone, @Param("uno") int uno);
 	
 	@Update("UPDATE users SET "
-		   +"name = #{name}, "
-		   +"phone = #{phone}, "
-		   +"pwd = #{pwd} "
-		   +"WHERE uno = #{uno}")
+	         +"name = #{name}, "
+	         +"phone = #{phone}, "
+	         +"pwd = #{pwd}, "
+	         +"updated_at = SYSDATE "
+	         +"WHERE uno = #{uno}")
 	public void mypageUpdate(UsersVO vo);
 	
 	@Update("UPDATE users SET profile_img = #{profile_img} WHERE uno = #{uno}")
 	public void profile_update(@Param("profile_img") String profile_img, @Param("uno") int uno);
-
+	
+	// 유저 기타 삭제
+	@Delete("DELETE FROM bookmark WHERE uno = #{uno}")
+	public void userBookmarkDelete(@Param("uno") int uno);
+	
+	@Delete("DELETE FROM reply WHERE uno = #{uno}")
+	public void userReplyDelete(@Param("uno") int uno);
+	
+	@Delete("DELETE FROM favorite WHERE uno = #{uno}")
+	public void userFavoriteDelete(@Param("uno") int uno);
+	
+	@Delete("DELETE FROM userlike WHERE uno = #{uno}")
+	public void userUserLikeDelete(@Param("uno") int uno);
+	
+	// 코스 삭제
+	@Delete("DELETE FROM bookmark WHERE cno IN(select cno from course where uno= #{uno})")
+	public void userCourseBookmarkDelete(@Param("uno") int uno);
+	
+	@Delete("DELETE FROM reply WHERE cno IN(select cno from course where uno= #{uno})")
+	public void userCourseReplyDelete(@Param("uno") int uno);
+	
+	@Delete("DELETE FROM course WHERE uno = #{uno}")
+	public void userCourseDelete(@Param("uno") int uno);
+	
+	// 유저 삭제
+	@Delete("DELETE FROM users WHERE uno = #{uno}")
+	public void userDelete(@Param("uno") int uno);
 }

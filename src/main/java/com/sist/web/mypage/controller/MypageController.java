@@ -18,11 +18,32 @@ public class MypageController {
 	private final MypageService mService;
 	// 내 정보
 	@GetMapping("/mypage/my_info")
-	public String mypage_info(Model model) {
-	      
-		model.addAttribute("my_jsp" ,"../mypage/my_info.jsp");
-		return "mypage/my_main";
-	}
+    public String mypage_info(HttpSession session,Model model) {
+       Integer uno = (Integer) session.getAttribute("uno");
+        if (uno == null) return "redirect:/login";
+
+        UsersVO vo = mService.mypageData(uno);
+
+        String createdAtFormatted = "";
+        if (vo != null && vo.getCreated_at() != null) {
+            createdAtFormatted =
+                new SimpleDateFormat("yyyy-MM-dd")
+                    .format(vo.getCreated_at());
+        }
+
+        String updatedAtFormatted = "없음";
+        if (vo != null && vo.getUpdated_at() != null) {
+            updatedAtFormatted =
+                new SimpleDateFormat("yyyy-MM-dd")
+                    .format(vo.getUpdated_at());
+        }
+
+        model.addAttribute("vo", vo);
+        model.addAttribute("createdAtFormatted", createdAtFormatted);
+        model.addAttribute("updatedAtFormatted", updatedAtFormatted);
+       model.addAttribute("my_jsp" ,"../mypage/my_info.jsp");
+       return "mypage/my_main";
+    }
 	   
 	// 내 정보 수정
 	@GetMapping("/mypage/my_update")

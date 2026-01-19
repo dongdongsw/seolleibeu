@@ -42,7 +42,7 @@ const SESSION_ID=Number('${sessionScope.uno}')
 	    </div>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 100px;">
 					<table class="table" v-for="(rvo,index) in rStore.reply_list" :key="index">
 					  <tr>
 					   <td class="text-left" width="80%" style="display: flex;">
