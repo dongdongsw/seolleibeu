@@ -30,4 +30,21 @@
   WHERE rf_id=#{rf_id} 
   AND rf_status='환불 대기'
  </update>
+ <!-- 관리자 환불 목록 -->
+ <select id="adminRefundListData" resultType="RefundVO" parameterType="hashmap">
+  SELECT r.rf_id,r.p_id,r.rf_status,TO_CHAR(r.rf_doneAt,'yyyy-mm-dd') as doneday,TO_char(r.rf_requestedAt,'yyyy-mm-dd hh24 mi:ss') as reqday,rf_msg,
+  pl.name as pname, rf_amount
+  FROM refund r
+  JOIN pay p ON r.p_id=p.p_id
+  JOIN reserve re ON p.rvno=re.rvno
+  JOIN place pl ON re.pno=pl.pno
+  ORDER BY rf_id DESC
+  OFFSET #{start} ROWS FETCH NEXT 8 ROWS ONLY
+ </select>
+ <!-- 관리자 환불 총 페이지 -->
+  <select id="adminRefundTotalPage" resultType="int">
+  SELECT CEIL(COUNT(*)/8.0) FROM refund r
+  JOIN pay p ON r.p_id=p.p_id
+  JOIN reserve re ON p.rvno=re.rvno
+ </select> 
 </mapper>

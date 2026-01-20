@@ -57,4 +57,26 @@ public class RefundRestcontroller {
 			return new ResponseEntity<>("환불 요청 실패",HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	// 관리자 환불 목록
+	@GetMapping("/admin/refund_list_vue/")
+	public ResponseEntity<Map> admin_refund_list(@RequestParam("page") int page)
+	{
+		Map map=new HashMap();
+		try
+		{
+			map.put("start", (page-1)*8);
+			List<RefundVO> list=rservice.adminRefundListData(map);
+			int totalpage=rservice.adminRefundTotalPage();
+
+			Map pageMap=Methods.paginationMap(8, page, totalpage);
+			map.putAll(pageMap);
+			map.put("list", list);
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map,HttpStatus.OK);
+	}
+	// 관리자 환불 승인 / 취소
 }

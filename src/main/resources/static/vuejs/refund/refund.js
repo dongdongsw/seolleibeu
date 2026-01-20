@@ -26,7 +26,7 @@ const useRefundStore=defineStore('refund',{
 				if(res.data==='환불 요청 완료')
 				{
 					alert('환불 요청이 완료되었습니다')
-					this.refundListData()
+					location.href="/mypage/my_reserve"
 				}
 				else
 				{

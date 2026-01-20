@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div id="admin_refund">
 	<div id="wrapper">
 		<div class="container-fluid">
 			<div class="card shadow mb-4" style="margin-top: 16px;">
@@ -28,25 +29,24 @@
 				<div style="height:630px;">
 					<div class="card-body">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="dataTable" width="100%"
-								cellspacing="0">
+							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
 										<th style="width: 5%">번호</th>
 										<th style="width: 15%">사용자 이름</th>
 										<th style="width: 45%">제목</th>
 										<th style="width: 10%">환불 금액</th>
-										<th style="width: 10%">환불 요청일</th>
-										<th style="width: 5%">환불 사유</th>
+										<th style="width: 15%">환불 요청일</th>
+										<th style="width: 7%">환불 사유</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>123</td>
-										<td>김민석</td>
-										<td>김민석 길들이기</td>
-										<td>5만원</td>
-										<td>2011/04/25</td>
+									<tr v-for="(vo,index) in store.list" :key="index">
+										<td>{{vo.rf_id}}</td>
+										<td>{{}}</td>
+										<td>{{vo.pname}}</td>
+										<td>{{vo.rf_amount}}원</td>
+										<td>{{vo.reqday}}</td>
 										<td class="text-center">
 											<div class="dropdown">
 												<a href="#" data-toggle="dropdown"> <i
@@ -56,6 +56,24 @@
 													<a class="dropdown-item" href="#">상세보기</a>
 												</div>
 											</div>
+											<!-- <div id="myModal" class="modal fade" role="dialog">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<button type="button" class="close" data-dismiss="modal">&times;</button>
+																<h4 class="modal-title">환불 사유 작성</h4>
+														</div>
+														<div class="modal-body">
+															<h5 style="color: red;">※적절한 환불 사유를 작성하지 않을 시 환불이 거절 될 수있습니다.</h5>
+																<textarea rows="5" cols="68" v-model="rstore.rf_msg" placeholder="환불 사유를 입력해 주세요"></textarea>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-default" data-dismiss="modal" @click="rstore.refundInsert()">작성</button>
+															<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+														</div>
+													</div>
+												</div>
+											</div> -->
 										</td>
 									</tr>
 								</tbody>
@@ -63,15 +81,10 @@
 							<div class="dataTables_wrapper" style="position: absolute; top: 90%; left: 40%;">
 								<div class="dataTables_paginate paging_simple_numbers">
 									<ul class="pagination justify-content-center">
-										<li class="page-item"><a class="page-link">&lt;</a></li>
-										<li class="page-item active"><a class="page-link">1</a></li>
-										<li class="page-item"><a class="page-link">2</a></li>
-										<li class="page-item"><a class="page-link">3</a></li>
-										<li class="page-item"><a class="page-link">4</a></li>
-										<li class="page-item"><a class="page-link">5</a></li>
-										<li class="page-item"><a class="page-link">6</a></li>
-										<li class="page-item"><a class="page-link">&gt;</a></li>
-									</ul>
+										<li class="page-item" v-if="store.startPage>1"><a class="page-link" @click="store.pageChange(store.startPage-1)">이전</a></li>
+										<li :class="i==store.curpage?'page-item active':'page-item'" v-for="i in store.range"><a class="page-link" @click="store.pageChange(i)">{{i}}</a></li>
+										<li class="page-item" v-if="store.endPage<store.totalpage"><a class="page-link" @click="store.pageChange(store.endPage+1)">다음</a></li>
+								    </ul>
 								</div>
 							</div>
 						</div>
@@ -80,5 +93,31 @@
 			</div>
 		</div>
 	</div>
+</div>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://unpkg.com/vue-demi"></script>
+	<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/refund/admin_refund.js"></script>
+	<script>
+	 const {createApp,onMounted} = Vue
+	 const {createPinia} = Pinia
+	 
+	 const adminApp=createApp({
+		 setup(){
+			 const store=useAdminRefundStore()
+			 
+			 onMounted(()=>{
+				 store.adminRefundListData()
+			 })
+			 return {
+				 store
+			 }
+		 }
+	 })
+	 adminApp.use(createPinia())
+	 adminApp.mount('#admin_refund')
+	</script>
 </body>
 </html>
