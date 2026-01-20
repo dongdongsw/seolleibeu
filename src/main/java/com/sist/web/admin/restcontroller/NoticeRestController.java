@@ -7,10 +7,13 @@ import com.sist.web.commons.Methods;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sist.web.admin.service.NoticeService;
@@ -33,6 +36,7 @@ public class NoticeRestController {
 			int totalpage=nService.noticeTotalPage();
 			
 			Map pageMap=Methods.paginationMap(10, page, totalpage);
+			
 		   	   
 			map.putAll(pageMap);
 			   
@@ -40,6 +44,7 @@ public class NoticeRestController {
 			
 		}catch(Exception ex)
 		{
+			ex.printStackTrace();
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<>(map,HttpStatus.OK);
@@ -55,6 +60,7 @@ public class NoticeRestController {
 			map.put("msg", "yes");
 		}catch(Exception ex)
 		{
+			ex.printStackTrace();
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<>(map,HttpStatus.OK);
@@ -69,10 +75,41 @@ public class NoticeRestController {
 			vo=nService.noticeDetailData(n_id);
 		}catch(Exception ex)
 		{
+			ex.printStackTrace();
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<>(vo,HttpStatus.OK);
 	}
 	
+	@PutMapping("/notice/update_vue/")
+	public ResponseEntity<Map> notice_update_vue(@RequestBody NoticeVO vo)
+	{
+		Map map=new HashMap();
+		try
+		{
+			nService.noticeUpdate(vo);
+			map.put("msg", "ok");
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map,HttpStatus.OK);
+	}
+	@DeleteMapping("/notice/delete_vue/")
+	public ResponseEntity<Map> notice_delete_vue(@RequestParam("n_id") int n_id)
+	{
+		Map map=new HashMap();
+		try
+		{
+			nService.noticeDelete(n_id);
+			map.put("msg", "ok");
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map,HttpStatus.OK);
+	}
 	
 }

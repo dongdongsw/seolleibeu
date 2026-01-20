@@ -31,7 +31,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12">
-					<main class="mypage-main">
+					<main class="mypage-main" id="notice_list">
 						<div class="row">
 							<table class="table">
 							</table>
@@ -46,84 +46,15 @@
 								</thead>
 								<tbody>
 									<!-- 공지사항 목록 반복 -->
-									<c:forEach var="notice" items="${noticeList}">
-										<tr style="cursor: pointer;" onclick="location.href='notice_detail?no=${notice.no}'">
-											<td class="text-center">${notice.no}</td>
+										<tr style="cursor: pointer;" v-for="notice in store.notice_list" :key="notice.n_id"  @click="goDetail(notice.n_id)">
+											<td class="text-center">{{notice.n_id}}</td>
 											<td class="text-left">
-												<c:if test="${notice.isImportant}">
-													<span class="badge bg-danger">중요</span>
-												</c:if>
-												${notice.title}
-												<c:if test="${notice.isNew}">
-													<span class="badge bg-success">New</span>
-												</c:if>
+												{{notice.n_title}}
 											</td>
-											<td class="text-center">${notice.createDate}</td>
-											<td class="text-center">${notice.viewCount}</td>
+											<td class="text-center">{{notice.created_at}}</td>
+											<td class="text-center">{{notice.hit}}</td>
 										</tr>
-									</c:forEach>
 									
-									<!-- 샘플 데이터 -->
-									<tr style="cursor: pointer;" onclick="location.href='../notice/detail'">
-										<td class="text-center">5</td>
-										<td class="text-left">2025년 설 연휴 배송 안내</td>
-										<td class="text-center">2025-01-15</td>
-										<td class="text-center">1,234</td>
-									</tr>
-									<tr style="cursor: pointer;" onclick="location.href='notice_detail?no=4'">
-										<td class="text-center">4</td>
-										<td class="text-left">개인정보 처리방침 개정 안내</td>
-										<td class="text-center">2025-01-10</td>
-										<td class="text-center">856</td>
-									</tr>
-									<tr style="cursor: pointer;" onclick="location.href='notice_detail?no=3'">
-										<td class="text-center">3</td>
-										<td class="text-left">서비스 정기 점검 안내 (1월 20일)</td>
-										<td class="text-center">2025-01-05</td>
-										<td class="text-center">642</td>
-									</tr>
-									<tr style="cursor: pointer;" onclick="location.href='notice_detail?no=2'">
-										<td class="text-center">2</td>
-										<td class="text-left">신규 결제 수단 추가 안내</td>
-										<td class="text-center">2024-12-28</td>
-										<td class="text-center">421</td>
-									</tr>
-									<tr style="cursor: pointer;" onclick="location.href='notice_detail?no=1'">
-										<td class="text-center">1</td>
-										<td class="text-left">회원가입 이벤트 안내</td>
-										<td class="text-center">2024-12-20</td>
-										<td class="text-center">1,987</td>
-									</tr>
-									<tr style="cursor: pointer;" onclick="location.href='notice_detail?no=1'">
-										<td class="text-center">1</td>
-										<td class="text-left">회원가입 이벤트 안내</td>
-										<td class="text-center">2024-12-20</td>
-										<td class="text-center">1,987</td>
-									</tr>
-									<tr style="cursor: pointer;" onclick="location.href='notice_detail?no=1'">
-										<td class="text-center">1</td>
-										<td class="text-left">회원가입 이벤트 안내</td>
-										<td class="text-center">2024-12-20</td>
-										<td class="text-center">1,987</td>
-									</tr>
-									<tr style="cursor: pointer;" onclick="location.href='notice_detail?no=1'">
-										<td class="text-center">1</td>
-										<td class="text-left">회원가입 이벤트 안내</td>
-										<td class="text-center">2024-12-20</td>
-										<td class="text-center">1,987</td>
-									</tr>
-									<tr style="cursor: pointer;" onclick="location.href='notice_detail?no=1'">
-										<td class="text-center">1</td>
-										<td class="text-left">회원가입 이벤트 안내</td>
-										<td class="text-center">2024-12-20</td>
-										<td class="text-center">1,987</td>
-									</tr>
-									<tr style="cursor: pointer;" onclick="location.href='notice_detail?no=1'">
-										<td class="text-center">1</td>
-										<td class="text-left">회원가입 이벤트 안내</td>
-										<td class="text-center">2024-12-20</td>
-										<td class="text-center">1,987</td>
-									</tr>
 								</tbody>
 							</table>
 							
@@ -131,11 +62,13 @@
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="st-pagination">
 									<ul class="pagination">
-										<li><a href="#">Previous</a></li>
-										<li><a href="#" class="active">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">Next</a></li>
+										<li v-if="store.startPage>1"><a class="nav-link"
+											@click="store.movePage(store.startPage-1)">&laquo;</a></li>
+										<li v-for="i in store.range"
+											:class="i===store.curpage?'active':''"><a
+											class="nav-link" @click="store.movePage(i)">{{i}}</a></li>
+										<li v-if="store.endPage<store.totalpage"><a
+											class="nav-link" @click="store.movePage(store.endPage+1)">&raquo;</a></li>
 									</ul>
 								</div>
 							</div>
@@ -145,6 +78,33 @@
 			</div>
 		</div>
 	</div>
-
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/notice/noticeStore.js"></script>
+    <script type="text/javascript">
+     const {createApp,onMounted} = Vue
+     const {createPinia} = Pinia
+     const noticeApp=createApp({
+    	 setup(){
+    		 const store=useNoticeStore();
+    		 
+    		 const goDetail = (n_id) => {
+    			 location.href = '/notice/detail?n_id=' + n_id
+    		    }
+    		 
+    		 const params=new URLSearchParams(location.search)
+    		 
+    		 onMounted(()=>{
+    			 store.noticeListData()
+    		 })
+    		 
+    		 return {
+    			 store,
+    			 goDetail
+    		 }
+    	 }
+     })
+     noticeApp.use(createPinia())
+     noticeApp.mount('#notice_list')
+    </script>
 </body>
 </html>

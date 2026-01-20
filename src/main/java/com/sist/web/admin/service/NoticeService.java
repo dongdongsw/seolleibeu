@@ -10,5 +10,5 @@ public interface NoticeService {
 	public int noticeTotalPage();
 	public NoticeVO noticeDetailData(int n_id);
 	public void noticeUpdate(NoticeVO vo);
-	public void noticeDelete(int u_id);
+	public void noticeDelete(int n_id);
 }

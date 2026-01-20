@@ -83,56 +83,24 @@
 		<div class="container back">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12">
-					<main class="mypage-main">
+					<main class="mypage-main" id="notice_detail">
 						<div class="notice-detail-header">
 							<div class="notice-title">
-								<c:if test="${notice.isImportant}">
-									<span class="badge bg-danger">중요</span>
-								</c:if>
-								${notice.title}
-								<!-- 샘플 제목 -->
-								<span class="badge bg-danger">중요</span>
-								2025년 설 연휴 배송 안내
+								{{store.detail.n_title}}
 							</div>
 							<div class="notice-info">
 								<span><i class="fa fa-user"></i> 관리자</span>
-								<span><i class="fa fa-calendar"></i> 2025-01-15</span>
-								<span><i class="fa fa-eye"></i> 조회수 1,234</span>
+								<span><i class="fa fa-calendar"></i> {{store.detail.created_at}}</span>
+								<span><i class="fa fa-eye"></i> 조회수 {{store.detail.hit}}</span>
 							</div>
 						</div>
 
 						<div class="notice-content">
-							${notice.content}
-							<!-- 샘플 내용 -->
-							<p>안녕하세요. 고객 여러분</p>
-							<br>
-							<p>2025년 설 연휴 기간 동안의 배송 일정을 안내드립니다.</p>
-							<br>
-							<p><strong>[휴무 기간]</strong></p>
-							<p>2025년 1월 28일(화) ~ 1월 30일(목)</p>
-							<br>
-							<p><strong>[배송 안내]</strong></p>
-							<ul>
-								<li>1월 27일(월) 오후 2시 이후 주문 건은 1월 31일(금)부터 순차 발송됩니다.</li>
-								<li>배송 지연이 예상되오니 미리 주문해 주시기 바랍니다.</li>
-								<li>긴급 문의는 고객센터 이메일로 남겨주시면 휴무 후 순차 답변드리겠습니다.</li>
-							</ul>
-							<br>
-							<p><strong>[고객센터 운영]</strong></p>
-							<p>설 연휴 기간 중 고객센터 운영이 중단되며, 1월 31일(금)부터 정상 운영됩니다.</p>
-							<br>
-							<p>이용에 불편을 드려 죄송합니다.</p>
-							<p>즐거운 명절 보내시기 바랍니다.</p>
-							<br>
-							<p>감사합니다.</p>
+							{{store.detail.n_content}}
 						</div>
-
-						<div class="notice-footer" style="margin-bottom: 20px;">
-							<button class="btn btn-primary btn-list" onclick="location.href='../notice/list'">
-								<i class="fa fa-list"></i> 목록으로
-							</button>
-							<div style="clear: both;"></div>
-						</div>
+						 <div class="notice-footer">
+						   <button class="btn btn-secondary" @click="goList">목록</button>
+						 </div>
 					</main>
 				</div>
 			</div>
@@ -165,5 +133,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+	<script src="/vuejs/axios.js"></script>
+	<script src="/vuejs/notice/noticeStore.js"></script>
+    <script type="text/javascript">
+     const {createApp,onMounted} = Vue
+     const {createPinia} = Pinia
+     const noticeApp=createApp({
+    	 setup(){
+    		 const store=useNoticeStore();
+    		 
+    		 const params = new URLSearchParams(location.search)
+    		 const n_id = params.get('n_id')
+    		 
+    		 const goList = () => {
+		      location.href = '/notice/list'
+		    }
+
+    		 onMounted(()=>{
+    			 store.noticeDetailData(n_id)
+    		 })
+    		 
+    		 return {
+    			 store,
+    		     goList
+    		 }
+    	 }
+     })
+     noticeApp.use(createPinia())
+     noticeApp.mount('#notice_detail')
+    </script>
 </body>
 </html>
