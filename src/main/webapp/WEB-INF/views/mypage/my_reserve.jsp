@@ -37,6 +37,7 @@
 												<div class="course-meta">
 													<span class="date"><b>예매 등록일시</b> {{vo.createday}}</span>
 													<span style="margin-left: 5px;"><b>예매 상태</b> {{vo.rv_status}}</span>
+													<span style="margin-left: 10px;"><b>환불 상태</b> {{vo.rfvo.rf_status}}</span>
 												</div>
 											</div>
 	

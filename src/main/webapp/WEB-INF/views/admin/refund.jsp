@@ -17,9 +17,9 @@
 				        <div class="input-group search-bar">
 				            <input type="text" class="form-control bg-light border-0 small"
 				                placeholder="Search for..." aria-label="Search"
-				                aria-describedby="basic-addon2">
+				                aria-describedby="basic-addon2" v-model="store.name" @keyup.enter="store.find(nameRef)">
 				            <div class="input-group-append">
-				                <button class="btn btn-primary" type="button">
+				                <button class="btn btn-primary" @click="store.find(nameRef)">
 				                    <i class="fas fa-search fa-sm"></i>
 				                </button>
 				            </div>
@@ -33,18 +33,20 @@
 								<thead>
 									<tr>
 										<th style="width: 5%">번호</th>
-										<th style="width: 15%">사용자 이름</th>
-										<th style="width: 45%">제목</th>
+										<th style="width: 10%">사용자 이름</th>
+										<th style="width: 40%">제목</th>
+										<th style="width: 10%">상태</th>
 										<th style="width: 10%">환불 금액</th>
-										<th style="width: 15%">환불 요청일</th>
-										<th style="width: 7%">환불 사유</th>
+										<th style="width: 10%">환불 요청일</th>
+										<th style="width: 5%">환불 사유</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr v-for="(vo,index) in store.list" :key="index">
 										<td>{{vo.rf_id}}</td>
-										<td>{{}}</td>
+										<td>{{vo.name}}</td>
 										<td>{{vo.pname}}</td>
+										<td>{{vo.rf_status}}</td>
 										<td>{{vo.rf_amount}}원</td>
 										<td>{{vo.reqday}}</td>
 										<td class="text-center">
@@ -53,27 +55,10 @@
 													class="fas fa-ellipsis-h"></i>
 												</a>
 												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" href="#">상세보기</a>
+													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal" @click="store.vo=vo">상세보기</a>
 												</div>
 											</div>
-											<!-- <div id="myModal" class="modal fade" role="dialog">
-												<div class="modal-dialog">
-													<div class="modal-content">
-														<div class="modal-header">
-															<button type="button" class="close" data-dismiss="modal">&times;</button>
-																<h4 class="modal-title">환불 사유 작성</h4>
-														</div>
-														<div class="modal-body">
-															<h5 style="color: red;">※적절한 환불 사유를 작성하지 않을 시 환불이 거절 될 수있습니다.</h5>
-																<textarea rows="5" cols="68" v-model="rstore.rf_msg" placeholder="환불 사유를 입력해 주세요"></textarea>
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-default" data-dismiss="modal" @click="rstore.refundInsert()">작성</button>
-															<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-														</div>
-													</div>
-												</div>
-											</div> -->
+											 
 										</td>
 									</tr>
 								</tbody>
@@ -93,7 +78,27 @@
 			</div>
 		</div>
 	</div>
-</div>
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog" v-if="store.vo.rf_id && store.vo">
+				<div class="modal-content" style="width: 700px;">
+					<div class="modal-header">
+						<h4 class="modal-title">환불 사유</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<textarea rows="5" cols="68" v-model="store.vo.rf_msg" readonly></textarea>
+					</div>
+					<div class="modal-footer">
+					  <div v-if="store.vo.rf_status==='환불 대기'">
+						<button type="button" class="btn btn-default" data-dismiss="modal" @click="store.adminRefundUpdate(store.vo.rf_id,'환불 승인')">환불 승인</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" @click="store.adminRefundUpdate(store.vo.rf_id,'환불 실패')">환불 실패</button>
+					  </div>
+						<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	<script src="https://unpkg.com/vue-demi"></script>
 	<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
@@ -101,18 +106,19 @@
 	<script src="/vuejs/axios.js"></script>
 	<script src="/vuejs/refund/admin_refund.js"></script>
 	<script>
-	 const {createApp,onMounted} = Vue
+	 const {createApp,onMounted,ref} = Vue
 	 const {createPinia} = Pinia
 	 
 	 const adminApp=createApp({
 		 setup(){
 			 const store=useAdminRefundStore()
+			 const nameRef=ref(null)
 			 
 			 onMounted(()=>{
 				 store.adminRefundListData()
 			 })
 			 return {
-				 store
+				 store,nameRef
 			 }
 		 }
 	 })

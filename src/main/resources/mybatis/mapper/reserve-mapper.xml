@@ -20,13 +20,18 @@
     <result property="pyvo.p_id" column="p_id"/>
     
     <!-- 환불 관련 -->
+    <result property="rfvo.rf_status" column="rf_status"/>
+    <result property="rfvo.rf_id" column="rf_id"/>
   </resultMap>
   
   <select id="myReservedListData" resultMap="reserveMap" parameterType="hashmap">
     SELECT p.pno, p.thumbnail, p.name, rv.rvno, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, rv.rv_time, 
-    		rv.rv_option, TO_CHAR(rv.rv_created_at, 'YYYY-MM-DD HH24:MI:SS') AS createday, rv.rv_exposure, rv.rv_status
+    		rv.rv_option, TO_CHAR(rv.rv_created_at, 'YYYY-MM-DD HH24:MI:SS') AS createday, rv.rv_exposure, rv.rv_status,
+    		rf.rf_status, rf.rf_id
     FROM reserve rv
     JOIN place p ON p.pno = rv.pno
+    LEFT OUTER JOIN pay pyvo ON rv.rvno = pyvo.rvno
+    LEFT OUTER JOIN refund rf ON pyvo.p_id = rf.p_id
     WHERE rv.uno = #{uno}
     AND rv.rv_exposure = 'y'
     ORDER BY rv.rvno DESC
@@ -41,10 +46,12 @@
   <select id="myReservedDetailData" resultMap="reserveMap" parameterType="int">
     SELECT p.thumbnail, p.name, p.company, p.addr, p.phone AS p_phone, rv.rvno, rv.rv_status, rv.rv_time, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, rv.rv_option, 
     		rv.rv_price, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_amount, rv.nickname, rv.phone AS rv_phone, rv.email,
-    		pyvo.totalAmount, pyvo.method, TO_CHAR(pyvo.requestedAt, 'YYYY-MM-DD HH24:MI:SS') AS requestedAt, pyvo.p_id
+    		pyvo.totalAmount, pyvo.method, TO_CHAR(pyvo.requestedAt, 'YYYY-MM-DD HH24:MI:SS') AS requestedAt, pyvo.p_id,
+    		rf.rf_status, rf.rf_id, p.pno
     FROM reserve rv
     JOIN place p ON p.pno = rv.pno
     LEFT OUTER JOIN pay pyvo ON rv.rvno = pyvo.rvno
+    LEFT OUTER JOIN refund rf ON pyvo.p_id = rf.p_id
     WHERE rv.rvno = #{rvno}
   </select>
   

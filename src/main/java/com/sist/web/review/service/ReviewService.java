@@ -26,4 +26,6 @@ public interface ReviewService {
 	public List<ReviewVO> mypageReviewListData(Map map);
 	// 마이페이지 리뷰 총 페이지
 	public int mypageReviewTotalPage(int uno);
+	// 리뷰 갯수
+	public int getMyReviewCount(Map map);
 }

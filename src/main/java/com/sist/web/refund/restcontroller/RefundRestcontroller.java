@@ -59,12 +59,13 @@ public class RefundRestcontroller {
 	}
 	// 관리자 환불 목록
 	@GetMapping("/admin/refund_list_vue/")
-	public ResponseEntity<Map> admin_refund_list(@RequestParam("page") int page)
+	public ResponseEntity<Map> admin_refund_list(@RequestParam("page") int page,@RequestParam(name="name",required = false) String name)
 	{
 		Map map=new HashMap();
 		try
 		{
 			map.put("start", (page-1)*8);
+			map.put("name", name);
 			List<RefundVO> list=rservice.adminRefundListData(map);
 			int totalpage=rservice.adminRefundTotalPage();
 
@@ -79,4 +80,21 @@ public class RefundRestcontroller {
 		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
 	// 관리자 환불 승인 / 취소
+	@PostMapping("/admin/refund_update_vue/")
+	public ResponseEntity<Map> refund_update_vue(@RequestBody RefundVO vo)
+	{
+		Map map=new HashMap();
+		try
+		{
+			map.put("rf_id", vo.getRf_id());
+			map.put("rf_status", vo.getRf_status());
+			rservice.refundUpdate(map);
+			map.put("result", "success");
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<>(map,HttpStatus.OK);
+	}
 }

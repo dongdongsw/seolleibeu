@@ -85,4 +85,10 @@ public class ReviewServiceImpl implements ReviewService{
 		return rmapper.reviewUpdate(vo);
 	}
 
+	@Override
+	public int getMyReviewCount(Map map) {
+		// TODO Auto-generated method stub
+		return rmapper.getMyReviewCount(map);
+	}
+
 }

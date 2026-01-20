@@ -15,4 +15,5 @@ public class ReserveVO {
 	
 	private PayVO pyvo = new PayVO();
 	private RefundVO rfvo = new RefundVO();
+	
 }

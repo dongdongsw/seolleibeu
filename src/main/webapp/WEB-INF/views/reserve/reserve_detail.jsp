@@ -163,7 +163,14 @@
 														<li>
 															<span class="label">결제일시</span>
 															<span class="value" v-if="store.rvvo.rv_status === '예약완료'">
-															{{store.rvvo.pyvo.requestedAt ? store.rvvo.pyvo.requestedAt.replace('T', ' ').split('.')[0] : ''}}</span>
+																{{store.rvvo.pyvo.requestedAt ? store.rvvo.pyvo.requestedAt.replace('T', ' ').split('.')[0] : ''}}
+															</span>
+														</li>
+														<li>
+															<span class="label">환불상태</span>
+															<span class="value" >
+																{{store.rvvo.rfvo ? store.rvvo.rfvo.rf_status : '-'}}
+															</span>
 														</li>
 													</ul>
 												</div>
@@ -176,9 +183,11 @@
 								</div>
 								<div class="row text-right" style="margin-right: 1px; margin-bottom: 10px;">
 									<a class="btn btn-default btn-sm" @click="store.reserveExposureChange(store.rvvo.rvno)">예매내역 삭제</a>&nbsp;
-									<a href="../mypage/review_create" class="btn btn-default btn-sm">리뷰 작성</a>&nbsp;
-									<a href="#" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal"
-										 @click="rstore.p_id=store.rvvo.pyvo.p_id; rstore.rf_amount=store.rvvo.pyvo.totalAmount">환불 요청</a>&nbsp;
+									<div v-if="store.rvvo.pyvo ?.totalAmount > 0">
+										<a :href="'/place/culture/detail_before?pno='+store.rvvo.pvo.pno" class="btn btn-default btn-sm" v-if="store.rvvo.rfvo ?.rf_status === null">리뷰 작성</a>&nbsp;
+										<a class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal" @click="rstore.p_id=store.rvvo.pyvo.p_id; rstore.rf_amount=store.rvvo.pyvo.totalAmount"
+											 v-if="store.rvvo.rfvo ?.rf_status !== '환불 승인' && store.rvvo.rfvo ?.rf_status !== '환불 실패' && store.rvvo.rv_status !== '예약취소'">환불 요청</a>&nbsp;
+									</div>
 									<a href="javascript:history.back()" class="btn btn-default btn-sm">목록</a>
 								</div>
 								<div id="myModal" class="modal fade" role="dialog">
@@ -189,7 +198,8 @@
 													<h4 class="modal-title">환불 사유 작성</h4>
 											</div>
 											<div class="modal-body">
-												<h5 style="color: red;">※적절한 환불 사유를 작성하지 않을 시 환불이 거절 될 수있습니다.</h5>
+												<h5 style="color: red;">※환불 신청은 한 번만 가능하오니 신중하게 환불 사유를 작성해 주세요.</h5>
+												<h5 style="color: red;">※적절한 환불 사유가 아닐 시 환불 신청이 거절될 수 있습니다.</h5>
 													<textarea rows="5" cols="68" v-model="rstore.rf_msg" placeholder="환불 사유를 입력해 주세요"></textarea>
 											</div>
 											<div class="modal-footer">

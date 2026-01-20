@@ -38,11 +38,13 @@ public class RefundServiceImpl implements RefundService{
 		int result=rmapper.refundUpdate(map);
 		return result;
 	}
+	// 관리자 환불 목록
 	@Override
 	public List<RefundVO> adminRefundListData(Map map) {
 		// TODO Auto-generated method stub
 		return rmapper.adminRefundListData(map);
 	}
+	// 관리자 환불 총 페이지
 	@Override
 	public int adminRefundTotalPage() {
 		// TODO Auto-generated method stub

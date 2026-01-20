@@ -12,5 +12,6 @@ public class RefundVO {
 	// 장소
 	private String pname,thumbnail;
 	
-	private int name;
+	// 사용자
+	private String name;
 }

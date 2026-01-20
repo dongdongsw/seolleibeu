@@ -58,5 +58,9 @@ public interface ReviewMapper {
 	public List<ReviewVO> mypageReviewListData(Map map);
 	// 마이페이지 리뷰 총 페이지
 	public int mypageReviewTotalPage(int uno);
+	// 리뷰 갯수
+	@Select("SELECT COUNT(*) FROM review "
+			+ "WHERE pno=#{pno} AND uno=#{uno}")
+	public int getMyReviewCount(Map map);
 	
 }
