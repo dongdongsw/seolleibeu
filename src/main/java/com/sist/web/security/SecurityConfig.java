@@ -8,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
@@ -42,12 +43,16 @@ public class SecurityConfig {
 					//.anyRequest().authenticated()
 			)
 			
+			.sessionManagement(session -> session
+					.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+			)
+			
 			.formLogin(form -> form
 					.loginPage("/auth/login")
 					.loginProcessingUrl("/auth/login_process")
 					.usernameParameter("id")
 					.passwordParameter("pwd")
-					.defaultSuccessUrl("/", false)
+					.defaultSuccessUrl("/", true)
 					.successHandler(loginSuccessHandler)
 					.failureHandler(loginFailHandler)
 					.permitAll()

@@ -15,13 +15,16 @@
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
 
+
+	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	<script src="https://unpkg.com/vue-demi"></script>
 	<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-
+	<div id="duplication"></div>
 
 	<jsp:include page="header.jsp"></jsp:include>
 	
@@ -33,5 +36,22 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/menumaker.js"></script>
     <script src="/js/navigation.js" type="text/javascript"></script>
+    <script src="/vuejs/auth/duplicationStore.js"></script>
+    <script>
+    	const {createPinia} = Pinia
+    	const {createApp, onMounted} = Vue
+    	const duplicationApp = createApp({
+    		setup(){
+    			const duplicationStore = useDuplicationStore()
+    			
+    			onMounted(()=>{
+    				duplicationStore.connect()
+    			})
+    		}
+    	})
+    	duplicationApp.use(createPinia())
+    	duplicationApp.mount("#duplication")
+    </script>
+    
 </body>
 </html>

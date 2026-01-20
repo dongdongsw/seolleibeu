@@ -2,6 +2,7 @@ package com.sist.web.security;
 
 import java.io.IOException;
 
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
@@ -20,14 +21,37 @@ import lombok.RequiredArgsConstructor;
 public class LoginSuccessHandler implements AuthenticationSuccessHandler{
 
 	private final LoginService lService;
+	
+	private final LoginSessionRegistry loginRegistry;
+	private final WebSocketSessionRegistry wsRegistry;
+	private final SimpMessagingTemplate template;
 
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
 		
-		UsersVO vo = lService.loginInfoData(authentication.getName());
+		
 		HttpSession session = request.getSession();
 		
+		
+		String userid = authentication.getName();
+		String newSessionId = session.getId();
+		
+		
+		String oldSessionId = loginRegistry.get(userid);
+		
+		if(oldSessionId != null && !oldSessionId.equals(newSessionId)) {
+			
+			wsRegistry.getSession(userid).forEach(sid -> {
+				template.convertAndSendToUser(userid,"/queue/force-logout","DUPLICATE_LOGIN");
+			});
+			
+			SessionUtils.invalidate(oldSessionId);
+		}
+		
+		loginRegistry.registry(userid, newSessionId);
+		
+		UsersVO vo = lService.loginInfoData(authentication.getName());
 		session.setAttribute("uno", vo.getUno());
 		session.setAttribute("id", vo.getId());
 		session.setAttribute("name", vo.getName());
