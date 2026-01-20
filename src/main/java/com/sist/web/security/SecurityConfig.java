@@ -33,12 +33,11 @@ public class SecurityConfig {
 							"/main/**", 
 							"/admin/**", 
 							"/place/**", 
-							"/auth/**",
-							"/mypage/**"
+							"/auth/**"
 					).permitAll()
-					//.requestMatchers("/course/create/**").hasRole("USER")
-					//.requestMatchers("/mypage/**").hasRole("USER")
-					//.requestMatchers("/admin/**").hasRole("ADMIN")
+					.requestMatchers("/course/create/**").hasRole("USER")
+					.requestMatchers("/mypage/**").hasRole("USER")
+					.requestMatchers("/admin/**").hasRole("ADMIN")
 					.anyRequest().permitAll()
 					//.anyRequest().authenticated()
 			)

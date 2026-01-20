@@ -7,6 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="/css/course.css" rel="stylesheet">
+
+<style type="text/css">
+.page-header{
+  background: linear-gradient(rgba(30, 30, 30, 0.7), rgba(30, 30, 30, 0.7)),  url(/images/asdf.jpg) no-repeat center;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
     <div class="page-header">

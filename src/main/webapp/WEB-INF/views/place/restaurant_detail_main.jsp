@@ -11,6 +11,12 @@
 
 <link href="/css/place/restaurant_detail.css" rel="stylesheet" />
 <link rel="stylesheet" href="/css/review/review.css">
+<style type="text/css">
+.page-header{
+  background: linear-gradient(rgba(30, 30, 30, 0.7), rgba(30, 30, 30, 0.7)),  url(/images/asdf.jpg) no-repeat center;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
 	<div id="restaurant_detail">

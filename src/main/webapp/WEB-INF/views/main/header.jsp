@@ -29,16 +29,16 @@
                                 <li><a href="/place/restaurant/list" title="Contact Us">음식점</a> </li>
                                 <li><a href="/place/culture/list" title="Contact Us">문화/체험</a> </li>
                                 <li><a href="/place/attraction/list" title="Contact Us">관광명소</a> </li>
-                                <li><a href="/admin" title="Error">관리자</a> </li>
+                                <!-- <li><a href="/admin" title="Error">관리자</a> </li> -->
                                 <li><a href="/notice/list" title="Contact Us">공지사항</a> </li>
-                                <c:choose>
+                                <%-- <c:choose>
                            		 <c:when test="${not empty sessionScope.uno}">
                                  <li><a href="/mypage/my_info" title="Contact Us">마이페이지</a> </li>
                                  </c:when>
                                  <c:otherwise>
 		                         <li><a href="/auth/login">마이페이지</a></li>
 		                         </c:otherwise>
-		                        </c:choose>
+		                        </c:choose> --%>
                                 <li>
                                 	<a href="#" class="dropdown-toggle bellBtn">
                                 		<img src="/images/bell2.png" style="height: 15px; width: 13px; padding-bottom: 2px">
@@ -98,7 +98,7 @@
     			return true;
     		}
     		
-  			if(confirm('로그인이 필요한 서비스입니다. 로그인하시겠습니까?')){
+  			if(confirm('로그인이 필요한 서비스입니다.')){
   				location.href='/auth/login';
   			}
     	
