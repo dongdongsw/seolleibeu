@@ -70,31 +70,169 @@
 }
 
 .booking-widget {
-	/* widget styling */
+	background-color: #f3f0eb;
+	padding: 20px;
+	border-radius: 8px;
 }
 
 .booking-widget .widget-title {
 	font-weight: bold;
+	margin-botton: 20px;
 }
 
-.booking-widget ul {
-	list-style: none;
+.booking-accordion-item {
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	overflow: hidden;
 }
 
-.booking-option {
+.accordion-header {
+	background-color: #f3f0eb;
+	padding: 12px 15px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+	background-color: #f5f5f5;
+}
+
+.accordion-title {
 	font-weight: bold;
-	min-height: 30px;
+	font-size: 14px;
+	color: #333;
+}
+
+.accordion-value {
+	font-size: 14px;
+	color: #666;
+	margin-right: 10px;
+}
+
+.accordion-icon {
+	font-size: 12px;
+}
+
+.accordion-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-out;
+	background-color: white;
+	border-top: 1px solid #ddd;
+}
+
+.accordion-body {
+	padding: 15px;
+}
+
+#calendar {
+	font-size: 11px;
+}
+
+.calendar-container {
+    max-width: 100%;
+    max-height: 320px;
+    overflow: hidden;
+}
+
+#calendar .fc-daygrid-day {
+    height: 26px !important;
+    padding: 0 !important;
+}
+
+#calendar .fc-daygrid-day-frame {
+	height: 22px !important;
+    min-height: 22px !important;
+}
+
+#calendar .fc-col-header-cell {
+    padding: 2px 0 !important;
+}
+
+#calendar .fc-daygrid-day-top {
+    display: flex;
+    justify-content: center;
+}
+
+#calendar .fc-daygrid-day-number {
+    float: none !important;
+}
+
+#calendar table {
+    line-height: 1 !important;
+}
+
+#calendar thead {
+    height: 25px !important;
+}
+
+#calendar tbody tr {
+    height: 22px !important;
+}
+
+#calendar .fc {
+    font-size: 12px;
+}
+
+#calendar .fc-toolbar {
+	margin-bottom: 5px !important;
+}
+
+#calendar .fc-toolbar-title {
+    font-size: 16px !important;
+}
+
+.time-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 8px;
+}
+
+.time-btn {
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	background-color: white;
+	cursor: pointer;
+	font-size: 13px;
+	transition: all 0.2s;
+}
+
+.option-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 8px;
+}
+
+.option-btn {
+	padding: 12px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	background-color: white;
+	cursor: pointer;
+	font-size: 13px;
+	transition: all 0.2s;
+	text-align: center;
+}
+
+.booking-footer {
+	margin-top: 20px;
+	padding-top: 15px;
+	border-top: 1px solid #ddd;
 }
 
 .quantity-section {
 	display: flex;
 	align-items: center;
-	margin-bottom: -25px;
-	margin-left: 65px;
+	justify-content: space-between;
+	margin-bottom: 15px;
 }
 
 .quantity-label {
-	margin-right: 10px;
 	font-size: 14px;
 	font-weight: bold;
 }
@@ -102,11 +240,10 @@
 .quantity-controls {
 	display: flex;
 	align-items: stretch;
-	margin-right: 15px;
 }
 
 .quantity-input {
-	width: 38px;
+	width: 50px;
 	height: 32px;
 	text-align: center;
 	border: 1px solid #ccc;
@@ -143,14 +280,14 @@
 }
 
 .booking-btn {
+	width: 100%;
 	background-color: black;
 	color: white;
 	border: none;
 	border-radius: 20px;
-	padding: 0 20px;
-	height: 32px;
+	padding: 12px 20px;
 	font-weight: bold;
-	font-size: 13px;
+	font-size: 14px;
 	cursor: pointer;
 	outline: none;
 }
@@ -186,7 +323,29 @@
 .text-right {
 	margin-top: 5px;
 }
+
+#calendar .fc-scrollgrid {
+    border: none !important;
+}
+
+#calendar .fc-daygrid-body {
+    border: none !important;
+}
+
+#calendar .fc-scrollgrid-sync-table tbody tr {
+    height: 28px !important;
+}
+
+#calendar .fc-daygrid-day-events {
+    margin: 0 !important;
+    min-height: 0 !important;
+}
+
+#calendar .fc-daygrid-day-bg {
+    min-height: 28px !important;
+}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
 </head>
 <body>
 	<div class="page-header">
@@ -256,31 +415,75 @@
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 				<div class="widget widget-recent-post booking-widget">
 					<h3 class="widget-title"><b>티켓 예매</b></h3>
-					<ul class="listnone widget-recent-post">
-						<li>
-							<div class="option_date booking-option">날짜 선택</div>
-						</li>
-						<li>
-							<div class="option_time booking-option">시간 선택</div>
-						</li>
-						<li>
-							<div class="option_two booking-option">옵션 선택</div>
-						</li>
-						<li>
-							<div id="selected-option-output" class="booking-option" style="margin-bottom: 35px;">선택옵션 출력</div>
-							<div class="quantity-section">
-								<span class="quantity-label">수량</span>
-								<div class="quantity-controls">
-									<input type="text" id="qty_val" value="1" readonly="readonly" class="quantity-input">
-									<div class="quantity-buttons">
-										<button type="button" onclick="changeQ(1)" class="quantity-btn">+</button>
-										<button type="button" onclick="changeQ(-1)" class="quantity-btn minus">-</button>
-									</div>
-								</div>
-								<button type="button" class="booking-btn" onclick="location.href='/reserve/reserve_ok'">예매하기</button>
+					<!-- 날짜 선택 -->
+					<div class="booking-accordion-item">
+						<div class="accordion-header" onclick="toggleAccordion('date')">
+							<span class="accordion-title">날짜 선택</span>
+							<div style="display: flex; align-items: center;">
+								<span class="accordion-value">날짜를 선택하세요</span>
+								<span class="accordion-icon">▼</span>
 							</div>
-						</li>
-					</ul>
+						</div>
+						<div class="accordion-content" id="accordion-date">
+							<div class="accordion-body">
+								<div class="calendar-container" id="calendar">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 시간 선택 -->
+					<div class="booking-accordion-item">
+						<div class="accordion-header" onclick="toggleAccordion('time')">
+							<span class="accordion-title">시간 선택</span>
+							<div style="display: flex; align-items: center;">
+								<span class="accordion-value">시간을 선택하세요</span>
+								<span class="accordion-icon">▼</span>
+							</div>
+						</div>
+						<div class="accordion-content" id="accordion-time">
+							<div class="accordion-body">
+								<div class="time-grid">
+									<button class="time-btn">성현 해줘</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 옵션 선택 아코디언 -->
+					<div class="booking-accordion-item">
+						<div class="accordion-header" onclick="toggleAccordion('option')">
+							<span class="accordion-title">옵션 선택</span>
+							<div style="display: flex; align-items: center;">
+								<span class="accordion-value">옵션을 선택하세요</span>
+								<span class="accordion-icon">▼</span>
+							</div>
+						</div>
+						<div class="accordion-content" id="accordion-option">
+							<div class="accordion-body">
+								<div class="option-grid">
+									<button class="option-btn">
+										또는<br><small>동현씨가..</small>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="booking-footer">
+						<div class="quantity-section">
+							<span class="quantity-label">수량</span>
+							<div class="quantity-controls">
+								<input type="text" value="1" class="quantity-input" readonly>
+								<div class="quantity-buttons">
+									<button type="button" class="quantity-btn plus" onclick="changeQ(1)">+</button>
+									<button type="button" class="quantity-btn minus" onclick="changeQ(-1)">-</button>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="booking-btn" onclick="location.href='/reserve/reserve_ok'">예매하기</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -325,6 +528,24 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		function toggleAccordion(section) {
+			const content = document.getElementById('accordion-' + section)
+			const allContents = document.querySelectorAll('.accordion-content')
+			
+			allContents.forEach(item => {
+				if(item.id !== 'accordion-' + section) {
+					item.style.maxHeight = '0'
+				}
+			})
+			
+			if(content.style.maxHeight && content.style.maxHeight !== '0px') {
+				content.style.maxHeight = '0'
+			} else {
+				content.style.maxHeight = '400px'
+			}
+		}
+	</script>
 	<script src="/vuejs/axios.js"></script>
     <script src="/vuejs/place/cultureStore.js"></script>
     <script src="/vuejs/favorite/favoriteStore.js"></script>
@@ -361,6 +582,30 @@
     			  rstore.pno=pno
     			  rstore.curpage=1
     			  rstore.reviewListData()
+    			  
+    			  /* 달력 */
+    			  const calendar = new FullCalendar.Calendar(
+    					  document.getElementById('calendar'), {
+    						  initialView: 'dayGridMonth',
+    						  height: 220,
+    						  aspectRatio: 1.2,
+    						  headerToolbar: {
+    							  left: 'prev',
+    							  center: 'title',
+    							  right: 'next'
+    						  },
+    						  validRange: {
+    							  start: new Date().toISOString().split('T')[0],
+    							  end: '2026-04-01'
+    						  },
+    						  initialDate: new Date(),
+    						  dayCellContent: function(arg) {
+    							  return arg.dayNumberText.replace('일', '')
+    						  },
+    						  locale: 'ko'
+    					  }
+    			  )
+    			  calendar.render()
     		  })
     		  
     		  return {
