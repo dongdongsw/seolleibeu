@@ -1,6 +1,7 @@
-const {defineStore} = Pinia
+//const {defineStore} = Pinia
+window.defineStore ??= Pinia.defineStore
 
-const useDuplicationStore = defineStore('duplication',{
+window.useDuplicationStore ??= defineStore('duplication',{
 	state:()=>({
 		stomp : null,
 		connected: false
