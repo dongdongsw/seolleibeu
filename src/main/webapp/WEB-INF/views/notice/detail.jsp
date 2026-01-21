@@ -95,7 +95,7 @@
 							</div>
 						</div>
 
-						<div class="notice-content">
+						<div class="notice-content" style="white-space: pre-wrap;">
 							{{store.detail.n_content}}
 						</div>
 						 <div class="notice-footer">

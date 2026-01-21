@@ -53,9 +53,9 @@ const useNoticeStore=defineStore('notice',{
 		},
 		async noticeUpdate(n_id){
 			await api.put('/notice/update_vue/',{
-				n_id,
-				n_title:this.updateMsg[n_id],
-				n_content:this.updateMsg[n_id]
+				n_id: this.detail.n_id,
+				n_title: this.detail.n_title,
+				n_content: this.detail.n_content
 			})
 			this.noticeListData()
 		},

@@ -27,7 +27,7 @@ public interface NoticeMapper {
 		   +"VALUES(noti_no_seq.nextval,#{uno},#{n_title},#{n_content},SYSDATE,NULL,0)")
 	public void noticeInsert(NoticeVO vo);
 	
-	@Select("SELECT n_title, hit, n_content,  "
+	@Select("SELECT n_id, n_title, hit, n_content,  "
 		   +"TO_CHAR(n_created_at,'YYYY-MM-DD') as created_at "
 		   +"FROM notice WHERE n_id = #{n_id}")
 	public NoticeVO noticeDetailData(int n_id);

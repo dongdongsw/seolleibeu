@@ -15,6 +15,12 @@ const useInfoUpdateStore = Pinia.defineStore('info_update', {
   }),
 
   actions: {
+	initUserInfo() {
+	    this.name = USER_INFO.name
+	    this.phone = USER_INFO.phone
+		this.nameChecked = true
+		this.phoneChecked = true
+	},
     // 닉네임 중복확인
     async mypagNameChk() {
       if (this.name.trim() === '') {

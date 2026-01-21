@@ -47,8 +47,12 @@ public class MypageController {
 	   
 	// 내 정보 수정
 	@GetMapping("/mypage/my_update")
-	public String mypage_update(Model model) {
-		
+	public String mypage_update(Model model,HttpSession session) {
+		Integer uno = (Integer) session.getAttribute("uno");
+        if (uno == null) return "redirect:/login";
+
+        UsersVO vo = mService.mypageData(uno);
+        model.addAttribute("vo", vo);
 		model.addAttribute("my_jsp" ,"../mypage/my_update.jsp");
 		return "mypage/my_main";
 	}

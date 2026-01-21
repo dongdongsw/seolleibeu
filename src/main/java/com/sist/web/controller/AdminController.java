@@ -2,6 +2,8 @@ package com.sist.web.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.sist.web.commons.*;
 
 @Controller
@@ -59,6 +61,7 @@ public class AdminController {
 	@GetMapping("/admin/notice")
 	public String notice(Model model)
 	{
+		
 		model.addAttribute("main_jsp", "notice.jsp");
 		return "admin/main";
 	}
@@ -69,14 +72,16 @@ public class AdminController {
 		return "admin/main";
 	}
 	@GetMapping("/admin/notice_update")
-	public String notice_update(Model model)
+	public String notice_update(@RequestParam("n_id") int n_id, Model model)
 	{
+		model.addAttribute("n_id", n_id);
 		model.addAttribute("main_jsp", "notice_update.jsp");
 		return "admin/main";
 	}
 	@GetMapping("/admin/notice_detail")
-	public String notice_detail(Model model)
+	public String notice_detail(@RequestParam("n_id") int n_id, Model model)
 	{
+		model.addAttribute("n_id", n_id);
 		model.addAttribute("main_jsp", "notice_detail.jsp");
 		return "admin/main";
 	}

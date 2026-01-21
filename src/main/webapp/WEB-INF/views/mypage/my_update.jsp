@@ -9,7 +9,12 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-
+<script>
+  const USER_INFO = {
+    name: '${vo.name}',
+    phone: '${vo.phone}'
+  }
+</script>
 </head>
 <body>
 <div class="content auth-wrapper">
@@ -28,7 +33,6 @@
 
             <div style="flex:1;">
                 <div class="form-wrap">
-
 			  <div class="form-row">
 			    <label>닉네임</label>
 			    <div class="field">
@@ -111,6 +115,11 @@
 	const mypageUpdateApp=createApp({
 		 setup(){
 			 const store = useInfoUpdateStore()
+			 
+			 onMounted(() => {
+		        store.initUserInfo()
+		     })
+			 
 			 return {
 				 store
 			 }

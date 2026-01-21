@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sist.web.admin.service.NoticeService;
 import com.sist.web.vo.NoticeVO;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -51,11 +52,14 @@ public class NoticeRestController {
 	}
 	
 	@PostMapping("/notice/insert_vue/")
-	public ResponseEntity<Map> notice_insert_vue(@RequestBody NoticeVO vo)
+	public ResponseEntity<Map> notice_insert_vue(@RequestBody NoticeVO vo,HttpSession session)
 	{
 		Map map=new HashMap();
 		try
 		{
+			Integer uno = (Integer) session.getAttribute("uno");
+	        vo.setUno(uno);
+	        
 			nService.noticeInsert(vo);
 			map.put("msg", "yes");
 		}catch(Exception ex)
