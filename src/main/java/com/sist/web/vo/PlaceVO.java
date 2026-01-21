@@ -35,4 +35,7 @@ public class PlaceVO {
 	// 장소 옵션 조인용
 	private PlaceOptionsVO povo;
 	
+	// 리뷰 작성  여부
+	private boolean canWrite;
+	
 }

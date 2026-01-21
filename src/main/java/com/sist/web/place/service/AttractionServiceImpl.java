@@ -32,4 +32,5 @@ public class AttractionServiceImpl implements AttractionService {
         mapper.attractionHitIncrement(pno);
         return mapper.attractionDetailData(pno);
 	}
+
 }

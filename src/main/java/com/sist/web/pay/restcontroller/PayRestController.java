@@ -23,8 +23,6 @@ public class PayRestController {
 	@GetMapping("/pay/success/")
 	public ResponseEntity<Map> pay_success(@RequestParam("paymentKey") String paymentKey,@RequestParam("orderId") String orderId, @RequestParam(name="amount") long amount,@RequestParam("rvno") int rvno)
 	{
-		System.out.println(">>> 서버 접속 성공!");
-	    System.out.println(">>> rvno: " + rvno + ", amount: " + amount);
 		Map map=new HashMap();
 		try
 		{

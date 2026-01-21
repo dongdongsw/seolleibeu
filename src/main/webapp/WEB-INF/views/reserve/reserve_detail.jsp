@@ -185,7 +185,7 @@
 									<a class="btn btn-default btn-sm" @click="store.reserveExposureChange(store.rvvo.rvno)">예매내역 삭제</a>&nbsp;
 										<a :href="'/place/culture/detail_before?pno='+store.rvvo.pvo.pno" class="btn btn-default btn-sm" v-if="store.rvvo.rfvo ?.rf_status === null && store.rvvo.pyvo ?.totalAmount > 0">리뷰 작성</a>&nbsp;
 										<a class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal" @click="rstore.p_id=store.rvvo.pyvo.p_id; rstore.rf_amount=store.rvvo.pyvo.totalAmount"
-											 v-if="store.rvvo.rfvo ?.rf_status !== '환불 승인' && store.rvvo.rfvo ?.rf_status !== '환불 실패' && store.rvvo.rv_status !== '예약취소'">환불 요청</a>&nbsp;
+											 v-if="store.rvvo.rfvo ?.rf_status !== '환불 승인' && store.rvvo.rfvo ?.rf_status !== '환불 실패' && store.rvvo.rv_status !== '예약취소' && store.rvvo.pyvo ?.totalAmount > 0">환불 요청</a>&nbsp;
 									<a href="javascript:history.back()" class="btn btn-default btn-sm">목록</a>
 								</div>
 								<div id="myModal" class="modal fade" role="dialog">

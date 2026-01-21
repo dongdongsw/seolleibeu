@@ -2,6 +2,7 @@ package com.sist.web.place.restcontroller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +12,9 @@ import java.util.*;
 
 import com.sist.web.place.service.*;
 import com.sist.web.vo.*;
+
+import jakarta.servlet.http.HttpSession;
+
 import com.sist.web.commons.*;
 
 import lombok.RequiredArgsConstructor;
@@ -53,10 +57,23 @@ public class CultureRestController {
 	}
 	
 	@GetMapping("/detail_vue/")
-	public ResponseEntity<PlaceVO> culture_detail_vue(@RequestParam("pno") int pno) {
+	public ResponseEntity<PlaceVO> culture_detail_vue(@RequestParam("pno") int pno,HttpSession session) {
+		Integer uno=(Integer)session.getAttribute("uno");
+		
+		boolean bCheck = false;
+		if(uno != null && uno > 0) {
+			try {
+				bCheck=cService.reviewCheck(pno, uno);
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		
 		PlaceVO pvo = new PlaceVO();
 		try {
 			pvo = cService.cultureDetailData(pno);
+			
+			pvo.setCanWrite(bCheck);
 			
 			if(pvo.getImgs() != null) {
 				List<Map> imgList = new ArrayList();
@@ -72,7 +89,6 @@ public class CultureRestController {
 		} catch(Exception ex) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		
 		return new ResponseEntity<>(pvo, HttpStatus.OK);
 	}
 }

@@ -43,5 +43,8 @@ public interface PlaceMapper {
 	// 관광명소 장소 생성
 	public void attractionCreate(PlaceVO vo);
 	
-
+	@Select("SELECT COUNT(*) FROM reserve " +
+	        "WHERE pno = #{pno} AND uno = #{uno} AND rv_status = '예약완료' " +
+	        "AND NOT EXISTS (SELECT 1 FROM review WHERE pno = #{pno} AND uno = #{uno})")
+	public int reviewCheck(Map map);
 }

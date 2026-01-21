@@ -11,7 +11,8 @@ const useCultureStore = defineStore('culture', {
 		keyword: '',
 		selected: 'p.pno',
 		pvo: {
-			imgList: []
+			imgList: [],
+			canWrite: false
 		}
 	}),
 	getters: {

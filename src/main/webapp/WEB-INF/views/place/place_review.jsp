@@ -11,7 +11,7 @@
 	<div style="border: 1px solid #e3dfdc; border-top: none; border-radius: 0 0 5px 5px; padding: 20px; margin-bottom: 50px;">
 		<sec:authorize access="hasRole('USER')">
 			<!-- 리뷰 작성 폼 -->
-			<div class="review-write-box" >
+			<div class="review-write-box" v-if="store.pvo.canWrite">
 				<div class="review-write-title">
 					<i class="fa fa-pencil"></i> 리뷰 작성하기
 				</div>
