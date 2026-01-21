@@ -24,6 +24,7 @@
     <result property="rfvo.rf_id" column="rf_id"/>
   </resultMap>
   
+  <!-- 내 예약 내역 -->
   <select id="myReservedListData" resultMap="reserveMap" parameterType="hashmap">
     SELECT p.pno, p.thumbnail, p.name, rv.rvno, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, rv.rv_time, 
     		rv.rv_option, TO_CHAR(rv.rv_created_at, 'YYYY-MM-DD HH24:MI:SS') AS createday, rv.rv_exposure, rv.rv_status,
@@ -38,11 +39,14 @@
     OFFSET #{start} ROWS FETCH NEXT 3 ROWS ONLY
   </select>
   
+  <!-- 예약내역 페이지네이션 -->
   <select id="myReservedTotalPage" resultType="int" parameterType="int">
     SELECT CEIL(COUNT(*)/3.0) FROM reserve rv
     WHERE rv.uno = #{uno}
+    AND rv.rv_exposure = 'y'
   </select>
   
+  <!-- 예약 상세보기 -->
   <select id="myReservedDetailData" resultMap="reserveMap" parameterType="int">
     SELECT p.thumbnail, p.name, p.company, p.addr, p.phone AS p_phone, rv.rvno, rv.rv_status, rv.rv_time, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, rv.rv_option, 
     		rv.rv_price, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_amount, rv.nickname, rv.phone AS rv_phone, rv.email,
@@ -55,17 +59,65 @@
     WHERE rv.rvno = #{rvno}
   </select>
   
+  <!-- 예약 내역 숨김처리 -->
   <update id="myReservedChangeExposure" parameterType="int">
     UPDATE reserve SET
     rv_exposure = 'n'
     WHERE rvno = #{rvno}
   </update>
   
-<!--   <select id="reserveResultPage" resultMap="reserveMap" parameterMap="int">
-    SELECT p.thumbnail, p.type, p.name, rv.rvno, rv.rv_status, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday, 
-    		rv.rv_option, rv.rv_price, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_amount
+  <!-- 예약 생성 -->
+  <insert id="reserveInsert" parameterType="com.sist.web.vo.ReserveVO">
+    <selectKey keyProperty="rvno" resultType="int" order="BEFORE">
+      SELECT rv_rvno_seq.nextval FROM dual
+    </selectKey>
+    
+    INSERT INTO reserve(rvno, pno, opno, rv_status, rv_date, rv_time, rv_option, rv_price, 
+    			rv_amount, rv_created_at, rv_exposure, uno, userid, nickname, phone, email)
+    VALUES(#{rvno}, #{pno}, #{opno}, '예약대기', TO_DATE(#{opday}, 'YYYY-MM-DD'), #{rv_time}, #{rv_option}, #{rv_price},
+    			#{rv_amount}, SYSDATE, 'y', #{uno}, #{userid}, #{nickname}, #{phone}, #{email})
+  </insert>
+  
+  <!-- 예약 결과 페이지 -->
+  <select id="reserveResultData" resultMap="reserveMap" parameterType="int">
+    SELECT p.thumbnail, p.type, p.name, p.pno, rv.rvno, rv.rv_status, TO_CHAR(rv.rv_date, 'YYYY-MM-DD') AS opday,
+    		rv.rv_time, rv.rv_option, rv.rv_price, TO_CHAR(rv.rv_price, '999,999,999') AS form_price, rv.rv_amount
     FROM reserve rv
     JOIN place p ON p.pno = rv.pno
     WHERE rv.rvno = #{rvno}
-  </select> -->
+  </select>
+  
+  <!-- 예약대기 목록 -->
+  <select id="reserveWaitList" resultType="com.sist.web.vo.ReserveVO">
+    SELECT rvno, opno, rv_amount
+    FROM reserve
+    WHERE rv_status = '예약대기'
+    AND rv_created_at &lt; (SYSDATE - (1/24))
+  </select>
+  
+  <!-- 예약 취소 -->
+  <update id="reserveCancel" parameterType="int">
+    UPDATE reserve SET
+    rv_status = '예약취소'
+    WHERE rvno = #{rvno}
+    AND rv_status = '예약대기'
+  </update>
+  
+  <!-- 환불 승인된 예약 목록 -->
+  <select id="refundReserveList" resultType="com.sist.web.vo.ReserveVO">
+    SELECT rv.rvno, rv.opno, rv.rv_amount
+    FROM reserve rv
+    JOIN pay py ON rv.rvno = py.rvno
+    JOIN refund rf ON py.p_id = rf.p_id
+    WHERE rf.rf_status = '환불 승인'
+    AND rv.rv_status = '예약완료'
+  </select>
+  
+  <!-- 환불 승인시 예약 취소 -->
+  <update id="refundReserveCancel" parameterType="int">
+    UPDATE reserve SET
+    rv_status = '예약취소'
+    WHERE rvno = #{rvno}
+    AND rv_status = '예약완료'
+  </update>
 </mapper>

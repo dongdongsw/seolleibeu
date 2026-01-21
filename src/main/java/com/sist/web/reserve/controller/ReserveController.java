@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ReserveController {
 	
-	@GetMapping("/reserve/reserve_ok")
-	public String reserve_ok(Model model) {
-		model.addAttribute("main_jsp", "../reserve/reserve_ok.jsp");
+	@GetMapping("/reserve/reserve_result")
+	public String reserve_result(Model model) {
+		model.addAttribute("main_jsp", "../reserve/reserve_result.jsp");
 		
 		return "main/main";
 	}

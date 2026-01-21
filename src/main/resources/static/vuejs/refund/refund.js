@@ -1,5 +1,5 @@
 
-const useRefundStore=defineStore('refund',{
+const useRefundStore = Pinia.defineStore('refund',{
 	state:()=>({
 		list:[],
 		p_id:'',

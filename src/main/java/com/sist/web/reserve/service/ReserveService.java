@@ -9,5 +9,8 @@ public interface ReserveService {
 	public int myReservedTotalPage(int uno);
 	public ReserveVO myReservedDetailData(int rvno);
 	public void myReservedChangeExposure(int rvno);
-//	public ReserveVO reserveResultPage(int rvno);
+	public int createReserve(ReserveVO vo);
+	public ReserveVO reserveResultData(int rvno);
+	public void cancelReserve();
+	public void refundApproved();
 }

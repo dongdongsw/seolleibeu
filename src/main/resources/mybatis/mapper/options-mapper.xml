@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.web.reserve.mapper.OptionsMapper">
+  <!-- 날짜 리스트 -->
+  <select id="dateList" resultType="string" parameterType="int">
+    SELECT DISTINCT TO_CHAR(op_date, 'YYYY-MM-DD') AS opday
+    FROM options
+    WHERE pno = #{pno}
+    AND op_date >= TRUNC(SYSDATE)
+    ORDER BY opday
+  </select>
+  
+  <!-- 시간 리스트 -->
+  <select id="timeList" resultType="string" parameterType="hashmap">
+    SELECT DISTINCT op_time
+    FROM options
+    WHERE pno = #{pno}
+    AND op_date = TO_DATE(#{opday}, 'YYYY-MM-DD')
+    AND (op_amount - op_booked) > 0
+    ORDER BY op_time
+  </select>
+  
+  <!-- 옵션 리스트 -->
+  <select id="typeList" resultType="com.sist.web.vo.PlaceOptionsVO" parameterType="hashmap">
+    SELECT opno, pno, op_date, op_time, op_type, op_price, op_amount, op_booked
+    FROM options
+    WHERE pno = #{pno}
+    AND op_date = TO_DATE(#{opday}, 'YYYY-MM-DD')
+    AND op_time = #{op_time}
+    ORDER BY op_type
+  </select>
+  
+  <!-- 예약 재고처리 -->
+  <update id="bookedIncrement" parameterType="hashmap">
+    UPDATE options SET
+    op_booked = op_booked + #{rv_amount}
+    WHERE opno = #{opno}
+    AND (op_amount - op_booked) >= #{rv_amount}
+  </update>
+  
+  <!-- 예약 취소 재고처리 -->
+  <update id="bookedDecrement" parameterType="hashmap">
+    UPDATE options SET
+    op_booked = op_booked - #{rv_amount}
+    WHERE opno = #{opno}
+    AND op_booked >= #{rv_amount}
+  </update>
+</mapper>
