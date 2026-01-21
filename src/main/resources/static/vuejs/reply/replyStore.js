@@ -41,14 +41,13 @@ const useReplyStore = defineStore('reply', {
 		},
 		// 댓글 쓰기
 		async replyInsert(writer_id) {
-			console.log(writer_id)
 			if (!this.cr_content.trim()) return
 			const { data } = await api.post('/reply/insert_vue/', {
 				cno: this.cno,
 				cr_content: this.cr_content
 			}, 
 			{
-				params: { writer_id }
+				params: { writer_id: writer_id }
 			}
 
 			)

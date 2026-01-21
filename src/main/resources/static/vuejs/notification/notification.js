@@ -28,11 +28,9 @@ const notificationApp = Vue.createApp({
 			toastMsg.innerText = message;
 			toast.classList.add("show");
 
-			// 3초 후 자동 닫힘
-
 			setTimeout(() => {
 				hideToast()
-			}, 50000);
+			}, 8000);
 		}
 	}
 })
@@ -41,4 +39,4 @@ function hideToast() {
 	toast.classList.remove("show");
 }
 
-notificationApp.mount(".container")
+notificationApp.mount("#notification")

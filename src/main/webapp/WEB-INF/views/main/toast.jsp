@@ -13,7 +13,6 @@
   z-index: 9999;
 }
 
-/* Toast 박스 */
 .toast {
   width: 320px;
   background: #fff;
@@ -26,30 +25,26 @@
   pointer-events: none;
 }
 
-/* 보여질 때 */
 .toast.show {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-/* Header */
 .toast-header {
-  background: #28a745; /* success */
+  background: #cec8c1; 
   color: white;
-  padding: 10px 14px;
+  padding: 3px 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* 제목 */
 .toast-title {
   font-size: 15px;
   font-weight: bold;
 }
 
-/* 닫기 버튼 */
 .toast-close {
   background: transparent;
   border: none;
@@ -58,9 +53,8 @@
   cursor: pointer;
 }
 
-/* Body */
 .toast-body {
-  padding: 14px;
+  padding: 16px;
   font-size: 14px;
   color: #333;
 }
@@ -73,7 +67,7 @@
 	<div class="toast-container">
 		<div id="reserveToast" class="toast">
 			<div class="toast-header">
-				<strong class="toast-title">예약 알림</strong>
+				<strong class="toast-title">알림</strong>
 				<button class="toast-close" onclick="hideToast()">×</button>
 			</div>
 			<div class="toast-body" id="toastMsg"></div>

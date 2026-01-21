@@ -30,6 +30,7 @@
 </style>
 <script>
 const SESSION_ID=Number('${sessionScope.uno}')
+const WRITER_ID=Number('${vo.uno}')
 </script>
 </head>
 <body>
@@ -114,6 +115,7 @@ const SESSION_ID=Number('${sessionScope.uno}')
     		 
     		 const params=new URLSearchParams(location.search)
     		 const cno=params.get('cno')
+    		 const writer_id=WRITER_ID
     		 
     		 onMounted(()=>{
     			 rStore.replyListData(cno)
@@ -121,7 +123,8 @@ const SESSION_ID=Number('${sessionScope.uno}')
     		 })
     		 
     		 return {
-    			 rStore
+    			 rStore,
+    			 writer_id
     		 }
     	 }
      })

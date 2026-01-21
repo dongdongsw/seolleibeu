@@ -65,7 +65,7 @@ public class ReplyRestController {
 			
 			template.convertAndSend(
 				"/sub/noti/"+writer_id,
-				"[댓글] 내 코스에 댓글이 달렸습니다."
+				"[댓글] "+name+"님이 내 코스에 댓글을 남겼습니다."
 			);
 			
 		}catch(Exception ex)
