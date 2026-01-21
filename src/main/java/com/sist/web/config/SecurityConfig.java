@@ -1,4 +1,4 @@
-package com.sist.web.security;
+package com.sist.web.config;
 
 import javax.sql.DataSource;
 
@@ -12,6 +12,9 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+
+import com.sist.web.security.LoginFailHandler;
+import com.sist.web.security.LoginSuccessHandler;
 
 import lombok.RequiredArgsConstructor;
 
