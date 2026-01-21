@@ -21,7 +21,7 @@
 	                    </div>
 	                    
 	                    
-						<p style="position:absolute; left:20.5%; top:58%; color: red;">${errorMsg }</p>
+						<p style="position:absolute; left:50.5%; top:63%; color: red;">${errorMsg }</p>
 	                    <form class="auth-form" action="/auth/login_process" method="post">
 	
 	                        <div class="form-group"  style="display: flex; align-items: center; justify-content: center; margin-bottom: 0px;">
@@ -33,7 +33,9 @@
 	                            
 	                        </div>
 	                        
-	
+							<div style="margin-left: 40px; margin-top: 10px;">
+								<input type="checkbox" name="remember-me">&nbsp;자동 로그인
+							</div>
 	                        <div class="form-group text-center mt-4">
 	                            <button type="submit" class="btn btn-default auth-main-btn login-btn" style="background: black; color: #fff; border-radius: 10px; width: 80%;">
 	                                로그인하기

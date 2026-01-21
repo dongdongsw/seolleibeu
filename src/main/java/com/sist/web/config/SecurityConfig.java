@@ -61,6 +61,13 @@ public class SecurityConfig {
 					.permitAll()
 			)
 			
+			.rememberMe(remember -> remember
+					.key("my-secret-key")
+					.rememberMeParameter("remember-me")
+					.tokenValiditySeconds(60*60*24*30)
+					.userDetailsService(jdbcUserDetailService())
+			)
+			
 			.logout(logout->logout
 					.logoutUrl("/auth/logout")
 					.logoutSuccessUrl("/")
