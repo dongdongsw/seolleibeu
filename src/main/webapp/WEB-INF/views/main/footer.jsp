@@ -16,7 +16,7 @@
                 	<a href="/"><img src="/images/main_logo.png" style="width: 80px; height: 50px; margin-left: -4px;"></a>
                     <div class="footer-widget">
                         <h3 class="widget-title">설레이브</h3>
-                        <p>설레이브 | Team 1 Project<br>당신의 특별한 데이트를 위한 파트너</p>
+                        <p>설레이브 | Team 1 Project<br>특별한 데이트를 위한 파트너</p>
                     </div>
                 </div>
                 
