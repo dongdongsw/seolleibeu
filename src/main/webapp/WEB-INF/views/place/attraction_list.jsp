@@ -7,26 +7,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="/css/course.css" rel="stylesheet">
-<style>
-.custom-select option[disabled] {
-    display: none;
-}
-
-.page-header{
-  background: linear-gradient(rgba(30, 30, 30, 0.7), rgba(30, 30, 30, 0.7)),  url(/images/asdf.jpg) no-repeat center;
-  background-size: cover;
-}
-</style>
 </head>
 <body>
-    <div class="page-header">
+    <div class="page-header-attraction">
         <!-- page header -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="page-caption">
                         <h2 class="page-title">관광명소</h2>
-                        <p>명소 & 자연관광 & 엔터</p>
+                        <p>명소 & 자연관광 & 엔터테인먼트</p>
                     </div>
                 </div>
             </div>

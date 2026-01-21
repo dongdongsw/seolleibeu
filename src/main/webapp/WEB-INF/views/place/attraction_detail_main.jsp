@@ -9,89 +9,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/place/restaurant_detail.css">
 <link rel="stylesheet" href="/css/review/review.css">
-<style type="text/css">
-.page-header {
-	margin: 0px auto;
-}
-
-.main-container {
-	padding-top: 100px;
-}
-
-.attraction-detail-block {
-	margin-bottom: 40px;
-}
-
-.attraction-thumbnail {
-	float: left;
-	margin: 0px 30px 0px 0px;
-	width: 300px;
-	height: 280px;
-}
-
-.attraction-info ul {
-	list-style: none;
-	padding: 0;
-}
-
-.attraction-info li {
-	font-size: 16px;
-	margin-bottom: 10px;
-	display: flex;
-	align-items: center;
-}
-
-.attraction-info .label {
-	display: inline-block;
-	width: 60px;
-	padding: 4px 0px;
-	font-weight: bold;
-	color: black;
-	flex-shrink: 0;
-}
-
-.attraction-info .value {
-	margin-left: 12px;
-	font-size: 14px;
-	flex: 1;
-	word-break: keep-all;
-}
-
-.stats-section {
-	position: absolute;
-	left: 66%;
-}
-
-.stats-table {
-	border: none;
-}
-
-.stats-table td {
-	border: none !important;
-}
-
-.stats-table tbody tr {
-	border: none !important;
-}
-
-.stats-icon {
-	padding-top: 1px;
-	font-size: 22px;
-	color: black;
-}
-
-.btn-list {
-	background-color: black;
-	color: white;
-}
-
-.text-right {
-	margin-top: 5px;
-}
-</style>
+<link rel="stylesheet" href="/css/attraction_detail.css">
 </head>
 <body>
-	<div class="page-header">
+	<div class="page-header-attraction">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
