@@ -25,18 +25,21 @@
 </head>
 <body>
 	<div id="duplication"></div>
-
+	<div id="notification"></div>
 	<jsp:include page="header.jsp"></jsp:include>
 	
 	<jsp:include page="${main_jsp }"></jsp:include>
 	<jsp:include page="../common/cookie.jsp"></jsp:include>
 	<jsp:include page="footer.jsp"></jsp:include>
 	
+	<jsp:include page="toast.jsp"></jsp:include>
+	
 	<script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/menumaker.js"></script>
     <script src="/js/navigation.js" type="text/javascript"></script>
     <script src="/vuejs/auth/duplicationStore.js"></script>
+    <script src="/vuejs/notification/notification.js"></script>
     <script>
     	const {createPinia} = Pinia
     	const {createApp, onMounted} = Vue

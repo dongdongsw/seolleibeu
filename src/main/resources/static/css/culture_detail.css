@@ -313,6 +313,11 @@
 	color: white;
 }
 
+.btn-list:hover {
+	background-color: gray;
+	color: white;
+}
+
 .text-right {
 	margin-top: 5px;
 }

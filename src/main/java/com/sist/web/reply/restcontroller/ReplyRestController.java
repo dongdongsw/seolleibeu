@@ -6,6 +6,7 @@ import java.util.Map;
 import com.sist.web.commons.Methods;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ReplyRestController {
 	private final ReplyService rService;
+	private final SimpMessagingTemplate template;
 	
 	@GetMapping("/reply/list_vue/")
 	public ResponseEntity<Map> reply_list_vue(@RequestParam("cno") int cno)
@@ -44,7 +46,7 @@ public class ReplyRestController {
 	}
 	@PostMapping("/reply/insert_vue/")
 	public ResponseEntity<Map> reply_insert_vue(
-	   @RequestBody ReplyVO vo,HttpSession session
+	   @RequestBody ReplyVO vo,@RequestParam("writer_id") int writer_id,HttpSession session
 	)
 	{
 		Map map=new HashMap();
@@ -60,6 +62,12 @@ public class ReplyRestController {
 			map.put("rList", list);
 			map.put("cno", vo.getCno());
 			map.put("sessionId", session.getAttribute("id"));
+			
+			template.convertAndSend(
+				"/sub/noti/"+writer_id,
+				"[댓글] 내 코스에 댓글이 달렸습니다."
+			);
+			
 		}catch(Exception ex)
 		{
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
