@@ -83,9 +83,11 @@ const WRITER_ID=Number('${vo.uno}')
 					 
 					 <tr v-if="rStore.upReplyNo===rvo.id">
 					  <td colspan="2">
+					   <div class="reply-input-wrap">
 					   <textarea rows="5" class="comment-input" v-model="rStore.updateMsg[rvo.id]"></textarea>
 					   <button type=button class="replyupdate-btn" @click="rStore.replyUpdate(rvo.id)"
 					   >댓글수정</button>
+					   </div>
 					  </td>
 					 </tr>
 
@@ -93,9 +95,11 @@ const WRITER_ID=Number('${vo.uno}')
 					<table class="table" v-if="rStore.sessionId" style="margin-bottom: 100px;">
 					 <tr>
 					   <td>
+					    <div class="reply-input-wrap">
 					    <textarea rows="5" cols="70" class="comment-input" v-model="rStore.cr_content"></textarea>
 					    <button type=button class="comment-btn" @click="rStore.replyInsert(writer_id)"
 					    >댓글쓰기</button>
+					    </div>
 					   </td>
 					  </tr>
 					 </table>
