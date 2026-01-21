@@ -93,7 +93,7 @@ const SESSION_ID=Number('${sessionScope.uno}')
 					 <tr>
 					   <td>
 					    <textarea rows="5" cols="70" class="comment-input" v-model="rStore.cr_content"></textarea>
-					    <button type=button class="comment-btn" @click="rStore.replyInsert()"
+					    <button type=button class="comment-btn" @click="rStore.replyInsert(writer_id)"
 					    >댓글쓰기</button>
 					   </td>
 					  </tr>
@@ -105,6 +105,7 @@ const SESSION_ID=Number('${sessionScope.uno}')
 	<script src="/vuejs/axios.js"></script>
 	<script src="/vuejs/reply/replyStore.js"></script>
     <script type="text/javascript">
+    
      const {createApp,onMounted} = Vue
      const {createPinia} = Pinia
      const replyApp=createApp({

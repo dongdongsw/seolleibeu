@@ -15,13 +15,18 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer{
 		registry.addEndpoint("/chat-ws")
 			.setAllowedOriginPatterns("*")
 			.withSockJS();
+		
+		// 알림
+		registry.addEndpoint("/noti-ws")
+			.setAllowedOriginPatterns("*")
+			.withSockJS();
 	}
 
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
-		registry.enableSimpleBroker("/topic","/queue");
+		registry.enableSimpleBroker("/topic", "/queue", "/sub");
 		
-		registry.setApplicationDestinationPrefixes("/app");
+		registry.setApplicationDestinationPrefixes("/app", "/pub");
 		
 		registry.setUserDestinationPrefix("/user/");
 	}
