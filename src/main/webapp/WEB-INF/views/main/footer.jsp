@@ -24,9 +24,8 @@
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="footer-widget">
                         <h3 class="widget-title"><a href="#" style="color: white;">코스</a></h3>
-                        <p><a href="#" style="color: gray;">코스 생성</a></p>
-                        <p><a href="#" style="color: gray;">추천 코스</a></p>
-                        <p><a href="#" style="color: gray;">나의 코스</a></p>
+                        <p><a href="/course/create" style="color: gray;">코스 생성</a></p>
+                        <p><a href="/course/list" style="color: gray;">추천 코스</a></p>
                     </div>
                 </div>
                 
@@ -35,9 +34,9 @@
                     <div class="footer-widget">
                         <!-- newsletter block -->
                         <h3 class="widget-title"><a href="#" style="color: white;">장소</a></h3>
-                        <p><a href="#" style="color: gray;">음식점</a></p>
-                        <p><a href="#" style="color: gray;">문화/체험</a></p>
-                        <p><a href="#" style="color: gray;">관광명소</a></p>
+                        <p><a href="/place/restaurant/list" style="color: gray;">음식점</a></p>
+                        <p><a href="/place/culture/list" style="color: gray;">문화/체험</a></p>
+                        <p><a href="/place/attraction/list" style="color: gray;">관광명소</a></p>
                     </div>
                     <!-- newsletter block -->
                 </div>
@@ -46,9 +45,9 @@
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="footer-widget" style="margin-top: 80px;">
                         <!-- newsletter block -->
-                        <p><a href="#" style="color: gray;">공지사항</a></p>
-                        <p><a href="#" style="color: gray;">로그인</a></p>
-                        <p><a href="#" style="color: gray;">회원가입</a></p>
+                        <p><a href="/notice/list" style="color: gray;">공지사항</a></p>
+                        <p><a href="/auth/login" style="color: gray;">로그인</a></p>
+                        <p><a href="/auth/register" style="color: gray;">회원가입</a></p>
                       <!--   <p><a href="#" style="color: gray;">마이페이지</a></p> -->
                     </div>
                     <!-- newsletter block -->
@@ -64,17 +63,6 @@
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                     <div class="copyright-content">
                        Made by<i class="fa fa-love"></i><a href="https://github.com/dongdongsw/seolleibeu" style="color: white; margin-left: 4px;">Git Hub</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="footer-social">
-                        <ul class="listnone">
-                            <li> <a href="#"><i class="fa fa-facebook-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-twitter-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-google-plus-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-youtube-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-pinterest-square"></i></a> </li>
-                        </ul>
                     </div>
                 </div>
             </div>
