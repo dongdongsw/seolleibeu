@@ -17,6 +17,9 @@ const UNO = Number('${sessionScope.uno}');
        <img class="noti-img" src="/images/bell2.png" v-else>
     </a>
     <ul class="dropdown-menu dropdown-menu-right bell" style="width:300px;">
+        <li v-if="store.noti_list.length === 0">
+		    <a class="read" style="width: 300px; font-size: 12px;">알림이 없습니다.</a>
+		</li>
 		<li v-for="(vo, index) in store.noti_list" :key="index">
 			<a :class="vo.is_read === 'Y' ? 'read' : 'no-read'" 
 			   @click="store.notificationRead(vo.target_id, vo.target_type, vo.nono)" style="width: 300px; font-size: 12px;">
