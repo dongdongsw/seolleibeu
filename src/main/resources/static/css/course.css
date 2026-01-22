@@ -582,3 +582,16 @@ a {
 .selected-place {
 	color: #f999b7 !important;
 }
+.noti-img {
+	height: 15px;
+	width: 13px; 
+	padding-bottom: 2px
+}
+.noti-del-btn {
+	float: right; 
+	border:none; 
+	display: flex; 
+	justify-content: center; 
+	font-size: 10px; 
+	background-color: none;
+}

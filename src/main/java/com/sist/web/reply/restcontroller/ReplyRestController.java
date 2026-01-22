@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.sist.web.commons.Methods;
+import com.sist.web.notification.service.NotificationService;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -27,6 +29,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ReplyRestController {
 	private final ReplyService rService;
+	private final NotificationService nService;
 	private final SimpMessagingTemplate template;
 	
 	@GetMapping("/reply/list_vue/")
@@ -51,7 +54,6 @@ public class ReplyRestController {
 	)
 	{
 		Map map=new HashMap();
-		NotificationVO nvo=new NotificationVO();
 		try
 		{
 			int uno=(int)session.getAttribute("uno");
@@ -65,16 +67,25 @@ public class ReplyRestController {
 			map.put("cno", vo.getCno());
 			map.put("sessionId", session.getAttribute("id"));
 			
-			String msg="[댓글]"+name+"님이 내 코스에 댓글을 남겼습니다.";
-			
-			
-			template.convertAndSend(
-				"/sub/noti/"+writer_id,
-				msg
-			);
-			
+			// 알림
+			if(uno != writer_id) {
+				String msg="[댓글]"+name+"님이 내 코스에 댓글을 남겼습니다.";
+				
+				NotificationVO nvo=new NotificationVO();
+				nvo.setUno(writer_id);
+				nvo.setTarget_id(vo.getCno());
+				nvo.setTarget_type("course");
+				nvo.setMsg(msg);
+				nService.NotificationInsert(nvo);
+				
+				template.convertAndSend(
+					"/sub/noti/"+writer_id,
+					msg
+				);
+			}
 		}catch(Exception ex)
 		{
+			ex.printStackTrace();
 			return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<>(map,HttpStatus.OK);

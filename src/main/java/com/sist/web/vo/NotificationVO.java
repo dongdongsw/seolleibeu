@@ -7,6 +7,6 @@ import lombok.Data;
 public class NotificationVO {
 
 	private int nono, uno, target_id;
-	private String target_type, is_read;
+	private String target_type, is_read, msg;
 	private Date created_at;
 }

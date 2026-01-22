@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-
+    
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=500f9263086d9dabb5676152c0e94936&libraries=services"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -30,7 +31,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	
 	<jsp:include page="${main_jsp }"></jsp:include>
-	<jsp:include page="../common/cookie.jsp"></jsp:include>
+	<jsp:include page="../commons/cookie.jsp"></jsp:include>
 	<jsp:include page="footer.jsp"></jsp:include>
 	
 	

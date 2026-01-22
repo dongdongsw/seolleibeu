@@ -30,7 +30,7 @@
                                 <li><a href="/place/culture/list" title="Contact Us">문화/체험</a> </li>
                                 <li><a href="/place/attraction/list" title="Contact Us">관광명소</a> </li>
                                 <!-- <li><a href="/admin" title="Error">관리자</a> </li> -->
-                                <li><a href="/notice/list" title="Contact Us">공지사항</a> </li>
+                                <li style="padding-right: 15px;"><a href="/notice/list" title="Contact Us">공지사항</a> </li>
                                 <%-- <c:choose>
                            		 <c:when test="${not empty sessionScope.uno}">
                                  <li><a href="/mypage/my_info" title="Contact Us">마이페이지</a> </li>
@@ -39,22 +39,9 @@
 		                         <li><a href="/auth/login">마이페이지</a></li>
 		                         </c:otherwise>
 		                        </c:choose> --%>
-                                <li>
-                                	<a href="#" class="dropdown-toggle bellBtn">
-                                		<img src="/images/bell2.png" style="height: 15px; width: 13px; padding-bottom: 2px">
-                                	</a>
-                                	<ul class="dropdown-menu dropdown-menu-right bell" style="width:300px;">
-									    <li>
-									      <a class="no-read" href="#" style="width: 300px;">코스 게시판에 새 댓글이 달렸습니다.</a>
-									    </li>
-									    <li>
-									      <a class="read" href="#" style="width: 300px;">뮤지컬 결제 완료 되었습니다.</a>
-									    </li>
-									    <li>
-									      <a  class="read" href="#" style="width: 300px;">뮤지컬 예매 완료 되었습니다.</a>
-									    </li>
-									</ul>
-                                </li>
+		                        <sec:authorize access="isAuthenticated()">
+                                	<jsp:include page="../commons/notification.jsp"></jsp:include>
+                                </sec:authorize>
                             </ul>
                         </div>
                     </div>
@@ -93,29 +80,8 @@
     </div>
     
     <!-- 알림 -->
-    <div id="notification"></div>
-    <jsp:include page="../common/toast.jsp"></jsp:include>
-    <script src="/vuejs/notification/notificationStore.js"></script>
-    <script>
-    	window.createPinia ??= Pinia.createPinia
-   		window.createApp ??= Vue.createApp
-   		window.onMounted ??= Vue.onMounted
-    	const notificationApp = createApp({
-    		setup(){
-    			const store = useNotificationStore()
-    			
-    			onMounted(()=>{
-    				store.connect(uno)
-    			})
-    			
-    			return {
-    				store
-    			}
-    		}
-    	})
-		notificationApp.use(createPinia()) 
-    	notificationApp.mount("#notification")
-    </script>
+    <jsp:include page="../commons/toast.jsp"></jsp:include>
+    
     
     <script>
     	function loginRouter(){

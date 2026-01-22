@@ -114,7 +114,6 @@ const SESSION_UNO = Number('${sessionScope.uno}')
 	</div>
 	<jsp:include page="reply.jsp"></jsp:include>
 	<script src="/js/course_detail.js"></script>
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=500f9263086d9dabb5676152c0e94936&libraries=services"></script>
 	<script src="/vuejs/course/courseDetailStore.js"></script>
 	<script src="/vuejs/course/courseDetail.js"></script>
 	<script src="/vuejs/bookmark/bookmarkStore.js"></script>
