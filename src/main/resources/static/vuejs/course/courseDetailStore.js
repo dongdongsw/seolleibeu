@@ -52,7 +52,7 @@ const useCourseDetailStore=defineStore('course_detail', {
 		// 초기값을 위한 첫번째 장소 가져오기
 		async firstPlace(cno) {
 			this.cno=cno
-			const res=await api.get("course/first_place_vue/", {
+			const res=await api.get("/course/first_place_vue/", {
 				params: {
 					cno: this.cno
 				}

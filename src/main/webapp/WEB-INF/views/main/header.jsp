@@ -91,6 +91,12 @@
             </div>
          </div>
     </div>
+    
+    <!-- 알림 -->
+    <div id="notification"></div>
+    <jsp:include page="../common/toast.jsp"></jsp:include>
+    <script src="/vuejs/notification/notification.js"></script>
+    
     <script>
     	function loginRouter(){
     		var userId = '${sessionScope.id}';
