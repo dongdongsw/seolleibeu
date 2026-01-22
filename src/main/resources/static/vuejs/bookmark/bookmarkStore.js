@@ -24,6 +24,7 @@ const useBookmarkStore=Pinia.defineStore('bookmark',{
 		        }
 		      })
 		      this.bookmarked = false
+			  alert('북마크가 삭제되었습니다')
 		      return
 		    }
 
