@@ -237,6 +237,7 @@ const useReserveStore = Pinia.defineStore('reserve', {
 				}
 			})
 			this.rsvo = res.data
+			console.log(res.data)
 		}
 	}
 })

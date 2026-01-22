@@ -4,7 +4,7 @@
 
   <!-- 결제 -->
   <insert id="paymentInsert" parameterType="PayVO">
-   INSERT INTO pay VALUES(pay_id_seq.nextval,#{rvno},#{orderId},#{orderName},#{method},#{paymentKey},#{totalAmount},#{balanceAmount},NULL,#{status},SYSDATE,SYSDATE)
+   INSERT INTO pay VALUES(pay_id_seq.nextval,#{rvno},#{orderId},#{orderName},#{method},#{paymentKey},#{totalAmount},#{balanceAmount},NULL,#{status},SYSDATE+9/24,SYSDATE+9/24)
   </insert>
   
   <!-- 예약 완료 -->
