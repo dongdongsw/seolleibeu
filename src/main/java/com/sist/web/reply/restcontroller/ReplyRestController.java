@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sist.web.commons.Methods;
 import com.sist.web.reply.service.ReplyService;
+import com.sist.web.vo.NotificationVO;
 import com.sist.web.vo.ReplyVO;
 
 import jakarta.servlet.http.HttpSession;
@@ -50,6 +51,7 @@ public class ReplyRestController {
 	)
 	{
 		Map map=new HashMap();
+		NotificationVO nvo=new NotificationVO();
 		try
 		{
 			int uno=(int)session.getAttribute("uno");
@@ -63,9 +65,12 @@ public class ReplyRestController {
 			map.put("cno", vo.getCno());
 			map.put("sessionId", session.getAttribute("id"));
 			
+			String msg="[댓글]"+name+"님이 내 코스에 댓글을 남겼습니다.";
+			
+			
 			template.convertAndSend(
 				"/sub/noti/"+writer_id,
-				"[댓글] "+name+"님이 내 코스에 댓글을 남겼습니다."
+				msg
 			);
 			
 		}catch(Exception ex)

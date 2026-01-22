@@ -95,7 +95,27 @@
     <!-- 알림 -->
     <div id="notification"></div>
     <jsp:include page="../common/toast.jsp"></jsp:include>
-    <script src="/vuejs/notification/notification.js"></script>
+    <script src="/vuejs/notification/notificationStore.js"></script>
+    <script>
+    	window.createPinia ??= Pinia.createPinia
+   		window.createApp ??= Vue.createApp
+   		window.onMounted ??= Vue.onMounted
+    	const notificationApp = createApp({
+    		setup(){
+    			const store = useNotificationStore()
+    			
+    			onMounted(()=>{
+    				store.connect(uno)
+    			})
+    			
+    			return {
+    				store
+    			}
+    		}
+    	})
+		notificationApp.use(createPinia()) 
+    	notificationApp.mount("#notification")
+    </script>
     
     <script>
     	function loginRouter(){
