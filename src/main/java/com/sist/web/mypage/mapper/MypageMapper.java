@@ -50,6 +50,9 @@ public interface MypageMapper {
 	@Delete("DELETE FROM userlike WHERE uno = #{uno}")
 	public void userUserLikeDelete(@Param("uno") int uno);
 	
+	@Delete("DELETE FROM review WHERE uno = #{uno}")
+	public void userUserReviewDelete(@Param("uno") int uno);
+	
 	// 코스 삭제
 	@Delete("DELETE FROM bookmark WHERE cno IN(select cno from course where uno= #{uno})")
 	public void userCourseBookmarkDelete(@Param("uno") int uno);
