@@ -11,7 +11,7 @@ window.useDuplicationStore ??= defineStore('duplication',{
 			if(this.connected){
 				return;
 			}
-			const socket = new SockJS('/chat-ws')
+			const socket = new SockJS('/ws')
 			this.stomp = Stomp.over(socket)
 			
 			this.stomp.connect({},()=>{
