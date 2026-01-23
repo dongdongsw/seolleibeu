@@ -24,7 +24,7 @@
       <!-- 메인 -->
       <div class="col-lg-9 col-md-9 col-sm-12">
         <main class="mypage-main" id="mypage_update">
-          <h2>회원 정보</h2>
+          <h2>회원 수정</h2>
 		
           <div class="info-card" style="margin-left: -40px;">
             <div class="profile" style="margin-bottom: 20px;">
