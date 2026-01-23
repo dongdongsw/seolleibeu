@@ -29,7 +29,7 @@
 						<main class="mypage-main">
 							<div class="search search-row">
 								<h2 class="mypage-title">내가 쓴 댓글</h2>
-								<div class="input-group reply-search" style="margin-top: -40px;">
+								<div class="input-group reply-search" style="margin-top: -35px; margin-right: 0px;">
 									<input type="text" class="form-control" ref="cr_contentRef"
 										v-model="store.cr_content" @keyup.enter="store.find(cr_contentRef)"
 										placeholder="검색어를 입력하세요."> <span
