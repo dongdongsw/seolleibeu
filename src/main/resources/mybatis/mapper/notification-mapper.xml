@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.web.notification.mapper.NotificationMapper">
+	
+	<!-- 모든 사용자 uno 가져오기 -->
+	<select id="selectAllUno" resultType="int">
+  		SELECT uno FROM users
+	</select>
+	
+	<!-- 모든 사용자에게 공지 알림 -->
+	<insert id="noticeNotiInsert" parameterType="hashmap">
+		INSERT INTO notification (nono, uno, target_type, is_read, msg, created_at)
+		SELECT noti_no_seq.NEXTVAL,
+		       t.uno,
+		       'notice',
+		       'N',
+		       #{msg},
+		       SYSDATE
+		FROM (
+		<foreach collection="unos" item="uno" separator=" UNION ALL ">
+		   SELECT #{uno} as uno FROM dual
+		</foreach>
+		) t
+	</insert>
+</mapper>

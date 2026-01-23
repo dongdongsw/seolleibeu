@@ -1,6 +1,7 @@
 package com.sist.web.notification.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
@@ -44,4 +45,7 @@ public interface NotificationMapper {
 			+ "OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY) "
 			+ "WHERE is_read = 'N'")
 	public int noReadExist(int uno);
+	
+	public List<Integer> selectAllUno();
+	public void noticeNotiInsert(Map map);
 }

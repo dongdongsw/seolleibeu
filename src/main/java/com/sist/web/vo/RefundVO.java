@@ -14,4 +14,5 @@ public class RefundVO {
 	
 	// 사용자
 	private String name;
+	private int uno;
 }

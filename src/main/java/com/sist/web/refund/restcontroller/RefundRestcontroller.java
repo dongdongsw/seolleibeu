@@ -1,6 +1,7 @@
 package com.sist.web.refund.restcontroller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,11 +16,14 @@ import jakarta.servlet.http.HttpSession;
 
 import com.sist.web.refund.service.*;
 import com.sist.web.commons.*;
+import com.sist.web.notification.service.NotificationService;
 
 @RestController
 @RequiredArgsConstructor
 public class RefundRestcontroller {
 	private final RefundService rservice;
+	private final NotificationService nService;
+	private final SimpMessagingTemplate template;
 	// 환불 목록
 	@GetMapping("/refund_list_vue/")
 	public ResponseEntity<Map> refund_list_vue(@RequestParam("page") int page,HttpSession session)
@@ -90,6 +94,27 @@ public class RefundRestcontroller {
 			map.put("rf_status", vo.getRf_status());
 			rservice.refundUpdate(map);
 			map.put("result", "success");
+			
+			// 알림
+			String msg="";
+			if ("환불 실패".equals(vo.getRf_status())) {
+			    msg="[예매] 환불에 실패했습니다.";
+			} else  {
+			    msg="[예매] 환불 요청이 승인되었습니다.";
+			}
+			
+			NotificationVO nvo=new NotificationVO();
+			nvo.setUno(vo.getUno());
+			nvo.setTarget_id(vo.getRf_id());
+			nvo.setTarget_type("refund");
+			nvo.setMsg(msg);
+			nService.NotificationInsert(nvo);
+				
+			template.convertAndSend(
+				"/sub/noti/"+vo.getUno(),
+				msg
+			);
+
 		}catch(Exception ex)
 		{
 			ex.printStackTrace();

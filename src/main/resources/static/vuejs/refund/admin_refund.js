@@ -43,10 +43,11 @@ const useAdminRefundStore=defineStore('adimin_refund',{
 				this.curpage=1
 				this.adminRefundListData()
 			},
-		async adminRefundUpdate(rf_id,rf_status){
+		async adminRefundUpdate(rf_id,uno,rf_status){
 			const res=await api.post('/admin/refund_update_vue/',{
 					rf_id:rf_id,
-					rf_status:rf_status
+					rf_status:rf_status,
+					uno:uno
 			})
 			if(res.data.result==='success')
 			{

@@ -70,7 +70,7 @@ public class NotificationRestController {
 	
 	// 읽지 않은 알림 존재하는지 확인
 	@GetMapping("noread_exist_vue/")
-public ResponseEntity<Integer> noti_noread_exist_vue(@RequestParam("uno") int uno) {
+	public ResponseEntity<Integer> noti_noread_exist_vue(@RequestParam("uno") int uno) {
 		
 		int count;
 		try {

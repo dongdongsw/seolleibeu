@@ -90,8 +90,8 @@
 					</div>
 					<div class="modal-footer">
 					  <div v-if="store.vo.rf_status==='환불 대기'">
-						<button type="button" class="btn btn-default" data-dismiss="modal" @click="store.adminRefundUpdate(store.vo.rf_id,'환불 승인')">환불 승인</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal" @click="store.adminRefundUpdate(store.vo.rf_id,'환불 실패')">환불 실패</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" @click="store.adminRefundUpdate(store.vo.rf_id,store.vo.uno,'환불 승인')">환불 승인</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" @click="store.adminRefundUpdate(store.vo.rf_id,store.vo.uno,'환불 실패')">환불 실패</button>
 					  </div>
 						<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 					</div>

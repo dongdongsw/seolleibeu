@@ -33,7 +33,7 @@
  <!-- 관리자 환불 목록 -->
  <select id="adminRefundListData" resultType="RefundVO" parameterType="hashmap">
   SELECT r.rf_id,r.p_id,r.rf_status,TO_CHAR(r.rf_doneAt,'yyyy-mm-dd') as doneday,TO_char(r.rf_requestedAt,'yyyy-mm-dd hh24:mi') as reqday,rf_msg,
-  pl.name as pname, rf_amount, u.name as name
+  pl.name as pname, rf_amount, u.name as name, re.uno as uno
   FROM refund r
   JOIN pay p ON r.p_id=p.p_id
   JOIN reserve re ON p.rvno=re.rvno

@@ -4,9 +4,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.sist.web.commons.Methods;
+import com.sist.web.notification.service.NotificationService;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sist.web.admin.service.NoticeService;
 import com.sist.web.vo.NoticeVO;
+import com.sist.web.vo.NotificationVO;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +29,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class NoticeRestController {
 	private final NoticeService nService;
+	private final NotificationService noService;
+	private final SimpMessagingTemplate template;
 	
 	@GetMapping("/notice/list_vue/")
 	public ResponseEntity<Map> notice_list_vue(@RequestParam("page") int page)
@@ -62,6 +67,21 @@ public class NoticeRestController {
 	        
 			nService.noticeInsert(vo);
 			map.put("msg", "yes");
+			
+			// 알림
+			Map noMap=new HashMap();
+			List<Integer> unoList=noService.selectAllUno();
+			String msg="[공지] 설레이브의 새 공지가 있습니다.";
+			noMap.put("msg", msg);
+			noMap.put("unos", unoList);
+
+			noService.noticeNotiInsert(noMap);
+			
+			template.convertAndSend(
+				"/sub/noti/all",
+				msg
+			);
+			
 		}catch(Exception ex)
 		{
 			ex.printStackTrace();

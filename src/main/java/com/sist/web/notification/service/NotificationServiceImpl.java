@@ -1,6 +1,7 @@
 package com.sist.web.notification.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -43,6 +44,18 @@ public class NotificationServiceImpl implements NotificationService {
 	public int noReadExist(int uno) {
 		// TODO Auto-generated method stub
 		return mapper.noReadExist(uno);
+	}
+
+	@Override
+	public List<Integer> selectAllUno() {
+		// TODO Auto-generated method stub
+		return mapper.selectAllUno();
+	}
+
+	@Override
+	public void noticeNotiInsert(Map map) {
+		// TODO Auto-generated method stub
+		mapper.noticeNotiInsert(map);
 	}
 
 }
