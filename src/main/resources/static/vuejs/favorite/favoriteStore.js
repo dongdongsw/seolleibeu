@@ -28,7 +28,7 @@ const useFavoriteStore = defineStore('favorite',{
 		async favoriteCancel(pno){
 			const deleteMsg = confirm('즐겨찾기를 해제 하시겠습니까?')
 				if(deleteMsg){
-					const result = await api.post('favorite/cancel_vue/',{
+					const result = await api.post('/favorite/cancel_vue/',{
 						pno:pno
 					})
 					this.checkFavorite = 0
