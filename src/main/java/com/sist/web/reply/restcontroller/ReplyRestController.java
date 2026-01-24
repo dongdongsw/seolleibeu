@@ -69,7 +69,7 @@ public class ReplyRestController {
 			
 			// 알림
 			if(uno != writer_id) {
-				String msg="[댓글]"+name+"님이 내 코스에 댓글을 남겼습니다.";
+				String msg="[댓글] "+name+"님이 내 코스에 댓글을 남겼습니다.";
 				
 				NotificationVO nvo=new NotificationVO();
 				nvo.setUno(writer_id);

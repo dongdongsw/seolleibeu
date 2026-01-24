@@ -12,7 +12,7 @@
 	<!-- 모든 사용자에게 공지 알림 -->
 	<insert id="noticeNotiInsert" parameterType="hashmap">
 		INSERT INTO notification (nono, uno, target_type, is_read, msg, created_at)
-		SELECT noti_no_seq.NEXTVAL,
+		SELECT notifi_nono_seq.NEXTVAL,
 		       t.uno,
 		       'notice',
 		       'N',

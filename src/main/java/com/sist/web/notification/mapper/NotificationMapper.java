@@ -19,7 +19,7 @@ public interface NotificationMapper {
 	// 이벤트 발생 시 알림 저장
 	@Insert("INSERT INTO notification "
 			+ "(nono, uno, target_id, target_type, is_read, msg, created_at) VALUES "
-			+ "(noti_no_seq.nextval, #{uno}, #{target_id}, #{target_type}, 'N', #{msg}, SYSDATE)")
+			+ "(notifi_nono_seq.nextval, #{uno}, #{target_id}, #{target_type}, 'N', #{msg}, SYSDATE)")
 	public void NotificationInsert(NotificationVO vo);
 	
 	// 내 알림 목록
