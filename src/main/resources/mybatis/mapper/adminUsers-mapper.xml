@@ -4,7 +4,7 @@
 
  <!-- 사용자 리스트 -->
  <select id="usersListData" resultType="com.sist.web.vo.UsersVO" parameterType="hashmap">
-  SELECT uno,id,name,phone,email,status,profile_img,created_at,updated_at,enabled
+  SELECT uno,id,name,phone,email,profile_img,created_at,updated_at,enabled
   FROM users
   <where>
    <if test="name!=null and name!=''">

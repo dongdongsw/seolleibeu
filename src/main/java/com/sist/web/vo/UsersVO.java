@@ -8,6 +8,6 @@ import lombok.Data;
 public class UsersVO {
 
 	private int uno, failed_count, enabled;
-	private String id, pwd, name, phone, email, profile_img, role, status, required_agree, optional_agree; 
+	private String id, pwd, name, phone, email, profile_img, role, required_agree, optional_agree; 
 	private Date created_at, updated_at;
 }
