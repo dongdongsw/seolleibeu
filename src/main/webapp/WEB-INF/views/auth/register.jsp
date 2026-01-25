@@ -18,8 +18,6 @@
 	                        <h1>회원가입</h1>
 	                    </div>
 	
-	                   <!--  <form id="register" ref="register" action="/auth/register_ok" class="auth-form" method="post"> -->
-	
 	                        <div class="row" style="margin-bottom: 20px; position: relative;">
 	                            <div class="col-md-8">
 	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="아이디 (영문/숫자, 6~12자)" v-model="registerStore.id">
@@ -114,17 +112,12 @@
 	                        </div>
 	
 	                        <div class="text-center mt-4">
-	                            <!-- <a class="btn btn-default auth-cancel-btn auth-dark-btn" href="/auth/login" 
-	                            		style="color: white; text-decoration: none; margin-top:20px; ">회원가입</a>
-	                            <a class="btn btn-default auth-cancel-btn auth-dark-btn" href="/auth/login" 
-	                            		style="color: white; text-decoration: none; margin-top:20px; ">취소</a> -->
 	                            <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
 	                            	style="color: white; text-decoration: none; margin-top:20px;" @click="registerStore.handleRegisterClick()">회원가입</button>
 	                            <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
 	                            	style="color: white; text-decoration: none; margin-top:20px;" onclick="javascript:history.back()">취소</button>
 	                            
 	                        </div>
-	                    <!-- </form> -->
 	                </div>
 	            </div>
 	        </div>

@@ -63,7 +63,6 @@
 	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"  v-for="(rvo,index) in store.resList" :key="index">
 	                    <div class="project-img mb30 thumbnail">
 	                        <a :href="'/place/restaurant/detail_before?pno=' + rvo.pno" class="imghover">
-	                        <!-- "'/place/restaurant/detail_vue?pno='+rvo.pno" -->
 	                        	<img :src="rvo.thumbnail" style="height: 250px;" class="img-responsive" alt="Interior Design Website Templates Free Download">
 	                        	<div class="caption">
 	                        		<h4 class="text-center" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{rvo.name}}</h4>

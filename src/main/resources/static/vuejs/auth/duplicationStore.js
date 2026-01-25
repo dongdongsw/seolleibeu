@@ -1,4 +1,4 @@
-//const {defineStore} = Pinia
+
 window.defineStore ??= Pinia.defineStore
 
 window.useDuplicationStore ??= defineStore('duplication',{
