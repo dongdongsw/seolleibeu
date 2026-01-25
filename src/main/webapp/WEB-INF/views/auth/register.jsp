@@ -34,11 +34,11 @@
 	                        </div>
 	
 	                        <div class="form-group">
-	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호 (영문/숫자/특수문자)" v-model="registerStore.pwd">
+	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호 (8~20자/영문/숫자/특수문자)" v-model="registerStore.pwd">
 	                        </div>
 	
 	                        <div class="form-group"  style="margin-bottom: 30px; position: relative;">
-	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호 재입력 (영문/숫자/특수문자)" v-model="registerStore.pwd1">
+	                            <input type="password" class="form-control auth-input" style="color: black;" placeholder="비밀번호 재입력 (8~20자/영문/숫자/특수문자)" v-model="registerStore.pwd1">
 	                            <p style="position: absolute; left:3%; top:100%; color: red;">{{registerStore.pwd !== '' && registerStore.pwd !== ''&& registerStore.pwdCheckCount !== 3 && registerStore.pwd !== registerStore.pwd1?'비밀번호가 일치하지 않습니다.':''}}</p>
                             	<p style="position: absolute; left:3%; top:100%; color: green;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwdCheckCount !== 3 && registerStore.pwd === registerStore.pwd1?'비밀번호가 일치합니다.':''}}</p>
                             	<p style="position: absolute; left:3%; top:100%; color: red;">{{registerStore.pwd !== '' && registerStore.pwd !== '' && registerStore.pwdCheckCount === 3?'비밀번호 형식을 지켜주세요.':''}}</p>

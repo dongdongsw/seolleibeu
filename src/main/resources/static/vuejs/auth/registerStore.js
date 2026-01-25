@@ -22,7 +22,7 @@ const useRegisterStore = defineStore('register',{
 		emailCheckCount:2, 		// 이메일 중복 검사
 		emailCodeCheckCount:2,
 		emailCodeSuccess:2,
-		pwdCheck:/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~@#$!%*?&])[a-zA-Z\d~@#$!%*?&]{8,}$/ ,
+		pwdCheck:/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~@#$!%*?&])[a-zA-Z\d~@#$!%*?&]{8,20}$/ ,
 		pwdCheckCount: 2
 	}),
 	actions:{
