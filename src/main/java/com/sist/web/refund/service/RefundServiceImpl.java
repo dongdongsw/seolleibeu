@@ -1,6 +1,7 @@
 package com.sist.web.refund.service;
 import org.springframework.stereotype.Service;
-import com.sist.web.controller.AdminController;
+
+import com.sist.web.admin.controller.AdminController;
 import com.sist.web.refund.mapper.RefundMapper;
 import lombok.RequiredArgsConstructor;
 import java.util.*;

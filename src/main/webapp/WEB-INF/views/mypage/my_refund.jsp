@@ -46,7 +46,7 @@
 									<div class="st-pagination">
 										<ul class="pagination">
 											<li v-if="store.startPage>1"><a href="#" @click="store.pageChange(store.startPage-1)">이전</a></li>
-											<li v-for="i in store.range" :class="i==store.curpage?'active':''"><a href="#" class="active" @click="store.pageChange(i)">1</a></li>
+											<li v-for="i in store.range" :class="i==store.curpage?'active':''"><a href="#" @click="store.pageChange(i)">{{i}}</a></li>
 											<li v-if="store.endPage<store.totalpage" @click="store.pageChange(store.endPage+1)"><a href="#">다음</a></li>
 										</ul>
 									</div>
