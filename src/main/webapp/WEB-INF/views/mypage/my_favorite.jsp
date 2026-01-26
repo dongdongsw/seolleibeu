@@ -22,8 +22,10 @@
 					<div class="col-lg-9 col-md-9 col-sm-12" id="mypage_favorite">
 						<main class="mypage-main">
 							<h2>나의 즐겨찾기</h2>
-	
-							<div class="row" style="margin-top: 30px;">
+							<div class="info-card text-center" style="margin: 0; padding: 0" v-if="store.fList == ''">
+							<p style="margin-top: 250px;">등록된 즐겨찾기가 없습니다.</p>
+						</div>
+							<div class="row" style="margin-top: 30px;" v-if="store.fList !== ''">
 					                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" v-for="(fvo,index) in store.fList" :key="index">
 					                    <div class="project-img mb30 thumbnail">
 					                        <a :href="'/place/' + store.routeType(fvo.pvo.type) + '/detail?pno=' + fvo.pvo.pno" class="imghover">
