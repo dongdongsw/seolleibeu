@@ -63,6 +63,9 @@ public interface MypageMapper {
 	@Delete("DELETE FROM course WHERE uno = #{uno}")
 	public void userCourseDelete(@Param("uno") int uno);
 	
+	@Delete("DELETE FROM notification WHERE uno = #{uno}")
+	public void userNotificationDelete(@Param("uno") int uno);
+	
 	// 유저 삭제
 	@Delete("DELETE FROM users WHERE uno = #{uno}")
 	public void userDelete(@Param("uno") int uno);

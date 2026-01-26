@@ -68,6 +68,7 @@ public class MypageServiceImpl implements MypageService{
 		mMapper.userCourseBookmarkDelete(uno);
 		mMapper.userCourseReplyDelete(uno);
 		mMapper.userCourseDelete(uno);
+		mMapper.userNotificationDelete(uno);
 		mMapper.userDelete(uno);
 		
 	}
