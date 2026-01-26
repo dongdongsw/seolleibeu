@@ -37,6 +37,9 @@
 									</span>
 								</div>
 							</div>
+							<div class="info-card text-center" style="margin: 0; padding: 0" v-if="store.list == ''">
+									<p style="margin-top: 250px;">등록된 댓글이 없습니다.</p>
+							</div>
 							<div class="my-info" v-for="vo in store.list" :key="vo.cno">
 								<div class="post-block my-course-item" style="margin-bottom: 0">
 									<!-- 왼쪽 이미지 -->
