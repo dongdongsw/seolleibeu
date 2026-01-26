@@ -27,6 +27,11 @@ public class LoginController {
 		return "auth/auth_main";
 	}
 	
+	@GetMapping("/register_ok")
+	public String auth_register_ok(Model model) {		
+		return "auth/register_ok";
+	}
+	
 	@GetMapping("/find_id")
 	public String auth_find_id(Model model) {
 		

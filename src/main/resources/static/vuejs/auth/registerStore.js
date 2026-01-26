@@ -36,7 +36,7 @@ const useRegisterStore = defineStore('register',{
 				required_agree:this.required_agree,
 				optional_agree:this.optional_agree
 			})
-			location.href="/"
+			location.href="/auth/register_ok"
 		},
 		async idCheck(){
 			const result = await api.get('/auth/idCheck_vue/',{
