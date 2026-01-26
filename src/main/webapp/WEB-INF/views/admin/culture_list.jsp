@@ -162,7 +162,6 @@
 			 
 			 onMounted(()=>{
 				 store.cultureListData()
-				 store.modalDetailData()
 			 })
 			 return {
 				 store,nameRef
