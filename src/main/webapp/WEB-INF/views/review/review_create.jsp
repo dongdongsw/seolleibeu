@@ -58,36 +58,8 @@
 								<label class="form-label">
 									리뷰 내용<span class="required">*</span>
 								</label>
-								<textarea class="form-control" name="content" id="reviewContent" 
-									placeholder="상품에 대한 솔직한 리뷰를 작성해주세요." 
-									maxlength="1000" required></textarea>
+								<textarea class="form-control" name="content" id="reviewContent" placeholder="상품에 대한 솔직한 리뷰를 작성해주세요." maxlength="1000" required></textarea>
 							</div>
-
-							<!-- 이미지 업로드 -->
-							<!-- <div class="form-group">
-								<label class="form-label">
-									리뷰 이미지 <span style="color: #999; font-weight: normal;">(선택사항)</span>
-								</label>
-								<div class="image-upload-area" id="uploadArea">
-									<i class="fa fa-camera"></i>
-									<div class="image-upload-text">
-										<p style="margin: 0; font-size: 16px; font-weight: bold;">이미지를 클릭하여 업로드</p>
-										<p style="margin: 5px 0 0 0;">JPG, PNG 파일 (최대 5MB)</p>
-									</div>
-									<input type="file" id="imageInput" name="image" 
-										accept="image/jpeg,image/png,image/jpg" 
-										style="display: none;">
-								</div>
-								
-								<div class="image-preview" id="imagePreview">
-									<img id="previewImg" src="" alt="미리보기">
-									<div class="image-preview-controls">
-										<button type="button" class="btn-remove-image" id="removeImage">
-											<i class="fa fa-trash"></i> 이미지 삭제
-										</button>
-									</div>
-								</div>
-							</div> -->
 
 							<div class="review-footer" style="margin-bottom: 20px;">
 								<button type="button" class="btn-cancel" onclick="history.back()">

@@ -4,9 +4,14 @@ const useRefundStore = Pinia.defineStore('refund',{
 		list:[],
 		p_id:'',
 		rf_msg:'',
-		rf_amount:''
+		rf_amount:0
 	}),
 	actions:{
+		refundData(p_id,rf_amount){
+			this.p_id=p_id,
+			this.rf_amount=rf_amount,
+			this.rf_msg='';
+		},
 		async refundInsert(){
 				if(!this.rf_msg.trim())
 				{
