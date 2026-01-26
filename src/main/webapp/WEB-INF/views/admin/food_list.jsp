@@ -166,7 +166,6 @@
 			 
 			 onMounted(()=>{
 				 store.foodListData()
-				 store.modalDetailData()
 			 })
 			 return {
 				 store,nameRef
