@@ -22,7 +22,6 @@
           <h2>회원 탈퇴</h2>
 			<div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">회원 탈퇴 및 이용계약 해지 약관</h4>
       </div>
       <div class="modal-body">
