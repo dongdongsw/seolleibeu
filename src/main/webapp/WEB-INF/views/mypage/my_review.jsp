@@ -48,7 +48,10 @@
 								</div>
 								<hr style="margin:0">
 							 </div>
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="info-card text-center" style="margin: 0; padding: 0" v-else>
+									<p style="margin-top: 250px;">등록된 리뷰가 없습니다.</p>
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="st-pagination">
 									<ul class="pagination">
 										<li v-if="store.startPage>1"><a href="#" @click="store.pageChange(store.startPage-1)">이전</a></li>
@@ -78,7 +81,6 @@
 			</div>
 			</div>
 		</div>
-		
 	</div>
 <script src="/vuejs/axios.js"></script>
 <script src="/vuejs/review/mypage_review.js"></script>

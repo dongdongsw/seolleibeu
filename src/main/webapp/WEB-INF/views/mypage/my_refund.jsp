@@ -22,7 +22,7 @@
 							<div class="row">
 								<table class="table">
 								</table>
-								<table class="table">
+								<table class="table" v-if="store.list && store.list.length > 0">
 									<thead>
 										<tr>
 											<th width="10%" class="text-center">번호</th>
@@ -42,6 +42,9 @@
 										</tr>
 									</tbody>
 								</table>
+								<div class="info-card text-center" style="margin: 0; padding: 0" v-else>
+									<p style="margin-top: 250px;">환불이 내역 없습니다.</p>
+								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 									<div class="st-pagination">
 										<ul class="pagination">
