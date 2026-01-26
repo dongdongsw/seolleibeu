@@ -14,6 +14,9 @@ h3 {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+i {
+	cursor: pointer;
+}
 </style>
 <script>
 const SESSION_UNO = Number('${sessionScope.uno}')
@@ -43,8 +46,8 @@ const SESSION_UNO = Number('${sessionScope.uno}')
 					</div>
 					<div class="detail-head">
 						<div style="margin-left: 10px">
-							<i class="fa"
-							   :class="bookmarkStore.bookmarked ? 'fa-bookmark' : 'fa-bookmark-o'"
+							<i
+							   :class="bookmarkStore.bookmarked ? 'fa-bookmark fa' : 'fa-bookmark-o fa'"
 							   aria-hidden="true"
 							   @click="bookmarkStore.toggleBookmark()"></i>
 						</div>

@@ -13,6 +13,11 @@ spring:
     password: happy
     driver-class-name: oracle.jdbc.driver.OracleDriver
 
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
   #ai:
   #  google:
   #    genai:
@@ -26,3 +31,4 @@ file:
   upload:
     place: C:/data/uploads/place
     profile: src/main/resources/static/profile
+
