@@ -46,4 +46,7 @@ public interface LoginMapper {
 	@Update("UPDATE users SET pwd = #{pwd} WHERE id = #{id}")
 	public void pwdReset(@Param("pwd") String pwd, @Param("id") String id);
 	
+	// <아이디 찾기> 이메일로 아이디 찾기
+	@Select("SELECT id FROM users WHERE email = #{email}")
+	public String findIdOfEmail(String email);
 }

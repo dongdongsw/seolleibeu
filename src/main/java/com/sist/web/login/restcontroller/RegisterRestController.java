@@ -181,4 +181,19 @@ public class RegisterRestController {
 		
 		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
+	
+	@GetMapping("/find_id_vue/")
+	public ResponseEntity<String> auth_find_id(@RequestParam("email") String email){
+		String id = "";
+		try {
+			id = lService.findIdOfEmail(email);
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<>(id,HttpStatus.OK);
+	}
+	
 }

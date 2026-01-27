@@ -89,6 +89,12 @@ public class LoginServiceImpl implements LoginService{
 		
 		return res;
 	}
+
+	@Override
+	public String findIdOfEmail(String email) {
+		// TODO Auto-generated method stub
+		return mapper.findIdOfEmail(email);
+	}
 	
 	
 }

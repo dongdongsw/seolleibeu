@@ -22,4 +22,6 @@ public interface LoginService {
 	public Boolean emailSend(String email, HttpSession session);
 	
 	public Boolean emailCodeCheck(int emailCode, HttpSession session);
+	
+	public String findIdOfEmail(String email);
 }
