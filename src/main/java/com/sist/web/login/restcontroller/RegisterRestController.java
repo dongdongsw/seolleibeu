@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sist.web.login.service.LoginService;
+import com.sist.web.vo.MailVO;
 import com.sist.web.vo.UsersVO;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -132,5 +134,51 @@ public class RegisterRestController {
 		
 		
 		return ResponseEntity.ok().build();
+	}
+	
+	@PostMapping("/email_send_vue/")
+	public ResponseEntity<Map> auth_mail_send(
+			@RequestBody MailVO vo,
+			HttpSession session){
+
+		Map map = new HashMap<>();
+		try {
+			Boolean res = lService.emailSend(vo.getEmail(), session);
+			if(res.equals(true)) {
+				map.put("emailCheckCount", 1);
+			}else {
+				map.put("emailCheckCount", 3);
+			}
+			
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<>(map, HttpStatus.OK);
+	}
+	
+	@GetMapping("/emailCode_check_vue/")
+	public ResponseEntity<Map> auth_email_check(
+			@RequestParam("emailCode") Integer emailCode,
+			HttpSession session){
+		
+		Map map = new HashMap<>();
+		try {
+			Boolean res = lService.emailCodeCheck(emailCode, session);
+			if(res.equals(true)) {
+				map.put("emailCodeSuccess", 1);
+			}
+			else {
+				map.put("emailCodeSuccess", 3);
+			}
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
 }

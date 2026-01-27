@@ -20,8 +20,8 @@ const useRegisterStore = defineStore('register',{
 		nickNameCheckCount:2, 	// 닉네임 중복 검사
 		idCheckCount:2, 		// 아이디 중복 검사
 		emailCheckCount:2, 		// 이메일 중복 검사
-		emailCodeCheckCount:2,
-		emailCodeSuccess:2,
+		emailCodeCheckCount:2,	// 이메일 전송 여부
+		emailCodeSuccess:2,		// 이메일 인증번호 검사 성공
 		pwdCheck:/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~@#$!%*?&])[a-zA-Z\d~@#$!%*?&]{8,20}$/ ,
 		pwdCheckCount: 2
 	}),
@@ -70,21 +70,21 @@ const useRegisterStore = defineStore('register',{
 			
 		},
 		async emailSend(){
-			const result = await api.get('/auth/emailSend_vue/',{
+			const result = await api.post('/auth/email_send_vue/',{
+				email:this.email
+				
+			})
+			this.emailCheckCount = result.data.emailCheckCount
+			this.emailCodeCheckCount = 1
+		},
+		async emailCodeCheck(){
+			const result = await api.get('/auth/emailCode_check_vue/',{
 				params:{
-					email:this.email
+					emailCode:this.emailCode
 				}
 			})
-			this.emailCodeCheckCount = result.data.emailCodeCheckCount
+			this.emailCodeSuccess = result.data.emailCodeSuccess
 		},
-		async emailSend(){
-				const result = await api.get('/auth/emailCode_vue/',{
-					params:{
-						emailCode:this.emailCode
-					}
-				})
-				this.emailCodeSuccess = result.data.emailCodeSuccess
-			},
 		handleRegisterClick(){
 			
 			if(this.option1 === 'Y' && this.option2 === 'Y' && this.option3 === 'Y'){
@@ -104,9 +104,9 @@ const useRegisterStore = defineStore('register',{
 								
 								if(this.nickNameCheckCount === 0){ // 5
 									
-									if(this.emailCheckCount === 0){ // 6
+									if(this.emailCheckCount === 1){ // 6
 										
-										//if(this.emailCodeCheckCount === 1){// 7
+										if(this.emailCodeSuccess === 1){// 7
 											
 											if(this.phone1 !== '' && (this.phone2 !== ''  && this.phone2.length === 4) && 
 												(this.phone3 !== '' && this.phone3.length === 4)){ // 8
@@ -122,10 +122,10 @@ const useRegisterStore = defineStore('register',{
 											else{
 												alert('전화번호를 입력해주세요!');
 											}	
-										//} // 7
-										//else{
-										//	alert('이메일 인증번호 인증을 완료해주세요!');
-										//}
+										} // 7
+										else{
+											alert('이메일 인증번호 인증을 완료해주세요!');
+										}
 									} // 6
 									else{
 										alert('이메일의 중복 검사를 해주세요!');
