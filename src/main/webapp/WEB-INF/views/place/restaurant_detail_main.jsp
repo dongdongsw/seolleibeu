@@ -183,7 +183,5 @@
 		restaurantDetailApp.use(createPinia())
 		restaurantDetailApp.mount("#restaurant_detail")
 	</script>
-	
-	<script src="/vuejs/review/r_create.js"></script>
 </body>
 </html>

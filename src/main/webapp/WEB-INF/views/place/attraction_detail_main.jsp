@@ -159,7 +159,5 @@
       attractionDetailApp.use(createPinia())
       attractionDetailApp.mount('#attraction_detail')
     </script>
-    
-    <script src="/vuejs/review/r_create.js"></script>
 </body>
 </html>

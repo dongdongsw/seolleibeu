@@ -343,7 +343,5 @@
       cultureDetailApp.use(createPinia())
       cultureDetailApp.mount('#culture_detail')
     </script>
-    
-    <script src="/vuejs/review/r_create.js"></script>
 </body>
 </html>
