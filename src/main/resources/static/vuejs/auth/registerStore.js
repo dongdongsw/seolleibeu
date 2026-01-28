@@ -70,10 +70,11 @@ const useRegisterStore = defineStore('register',{
 			
 		},
 		async emailSend(){
-			const result = await api.post('/auth/email_send_vue/',{
+			const result = await slowApi.post('/auth/email_send_vue/',{
 				email:this.email
 				
 			})
+			console.log(result.data.emailCheckCount)
 			this.emailCheckCount = result.data.emailCheckCount
 			this.emailCodeCheckCount = 1
 		},

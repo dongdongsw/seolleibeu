@@ -74,10 +74,10 @@
 	                            </div>
 	                            
 	                            
-	                            <p v-if="registerStore.emailCheckCount === 1 && registerStore.emailCodeSuccess === 2" style="position: absolute; left:16%; top:51.5%; color: green;">
+	                            <p v-if="registerStore.emailCodeCheckCount === 1 && registerStore.emailCodeSuccess === 2" style="position: absolute; left:16%; top:51.5%; color: green;">
 								  이메일 전송에 성공하였습니다.
 								</p>
-								<p v-if="registerStore.emailCheckCount === 3 && registerStore.emailCodeSuccess === 2" style="position: absolute; left:16%; top:51.5%; color: red;">
+								<p v-if="registerStore.emailCodeCheckCount === 3 && registerStore.emailCodeSuccess === 2" style="position: absolute; left:16%; top:51.5%; color: red;">
 								  이메일 전송에 실패했습니다.
 								</p>
 	                            <p style="position: absolute; left:16%; top:51.5%; color: red;">{{registerStore.emailCodeSuccess === 3?'인증번호가 일치하지 않습니다.':''}}</p>
