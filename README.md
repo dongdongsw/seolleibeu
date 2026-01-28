@@ -102,9 +102,7 @@
 <div>
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566995514/noticon/jufppyr8htislboas4ve.png" width="60">
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566912109/noticon/puksfce6wca36hes1vom.png" width="60">
-<img src="https://github.com/user-attachments/assets/064fb320-fcf1-4571-bfc5-527212aabd5c" width="60">
-<img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1567128552/noticon/mksvojnxnqtvdwrhttce.png" width="60">
-<img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1623252802/noticon/dwhdor3qcwlynwmnqsxy.png" width="60">
+<img src="https://github.com/user-attachments/assets/064fb320-fcf1-4571-bfc5-527212aabd5c" width="60" margin-top="30">
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1592435019/noticon/z0s5osjhwlxpeo6pxslv.png" width="60">
 <img src="https://github.com/user-attachments/assets/22cd04fb-a77e-49a4-824a-f8ff1bd15b5d" width="60">
 <img src="https://github.com/user-attachments/assets/c2bef6ac-b546-4066-b89c-c295663b3959" width="60">
@@ -122,7 +120,7 @@
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1687026651/noticon/wsqz7rbeefmdsptsvkfw.png" width="60">
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1681787748/noticon/gnmvks5kewb4rorwqj3k.png" width="50">
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1592435210/noticon/fxihf9erzlrlinozxn9i.png" width="50">
-<img src="https://github.com/user-attachments/assets/3bd3a0e5-dc8c-41d3-a59e-24277b2954d8" width="50"/>
+<img src="https://github.com/user-attachments/assets/0e060575-e9f7-49ed-9169-157a84a2a4bb" width="50"/>
 
 </div>
 
