@@ -50,11 +50,6 @@ const useReviewStore=defineStore('review_list',{
 			this.avg_score=res.data.avg_score
 			console.log(res.data.list)
 		},
-		async reviewDetailData(rno){
-			const res=await api.get(`/review_detail_vue/?rno=${rno}`)
-			this.detail=res.data
-			console.log(res.data)
-		},
 		async reviewInsert(){
 			if(this.r_score===0){
 				alert("별점을 선택해주세요")
