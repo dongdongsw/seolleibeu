@@ -17,7 +17,8 @@ const useId_PwdStore = defineStore('id_pwd',{
 		pwdFindSuccess: false,	// 비밀번호 찾기 이메일 검사, 아이디 검사 완료시 true => 화면 전환을 위해서
 		foundId:'',
 		pwdCheck:/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~@#$!%*?&])[a-zA-Z\d~@#$!%*?&]{8,20}$/ ,
-		pwdChangeSuccess:''
+		pwdChangeSuccess:'',
+		emailMatched:null
 	}),
 	actions:{
 		// 공용
@@ -29,7 +30,10 @@ const useId_PwdStore = defineStore('id_pwd',{
 				}
 			})
 			this.emailCheckCount = result.data.emailCheckCount
-			this.idFindOfemail()
+			if(this.emailCheckCount === 1 && this.id){
+			    await this.idFindOfemail()
+			    this.emailMatchId()
+			  }
 		},
 		async emailSend(){
 			const result = await slowApi.post('/auth/email_send_vue/',{
@@ -59,29 +63,38 @@ const useId_PwdStore = defineStore('id_pwd',{
 		},
 		// 비밀번호 완료 누르면 실행되는 버튼
 		async pwdChange(){
-			if(this.pwdCheck.test(this.pwd) && this.pwdCheck.test(this.pwd1)){
-				if(this.pwd === this.pwd1 && this.pwd !== '' || this.pwd1 !== ''){
-					const result = await api.post('/auth/pwdReset_vue/',{
-						id:this.id,
-						pwd:this.pwd
-					})
-					this.pwdChangeSuccess = result.data
-					if(this.pwdChangeSuccess === 'success'){
-						const result = confirm("비밀번호 변경에 성공하셨습니다. 로그인 페이지로 이동하시겠습니까?");
-						
-						if(result){
-							window.location.href = '/auth/login'; 
-						}
-					}
-					
-				}	
-				else{
-					// 나중에 삭제할거임
-					alert('비밀번호를 제대로 입력해주세요.')
-				}
+
+			// 공백 검사
+			if (!this.pwd || !this.pwd1) {
+				alert('비밀번호를 입력해주세요.')
+				return
 			}
-			else{
+
+			// 형식 검사
+			if (!this.pwdCheck.test(this.pwd) || !this.pwdCheck.test(this.pwd1)) {
 				this.pwdCheckCount = 3
+				return
+			}
+
+			// 비밀번호 일치 검사
+			if (this.pwd !== this.pwd1) {
+				alert('비밀번호가 일치하지 않습니다.')
+				return
+			}
+
+			const result = await api.post('/auth/pwdReset_vue/', {
+				id: this.id,
+				pwd: this.pwd
+			})
+
+			this.pwdChangeSuccess = result.data
+
+			// 성공했을때
+			if (this.pwdChangeSuccess === 'success') {
+				const go = confirm('비밀번호 변경에 성공하셨습니다. 로그인 페이지로 이동하시겠습니까?')
+				if (go) {
+					window.location.href = '/auth/login'
+				}
 			}
 		},
 		// 이메일로 아이디 찾기
@@ -92,15 +105,11 @@ const useId_PwdStore = defineStore('id_pwd',{
 				}
 			})
 			this.foundId = result.data
-			// 아이디와 이메일이 같은지 비교
-
-			this.emailMatchId()
 		},
 		async emailMatchId(){
 			if(this.id !== this.foundId){
 				this.emailOfId = false
 				this.emailCheckCount = 2
-				alert('아이디와 이메일이 일치하지 않습니다.');
 			}
 			else{
 				this.emailOfId = true
@@ -139,6 +148,7 @@ const useId_PwdStore = defineStore('id_pwd',{
 					}
 					else{
 						this.pwdCheckCount = 3
+						alert('아이디와 이메일이 일치하지 않습니다.');
 					}
 					
 				}

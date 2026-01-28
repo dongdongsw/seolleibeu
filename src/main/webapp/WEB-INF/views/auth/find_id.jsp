@@ -24,11 +24,12 @@
 		                        </div>
 		                        <div class="col-md-4">
 		                            <button type="button" class="btn btn-default auth-sub-btn auth-dark-btn" 
-	                                	style="padding: 14px 3px;" @click="idStore.emailCheck()" v-if="idStore.emailCheckCount===2">이메일 검사</button>
+	                                	style="padding: 14px 3px;" @click="idStore.emailCheck()" v-if="idStore.emailCheckCount!==1">이메일 검사</button>
 	                                <button type="button" class="btn btn-default auth-sub-btn auth-dark-btn" 
 	                                	style="padding: 14px 3px;" @click="idStore.emailSend()" v-if="idStore.emailCheckCount===1">인증번호 전송</button>
 		                        </div>
 		                        
+	                            <p style="position: absolute; left:7%; top:55%; color: red;" v-if="idStore.emailCheckCount === 0">존재하지 않은 이메일 입니다.</p>
 								<p v-if="idStore.emailCodeCheckCount === 1 && idStore.emailCodeSuccess === 2" style="position: absolute; left:7%; top:55%; color: green;">
 								  이메일 전송에 성공하였습니다.
 								</p>
@@ -50,11 +51,11 @@
 		                        </div>
 	                        </div>
 	                        <div v-if="idStore.idFindSuccess">
-								<div class="col-md-9" style="margin-top: 10px; left: 23%; top: 38%; position:absolute; ">
+								<div class="col-md-9" style="margin-top: 30px; margin-left: 50px;">
 									<h1>아이디 : {{idStore.foundId}}</h1>
 								</div>
 								
-								<div class="col-md-12 text-center" style="position:absolute; right:1%; top: 70%;">
+								<div class="col-md-12 text-center" style="margin-top: 120px;">
 									<a class="btn btn-default auth-main-btn auth-dark-btn"  href="/auth/login">로그인하러 가기</a>
 								</div>
 							</div>

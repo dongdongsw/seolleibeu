@@ -17,12 +17,12 @@
 	                        <li class="active"><a href="#">비밀번호 찾기</a></li>
 	                    </ul>
 	
-	                    <div class="row auth-form">
+	                    <div class="row auth-form" >
 	                    	<div v-if="!pwdStore.pwdFindSuccess">
-		                        <div class="col-md-8">
+		                        <div class="col-md-8" style="position: relative;">
 		                            <input type="text" class="form-control auth-input" style="color: black; position:relative; " placeholder="아이디" v-model="pwdStore.id">
-		                            <p style="position: absolute; left:9%; top:77%; color: red;">{{pwdStore.idCheckCount === 0?'존재하지 않은 아이디 입니다.':''}}</p>
-		                            <p style="position: absolute; left:9%; top:77%; color: green;">{{pwdStore.idCheckCount === 1?'아이디가 존재합니다.':''}}</p>
+		                            <p style="position: absolute; left:9%; top:77%; color: red;" v-if="pwdStore.idCheckCount === 3">존재하지 않은 아이디 입니다.</p>
+		                            <p style="position: absolute; left:9%; top:77%; color: green;" v-if="pwdStore.idCheckCount === 1">아이디가 존재합니다.</p>
 		                        </div>
 		                        <div class="col-md-4" style="margin-top: 10px;">
 		                            <button class="btn btn-default auth-sub-btn auth-dark-btn" style="padding: 14px 3px;" @click="pwdStore.idCheck()">아이디 확인</button>
