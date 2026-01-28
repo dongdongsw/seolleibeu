@@ -17,8 +17,8 @@
 	                        <li><a href="/auth/find_pwd">비밀번호 찾기</a></li>
 	                    </ul>
 	
-	                    <div class="row auth-form">
-	                    	<div v-if="!idStore.idFindSuccess">
+	                    <div class="row auth-form" style="position: relative;">
+	                    	<div v-if="!idStore.idFindSuccess" >
 		                        <div class="col-md-8">
 		                            <input type="text" style="color: black;" class="form-control auth-input" placeholder="이메일" v-model="idStore.email">
 		                        </div>
@@ -29,14 +29,14 @@
 	                                	style="padding: 14px 3px;" @click="idStore.emailSend()" v-if="idStore.emailCheckCount===1">인증번호 전송</button>
 		                        </div>
 		                        
-								<p v-if="idStore.emailCodeCheckCount === 1 && idStore.emailCodeSuccess === 2" style="position: absolute; left:12%; top:60.5%; color: green;">
+								<p v-if="idStore.emailCodeCheckCount === 1 && idStore.emailCodeSuccess === 2" style="position: absolute; left:7%; top:55%; color: green;">
 								  이메일 전송에 성공하였습니다.
 								</p>
-								<p v-if="idStore.emailCodeCheckCount === 3 && idStore.emailCodeSuccess === 2" style="position: absolute; left:12%; top:60.5%; color: red;">
+								<p v-if="idStore.emailCodeCheckCount === 3 && idStore.emailCodeSuccess === 2" style="position: absolute; left:7%; top:55%; color: red;">
 								  이메일 전송에 실패했습니다.
 								</p>
-	                            <p style="position: absolute; left:12%; top:60.5%; color: red;">{{idStore.emailCodeSuccess === 3?'인증번호가 일치하지 않습니다.':''}}</p>
-	                            <p style="position: absolute; left:12%; top:60.5%; color: green;">{{idStore.emailCodeSuccess === 1?'인증번호가 일치합니다.':''}}</p>
+	                            <p style="position: absolute; left:7%; top:55%; color: red;">{{idStore.emailCodeSuccess === 3?'인증번호가 일치하지 않습니다.':''}}</p>
+	                            <p style="position: absolute; left:7%; top:55%; color: green;">{{idStore.emailCodeSuccess === 1?'인증번호가 일치합니다.':''}}</p>
 										
 		                        <div class="col-md-8">
 		                            <input type="text" style="color: black;" class="form-control auth-input" placeholder="인증번호" v-model="idStore.emailCode">

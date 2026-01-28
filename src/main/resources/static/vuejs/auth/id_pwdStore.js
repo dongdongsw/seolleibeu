@@ -27,7 +27,7 @@ const useId_PwdStore = defineStore('id_pwd',{
 			this.emailCheckCount = result.data.emailCheckCount
 		},
 		async emailSend(){
-			const result = await api.post('/auth/email_send_vue/',{
+			const result = await slowApi.post('/auth/email_send_vue/',{
 				email:this.email
 			})
 			this.emailCheckCount = result.data.emailCheckCount

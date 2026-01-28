@@ -60,7 +60,7 @@
 	                            <input type="email" class="form-control auth-input" style="color: black;" placeholder="이메일 입력" v-model="registerStore.email">
 	                        </div>
 	
-	                        <div class="row" style="margin-bottom: 20px;">
+	                        <div class="row" style="margin-bottom: 20px; position: relative;">
 	                            <div class="col-md-8">
 	                                <input type="text" class="form-control auth-input" style="color: black;" placeholder="인증번호 입력" v-model="registerStore.emailCode">
 	                            </div>
@@ -72,18 +72,17 @@
 	                                <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
 	                                	style="padding:14px 17px;" @click="registerStore.emailCodeCheck()" v-if="registerStore.emailCodeCheckCount===1 && registerStore.emailCheckCount === 0">인증번호 확인</button>
 	                            </div>
-	                            
-	                            <p v-if="registerStore.emailCheckCount === 1 && registerStore.emailCodeSuccess === 2" style="position: absolute; left:16%; top:51.5%; color: green;">
+	                            <p v-if="registerStore.emailCheckCount === 1 && registerStore.emailCodeSuccess === 2" style="position: absolute; left:7%; top:81.5%; color: green;">
 								  이메일이 이미 존재합니다.
 								</p>
-	                            <p v-if="registerStore.emailCodeCheckCount === 1 && registerStore.emailCodeSuccess === 2" style="position: absolute; left:16%; top:51.5%; color: green;">
+	                            <p v-if="registerStore.emailCodeCheckCount === 1 && registerStore.emailCodeSuccess === 2" style="position: absolute; left:7%; top:81.5%; color: green;">
 								  이메일 전송에 성공하였습니다.
 								</p>
-								<p v-if="registerStore.emailCodeCheckCount === 3 && registerStore.emailCodeSuccess === 2" style="position: absolute; left:16%; top:51.5%; color: red;">
+								<p v-if="registerStore.emailCodeCheckCount === 3 && registerStore.emailCodeSuccess === 2" style="position: absolute; left:7%; top:81.5%; color: red;">
 								  이메일 전송에 실패했습니다.
 								</p>
-	                            <p style="position: absolute; left:16%; top:51.5%; color: red;">{{registerStore.emailCodeSuccess === 3?'인증번호가 일치하지 않습니다.':''}}</p>
-	                            <p style="position: absolute; left:16%; top:51.5%; color: green;">{{registerStore.emailCodeSuccess === 1?'인증번호가 일치합니다.':''}}</p>
+	                            <p style="position: absolute; left:7%; top:81.5%; color: red;">{{registerStore.emailCodeSuccess === 3?'인증번호가 일치하지 않습니다.':''}}</p>
+	                            <p style="position: absolute; left:7%; top:81.5%; color: green;">{{registerStore.emailCodeSuccess === 1?'인증번호가 일치합니다.':''}}</p>
 	                        </div>
 	
 								<h3 style="color: #b7b6b7; margin-left: 5px;">전화번호</h3>
