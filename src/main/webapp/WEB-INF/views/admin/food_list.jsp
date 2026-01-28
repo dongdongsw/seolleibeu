@@ -47,12 +47,11 @@
 								cellspacing="0">
 								<thead>
 									<tr>
-										<th style="width: 4%">번호</th>
-										<th style="width: 25%">이름</th>
-										<th style="width: 38%">주소</th>
-										<th style="width: 13%">전화번호</th>
-										<th style="width: 7%">상태</th>
-										<th style="width: 3%"></th>
+										<th style="width: 5%">번호</th>
+										<th style="width: 30%">이름</th>
+										<th style="width: 45%">주소</th>
+										<th style="width: 15%">전화번호</th>
+										<th style="width: 5%"></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -61,7 +60,6 @@
 										<td :title="vo.name">{{vo.name}}</td>
 										<td class="addr" :title="vo.addr">{{vo.addr}}</td>
 										<td class="addr">{{vo.phone}}</td>
-										<td>비공개</td>
 										<td class="text-center">
 											<div class="dropdown">
 												<a href="#" data-toggle="dropdown"> <i
