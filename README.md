@@ -99,7 +99,7 @@
 <div>
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566995514/noticon/jufppyr8htislboas4ve.png" width="60">
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566912109/noticon/puksfce6wca36hes1vom.png" width="60">
-<img src="https://github.com/user-attachments/assets/064fb320-fcf1-4571-bfc5-527212aabd5c" width="60"/>
+<img src="https://github.com/user-attachments/assets/064fb320-fcf1-4571-bfc5-527212aabd5c"/>
 
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1567128552/noticon/mksvojnxnqtvdwrhttce.png" width="60">
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1623252802/noticon/dwhdor3qcwlynwmnqsxy.png" width="60">
