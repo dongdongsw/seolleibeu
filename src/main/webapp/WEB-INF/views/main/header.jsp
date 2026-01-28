@@ -68,8 +68,12 @@
 					    </button>
 					    <ul class="dropdown-menu"
 					        style="width:110px; min-width:110px; left:auto; right:0;">
-					        <li><a href="/mypage/my_info">마이페이지</a></li>
-					        <li><a href="/admin">관리자</a></li>
+					        <sec:authorize access="hasRole('USER')">
+					        	<li><a href="/mypage/my_info">마이페이지</a></li>
+					        </sec:authorize>
+					        <sec:authorize access="hasRole('ADMIN')">
+					        	<li><a href="/admin">관리자</a></li>
+					        </sec:authorize>
 					        <li class="divider"></li>
 					        <li><a href="/auth/logout">로그아웃</a></li>
 					    </ul>
