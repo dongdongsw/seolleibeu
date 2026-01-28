@@ -48,9 +48,20 @@ public class LoginServiceImpl implements LoginService{
 	}
 
 	@Override
-	public void pwdReset(String pwd, String id) {
+	public String pwdReset(String pwd, String id) {
 		// TODO Auto-generated method stub
-		mapper.pwdReset(pwd, id);
+		String res = "";
+		try {
+			
+			mapper.pwdReset(pwd, id);
+			res = "success";
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			res = "failed";
+		}
+		
+		return res;
 	}
 
 	@Override

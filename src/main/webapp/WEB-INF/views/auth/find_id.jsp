@@ -51,7 +51,7 @@
 	                        </div>
 	                        <div v-if="idStore.idFindSuccess">
 								<div class="col-md-9" style="margin-top: 10px; left: 23%; top: 38%; position:absolute; ">
-									<h1>아이디 : {{idStore.id}}</h1>
+									<h1>아이디 : {{idStore.foundId}}</h1>
 								</div>
 								
 								<div class="col-md-12 text-center" style="position:absolute; right:1%; top: 70%;">

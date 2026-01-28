@@ -17,7 +17,7 @@ public interface LoginService {
 	
 	public int registerEmailCheck(String email);
 	
-	public void pwdReset(String pwd, String id);
+	public String pwdReset(String pwd, String id);
 	
 	public Boolean emailSend(String email, HttpSession session);
 	

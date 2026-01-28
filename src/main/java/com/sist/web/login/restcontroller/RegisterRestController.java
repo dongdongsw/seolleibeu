@@ -121,10 +121,11 @@ public class RegisterRestController {
 	}
 	
 	@PostMapping("/pwdReset_vue/")
-	public ResponseEntity<Void> auth_pwdReset_vue(@RequestBody UsersVO vo){
-		
+	public ResponseEntity<String> auth_pwdReset_vue(@RequestBody UsersVO vo){
+		String  res = "";
 		try {
-			lService.pwdReset(vo.getPwd(), vo.getId());
+			
+			res = lService.pwdReset(Encoder.encode(vo.getPwd()), vo.getId());
 			
 			
 		} catch (Exception ex) {
@@ -133,7 +134,7 @@ public class RegisterRestController {
 		}
 		
 		
-		return ResponseEntity.ok().build();
+		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
 	
 	@PostMapping("/email_send_vue/")

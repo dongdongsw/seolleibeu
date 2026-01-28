@@ -10,10 +10,14 @@ const useId_PwdStore = defineStore('id_pwd',{
 		emailCheckCount:2, 		// 이메일 중복 검사
 		emailCodeCheckCount:2,	// 이메일 전송 여부
 		emailCodeSuccess:2,		// 이메일 인증성공 여부
+		emailOfId: false,		// 이메일과 아이디가 같은 사용자인지
 		idCheckCount:2,
+		pwdCheckCount : 2,
 		idFindSuccess: false, 	// 아이디 찾기 이메일 검사 완료시 true => 화면 전환을 위해서
 		pwdFindSuccess: false,	// 비밀번호 찾기 이메일 검사, 아이디 검사 완료시 true => 화면 전환을 위해서
-		
+		foundId:'',
+		pwdCheck:/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~@#$!%*?&])[a-zA-Z\d~@#$!%*?&]{8,20}$/ ,
+		pwdChangeSuccess:''
 	}),
 	actions:{
 		// 공용
@@ -25,6 +29,7 @@ const useId_PwdStore = defineStore('id_pwd',{
 				}
 			})
 			this.emailCheckCount = result.data.emailCheckCount
+			this.idFindOfemail()
 		},
 		async emailSend(){
 			const result = await slowApi.post('/auth/email_send_vue/',{
@@ -54,15 +59,52 @@ const useId_PwdStore = defineStore('id_pwd',{
 		},
 		// 비밀번호 완료 누르면 실행되는 버튼
 		async pwdChange(){
-			if(this.pwd === this.pwd1 && this.pwd !== '' || this.pwd1 !== ''){
-				await api.post('/auth/pwdReset_vue/',{
-					id:this.id,
-					pwd:this.pwd
-				})
-			}	
+			if(this.pwdCheck.test(this.pwd) && this.pwdCheck.test(this.pwd1)){
+				if(this.pwd === this.pwd1 && this.pwd !== '' || this.pwd1 !== ''){
+					const result = await api.post('/auth/pwdReset_vue/',{
+						id:this.id,
+						pwd:this.pwd
+					})
+					this.pwdChangeSuccess = result.data
+					if(this.pwdChangeSuccess === 'success'){
+						const result = confirm("비밀번호 변경에 성공하셨습니다. 로그인 페이지로 이동하시겠습니까?");
+						
+						if(result){
+							window.location.href = '/auth/login'; 
+						}
+					}
+					
+				}	
+				else{
+					// 나중에 삭제할거임
+					alert('비밀번호를 제대로 입력해주세요.')
+				}
+			}
 			else{
-				// 나중에 삭제할거임
-				alert('비밀번호가 공백이거나 다름')
+				this.pwdCheckCount = 3
+			}
+		},
+		// 이메일로 아이디 찾기
+		async idFindOfemail(){
+			const result = await api.get('/auth/find_id_vue/',{
+				params:{
+					email:this.email
+				}
+			})
+			this.foundId = result.data
+			// 아이디와 이메일이 같은지 비교
+
+			this.emailMatchId()
+		},
+		async emailMatchId(){
+			if(this.id !== this.foundId){
+				this.emailOfId = false
+				this.emailCheckCount = 2
+				alert('아이디와 이메일이 일치하지 않습니다.');
+			}
+			else{
+				this.emailOfId = true
+				
 			}
 		},
 		// 아이디 찾기 누르면 실행되는 버튼
@@ -70,12 +112,7 @@ const useId_PwdStore = defineStore('id_pwd',{
 			if(this.emailCheckCount === 1){ 
 				if(this.emailCodeSuccess === 1){
 					this.idFindSuccess = true
-					const result = await api.get('/auth/find_id_vue/',{
-						params:{
-							email:this.email
-						}
-					})
-					this.id = result.data
+					this.idFindOfemail()
 				}
 				else{
 					alert('이메일 인증번호 인증을 완료해주세요!');
@@ -87,7 +124,31 @@ const useId_PwdStore = defineStore('id_pwd',{
 		},
 		// 비밀번호 재설정 누르면 검사하는 버튼 
 		pwdDataCheck(){
-			
+			// 아이디 검사 했는지
+			if(this.idCheckCount === 1){ 
+				// 이메일 검사 했는지
+				if(this.emailCheckCount === 1){ 
+					if(this.emailOfId === true){
+						// 이메일 코드 인증 했는지
+						if(this.emailCodeSuccess === 1){
+							this.pwdFindSuccess = true
+						}
+						else{
+							alert('이메일 인증번호 인증을 완료해주세요!');
+						}
+					}
+					else{
+						this.pwdCheckCount = 3
+					}
+					
+				}
+				else{
+					alert('이메일의 중복 검사를 해주세요!');
+				}
+			}
+			else{
+				alert('아이디 확인이 완료되지 않았습니다!')
+			}
 		}
 		
 	}
