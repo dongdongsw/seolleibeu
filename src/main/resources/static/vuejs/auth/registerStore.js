@@ -44,7 +44,6 @@ const useRegisterStore = defineStore('register',{
 					id:this.id
 				}
 			})
-			console.log(result.data)
 			this.idCheckCount = result.data.idCheckCount
 		},
 		async nickNameCheck(){
@@ -53,7 +52,6 @@ const useRegisterStore = defineStore('register',{
 					name:this.name
 				}
 			})
-			console.log(result.data)
 			this.nickNameCheckCount = result.data.nickNameCheckCount
 			
 		},
@@ -64,7 +62,6 @@ const useRegisterStore = defineStore('register',{
 					email:this.email
 				}
 			})
-			console.log(result.data)
 			this.emailCheckCount = result.data.emailCheckCount
 			
 			
@@ -74,7 +71,6 @@ const useRegisterStore = defineStore('register',{
 				email:this.email
 				
 			})
-			console.log(result.data.emailCheckCount)
 			this.emailCheckCount = result.data.emailCheckCount
 			this.emailCodeCheckCount = 1
 		},

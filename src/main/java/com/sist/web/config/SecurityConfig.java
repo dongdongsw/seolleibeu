@@ -40,7 +40,7 @@ public class SecurityConfig {
 							"/auth/**"
 					).permitAll()
 					.requestMatchers("/course/create/**").hasRole("USER")
-					.requestMatchers("/mypage/**").hasRole("USER")
+					.requestMatchers("/mypage/**","/reserve/**").hasRole("USER")
 					.requestMatchers("/admin/**").hasRole("ADMIN")
 					.anyRequest().permitAll()
 					//.anyRequest().authenticated()

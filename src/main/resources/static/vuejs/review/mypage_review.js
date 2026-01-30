@@ -40,8 +40,6 @@ const useReviewStore=defineStore('myreview_list',{
 			this.startPage=res.data.startPage
 			this.endPage=res.data.endPage
 			this.totalpage=res.data.totalpage
-			console.log(res.data)
-			console.log(this.list)
 		},
 		async reviewUpdate(){
 			if(!this.r_content.trim()){

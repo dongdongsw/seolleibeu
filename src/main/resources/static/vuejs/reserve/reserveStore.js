@@ -225,7 +225,10 @@ const useReserveStore = Pinia.defineStore('reserve', {
 				
 				alert('예약에 실패했습니다')
 			} catch(e) {
-				alert('예약에 실패했습니다')
+				const result = confirm('로그인이 필요한 서비스 입니다 로그인하시겠습니까?')
+				if(result){
+					location.href="/auth/login"
+				}
 			} finally {
 				this.isLoading = false
 			}

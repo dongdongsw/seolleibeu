@@ -48,7 +48,6 @@ const useReviewStore=defineStore('review_list',{
 			this.totalpage=res.data.totalpage
 			this.count=res.data.count
 			this.avg_score=res.data.avg_score
-			console.log(res.data.list)
 		},
 		async reviewInsert(){
 			if(this.r_score===0){
@@ -61,7 +60,6 @@ const useReviewStore=defineStore('review_list',{
 				if(textarea) textarea.focus()
 				return
 			}
-			console.log(this.r_score)
 			const res=await api.post('/review_insert_vue/',{
 				pno:this.pno,
 				r_content:this.r_content,
@@ -70,7 +68,6 @@ const useReviewStore=defineStore('review_list',{
 			this.r_content=''
 			this.r_score=0
 			this.reviewListData()
-			console.log(this.r_content, this.r_score)
 		},
 		pageChange(page){
 			this.curpage=page
