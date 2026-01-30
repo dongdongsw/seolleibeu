@@ -12,12 +12,6 @@
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <img src="/images/main_logo.png" style="width: 50px;">
             </a>
-            <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="/admin">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link collapsed" id="headingTwo" href="#" data-toggle="collapse" data-target="#collapseTwo"

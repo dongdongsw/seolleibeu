@@ -72,7 +72,7 @@
 					        	<li><a href="/mypage/my_info">마이페이지</a></li>
 					        </sec:authorize>
 					        <sec:authorize access="hasRole('ADMIN')">
-					        	<li><a href="/admin">관리자</a></li>
+					        	<li><a href="/admin/course_list">관리자</a></li>
 					        </sec:authorize>
 					        <li class="divider"></li>
 					        <li><a href="/auth/logout">로그아웃</a></li>
