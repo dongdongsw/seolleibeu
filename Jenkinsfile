@@ -2,9 +2,9 @@ pipeline {
 	agent any 
 	
 	environment {
-		DOCKER_IMAGE = "mindory0144/total-app"
+		DOCKER_IMAGE = "seodongdongsw/total-app"
 		DOCKER_TAG = "latest"
-		EC2_HOST = "3.39.232.170"
+		EC2_HOST = "13.209.7.16"
 		EC2_USER = "ubuntu"
 		COMPOSE_FILE = "~/app/docker-compose.yml"
 	}

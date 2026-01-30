@@ -1,6 +1,6 @@
 version: "3"
 services:
 	app:
-		image: cheol0904/seolleibeu
+		image: seodongdongsw/seolleibeu
 		ports:
-			- "8080:8080"
+			- "9090:9090"
