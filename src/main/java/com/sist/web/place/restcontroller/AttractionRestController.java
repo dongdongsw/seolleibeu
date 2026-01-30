@@ -44,8 +44,8 @@ public class AttractionRestController {
 				if(vo.getAddr() == null) {
 					vo.setAddr("-");
 				} else {
-					String[] datas = vo.getAddr().split(" ");
-					vo.setAddr(datas[1]+" "+datas[2]+" "+datas[3]);
+					String[] datas = vo.getAddr().trim().split("\\s+");
+					vo.setAddr(datas.length >= 4 ? datas[1]+" "+datas[2]+" "+datas[3] : vo.getAddr());
 				}
 			}
 			
