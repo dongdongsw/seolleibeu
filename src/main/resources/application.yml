@@ -40,6 +40,6 @@ mybatis:
 
 file:
   upload:
-    place: C:/data/uploads/place
-    profile: C:/data/uploads/profile
+    place: /uploads/place
+    profile: /uploads/profile
 
