@@ -99,7 +99,7 @@ public class MypageRestController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
          }
      }
-    @Value("${file.upload.place:/uploads/place}")
+    @Value("${file.upload.profile:/uploads/profile}")
 	private String uploadDir;
     
 
