@@ -35,7 +35,7 @@ const useCultureStore = defineStore('culture', {
 				}
 			})
 			this.culList = res.data.culList
-			this.curpage = res.data.curpage 
+			this.curpage = res.data.curpage  
 			this.startPage = res.data.startPage
 			this.endPage = res.data.endPage
 			this.totalpage = res.data.totalpage
