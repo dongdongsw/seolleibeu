@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <h1 class="hero-title">
+                    <h1 class="hero-title" style="color: black;">
                     	<strong>데이트 코스 짜기에 지치신 분들?</strong>
                     	<br>원하는 코스를 검색해보세요!
 					</h1>
