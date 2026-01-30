@@ -100,7 +100,7 @@
 
 ## 5.2 Front-end
 <div>
-<img height="300" src="https://github.com/user-attachments/assets/bef11b85-3afe-481d-9dc1-e8ddb04888de" />
+<img height="70" src="https://github.com/user-attachments/assets/bef11b85-3afe-481d-9dc1-e8ddb04888de" />
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1592435019/noticon/z0s5osjhwlxpeo6pxslv.png" width="60">
 <img src="https://github.com/user-attachments/assets/22cd04fb-a77e-49a4-824a-f8ff1bd15b5d" width="60">
 <img src="https://github.com/user-attachments/assets/c2bef6ac-b546-4066-b89c-c295663b3959" width="60">
