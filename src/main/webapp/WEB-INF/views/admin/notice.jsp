@@ -66,13 +66,13 @@ a:hover {
 							<div class="dataTables_wrapper" style="position: absolute; top: 90%; left: 40%;">
 								<div class="dataTables_paginate paging_simple_numbers">
 									<ul class="pagination justify-content-center">
-										<li v-if="store.startPage>1"><a class="nav-link"
+										<li v-if="store.startPage>1"><a class="page-link"
 											@click="store.movePage(store.startPage-1)">&laquo;</a></li>
 										<li v-for="i in store.range"
-											:class="i===store.curpage?'active':''"><a
-											class="nav-link" @click="store.movePage(i)">{{i}}</a></li>
+											:class="i===store.curpage?'page-item active':'page-item'"><a
+											class="page-link" @click="store.movePage(i)">{{i}}</a></li>
 										<li v-if="store.endPage<store.totalpage"><a
-											class="nav-link" @click="store.movePage(store.endPage+1)">&raquo;</a></li>
+											class="page-link" @click="store.movePage(store.endPage+1)">&raquo;</a></li>
 									</ul>
 								</div>
 							</div>
