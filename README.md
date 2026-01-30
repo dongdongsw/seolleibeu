@@ -5,7 +5,7 @@
 </p>
 
 <p align="right">
-  <a href="https://verdant-iridium-22e.notion.site/27a54b06a5258008af15ec41470813a2">
+  <a href="https://dusty-seashore-445.notion.site/2ba9a0f442f08103b01df0228ace94a4?pvs=74">
     <img src="https://img.shields.io/badge/노션%20페이지%20바로가기-F0E9FF?style=for-the-badge&logo=&logoColor=white" alt="노션 페이지 바로가기">
   </a>
 </p>
