@@ -1,5 +1,5 @@
 <p align="right">
-  <a href="https://github.com/user-attachments/files/23964269/-.pdf">
+  <a href="./2nd-project.pdf">
     <img src="https://img.shields.io/badge/PPT%20바로보기-E7693E?style=for-the-badge&logo=&logoColor=white" alt="PPT 바로보기">
   </a>
 </p>
