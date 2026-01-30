@@ -1,6 +1,6 @@
 <p align="right">
-  <a href="./2nd-project.pdf">
-    <img src="https://img.shields.io/badge/PPT%20바로보기-E7693E?style=for-the-badge&logo=&logoColor=white" alt="PPT 바로보기">
+  <a href="https://raw.githubusercontent.com/dongdongsw/seolleibeu/master/2nd-project.pdf">
+    <img src="https://img.shields.io/badge/PPT%20다운로드-E7693E?style=for-the-badge&logo=&logoColor=white" alt="PPT 다운로드">
   </a>
 </p>
 
