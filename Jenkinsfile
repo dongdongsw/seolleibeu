@@ -28,14 +28,7 @@ pipeline {
 			}
 		}
 		
-		stage('Docker Build') {
-			steps {
-				echo 'Docker Image Build'
-				sh '''
-				    docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
-				   '''
-			}
-		}
+		
 		
 		stage('Docker Hub Login') {
 			steps {
@@ -48,10 +41,26 @@ pipeline {
 					sh '''
 					   echo "DOCKER_ID=$DOCKER_ID,DOCKER_PW=$DOCKER_PW"
 					   echo "$DOCKER_PW" | docker login -u "$DOCKER_ID" --password-stdin
-					   docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
 					   '''
 				}
 			}
+		}
+
+		stage('Docker Build') {
+			steps {
+				echo 'Docker Image Build'
+				sh '''
+				    docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
+				   '''
+			}
+		}
+		
+		stage('Docker Push') {
+		    steps {
+		        sh '''
+		            docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
+		        '''
+		    }
 		}
 
 		stage('Deploy docker-compose') {
