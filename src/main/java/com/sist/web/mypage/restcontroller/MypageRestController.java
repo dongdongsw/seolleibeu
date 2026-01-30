@@ -99,8 +99,9 @@ public class MypageRestController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
          }
      }
-    @Value("${file.upload.profile}")
-    private String uploadDir;
+    @Value("${file.upload.place:/uploads/place}")
+	private String uploadDir;
+    
 
     @PostMapping("/mypage/profile_upload_ok")
     public ResponseEntity<String> profile_upload_ok(
