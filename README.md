@@ -94,7 +94,7 @@
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1659254245/noticon/rj5wzu8zlbf1ddo2u8hq.png" width="60">
 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1629971717/noticon/ekgsz2bxwksz9xrgwgvx.png" width="60">
 <img src="https://github.com/user-attachments/assets/c8df0562-c217-455f-a463-8563900d63dc" width="60"/>
-<img src="https://github.com/user-attachments/assets/ed732dfa-5514-4d6c-ab38-b022f1246527" height="70"/>
+<img src="https://github.com/user-attachments/assets/ed732dfa-5514-4d6c-ab38-b022f1246527" height="55"/>
 
 </div>
 
