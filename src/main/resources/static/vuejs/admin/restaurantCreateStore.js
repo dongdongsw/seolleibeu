@@ -34,7 +34,7 @@ const useRestaurantCreateStore = defineStore('restaurantCreate', {
 				}
 			}
 			
-			const res = await axios.post('/admin/restaurant_create_vue/', formData, {
+			const res = await api.post('/admin/restaurant_create_vue/', formData, {
 				headers: {
 					'Content-Type': 'multipart/form-data'
 				}

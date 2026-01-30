@@ -179,6 +179,7 @@
 	<script src="https://unpkg.com/pinia@2/dist/pinia.iife.prod.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="/vuejs/admin/cultureCreateStore.js"></script>
+	<script src="/vuejs/axios.js"></script>
 	<script>
 		const { createApp, ref, watch } = Vue
 		const { createPinia } = Pinia
