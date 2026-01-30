@@ -28,9 +28,7 @@ const useMyCourseStore=defineStore('my_course', {
 					page: this.curpage
 				}
 			})	
-			console.log(res.data)
 			this.setPageData(res.data)
-			console.log(this.list)
 		},
 		
 		// 코스 삭제
