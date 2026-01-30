@@ -71,7 +71,6 @@ const useRegisterStore = defineStore('register',{
 				email:this.email
 				
 			})
-			this.emailCheckCount = result.data.emailCheckCount
 			this.emailCodeCheckCount = 1
 		},
 		async emailCodeCheck(){
@@ -82,6 +81,8 @@ const useRegisterStore = defineStore('register',{
 			})
 			console.log(result.data.emailCodeSuccess)
 			this.emailCodeSuccess = result.data.emailCodeSuccess
+			
+			
 		},
 		handleRegisterClick(){
 			
@@ -91,7 +92,7 @@ const useRegisterStore = defineStore('register',{
 			// 조건문
 			if(this.idCheckCount === 0){ // 1
 				
-				if(this.pwd !== '' || this.pwd1 !== ''){ // 2
+				if(this.pwd !== '' && this.pwd1 !== ''){ // 2
 					
 					if(this.pwd === this.pwd1){ // 3
 						if(this.pwdCheck.test(this.pwd) && this.pwdCheck.test(this.pwd1)){
@@ -102,7 +103,7 @@ const useRegisterStore = defineStore('register',{
 								
 								if(this.nickNameCheckCount === 0){ // 5
 									
-									if(this.emailCheckCount === 1){ // 6
+									if(this.emailCheckCount === 0){ // 6
 										
 										if(this.emailCodeSuccess === 1){// 7
 											
