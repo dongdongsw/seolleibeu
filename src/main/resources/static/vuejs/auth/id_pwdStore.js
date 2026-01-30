@@ -58,7 +58,6 @@ const useId_PwdStore = defineStore('id_pwd',{
 					id:this.id
 				}
 			})
-			console.log(result.data)
 			this.idCheckCount = result.data.idCheckCount
 		},
 		// 비밀번호 완료 누르면 실행되는 버튼

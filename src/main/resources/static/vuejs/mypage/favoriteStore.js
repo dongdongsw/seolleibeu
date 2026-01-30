@@ -40,7 +40,6 @@ const useMypageFavoriteStore = defineStore('favorite',{
 					category:this.category
 				}
 			})
-			console.log(result.data)
 			
 			this.fList = result.data.fList
 			this.curpage = result.data.curpage

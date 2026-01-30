@@ -11,7 +11,6 @@ const useLikeStore = defineStore('like',{
 					pno:pno
 				}
 			})
-			console.log(result.data)
 			
 			this.likeCount = result.data.likeCount
 			this.likeCheck = result.data.likeCheck
