@@ -18,11 +18,6 @@ const useRefundStore = Pinia.defineStore('refund',{
 					alert('환불 사유를 입력해주세요')
 					return
 				}
-				console.log("===== 환불 요청 데이터 확인 =====");
-				    console.log("p_id:", this.p_id);
-				    console.log("rf_amount:", this.rf_amount);
-				    console.log("rf_msg:", this.rf_msg);
-					console.log(JSON.parse(JSON.stringify(useReserveStore().rvvo)));
 				const res=await api.post('/refund_insert_vue/',{
 					p_id:this.p_id,
 					rf_msg:this.rf_msg,

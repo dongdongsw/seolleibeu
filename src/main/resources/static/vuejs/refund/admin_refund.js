@@ -32,7 +32,6 @@ const useAdminRefundStore=defineStore('adimin_refund',{
 	        this.startPage=res.data.startPage
 	        this.endPage=res.data.endPage
 	        this.totalpage=res.data.totalpage
-			console.log(res.data)
 			},
 			find(nameRef){
 				if(this.name==='')
