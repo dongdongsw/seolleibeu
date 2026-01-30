@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>설레이브 - 설렘 가득 데이트</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
