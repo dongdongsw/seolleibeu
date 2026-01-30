@@ -16,8 +16,7 @@
 <h1 align="center">E-UM<br><strong>사람과 사람 사이를 잇다</strong></h1>
 <br/>
 <a href="https://club-project-one.vercel.app/" target="_blank">
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/2e316b03-650b-4f31-aa42-8a78331af425" />
-
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/3623f484-3589-49b1-836a-20ea434a9d58" />
 </a>
 
 
