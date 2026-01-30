@@ -65,7 +65,7 @@ const useCultureCreateStore = defineStore('cultureCreate', {
 			
 			const url = (selectedType === 'culture') ? '/admin/culture_create_vue/' : '/admin/attraction_create_vue/' 
 			
-			return (await axios.post(url, formData)).data
+			return (await api.post(url, formData)).data
 		}
 	}
 })
