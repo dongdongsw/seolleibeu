@@ -132,36 +132,59 @@
 <br/>
 
 # 6. Project Structure (프로젝트 구조)
-```plaintext
-project/
-├── eum/
-│   ├── index.html          # HTML 템플릿 파일
-├── src/
-│   ├── admin/              # 관리자 도메인 관련 기능 모음
-│   ├── commons/            # SqlSessionFactory 재사용 클래스
-│   ├── main/               # 메인 페이지 도메인 관련 기능 모음
-│   ├── notice              # 공지사항 도메인 관련 기능 모음
-│   ├── pay                 # 결제 도메인 관련 기능 모음
-│   ├── seller              # 셀러 도메인 관련 기능 모음
-│   ├── users               # 사용자, 로그인, 회원가입 도메인 관련 기능 모음
-├─  ├── admin,main,notice,pay,seller,users
-├─  ├──  ├── dao              # 각 기능의 데이터베이스 접근(쿼리 호출) 계층
-├─  ├──  ├── mapper           # MyBatis Mapper 인터페이스 모음
-├─  ├──  ├── model            # 각 데이터 구조(Entity/DTO/VO 등) 정의
-
-├── .gitignore              # Git 무시 파일 목록
-├── webapp/                 # JSP 파일
-│   ├── admin/              # 관리자 기능 관련 파일
-│   ├── css/                # 주요 기능 CSS 관련 파일
-│   ├── images/             # 이미지 관련 파일
-│   ├── main/               # 메인 CSS관련 파일
-│   ├── notice/             # 공지사항 기능 관련 파일
-│   ├── pay/                # 결제 기능 관련 파일
-│   ├── seller/             # 셀러 기능 관련 파일
-│   ├── talent/             # 검색, 리스트페이지 기능 파일
-│   ├── template/           # 프로젝트 템플릿 파일
-│   ├── users/              # 사용자, 로그인, 회원가입 관련 파일
-└── README.md               # 프로젝트 개요 및 사용법
+```text
+📦 seolleibeu
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com.sist.web                # Java 소스 루트
+│   │   │       ├── admin                   # 관리자 기능
+│   │   │       ├── bookmark                # 북마크 기능
+│   │   │       ├── commons                 # 공통 유틸 / 공통 로직
+│   │   │       ├── config                  # Spring Security 설정, 웹 소켓 설정
+│   │   │       ├── course                  # 코스 관련 기능
+│   │   │       ├── favorite                # 즐겨찾기 기능
+│   │   │       ├── login                   # 로그인 / 인증
+│   │   │       ├── main_controller         # 메인 페이지 컨트롤러
+│   │   │       ├── mainpage                # 메인 페이지 비즈니스 로직
+│   │   │       ├── mypage                  # 마이페이지
+│   │   │       ├── notification            # 알림 기능
+│   │   │       ├── pay                     # 결제 기능
+│   │   │       ├── place                   # 장소 게시판 기능
+│   │   │       ├── refund                  # 환불 처리
+│   │   │       ├── reply                   # 댓글 기능
+│   │   │       ├── reserve                 # 예약 기능
+│   │   │       ├── review                  # 리뷰 기능
+│   │   │       ├── security                # 로그인 핸들러, 세션 및 WebSocket 접속 상태 관리
+│   │   │       └── vo                      # VO
+│   │   │
+│   │   ├── resources
+│   │   │   ├── mybatis.mapper              # MyBatis Mapper XML
+│   │   │   └── application.yml             # 환경 설정 파일
+│   │   │
+|   |   ├── static
+|   |   │   ├── css                         # 스타일시트
+|   |   │   ├── fonts                       # 폰트 파일
+|   |   │   ├── images                      # 이미지 리소스
+|   |   │   ├── js                          # JavaScript
+|   |   │   ├── profile                     # 프로필 이미지│   
+|   │   │   ├── vendor                      # 외부 라이브러리
+│   │   │   └── vuejs                       # Vue + Pinia 기반 공통 프론트 로직 및 상태 관리
+│   │   │         
+│   │   ├── webapp
+│   │   │   ├── WEB-INF
+│   │   │   │   └── views                   # JSP View
+│   │   │   │       ├── admin               # 관리자 화면
+│   │   │   │       ├── auth                # 로그인 / 인증 화면
+│   │   │   │       ├── commons             # 공통 레이아웃
+│   │   │   │       ├── course              # 코스 관련 화면
+│   │   │   │       ├── main                # 메인 화면
+│   │   │   │       ├── mypage              # 마이페이지 화면
+│   │   │   │       ├── notice              # 공지사항
+│   │   │   │       ├── pay                 # 결제 화면
+│   │   │   │       ├── place               # 장소 화면
+│   │   │   │       ├── reserve             # 예약 화면
+│   │   │   │       └── review              # 리뷰 화면
 ```
 
 <br/>
