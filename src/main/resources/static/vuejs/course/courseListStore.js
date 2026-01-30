@@ -31,7 +31,6 @@ const useCourseListStore=defineStore('course_list', {
 					keyword: this.keyword
 				}
 			})
-			console.log(res.data)
 			this.course_list=res.data.list
 			this.setPageData(res.data)
 		},

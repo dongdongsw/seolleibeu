@@ -34,7 +34,6 @@ const useRefundStore=defineStore('refund',{
 	        this.startPage=res.data.startPage
 	        this.endPage=res.data.endPage
 	        this.totalpage=res.data.totalpage
-			console.log(res.data)
 		},
 		pageChange(page){
 			this.curpage=page
