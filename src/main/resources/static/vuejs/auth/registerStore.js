@@ -80,6 +80,7 @@ const useRegisterStore = defineStore('register',{
 					emailCode:this.emailCode
 				}
 			})
+			console.log(result.data.emailCodeSuccess)
 			this.emailCodeSuccess = result.data.emailCodeSuccess
 		},
 		handleRegisterClick(){
