@@ -12,6 +12,8 @@
 <link href="/css/style.css" rel="stylesheet">
 <script>
 const SESSION_UNO = Number('${sessionScope.uno}')
+const INIT_PROFILE_IMG =
+    '${empty vo.profile_img ? "/profile/profile.png" : vo.profile_img}';
 </script>
 </head>
 <body>
@@ -26,7 +28,7 @@ const SESSION_UNO = Number('${sessionScope.uno}')
       
           <div class="info-card" style="gap:40px;">
             <div class="profile" style="margin-bottom: 20px;">
-              <img id="profileImg" src="${empty vo.profile_img ? '/profile/profile.png' : vo.profile_img}" @click="$refs.fileInput.click()" />
+              <img :src="profilePreview" @click="$refs.fileInput.click()" />
               <input type="file" ref="fileInput" accept="image/*" @change="handlerFile" style="display:none">
               <button class="info-btn" style="margin-left:340px;margin-top:5px;" @click="$refs.fileInput.click()">프로필 변경</button>
             </div>
@@ -69,26 +71,30 @@ const SESSION_UNO = Number('${sessionScope.uno}')
 <script src="/vuejs/axios.js"></script>
 <script type="text/javascript">
 Vue.createApp({
-     methods: {
-       handlerFile(e) {
-         const file = e.target.files[0]
-         if (!file) return
+	  data() {
+	    return {
+	      file: null,
+	      profilePreview: INIT_PROFILE_IMG
+	    }
+	  },
+	  methods: {
+	    handlerFile(e) {
+	      this.file = e.target.files[0]
+	      if (!this.file) return
 
-         const formData = new FormData()
-         formData.append("profile", file)
+	      this.profilePreview = URL.createObjectURL(this.file)
 
-         axios.post("/mypage/profile_upload_ok", formData)
-           .then(res => {
-             const img = document.getElementById("profileImg")
-             img.src = res.data + "?t=" + Date.now()
-           })
-           .catch(err => {
-             console.error(err)
-             alert("프로필 업로드 실패")
-           })
-       }
-     }
-   }).mount("#profile_mypage")
+	      const formData = new FormData()
+	      formData.append("profile", this.file)
+
+	      axios.post("/mypage/profile_upload_ok", formData, {
+	        headers: { "Content-Type": "multipart/form-data" }
+	      }).then(res => {
+	        this.profilePreview = res.data
+	      })
+	    }
+	  }
+	}).mount("#profile_mypage")
   </script>
 </body>
 </html>

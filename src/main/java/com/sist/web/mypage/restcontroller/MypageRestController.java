@@ -120,24 +120,32 @@ public class MypageRestController {
             File dir = new File(uploadDir);
             if (!dir.exists()) dir.mkdirs();
 
-            String originalName = profile.getOriginalFilename();
-            String ext = originalName.substring(originalName.lastIndexOf("."));
-            String newName = System.currentTimeMillis() + "-" + UUID.randomUUID() + ext;
+            String oname = profile.getOriginalFilename();
+            String ext = oname.substring(oname.lastIndexOf("."));
+            String newName = UUID.randomUUID().toString() + ext;
 
             Path savePath = Paths.get(uploadDir, newName);
-            Files.copy(profile.getInputStream(), savePath, StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(
+                profile.getInputStream(),
+                savePath,
+                StandardCopyOption.REPLACE_EXISTING
+            );
 
             String urlPath = "/profile/" + newName;
+
             mService.profile_update(urlPath, uno);
+
+            session.setAttribute("profile", urlPath);
 
             return ResponseEntity.ok(urlPath);
 
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("서버 오류");
+                                 .body("서버 오류");
         }
     }
+
     @DeleteMapping("/mypage/user_delete_vue/")
     public ResponseEntity<Map> user_delete_vue(
       HttpSession session
