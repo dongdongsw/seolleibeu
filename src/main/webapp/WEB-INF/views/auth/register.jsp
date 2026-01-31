@@ -66,7 +66,7 @@
 	                            </div>
 	                            <div class="col-md-4">
 	                                <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
-	                                	style="padding:14px 17px;" @click="registerStore.emailCheck()" v-if="registerStore.emailCheckCount===2">이메일 검사</button>
+	                                	style="padding:14px 17px;" @click="registerStore.emailCheck()" v-if="registerStore.emailCheckCount===2 || registerStore.emailCheckCount===1">이메일 검사</button>
 	                                <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
 	                                	style="padding:14px 17px;" @click="registerStore.emailSend()" v-if="registerStore.emailCheckCount === 0 && registerStore.emailCodeCheckCount === 2 && registerStore.emailCodeSuccess !== 1">인증번호 전송</button>
 	                                <button type="button" class="btn btn-default auth-cancel-btn auth-dark-btn" 
