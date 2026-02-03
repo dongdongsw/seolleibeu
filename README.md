@@ -259,13 +259,13 @@
 |:------:|:------:|:------:|
 | <img width="1919" height="1032" alt="로그인" src="https://github.com/user-attachments/assets/1f61f2b0-4f80-4ac7-a3e8-a6771c547064" /> | <img width="1919" height="1031" alt="아이디찾기" src="https://github.com/user-attachments/assets/525cc0d6-9c93-4bad-9dca-0a6ff08a2493" /> | <img width="1919" height="1030" alt="비밀번호 찾기" src="https://github.com/user-attachments/assets/8ed42132-1a0a-4a75-9be5-3f99ce8e20da" /> |
 
-| 회원가입 | 중복로그인 | 결제 취소 |
+| 회원가입 | 중복로그인 | 음식점 게시판 리스트 |
 |:------:|:------:|:------:|
-| <img width="1919" height="1030" alt="회원가입" src="https://github.com/user-attachments/assets/106de394-da46-4eeb-8dea-5fbbd8a79a90" /> | <img width="1919" height="1031" alt="중복 로그인" src="https://github.com/user-attachments/assets/53dcb681-0ce0-4c45-90ed-9adaafcdfba4" /> | <img width="1919" height="1024" alt="3  결제 취소" src="https://github.com/user-attachments/assets/1a134bd0-536c-42f8-bc4b-0fb003507017" /> |
+| <img width="1919" height="1030" alt="회원가입" src="https://github.com/user-attachments/assets/106de394-da46-4eeb-8dea-5fbbd8a79a90" /> | <img width="1919" height="1031" alt="중복 로그인" src="https://github.com/user-attachments/assets/53dcb681-0ce0-4c45-90ed-9adaafcdfba4" /> | <img width="1919" height="1029" alt="게시판 리스트" src="https://github.com/user-attachments/assets/8a7d17cd-8396-49b4-8267-4e295bd318e2" /> |
 
-| 결제 완료 페이지 | 마이페이지 회원정보 | 마이페이지 리뷰 | 
+| 음식점 게시판 상세보기_1 | 음식점 게시판 상세보기_2 | 마이페이지 리뷰 | 
 |:------:|:------:|:------:|
-| <img width="1919" height="1024" alt="4  결제 완료 페이지" src="https://github.com/user-attachments/assets/d9a85a46-58e7-419e-b718-7472e30f902a" /> | ![7  마이페이지 회원정보](https://github.com/user-attachments/assets/989f2801-fa54-4a97-ad50-225f8da75444) | ![8  마이페이지 리뷰](https://github.com/user-attachments/assets/6005ff31-ee46-444f-b96a-5e90ce864a81) |
+| <img width="1919" height="1030" alt="게시판 상세보기_1" src="https://github.com/user-attachments/assets/34b93dbc-0472-4339-9169-466b303df6e1" /> | <img width="1919" height="1032" alt="게시판 상세보기_2" src="https://github.com/user-attachments/assets/507cde4c-0d2d-4a13-82ed-6e7b4d7e6c4e" /> | ![8  마이페이지 리뷰](https://github.com/user-attachments/assets/6005ff31-ee46-444f-b96a-5e90ce864a81) |
 
 | 마이페이지 즐겨찾기 | 마이페이지 결제 내역-검색 | 마이페이지 결제 내역-환불 요청 |  
 |:------:|:------:|:------:|
@@ -294,6 +294,16 @@
 | 셀러 컨텐츠 수정(상세정보) | 셀러 컨텐츠 수정(이미지) | 셀러 컨텐츠 작성(가격옵션) |
 |:------:|:------:|:------:|
 | <img width="1775" height="1025" alt="15  셀러 컨텐츠 수정(상세정보)" src="https://github.com/user-attachments/assets/00883645-d0b0-4605-85d0-1c2e2f9d8b09" /> | <img width="1766" height="1027" alt="16  셀러 컨텐츠 수정(이미지)" src="https://github.com/user-attachments/assets/1b828e6a-f404-4a8d-919b-2f63adeb9703" /> | <img width="1777" height="1057" alt="17  셀러 컨텐츠 작성(가격옵션)" src="https://github.com/user-attachments/assets/3464e984-f4c6-40b3-b6e6-89241c965d0c" /> |
+
+# 마이페이지
+---
+| 관리자 대시보드 | 관리자(유저 리스트 더보기) | 마이페이지 즐겨찾기 |
+|:------:|:------:|:------:|
+| <img width="1918" height="1029" alt="대시보드" src="https://github.com/user-attachments/assets/5b12ceea-9e76-4dea-b863-97034776d3c8" /> | <img width="1919" height="1033" alt="유저 리스트 더보기" src="https://github.com/user-attachments/assets/92064352-ed14-4f08-8c44-3dd614a6dc72" /> | <img width="1919" height="1030" alt="마이페이지 즐겨찾기 목록" src="https://github.com/user-attachments/assets/1ba0255e-b577-4ef9-93df-7718d6616167" /> |
+
+| 관리자(셀러 리스트)  | 관리자(셀러 디테일 더보기) | 관리자(리뷰 리스트 더보기) |
+|:------:|:------:|:------:|
+| <img width="1919" height="1032" alt="셀러 리스트" src="https://github.com/user-attachments/assets/568f98a1-35bb-4f0e-a555-c9906a8d511f" />  | <img width="1919" height="1033" alt="셀러 디테일 더보기" src="https://github.com/user-attachments/assets/441fa337-ec4e-41dc-be11-ad1176523686" /> | <img width="1919" height="1033" alt="리뷰 리스트 더보기" src="https://github.com/user-attachments/assets/2f2dfd13-3741-4720-b2df-edc0dfb20df6" />
 
 # 관리자 대시보드
 ---
