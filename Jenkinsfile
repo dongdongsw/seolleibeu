@@ -62,6 +62,14 @@ pipeline {
 				
 			}
 		}
+
+		stage('Docker Push') {
+		    steps {
+		        sh '''
+		            docker push seodongdong/total-app:latest
+		        '''
+		    }
+		}
 		
 		stage('Docker Login') {
 		  	steps {
