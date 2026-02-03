@@ -299,16 +299,11 @@
 ---
 | 코스 생성(장소 선택) | 코스 생성(내용 작성) | 코스 게시판(목록) |
 |:------:|:------:|:------:|
-| <img width="1914" height="991" alt="코드 등록" src="https://github.com/user-attachments/assets/7fc698fb-2c20-4b66-9b40-dd2d92ec3bdc" />
- | <img width="1917" height="989" alt="코스 등록2" src="https://github.com/user-attachments/assets/6215e4e8-e56f-4784-9ce7-77d44ebd195b" />
-  | <img width="1928" height="2390" alt="코스 게시판(목록)" src="https://github.com/user-attachments/assets/ed1f559f-6d9d-481e-bd2a-7d77970ab1e2" />
- |
+| <img width="1914" height="991" alt="코드 등록" src="https://github.com/user-attachments/assets/7fc698fb-2c20-4b66-9b40-dd2d92ec3bdc" /> | <img width="1917" height="989" alt="코스 등록2" src="https://github.com/user-attachments/assets/6215e4e8-e56f-4784-9ce7-77d44ebd195b" /> | <img width="1928" height="2390" alt="코스 게시판(목록)" src="https://github.com/user-attachments/assets/ed1f559f-6d9d-481e-bd2a-7d77970ab1e2" /> |
 
 | 코스 게시판(상세)  | 북마크 | 댓글 |
 |:------:|:------:|:------:|
-| <img width="1928" height="2786" alt="코스 게시판(상세)" src="https://github.com/user-attachments/assets/3726b9fe-6db2-4ff1-8fd7-330a4697ec3d" />
-  | <img width="1195" height="626" alt="북마크" src="https://github.com/user-attachments/assets/bd8059bf-ce09-4181-882c-407d58da77bc" />
- | <img width="1190" height="638" alt="댓글" src="https://github.com/user-attachments/assets/04049e87-7739-47da-af13-5bd51f9e0893" /> |
+| <img width="1928" height="2786" alt="코스 게시판(상세)" src="https://github.com/user-attachments/assets/3726b9fe-6db2-4ff1-8fd7-330a4697ec3d" /> | <img width="1195" height="626" alt="북마크" src="https://github.com/user-attachments/assets/bd8059bf-ce09-4181-882c-407d58da77bc" /> | <img width="1190" height="638" alt="댓글" src="https://github.com/user-attachments/assets/04049e87-7739-47da-af13-5bd51f9e0893" /> |
 
 
 # 마이페이지
