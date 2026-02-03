@@ -1,3 +1,6 @@
+/*
+	우분투 배포
+*/
 pipeline {
 	agent any
 	
@@ -11,7 +14,7 @@ pipeline {
 		
 	stages {
 		
-		
+		/*
 		 연결 확인 = ngrok
 		 stage('Check Git Info') {
 			steps {
@@ -21,8 +24,8 @@ pipeline {
 				    git log -1
 				   '''
 			}
-		}
-		/*
+		}*/
+		
 		// 감지 = main : push (commit)
 		stage('Check Out') {
 			steps {
@@ -49,34 +52,33 @@ pipeline {
 			}
 		}
 		
-		// war파일 전송 = rsync / scp 
-		stage('Deploy = rsync') {
+		// Docker Build 
+		stage('Docker Build') {
 			steps {
-				sshagent(credentials:['SERVER_SSH_KEY']){
-					sh """
-					    rsync -avz -e 'ssh -o StrictHostKeyChecking=no' build/libs/*.war ${SERVER_USER}@${SERVER_IP}:${APP_DIR}
-					   """
-				}
+				
+				sh 	'''
+						docker build -t seodongdong/total-app:latest .
+					'''
+				
 			}
 		}
 		// 실행 명령 
 		
-		stage('Run Application') {
+		stage('Deploy to Minikube') {
 			steps {
-				sshagent(credentials:['SERVER_SSH_KEY']){
-					sh """
-					    ssh -o StrictHostKeyChecking=no ${SERVER_USER}@{SERVER_IP} << 'EOF'
-					       pkill -f 'java -jar' || true
-					       nohup java -jar ${APP_DIR}/${JAR_NAME} > log.txt 2>&1 &
-EOF
-					   """ 
-				}
+				
+				sh  '''
+						kubectl delete deployment total-app || true
+						kubectl apply -f ~/k8s/deployment.yaml
+						
+					''' 
+				
 			}
 		}
 		
 	
+	
 	}
-	*/
 }
 
 
