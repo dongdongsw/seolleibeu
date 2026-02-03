@@ -248,6 +248,7 @@
 <br/>
 <br/>
 
+
 # 10. 화면 구성
 
 | 메인페이지 버튼 | 리스트 정렬 버튼 | 디테일 즐겨찾기 |
@@ -256,11 +257,11 @@
 
 | 로그인 창 | 아이디 찾기 | 비밀번호 찾기 |
 |:------:|:------:|:------:|
-| ![4  로그인창](https://github.com/user-attachments/assets/649e3195-8339-4fa1-8f86-7125efba5bd9) | ![5  계정찾기](https://github.com/user-attachments/assets/cd72d4db-7ae3-4f46-b6a8-e4a51fe470c8) | ![6  비밀번호 찾기](https://github.com/user-attachments/assets/7a2b3929-c6ed-4626-8aee-786af1c5644e) |
+| <img width="1919" height="1032" alt="로그인" src="https://github.com/user-attachments/assets/1f61f2b0-4f80-4ac7-a3e8-a6771c547064" /> | <img width="1919" height="1031" alt="아이디찾기" src="https://github.com/user-attachments/assets/525cc0d6-9c93-4bad-9dca-0a6ff08a2493" /> | <img width="1919" height="1030" alt="비밀번호 찾기" src="https://github.com/user-attachments/assets/8ed42132-1a0a-4a75-9be5-3f99ce8e20da" /> |
 
-| 주문 상세보기 페이지 | 결제창 | 결제 취소 |
+| 회원가입 | 중복로그인 | 결제 취소 |
 |:------:|:------:|:------:|
-| <img width="1919" height="1028" alt="주문 상세보기 페이지" src="https://github.com/user-attachments/assets/ac232ad8-00cf-4dc6-a410-ab65810a69e8" /> | <img width="1919" height="1028" alt="2  결제창" src="https://github.com/user-attachments/assets/d1f7a2ed-bc38-425b-8315-9d6f7e86682a" /> | <img width="1919" height="1024" alt="3  결제 취소" src="https://github.com/user-attachments/assets/1a134bd0-536c-42f8-bc4b-0fb003507017" /> |
+| <img width="1919" height="1030" alt="회원가입" src="https://github.com/user-attachments/assets/106de394-da46-4eeb-8dea-5fbbd8a79a90" /> | <img width="1919" height="1031" alt="중복 로그인" src="https://github.com/user-attachments/assets/53dcb681-0ce0-4c45-90ed-9adaafcdfba4" /> | <img width="1919" height="1024" alt="3  결제 취소" src="https://github.com/user-attachments/assets/1a134bd0-536c-42f8-bc4b-0fb003507017" /> |
 
 | 결제 완료 페이지 | 마이페이지 회원정보 | 마이페이지 리뷰 | 
 |:------:|:------:|:------:|
