@@ -68,8 +68,9 @@ pipeline {
 			steps {
 				
 				sh  '''
+						cp /home/sist/k8s/deployment.yaml .
 						kubectl delete deployment total-app || true
-						kubectl apply -f  /home/sist/k8s/deployment.yaml
+						kubectl apply -f deployment.yaml
 						
 					''' 
 				
