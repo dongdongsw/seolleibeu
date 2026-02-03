@@ -38,7 +38,7 @@ pipeline {
 				    chmod +x gradlew
 				   '''
 			}
-		}
+		} 
 		
 		// build 시작 
 		stage('Gradle Build') {
