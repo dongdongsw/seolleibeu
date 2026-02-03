@@ -44,7 +44,7 @@ pipeline {
 		} 
 		
 		// build 시작 
-		stage('Gradle Build') {
+		stage('Gradle Build') { 
 			steps {
 				sh '''
 				    ./gradlew clean build
