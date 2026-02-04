@@ -7,7 +7,7 @@ pipeline {
 	// 전역변수 => ${SERVER_IP}
 	environment {
 			APP_DIR = "~/app"
-			JAR_NAME = "*-0.0.1-SNAPSHOT.war"
+			JAR_NAME = "*-0.0.1-SNAPSHOT.war" 
 	}
 		
 	stages {
