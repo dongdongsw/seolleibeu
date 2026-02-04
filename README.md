@@ -336,9 +336,9 @@
 
 
 
-| 관리자(컨텐츠 리스트 더보기) | 관리자(컨텐츠 디테일 판매중) | 
+| 관리자 환불 조회 | 관리자 환불(사용자 검색) | 
 |:------:|:------:|
-| <img width="1919" height="1033" alt="컨텐츠 리스트 더보기" src="https://github.com/user-attachments/assets/09cb3ab0-abd0-4457-81ad-6f30f040f5fd" /> | <img width="1919" height="1033" alt="컨텐츠 디테일 판매중" src="https://github.com/user-attachments/assets/67cf0156-a88e-4828-a582-5c26915614f0" /> 
+| <img width="1919" height="1033" alt="관리자 환불 조회" src="https://github.com/user-attachments/assets/6ea22906-e346-4cb1-a27e-4015265360cb" /> | <img width="1919" height="1033" alt="관리자 환불(사용자 검색)" src="https://github.com/user-attachments/assets/986ac478-677e-4102-8b2e-f51d3d92e693" /> 
 
 | 공지사항 리스트 | 공지사항 상세페이지 | 관리자 공지사항 리스트 |
 |:------:|:------:|:------:|
