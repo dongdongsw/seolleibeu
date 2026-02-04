@@ -51,8 +51,7 @@
 <br/>
 
 # 3. 프로젝트 기간
-
-<img width="1110" height="622" alt="Image" src="https://github.com/user-attachments/assets/c41f470e-ddea-4657-93d0-35d699de019f" />
+<img width="1038" height="571" alt="image" src="https://github.com/user-attachments/assets/d164b7e8-10d6-4760-8464-f7a711ef757c" />
 
 
 # 4. Key Features (주요 기능)
