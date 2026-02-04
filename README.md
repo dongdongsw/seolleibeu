@@ -263,7 +263,7 @@
 |:------:|:------:|:------:|
 | <img width="1919" height="1030" alt="회원가입" src="https://github.com/user-attachments/assets/106de394-da46-4eeb-8dea-5fbbd8a79a90" /> | <img width="1919" height="1031" alt="중복 로그인" src="https://github.com/user-attachments/assets/53dcb681-0ce0-4c45-90ed-9adaafcdfba4" /> | <img width="1919" height="1029" alt="게시판 리스트" src="https://github.com/user-attachments/assets/8a7d17cd-8396-49b4-8267-4e295bd318e2" /> |
 
-| 음식점 게시판 상세보기_1 | 음식점 게시판 상세보기_2 | 마이페이지 리뷰 | 
+| 음식점 게시판 상세보기_1 | 음식점 게시판 상세보기_2 | 리뷰 작성 | 
 |:------:|:------:|:------:|
 | <img width="1919" height="1030" alt="게시판 상세보기_1" src="https://github.com/user-attachments/assets/34b93dbc-0472-4339-9169-466b303df6e1" /> | <img width="1919" height="1032" alt="게시판 상세보기_2" src="https://github.com/user-attachments/assets/507cde4c-0d2d-4a13-82ed-6e7b4d7e6c4e" /> | ![8  리뷰 작성](https://github.com/user-attachments/assets/c65c1c26-9a3c-444b-a0b4-3e4b42f0c32e) |
 
