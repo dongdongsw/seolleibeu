@@ -130,7 +130,7 @@ pipeline {
     stages {
 		// GIT 연결 => 주소
         stage('Checkout') {
-            steps {
+            steps { 
                 echo 'Git Checkout'
                 checkout scm
             }
