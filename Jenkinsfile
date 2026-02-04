@@ -1,19 +1,32 @@
 /*
 	우분투 배포
 */
-pipeline {
+ipeline {
 	agent any
 	
 	// 전역변수 => ${SERVER_IP}
 	environment {
-			/*SERVER_IP = "aws ip"
-			SERVER_USER = "ubuntu"*/
 			APP_DIR = "~/app"
 			JAR_NAME = "*-0.0.1-SNAPSHOT.war"
 	}
 		
 	stages {
-		
+		/*
+			git push = commit
+			    |
+			web hooks / poll
+			    |
+			 jenkins (local)
+			    |
+			  build
+			    |
+			  docker build
+			  docker push
+			    |
+			  minikube
+			    | deployment.yaml update
+			  브라우저 실행
+		*/
 		/*
 		 연결 확인 = ngrok
 		 stage('Check Git Info') {
@@ -29,7 +42,7 @@ pipeline {
 		// 감지 = main : push (commit)
 		stage('Check Out') {
 			steps {
-				 echo 'Git Checkout' 
+				 echo 'Git Checkout'
                  checkout scm
 			}
 		}
@@ -41,16 +54,26 @@ pipeline {
 				    chmod +x gradlew
 				   '''
 			}
-		} 
+		}
 		
 		// build 시작 
-		stage('Gradle Build') { 
-			steps { 
-				sh ''' 
+		stage('Gradle Build') {
+			steps {
+				sh '''
 				    ./gradlew clean build
 				   '''
 			}
 		}
+		
+		// Docker Build 
+		stage('Docker Build') {
+			steps {
+				sh '''
+					docker build -t seodongdongsw/total-app:latest .
+				   '''
+			}
+		}
+		
 		stage('Docker Login') {
 		  	steps {
 		   		 withCredentials([usernamePassword(
@@ -65,48 +88,31 @@ pipeline {
 		  	}
 		}
 		
-		// Docker Build 
-		stage('Docker Build') {
-			steps {
-				
-				sh 	'''
-						docker build -t seodongdongsw/total-app:latest .
-					'''
-				
-			}
-		}
-
+		// Docker Push
 		stage('Docker Push') {
-		    steps {
-		        sh '''
-		            docker push seodongdongsw/total-app:latest
-		        '''
-		    }
+		  	steps {
+		    	sh '''
+		      		docker push seodongdongsw/total-app:latest
+		    	'''
+		  	}
 		}
-		
-		
-
 		
 		// 실행 명령 
 		
-		stage('Deploy to Minikube') {
+		stage('Deploy to MiniKube') {
 			steps {
-				
-				sh  '''
-						kubectl delete deployment total-app || true
-						kubectl apply -f /opt/jenkins/k8s/deployment.yaml
-												
-						sudo -u sist kubectl rollout restart deployment/totalapp
-						sudo -u sist kubectl rollout status deployment/totalapp
-					''' 
-				
+				sh '''
+					kubectl delete deployment total-app || true
+					sudo -u sist /usr/local/bin/kubectl apply -f /var/lib/jenkins/k8s/deployment.yaml
+					sudo -u sist /usr/local/bin/kubectl rollout restart deployment/totalapp-deployment
+					sudo -u sist /usr/local/bin/kubectl rollout status deployment/totalapp-deployment
+				   '''
 			}
 		}
 		
-	
-	
 	}
 }
+
 
 
 
