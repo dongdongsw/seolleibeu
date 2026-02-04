@@ -103,9 +103,9 @@ pipeline {
 			steps {
 				sh '''
 					kubectl delete deployment total-app || true
-					sudo -u sist /usr/local/bin/kubectl apply -f /var/lib/jenkins/k8s/deployment.yaml
-					sudo -u sist /usr/local/bin/kubectl rollout restart deployment/totalapp-deployment
-					sudo -u sist /usr/local/bin/kubectl rollout status deployment/totalapp-deployment
+					kubectl apply -f /var/lib/jenkins/k8s/deployment.yaml
+					kubectl rollout restart deployment/totalapp-deployment
+					kubectl rollout status deployment/totalapp-deployment
 				   '''
 			}
 		}
