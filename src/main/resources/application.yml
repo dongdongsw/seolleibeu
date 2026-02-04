@@ -46,3 +46,12 @@ file:
 #		place: C:/uploads/place
 #		profile: C:/uploads/prifile
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      probes:
+        enabled: true
