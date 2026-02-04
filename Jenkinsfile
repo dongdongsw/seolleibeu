@@ -29,7 +29,7 @@ pipeline {
 		// 감지 = main : push (commit)
 		stage('Check Out') {
 			steps {
-				 echo 'Git Checkout'
+				 echo 'Git Checkout' 
                  checkout scm
 			}
 		}
