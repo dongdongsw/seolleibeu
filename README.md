@@ -277,14 +277,6 @@
 |:------:|:------:|:------:|
 | <img width="1919" height="1019" alt="공지사항 리스트" src="https://github.com/user-attachments/assets/1d59c146-9b1e-48a7-be5c-e62567d48bf4" /> | <img width="1919" height="1018" alt="공지사항 상세페이지" src="https://github.com/user-attachments/assets/3101902d-2f77-42d7-b7a7-85c8c172455b" /> | <img width="1777" height="1085" alt="8  셀러 컨텐츠등록(가격옵션)" src="https://github.com/user-attachments/assets/fbdbe5ce-bf8f-4276-bed6-df78a7fc7e58" /> |
 
-| 관리자 공지사항 리스트 | 관리자 공지사항 상세페이지 | 관리자 공지사항 수정 |
-|:------:|:------:|:------:|
-| <img width="1919" height="1017" alt="관리자 공지사항 리스트" src="https://github.com/user-attachments/assets/dd06ac82-4b82-4f34-8882-82b86f73c5de" /> | <img width="1919" height="1018" alt="관리자 공지사항 상세페이지" src="https://github.com/user-attachments/assets/9326c85e-f9f1-48e7-9959-338aeed97ccd" /> | <img width="1919" height="1018" alt="관리자 공지사항 수정" src="https://github.com/user-attachments/assets/4d680208-1282-4201-a18f-6ddecac7422e" /> |
-
-| 관리자 공지사항 작성 | 관리자 공지사항 삭제 |  |
-|:------:|:------:|:------:|
-| <img width="1919" height="1018" alt="관리자 공지사항 작성" src="https://github.com/user-attachments/assets/2ed38e75-7b14-4af4-ac5c-6fd4c46826e7" /> | <img width="1919" height="1017" alt="관리자 공지사항 삭제" src="https://github.com/user-attachments/assets/96724230-da33-4428-8c08-fc087c375f1b" /> | <img width="1777" height="1085" alt="8  셀러 컨텐츠등록(가격옵션)" src="https://github.com/user-attachments/assets/fbdbe5ce-bf8f-4276-bed6-df78a7fc7e58" /> |
-
 | 셀러 컨텐츠등록 완료 | 셀러정보 | 셀러 내 컨텐츠목록 |
 |:------:|:------:|:------:|
 | <img width="1784" height="1082" alt="9  셀러 컨텐츠등록 완료" src="https://github.com/user-attachments/assets/24228fb5-b20e-4cca-ae37-cae0b96b101d" /> | <img width="1777" height="1082" alt="10  셀러정보" src="https://github.com/user-attachments/assets/c3bc9f6e-daee-4c1f-a814-cd14dd52240f" /> | <img width="1780" height="992" alt="11  셀러 내컨텐츠목록" src="https://github.com/user-attachments/assets/8a95393c-b1fa-4854-bea1-e63bb546afe7" /> |
@@ -350,13 +342,14 @@
 |:------:|:------:|:------:|
 | <img width="1919" height="1033" alt="관리자 환불 조회" src="https://github.com/user-attachments/assets/6ea22906-e346-4cb1-a27e-4015265360cb" /> | <img width="1919" height="1033" alt="관리자 환불(사용자 검색)" src="https://github.com/user-attachments/assets/dd67542e-21e3-4721-8b62-32386e404790" /> | <img width="1919" height="1033" alt="관리자 환불 승인" src="https://github.com/user-attachments/assets/d729aa61-3706-4df6-9d67-035b055c368c" /> 
 
-| 공지사항 리스트 | 공지사항 상세페이지 | 관리자 공지사항 리스트 |
-|:------:|:------:|:------:|
-| <img width="1914" height="1026" alt="공지사항 리스트" src="https://github.com/user-attachments/assets/0c659954-3534-4512-9343-f5357633e802" /> | <img width="1912" height="1029" alt="3  공지사항 상세페이지" src="https://github.com/user-attachments/assets/be0e4b5a-baf0-457b-92bc-bf7c748eafa5" /> | <img width="1916" height="1031" alt="4  관리자 공지사항 리스트" src="https://github.com/user-attachments/assets/2ead36f8-08f6-4acb-9892-55b1dfdfee21" /> |
 
-| 관리자 공지사항 상세페이지 | 관리자 공지사항 수정 | 관리자 공지사항 삭제 | 
+| 관리자 공지사항 리스트 | 관리자 공지사항 상세페이지 | 관리자 공지사항 수정 |
 |:------:|:------:|:------:|
-| <img width="1917" height="1030" alt="5  관리자 공지사항 상세페이지" src="https://github.com/user-attachments/assets/aca44c3a-cbd0-4b8a-b6cb-c71b68a9f73c" /> | <img width="1916" height="1031" alt="5  관리자 공지사항 수정" src="https://github.com/user-attachments/assets/19fc3964-54b9-46a9-9484-0b824c84cb49" /> | <img width="1910" height="1030" alt="6  관리자 공지사항 삭제" src="https://github.com/user-attachments/assets/1b22add8-339a-4318-9ee1-fb039386aeb9" /> |
+| <img width="1919" height="1017" alt="관리자 공지사항 리스트" src="https://github.com/user-attachments/assets/dd06ac82-4b82-4f34-8882-82b86f73c5de" /> | <img width="1919" height="1018" alt="관리자 공지사항 상세페이지" src="https://github.com/user-attachments/assets/9326c85e-f9f1-48e7-9959-338aeed97ccd" /> | <img width="1919" height="1018" alt="관리자 공지사항 수정" src="https://github.com/user-attachments/assets/4d680208-1282-4201-a18f-6ddecac7422e" /> |
+
+| 관리자 공지사항 작성 | 관리자 공지사항 삭제 |  |
+|:------:|:------:|:------:|
+| <img width="1919" height="1018" alt="관리자 공지사항 작성" src="https://github.com/user-attachments/assets/2ed38e75-7b14-4af4-ac5c-6fd4c46826e7" /> | <img width="1919" height="1017" alt="관리자 공지사항 삭제" src="https://github.com/user-attachments/assets/96724230-da33-4428-8c08-fc087c375f1b" /> | <img width="1777" height="1085" alt="8  셀러 컨텐츠등록(가격옵션)" src="https://github.com/user-attachments/assets/fbdbe5ce-bf8f-4276-bed6-df78a7fc7e58" /> |
 
 <br/>
 <br/>
