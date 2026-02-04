@@ -269,7 +269,7 @@
 
 | 마이페이지 즐겨찾기 | 마이페이지 결제 내역-검색 | 마이페이지 결제 내역-환불 요청 |  
 |:------:|:------:|:------:|
-| ![9  마이페이지 즐겨찾기한 컨텐츠](https://github.com/user-attachments/assets/706f6aae-aa9c-493a-a353-43529e6a2062) | <img width="1919" height="1028" alt="마이페이지 환불 내역" src="https://github.com/user-attachments/assets/31e80a49-98da-4f57-908b-e8d4124277a5" /> | <img width="1919" height="1027" alt="환불 요청" src="https://github.com/user-attachments/assets/31e80a49-98da-4f57-908b-e8d4124277a5" /> |
+| ![9  마이페이지 즐겨찾기한 컨텐츠](https://github.com/user-attachments/assets/706f6aae-aa9c-493a-a353-43529e6a2062) | <img width="1919" height="1028" alt="마이페이지 환불 내역" src="https://github.com/user-attachments/assets/320cc377-b337-4073-bb7f-fdecff4b6ab8" /> | <img width="1919" height="1027" alt="환불 요청" src="https://github.com/user-attachments/assets/31e80a49-98da-4f57-908b-e8d4124277a5" /> |
 
 | 마이페이지 정보 수정 | 리뷰 | 리뷰(답글) |
 |:------:|:------:|:------:|
