@@ -242,11 +242,11 @@
 
 | 알림 |  |  |
 |:------:|:------:|:------:|
-| <img width="1916" height="988" alt="알림" src="https://github.com/user-attachments/assets/2d1953c2-f76c-4769-bfa9-b27aca803c97" /> | <img width="1777" height="1072" alt="4  셀러 정보 수정" src="https://github.com/user-attachments/assets/8dd637f9-dea6-4c64-8821-597840385993" /> | <img width="1797" height="1069" alt="5  셀러 컨텐츠 작성(정보)" src="https://github.com/user-attachments/assets/588a23f2-827b-4bec-b593-df9e040dae15" /> |
+| <img width="1783" height="1074" alt="알림" src="https://github.com/user-attachments/assets/2d1953c2-f76c-4769-bfa9-b27aca803c97" /> | <img width="1777" height="1072" alt="4  셀러 정보 수정" src="https://github.com/user-attachments/assets/8dd637f9-dea6-4c64-8821-597840385993" /> | <img width="1797" height="1069" alt="5  셀러 컨텐츠 작성(정보)" src="https://github.com/user-attachments/assets/588a23f2-827b-4bec-b593-df9e040dae15" /> |
 
 | 마이페이지 나의 코스 |  |  |
 |:------:|:------:|:------:|
-| <img width="1918" height="983" alt="마이페이지-나의코스" src="https://github.com/user-attachments/assets/e6b18b2e-0f24-46c3-a3c7-ec4343de542e" /> | <img width="1783" height="1074" alt="7  셀러 컨텐츠등록(이미지삽입)" src="https://github.com/user-attachments/assets/6d74146f-19d5-491f-bd1e-9aa7fc205851" /> | <img width="1777" height="1085" alt="8  셀러 컨텐츠등록(가격옵션)" src="https://github.com/user-attachments/assets/fbdbe5ce-bf8f-4276-bed6-df78a7fc7e58" /> |
+| <img width="1783" height="1074" alt="마이페이지-나의코스" src="https://github.com/user-attachments/assets/e6b18b2e-0f24-46c3-a3c7-ec4343de542e" /> | <img width="1783" height="1074" alt="7  셀러 컨텐츠등록(이미지삽입)" src="https://github.com/user-attachments/assets/6d74146f-19d5-491f-bd1e-9aa7fc205851" /> | <img width="1777" height="1085" alt="8  셀러 컨텐츠등록(가격옵션)" src="https://github.com/user-attachments/assets/fbdbe5ce-bf8f-4276-bed6-df78a7fc7e58" /> |
 
 | 셀러 컨텐츠등록 완료 | 셀러정보 | 셀러 내 컨텐츠목록 |
 |:------:|:------:|:------:|
