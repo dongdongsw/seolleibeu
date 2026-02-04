@@ -25,15 +25,16 @@
 <br/>
 
 # 1. Project Overview (프로젝트 개요)
-- 프로젝트 이름: e-um(이음 : 재능을 잇다)
+- 프로젝트 이름: 설레이브
   
-- 프로젝트 설명: 누구나 자신의 재능을 쉽게 판매하고, 검증된 셀러를 통해 신뢰할 수 있는 서비스를 연결해주는 재능 공유 플랫폼
+- 프로젝트 설명: 취향에 맞춰 특별한 하루를 완성하는 감성 데이트 코스 가이드
   
 - 기획 의도
-1. 누구나 쉽게 자신의 재능을 수익화할 수 있는 공간 제공<br/>
-2. 자기 개발 능력 향상 및 보완을 위한 연결고리<br/>
-3. 셀러 인증을 통한 서비스 풀질 및 신뢰 확보<br/>
-4. 누구나 가지고 있는 사소한 재능도 가치가 되는 곳
+1. 특별한 하루를 위한 맞춤 데이트 코스 제안
+2. 연인들을 위한 감성적 데이트 추천 플랫폼
+3. 고민 없이 즐기는 최적 데이트 코스 안내
+4. 취향 기반으로 완성하는 데이트 코스 추천
+5. 더 즐거운 데이트를 위한 스마트 가이드
 
 <br/>
 
@@ -130,7 +131,30 @@
 <br/>
 
 # 6. Development Workflow (개발 워크플로우)
-## 시스템 설계 (System Design)
+<details>
+  <summary>## ERD</summary>
+    <img width="3610" height="2002" alt="seolleibeu_1" src="https://github.com/user-attachments/assets/ac9c38a3-3dbe-44f1-9aa7-ffe80d040878" />
+</details>
+
+<details>
+  <summary>## Usecase Diagram</summary>
+  <img width="5985" height="3295" alt="유스케이스 다이어그램 drawio (1)" src="https://github.com/user-attachments/assets/7158bbbf-820d-40dd-8ce8-77d5489d58a7" />
+</details>
+
+<details>
+  <summary>## Flow Chart</summary>
+  <img width="7213" height="4118" alt="플로우차트 다이어그램 drawio (1)" src="https://github.com/user-attachments/assets/787658ec-85ae-4ebc-b5bc-18e75303ee5c" />
+</details>
+
+<details>
+  <summary>## Wire Frame</summary>
+  
+</details>
+
+<details>
+  <summary>## Sequence Diagram</summary>
+  <img width="492" height="425" alt="시퀀스 다이어그램" src="https://github.com/user-attachments/assets/68b7f949-b685-48df-8187-c4efaed17612" />
+</details>
 
 <br/>
 
