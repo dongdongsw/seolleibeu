@@ -9,7 +9,7 @@ pipeline {
 			APP_DIR = "~/app"
 			JAR_NAME = "*-0.0.1-SNAPSHOT.war" 
 	}
-		
+		 
 	stages {
 		/*
 			git push = commit
