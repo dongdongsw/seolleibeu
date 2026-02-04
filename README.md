@@ -260,7 +260,7 @@
 |:------:|:------:|:------:|
 | <img width="1775" height="1025" alt="15  셀러 컨텐츠 수정(상세정보)" src="https://github.com/user-attachments/assets/00883645-d0b0-4605-85d0-1c2e2f9d8b09" /> | <img width="1766" height="1027" alt="16  셀러 컨텐츠 수정(이미지)" src="https://github.com/user-attachments/assets/1b828e6a-f404-4a8d-919b-2f63adeb9703" /> | <img width="1777" height="1057" alt="17  셀러 컨텐츠 작성(가격옵션)" src="https://github.com/user-attachments/assets/3464e984-f4c6-40b3-b6e6-89241c965d0c" /> |
 
-# 코스 생성 및 게시판
+# 코스 플래너 및 게시판
 ---
 | 코스 생성(장소 선택) | 코스 생성(내용 작성) | 코스 게시판(목록) |
 |:------:|:------:|:------:|
