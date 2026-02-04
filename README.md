@@ -132,27 +132,28 @@
 
 # 6. Development Workflow (개발 워크플로우)
 <details>
-  <summary>## ERD</summary>
+  <summary>6.1 ERD</summary>
     <img width="3610" height="2002" alt="seolleibeu_1" src="https://github.com/user-attachments/assets/ac9c38a3-3dbe-44f1-9aa7-ffe80d040878" />
 </details>
 
 <details>
-  <summary>## Usecase Diagram</summary>
+  <summary>6.2 Usecase Diagram</summary>
   <img width="5985" height="3295" alt="유스케이스 다이어그램 drawio (1)" src="https://github.com/user-attachments/assets/7158bbbf-820d-40dd-8ce8-77d5489d58a7" />
 </details>
 
 <details>
-  <summary>## Flow Chart</summary>
+  <summary>6.3 Flow Chart</summary>
   <img width="7213" height="4118" alt="플로우차트 다이어그램 drawio (1)" src="https://github.com/user-attachments/assets/787658ec-85ae-4ebc-b5bc-18e75303ee5c" />
 </details>
 
 <details>
-  <summary>## Wire Frame</summary>
-  
+  <summary>6.4 Wire Frame</summary>
+  <img src="https://github.com/user-attachments/assets/0375fd1d-2e72-4bf0-85b3-aab9816bb5d6">
+  <img src="https://github.com/user-attachments/assets/5ede56dd-ac0d-40dd-9f37-a17e42c9f1a8">
 </details>
 
 <details>
-  <summary>## Sequence Diagram</summary>
+  <summary>6.5 Sequence Diagram</summary>
   <img width="492" height="425" alt="시퀀스 다이어그램" src="https://github.com/user-attachments/assets/68b7f949-b685-48df-8187-c4efaed17612" />
 </details>
 
