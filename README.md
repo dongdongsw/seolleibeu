@@ -273,7 +273,7 @@
 
 | 마이페이지 리뷰 | 리뷰 수정 | 리뷰 삭제 |
 |:------:|:------:|:------:|
-| ![11  마이페이지 정보 수정](https://github.com/user-attachments/assets/f5a3a02b-dad9-4a77-8696-251338fd4d71) | <img width="1774" height="1083" alt="1  리뷰" src="https://github.com/user-attachments/assets/c57c2fdc-c655-48ec-9886-7d0f9cb8f0e3" /> | <img width="1783" height="1073" alt="2  리뷰(답글)" src="https://github.com/user-attachments/assets/0ee8af57-6ec5-4656-8a05-e39a702f36df" /> |
+| ![11  마이페이지 리뷰 조회](https://github.com/user-attachments/assets/10ad8c80-b7b6-4aa5-9e3e-f1add9a99d55) | <img width="1774" height="1083" alt="1  리뷰 수정" src="https://github.com/user-attachments/assets/ce8423c9-6a03-4f01-82e6-8825d4604068" /> | <img width="1783" height="1073" alt="2  리뷰 삭제" src="https://github.com/user-attachments/assets/422b2a58-c6fd-4f25-965e-750c90412b13" /> |
 
 | 셀러 등록 | 셀러 정보 수정 | 셀러 컨텐츠 작성(정보) |
 |:------:|:------:|:------:|
