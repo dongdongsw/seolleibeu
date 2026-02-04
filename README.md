@@ -257,10 +257,6 @@
 |:------:|:------:|:------:|
 | <img width="1919" height="1030" alt="게시판 상세보기_1" src="https://github.com/user-attachments/assets/34b93dbc-0472-4339-9169-466b303df6e1" /> | <img width="1919" height="1032" alt="게시판 상세보기_2" src="https://github.com/user-attachments/assets/507cde4c-0d2d-4a13-82ed-6e7b4d7e6c4e" /> | ![8  리뷰 작성](https://github.com/user-attachments/assets/c65c1c26-9a3c-444b-a0b4-3e4b42f0c32e) |
 
-| 마이페이지 즐겨찾기 | 마이페이지 환불 내역 | 환불 요청 |  
-|:------:|:------:|:------:|
-| ![9  마이페이지 즐겨찾기한 컨텐츠](https://github.com/user-attachments/assets/706f6aae-aa9c-493a-a353-43529e6a2062) | <img width="1919" height="1028" alt="마이페이지 환불 내역" src="https://github.com/user-attachments/assets/320cc377-b337-4073-bb7f-fdecff4b6ab8" /> | <img width="1919" height="1027" alt="환불 요청" src="https://github.com/user-attachments/assets/31e80a49-98da-4f57-908b-e8d4124277a5" /> |
-
 | 알림 |  |  |
 |:------:|:------:|:------:|
 | <img width="1783" height="1074" alt="알림" src="https://github.com/user-attachments/assets/2d1953c2-f76c-4769-bfa9-b27aca803c97" /> | <img width="1777" height="1072" alt="4  셀러 정보 수정" src="https://github.com/user-attachments/assets/8dd637f9-dea6-4c64-8821-597840385993" /> | <img width="1797" height="1069" alt="5  셀러 컨텐츠 작성(정보)" src="https://github.com/user-attachments/assets/588a23f2-827b-4bec-b593-df9e040dae15" /> |
@@ -282,6 +278,10 @@
 | <img width="1775" height="1072" alt="12  셀러 구매자 리뷰" src="https://github.com/user-attachments/assets/32547b24-bd41-4658-a7fe-71fda8453f9d" /> | <img width="1919" height="990" alt="13  판매내역" src="https://github.com/user-attachments/assets/116c8e29-d788-4d83-a0b5-ee039a7b2b5d" /> | <img width="1777" height="1024" alt="14  셀러 컨텐츠 수정(정보)" src="https://github.com/user-attachments/assets/0b4c381d-bb32-42c6-94fc-0cf45331ae22" /> |
 
 | 셀러 컨텐츠 수정(상세정보) | 셀러 컨텐츠 수정(이미지) | 셀러 컨텐츠 작성(가격옵션) |
+|:------:|:------:|:------:|
+| <img width="1775" height="1025" alt="15  결제)" src="https://github.com/user-attachments/assets/5b00e97a-fc4c-45af-88de-aa8f78bbe1c3" /> | <img width="1766" height="1027" alt="16  결제 완료" src="https://github.com/user-attachments/assets/a6e2dde8-53a3-488b-b972-8fd428154955" /> | <img width="1777" height="1057" alt="17  결제 취소" src="https://github.com/user-attachments/assets/a076aec4-5589-4222-8fcf-64fd7bc3dfa3" /> |
+
+| 결제 | 결제 완료 | 결제 취소 |
 |:------:|:------:|:------:|
 | <img width="1775" height="1025" alt="15  셀러 컨텐츠 수정(상세정보)" src="https://github.com/user-attachments/assets/00883645-d0b0-4605-85d0-1c2e2f9d8b09" /> | <img width="1766" height="1027" alt="16  셀러 컨텐츠 수정(이미지)" src="https://github.com/user-attachments/assets/1b828e6a-f404-4a8d-919b-2f63adeb9703" /> | <img width="1777" height="1057" alt="17  셀러 컨텐츠 작성(가격옵션)" src="https://github.com/user-attachments/assets/3464e984-f4c6-40b3-b6e6-89241c965d0c" /> |
 
