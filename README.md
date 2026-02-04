@@ -130,7 +130,12 @@
 <br/>
 <br/>
 
-# 6. Project Structure (프로젝트 구조)
+# 6. Development Workflow (개발 워크플로우)
+## 시스템 설계 (System Design)
+
+<br/>
+
+# 7. Project Structure (프로젝트 구조)
 ```text
 📦 seolleibeu
 ├── src
@@ -188,10 +193,7 @@
 
 <br/>
 
-# 7. Development Workflow (개발 워크플로우)
-## 시스템 설계 (System Design)
 
-<br/>
 
 # 8. 성과 및 배운점
 ## 서동현
