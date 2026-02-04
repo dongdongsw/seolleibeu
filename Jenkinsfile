@@ -1,7 +1,7 @@
 /*
 	우분투 배포
 */
-ipeline {
+pipeline {
 	agent any
 	
 	// 전역변수 => ${SERVER_IP}
