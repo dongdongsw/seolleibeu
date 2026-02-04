@@ -240,9 +240,9 @@
 |:------:|:------:|:------:|
 | ![11  마이페이지 리뷰 조회](https://github.com/user-attachments/assets/10ad8c80-b7b6-4aa5-9e3e-f1add9a99d55) | <img width="1774" height="1083" alt="1  리뷰 수정" src="https://github.com/user-attachments/assets/ce8423c9-6a03-4f01-82e6-8825d4604068" /> | <img width="1783" height="1073" alt="2  리뷰 삭제" src="https://github.com/user-attachments/assets/422b2a58-c6fd-4f25-965e-750c90412b13" /> |
 
-| 셀러 등록 | 셀러 정보 수정 | 셀러 컨텐츠 작성(정보) |
+| 알림 |  |  |
 |:------:|:------:|:------:|
-| <img width="1778" height="1018" alt="3  셀러 등록" src="https://github.com/user-attachments/assets/04c37f94-32a9-4e21-851a-6b24ccea24ca" /> | <img width="1777" height="1072" alt="4  셀러 정보 수정" src="https://github.com/user-attachments/assets/8dd637f9-dea6-4c64-8821-597840385993" /> | <img width="1797" height="1069" alt="5  셀러 컨텐츠 작성(정보)" src="https://github.com/user-attachments/assets/588a23f2-827b-4bec-b593-df9e040dae15" /> |
+| <img width="1916" height="988" alt="알림" src="https://github.com/user-attachments/assets/2d1953c2-f76c-4769-bfa9-b27aca803c97" /> | <img width="1777" height="1072" alt="4  셀러 정보 수정" src="https://github.com/user-attachments/assets/8dd637f9-dea6-4c64-8821-597840385993" /> | <img width="1797" height="1069" alt="5  셀러 컨텐츠 작성(정보)" src="https://github.com/user-attachments/assets/588a23f2-827b-4bec-b593-df9e040dae15" /> |
 
 | 셀러 컨텐츠등록(상세설명) | 셀러 컨텐츠등록(이미지삽입) | 셀러 컨텐츠등록(가격옵션) |
 |:------:|:------:|:------:|
