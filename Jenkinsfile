@@ -79,7 +79,7 @@ pipeline {
 		stage('Docker Push') {
 		    steps {
 		        sh '''
-		            docker push seodongdong/total-app:latest
+		            docker push seodongdongsw/total-app:latest
 		        '''
 		    }
 		}
