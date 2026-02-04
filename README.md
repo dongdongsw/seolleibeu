@@ -336,9 +336,9 @@
 
 
 
-| 관리자 환불 조회 | 관리자 환불(사용자 검색) | 
+| 관리자 환불 조회 | 관리자 환불(사용자 검색) |  관리자 환불 승인 |
 |:------:|:------:|
-| <img width="1919" height="1033" alt="관리자 환불 조회" src="https://github.com/user-attachments/assets/6ea22906-e346-4cb1-a27e-4015265360cb" /> | <img width="1919" height="1033" alt="관리자 환불(사용자 검색)" src="https://github.com/user-attachments/assets/986ac478-677e-4102-8b2e-f51d3d92e693" /> 
+| <img width="1919" height="1033" alt="관리자 환불 조회" src="https://github.com/user-attachments/assets/6ea22906-e346-4cb1-a27e-4015265360cb" /> | <img width="1919" height="1033" alt="관리자 환불(사용자 검색)" src="https://github.com/user-attachments/assets/986ac478-677e-4102-8b2e-f51d3d92e693" | <img width="1919" height="1033" alt="관리자 환불 승인" src="https://github.com/user-attachments/assets/d729aa61-3706-4df6-9d67-035b055c368c" /> 
 
 | 공지사항 리스트 | 공지사항 상세페이지 | 관리자 공지사항 리스트 |
 |:------:|:------:|:------:|
