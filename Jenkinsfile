@@ -70,7 +70,7 @@ pipeline {
 			steps {
 				
 				sh 	'''
-						docker build -t seodongdong/total-app:latest .
+						docker build -t seodongdongsw/total-app:latest .
 					'''
 				
 			}
