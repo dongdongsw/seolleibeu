@@ -261,10 +261,6 @@
 |:------:|:------:|:------:|
 | ![9  마이페이지 즐겨찾기한 컨텐츠](https://github.com/user-attachments/assets/706f6aae-aa9c-493a-a353-43529e6a2062) | <img width="1919" height="1028" alt="마이페이지 환불 내역" src="https://github.com/user-attachments/assets/320cc377-b337-4073-bb7f-fdecff4b6ab8" /> | <img width="1919" height="1027" alt="환불 요청" src="https://github.com/user-attachments/assets/31e80a49-98da-4f57-908b-e8d4124277a5" /> |
 
-| 마이페이지 리뷰 | 리뷰 수정 | 리뷰 삭제 |
-|:------:|:------:|:------:|
-| ![11  마이페이지 리뷰 조회](https://github.com/user-attachments/assets/10ad8c80-b7b6-4aa5-9e3e-f1add9a99d55) | <img width="1774" height="1083" alt="1  리뷰 수정" src="https://github.com/user-attachments/assets/ce8423c9-6a03-4f01-82e6-8825d4604068" /> | <img width="1783" height="1073" alt="2  리뷰 삭제" src="https://github.com/user-attachments/assets/422b2a58-c6fd-4f25-965e-750c90412b13" /> |
-
 | 알림 |  |  |
 |:------:|:------:|:------:|
 | <img width="1783" height="1074" alt="알림" src="https://github.com/user-attachments/assets/2d1953c2-f76c-4769-bfa9-b27aca803c97" /> | <img width="1777" height="1072" alt="4  셀러 정보 수정" src="https://github.com/user-attachments/assets/8dd637f9-dea6-4c64-8821-597840385993" /> | <img width="1797" height="1069" alt="5  셀러 컨텐츠 작성(정보)" src="https://github.com/user-attachments/assets/588a23f2-827b-4bec-b593-df9e040dae15" /> |
@@ -314,9 +310,9 @@
 |:------:|:------:|:------:|
 | ![11  마이페이지 리뷰 조회](https://github.com/user-attachments/assets/10ad8c80-b7b6-4aa5-9e3e-f1add9a99d55) | <img width="1774" height="1083" alt="1  리뷰 수정" src="https://github.com/user-attachments/assets/ce8423c9-6a03-4f01-82e6-8825d4604068" /> | <img width="1783" height="1073" alt="2  리뷰 삭제" src="https://github.com/user-attachments/assets/422b2a58-c6fd-4f25-965e-750c90412b13" /> |
 
-| 관리자(셀러 리스트)  | 관리자(셀러 디테일 더보기) | 관리자(리뷰 리스트 더보기) |
-|:------:|:------:|:------:|
-| <img width="1919" height="1032" alt="셀러 리스트" src="https://github.com/user-attachments/assets/568f98a1-35bb-4f0e-a555-c9906a8d511f" />  | <img width="1919" height="1033" alt="셀러 디테일 더보기" src="https://github.com/user-attachments/assets/441fa337-ec4e-41dc-be11-ad1176523686" /> | <img width="1919" height="1033" alt="리뷰 리스트 더보기" src="https://github.com/user-attachments/assets/2f2dfd13-3741-4720-b2df-edc0dfb20df6" />
+| 마이페이지 환불 내역 | 환불 요청 |  
+|:------:|:------:|
+| <img width="1919" height="1028" alt="마이페이지 환불 내역" src="https://github.com/user-attachments/assets/320cc377-b337-4073-bb7f-fdecff4b6ab8" /> | <img width="1919" height="1027" alt="환불 요청" src="https://github.com/user-attachments/assets/31e80a49-98da-4f57-908b-e8d4124277a5" /> |
 
 # 관리자 대시보드
 ---
