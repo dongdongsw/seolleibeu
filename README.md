@@ -273,6 +273,28 @@
 |:------:|:------:|:------:|
 | <img width="1783" height="1074" alt="마이페이지-나의코스" src="https://github.com/user-attachments/assets/e6b18b2e-0f24-46c3-a3c7-ec4343de542e" /> | <img width="1783" height="1074" alt="7  셀러 컨텐츠등록(이미지삽입)" src="https://github.com/user-attachments/assets/6d74146f-19d5-491f-bd1e-9aa7fc205851" /> | <img width="1777" height="1085" alt="8  셀러 컨텐츠등록(가격옵션)" src="https://github.com/user-attachments/assets/fbdbe5ce-bf8f-4276-bed6-df78a7fc7e58" /> |
 
+| 마이페이지 회원 정보 <img width="1919" height="1030" alt="게시판 상세보기_1" src="https://github.com/user-attachments/assets/34b93dbc-0472-4339-9169-466b303df6e1" /> | <img width="1919" height="1032" alt="게시판 상세보기_2" src="https://github.com/user-attachments/assets/507cde4c-0d2d-4a13-82ed-6e7b4d7e6c4e" /> | ![8  리뷰 작성](https://github.com/user-attachments/assets/c65c1c26-9a3c-444b-a0b4-3e4b42f0c32e) |
+
+| 마이페이지 즐겨찾기 | 마이페이지 환불 내역 | 환불 요청 |  
+|:------:|:------:|:------:|
+| ![9  마이페이지 즐겨찾기한 컨텐츠](https://github.com/user-attachments/assets/706f6aae-aa9c-493a-a353-43529e6a2062) | <img width="1919" height="1028" alt="마이페이지 환불 내역" src="https://github.com/user-attachments/assets/320cc377-b337-4073-bb7f-fdecff4b6ab8" /> | <img width="1919" height="1027" alt="환불 요청" src="https://github.com/user-attachments/assets/31e80a49-98da-4f57-908b-e8d4124277a5" /> |
+
+| 마이페이지 리뷰 | 리뷰 수정 | 리뷰 삭제 |
+|:------:|:------:|:------:|
+| ![11  마이페이지 리뷰 조회](https://github.com/user-attachments/assets/10ad8c80-b7b6-4aa5-9e3e-f1add9a99d55) | <img width="1774" height="1083" alt="1  리뷰 수정" src="https://github.com/user-attachments/assets/ce8423c9-6a03-4f01-82e6-8825d4604068" /> | <img width="1783" height="1073" alt="2  리뷰 삭제" src="https://github.com/user-attachments/assets/422b2a58-c6fd-4f25-965e-750c90412b13" /> |
+
+| 알림 |  |  |
+|:------:|:------:|:------:|
+| <img width="1783" height="1074" alt="알림" src="https://github.com/user-attachments/assets/2d1953c2-f76c-4769-bfa9-b27aca803c97" /> | <img width="1777" height="1072" alt="4  셀러 정보 수정" src="https://github.com/user-attachments/assets/8dd637f9-dea6-4c64-8821-597840385993" /> | <img width="1797" height="1069" alt="5  셀러 컨텐츠 작성(정보)" src="https://github.com/user-attachments/assets/588a23f2-827b-4bec-b593-df9e040dae15" /> |
+
+| 마이페이지 나의 코스 |  |  |
+|:------:|:------:|:------:|
+| <img width="1783" height="1074" alt="마이페이지-나의코스" src="https://github.com/user-attachments/assets/e6b18b2e-0f24-46c3-a3c7-ec4343de542e" /> | <img width="1783" height="1074" alt="7  셀러 컨텐츠등록(이미지삽입)" src="https://github.com/user-attachments/assets/6d74146f-19d5-491f-bd1e-9aa7fc205851" /> | <img width="1777" height="1085" alt="8  셀러 컨텐츠등록(가격옵션)" src="https://github.com/user-attachments/assets/fbdbe5ce-bf8f-4276-bed6-df78a7fc7e58" /> |
+
+| 코스 댓글 작성 | 코스 북마크 | 마이페이지 회원 정보 |
+|:------:|:------:|:------:|
+| <img width="1919" height="1013" alt="스크린샷 2026-02-04 164430" src="https://github.com/user-attachments/assets/421a6ec4-cc1e-406a-8fa3-a9ba5352ae97" /> | <img width="1919" height="1017" alt="스크린샷 2026-02-04 164458" src="https://github.com/user-attachments/assets/cfb5327c-44b2-4d6e-866d-8b27b860841f" /> | <img width="1919" height="1017" alt="스크린샷 2026-02-04 164238" src="https://github.com/user-attachments/assets/29766eb9-18b8-42ed-afb5-6ad36ad59160" /> |
+
 | 셀러 컨텐츠등록 완료 | 셀러정보 | 셀러 내 컨텐츠목록 |
 |:------:|:------:|:------:|
 | <img width="1784" height="1082" alt="9  셀러 컨텐츠등록 완료" src="https://github.com/user-attachments/assets/24228fb5-b20e-4cca-ae37-cae0b96b101d" /> | <img width="1777" height="1082" alt="10  셀러정보" src="https://github.com/user-attachments/assets/c3bc9f6e-daee-4c1f-a814-cd14dd52240f" /> | <img width="1780" height="992" alt="11  셀러 내컨텐츠목록" src="https://github.com/user-attachments/assets/8a95393c-b1fa-4854-bea1-e63bb546afe7" /> |
