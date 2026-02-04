@@ -273,9 +273,9 @@
 |:------:|:------:|:------:|
 | <img width="1783" height="1074" alt="마이페이지-나의코스" src="https://github.com/user-attachments/assets/e6b18b2e-0f24-46c3-a3c7-ec4343de542e" /> | <img width="1783" height="1074" alt="7  셀러 컨텐츠등록(이미지삽입)" src="https://github.com/user-attachments/assets/6d74146f-19d5-491f-bd1e-9aa7fc205851" /> | <img width="1777" height="1085" alt="8  셀러 컨텐츠등록(가격옵션)" src="https://github.com/user-attachments/assets/fbdbe5ce-bf8f-4276-bed6-df78a7fc7e58" /> |
 
-| 마이페이지 회원 탈퇴 | 공지사항 리스트 | 공지사항 상세페이지 |
+| 공지사항 리스트 | 공지사항 상세페이지 |  |
 |:------:|:------:|:------:|
-| <img width="1919" height="1015" alt="마이페이지 회원 탈퇴" src="https://github.com/user-attachments/assets/082e23e4-daa6-4dc3-8f98-d685ad2fd19a" /> | <img width="1919" height="1019" alt="공지사항 리스트" src="https://github.com/user-attachments/assets/1d59c146-9b1e-48a7-be5c-e62567d48bf4" /> | <img width="1919" height="1018" alt="공지사항 상세페이지" src="https://github.com/user-attachments/assets/3101902d-2f77-42d7-b7a7-85c8c172455b" /> |
+| <img width="1919" height="1019" alt="공지사항 리스트" src="https://github.com/user-attachments/assets/1d59c146-9b1e-48a7-be5c-e62567d48bf4" /> | <img width="1919" height="1018" alt="공지사항 상세페이지" src="https://github.com/user-attachments/assets/3101902d-2f77-42d7-b7a7-85c8c172455b" /> | <img width="1777" height="1085" alt="8  셀러 컨텐츠등록(가격옵션)" src="https://github.com/user-attachments/assets/fbdbe5ce-bf8f-4276-bed6-df78a7fc7e58" /> |
 
 | 관리자 공지사항 리스트 | 관리자 공지사항 상세페이지 | 관리자 공지사항 수정 |
 |:------:|:------:|:------:|
@@ -314,7 +314,7 @@
 |:------:|:------:|:------:|
 | <img width="1919" height="1017" alt="마이페이지 회원 정보" src="https://github.com/user-attachments/assets/29766eb9-18b8-42ed-afb5-6ad36ad59160" /> | <img width="1919" height="1016" alt="마이페이지 회원 수정" src="https://github.com/user-attachments/assets/c01269b6-28c4-44ab-a39f-c9e1f24b2f03" /> | <img width="1919" height="1015" alt="마이페이지 회원 탈퇴" src="https://github.com/user-attachments/assets/082e23e4-daa6-4dc3-8f98-d685ad2fd19a" /> |
 
-| 마이페이지 북마크 | 마이페이지 내가 쓴 댓글 |  |
+| 마이페이지 북마크 | 마이페이지 내가 쓴 댓글 | 마이페이지 즐겨찾기 |
 |:------:|:------:|:------:|
 | <img width="1919" height="1016" alt="마이페이지 북마크" src="https://github.com/user-attachments/assets/82eb53e0-6fb6-4bed-9dbf-2607532d6072" /> | <img width="1919" height="1014" alt="마이페이지 내가 쓴 댓글" src="https://github.com/user-attachments/assets/ff6647ed-3f28-42df-a913-0dd7ccca71e2" /> |  <img width="1919" height="1030" alt="마이페이지 즐겨찾기 목록" src="https://github.com/user-attachments/assets/1ba0255e-b577-4ef9-93df-7718d6616167" /> |
 
