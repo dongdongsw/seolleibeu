@@ -96,8 +96,8 @@ pipeline {
 						kubectl delete deployment total-app || true
 						kubectl apply -f /opt/jenkins/k8s/deployment.yaml
 												
-						sudo -u sist kubectl rollout restart deployment/total-app
-						sudo -u sist kubectl rollout status deployment/total-app
+						sudo -u sist kubectl rollout restart deployment/totalapp
+						sudo -u sist kubectl rollout status deployment/totalapp
 					''' 
 				
 			}
