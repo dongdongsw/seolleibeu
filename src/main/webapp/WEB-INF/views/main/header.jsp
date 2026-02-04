@@ -26,7 +26,7 @@
                                 </li>
                                 <li><a href="/course/list">추천 코스</a>
                                 </li>
-                                <li><a href="/place/restaurant/list" title="Contact Us">음식점asdfgh</a> </li> 
+                                <li><a href="/place/restaurant/list" title="Contact Us">음식점asdfghj</a> </li> 
                                 <li><a href="/place/culture/list" title="Contact Us">문화/체험</a> </li>
                                 <li><a href="/place/attraction/list" title="Contact Us">관광명소</a> </li>
                                 <!-- <li><a href="/admin" title="Error">관리자</a> </li> -->
