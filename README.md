@@ -310,9 +310,9 @@
 |:------:|:------:|:------:|
 | <img width="1919" height="1016" alt="마이페이지 북마크" src="https://github.com/user-attachments/assets/82eb53e0-6fb6-4bed-9dbf-2607532d6072" /> | <img width="1919" height="1014" alt="마이페이지 내가 쓴 댓글" src="https://github.com/user-attachments/assets/ff6647ed-3f28-42df-a913-0dd7ccca71e2" /> |  <img width="1919" height="1030" alt="마이페이지 즐겨찾기 목록" src="https://github.com/user-attachments/assets/1ba0255e-b577-4ef9-93df-7718d6616167" /> |
 
-| 관리자 대시보드 | 관리자(유저 리스트 더보기) | 마이페이지 즐겨찾기 |
+| 마이페이지 리뷰 | 마이페이지 리뷰 수정 | 마이페이지 리뷰 삭제 |
 |:------:|:------:|:------:|
-| <img width="1918" height="1029" alt="대시보드" src="https://github.com/user-attachments/assets/5b12ceea-9e76-4dea-b863-97034776d3c8" /> | <img width="1919" height="1033" alt="유저 리스트 더보기" src="https://github.com/user-attachments/assets/92064352-ed14-4f08-8c44-3dd614a6dc72" /> | <img width="1919" height="1030" alt="마이페이지 즐겨찾기 목록" src="https://github.com/user-attachments/assets/1ba0255e-b577-4ef9-93df-7718d6616167" /> |
+| ![11  마이페이지 리뷰 조회](https://github.com/user-attachments/assets/10ad8c80-b7b6-4aa5-9e3e-f1add9a99d55) | <img width="1774" height="1083" alt="1  리뷰 수정" src="https://github.com/user-attachments/assets/ce8423c9-6a03-4f01-82e6-8825d4604068" /> | <img width="1783" height="1073" alt="2  리뷰 삭제" src="https://github.com/user-attachments/assets/422b2a58-c6fd-4f25-965e-750c90412b13" /> |
 
 | 관리자(셀러 리스트)  | 관리자(셀러 디테일 더보기) | 관리자(리뷰 리스트 더보기) |
 |:------:|:------:|:------:|
