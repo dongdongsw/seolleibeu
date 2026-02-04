@@ -265,11 +265,11 @@
 
 | 음식점 게시판 상세보기_1 | 음식점 게시판 상세보기_2 | 마이페이지 리뷰 | 
 |:------:|:------:|:------:|
-| <img width="1919" height="1030" alt="게시판 상세보기_1" src="https://github.com/user-attachments/assets/34b93dbc-0472-4339-9169-466b303df6e1" /> | <img width="1919" height="1032" alt="게시판 상세보기_2" src="https://github.com/user-attachments/assets/507cde4c-0d2d-4a13-82ed-6e7b4d7e6c4e" /> | ![8  마이페이지 리뷰](https://github.com/user-attachments/assets/6005ff31-ee46-444f-b96a-5e90ce864a81) |
+| <img width="1919" height="1030" alt="게시판 상세보기_1" src="https://github.com/user-attachments/assets/34b93dbc-0472-4339-9169-466b303df6e1" /> | <img width="1919" height="1032" alt="게시판 상세보기_2" src="https://github.com/user-attachments/assets/507cde4c-0d2d-4a13-82ed-6e7b4d7e6c4e" /> | ![8  리뷰 작성](https://github.com/user-attachments/assets/c65c1c26-9a3c-444b-a0b4-3e4b42f0c32e) |
 
 | 마이페이지 즐겨찾기 | 마이페이지 결제 내역-검색 | 마이페이지 결제 내역-환불 요청 |  
 |:------:|:------:|:------:|
-| ![9  마이페이지 즐겨찾기한 컨텐츠](https://github.com/user-attachments/assets/706f6aae-aa9c-493a-a353-43529e6a2062) | <img width="1919" height="1028" alt="마이페이지 결제 내역-검색" src="https://github.com/user-attachments/assets/7e93585f-fc8a-4c3c-8521-701e3648367d" /> | <img width="1919" height="1027" alt="환불 요청" src="https://github.com/user-attachments/assets/89af6deb-15fa-4ce6-a10d-406cef0df8dd" /> |
+| ![9  마이페이지 즐겨찾기한 컨텐츠](https://github.com/user-attachments/assets/706f6aae-aa9c-493a-a353-43529e6a2062) | <img width="1919" height="1028" alt="마이페이지 환불 내역" src="https://github.com/user-attachments/assets/31e80a49-98da-4f57-908b-e8d4124277a5" /> | <img width="1919" height="1027" alt="환불 요청" src="https://github.com/user-attachments/assets/31e80a49-98da-4f57-908b-e8d4124277a5" /> |
 
 | 마이페이지 정보 수정 | 리뷰 | 리뷰(답글) |
 |:------:|:------:|:------:|
