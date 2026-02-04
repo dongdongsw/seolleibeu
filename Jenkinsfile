@@ -14,7 +14,7 @@ pipeline {
 		/*
 			git push = commit
 			    |
-			web hooks / poll
+			web hooks / poll 
 			    |
 			 jenkins (local)
 			    |
