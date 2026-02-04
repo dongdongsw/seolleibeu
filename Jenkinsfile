@@ -102,9 +102,7 @@ pipeline {
 		stage('Deploy to MiniKube') {
 			steps {
 				sh '''
-					kubectl delete deployment total-app || true
 					kubectl apply -f /var/lib/jenkins/k8s/deployment.yaml
-					kubectl rollout restart deployment/totalapp-deployment
 					kubectl rollout status deployment/totalapp-deployment
 				   '''
 			}
