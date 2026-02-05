@@ -241,25 +241,21 @@
 
 # 9. 화면 구성
 
-| 메인페이지 버튼 | 리스트 정렬 버튼 | 디테일 즐겨찾기 |
+| 메인페이지 | 로그인 창 | 아이디 찾기 |
 |:------:|:------:|:------:|
-| ![1  로그인 마이페이지 버튼](https://github.com/user-attachments/assets/ca24f3cf-9702-4882-8f03-8346081dcdca) | ![2  리스트 더보기 버튼](https://github.com/user-attachments/assets/06ee5999-2445-4703-bdcf-923fb240b47a) | ![3  디테일 즐겨찾기](https://github.com/user-attachments/assets/7a2d4664-400f-4a05-9ef8-6a6a16c49a1e) |
+| <img width="700" height="1030" alt="image" src="https://github.com/user-attachments/assets/81a4054f-bb38-4926-933f-18a3781b3f40" /> | <img width="1919" height="1032" alt="로그인" src="https://github.com/user-attachments/assets/1f61f2b0-4f80-4ac7-a3e8-a6771c547064" /> | <img width="1919" height="1031" alt="아이디찾기" src="https://github.com/user-attachments/assets/525cc0d6-9c93-4bad-9dca-0a6ff08a2493" /> |
 
-| 로그인 창 | 아이디 찾기 | 비밀번호 찾기 |
+| 비밀번호 찾기 | 회원가입 | 중복로그인 |
 |:------:|:------:|:------:|
-| <img width="1919" height="1032" alt="로그인" src="https://github.com/user-attachments/assets/1f61f2b0-4f80-4ac7-a3e8-a6771c547064" /> | <img width="1919" height="1031" alt="아이디찾기" src="https://github.com/user-attachments/assets/525cc0d6-9c93-4bad-9dca-0a6ff08a2493" /> | <img width="1919" height="1030" alt="비밀번호 찾기" src="https://github.com/user-attachments/assets/8ed42132-1a0a-4a75-9be5-3f99ce8e20da" /> |
+| <img width="1919" height="1030" alt="비밀번호 찾기" src="https://github.com/user-attachments/assets/8ed42132-1a0a-4a75-9be5-3f99ce8e20da" /> | <img width="1919" height="1030" alt="회원가입" src="https://github.com/user-attachments/assets/106de394-da46-4eeb-8dea-5fbbd8a79a90" /> | <img width="1919" height="1031" alt="중복 로그인" src="https://github.com/user-attachments/assets/53dcb681-0ce0-4c45-90ed-9adaafcdfba4" /> |
 
-| 회원가입 | 중복로그인 | 음식점 게시판 리스트 |
+| 음식점 게시판 리스트 | 게시판 음식점 상세보기 | 리뷰 작성 |
 |:------:|:------:|:------:|
-| <img width="1919" height="1030" alt="회원가입" src="https://github.com/user-attachments/assets/106de394-da46-4eeb-8dea-5fbbd8a79a90" /> | <img width="1919" height="1031" alt="중복 로그인" src="https://github.com/user-attachments/assets/53dcb681-0ce0-4c45-90ed-9adaafcdfba4" /> | <img width="1919" height="1029" alt="게시판 리스트" src="https://github.com/user-attachments/assets/8a7d17cd-8396-49b4-8267-4e295bd318e2" /> |
-
-| 음식점 게시판 상세보기_1 | 음식점 게시판 상세보기_2 | 리뷰 작성 | 
-|:------:|:------:|:------:|
-| <img width="1919" height="1030" alt="게시판 상세보기_1" src="https://github.com/user-attachments/assets/34b93dbc-0472-4339-9169-466b303df6e1" /> | <img width="1919" height="1032" alt="게시판 상세보기_2" src="https://github.com/user-attachments/assets/507cde4c-0d2d-4a13-82ed-6e7b4d7e6c4e" /> | ![8  리뷰 작성](https://github.com/user-attachments/assets/c65c1c26-9a3c-444b-a0b4-3e4b42f0c32e) |
+| <img width="720" height="1200" alt="image" src="https://github.com/user-attachments/assets/ddad6e7a-8539-471f-b2c3-9e7bbd11da18" /> | <img width="700" height="1100" alt="image" src="https://github.com/user-attachments/assets/0e3fb661-83d9-4ee8-b891-0ac743c27924" />| ![8  리뷰 작성](https://github.com/user-attachments/assets/c65c1c26-9a3c-444b-a0b4-3e4b42f0c32e) |  
 
 | 알림 |  |  |
 |:------:|:------:|:------:|
-| <img width="1783" height="1074" alt="알림" src="https://github.com/user-attachments/assets/2d1953c2-f76c-4769-bfa9-b27aca803c97" /> | <img width="1777" height="1072" alt="4  셀러 정보 수정" src="https://github.com/user-attachments/assets/8dd637f9-dea6-4c64-8821-597840385993" /> | <img width="1797" height="1069" alt="5  셀러 컨텐츠 작성(정보)" src="https://github.com/user-attachments/assets/588a23f2-827b-4bec-b593-df9e040dae15" /> |
+| <img width="1783" height="1074" alt="알림" src="https://github.com/user-attachments/assets/2d1953c2-f76c-4769-bfa9-b27aca803c97" /> | - | - |
 
 | 마이페이지 나의 코스 |  |  |
 |:------:|:------:|:------:|
@@ -268,14 +264,6 @@
 | 공지사항 리스트 | 공지사항 상세페이지 |  |
 |:------:|:------:|:------:|
 | <img width="1919" height="1019" alt="공지사항 리스트" src="https://github.com/user-attachments/assets/1d59c146-9b1e-48a7-be5c-e62567d48bf4" /> | <img width="1919" height="1018" alt="공지사항 상세페이지" src="https://github.com/user-attachments/assets/3101902d-2f77-42d7-b7a7-85c8c172455b" /> | <img width="1777" height="1085" alt="8  셀러 컨텐츠등록(가격옵션)" src="https://github.com/user-attachments/assets/fbdbe5ce-bf8f-4276-bed6-df78a7fc7e58" /> |
-
-| 셀러 컨텐츠등록 완료 | 셀러정보 | 셀러 내 컨텐츠목록 |
-|:------:|:------:|:------:|
-| <img width="1784" height="1082" alt="9  셀러 컨텐츠등록 완료" src="https://github.com/user-attachments/assets/24228fb5-b20e-4cca-ae37-cae0b96b101d" /> | <img width="1777" height="1082" alt="10  셀러정보" src="https://github.com/user-attachments/assets/c3bc9f6e-daee-4c1f-a814-cd14dd52240f" /> | <img width="1780" height="992" alt="11  셀러 내컨텐츠목록" src="https://github.com/user-attachments/assets/8a95393c-b1fa-4854-bea1-e63bb546afe7" /> |
-
-| 셀러 구매자 리뷰 | 판매내역 | 셀러 컨텐츠 수정(정보) |
-|:------:|:------:|:------:|
-| <img width="1775" height="1072" alt="12  셀러 구매자 리뷰" src="https://github.com/user-attachments/assets/32547b24-bd41-4658-a7fe-71fda8453f9d" /> | <img width="1919" height="990" alt="13  판매내역" src="https://github.com/user-attachments/assets/116c8e29-d788-4d83-a0b5-ee039a7b2b5d" /> | <img width="1777" height="1024" alt="14  셀러 컨텐츠 수정(정보)" src="https://github.com/user-attachments/assets/0b4c381d-bb32-42c6-94fc-0cf45331ae22" /> |
 
 | 결제 | 결제 완료 | 결제 취소 |
 |:------:|:------:|:------:|
