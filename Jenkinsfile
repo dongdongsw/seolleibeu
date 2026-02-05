@@ -1,276 +1,103 @@
-/*
-	우분투 배포
-*/
 pipeline {
 	agent any
 	
-	// 전역변수 => ${SERVER_IP}
 	environment {
-			APP_DIR = "~/app"
-			JAR_NAME = "*-0.0.1-SNAPSHOT.war" 
+		APP = "total-app"
+		IMAGE = "total-app"
+		PORT = "9090"
 	}
-		 
-	stages { 
-		/*
-			git push = commit
-			    |
-			web hooks / poll 
-			    |
-			 jenkins (local)
-			    |
-			  build
-			    |
-			  docker build
-			  docker push
-			    |
-			  minikube
-			    | deployment.yaml update
-			  브라우저 실행
-		*/
-		/*
-		 연결 확인 = ngrok
-		 stage('Check Git Info') {
-			steps {
-				sh '''
-				    echo "===Git Info==="
-				    git branch
-				    git log -1
-				   '''
-			}
-		}*/
-		
-		// 감지 = main : push (commit)
-		stage('Check Out') {
-			steps {
-				 echo 'Git Checkout'
-                 checkout scm
-			}
-		}
-		
-		// gradle build => war파일을 다시 생성 
-		stage('Gradle Permission') {
-			steps {
-				sh '''
-				    chmod +x gradlew
-				   '''
-			}
-		}
-		
-		// build 시작 
-		stage('Gradle Build') {
-			steps {
-				sh '''
-				    ./gradlew clean build
-				   '''
-			}
-		}
-		
-		// Docker Build 
-		stage('Docker Build') {
-			steps {
-				sh '''
-					docker build -t seodongdongsw/total-app:latest .
-				   '''
-			}
-		}
-		
-		stage('Docker Login') {
-		  	steps {
-		   		 withCredentials([usernamePassword(
-		        	credentialsId: 'dockerhub-creds',
-		       		usernameVariable: 'DH_USER',
-		        	passwordVariable: 'DH_PASS'
-		    )]) {
-		     	 sh '''
-		       		 echo "$DH_PASS" | docker login -u "$DH_USER" --password-stdin
-		      		'''
-		    	}
-		  	}
-		}
-		
-		// Docker Push
-		stage('Docker Push') {
-		  	steps {
-		    	sh '''
-		      		docker push seodongdongsw/total-app:latest
-		    	'''
-		  	}
-		}
-		
-		// 실행 명령 
-		
-		stage('Deploy to MiniKube') {
-			steps {
-				sh '''
-					kubectl apply -f /var/lib/jenkins/k8s/deployment.yaml
-					kubectl rollout status deployment/totalapp-deployment
-				   '''
-			}
-		}
-		 
-	}
-}
+	
+	stages {
+		stage('Git Checkout') {
+	            steps {
+	                echo "=== Git Checkout ==="
+	                checkout scm
+	            }
+	    }
+	
+	    stage('Gradle Permission') {
+	            steps {
+	                sh 'chmod +x gradlew'
+	            }
+	    }
+	
+	    stage('Gradle Build') {
+	            steps {
+	                sh './gradlew build -x test --build-cache'
+	            }
+	    }
+	    
+	
+	    stage('Docker Build') {
+	            steps {
+	                sh "docker build -t ${IMAGE}:latest ."
+	            }
+	    }
+	    stage('Deploy') {
+            steps {
+                sh '''
+                echo "▶ 이전 컨테이너 종료"
+                docker rm -f total-app || true
 
+                echo "▶ 새 컨테이너 실행 (latest)"
+                docker run -d \
+                  --name total-app \
+                  -p 9090:9090 \
+                  total-app:latest
+                '''
 
+                sh '''
+                echo "▶ Health Check 시작"
 
+                for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+                do
+                  STATUS=$(curl -s http://localhost:9090/actuator/health || true)
+                  echo "응답: $STATUS"
 
+                  if echo "$STATUS" | grep -q UP; then
+                    echo "HEALTH CHECK OK"
 
-/* AWS 배포
-pipeline {
-    agent any
+                    echo "previous 이미지 갱신"
+                    docker tag total-app:latest total-app:previous
 
-    environment {
-	   DOCKER_IMAGE = "seodongdongsw/total-app"
-	   DOCKER_TAG = "latest"
-	   EC2_HOST = "13.209.7.16"
-	   EC2_USER = "ubuntu"
-	   COMPOSE_FILE = "~/app/docker-compose.yml"
-	}
+                    exit 0
+                  fi
 
-    stages {
-		// GIT 연결 => 주소
-        stage('Checkout') {
-            steps { 
-                echo 'Git Checkout'
-                checkout scm
+                  sleep 2
+                done
+
+                echo "❌ HEALTH CHECK FAIL"
+                exit 1
+                '''
             }
         }
-        // 배포판 만들기 
-        stage('Gradlew Build') {
-			steps {
-				echo 'Gradle Build'
-				sh '''
-				    chmod +x gradlew
-				    ./gradlew clean build -x test
-				   '''
-			}
-		} 
-		
-		
-		
-		stage('Docker Hub Login') {
-			steps {
-				echo 'DockerHub Login'
-				withCredentials([usernamePassword(
-					credentialsId: 'dockerhub_config',
-					usernameVariable: 'DOCKER_ID',
-					passwordVariable: 'DOCKER_PW'
-				)]){
-					sh '''
-					   echo "DOCKER_ID=$DOCKER_ID,DOCKER_PW=$DOCKER_PW"
-					   echo "$DOCKER_PW" | docker login -u "$DOCKER_ID" --password-stdin
-					   '''
-				}
-			}
-		}
-
-		stage('Docker Build') {
-			steps {
-				echo 'Docker Image Build'
-				sh '''
-				    docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
-				   '''
-			}
-		}
-		
-		stage('Docker Push') {
-		    steps {
-		        sh '''
-		            docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
-		        '''
-		    }
-		}
-
-		stage('Deploy docker-compose') {
-			steps {
-				sshagent(credentials: ['SERVER_SSH_KEY']) {
-				sh """
-				   ssh -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} '
-				   cd /home/ubuntu/app
-				   docker-compose down
-				   docker-compose pull
-				   docker-compose up -d
-				   '
-				   """
-				}
-			}
-		}
-		
-		/*
-		stage('Deploy to EC2') {
-			steps {
-			  // Manage => SSH Agent 설치 = jenkins 다시 실행 
-			  sshagent(credentials: ['SERVER_SSH_KEY']) {
-				sh """
-				   ssh -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} << 'EOF'
-				       docker stop total-app || true
-				       docker rm total-app || true
-				       docker pull ${DOCKER_IMAGE}:${DOCKER_TAG}
-				       docker run --name total-app -it -d -p 9090:9090 ${DOCKER_IMAGE}:${DOCKER_TAG}
-EOF
-				   """
-			  }
-			}
-		}
-		 */
-		
-		/*
-		stage('Docker Compose Down') {
-			steps {
-				echo 'docker-compose down'
-				sh '''
-				     docker-compose -f ${COMPOSE_FILE} down || true
-				   '''
-			}
-		}
-		
-		stage('Docker Stop And RM'){
-			steps {
-				echo 'docker stop rm'
-				sh '''
-				    docker stop total-app || true
-				    docker rm total-app || true
-				    docker pull ${DOCKER_IMAGE}
-				   '''
-			}
-		}
-		
-		stage('Docker Compose UP') {
-			steps {
-				echo 'docker-compose up'
-				sh '''
-				    docker-compose -f ${COMPOSE_FILE} up -d
-				   '''
-			}
-		}
-		*/
-		
-		/*
-		stage('Docker Run') {
-			steps {
-				echo 'Docker Run'
-				sh '''
-				    docker stop ${CONTAINER_NAME} || true
-				    docker rm ${CONTAINER_NAME} || true
-				    
-				    docker pull ${IMAGE_NAME}
-				    
-				    docker run --name ${CONTAINER_NAME} \
-				    -it -d -p 9090:9090 \
-				    ${IMAGE_NAME}
-				   '''
-			}
-		}
-		 
     }
-    
+
     post {
-		success {
-			echo 'CI/CD 실행 성공'
-		}
-		failure {
-			echo 'CI/CD 실행 실패'
-		}
-	}
+        failure {
+            echo "♻️ 자동 롤백 시작"
+
+            sh '''
+            echo "▶ 실패 컨테이너 제거"
+            docker rm -f total-app || true
+
+            if docker image inspect total-app:previous > /dev/null 2>&1; then
+              echo "▶ 이전 이미지로 롤백"
+              docker run -d \
+                --name total-app \
+                -p 9090:9090 \
+                total-app:previous
+            else
+              echo " 롤백할 이미지 없음 (최초 배포)"
+            fi
+            '''
+        }
+
+        always {
+            cleanWs()
+        }
+    }
 }
-*/
+
+
+

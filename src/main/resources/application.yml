@@ -46,17 +46,11 @@ file:
 #		place: C:/uploads/place
 #		profile: C:/uploads/prifile
 
-management:
-  endpoints:
+menagement:
+ endpoints:
     web:
-      exposure:
-        include: health
-
-  endpoint:
+     exposure:
+      include: health
+ endpoins:
     health:
-      probes:
-        enabled: true
-
-  health:
-    mail:
-      enabled: false
+     show-details: always 
