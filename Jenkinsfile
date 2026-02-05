@@ -8,7 +8,7 @@ pipeline {
 	}
 	
 	stages {
-		stage('Git Checkout') {
+		stage('Git Checkout') { 
 	            steps {
 	                echo "=== Git Checkout ==="
 	                checkout scm
