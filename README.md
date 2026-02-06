@@ -243,7 +243,7 @@
 
 | 메인페이지 | 로그인 창 | 아이디 찾기 |
 |:------:|:------:|:------:|
-| <img width="700" height="1030" alt="image" src="https://github.com/user-attachments/assets/81a4054f-bb38-4926-933f-18a3781b3f40" /> | <img width="1919" height="1032" alt="로그인" src="https://github.com/user-attachments/assets/1f61f2b0-4f80-4ac7-a3e8-a6771c547064" /> | <img width="1919" height="1031" alt="아이디찾기" src="https://github.com/user-attachments/assets/525cc0d6-9c93-4bad-9dca-0a6ff08a2493" /> |
+| <img width="700" height="1030" alt="image" src="https://github.com/user-attachments/assets/b531612d-6de5-40b2-be44-c2c5d2de70b2"> | <img width="1919" height="1032" alt="로그인" src="https://github.com/user-attachments/assets/1f61f2b0-4f80-4ac7-a3e8-a6771c547064" /> | <img width="1919" height="1031" alt="아이디찾기" src="https://github.com/user-attachments/assets/525cc0d6-9c93-4bad-9dca-0a6ff08a2493" /> |
 
 | 비밀번호 찾기 | 회원가입 | 중복로그인 |
 |:------:|:------:|:------:|
@@ -252,6 +252,10 @@
 | 음식점 게시판 리스트 | 게시판 음식점 상세보기 | 리뷰 작성 |
 |:------:|:------:|:------:|
 | <img width="720" height="1200" alt="image" src="https://github.com/user-attachments/assets/ddad6e7a-8539-471f-b2c3-9e7bbd11da18" /> | <img width="700" height="1100" alt="image" src="https://github.com/user-attachments/assets/0e3fb661-83d9-4ee8-b891-0ac743c27924" />| ![8  리뷰 작성](https://github.com/user-attachments/assets/c65c1c26-9a3c-444b-a0b4-3e4b42f0c32e) |  
+
+| 문화체험 게시판 상세보기 | 예매 | 예매 결과 |
+|:------:|:------:|:------:|
+| <img width="700" height="1100" alt="문화체험 게시판 상세" src="https://github.com/user-attachments/assets/382e2f8c-af3c-4cd0-8df0-8e50c432bf42"/> | <img width="700" height="1100" alt="예매" src="https://github.com/user-attachments/assets/bc5ff2ef-1f57-4fef-b1fc-cfec383f0006" /> | <img width="700" height="1100" alt="예매 결과" src="https://github.com/user-attachments/assets/b44d7cd3-36b6-4497-9a2e-a2708ab101a5" /> | 
 
 | 공지사항 리스트 | 공지사항 상세페이지 | 알림 |
 |:------:|:------:|:------:|
@@ -289,6 +293,10 @@
 | 마이페이지 나의 코스 | 마이페이지 환불 내역 | 환불 요청 |  
 |:------:|:------:|:------:|
 | <img width="1919" height="1027" alt="마이페이지-나의코스" src="https://github.com/user-attachments/assets/e6b18b2e-0f24-46c3-a3c7-ec4343de542e" /> | <img width="1919" height="1028" alt="마이페이지 환불 내역" src="https://github.com/user-attachments/assets/320cc377-b337-4073-bb7f-fdecff4b6ab8" /> | <img width="1919" height="1027" alt="환불 요청" src="https://github.com/user-attachments/assets/31e80a49-98da-4f57-908b-e8d4124277a5" /> |
+
+| 마이페이지 예매내역 | 예매 상세내역(미결제) | 예매 상세내역(결제) |
+|:------:|:------:|:------:|
+| <img width="1919" height="1016" alt="예매내역" src="https://github.com/user-attachments/assets/0dd3f8f1-c3a3-4203-be3f-c2a34b4e7111" /> | <img width="1919" height="1014" alt="예매 상세내역(1)" src="https://github.com/user-attachments/assets/848464eb-e774-433f-84a0-1bacc3d74f67" /> | <img width="1919" height="1014" alt="예매 상세내역(2)" src="https://github.com/user-attachments/assets/f90f6dfe-f819-4027-8f55-97951ddc095a" /> |
 
 # 관리자 대시보드
 ---
