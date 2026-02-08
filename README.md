@@ -236,7 +236,7 @@
 
 | 문화체험 게시판 상세보기 | 예매 | 예매 결과 |
 |:------:|:------:|:------:|
-| <img width="700" height="1100" alt="문화체험 게시판 상세" src="https://github.com/user-attachments/assets/382e2f8c-af3c-4cd0-8df0-8e50c432bf42"/> | <img width="700" height="1100" alt="예매" src="https://github.com/user-attachments/assets/bc5ff2ef-1f57-4fef-b1fc-cfec383f0006" /> | <img width="700" height="1100" alt="예매 결과" src="https://github.com/user-attachments/assets/b44d7cd3-36b6-4497-9a2e-a2708ab101a5" /> | 
+| <img width="500" height="1100" alt="문화체험 게시판 상세" src="https://github.com/user-attachments/assets/382e2f8c-af3c-4cd0-8df0-8e50c432bf42"/> | <img width="700" height="1100" alt="예매" src="https://github.com/user-attachments/assets/bc5ff2ef-1f57-4fef-b1fc-cfec383f0006" /> | <img width="700" height="1100" alt="예매 결과" src="https://github.com/user-attachments/assets/b44d7cd3-36b6-4497-9a2e-a2708ab101a5" /> | 
 
 | 공지사항 리스트 | 공지사항 상세페이지 | 알림 |
 |:------:|:------:|:------:|
